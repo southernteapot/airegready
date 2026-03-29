@@ -6,15 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        charcoal: '#16171c',
-        gold: {
-          DEFAULT: '#c8a46e',
-          light: '#e8d5a8',
-          dark: '#a67c3d',
+        bg: '#F1E9DC',
+        surface: '#FFFDF8',
+        primary: '#20262B',
+        secondary: '#646A6F',
+        accent: {
+          DEFAULT: '#9E7A56',
+          light: '#B8956E',
+          dark: '#86653F',
+          text: '#FFF9F2',
         },
-        cream: '#eae5db',
-        silver: '#9a9a9e',
-        dim: '#72727a',
+        border: '#D8CCBE',
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Georgia', 'Times New Roman', 'serif'],

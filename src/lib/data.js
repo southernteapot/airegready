@@ -85,7 +85,7 @@ export const BLOG_POSTS = [
 export const FAQ_ITEMS = [
   {
     q: 'Who needs to worry about AI compliance?',
-    a: "Any organization that develops, deploys, or uses AI systems \u2014 including off-the-shelf tools like ChatGPT or Copilot. If AI influences decisions about people (hiring, lending, healthcare, benefits), your compliance obligations are significantly higher. Even companies 'just using' third-party AI tools can face liability.",
+    a: "It's not just big tech companies. Any organization that develops, deploys, or uses AI systems needs to pay attention \u2014 including small businesses using off-the-shelf tools like ChatGPT or Copilot. Individuals are affected too: AI is increasingly used to make decisions about hiring, lending, insurance, and benefits. Understanding the rules helps you protect your rights and stay ahead of obligations.",
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',
@@ -96,8 +96,8 @@ export const FAQ_ITEMS = [
     a: 'It varies by regulation. The EU AI Act can impose fines up to \u20AC35 million or 7% of global annual revenue. U.S. state laws vary \u2014 some carry civil penalties, others create private rights of action. The reputational and operational costs of enforcement actions often exceed the fines themselves.',
   },
   {
-    q: 'Where should a company start with AI compliance?',
-    a: 'Start with an inventory: what AI systems do you use, what data do they process, and what decisions do they influence? Then map those systems against the regulations that apply to your industry and geography. Our free Risk Assessment tool above gives you a quick starting point.',
+    q: 'Where should I start with AI compliance?',
+    a: 'If you represent an organization, start with an inventory: what AI systems do you use, what data do they process, and what decisions do they influence? Then map those against the regulations for your industry and geography. If you\'re an individual, start by understanding which AI-driven decisions affect you and what rights you have. Either way, our free Risk Assessment tool above gives you a quick starting point.',
   },
   {
     q: 'Is there a single standard that covers everything?',
@@ -112,12 +112,14 @@ export const FAQ_ITEMS = [
 export const QUESTIONS = [
   {
     id: 1,
-    text: 'Does your organization develop or deploy AI systems?',
+    text: 'What is your relationship with AI systems?',
     options: [
-      { label: 'Yes \u2014 we build AI systems', value: 'develop', risk: 3 },
-      { label: 'Yes \u2014 we use third-party AI tools', value: 'deploy', risk: 2 },
+      { label: 'I/we build or develop AI systems', value: 'develop', risk: 3 },
+      { label: 'I/we use third-party AI tools (ChatGPT, Copilot, etc.)', value: 'deploy', risk: 2 },
       { label: 'Both \u2014 we build and use AI', value: 'both', risk: 4 },
-      { label: 'Exploring / planning to adopt', value: 'exploring', risk: 1 },
+      { label: 'Exploring or planning to adopt AI', value: 'exploring', risk: 1 },
+      { label: 'I\u2019m an individual affected by or interested in AI regulation', value: 'individual', risk: 1 },
+      { label: 'No involvement with AI currently', value: 'none', risk: 0 },
     ],
   },
   {

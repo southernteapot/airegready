@@ -13,12 +13,12 @@ export default function FAQSection() {
       aria-labelledby="faq-heading"
     >
       <div className="text-center mb-12">
-        <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-gold mb-3">
+        <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
           FAQ
         </div>
         <h2
           id="faq-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-cream"
+          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
           Common Questions About AI Compliance
         </h2>
@@ -27,8 +27,8 @@ export default function FAQSection() {
         {FAQ_ITEMS.map((item, i) => (
           <div
             key={i}
-            className={`bg-white/[0.025] border rounded-xl overflow-hidden transition-colors duration-300 ${
-              open === i ? 'border-gold/[0.35]' : 'border-white/[0.06]'
+            className={`bg-surface border rounded-xl overflow-hidden transition-colors duration-300 ${
+              open === i ? 'border-accent/50' : 'border-border'
             }`}
           >
             <button
@@ -39,13 +39,13 @@ export default function FAQSection() {
             >
               <span
                 className={`font-sans text-base font-semibold text-left transition-colors duration-300 ${
-                  open === i ? 'text-gold' : 'text-cream'
+                  open === i ? 'text-accent' : 'text-primary'
                 }`}
               >
                 {item.q}
               </span>
               <span
-                className={`text-dim text-xl font-light flex-shrink-0 transition-transform duration-300 select-none ${
+                className={`text-secondary text-xl font-light flex-shrink-0 transition-transform duration-300 select-none ${
                   open === i ? 'rotate-45' : ''
                 }`}
               >
@@ -55,13 +55,12 @@ export default function FAQSection() {
             <div
               id={`faq-answer-${i}`}
               role="region"
-              aria-labelledby={`faq-question-${i}`}
               className={`overflow-hidden transition-all duration-300 ${
                 open === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
               <div className="px-6 pb-5">
-                <p className="font-sans text-[15px] text-silver leading-relaxed">
+                <p className="font-sans text-[15px] text-secondary leading-relaxed">
                   {item.a}
                 </p>
               </div>

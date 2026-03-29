@@ -16,14 +16,14 @@ export default function NavBar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-xl border-b border-white/[0.06] px-6 h-16 flex items-center justify-between"
+      className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border px-6 h-16 flex items-center justify-between"
     >
       <a href="/" className="flex items-center gap-2.5 no-underline">
-        <div className="w-8 h-8 bg-gradient-to-br from-gold to-gold-dark rounded-md flex items-center justify-center font-extrabold text-base text-charcoal font-sans">
+        <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-dark rounded-md flex items-center justify-center font-extrabold text-base text-accent-text font-sans">
           A
         </div>
-        <span className="font-sans font-bold text-[19px] text-cream tracking-tight">
-          AIReg<span className="text-gold">Ready</span>
+        <span className="font-sans font-bold text-[19px] text-primary tracking-tight">
+          AIReg<span className="text-accent">Ready</span>
         </span>
       </a>
 
@@ -33,7 +33,7 @@ export default function NavBar() {
           <a
             key={link.label}
             href={link.href}
-            className="text-silver text-sm font-sans font-medium hover:text-gold transition-colors no-underline"
+            className="text-secondary text-sm font-sans font-medium hover:text-accent transition-colors no-underline"
           >
             {link.label}
           </a>
@@ -42,7 +42,7 @@ export default function NavBar() {
 
       {/* Mobile hamburger */}
       <button
-        className="md:hidden text-silver hover:text-cream bg-transparent border-none cursor-pointer p-1"
+        className="md:hidden text-secondary hover:text-primary bg-transparent border-none cursor-pointer p-1"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label="Toggle menu"
         aria-expanded={mobileOpen}
@@ -66,13 +66,13 @@ export default function NavBar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-charcoal/95 backdrop-blur-xl border-b border-white/[0.06] md:hidden">
+        <div className="absolute top-16 left-0 right-0 bg-bg/95 backdrop-blur-xl border-b border-border md:hidden">
           <div className="flex flex-col p-6 gap-4">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-silver text-base font-sans font-medium hover:text-gold transition-colors no-underline"
+                className="text-secondary text-base font-sans font-medium hover:text-accent transition-colors no-underline"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
