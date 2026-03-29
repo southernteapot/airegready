@@ -20,7 +20,7 @@ export default function Newsletter() {
         </h2>
         <p className="font-sans text-[15px] text-secondary leading-relaxed mb-7">
           Weekly updates on new AI laws, enforcement actions, and what they
-          mean for your compliance obligations.
+          mean in practice.
         </p>
         {!submitted ? (
           <form

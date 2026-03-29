@@ -8,7 +8,7 @@ const reasons = [
     desc: 'Every summary traces back to the actual law, rule, or guidance document. Verify anything in one click.',
   },
   {
-    title: 'Built for Real Use',
+    title: 'Practice Over Theory',
     desc: 'Designed for people who need to understand AI regulation in practice \u2014 not decode it.',
   },
 ]

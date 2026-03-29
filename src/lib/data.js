@@ -85,7 +85,7 @@ export const BLOG_POSTS = [
 export const FAQ_ITEMS = [
   {
     q: 'Who needs to worry about AI compliance?',
-    a: 'Any organization that develops, deploys, or uses AI systems \u2014 including small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI influences decisions about people (hiring, lending, healthcare, benefits), the compliance obligations are significantly higher. Even companies that only use third-party AI tools can face liability under emerging regulations.',
+    a: 'Any organization that develops, deploys, or uses AI systems \u2014 and increasingly, individuals affected by AI-driven decisions in hiring, lending, insurance, or content moderation. If AI influences decisions about people, the regulatory stakes are higher for everyone involved. Even small businesses using off-the-shelf tools like ChatGPT or Copilot can face liability under emerging regulations.',
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',

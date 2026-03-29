@@ -31,8 +31,7 @@ export default function ToolsTeaser() {
           What&apos;s Coming Next
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Tools we&apos;re building to help you track and manage AI compliance
-          obligations.
+          Tools we&apos;re building to help you stay on top of AI regulation.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

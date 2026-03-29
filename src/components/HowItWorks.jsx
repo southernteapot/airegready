@@ -12,7 +12,7 @@ const steps = [
   {
     num: '03',
     title: 'Get Practical Guidance',
-    desc: 'Understand what each regulation actually requires in plain language — and what steps to take next.',
+    desc: 'Understand what each regulation actually requires — who it applies to, what it mandates, and where to find the full text.',
   },
 ]
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
           id="how-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          How AIRegReady Works
+          Understand AI Regulation in Three Steps
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[520px] mx-auto leading-relaxed">
           Dense regulatory text, turned into guidance you can actually use.

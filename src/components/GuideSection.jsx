@@ -15,7 +15,7 @@ export default function GuideSection() {
           id="guide-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Regulations You Should Know
+          AI Regulations You Should Know
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[560px] mx-auto leading-relaxed">
           Each framework summarized in plain English &mdash; what it requires,
