@@ -1,8 +1,11 @@
 import NavBar from '@/components/NavBar'
 import Hero from '@/components/Hero'
+import TrustStrip from '@/components/TrustStrip'
+import HowItWorks from '@/components/HowItWorks'
 import GuideSection from '@/components/GuideSection'
 import AssessmentTool from '@/components/AssessmentTool'
 import BlogSection from '@/components/BlogSection'
+import WhySection from '@/components/WhySection'
 import FAQSection from '@/components/FAQSection'
 import ToolsTeaser from '@/components/ToolsTeaser'
 import Newsletter from '@/components/Newsletter'
@@ -32,9 +35,12 @@ export default function Home() {
       <NavBar />
       <main>
         <Hero />
+        <TrustStrip />
+        <HowItWorks />
         <GuideSection />
         <AssessmentTool />
         <BlogSection />
+        <WhySection />
         <FAQSection />
         <ToolsTeaser />
         <Newsletter />

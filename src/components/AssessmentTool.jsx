@@ -41,11 +41,11 @@ export default function AssessmentTool() {
           id="assessment-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          AI Compliance Risk Assessment
+          See Which AI Rules May Apply to You
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Answer 7 questions. Get your risk profile and the regulations that
-          likely apply to you.
+          7 questions. 2 minutes. Get a personalized risk profile and a list of
+          the regulations you should be paying attention to.
         </p>
       </div>
 

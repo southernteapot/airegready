@@ -12,17 +12,17 @@ export default function BlogSection() {
     >
       <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          Latest Analysis
+          Latest Updates
         </div>
         <h2
           id="blog-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Insights &amp; Guides
+          What&apos;s Changing in AI Regulation
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Practical analysis of AI regulations, enforcement trends, and
-          compliance strategies you can act on.
+          Practical breakdowns of new AI laws, enforcement actions, and
+          compliance developments &mdash; written so you can act on them.
         </p>
       </div>
 

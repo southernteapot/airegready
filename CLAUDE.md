@@ -17,13 +17,16 @@ Phase 1 — content site with a free risk assessment tool. No paid features yet.
 - **Footer** — includes legal disclaimer: "Content is educational and does not constitute legal advice"
 
 ## Design System
-- **Vibe**: Sharp and professional — law firm meets tech
-- **Background**: Dark charcoal (#16171c), NOT pure black
-- **Accent color**: Gold (#c8a46e) with lighter gold (#e8d5a8) for gradients
-- **Card backgrounds**: rgba(255,255,255,0.025) with subtle borders
+- **Vibe**: Warm, professional, approachable — credible but not corporate
+- **Background**: Warm cream (#F1E9DC)
+- **Surfaces/cards**: Off-white (#FFFDF8) with warm borders (#D8CCBE)
+- **Primary text**: Dark charcoal (#20262B)
+- **Secondary text**: Muted gray (#646A6F)
+- **Accent / CTA**: Warm brown (#9E7A56) with lighter (#B8956E) and darker (#86653F) variants
+- **Accent text** (on accent backgrounds): Warm white (#FFF9F2)
 - **Fonts**: Playfair Display (serif, headings) + DM Sans (sans-serif, body)
-- **Interactions**: Gold border highlights on hover, subtle transitions
-- **Section labels**: Uppercase, small, gold, letterspaced
+- **Interactions**: Accent border highlights on hover, subtle shadows, smooth transitions
+- **Section labels**: Uppercase, small, accent-colored, letterspaced
 
 ## Tech Stack
 - Next.js
