@@ -31,11 +31,11 @@ export default function ToolsTeaser() {
           id="tools-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Compliance Tools, Built for the Real World
+          What&apos;s Coming Next
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Not another AI chatbot. Real compliance infrastructure designed by
-          people who understand enforcement.
+          Practical tools to help you track regulatory obligations, generate
+          compliance documentation, and stay current.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -1,7 +1,7 @@
 const reasons = [
   {
     title: 'Plain English',
-    desc: 'We translate dense regulatory text into clear, actionable summaries. If you can read a blog post, you can understand AI compliance.',
+    desc: 'Regulatory language translated into clear summaries you can act on \u2014 whether you\u2019re reviewing a framework or explaining obligations to your team.',
   },
   {
     title: 'Source-Linked',
@@ -13,7 +13,7 @@ const reasons = [
   },
   {
     title: 'Built for Practitioners',
-    desc: 'Designed for founders, product teams, and compliance leads navigating AI regulation in practice \u2014 not for academics.',
+    desc: 'Designed for founders, product teams, and compliance leads who need to understand the rules \u2014 not decode them.',
   },
 ]
 

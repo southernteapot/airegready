@@ -19,8 +19,8 @@ export default function Newsletter() {
           Stay Ahead of AI Regulation
         </h2>
         <p className="font-sans text-[15px] text-secondary leading-relaxed mb-7">
-          Weekly analysis of new AI laws, enforcement actions, and compliance
-          strategies. No spam, no fluff.
+          Weekly updates on new AI laws, enforcement actions, and what they
+          mean for your compliance obligations.
         </p>
         {!submitted ? (
           <form

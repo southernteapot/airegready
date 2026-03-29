@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Badge */}
       <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-8 text-[13px] font-semibold text-accent font-sans uppercase tracking-wide relative">
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-[pulse-dot_2s_infinite]" />
-        Tracking 6 Regulatory Frameworks &mdash; Updated Weekly
+        AI Regulatory Developments, Organized and Updated
       </div>
 
       <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-bold text-primary leading-[1.1] max-w-[820px] mb-6 tracking-tight">
@@ -22,8 +22,8 @@ export default function Hero() {
 
       <p className="font-sans text-lg sm:text-[19px] text-secondary max-w-[640px] mb-10 leading-relaxed">
         Plain-English summaries of AI laws and compliance guidance &mdash;
-        organized by framework, built for teams actually using AI, and updated
-        as rules evolve. No legalese, no fluff.
+        organized by framework, built for teams actually using AI, and
+        updated as the rules evolve.
       </p>
 
       <div className="flex gap-4 flex-wrap justify-center">

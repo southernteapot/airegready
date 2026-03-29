@@ -30,11 +30,10 @@ export default function HowItWorks() {
           id="how-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          From Regulatory Chaos to Clarity
+          How AIRegReady Works
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[520px] mx-auto leading-relaxed">
-          We do the hard work of reading dense regulatory text so you
-          don&apos;t have to.
+          Dense regulatory text, turned into guidance you can actually use.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

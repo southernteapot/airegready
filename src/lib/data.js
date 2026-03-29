@@ -85,7 +85,7 @@ export const BLOG_POSTS = [
 export const FAQ_ITEMS = [
   {
     q: 'Who needs to worry about AI compliance?',
-    a: "It's not just big tech companies. Any organization that develops, deploys, or uses AI systems needs to pay attention \u2014 including small businesses using off-the-shelf tools like ChatGPT or Copilot. Individuals are affected too: AI is increasingly used to make decisions about hiring, lending, insurance, and benefits. Understanding the rules helps you protect your rights and stay ahead of obligations.",
+    a: 'Any organization that develops, deploys, or uses AI systems \u2014 including small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI influences decisions about people (hiring, lending, healthcare, benefits), the compliance obligations are significantly higher. Even companies that only use third-party AI tools can face liability under emerging regulations.',
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',
@@ -97,11 +97,11 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Where should I start with AI compliance?',
-    a: 'If you represent an organization, start with an inventory: what AI systems do you use, what data do they process, and what decisions do they influence? Then map those against the regulations for your industry and geography. If you\'re an individual, start by understanding which AI-driven decisions affect you and what rights you have. Either way, our free Risk Assessment tool above gives you a quick starting point.',
+    a: 'Start with an inventory: what AI systems does your organization use, what data do they process, and what decisions do they influence? Then map those against the regulations that apply to your industry and geography. Our free Risk Assessment tool above gives you a quick starting point.',
   },
   {
     q: 'Is there a single standard that covers everything?',
-    a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most organizations need to comply with multiple overlapping frameworks \u2014 which is exactly the problem AIRegReady is built to help solve.',
+    a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most organizations need to comply with multiple overlapping frameworks \u2014 which is why having a single resource that tracks all of them matters.',
   },
   {
     q: 'How fast is the regulatory landscape changing?',
