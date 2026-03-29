@@ -28,7 +28,7 @@ export default function TrustStrip() {
           <span className="text-border hidden sm:inline">&middot;</span>
           <span>Plain English, Not Legalese</span>
           <span className="text-border hidden sm:inline">&middot;</span>
-          <span>Updated as Rules Evolve</span>
+          <span>U.S. and International Coverage</span>
         </div>
       </div>
     </section>

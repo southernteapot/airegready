@@ -8,12 +8,8 @@ const reasons = [
     desc: 'Every summary traces back to the actual law, rule, or guidance document. Verify anything in one click.',
   },
   {
-    title: 'Always Current',
-    desc: 'AI regulation moves fast. We track changes across jurisdictions so you don\u2019t have to monitor the Federal Register yourself.',
-  },
-  {
-    title: 'Built for Practitioners',
-    desc: 'Designed for founders, product teams, and compliance leads who need to understand the rules \u2014 not decode them.',
+    title: 'Built for Real Use',
+    desc: 'Designed for people who need to understand AI regulation in practice \u2014 not decode it.',
   },
 ]
 
@@ -34,7 +30,7 @@ export default function WhySection() {
           Regulatory Guidance You Can Actually Use
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {reasons.map((reason) => (
           <div
             key={reason.title}

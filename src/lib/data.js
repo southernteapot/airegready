@@ -124,7 +124,7 @@ export const QUESTIONS = [
   },
   {
     id: 2,
-    text: 'What industry does your organization primarily operate in?',
+    text: 'What industry are you in?',
     options: [
       { label: 'Healthcare', value: 'healthcare', risk: 4 },
       { label: 'Financial services', value: 'finance', risk: 4 },
@@ -165,7 +165,7 @@ export const QUESTIONS = [
   },
   {
     id: 6,
-    text: 'Does your organization operate across multiple states or countries?',
+    text: 'Do you operate across multiple states or countries?',
     options: [
       { label: 'Multiple countries', value: 'international', risk: 4 },
       { label: 'Multiple U.S. states', value: 'multi-state', risk: 3 },

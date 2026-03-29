@@ -22,8 +22,7 @@ export default function Hero() {
 
       <p className="font-sans text-lg sm:text-[19px] text-secondary max-w-[640px] mb-10 leading-relaxed">
         Plain-English summaries of AI laws and compliance guidance &mdash;
-        organized by framework, built for teams actually using AI, and
-        updated as the rules evolve.
+        organized by framework and linked to the source documents.
       </p>
 
       <div className="flex gap-4 flex-wrap justify-center">

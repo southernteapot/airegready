@@ -1,18 +1,15 @@
 const tools = [
   {
     title: 'Compliance Tracker',
-    desc: 'Monitor your compliance status across every applicable regulation in a single dashboard.',
-    status: 'Coming Q3 2026',
+    desc: 'Track which regulations apply to you and where you stand on each one.',
   },
   {
-    title: 'Policy Generator',
-    desc: 'Generate customized AI governance policies, acceptable use documents, and risk assessments.',
-    status: 'Coming Q4 2026',
+    title: 'Policy Templates',
+    desc: 'Starting points for AI governance policies, acceptable use documents, and risk assessments.',
   },
   {
     title: 'Regulatory Alerts',
-    desc: 'Real-time monitoring of new AI regulations, enforcement actions, and guidance updates.',
-    status: 'Coming Q3 2026',
+    desc: 'Get notified when AI regulations change in the jurisdictions you care about.',
   },
 ]
 
@@ -34,8 +31,8 @@ export default function ToolsTeaser() {
           What&apos;s Coming Next
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Practical tools to help you track regulatory obligations, generate
-          compliance documentation, and stay current.
+          Tools we&apos;re building to help you track and manage AI compliance
+          obligations.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -48,12 +45,9 @@ export default function ToolsTeaser() {
             <h3 className="font-sans text-[17px] font-bold text-primary mb-2">
               {tool.title}
             </h3>
-            <p className="font-sans text-sm text-secondary leading-relaxed mb-4">
+            <p className="font-sans text-sm text-secondary leading-relaxed">
               {tool.desc}
             </p>
-            <span className="font-sans text-xs font-bold text-accent uppercase tracking-wide">
-              {tool.status}
-            </span>
           </div>
         ))}
       </div>

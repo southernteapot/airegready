@@ -36,7 +36,7 @@ export default function Newsletter() {
             <input
               id="newsletter-email"
               type="email"
-              placeholder="you@company.com"
+              placeholder="you@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
