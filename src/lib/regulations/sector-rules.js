@@ -25,7 +25,7 @@ export const sectorRules = {
       id: 'healthcare',
       title: 'Healthcare',
       content:
-        'Healthcare is one of the most heavily regulated sectors for AI, with multiple overlapping frameworks governing how AI can be developed, deployed, and used in clinical settings. The FDA has been the most active federal agency in formally regulating AI products, while HIPAA and nondiscrimination rules add additional layers of compliance.\n\nAs of early 2026, the FDA has authorized over 950 AI/ML-enabled medical devices. The pace of clearances has accelerated sharply since 2020, reflecting both industry growth and the FDA\u2019s increasing comfort with its regulatory framework for these products.',
+        'Healthcare is one of the most heavily regulated sectors for AI, with multiple overlapping frameworks governing how AI can be developed, deployed, and used in clinical settings. The FDA has been the most active federal agency in formally regulating AI products, while HIPAA and nondiscrimination rules add additional layers of compliance.\n\nAs of mid-2025, the FDA has authorized over 1,250 AI/ML-enabled medical devices\u2014a significant acceleration from roughly 500 in 2021. The regulatory framework continues to evolve: in January 2025, the FDA issued draft guidance on AI-enabled device software functions applying a Total Product Life Cycle (TPLC) approach with Predetermined Change Control Plans (PCCP). In January 2026, the FDA issued guidance reducing oversight of certain low-risk digital health products, including AI-enabled software and wearables. And in February 2026, the FDA finalized Quality Management System Regulation (QMSR) cybersecurity guidance for medical devices, reflecting the growing importance of security in connected AI systems.',
       items: [
         {
           term: 'FDA Regulation of AI/ML Software as a Medical Device (SaMD)',
@@ -46,6 +46,11 @@ export const sectorRules = {
           term: 'ONC Health IT Certification Requirements',
           description:
             'The Office of the National Coordinator for Health Information Technology (ONC) sets certification criteria for electronic health record systems and other health IT. As AI is increasingly embedded in certified health IT products, ONC\u2019s requirements around interoperability, data transparency, and algorithmic transparency become directly relevant. Developers building AI features into certified health IT must comply with these standards.',
+        },
+        {
+          term: 'FDA Software Bill of Materials (SBOM) for AI/ML Devices',
+          description:
+            'The FDA increasingly expects manufacturers of AI/ML-enabled medical devices to provide a Software Bill of Materials (SBOM)\u2014a detailed inventory of all software components, libraries, and dependencies in the device. SBOMs support cybersecurity risk management by enabling manufacturers and healthcare providers to identify vulnerabilities in third-party components, including those used in AI model training and inference pipelines. This requirement aligns with broader federal cybersecurity initiatives and the FDA\u2019s finalized QMSR cybersecurity guidance.',
         },
       ],
     },
@@ -78,7 +83,17 @@ export const sectorRules = {
         {
           term: 'SEC Guidance on AI in Trading and Advisory',
           description:
-            'The SEC has addressed AI in the context of broker-dealer and investment adviser obligations. Firms using AI for trading, portfolio management, or robo-advisory services must still comply with fiduciary duties, best execution requirements, and disclosure obligations. In 2023, the SEC proposed rules specifically targeting conflicts of interest arising from the use of predictive data analytics and AI by broker-dealers and investment advisers. The SEC has also flagged \u201cAI washing\u201d\u2014firms making misleading claims about their use of AI\u2014as an enforcement priority.',
+            'The SEC has addressed AI in the context of broker-dealer and investment adviser obligations. Firms using AI for trading, portfolio management, or robo-advisory services must still comply with fiduciary duties, best execution requirements, and disclosure obligations. In 2023, the SEC proposed rules specifically targeting conflicts of interest arising from the use of predictive data analytics and AI by broker-dealers and investment advisers. The SEC has also flagged \u201cAI washing\u201d\u2014firms making misleading claims about their use of AI\u2014as an enforcement priority, and has brought enforcement actions against firms for misleading investors about the role and capabilities of AI in their products.',
+        },
+        {
+          term: 'CFPB Rule on Algorithmic Appraisal Tools',
+          description:
+            'The CFPB, jointly with the FHFA, FDIC, Federal Reserve, NCUA, and OCC, approved a rule requiring safeguards for AI and algorithmic tools used in home valuations. The rule addresses the risk that automated valuation models perpetuate bias in property appraisals, which can lead to discriminatory outcomes in mortgage lending. Covered institutions must adopt policies ensuring the quality, accuracy, and nondiscrimination of algorithmic appraisal outputs, with particular attention to preventing bias based on race, ethnicity, and neighborhood demographics.',
+        },
+        {
+          term: 'State Enforcement: AI Lending Discrimination',
+          description:
+            'State attorneys general are independently pursuing AI-related enforcement in financial services. In July 2025, the Massachusetts Attorney General reached a settlement with a student loan company over AI underwriting models that produced disparate impact based on race and immigration status. The case underscores that AI-driven lending decisions face the same nondiscrimination requirements as traditional underwriting, and that state enforcers are willing to act where they identify algorithmic bias\u2014regardless of the status of federal guidance.',
         },
         {
           term: 'OCC and Federal Reserve: Model Risk Management (SR 11-7)',
@@ -91,22 +106,22 @@ export const sectorRules = {
       id: 'employment',
       title: 'Employment',
       content:
-        'AI is increasingly used in hiring, promotion, performance evaluation, and workforce management. Employers are deploying tools for resume screening, video interview analysis, skills assessments, and employee monitoring. Federal agencies\u2014particularly the EEOC\u2014have made clear that existing employment discrimination laws apply fully to these AI tools.\n\nA critical point for employers: you are liable for the AI tools you use, even if you purchased them from a third-party vendor. The EEOC, courts, and state regulators have consistently held that the employer, not the software vendor, bears responsibility for discriminatory outcomes.',
+        'AI is increasingly used in hiring, promotion, performance evaluation, and workforce management. Employers are deploying tools for resume screening, video interview analysis, skills assessments, and employee monitoring. While the EEOC removed its AI-specific guidance documents from its website in January 2025 following a change in administration, the underlying employment discrimination laws\u2014Title VII, the ADA, and the ADEA\u2014continue to apply fully to AI tools. These are statutes, not guidance, and they have not been repealed or modified.\n\nA critical point for employers: you are liable for the AI tools you use, even if you purchased them from a third-party vendor. Courts and state regulators have consistently held that the employer, not the software vendor, bears responsibility for discriminatory outcomes.',
       items: [
         {
           term: 'EEOC Guidance on AI and Title VII Adverse Impact',
           description:
-            'In May 2023, the EEOC issued detailed [technical guidance](https://www.eeoc.gov/laws/guidance/select-issues-assessing-adverse-impact-software-algorithms-and-artificial) on how Title VII\u2019s adverse impact framework applies to AI-driven selection procedures. The guidance confirms that if an AI tool used in hiring or promotion has a disparate impact on a protected group, the employer can be held liable under Title VII\u2014even if the employer did not design or understand the tool. The employer must be prepared to demonstrate that the tool is job-related and consistent with business necessity, and that there is no less discriminatory alternative available.',
+            'In May 2023, the EEOC issued detailed technical guidance on how Title VII\u2019s adverse impact framework applies to AI-driven selection procedures. However, on January 27, 2025, the EEOC removed this guidance\u2014along with its ADA-related AI guidance\u2014from its website, following the January 23, 2025 executive order revoking the Biden administration\u2019s AI Executive Order. The OFCCP similarly removed AI-related guidance for federal contractors. **Critically, the removal of guidance does not change the underlying law.** Title VII\u2019s adverse impact framework still fully applies to AI-driven employment decisions. If an AI tool used in hiring or promotion has a disparate impact on a protected group, the employer can be held liable\u2014regardless of whether agency guidance documents are posted on a website. Employers should continue to evaluate AI hiring tools for adverse impact and be prepared to demonstrate job-relatedness and business necessity.',
         },
         {
           term: 'Americans with Disabilities Act (ADA) Implications',
           description:
-            'The EEOC has also addressed how the ADA applies to AI hiring tools. AI assessments that screen out applicants with disabilities\u2014for example, video analysis tools that penalize atypical speech patterns or facial expressions\u2014may violate the ADA unless the employer can show the tool measures abilities genuinely required for the job. Employers must also provide reasonable accommodations for applicants who cannot fully engage with AI-powered assessment tools due to a disability.',
+            'The EEOC previously issued guidance on how the ADA applies to AI hiring tools, though this guidance was removed from the EEOC website in January 2025 along with other AI-related materials. The underlying legal requirements remain unchanged. AI assessments that screen out applicants with disabilities\u2014for example, video analysis tools that penalize atypical speech patterns or facial expressions\u2014may violate the ADA unless the employer can show the tool measures abilities genuinely required for the job. Employers must also provide reasonable accommodations for applicants who cannot fully engage with AI-powered assessment tools due to a disability.',
         },
         {
           term: 'State-Level Employment AI Laws',
           description:
-            'Several states have enacted laws specifically targeting AI in employment. **New York City Local Law 144** (effective July 2023) requires employers using automated employment decision tools (AEDTs) to conduct annual bias audits and provide notice to candidates. **Illinois\u2019 Artificial Intelligence Video Interview Act (AIVITA)** requires employers using AI to analyze video interviews to notify applicants, explain how the AI works, and obtain consent. Other states are advancing similar legislation. For more detail, see the [U.S. State AI Laws](/regulations/us-state-laws) page.',
+            'Several states have enacted laws specifically targeting AI in employment. **New York City Local Law 144** (effective July 2023) requires employers using automated employment decision tools (AEDTs) to conduct annual bias audits and provide notice to candidates. **Illinois** originally enacted the Artificial Intelligence Video Interview Act (AIVITA) covering AI analysis of video interviews. In 2025, Illinois signed into law **HB 3773 (the AI Transparency in Employment Act)**, which significantly expands AIVITA to cover all AI analysis of applicants\u2014not just video interviews\u2014requiring notice, explanation, and consent for any AI-driven evaluation of job candidates. Other states are advancing similar legislation. For more detail, see the [U.S. State AI Laws](/regulations/us-state-laws) page.',
         },
         {
           term: 'Employer Liability for Vendor AI Tools',
@@ -212,7 +227,12 @@ export const sectorRules = {
     { date: 'December 2023', event: 'NAIC adopts model bulletin on the use of AI systems by insurers.' },
     { date: '2024', event: 'HHS finalizes updated Section 1557 rule addressing nondiscrimination in AI-driven healthcare decisions.' },
     { date: '2024\u20132025', event: 'Colorado Division of Insurance finalizes detailed regulations on AI in insurance under SB 21-169.' },
-    { date: 'Early 2026', event: 'FDA has authorized over 950 AI/ML-enabled medical devices; enforcement actions across sectors continue to increase.' },
+    { date: 'January 2025', event: 'EEOC removes AI-related guidance documents from its website, including Title VII adverse impact and ADA guidance, following executive order revoking Biden\u2019s AI EO. Underlying laws remain fully in effect.' },
+    { date: 'January 2025', event: 'FDA issues draft guidance on AI-enabled device software functions applying a Total Product Life Cycle (TPLC) approach with Predetermined Change Control Plans (PCCP).' },
+    { date: 'July 2025', event: 'Massachusetts Attorney General settles AI lending discrimination case against a student loan company over disparate impact from AI underwriting models.' },
+    { date: 'January 2026', event: 'FDA issues guidance reducing oversight of certain low-risk AI digital health products, including AI-enabled software and wearables.' },
+    { date: 'February 2026', event: 'FDA finalizes QMSR cybersecurity guidance for medical devices, reinforcing security requirements for connected AI systems.' },
+    { date: 'Early 2026', event: 'FDA has authorized over 1,250 AI/ML-enabled medical devices; enforcement actions across sectors continue to increase.' },
   ],
   sources: [
     {
@@ -228,7 +248,7 @@ export const sectorRules = {
     {
       title: 'EEOC: Assessing Adverse Impact in Software, Algorithms, and AI',
       url: 'https://www.eeoc.gov/laws/guidance/select-issues-assessing-adverse-impact-software-algorithms-and-artificial',
-      description: 'EEOC technical guidance on how Title VII adverse impact analysis applies to AI-driven employment selection procedures.',
+      description: 'EEOC technical guidance on how Title VII adverse impact analysis applies to AI-driven employment selection procedures. Note: This guidance was removed from the EEOC website in January 2025. The URL may no longer be active, but the underlying legal framework (Title VII, ADA) continues to apply.',
     },
     {
       title: 'NAIC Model Bulletin: Use of AI Systems by Insurers',

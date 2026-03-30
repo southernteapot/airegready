@@ -19,7 +19,7 @@ export const nistAiRmfPractice = {
     {
       title: 'Why "Voluntary" Doesn\'t Mean "Optional"',
       content:
-        'NIST frameworks have a pattern. The Cybersecurity Framework was voluntary too, until it became the de facto standard that regulators referenced, insurers required, and contracts mandated. The AI RMF is on the same trajectory.\n\nColorado\'s SB 24-205 explicitly calls out "nationally or internationally recognized risk management frameworks" as a factor in demonstrating compliance. The EU AI Act\'s risk management requirements for high-risk systems map closely to the AI RMF\'s structure. Federal agencies are required to follow it under OMB Memorandum M-24-10. And increasingly, enterprise procurement questionnaires ask whether you\'ve adopted the NIST AI RMF or something equivalent.\n\nSo yes, nobody will fine you for not adopting it. But you\'ll have a much harder time winning certain contracts, satisfying certain regulators, and defending certain decisions without it.',
+        'NIST frameworks have a pattern. The Cybersecurity Framework was voluntary too, until it became the de facto standard that regulators referenced, insurers required, and contracts mandated. The AI RMF is on the same trajectory.\n\nColorado\'s SB 24-205 explicitly calls out "nationally or internationally recognized risk management frameworks" as a factor in demonstrating compliance. The EU AI Act\'s risk management requirements for high-risk systems map closely to the AI RMF\'s structure. And increasingly, enterprise procurement questionnaires ask whether you\'ve adopted the NIST AI RMF or something equivalent.\n\nA note on the federal mandate: OMB Memorandum M-24-10, which required federal agencies to adopt the AI RMF, was rescinded in early 2025 under the Trump administration and replaced by M-25-21, which takes a different approach to federal AI governance. However, the underlying NIST framework itself remains the primary reference point for federal AI risk management, and many agencies continue to use it in practice. The framework\'s influence has always been broader than any single mandate.\n\nSo yes, nobody will fine you for not adopting it. But you\'ll have a much harder time winning certain contracts, satisfying certain regulators, and defending certain decisions without it.',
     },
     {
       title: 'The Four Functions',
@@ -89,7 +89,7 @@ export const nistAiRmfPractice = {
     },
     {
       title:
-        'OMB Memorandum M-24-10 — Advancing Governance, Innovation, and Risk Management for Agency Use of AI',
+        'OMB Memorandum M-24-10 — Advancing Governance, Innovation, and Risk Management for Agency Use of AI (rescinded early 2025; replaced by M-25-21)',
       url: 'https://www.whitehouse.gov/omb/briefing-room/2024/03/28/omb-memorandum-m-24-10/',
     },
   ],

@@ -27,20 +27,20 @@ export const usStateLaws = {
       value:
         '[NCSL AI Legislation Tracker](https://www.ncsl.org/technology-and-communication/artificial-intelligence-2024-legislation)',
     },
-    { label: 'Pace of Change', value: 'Dozens of new bills introduced each year' },
+    { label: 'Pace of Change', value: '1,208 AI bills introduced across 50 states in 2025; 145 enacted' },
   ],
   sections: [
     {
       id: 'overview',
       title: 'The Patchwork Problem',
       content:
-        'The United States has no federal law that comprehensively regulates artificial intelligence. Congress has held hearings and introduced bills, but nothing has passed. In the absence of federal action, states have stepped in, each with their own approach, definitions, and enforcement mechanisms.\n\nThis creates a patchwork. A company operating in multiple states may face different disclosure requirements, different definitions of "automated decision," and different penalties depending on where its customers or employees are located. For organizations deploying AI at scale, this is one of the most challenging compliance environments in the world.\n\nThe pace is accelerating. In 2024 alone, over 40 states introduced AI-related legislation. Some of these bills target narrow use cases like deepfakes or AI in elections. Others, like Colorado\'s SB 24-205, attempt to regulate AI broadly across multiple high-risk domains. Understanding which laws apply to your organization requires tracking legislation across every state where you do business.\n\nThis guide covers the most significant state-level AI laws that are enacted or in effect, the common themes across them, and practical steps for building a multi-state compliance strategy.',
+        'The United States has no federal law that comprehensively regulates artificial intelligence. Congress has held hearings and introduced bills, but nothing has passed. In the absence of federal action, states have stepped in, each with their own approach, definitions, and enforcement mechanisms.\n\nThis creates a patchwork. A company operating in multiple states may face different disclosure requirements, different definitions of "automated decision," and different penalties depending on where its customers or employees are located. For organizations deploying AI at scale, this is one of the most challenging compliance environments in the world.\n\nThe pace is accelerating rapidly. In 2024, over 40 states introduced AI-related legislation. In 2025, that number surged — **1,208 AI-related bills were introduced across all 50 states, with 145 enacted into law**. According to the National Conference of State Legislatures, 38 states adopted or enacted around 100 AI-related measures in 2025. Some of these bills target narrow use cases like deepfakes or AI in elections. Others, like Colorado\'s SB 24-205, attempt to regulate AI broadly across multiple high-risk domains. Understanding which laws apply to your organization requires tracking legislation across every state where you do business.\n\nThis guide covers the most significant state-level AI laws that are enacted or in effect, the common themes across them, and practical steps for building a multi-state compliance strategy.',
     },
     {
       id: 'colorado',
       title: 'Colorado SB 24-205: The First Comprehensive State AI Law',
       content:
-        'Colorado made history in May 2024 when Governor Jared Polis signed **SB 24-205**, the Colorado Artificial Intelligence Act. It is widely recognized as the first comprehensive state law regulating AI in the United States. The law took effect on **February 1, 2026**.\n\nUnlike narrower laws that target a single use case (like AI in hiring), Colorado\'s law applies broadly to any AI system used in **"consequential decisions"** — decisions that have a material legal or similarly significant effect on a person. The law covers seven domains: **employment, education, financial services, housing, insurance, healthcare, and legal services**.\n\nThe law creates obligations for two groups. **Developers** are companies that build or substantially modify AI systems. **Deployers** are companies that use those systems to make or substantially support consequential decisions. Both have distinct obligations.',
+        'Colorado made history in May 2024 when Governor Jared Polis signed **SB 24-205**, the Colorado Artificial Intelligence Act. It is widely recognized as the first comprehensive state law regulating AI in the United States. The law was originally set to take effect on February 1, 2026, but on **August 28, 2025**, Governor Polis signed **SB 25B-004**, delaying the effective date to **June 30, 2026**. The delay came after a special legislative session failed to produce a compromise on amendments. Polis cited concerns about the high compliance costs the law would impose on state and local governments as well as businesses.\n\nUnlike narrower laws that target a single use case (like AI in hiring), Colorado\'s law applies broadly to any AI system used in **"consequential decisions"** — decisions that have a material legal or similarly significant effect on a person. The law covers seven domains: **employment, education, financial services, housing, insurance, healthcare, and legal services**.\n\nThe law creates obligations for two groups. **Developers** are companies that build or substantially modify AI systems. **Deployers** are companies that use those systems to make or substantially support consequential decisions. Both have distinct obligations.',
       items: [
         {
           term: 'Algorithmic Impact Assessments',
@@ -78,7 +78,7 @@ export const usStateLaws = {
       id: 'illinois',
       title: 'Illinois: AI in Hiring and Biometric Data',
       content:
-        'Illinois was one of the earliest states to regulate AI, and it remains one of the most active. Two laws are particularly important for organizations using AI: the **Artificial Intelligence Video Interview Act (AIVITA)** and the **Biometric Information Privacy Act (BIPA)**.\n\n**AIVITA (effective January 1, 2020)** applies to employers that use AI to analyze video interviews of job applicants. It was one of the first laws anywhere to directly regulate AI in employment. The law requires employers to notify applicants before the interview that AI will be used to analyze their video, explain how the AI works and what characteristics it evaluates, and obtain the applicant\'s written consent. Applicants have the right to request deletion of their video within 30 days, and employers must comply. If the applicant does not consent, the employer cannot use AI analysis on that interview.\n\n**BIPA (2008, but increasingly relevant to AI)** is not an AI law per se, but it has major implications for AI systems that use biometric data — particularly facial recognition, voiceprint analysis, and fingerprint scanning. BIPA requires informed written consent before collecting biometric identifiers, a publicly available data retention and destruction policy, and restrictions on selling or disclosing biometric data.\n\nBIPA is notable for its **private right of action**. Individuals can sue for $1,000 per negligent violation and $5,000 per intentional or reckless violation. Class action lawsuits under BIPA have resulted in settlements exceeding $600 million. Any AI system that processes biometric data on Illinois residents must comply with BIPA, regardless of where the company is based.\n\nIllinois has also considered broader automated decision-making legislation. Proposed bills would extend AI transparency and impact assessment requirements beyond hiring to other high-stakes domains. While these have not yet passed, they signal the direction Illinois is heading.',
+        'Illinois was one of the earliest states to regulate AI, and it remains one of the most active. Two laws are particularly important for organizations using AI: the **Artificial Intelligence Video Interview Act (AIVITA)** and the **Biometric Information Privacy Act (BIPA)**.\n\n**AIVITA (effective January 1, 2020)** applies to employers that use AI to analyze video interviews of job applicants. It was one of the first laws anywhere to directly regulate AI in employment. The law requires employers to notify applicants before the interview that AI will be used to analyze their video, explain how the AI works and what characteristics it evaluates, and obtain the applicant\'s written consent. Applicants have the right to request deletion of their video within 30 days, and employers must comply. If the applicant does not consent, the employer cannot use AI analysis on that interview.\n\n**BIPA (2008, but increasingly relevant to AI)** is not an AI law per se, but it has major implications for AI systems that use biometric data — particularly facial recognition, voiceprint analysis, and fingerprint scanning. BIPA requires informed written consent before collecting biometric identifiers, a publicly available data retention and destruction policy, and restrictions on selling or disclosing biometric data.\n\nBIPA is notable for its **private right of action**. Individuals can sue for $1,000 per negligent violation and $5,000 per intentional or reckless violation. Class action lawsuits under BIPA have resulted in settlements exceeding $600 million. Any AI system that processes biometric data on Illinois residents must comply with BIPA, regardless of where the company is based.\n\nIllinois took another significant step in August 2024 when Governor Pritzker signed **HB 3773** (Public Act 103-0804), which amends the **Illinois Human Rights Act** to address AI in employment. The law makes it a **civil rights violation** to use AI for employment decisions without providing notice to employees, or to use AI in a manner that results in discrimination against members of protected classes. This extends Illinois\'s AI regulation beyond video interviews to cover AI-assisted employment decisions more broadly.\n\nIllinois continues to consider additional automated decision-making legislation. Proposed bills would extend AI transparency and impact assessment requirements beyond hiring to other high-stakes domains, signaling that Illinois will remain at the forefront of state AI regulation.',
     },
     {
       id: 'nyc',
@@ -123,15 +123,33 @@ export const usStateLaws = {
         rows: [
           [
             'Texas',
+            'TRAIGA (HB 149)',
+            'Signed June 2025, effective Jan 1, 2026',
+            'Texas Responsible AI Governance Act. Prohibits AI designed for encouraging self-harm/criminal activity, generating CSAM or deepfake pornography, or simulating sexual content involving minors. Requires government entities and healthcare providers to disclose AI use. Bans government social scoring AI. Prohibits intentional AI discrimination (disparate impact alone not sufficient). Private employers NOT required to disclose AI use. Enforcement by TX AG only, no private right of action. Civil penalties $10,000-$200,000/violation. Safe harbor for NIST AI RMF adopters. Includes regulatory sandbox program.',
+          ],
+          [
+            'Texas',
             'HB 1709',
             'Signed 2025',
-            'Establishes an AI advisory council, requires state agencies to inventory AI systems, sets governance standards for government use of AI. Does not directly regulate private sector but signals direction.',
+            'Establishes an AI advisory council, requires state agencies to inventory AI systems, sets governance standards for government use of AI.',
           ],
           [
             'California',
-            'SB 1047 (vetoed), CalAIPA framework',
+            'SB 53 (Transparency in Frontier AI Act)',
+            'Signed Sept 2025, effective Jan 1, 2026',
+            'California\'s first comprehensive frontier AI law. Applies to "frontier models" trained above 10^26 FLOPs and "large frontier developers" with >$500M annual revenue (~5-8 companies including OpenAI, Anthropic, Google DeepMind, Meta, Microsoft). Requires published safety frameworks updated annually, transparency reports before releasing new models, catastrophic risk assessments reported to CA Office of Emergency Services, critical safety incident reporting, and whistleblower protections. Penalties up to $1M per violation, enforced by CA Attorney General.',
+          ],
+          [
+            'California',
+            'AB 2013, SB 942',
+            'Effective Jan 1, 2026',
+            'AB 2013 (GAI Training Data Transparency Act) requires transparency about data used to train generative AI models. SB 942 (AI Transparency Act) requires disclosure when consumers interact with AI systems. Together with SB 53, these form California\'s comprehensive AI regulatory framework.',
+          ],
+          [
+            'California',
+            'SB 1047 (vetoed), CPPA rules',
             'Evolving',
-            'SB 1047 would have imposed safety requirements on large AI models — vetoed by Gov. Newsom in Sept 2024 citing concerns about stifling innovation. Its influence persists in ongoing legislative discussions. The California Privacy Protection Agency (CPPA) is pursuing AI-specific rules under CCPA authority, including automated decision-making opt-out rights.',
+            'SB 1047 would have imposed safety requirements on large AI models — vetoed by Gov. Newsom in Sept 2024 citing concerns about stifling innovation. SB 53 is its spiritual successor with a narrower scope. The California Privacy Protection Agency (CPPA) is pursuing AI-specific rules under CCPA authority, including automated decision-making opt-out rights.',
           ],
           [
             'Connecticut',
@@ -190,15 +208,15 @@ export const usStateLaws = {
     },
     {
       id: 'compliance-challenges',
-      title: 'Multi-State Compliance Challenges',
+      title: 'Multi-State Compliance Challenges and Federal Preemption Risk',
       content:
-        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as a "high-risk AI system" in Colorado. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Colorado requires impact assessments. Connecticut does too, but with different specifications. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With dozens of states considering AI bills in any given legislative session, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. Colorado\'s law, for example, references "algorithmic discrimination" but the practical threshold for enforcement is still being defined.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
+        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems. And a new complication emerged in late 2025: the threat of federal preemption.\n\n**Federal preemption threat.** In December 2025, the Trump administration issued an executive order titled **"Ensuring a National Policy Framework for AI"** that directly targets the state AI regulatory patchwork. The order established a **DOJ AI Litigation Task Force** (operational January 10, 2026) tasked with challenging state AI laws that conflict with federal AI policy. The Commerce Department is evaluating state laws for conflicts, and states with conflicting AI laws may lose federal funding eligibility. The order includes carve-outs for child safety, procurement, and data center infrastructure. A **March 2026 legislative blueprint** urges Congress to pass federal preemption legislation. This creates major uncertainty for organizations investing in state-level compliance — laws they are preparing for may be challenged or preempted before they are fully enforced.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as a "high-risk AI system" in Colorado. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Colorado requires impact assessments. Connecticut does too, but with different specifications. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With over 1,200 AI bills introduced across all 50 states in 2025 alone, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. The federal preemption threat adds another layer — organizations may invest in compliance with state laws that are subsequently struck down or preempted.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
     },
     {
       id: 'practical-steps',
       title: 'What Organizations Should Do',
       content:
-        'The patchwork is not going away soon. Even if Congress eventually passes a federal AI law, it will likely set a floor rather than preempt state laws entirely. Building a compliance strategy now is both a legal necessity and a competitive advantage.',
+        'The patchwork is not going away soon, though the December 2025 executive order on federal preemption introduces new uncertainty. Even if federal action eventually preempts some state laws, organizations that have built compliance programs around frameworks like NIST AI RMF will be well-positioned regardless of how the federal-state dynamic resolves. Building a compliance strategy now is both a legal necessity and a competitive advantage.',
       list: [
         '**Map your AI footprint.** Inventory every AI system your organization develops or uses. For each one, document what it does, what data it processes, what decisions it influences, and where those decisions affect people geographically.',
         '**Identify your highest-risk systems first.** Focus initial compliance efforts on AI systems used in consequential decisions — hiring, lending, insurance, housing, healthcare, education, and legal services. These are the domains every state law targets.',
@@ -234,6 +252,11 @@ export const usStateLaws = {
         'Connecticut signs SB 1103, requiring AI impact assessments and consumer disclosure for high-risk systems.',
     },
     {
+      date: 'August 2024',
+      event:
+        'Illinois HB 3773 signed, amending the Illinois Human Rights Act to make it a civil rights violation to use AI for employment decisions without notice or in a discriminatory manner.',
+    },
+    {
       date: 'September 2024',
       event:
         'California Governor Newsom vetoes SB 1047, citing concerns about stifling AI innovation. The bill\'s influence persists in ongoing legislative discussions.',
@@ -246,12 +269,37 @@ export const usStateLaws = {
     {
       date: '2025',
       event:
-        'Texas signs HB 1709 establishing AI governance for state agencies. Multiple other states introduce comprehensive AI bills.',
+        'Texas signs HB 1709 establishing AI governance for state agencies. Over 1,200 AI bills introduced across all 50 states, with 145 enacted into law.',
     },
     {
-      date: 'February 2026',
+      date: 'June 2025',
       event:
-        'Colorado SB 24-205 takes effect, marking the first enforcement date for a comprehensive state AI law.',
+        'Governor Abbott signs Texas TRAIGA (HB 149), the Texas Responsible AI Governance Act, effective January 1, 2026.',
+    },
+    {
+      date: 'August 2025',
+      event:
+        'Colorado Governor Polis signs SB 25B-004, delaying the Colorado AI Act (SB 24-205) effective date from February 1, 2026 to June 30, 2026.',
+    },
+    {
+      date: 'September 2025',
+      event:
+        'California Governor signs SB 53 (Transparency in Frontier AI Act), California\'s first comprehensive frontier AI law targeting the largest AI developers.',
+    },
+    {
+      date: 'December 2025',
+      event:
+        'Trump executive order "Ensuring a National Policy Framework for AI" targets state AI laws for potential federal preemption. DOJ AI Litigation Task Force established.',
+    },
+    {
+      date: 'January 2026',
+      event:
+        'Multiple state AI laws take effect: California SB 53, AB 2013, and SB 942; Texas TRAIGA (HB 149); and others.',
+    },
+    {
+      date: 'June 2026',
+      event:
+        'Colorado SB 24-205 (delayed) takes effect, marking the first enforcement date for a comprehensive state AI law.',
     },
   ],
   sources: [
@@ -284,6 +332,18 @@ export const usStateLaws = {
       url: 'https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3004',
       description:
         'Full text of BIPA, which governs collection and use of biometric data including by AI systems.',
+    },
+    {
+      title: 'California SB 53 (Transparency in Frontier AI Act)',
+      url: 'https://legiscan.com/CA/text/SB53/id/3270002',
+      description:
+        'Full text of California\'s frontier AI transparency law.',
+    },
+    {
+      title: 'Texas TRAIGA (HB 149)',
+      url: 'https://capitol.texas.gov/tlodocs/89R/billtext/pdf/HB00149F.pdf',
+      description:
+        'Full text of the Texas Responsible AI Governance Act.',
     },
   ],
   relatedRegulations: ['federal-policy', 'sector-rules'],

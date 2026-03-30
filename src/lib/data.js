@@ -43,7 +43,7 @@ export const REGULATIONS = [
     id: 'global',
     slug: 'global',
     title: 'Global AI Governance',
-    desc: "Canada's AIDA, China's AI regulations, UK's pro-innovation approach, and international standards.",
+    desc: "China's layered AI rules, Japan and South Korea's new laws, UK's sector-led approach, and international standards.",
     tag: 'Expanding',
     icon: '\u{1F310}',
   },
@@ -115,7 +115,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'How fast is the regulatory landscape changing?',
-    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. In 2025\u20132026 alone, dozens of U.S. states introduced AI-related legislation, the EU AI Act entered enforcement phases, and multiple federal agencies issued new AI guidance. Staying current is a real challenge \u2014 and a core reason this resource exists.',
+    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. In 2025\u20132026 alone, dozens of U.S. states introduced AI-related legislation, the EU AI Act entered enforcement phases, Japan and South Korea passed comprehensive AI laws, and the federal policy landscape shifted significantly with a new administration. Staying current is a real challenge \u2014 and a core reason this resource exists.',
   },
 ]
 

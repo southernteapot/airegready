@@ -28,7 +28,7 @@ export const federalPolicy = {
     },
     {
       label: 'OMB Guidance',
-      value: 'M-24-10 issued March 2024, subsequently rescinded',
+      value: 'M-25-21 (April 2025) replaced rescinded M-24-10; companion M-25-22 covers AI procurement',
     },
   ],
   sections: [
@@ -97,6 +97,49 @@ export const federalPolicy = {
         'The shift from EO 14110 to EO 14148 does not create a regulatory vacuum. Federal agencies still have their existing statutory authority to regulate AI within their domains — the FTC can still pursue deceptive AI practices, the EEOC can still enforce anti-discrimination law in AI hiring tools, and the FDA can still regulate AI medical devices. What changed is the top-level policy direction: from proactive AI-specific regulation toward reliance on existing authority and market forces.\n\nFor organizations, the practical takeaway is that voluntary compliance and self-governance are now the federal expectation rather than mandatory requirements. However, this does not reduce legal risk — it shifts the enforcement mechanism from prescriptive rules to after-the-fact agency action under existing law.',
     },
     {
+      id: 'eo-december-2025',
+      title: 'December 2025: Federal Preemption of State AI Laws',
+      content:
+        'On **December 11, 2025**, President Trump signed an executive order titled "Ensuring a National Policy Framework for Artificial Intelligence," representing the most significant federal AI policy action since the revocation of EO 14110. The order establishes federal policy to "sustain and enhance" U.S. global AI dominance through a "minimally burdensome national policy framework" — and directly targets state-level AI regulation as an obstacle to that goal.\n\nThe December 2025 EO is a major development because it moves beyond the deregulatory posture of EO 14148 into active federal preemption of state AI laws. It creates enforcement mechanisms and institutional structures designed to challenge and override state AI regulation.\n\n**Key provisions:**',
+      items: [
+        {
+          term: 'DOJ AI Litigation Task Force',
+          description:
+            'The order creates a Department of Justice AI Litigation Task Force, which became operational on January 10, 2026. The Task Force is directed to challenge state AI laws in federal court on grounds that they unconstitutionally burden interstate commerce or are preempted by federal regulations. This represents the first federal mechanism specifically designed to litigate against state AI legislation.',
+        },
+        {
+          term: 'Commerce Department Assessment',
+          description:
+            'The Secretary of Commerce is required to publish an assessment within 90 days identifying state AI laws that conflict with the national policy framework. This assessment is intended to provide the basis for DOJ litigation and Congressional action.',
+        },
+        {
+          term: 'FCC Federal Reporting Standard',
+          description:
+            'The FCC is directed to initiate a proceeding to develop a federal AI reporting and disclosure standard that would preempt state-level requirements. This targets the patchwork of state disclosure and transparency laws emerging from legislatures like Colorado and Connecticut.',
+        },
+        {
+          term: 'FTC Policy Statement',
+          description:
+            'The FTC Chair is directed to issue a policy statement on how the FTC Act applies to AI, due March 11, 2026. This is intended to establish a federal baseline for AI enforcement that could reduce the perceived need for state-level regulation.',
+        },
+        {
+          term: 'Conditional Federal Funding',
+          description:
+            'States with AI laws determined to conflict with the federal framework may lose eligibility for BEAD (Broadband Equity, Access, and Deployment) broadband funds. This creates a financial incentive for states to align with or repeal AI-specific regulation.',
+        },
+        {
+          term: 'Carve-Outs',
+          description:
+            'The order includes notable exceptions. Child safety protections, AI compute and data center infrastructure regulations, and state government procurement and use of AI are carved out from the preemption framework. States retain authority in these areas.',
+        },
+        {
+          term: 'March 2026 Legislative Blueprint',
+          description:
+            'On March 20, 2026, the White House released a legislative blueprint urging Congress to adopt a unified federal AI framework. The blueprint builds on the December 2025 EO and seeks to codify federal preemption of state AI laws through legislation, providing a more durable legal basis than executive action alone.',
+        },
+      ],
+    },
+    {
       id: 'omb-guidance',
       title: 'OMB M-24-10: Federal AI Governance (Rescinded)',
       content:
@@ -123,9 +166,9 @@ export const federalPolicy = {
             'M-24-10 established minimum practices for AI use across all agencies, including documentation requirements, data quality standards, and processes for public feedback on government AI systems.',
         },
         {
-          term: 'Status: Rescinded',
+          term: 'Status: Rescinded and Replaced',
           description:
-            'M-24-10 was rescinded following the change in administration and the issuance of EO 14148. The rescission removed the mandatory requirements for Chief AI Officers, public AI inventories, and the specific risk management practices the memorandum had established. However, the practical influence persists. Many federal agencies had already begun implementing its requirements — appointing Chief AI Officers, building AI inventories, and establishing governance frameworks. Some agencies have continued these practices voluntarily, recognizing their operational value even without the mandate. For government contractors and vendors selling AI to federal agencies, the expectations established by M-24-10 remain informally relevant even though the formal requirements are gone.',
+            'M-24-10 was rescinded and replaced by **OMB M-25-21** ("Accelerating Federal Use of AI through Innovation, Governance, and Public Trust"), released April 3-7, 2025. A companion memo, **M-25-22**, covers AI procurement. The new memos represent a significant shift from the Biden-era approach: where M-24-10 emphasized risk management, Chief AI Officers, and public AI inventories, M-25-21 emphasizes innovation, removing bureaucratic barriers, and accelerating federal AI adoption. The mandatory risk management framework and public disclosure requirements of M-24-10 have been replaced by a lighter-touch approach focused on enabling agencies to experiment with and deploy AI more quickly. However, the practical influence of M-24-10 persists. Many federal agencies had already begun implementing its requirements — appointing Chief AI Officers, building AI inventories, and establishing governance frameworks. Some agencies have continued these practices voluntarily, recognizing their operational value even under the new guidance. The NIST AI RMF remains referenced as a compliance framework under the new OMB memos.',
         },
       ],
     },
@@ -138,12 +181,12 @@ export const federalPolicy = {
         {
           term: 'EEOC — AI in Employment Decisions',
           description:
-            'The Equal Employment Opportunity Commission has issued [guidance on AI and Title VII](https://www.eeoc.gov/laws/guidance/select-issues-assessing-adverse-impact-software-algorithms-and-artificial), making clear that employers are liable for discriminatory outcomes from AI hiring tools, even if the tool was developed by a third-party vendor. The EEOC\'s position is that existing anti-discrimination law applies fully to algorithmic decision-making. If an AI screening tool disproportionately rejects candidates based on race, sex, or other protected characteristics, the employer faces the same liability as if a human made those decisions.',
+            'The Equal Employment Opportunity Commission published [guidance on AI and Title VII](https://www.eeoc.gov/laws/guidance/select-issues-assessing-adverse-impact-software-algorithms-and-artificial) in May 2023, making clear that employers are liable for discriminatory outcomes from AI hiring tools, even if the tool was developed by a third-party vendor. However, the EEOC **removed this AI hiring guidance from its website on January 27, 2025**, following the change in administration. Despite the removal, the underlying statutory protections remain fully in effect — Title VII, the ADA, and the ADEA all apply to algorithmic employment decisions regardless of whether the guidance is posted. If an AI screening tool disproportionately rejects candidates based on race, sex, or other protected characteristics, the employer faces the same liability as if a human made those decisions.',
         },
         {
           term: 'FTC — Deceptive and Unfair AI Practices',
           description:
-            'The Federal Trade Commission has been the most active federal enforcer on AI issues. The FTC has taken action against companies for making deceptive claims about AI capabilities, using AI in ways that cause consumer harm, and failing to protect data used in AI training. The FTC\'s authority under Section 5 (prohibiting unfair or deceptive practices) gives it broad enforcement power over commercial AI. The Commission has signaled that it considers algorithmic deception, dark patterns in AI interfaces, and AI-enabled surveillance to be enforcement priorities.',
+            'The Federal Trade Commission has been the most active federal enforcer on AI issues. In **September 2024, the FTC launched Operation AI Comply**, bringing five enforcement actions against companies making false or unsubstantiated claims about AI products and services. The FTC has also taken action against companies for using AI in ways that cause consumer harm and failing to protect data used in AI training. The FTC\'s authority under Section 5 (prohibiting unfair or deceptive practices) gives it broad enforcement power over commercial AI. The Commission has signaled that it considers algorithmic deception, dark patterns in AI interfaces, and AI-enabled surveillance to be enforcement priorities. Under the December 2025 executive order, the FTC Chair is directed to issue a policy statement on how the FTC Act applies to AI, due March 11, 2026.',
         },
         {
           term: 'FDA — AI in Healthcare and Medical Devices',
@@ -164,6 +207,11 @@ export const federalPolicy = {
           term: 'HUD — AI in Housing',
           description:
             'The Department of Housing and Urban Development has authority to enforce the Fair Housing Act in the context of AI. Algorithmic tools used in tenant screening, mortgage lending, and property valuation that produce discriminatory outcomes can violate federal fair housing law regardless of intent.',
+        },
+        {
+          term: 'CFPB — AI in Financial Services and Appraisals',
+          description:
+            'The Consumer Financial Protection Bureau has approved a rule on AI in home appraisals, requiring safeguards for algorithmic appraisal tools used in mortgage lending. The rule addresses the risk that automated valuation models may perpetuate historical biases in property valuations. The CFPB also has authority under the Equal Credit Opportunity Act (ECOA) and Fair Credit Reporting Act (FCRA) to regulate AI used in credit decisions, and has signaled that lenders using AI must still provide specific, accurate reasons when denying credit.',
         },
         {
           term: 'Why Agency Authority Matters Most',
@@ -214,7 +262,7 @@ export const federalPolicy = {
       id: 'current-state',
       title: 'Where Federal AI Policy Stands (Early 2026)',
       content:
-        'As of early 2026, federal AI policy is in a transitional period. The Biden-era regulatory apparatus has been largely dismantled at the executive order level, but its effects linger in agency practice and state legislation. The Trump administration has signaled a permissive approach, but has not yet articulated a detailed alternative framework.\n\n**What is currently in effect:**\n\nExisting statutory authority remains the primary federal enforcement mechanism for AI. The FTC, EEOC, FDA, SEC, and other agencies continue to apply their existing laws to AI. This authority was never dependent on executive orders and is not affected by the change in administration. NIST continues its work on AI standards and evaluation tools, funded by Congressional appropriations rather than executive orders. The AI Risk Management Framework and related resources remain available and are still referenced by state laws and industry standards.\n\n**What has changed:**\n\nThe mandatory safety reporting requirements for powerful AI models established by EO 14110 are gone. The OMB governance requirements for federal agencies (Chief AI Officers, AI inventories, minimum practices) have been rescinded. The overall policy direction has shifted from precautionary regulation to innovation-first. New AI-specific rulemaking at the federal level has slowed significantly.\n\n**What this means for organizations:**\n\nThe absence of prescriptive federal AI rules does not mean the absence of legal risk. Organizations still face enforcement under existing law if their AI systems produce discriminatory outcomes, deceive consumers, or cause harm. State laws continue to proliferate and in many cases impose more specific requirements than anything the federal government has established. The practical effect of the current federal posture is that organizations have more flexibility but less clarity. There is no single federal standard to comply with, but there are multiple agency-specific expectations and a growing body of state law that fills the gaps.',
+        'As of early 2026, the federal AI policy landscape has shifted dramatically. The December 2025 executive order on federal preemption of state AI laws is now the dominant development, marking a transition from passive deregulation to active federal intervention against state-level AI regulation. Combined with the January 2025 revocation of EO 14110 and the April 2025 OMB memos (M-25-21 and M-25-22), the Trump administration has articulated a clear two-part federal AI strategy: (a) deregulation and innovation promotion at the federal level, and (b) active preemption and legal challenge of state-level AI regulation.\n\n**What is currently in effect:**\n\nExisting statutory authority remains the primary federal enforcement mechanism for AI. The FTC, FDA, SEC, and other agencies continue to apply their existing laws — the FTC Act, Title VII, ECOA, FCRA, and sector-specific statutes — to AI systems. This authority was never dependent on executive orders and persists regardless of administration. The FTC\'s Operation AI Comply enforcement actions and the upcoming FTC policy statement on AI (due March 2026) underscore that federal enforcement continues even under a deregulatory posture. NIST continues its work on AI standards, including the AI RMF and the new Cyber AI Profile, funded by Congressional appropriations. The Center for AI Standards and Innovation (CAISI, formerly the U.S. AI Safety Institute) continues to operate within NIST.\n\n**What has changed:**\n\nThe December 2025 EO creates active federal mechanisms to challenge state AI laws. The DOJ AI Litigation Task Force became operational in January 2026 and is directed to bring federal court challenges against state AI legislation. The Commerce Department assessment of conflicting state laws, the FCC proceeding on a federal AI reporting standard, and the conditional BEAD funding provisions all create pressure on states to scale back AI-specific regulation. The March 2026 White House legislative blueprint urges Congress to codify federal preemption through legislation. Meanwhile, OMB M-25-21 replaced M-24-10, shifting federal AI governance from a risk-management framework to an innovation-acceleration framework. Some agency guidance has been removed — notably the EEOC took down its AI hiring guidance in January 2025 — though underlying statutory protections remain.\n\n**What this means for organizations:**\n\nOrganizations face a period of significant legal uncertainty. The federal government is actively working to preempt state AI laws, but it has not yet established a comprehensive federal alternative. State laws remain in effect until successfully challenged in court or preempted by legislation. The practical result is that compliance obligations may shift rapidly depending on the outcomes of DOJ litigation, the FCC preemption proceeding, and Congressional action on the legislative blueprint. Organizations should not assume that state AI laws like Colorado\'s SB 24-205 will be struck down — the legal challenges face substantial constitutional questions. The safest approach is to maintain compliance programs that meet the most stringent applicable requirements while monitoring the preemption landscape closely.',
     },
     {
       id: 'practical-steps',
@@ -265,14 +313,34 @@ export const federalPolicy = {
         'Multiple agencies issue AI-specific guidance: FTC on deceptive AI practices, FDA on AI medical devices, SEC on AI in financial services, HUD on AI in housing.',
     },
     {
+      date: 'September 2024',
+      event:
+        'FTC launches Operation AI Comply with five enforcement actions against companies making false or unsubstantiated claims about AI products and services.',
+    },
+    {
       date: 'January 20, 2025',
       event:
         'President Trump signs EO 14148, revoking EO 14110 and directing agencies to remove barriers to AI innovation. OMB M-24-10 is subsequently rescinded.',
     },
     {
-      date: 'Early 2026',
+      date: 'April 2025',
       event:
-        'Federal AI policy remains in a transitional period. Agency enforcement under existing law continues. NIST AI standards work proceeds. Congressional AI legislation remains under discussion.',
+        'OMB issues M-25-21 ("Accelerating Federal Use of AI through Innovation, Governance, and Public Trust") and companion M-25-22 (AI procurement), replacing Biden-era AI memos with innovation-focused guidance.',
+    },
+    {
+      date: 'December 2025',
+      event:
+        'President Trump signs "Ensuring a National Policy Framework for Artificial Intelligence," establishing federal preemption of state AI laws and creating the DOJ AI Litigation Task Force.',
+    },
+    {
+      date: 'January 2026',
+      event:
+        'DOJ AI Litigation Task Force begins operations, directed to challenge state AI laws in federal court.',
+    },
+    {
+      date: 'March 2026',
+      event:
+        'White House releases legislative blueprint urging Congress to adopt a unified federal AI framework codifying federal preemption of state AI laws.',
     },
   ],
   sources: [
@@ -312,6 +380,12 @@ export const federalPolicy = {
       url: 'https://www.ftc.gov/business-guidance/blog/2023/02/keep-your-ai-claims-check',
       description:
         'FTC guidance on AI marketing claims and enforcement priorities for AI-related consumer harm.',
+    },
+    {
+      title: 'EO: Ensuring a National Policy Framework for AI (Dec 2025)',
+      url: 'https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/',
+      description:
+        'December 2025 executive order on federal AI preemption, establishing the DOJ AI Litigation Task Force and targeting state AI laws.',
     },
   ],
   relatedRegulations: ['us-state-laws', 'nist-ai-rmf', 'sector-rules'],
