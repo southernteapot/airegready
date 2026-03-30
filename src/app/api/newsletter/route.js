@@ -4,8 +4,6 @@
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-export const runtime = 'edge'
-
 export async function POST(request) {
   try {
     const body = await request.json()
