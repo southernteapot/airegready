@@ -19,6 +19,12 @@ export default function Footer() {
               Regulations
             </a>
             <a
+              href="/compare"
+              className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
+            >
+              Compare
+            </a>
+            <a
               href="/assessment"
               className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
             >

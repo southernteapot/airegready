@@ -90,6 +90,66 @@ export const BLOG_POSTS = [
       "NIST's AI Risk Management Framework is voluntary \u2014 but it's becoming the de facto standard. A step-by-step guide to actually implementing it.",
     featured: false,
   },
+  {
+    slug: 'federal-ai-preemption',
+    title: 'The Federal Push to Preempt State AI Laws: What It Means for Compliance',
+    category: 'Federal Policy',
+    date: 'Mar 2026',
+    readTime: '7 min read',
+    excerpt:
+      "The December 2025 executive order on AI preemption changed the game for state-level compliance. Here's what it means and why you shouldn't abandon state compliance yet.",
+    featured: false,
+  },
+  {
+    slug: 'eu-ai-act-compliance-checklist',
+    title: 'EU AI Act Compliance Checklist: What to Do Before August 2026',
+    category: 'EU AI Act',
+    date: 'Mar 2026',
+    readTime: '9 min read',
+    excerpt:
+      'The August 2026 deadline for Annex III high-risk compliance is approaching. A phased checklist to get your organization ready.',
+    featured: false,
+  },
+  {
+    slug: 'gpai-code-of-practice',
+    title: 'The GPAI Code of Practice: What AI Model Providers Need to Know',
+    category: 'EU AI Act',
+    date: 'Mar 2026',
+    readTime: '8 min read',
+    excerpt:
+      'The EU published its GPAI Code of Practice in July 2025. Here\u2019s what it requires, who it applies to, and how signing creates a compliance presumption.',
+    featured: false,
+  },
+  {
+    slug: 'ai-vendor-due-diligence',
+    title: 'AI Vendor Due Diligence: 10 Questions to Ask Before You Buy',
+    category: 'Governance',
+    date: 'Mar 2026',
+    readTime: '7 min read',
+    excerpt:
+      "You're liable for the AI tools you deploy, even if a vendor built them. Ten questions every buyer should ask \u2014 and red flags to watch for.",
+    featured: false,
+  },
+  {
+    slug: 'ai-compliance-startups',
+    title: 'AI Compliance for Startups: Where to Start When Resources Are Limited',
+    category: 'Governance',
+    date: 'Mar 2026',
+    readTime: '6 min read',
+    excerpt:
+      "You don't need a fifty-person governance team. Here's the minimum viable AI compliance program that actually works.",
+    featured: false,
+  },
+  {
+    slug: 'ai-risk-management-program',
+    title: 'Building an AI Risk Management Program: A Practical Template',
+    category: 'NIST',
+    date: 'Feb 2026',
+    readTime: '10 min read',
+    excerpt:
+      'A four-phase approach to building a formal AI risk management program, mapped to the NIST AI RMF functions.',
+    featured: false,
+  },
 ]
 
 export const FAQ_ITEMS = [

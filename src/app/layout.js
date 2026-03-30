@@ -69,6 +69,9 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://airegready.com',
+    types: {
+      'application/rss+xml': 'https://airegready.com/feed.xml',
+    },
   },
 }
 

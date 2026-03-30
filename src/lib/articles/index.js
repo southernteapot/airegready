@@ -1,13 +1,25 @@
 import { euAiActRiskClassification } from './eu-ai-act-risk-classification'
+import { euAiActComplianceChecklist } from './eu-ai-act-compliance-checklist'
 import { usStatesAiHiring } from './us-states-ai-hiring'
 import { shadowAiCompliance } from './shadow-ai-compliance'
 import { nistAiRmfPractice } from './nist-ai-rmf-practice'
+import { aiVendorDueDiligence } from './ai-vendor-due-diligence'
+import { federalAiPreemption } from './federal-ai-preemption'
+import { aiComplianceStartups } from './ai-compliance-startups'
+import { gpaiCodeOfPractice } from './gpai-code-of-practice'
+import { aiRiskManagementProgram } from './ai-risk-management-program'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
+  'eu-ai-act-compliance-checklist': euAiActComplianceChecklist,
   'us-states-ai-hiring': usStatesAiHiring,
   'shadow-ai-compliance': shadowAiCompliance,
   'nist-ai-rmf-practice': nistAiRmfPractice,
+  'ai-vendor-due-diligence': aiVendorDueDiligence,
+  'federal-ai-preemption': federalAiPreemption,
+  'ai-compliance-startups': aiComplianceStartups,
+  'gpai-code-of-practice': gpaiCodeOfPractice,
+  'ai-risk-management-program': aiRiskManagementProgram,
 }
 
 export function getAllArticles() {

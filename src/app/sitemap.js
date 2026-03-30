@@ -12,9 +12,15 @@ export default function sitemap() {
 
   const articles = [
     'eu-ai-act-risk-classification',
+    'eu-ai-act-compliance-checklist',
     'us-states-ai-hiring',
     'shadow-ai-compliance',
     'nist-ai-rmf-practice',
+    'ai-vendor-due-diligence',
+    'federal-ai-preemption',
+    'ai-compliance-startups',
+    'gpai-code-of-practice',
+    'ai-risk-management-program',
   ]
 
   return [
@@ -48,6 +54,12 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.7,
     })),
+    {
+      url: `${base}/compare`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     {
       url: `${base}/assessment`,
       lastModified: new Date(),
