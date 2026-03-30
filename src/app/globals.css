@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Color tokens (light mode) ─── */
+:root {
+  --color-bg: 241 233 220;
+  --color-surface: 255 253 248;
+  --color-border: 216 204 190;
+  --color-primary: 32 38 43;
+  --color-secondary: 100 106 111;
+  --color-accent: 158 122 86;
+  --color-accent-light: 184 149 110;
+  --color-accent-dark: 134 101 63;
+  --color-accent-text: 255 249 242;
+}
+
+/* ─── Color tokens (dark mode) ─── */
+.dark {
+  --color-bg: 26 26 46;
+  --color-surface: 34 34 54;
+  --color-border: 51 51 82;
+  --color-primary: 232 230 227;
+  --color-secondary: 160 160 176;
+  --color-accent: 196 164 122;
+  --color-accent-light: 212 180 138;
+  --color-accent-dark: 176 142 90;
+  --color-accent-text: 26 26 46;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,12 +36,262 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
-  background-color: #F1E9DC;
-  color: #20262B;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-primary));
 }
 
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out;
+}
+
+/* ─── Print styles ─── */
+@media print {
+  /* Reset to readable defaults */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    transition: none !important;
+  }
+
+  /* Page header with site name and URL */
+  @page {
+    margin: 2cm;
+  }
+
+  body::before {
+    content: "AIRegReady.com";
+    display: block;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #555 !important;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4pt;
+    margin-bottom: 16pt;
+  }
+
+  /* Hide non-essential elements */
+  nav[aria-label="Main navigation"],
+  footer,
+  nav[aria-label="Breadcrumb"],
+  [aria-label="Search site (Ctrl+K)"],
+  [aria-label="Toggle dark mode"],
+  [aria-label="Switch to light mode"],
+  [aria-label="Switch to dark mode"],
+  [data-back-to-top],
+  [data-filter-pills],
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show link URLs after link text */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555 !important;
+    font-weight: normal;
+  }
+
+  /* Don't show URL for anchor links or javascript */
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Prevent tables and figures from breaking across pages */
+  table,
+  figure,
+  img,
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  /* Keep headings with their content */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Ensure reasonable sizing for content areas */
+  .max-w-\[820px\],
+  .max-w-\[720px\] {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Remove top padding that accounts for fixed navbar */
+  .pt-28 {
+    padding-top: 0 !important;
+  }
+
+  /* Clean up cards and surfaces for print */
+  [class*="bg-surface"],
+  [class*="bg-bg"] {
+    border: 1px solid #ddd !important;
+  }
+
+  /* Ensure images are reasonable size */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* ─── Assessment report print overrides ─── */
+
+  /* Hide the body::before AIRegReady header when printing the report
+     (the report has its own header) */
+  body:has(.print-report)::before {
+    display: none !important;
+  }
+
+  /* Report container resets */
+  .print-report {
+    max-width: 100% !important;
+  }
+
+  .print-report .py-20 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Suppress link URL display inside the report for cleaner output */
+  .print-report a[href]::after {
+    content: "" !important;
+  }
+
+  /* Preserve the risk level color */
+  .print-report [style*="color"] {
+    color: inherit !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Preserve the risk bar color */
+  .print-report .rounded-full[style*="background"] {
+    background: inherit !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Priority badges need their colors */
+  .print-report .bg-red-50 {
+    background-color: #fef2f2 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-report .text-red-700 {
+    color: #b91c1c !important;
+  }
+  .print-report .border-red-200 {
+    border-color: #fecaca !important;
+  }
+  .print-report .bg-amber-50 {
+    background-color: #fffbeb !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-report .text-amber-700 {
+    color: #b45309 !important;
+  }
+  .print-report .border-amber-200 {
+    border-color: #fde68a !important;
+  }
+  .print-report .bg-green-50 {
+    background-color: #f0fdf4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print-report .text-green-700 {
+    color: #15803d !important;
+  }
+  .print-report .border-green-200 {
+    border-color: #bbf7d0 !important;
+  }
+
+  /* Action plan left border colors */
+  .print-report .border-l-4.border-red-300 {
+    border-left-color: #fca5a5 !important;
+  }
+  .print-report .border-l-4.border-amber-300 {
+    border-left-color: #fcd34d !important;
+  }
+  .print-report .border-l-4.border-green-300 {
+    border-left-color: #86efac !important;
+  }
+
+  /* Accent-colored text in report */
+  .print-report .text-accent {
+    color: #9E7A56 !important;
+  }
+  .print-report .text-accent-dark {
+    color: #86653F !important;
+  }
+
+  /* Secondary text */
+  .print-report .text-secondary {
+    color: #555 !important;
+  }
+
+  /* Checkbox squares for action plan */
+  .print-report .print-checkbox {
+    border: 1.5px solid #999 !important;
+    border-radius: 2px !important;
+    width: 13px !important;
+    height: 13px !important;
+    background: transparent !important;
+  }
+
+  /* Card borders */
+  .print-report .bg-bg {
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 12pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  /* Disclaimer box */
+  .print-report [class*="bg-accent"] {
+    border: 1px solid #ccc !important;
+    background: #f9f6f2 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Progress bar background */
+  .print-report .bg-border {
+    background: #e5e5e5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }

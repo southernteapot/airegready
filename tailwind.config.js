@@ -3,20 +3,21 @@ module.exports = {
   content: [
     './src/**/*.{js,jsx,ts,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bg: '#F1E9DC',
-        surface: '#FFFDF8',
-        primary: '#20262B',
-        secondary: '#646A6F',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: {
-          DEFAULT: '#9E7A56',
-          light: '#B8956E',
-          dark: '#86653F',
-          text: '#FFF9F2',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          light: 'rgb(var(--color-accent-light) / <alpha-value>)',
+          dark: 'rgb(var(--color-accent-dark) / <alpha-value>)',
+          text: 'rgb(var(--color-accent-text) / <alpha-value>)',
         },
-        border: '#D8CCBE',
+        border: 'rgb(var(--color-border) / <alpha-value>)',
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Georgia', 'Times New Roman', 'serif'],

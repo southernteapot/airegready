@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Search from './Search'
+import DarkModeToggle from './DarkModeToggle'
 
 const links = [
   { label: 'Regulations', href: '/regulations' },
@@ -42,9 +43,10 @@ export default function NavBar() {
         ))}
       </div>
 
-      {/* Search + Mobile hamburger */}
+      {/* Search + Dark mode + Mobile hamburger */}
       <div className="flex items-center gap-2">
         <Search />
+        <DarkModeToggle />
         <button
           className="md:hidden text-secondary hover:text-primary bg-transparent border-none cursor-pointer p-1"
           onClick={() => setMobileOpen(!mobileOpen)}

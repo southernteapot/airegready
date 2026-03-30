@@ -8,6 +8,11 @@ import { federalAiPreemption } from './federal-ai-preemption'
 import { aiComplianceStartups } from './ai-compliance-startups'
 import { gpaiCodeOfPractice } from './gpai-code-of-practice'
 import { aiRiskManagementProgram } from './ai-risk-management-program'
+import { aiComplianceAcrossBorders } from './ai-compliance-across-borders'
+import { aiInsuranceUnderwriting } from './ai-insurance-underwriting'
+import { aiLiteracyRequirement } from './ai-literacy-requirement'
+import { aiIncidentResponse } from './ai-incident-response'
+import { iso42001Explained } from './iso-42001-explained'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
@@ -20,6 +25,11 @@ const articles = {
   'ai-compliance-startups': aiComplianceStartups,
   'gpai-code-of-practice': gpaiCodeOfPractice,
   'ai-risk-management-program': aiRiskManagementProgram,
+  'ai-compliance-across-borders': aiComplianceAcrossBorders,
+  'ai-insurance-underwriting': aiInsuranceUnderwriting,
+  'ai-literacy-requirement': aiLiteracyRequirement,
+  'ai-incident-response': aiIncidentResponse,
+  'iso-42001-explained': iso42001Explained,
 }
 
 export function getAllArticles() {

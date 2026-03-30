@@ -21,6 +21,11 @@ export default function sitemap() {
     'ai-compliance-startups',
     'gpai-code-of-practice',
     'ai-risk-management-program',
+    'ai-compliance-across-borders',
+    'ai-insurance-underwriting',
+    'ai-literacy-requirement',
+    'ai-incident-response',
+    'iso-42001-explained',
   ]
 
   return [
