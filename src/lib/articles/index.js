@@ -44,3 +44,17 @@ export function getArticle(slug) {
 export function getAllArticleSlugs() {
   return Object.keys(articles)
 }
+
+export function getArticlesForRegulation(regulationSlug, limit = 3) {
+  return Object.values(articles)
+    .filter((a) => a.relatedRegulations && a.relatedRegulations.includes(regulationSlug))
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, limit)
+    .map((a) => ({
+      slug: a.slug,
+      title: a.title,
+      category: a.category,
+      displayDate: a.displayDate,
+      readTime: a.readTime,
+    }))
+}

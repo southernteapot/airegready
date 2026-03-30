@@ -38,12 +38,16 @@ export default async function ArticlePage({ params }) {
     headline: article.title,
     description: article.description,
     datePublished: article.date,
+    dateModified: article.dateModified || article.date,
     publisher: {
       '@type': 'Organization',
       name: 'AIRegReady',
       url: 'https://airegready.com',
     },
-    mainEntityOfPage: `https://airegready.com/blog/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://airegready.com/blog/${slug}`,
+    },
   }
 
   return (

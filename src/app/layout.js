@@ -78,20 +78,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'AIRegReady',
-              url: 'https://airegready.com',
-              description:
-                'AI compliance and regulatory guidance. Expert analysis of AI laws, practical compliance frameworks, and free risk assessment tools.',
-            }),
-          }}
-        />
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -101,12 +88,10 @@ export default function RootLayout({ children }) {
               name: 'AIRegReady',
               url: 'https://airegready.com',
               description:
-                'Navigate AI regulations with confidence. Expert guidance, free risk assessment, and compliance tools.',
+                'Practical AI regulatory guidance and compliance resources.',
             }),
           }}
         />
-      </head>
-      <body className="font-sans antialiased">
         <NavBar />
         {children}
         <Footer />

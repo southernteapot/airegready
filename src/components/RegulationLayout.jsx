@@ -2,7 +2,7 @@ import Breadcrumb from './Breadcrumb'
 import Disclaimer from './Disclaimer'
 import { ContentBlock, renderText } from './ContentRenderer'
 
-export default function RegulationLayout({ regulation }) {
+export default function RegulationLayout({ regulation, relatedArticles = [] }) {
   return (
     <div className="pt-28 pb-20 px-6">
       <div className="max-w-[820px] mx-auto">
@@ -237,6 +237,32 @@ export default function RegulationLayout({ regulation }) {
             ))}
           </div>
         </section>
+
+        {/* Related Articles */}
+        {relatedArticles.length > 0 && (
+          <section className="mb-8">
+            <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-4">
+              Related Articles
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {relatedArticles.map((article) => (
+                <a
+                  key={article.slug}
+                  href={`/blog/${article.slug}`}
+                  className="bg-surface border border-border rounded-xl p-5 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+                >
+                  <div className="font-sans text-xs text-secondary mb-2">
+                    {article.category} &middot; {article.displayDate} &middot;{' '}
+                    {article.readTime}
+                  </div>
+                  <h3 className="font-sans text-[15px] font-bold text-primary leading-snug">
+                    {article.title}
+                  </h3>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
 
         <Disclaimer />
       </div>

@@ -11,6 +11,16 @@ import Newsletter from '@/components/Newsletter'
 import { FAQ_ITEMS } from '@/lib/data'
 
 export default function Home() {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'AIRegReady',
+    url: 'https://airegready.com',
+    description:
+      'Practical AI regulatory guidance for organizations navigating compliance across jurisdictions.',
+    sameAs: [],
+  }
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -26,6 +36,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

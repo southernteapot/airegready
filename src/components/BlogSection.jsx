@@ -70,6 +70,15 @@ export default function BlogSection() {
           </a>
         ))}
       </div>
+
+      <div className="text-center mt-8">
+        <a
+          href="/blog"
+          className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+        >
+          View all articles &rarr;
+        </a>
+      </div>
     </section>
   )
 }

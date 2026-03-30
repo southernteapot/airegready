@@ -67,6 +67,18 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${base}/glossary`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/timeline`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${base}/faq`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

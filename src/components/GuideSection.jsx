@@ -47,6 +47,15 @@ export default function GuideSection() {
           </a>
         ))}
       </div>
+
+      <div className="text-center mt-8">
+        <a
+          href="/compare"
+          className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+        >
+          Compare all frameworks &rarr;
+        </a>
+      </div>
     </section>
   )
 }

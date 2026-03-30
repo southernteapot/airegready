@@ -1,8 +1,12 @@
 import Breadcrumb from './Breadcrumb'
 import Disclaimer from './Disclaimer'
 import { ContentBlock, renderText } from './ContentRenderer'
+import { getRegulation } from '@/lib/regulations'
 
 export default function ArticleLayout({ article }) {
+  const relatedRegs = (article.relatedRegulations || [])
+    .map((slug) => getRegulation(slug))
+    .filter(Boolean)
   return (
     <div className="pt-28 pb-20 px-6">
       <article className="max-w-[720px] mx-auto">
@@ -110,6 +114,41 @@ export default function ArticleLayout({ article }) {
               ))}
             </ul>
           </div>
+        )}
+
+        {/* Related Regulations */}
+        {relatedRegs.length > 0 && (
+          <section className="mb-8">
+            <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-3">
+              Related Regulations
+            </h2>
+            <div className="flex flex-col gap-2">
+              {relatedRegs.map((reg) => (
+                <a
+                  key={reg.slug}
+                  href={`/regulations/${reg.slug}`}
+                  className="bg-surface border border-border rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group no-underline"
+                >
+                  <span className="text-[24px] flex-shrink-0 mt-0.5" role="img" aria-hidden="true">
+                    {reg.icon}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-sans text-sm font-semibold text-primary group-hover:text-accent transition-colors">
+                        {reg.title}
+                      </span>
+                      <span className="font-sans text-[10px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2 py-0.5 rounded-full flex-shrink-0">
+                        {reg.status}
+                      </span>
+                    </div>
+                    <p className="font-sans text-xs text-secondary leading-relaxed line-clamp-2">
+                      {reg.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* Sources */}

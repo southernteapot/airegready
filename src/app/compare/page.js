@@ -432,6 +432,56 @@ export default function ComparePage() {
         <div className="max-w-[900px] mx-auto">
           <Disclaimer />
         </div>
+
+        {/* ---- Explore More ---- */}
+        <div className="max-w-[900px] mx-auto mt-16">
+          <div className="text-center mb-8">
+            <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+              Keep Going
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+              Explore More
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a
+              href="/assessment"
+              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+            >
+              <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
+                Risk Assessment
+              </div>
+              <p className="font-sans text-sm text-secondary leading-relaxed">
+                Find out which AI regulations apply to your organization with our
+                free interactive assessment.
+              </p>
+            </a>
+            <a
+              href="/glossary"
+              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+            >
+              <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
+                Glossary
+              </div>
+              <p className="font-sans text-sm text-secondary leading-relaxed">
+                Plain-English definitions for AI compliance terms, from
+                algorithmic impact assessments to risk tiers.
+              </p>
+            </a>
+            <a
+              href="/blog"
+              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+            >
+              <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
+                Blog
+              </div>
+              <p className="font-sans text-sm text-secondary leading-relaxed">
+                Practical analysis of new AI laws, enforcement trends, and
+                compliance strategies you can act on.
+              </p>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   )

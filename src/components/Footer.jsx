@@ -37,6 +37,18 @@ export default function Footer() {
               Blog
             </a>
             <a
+              href="/glossary"
+              className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
+            >
+              Glossary
+            </a>
+            <a
+              href="/timeline"
+              className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
+            >
+              Timeline
+            </a>
+            <a
               href="/faq"
               className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
             >

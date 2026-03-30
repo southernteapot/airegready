@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Search from './Search'
 
 const links = [
   { label: 'Regulations', href: '/regulations' },
@@ -41,29 +42,32 @@ export default function NavBar() {
         ))}
       </div>
 
-      {/* Mobile hamburger */}
-      <button
-        className="md:hidden text-secondary hover:text-primary bg-transparent border-none cursor-pointer p-1"
-        onClick={() => setMobileOpen(!mobileOpen)}
-        aria-label="Toggle menu"
-        aria-expanded={mobileOpen}
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
+      {/* Search + Mobile hamburger */}
+      <div className="flex items-center gap-2">
+        <Search />
+        <button
+          className="md:hidden text-secondary hover:text-primary bg-transparent border-none cursor-pointer p-1"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
-          {mobileOpen ? (
-            <path d="M6 6l12 12M6 18L18 6" />
-          ) : (
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          >
+            {mobileOpen ? (
+              <path d="M6 6l12 12M6 18L18 6" />
+            ) : (
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (

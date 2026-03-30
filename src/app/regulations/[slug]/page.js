@@ -1,4 +1,5 @@
 import { getRegulation, getAllRegulationSlugs } from '@/lib/regulations'
+import { getArticlesForRegulation } from '@/lib/articles'
 import RegulationLayout from '@/components/RegulationLayout'
 import { notFound } from 'next/navigation'
 
@@ -30,10 +31,12 @@ export default async function RegulationPage({ params }) {
   const regulation = getRegulation(slug)
   if (!regulation) notFound()
 
+  const relatedArticles = getArticlesForRegulation(slug)
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: `${regulation.title} — Comprehensive Guide`,
+    '@type': 'WebPage',
+    name: `${regulation.title} — Comprehensive Guide`,
     description: regulation.description,
     dateModified: new Date().toISOString().split('T')[0],
     publisher: {
@@ -41,7 +44,10 @@ export default async function RegulationPage({ params }) {
       name: 'AIRegReady',
       url: 'https://airegready.com',
     },
-    mainEntityOfPage: `https://airegready.com/regulations/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://airegready.com/regulations/${slug}`,
+    },
   }
 
   return (
@@ -51,7 +57,7 @@ export default async function RegulationPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main>
-        <RegulationLayout regulation={regulation} />
+        <RegulationLayout regulation={regulation} relatedArticles={relatedArticles} />
       </main>
     </>
   )
