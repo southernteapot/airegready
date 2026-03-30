@@ -188,6 +188,7 @@ export default function Search() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
         >
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
@@ -221,6 +222,7 @@ export default function Search() {
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
+              aria-hidden="true"
             >
               <path d="M6 6l12 12M6 18L18 6" />
             </svg>
@@ -239,6 +241,7 @@ export default function Search() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                aria-hidden="true"
               >
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
@@ -275,6 +278,7 @@ export default function Search() {
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
+                    aria-hidden="true"
                   >
                     <path d="M6 6l12 12M6 18L18 6" />
                   </svg>

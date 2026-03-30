@@ -1,6 +1,8 @@
 import { Playfair_Display, DM_Sans } from 'next/font/google'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import BackToTop from '@/components/BackToTop'
+import ReadingProgress from '@/components/ReadingProgress'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -86,6 +88,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-accent focus:text-accent-text focus:px-4 focus:py-2 focus:rounded-md focus:font-sans focus:text-sm"
+        >
+          Skip to main content
+        </a>
+        <ReadingProgress />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,8 +109,11 @@ export default function RootLayout({ children }) {
           }}
         />
         <NavBar />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <Footer />
+        <BackToTop />
         {process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN && (
           <script
             defer

@@ -22,7 +22,7 @@ export default function NavBar() {
       className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border px-6 h-16 flex items-center justify-between"
     >
       <a href="/" className="flex items-center gap-2.5 no-underline">
-        <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-dark rounded-md flex items-center justify-center font-extrabold text-base text-accent-text font-sans">
+        <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-dark rounded-md flex items-center justify-center font-extrabold text-base text-accent-text font-sans" aria-hidden="true">
           A
         </div>
         <span className="font-sans font-bold text-[19px] text-primary tracking-tight">
@@ -61,6 +61,7 @@ export default function NavBar() {
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
+            aria-hidden="true"
           >
             {mobileOpen ? (
               <path d="M6 6l12 12M6 18L18 6" />

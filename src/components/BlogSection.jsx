@@ -2,7 +2,7 @@ import { BLOG_POSTS } from '@/lib/data'
 
 export default function BlogSection() {
   const featured = BLOG_POSTS.find((p) => p.featured)
-  const rest = BLOG_POSTS.filter((p) => !p.featured)
+  const recent = BLOG_POSTS.filter((p) => !p.featured).slice(0, 5)
 
   return (
     <section
@@ -49,9 +49,9 @@ export default function BlogSection() {
         </p>
       </a>
 
-      {/* Other posts */}
+      {/* Recent posts — 5 most recent non-featured */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {rest.map((post) => (
+        {recent.map((post) => (
           <a
             key={post.slug}
             href={`/blog/${post.slug}`}
@@ -76,7 +76,7 @@ export default function BlogSection() {
           href="/blog"
           className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
         >
-          View all articles &rarr;
+          View all {BLOG_POSTS.length} articles &rarr;
         </a>
       </div>
     </section>

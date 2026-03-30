@@ -1,3 +1,10 @@
+const stats = [
+  { value: '6', label: 'Regulatory Frameworks' },
+  { value: '15', label: 'In-Depth Articles' },
+  { value: '48', label: 'Glossary Terms' },
+  { value: '6', label: 'Frameworks Compared' },
+]
+
 const reasons = [
   {
     title: 'Plain English',
@@ -30,6 +37,21 @@ export default function WhySection() {
           Regulatory Guidance You Can Actually Use
         </h2>
       </div>
+
+      {/* Stats strip */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {stats.map((stat) => (
+          <div key={stat.label} className="text-center py-4">
+            <div className="font-serif text-3xl sm:text-4xl font-bold text-accent mb-1">
+              {stat.value}
+            </div>
+            <div className="font-sans text-sm text-secondary">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {reasons.map((reason) => (
           <div

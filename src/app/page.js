@@ -5,10 +5,22 @@ import GuideSection from '@/components/GuideSection'
 import AssessmentTool from '@/components/AssessmentTool'
 import BlogSection from '@/components/BlogSection'
 import WhySection from '@/components/WhySection'
+import ResourcesSection from '@/components/ResourcesSection'
 import FAQSection from '@/components/FAQSection'
 import ToolsTeaser from '@/components/ToolsTeaser'
 import Newsletter from '@/components/Newsletter'
 import { FAQ_ITEMS } from '@/lib/data'
+
+export const metadata = {
+  title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+  description:
+    'Navigate AI regulations with practical guidance, a free risk assessment tool, regulatory comparison tables, a 48-term compliance glossary, and timeline of key deadlines across the EU AI Act, NIST AI RMF, U.S. state AI laws, and global frameworks.',
+  openGraph: {
+    title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+    description:
+      'Free AI compliance tools: risk assessment, regulatory comparison table, glossary of 48 key terms, and deadline timeline. Expert guidance on EU AI Act, NIST AI RMF, and U.S. state AI laws.',
+  },
+}
 
 export default function Home() {
   const organizationSchema = {
@@ -44,18 +56,17 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main>
-        <Hero />
-        <TrustStrip />
-        <HowItWorks />
-        <GuideSection />
-        <AssessmentTool />
-        <BlogSection />
-        <WhySection />
-        <FAQSection />
-        <ToolsTeaser />
-        <Newsletter />
-      </main>
+      <Hero />
+      <TrustStrip />
+      <HowItWorks />
+      <GuideSection />
+      <AssessmentTool />
+      <BlogSection />
+      <WhySection />
+      <ResourcesSection />
+      <FAQSection />
+      <ToolsTeaser />
+      <Newsletter />
     </>
   )
 }

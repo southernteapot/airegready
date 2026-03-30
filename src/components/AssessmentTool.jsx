@@ -324,13 +324,18 @@ export default function AssessmentTool() {
       </div>
 
       <div className={`bg-surface border border-border rounded-2xl p-6 sm:p-10 ${result ? 'print:border-0 print:p-0 print:bg-transparent' : ''}`}>
+        {/* Screen reader announcement for question progress */}
+        <div aria-live="polite" className="sr-only">
+          {!result && `Question ${step + 1} of ${QUESTIONS.length}: ${QUESTIONS[step].text}`}
+        </div>
+
         {!result ? (
           <>
             <div className="flex justify-between items-center mb-8">
               <span className="font-sans text-[13px] text-secondary font-semibold">
                 Question {step + 1} of {QUESTIONS.length}
               </span>
-              <div className="w-[120px] h-1 bg-border rounded-full overflow-hidden">
+              <div className="w-[120px] h-1 bg-border rounded-full overflow-hidden" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-label={`Question ${step + 1} of ${QUESTIONS.length}`}>
                 <div
                   className="h-full bg-gradient-to-r from-accent to-accent-light rounded-full transition-all duration-500"
                   style={{
@@ -339,24 +344,22 @@ export default function AssessmentTool() {
                 />
               </div>
             </div>
-            <h3 className="font-sans text-lg sm:text-xl font-semibold text-primary mb-6 leading-snug">
-              {QUESTIONS[step].text}
-            </h3>
-            <div
-              className="flex flex-col gap-2.5"
-              role="radiogroup"
-              aria-label={QUESTIONS[step].text}
-            >
-              {QUESTIONS[step].options.map((opt) => (
-                <button
-                  key={opt.value}
-                  onClick={() => handleAnswer(opt)}
-                  className="bg-bg border border-border rounded-[10px] px-5 py-3.5 text-secondary font-sans text-[15px] font-medium text-left transition-all hover:border-accent/50 hover:bg-accent/[0.04] hover:text-primary cursor-pointer"
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
+            <fieldset className="border-none p-0 m-0">
+              <legend className="font-sans text-lg sm:text-xl font-semibold text-primary mb-6 leading-snug">
+                {QUESTIONS[step].text}
+              </legend>
+              <div className="flex flex-col gap-2.5">
+                {QUESTIONS[step].options.map((opt) => (
+                  <button
+                    key={opt.value}
+                    onClick={() => handleAnswer(opt)}
+                    className="bg-bg border border-border rounded-[10px] px-5 py-3.5 text-secondary font-sans text-[15px] font-medium text-left transition-all hover:border-accent/50 hover:bg-accent/[0.04] hover:text-primary cursor-pointer"
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
           </>
         ) : (
           <ReportResults result={result} onReset={reset} />

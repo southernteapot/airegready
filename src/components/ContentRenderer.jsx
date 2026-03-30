@@ -13,6 +13,7 @@ export function renderText(text) {
           className="text-accent underline decoration-accent/30 hover:decoration-accent transition-colors"
         >
           {linkMatch[1]}
+          <span className="sr-only"> (opens in new tab)</span>
         </a>
       )
     }

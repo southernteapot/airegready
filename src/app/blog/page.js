@@ -1,5 +1,6 @@
 import { getAllArticles } from '@/lib/articles'
 import Breadcrumb from '@/components/Breadcrumb'
+import BlogList from '@/components/BlogList'
 
 export const metadata = {
   title: 'AI Regulation Blog',
@@ -12,8 +13,6 @@ export const metadata = {
 
 export default function BlogIndex() {
   const articles = getAllArticles()
-  const featured = articles.find((a) => a.featured)
-  const rest = articles.filter((a) => !a.featured)
 
   return (
     <div className="pt-28 pb-20 px-6">
@@ -35,53 +34,7 @@ export default function BlogIndex() {
           </p>
         </div>
 
-        {/* Featured post */}
-        {featured && (
-          <a
-            href={`/blog/${featured.slug}`}
-            className="bg-surface border border-border rounded-[14px] p-7 sm:p-9 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
-          >
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-            <div className="flex flex-wrap gap-3 items-center mb-4">
-              <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
-                Featured
-              </span>
-              <span className="font-sans text-[13px] text-secondary">
-                {featured.category} &middot;{' '}
-                <time>{featured.displayDate}</time> &middot;{' '}
-                {featured.readTime}
-              </span>
-            </div>
-            <h2 className="font-serif text-xl sm:text-[26px] font-bold text-primary mb-3 leading-tight">
-              {featured.title}
-            </h2>
-            <p className="font-sans text-[15px] text-secondary leading-relaxed max-w-[700px]">
-              {featured.description}
-            </p>
-          </a>
-        )}
-
-        {/* Other posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {rest.map((post) => (
-            <a
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="bg-surface border border-border rounded-xl p-7 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
-            >
-              <div className="font-sans text-xs text-secondary mb-3">
-                {post.category} &middot; <time>{post.displayDate}</time>{' '}
-                &middot; {post.readTime}
-              </div>
-              <h2 className="font-sans text-[17px] font-bold text-primary mb-2.5 leading-snug">
-                {post.title}
-              </h2>
-              <p className="font-sans text-sm text-secondary leading-relaxed">
-                {post.description}
-              </p>
-            </a>
-          ))}
-        </div>
+        <BlogList articles={articles} />
       </div>
     </div>
   )
