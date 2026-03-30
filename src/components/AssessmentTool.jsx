@@ -142,12 +142,162 @@ function ReadingCard({ reading }) {
   )
 }
 
+function buildPdfHtml(result) {
+  const priorityColors = {
+    High: { bg: '#fef2f2', text: '#b91c1c', border: '#fecaca' },
+    Medium: { bg: '#fffbeb', text: '#b45309', border: '#fde68a' },
+    Low: { bg: '#f0fdf4', text: '#15803d', border: '#bbf7d0' },
+  }
+
+  const actionBorderColors = {
+    immediate: '#fca5a5',
+    shortTerm: '#fcd34d',
+    ongoing: '#86efac',
+  }
+
+  const regCardsHtml = result.regulationCards
+    .map((reg) => {
+      const pStyle = priorityColors[reg.priority] || priorityColors.Low
+      const actionsHtml =
+        reg.actions.length > 0
+          ? `<div style="margin-top:12px;">
+              <div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8E6C48;margin-bottom:6px;">Key Action Items</div>
+              <ul style="margin:0;padding:0;list-style:none;">${reg.actions.map((a) => `<li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:4px;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#8E6C48;">&#8226;</span>${a}</li>`).join('')}</ul>
+            </div>`
+          : ''
+      const whyHtml = reg.whyApplies
+        ? `<p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;margin:8px 0 0;">${reg.whyApplies}</p>`
+        : ''
+      return `<div style="border:1px solid #ddd;padding:16px;margin-bottom:10px;page-break-inside:avoid;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#20262B;">${reg.name}</div>
+          <span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:${pStyle.bg};color:${pStyle.text};border:1px solid ${pStyle.border};">${reg.priority} Priority</span>
+        </div>
+        ${whyHtml}
+        ${actionsHtml}
+      </div>`
+    })
+    .join('')
+
+  const actionSections = [
+    { key: 'immediate', label: 'Immediate Actions', sublabel: 'This Month', items: result.actionPlan.immediate },
+    { key: 'shortTerm', label: 'Short-Term Actions', sublabel: 'Next 90 Days', items: result.actionPlan.shortTerm },
+    { key: 'ongoing', label: 'Ongoing Actions', sublabel: 'Continuous', items: result.actionPlan.ongoing },
+  ]
+
+  const actionPlanHtml = actionSections
+    .filter((s) => s.items.length > 0)
+    .map(
+      (s) =>
+        `<div style="border:1px solid #ddd;border-left:4px solid ${actionBorderColors[s.key]};padding:16px;margin-bottom:10px;page-break-inside:avoid;">
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
+            <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${s.label}</div>
+            <span style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:0.06em;">${s.sublabel}</span>
+          </div>
+          <ul style="margin:0;padding:0;list-style:none;">${s.items.map((item) => `<li style="display:flex;align-items:flex-start;gap:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:6px;"><span style="display:inline-block;width:14px;height:14px;flex-shrink:0;border:1.5px solid #999;border-radius:2px;margin-top:3px;"></span><span>${item}</span></li>`).join('')}</ul>
+        </div>`
+    )
+    .join('')
+
+  const readingHtml =
+    result.recommendedReading.length > 0
+      ? `<div style="margin-bottom:32px;">
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 16px;">Recommended Reading</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">${result.recommendedReading.map((r) => `<div style="border:1px solid #ddd;padding:14px;page-break-inside:avoid;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;color:#20262B;margin-bottom:4px;">${r.title}</div><div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#555;line-height:1.5;">${r.reason}</div></div>`).join('')}</div>
+        </div>`
+      : ''
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AIRegReady — AI Compliance Risk Assessment Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+  @page { margin: 2cm; }
+  body { margin:0; padding:0; background:#fff; color:#20262B; font-family:'DM Sans',sans-serif; }
+  @media print {
+    body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+  <div style="max-width:640px;margin:0 auto;padding:20px 0;">
+    <!-- Header -->
+    <div style="border-bottom:2px solid #ddd;padding-bottom:12px;margin-bottom:24px;">
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#20262B;">AIRegReady &mdash; AI Compliance Risk Assessment</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;margin-top:4px;">Generated ${result.generatedAt}</div>
+    </div>
+
+    <!-- Risk Level -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#555;margin-bottom:6px;">Your Risk Level</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:40px;font-weight:700;color:${result.color};">${result.level}</div>
+      <div style="width:100%;height:8px;background:#e5e5e5;border-radius:4px;margin:16px 0;overflow:hidden;">
+        <div style="width:${result.pct}%;height:100%;background:${result.color};border-radius:4px;"></div>
+      </div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:14px;color:#555;line-height:1.6;max-width:480px;margin:0 auto;">Score: ${result.pct}% &mdash; ${result.summary}</div>
+    </div>
+
+    <!-- Applicable Regulations -->
+    <div style="margin-bottom:32px;">
+      <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 16px;">Applicable Regulations</h3>
+      ${regCardsHtml}
+    </div>
+
+    <!-- Action Plan -->
+    <div style="margin-bottom:32px;">
+      <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 16px;">Personalized Action Plan</h3>
+      ${actionPlanHtml}
+    </div>
+
+    <!-- Recommended Reading -->
+    ${readingHtml}
+
+    <!-- Disclaimer -->
+    <div style="border:1px solid #ccc;background:#f9f6f2;padding:16px;margin-bottom:24px;page-break-inside:avoid;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#765836;line-height:1.5;margin:0;">
+        <strong>Important:</strong> This assessment provides general guidance based on your responses and does not constitute legal advice. Regulatory requirements vary by jurisdiction and specific use case. Consult with qualified legal counsel for compliance decisions specific to your organization.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div style="border-top:1px solid #ddd;padding-top:12px;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:#888;line-height:1.5;margin:0;">
+        Generated by AIRegReady.com &mdash; This assessment is for informational purposes only and does not constitute legal advice.
+      </p>
+    </div>
+  </div>
+</body>
+</html>`
+}
+
 function ReportResults({ result, onReset }) {
   const [copied, setCopied] = useState(false)
 
-  const handlePrint = useCallback(() => {
-    window.print()
-  }, [])
+  const handleDownloadPDF = useCallback(() => {
+    const html = buildPdfHtml(result)
+    const printWindow = window.open('', '_blank')
+    if (!printWindow) {
+      // Fallback if popup is blocked
+      window.print()
+      return
+    }
+    printWindow.document.write(html)
+    printWindow.document.close()
+    // Wait for fonts to load before printing
+    printWindow.onload = () => {
+      setTimeout(() => {
+        printWindow.print()
+      }, 400)
+    }
+    // Also trigger after a longer timeout as a fallback (some browsers don't fire onload reliably)
+    setTimeout(() => {
+      if (!printWindow.closed) {
+        printWindow.print()
+      }
+    }, 1500)
+  }, [result])
 
   const handleShare = useCallback(() => {
     const params = new URLSearchParams()
@@ -246,10 +396,11 @@ function ReportResults({ result, onReset }) {
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-3 print:hidden">
         <button
-          onClick={handlePrint}
-          className="bg-accent text-accent-text rounded-lg px-6 py-3 font-sans text-sm font-semibold hover:bg-accent-dark transition-colors cursor-pointer"
+          onClick={handleDownloadPDF}
+          className="inline-flex items-center gap-2 bg-accent text-accent-text rounded-lg px-6 py-3 font-sans text-sm font-semibold hover:bg-accent-dark transition-colors cursor-pointer"
         >
-          Download Report (PDF)
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF Report
         </button>
         <button
           onClick={handleShare}

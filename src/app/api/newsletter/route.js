@@ -1,8 +1,47 @@
-// TODO: Connect to a real email service (Buttondown, Resend, Mailchimp, etc.)
-// or a database (D1, KV, etc.) for persistent storage. Right now this only
-// logs the email server-side and returns success.
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const BUTTONDOWN_API_URL = 'https://api.buttondown.com/v1/subscribers'
+
+async function subscribeViaButtondown(email) {
+  const apiKey = process.env.BUTTONDOWN_API_KEY
+
+  if (!apiKey) {
+    console.log(`[newsletter] BUTTONDOWN_API_KEY not set — logging only: ${email}`)
+    return { success: true, message: 'Thanks for subscribing!' }
+  }
+
+  const res = await fetch(BUTTONDOWN_API_URL, {
+    method: 'POST',
+    headers: {
+      Authorization: `Token ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  })
+
+  if (res.status === 201) {
+    return { success: true, message: 'Thanks for subscribing!' }
+  }
+
+  if (res.status === 409) {
+    return { success: true, message: "You're already subscribed!" }
+  }
+
+  // Try to extract an error message from the Buttondown response
+  let detail = 'Unable to subscribe. Please try again.'
+  try {
+    const data = await res.json()
+    if (data.detail) {
+      detail = data.detail
+    } else if (Array.isArray(data.email) && data.email.length > 0) {
+      detail = data.email[0]
+    }
+  } catch {
+    // Buttondown returned non-JSON; use the default message
+  }
+
+  return { success: false, status: res.status, error: detail }
+}
 
 export async function POST(request) {
   try {
@@ -25,16 +64,19 @@ export async function POST(request) {
       )
     }
 
-    // TODO: Replace console.log with actual storage / email-service call.
-    // Examples:
-    //   - Cloudflare KV:  await env.NEWSLETTER_KV.put(trimmed, JSON.stringify({ subscribedAt: new Date().toISOString() }))
-    //   - Buttondown API: await fetch('https://api.buttondown.email/v1/subscribers', { ... })
-    //   - Resend:         await fetch('https://api.resend.com/audiences/{id}/contacts', { ... })
-    console.log(`[newsletter] New subscriber: ${trimmed}`)
+    const result = await subscribeViaButtondown(trimmed)
 
+    if (result.success) {
+      return Response.json(
+        { success: true, message: result.message },
+        { status: 200 }
+      )
+    }
+
+    // Buttondown rejected the request (invalid email, rate limit, etc.)
     return Response.json(
-      { success: true, message: 'Thanks for subscribing!' },
-      { status: 200 }
+      { error: result.error },
+      { status: result.status >= 400 && result.status < 500 ? 400 : 502 }
     )
   } catch {
     return Response.json(

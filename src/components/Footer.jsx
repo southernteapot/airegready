@@ -60,6 +60,12 @@ export default function Footer() {
             >
               About
             </a>
+            <a
+              href="/legal"
+              className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
+            >
+              Legal
+            </a>
           </nav>
         </div>
         <div className="text-center">
