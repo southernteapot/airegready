@@ -1,4 +1,3 @@
-import NavBar from '@/components/NavBar'
 import Hero from '@/components/Hero'
 import TrustStrip from '@/components/TrustStrip'
 import HowItWorks from '@/components/HowItWorks'
@@ -9,7 +8,6 @@ import WhySection from '@/components/WhySection'
 import FAQSection from '@/components/FAQSection'
 import ToolsTeaser from '@/components/ToolsTeaser'
 import Newsletter from '@/components/Newsletter'
-import Footer from '@/components/Footer'
 import { FAQ_ITEMS } from '@/lib/data'
 
 export default function Home() {
@@ -32,7 +30,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <NavBar />
       <main>
         <Hero />
         <TrustStrip />
@@ -45,7 +42,6 @@ export default function Home() {
         <ToolsTeaser />
         <Newsletter />
       </main>
-      <Footer />
     </>
   )
 }

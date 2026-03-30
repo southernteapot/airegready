@@ -1,6 +1,7 @@
 export const REGULATIONS = [
   {
     id: 'eu-ai-act',
+    slug: 'eu-ai-act',
     title: 'EU AI Act',
     desc: "The world's first comprehensive AI law. Classification-based requirements for AI systems by risk level.",
     tag: 'In Effect',
@@ -8,6 +9,7 @@ export const REGULATIONS = [
   },
   {
     id: 'nist-rmf',
+    slug: 'nist-ai-rmf',
     title: 'NIST AI RMF',
     desc: 'Voluntary U.S. framework for managing AI risks across the lifecycle. Increasingly referenced in policy.',
     tag: 'Framework',
@@ -15,6 +17,7 @@ export const REGULATIONS = [
   },
   {
     id: 'state-laws',
+    slug: 'us-state-laws',
     title: 'U.S. State AI Laws',
     desc: 'A patchwork of state-level requirements from Colorado, Illinois, Texas, California, and more.',
     tag: 'Evolving',
@@ -22,6 +25,7 @@ export const REGULATIONS = [
   },
   {
     id: 'exec-orders',
+    slug: 'federal-policy',
     title: 'Executive Orders & Federal Policy',
     desc: 'Federal AI directives, OMB guidance, and agency-specific requirements for AI procurement and use.',
     tag: 'Active',
@@ -29,6 +33,7 @@ export const REGULATIONS = [
   },
   {
     id: 'sector',
+    slug: 'sector-rules',
     title: 'Sector-Specific Rules',
     desc: 'HIPAA, FCRA, ECOA, SEC guidance \u2014 existing laws being applied to AI in healthcare, finance, and hiring.',
     tag: 'Cross-Cutting',
@@ -36,6 +41,7 @@ export const REGULATIONS = [
   },
   {
     id: 'global',
+    slug: 'global',
     title: 'Global AI Governance',
     desc: "Canada's AIDA, China's AI regulations, UK's pro-innovation approach, and international standards.",
     tag: 'Expanding',
@@ -45,6 +51,7 @@ export const REGULATIONS = [
 
 export const BLOG_POSTS = [
   {
+    slug: 'eu-ai-act-risk-classification',
     title: 'The EU AI Act Risk Classification: What You Actually Need to Know',
     category: 'EU AI Act',
     date: 'Mar 2026',
@@ -54,6 +61,7 @@ export const BLOG_POSTS = [
     featured: true,
   },
   {
+    slug: 'us-states-ai-hiring',
     title: '5 U.S. States Now Regulate AI in Hiring \u2014 Is Yours Next?',
     category: 'State Laws',
     date: 'Mar 2026',
@@ -63,6 +71,7 @@ export const BLOG_POSTS = [
     featured: false,
   },
   {
+    slug: 'shadow-ai-compliance',
     title: 'Shadow AI Is Your Biggest Compliance Risk (And How to Fix It)',
     category: 'Governance',
     date: 'Feb 2026',
@@ -72,6 +81,7 @@ export const BLOG_POSTS = [
     featured: false,
   },
   {
+    slug: 'nist-ai-rmf-practice',
     title: 'NIST AI RMF in Practice: From Framework to Action Plan',
     category: 'NIST',
     date: 'Feb 2026',

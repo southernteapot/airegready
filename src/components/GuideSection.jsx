@@ -25,9 +25,10 @@ export default function GuideSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {REGULATIONS.map((reg) => (
-          <article
+          <a
             key={reg.id}
-            className="bg-surface border border-border rounded-xl p-7 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] cursor-pointer"
+            href={`/regulations/${reg.slug}`}
+            className="bg-surface border border-border rounded-xl p-7 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline block"
           >
             <div className="flex justify-between items-start mb-3">
               <span className="text-[28px]" role="img" aria-hidden="true">
@@ -43,7 +44,7 @@ export default function GuideSection() {
             <p className="font-sans text-sm text-secondary leading-relaxed">
               {reg.desc}
             </p>
-          </article>
+          </a>
         ))}
       </div>
     </section>

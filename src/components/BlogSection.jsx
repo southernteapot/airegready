@@ -27,7 +27,10 @@ export default function BlogSection() {
       </div>
 
       {/* Featured post */}
-      <article className="bg-surface border border-border rounded-[14px] p-7 sm:p-9 mb-4 cursor-pointer transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden">
+      <a
+        href={`/blog/${featured.slug}`}
+        className="bg-surface border border-border rounded-[14px] p-7 sm:p-9 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
+      >
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
         <div className="flex flex-wrap gap-3 items-center mb-4">
           <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
@@ -44,14 +47,15 @@ export default function BlogSection() {
         <p className="font-sans text-[15px] text-secondary leading-relaxed max-w-[700px]">
           {featured.excerpt}
         </p>
-      </article>
+      </a>
 
       {/* Other posts */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {rest.map((post) => (
-          <article
-            key={post.title}
-            className="bg-surface border border-border rounded-xl p-7 cursor-pointer transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)]"
+          <a
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+            className="bg-surface border border-border rounded-xl p-7 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
           >
             <div className="font-sans text-xs text-secondary mb-3">
               {post.category} &middot; <time>{post.date}</time> &middot;{' '}
@@ -63,7 +67,7 @@ export default function BlogSection() {
             <p className="font-sans text-sm text-secondary leading-relaxed">
               {post.excerpt}
             </p>
-          </article>
+          </a>
         ))}
       </div>
     </section>

@@ -1,4 +1,6 @@
 import { Playfair_Display, DM_Sans } from 'next/font/google'
+import NavBar from '@/components/NavBar'
+import Footer from '@/components/Footer'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -101,7 +103,11 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
