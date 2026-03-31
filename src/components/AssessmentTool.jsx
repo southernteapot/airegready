@@ -442,7 +442,19 @@ export default function AssessmentTool() {
     if (step < QUESTIONS.length - 1) {
       setStep(step + 1)
     } else {
-      setResult(getDetailedReport(newAnswers))
+      const report = getDetailedReport(newAnswers)
+      setResult(report)
+      // Track completion — fire and forget
+      fetch('/api/assessment-complete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          riskLevel: report.riskLevel,
+          score: report.score,
+          regulationCount: report.regulations?.length || 0,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch(() => {})
     }
   }
 
