@@ -16,7 +16,7 @@ async function subscribeViaButtondown(email) {
       Authorization: `Token ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email_address: email }),
   })
 
   if (res.status === 201) {
