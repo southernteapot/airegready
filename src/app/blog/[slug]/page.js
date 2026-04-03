@@ -56,9 +56,7 @@ export default async function ArticlePage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <ArticleLayout article={article} />
-      </main>
+      <ArticleLayout article={article} />
     </>
   )
 }

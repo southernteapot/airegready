@@ -56,9 +56,7 @@ export default async function RegulationPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main>
-        <RegulationLayout regulation={regulation} relatedArticles={relatedArticles} />
-      </main>
+      <RegulationLayout regulation={regulation} relatedArticles={relatedArticles} />
     </>
   )
 }

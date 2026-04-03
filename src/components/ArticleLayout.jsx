@@ -166,8 +166,9 @@ export default function ArticleLayout({ article }) {
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-secondary hover:text-accent transition-colors flex items-center gap-2"
                 >
-                  <span className="text-accent text-xs">&#8599;</span>
+                  <span className="text-accent text-xs" aria-hidden="true">&#8599;</span>
                   {source.title}
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               ))}
             </div>

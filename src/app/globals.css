@@ -9,9 +9,9 @@
   --color-border: 216 204 190;
   --color-primary: 32 38 43;
   --color-secondary: 100 106 111;
-  --color-accent: 158 122 86;
-  --color-accent-light: 184 149 110;
-  --color-accent-dark: 134 101 63;
+  --color-accent: 142 108 72;
+  --color-accent-light: 168 134 96;
+  --color-accent-dark: 118 88 54;
   --color-accent-text: 255 249 242;
 }
 
@@ -257,10 +257,10 @@ body {
 
   /* Accent-colored text in report */
   .print-report .text-accent {
-    color: #9E7A56 !important;
+    color: #8E6C48 !important;
   }
   .print-report .text-accent-dark {
-    color: #86653F !important;
+    color: #765836 !important;
   }
 
   /* Secondary text */

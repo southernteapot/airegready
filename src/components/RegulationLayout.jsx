@@ -59,7 +59,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
         )}
 
         {/* Table of Contents */}
-        <nav className="bg-surface border border-border rounded-xl p-6 mb-12">
+        <nav aria-label="Table of contents" className="bg-surface border border-border rounded-xl p-6 mb-12">
           <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-3">
             On This Page
           </h2>
@@ -220,12 +220,13 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 rel="noopener noreferrer"
                 className="bg-surface border border-border rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group"
               >
-                <span className="text-accent text-sm mt-0.5 flex-shrink-0">
+                <span className="text-accent text-sm mt-0.5 flex-shrink-0" aria-hidden="true">
                   &#8599;
                 </span>
                 <div>
                   <span className="font-sans text-sm font-semibold text-primary group-hover:text-accent transition-colors">
                     {source.title}
+                    <span className="sr-only"> (opens in new tab)</span>
                   </span>
                   {source.description && (
                     <p className="font-sans text-xs text-secondary mt-0.5">
