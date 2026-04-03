@@ -82,8 +82,9 @@ export default function Newsletter() {
         const data = await res.json()
 
         if (!res.ok) {
+          const err = data.error
           setStatus('error')
-          setErrorMsg(data.error || 'Something went wrong. Please try again.')
+          setErrorMsg(typeof err === 'string' ? err : 'Something went wrong. Please try again.')
           return
         }
 

@@ -34,7 +34,8 @@ async function subscribeViaButtondown(email) {
     if (data.detail) {
       detail = data.detail
     } else if (Array.isArray(data.email) && data.email.length > 0) {
-      detail = data.email[0]
+      const first = data.email[0]
+      detail = typeof first === 'string' ? first : first.msg || 'Invalid email address.'
     }
   } catch {
     // Buttondown returned non-JSON; use the default message
