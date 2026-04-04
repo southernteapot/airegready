@@ -149,7 +149,7 @@ body {
 
   /* Ensure reasonable sizing for content areas */
   .max-w-\[820px\],
-  .max-w-\[720px\] {
+  .max-w-\[800px\] {
     max-width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;

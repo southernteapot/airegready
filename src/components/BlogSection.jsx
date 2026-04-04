@@ -7,7 +7,7 @@ export default function BlogSection() {
   return (
     <section
       id="blog"
-      className="py-20 px-6 max-w-[1100px] mx-auto"
+      className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="blog-heading"
     >
       <div className="text-center mb-14">
@@ -16,7 +16,7 @@ export default function BlogSection() {
         </div>
         <h2
           id="blog-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           What&apos;s New in AI Readiness
         </h2>
@@ -29,7 +29,7 @@ export default function BlogSection() {
       {/* Featured post */}
       <a
         href={`/blog/${featured.slug}`}
-        className="bg-surface border border-border rounded-[14px] p-7 sm:p-9 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
+        className="bg-surface border border-border/60 rounded-[14px] p-7 sm:p-9 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
       >
         <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
         <div className="flex flex-wrap gap-3 items-center mb-4">
@@ -55,7 +55,7 @@ export default function BlogSection() {
           <a
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="bg-surface border border-border rounded-xl p-7 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+            className="bg-surface border border-border/60 rounded-xl p-7 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
           >
             <div className="font-sans text-xs text-secondary mb-3">
               {post.category} &middot; <time>{post.date}</time> &middot;{' '}

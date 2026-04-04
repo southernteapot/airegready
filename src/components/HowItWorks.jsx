@@ -24,7 +24,7 @@ const themes = [
 export default function HowItWorks() {
   return (
     <section
-      className="py-20 px-6 max-w-[1100px] mx-auto"
+      className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="how-heading"
     >
       <div className="text-center mb-14">
@@ -33,11 +33,11 @@ export default function HowItWorks() {
         </div>
         <h2
           id="how-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           Getting Oriented on AI
         </h2>
-        <p className="font-sans text-base text-secondary mt-3 max-w-[520px] mx-auto leading-relaxed">
+        <p className="font-sans text-base text-secondary mt-3 max-w-[580px] mx-auto leading-relaxed">
           Whether you&apos;re adopting AI for the first time or reviewing what
           you already have in place.
         </p>

@@ -28,7 +28,7 @@ export default function ResourcesSection() {
   return (
     <section
       id="resources"
-      className="py-20 px-6 max-w-[1100px] mx-auto"
+      className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="resources-heading"
     >
       <div className="text-center mb-14">
@@ -37,11 +37,11 @@ export default function ResourcesSection() {
         </div>
         <h2
           id="resources-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           Browse by Topic
         </h2>
-        <p className="font-sans text-base text-secondary mt-3 max-w-[560px] mx-auto leading-relaxed">
+        <p className="font-sans text-base text-secondary mt-3 max-w-[620px] mx-auto leading-relaxed">
           Frameworks, templates, regulations, and checklists &mdash; all in
           plain English, all free.
         </p>

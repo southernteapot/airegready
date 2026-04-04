@@ -100,13 +100,13 @@ export default function Newsletter() {
 
   return (
     <section
-      className="py-20 px-6 max-w-[600px] mx-auto text-center"
+      className="py-24 px-6 max-w-[680px] mx-auto text-center"
       aria-labelledby="newsletter-heading"
     >
       <div className="bg-accent/10 border border-accent/20 rounded-2xl p-8 sm:p-12">
         <h2
           id="newsletter-heading"
-          className="font-serif text-2xl sm:text-[30px] font-bold text-primary mb-3"
+          className="font-serif text-[28px] sm:text-[34px] font-bold text-primary mb-3"
         >
           Get Updates
         </h2>

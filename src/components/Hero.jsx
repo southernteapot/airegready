@@ -1,20 +1,20 @@
 export default function Hero() {
   return (
     <section
-      className="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-16 relative overflow-hidden"
+      className="min-h-[80vh] flex flex-col justify-center items-center text-center px-6 pt-32 pb-16 relative overflow-hidden"
       aria-label="Introduction"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(158,122,86,0.07)_0%,transparent_70%)] pointer-events-none" />
 
-      <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-bold text-primary leading-[1.1] mb-6 tracking-tight">
+      <h1 className="font-serif text-[clamp(40px,6vw,72px)] font-bold text-primary leading-[1.1] mb-6 tracking-tight">
         AI Resources for{' '}
         <span className="bg-gradient-to-br from-accent to-accent-dark bg-clip-text text-transparent">
           Real-World Use
         </span>
       </h1>
 
-      <p className="font-sans text-lg sm:text-[19px] text-secondary max-w-[640px] mb-10 leading-relaxed">
+      <p className="font-sans text-[19px] sm:text-xl text-secondary max-w-[700px] mb-10 leading-relaxed">
         Frameworks, assessments, and plain-English information for startups,
         small businesses, and anyone using AI in the real world.
       </p>

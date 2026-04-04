@@ -16,7 +16,7 @@ const reasons = [
 export default function WhySection() {
   return (
     <section
-      className="py-20 px-6 max-w-[1100px] mx-auto"
+      className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="why-heading"
     >
       <div className="text-center mb-14">
@@ -25,7 +25,7 @@ export default function WhySection() {
         </div>
         <h2
           id="why-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           Not AI Hype. Not Legalese. Just Practical Information.
         </h2>
@@ -35,7 +35,7 @@ export default function WhySection() {
         {reasons.map((reason) => (
           <div
             key={reason.title}
-            className="bg-surface border border-border rounded-xl p-7"
+            className="bg-surface border border-border/60 rounded-xl p-7"
           >
             <h3 className="font-sans text-[17px] font-bold text-primary mb-2">
               {reason.title}

@@ -17,7 +17,7 @@ export default function ToolsTeaser() {
   return (
     <section
       id="tools"
-      className="py-20 px-6 max-w-[1100px] mx-auto"
+      className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="tools-heading"
     >
       <div className="text-center mb-12">
@@ -26,7 +26,7 @@ export default function ToolsTeaser() {
         </div>
         <h2
           id="tools-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           More Resources on the Way
         </h2>
@@ -38,7 +38,7 @@ export default function ToolsTeaser() {
         {tools.map((tool) => (
           <div
             key={tool.title}
-            className="bg-surface border border-border rounded-xl p-7 relative overflow-hidden"
+            className="bg-surface border border-border/60 rounded-xl p-7 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
             <h3 className="font-sans text-[17px] font-bold text-primary mb-2">

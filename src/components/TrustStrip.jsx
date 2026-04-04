@@ -10,7 +10,7 @@ const items = [
 export default function TrustStrip() {
   return (
     <section className="py-6 px-6 border-y border-border/80" aria-label="Topics covered">
-      <div className="max-w-[1100px] mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         {/* Topic pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {items.map((item) => (

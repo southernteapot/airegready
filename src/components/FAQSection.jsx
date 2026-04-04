@@ -9,7 +9,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-20 px-6 max-w-[760px] mx-auto"
+      className="py-24 px-6 max-w-[840px] mx-auto"
       aria-labelledby="faq-heading"
     >
       <div className="text-center mb-12">
@@ -18,7 +18,7 @@ export default function FAQSection() {
         </div>
         <h2
           id="faq-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           Common Questions About AI Readiness
         </h2>

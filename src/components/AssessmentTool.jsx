@@ -463,7 +463,7 @@ export default function AssessmentTool() {
   return (
     <section
       id="assessment"
-      className="py-20 px-6 max-w-[720px] mx-auto"
+      className="py-24 px-6 max-w-[800px] mx-auto"
       aria-labelledby="assessment-heading"
     >
       <div className="text-center mb-12 print:hidden">
@@ -472,7 +472,7 @@ export default function AssessmentTool() {
         </div>
         <h2
           id="assessment-heading"
-          className="font-serif text-3xl sm:text-4xl font-bold text-primary"
+          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
         >
           How AI-Ready Is Your Work?
         </h2>
