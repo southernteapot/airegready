@@ -81,7 +81,7 @@ export default function LegalPage() {
               </h2>
               <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
                 <p>
-                  The AI Compliance Risk Assessment tool provides a general,
+                  The AI Readiness Assessment tool provides a general,
                   informational estimate of potential regulatory exposure based
                   on the answers you provide. Results are not a compliance
                   determination and should not be treated as one.
@@ -224,7 +224,7 @@ export default function LegalPage() {
                 Assessment Tool Data
               </h2>
               <p className="font-sans text-[15px] text-secondary leading-relaxed">
-                The AI Compliance Risk Assessment tool processes all data
+                The AI Readiness Assessment tool processes all data
                 entirely in your browser (client-side). Your answers and results
                 are not transmitted to our servers, stored in any database, or
                 shared with anyone. When you close or refresh the page, the data

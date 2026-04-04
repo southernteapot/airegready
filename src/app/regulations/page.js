@@ -2,9 +2,9 @@ import { getAllRegulations } from '@/lib/regulations'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = {
-  title: 'AI Regulations Guide',
+  title: 'AI Frameworks & Regulations',
   description:
-    'Plain-English guides to the AI regulations that matter most. EU AI Act, NIST AI RMF, U.S. state laws, federal policy, sector-specific rules, and global AI governance.',
+    'Plain-English guides to the AI frameworks and regulations that matter most. EU AI Act, NIST AI RMF, U.S. state laws, federal policy, sector-specific rules, and global AI governance.',
   alternates: {
     canonical: 'https://airegready.com/regulations',
   },

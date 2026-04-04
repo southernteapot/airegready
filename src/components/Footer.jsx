@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
         <div className="text-center">
           <p className="font-sans text-[13px] text-secondary">
-            &copy; 2026 AIRegReady. Practical AI regulatory guidance.
+            &copy; 2026 AIRegReady. AI resources for real-world use.
           </p>
           <p className="font-sans text-xs text-secondary/70 mt-1">
             Content is educational and does not constitute legal advice. Consult

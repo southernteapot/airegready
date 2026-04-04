@@ -11,16 +11,16 @@ const helpfulLinks = [
     href: '/regulations',
     description: 'Browse AI regulatory frameworks',
   },
-  { label: 'Blog', href: '/blog', description: 'Read AI compliance insights' },
+  { label: 'Blog', href: '/blog', description: 'Read practical AI guidance' },
   {
     label: 'Assessment',
     href: '/assessment',
-    description: 'Take the free risk assessment',
+    description: 'Take the free AI readiness assessment',
   },
   {
     label: 'Glossary',
     href: '/glossary',
-    description: 'AI compliance terminology',
+    description: 'AI terms and definitions',
   },
 ]
 

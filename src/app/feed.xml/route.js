@@ -23,8 +23,8 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AIRegReady - AI Compliance Insights</title>
-    <description>Practical breakdowns of AI regulations, enforcement trends, and compliance strategies</description>
+    <title>AIRegReady - Practical AI Guidance</title>
+    <description>Practical information on AI adoption, governance, regulations, and what they mean for real-world use</description>
     <link>${base}/blog</link>
     <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml" />
     <language>en-us</language>

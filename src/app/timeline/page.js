@@ -118,8 +118,8 @@ export default function TimelinePage() {
             AI Regulation Timeline
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[640px]">
-            Major milestones and upcoming deadlines across all AI regulatory
-            frameworks
+            Major milestones and key dates across AI frameworks and
+            regulations
           </p>
         </header>
 

@@ -209,7 +209,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Who needs to think about AI readiness?',
-    a: 'Any organization that develops, deploys, or uses AI systems \u2014 including startups and small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI touches your operations, your customers, or decisions about people, you have readiness and regulatory considerations worth understanding. You don\u2019t need a big team to get started \u2014 but you do need a clear picture of what you\u2019re using and what\u2019s at stake.',
+    a: 'Anyone who develops, deploys, or uses AI \u2014 including solo operators, freelancers, startups, and small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI touches your work, your customers, or decisions about people, you have readiness and regulatory considerations worth understanding. You don\u2019t need a big team to get started \u2014 but you do need a clear picture of what you\u2019re using and what\u2019s at stake.',
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',
@@ -225,15 +225,15 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'We\u2019re a small team \u2014 do we really need AI policies?',
-    a: 'Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory puts you ahead of most organizations. You don\u2019t need a 50-page governance manual \u2014 you need clear expectations about what tools are approved, what data can go into them, and who\u2019s responsible for reviewing AI outputs. Start simple and build from there.',
+    a: 'Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory puts you ahead of the curve. You don\u2019t need a 50-page governance manual \u2014 you need clear expectations about what tools are approved, what data can go into them, and who\u2019s responsible for reviewing AI outputs. Start simple and build from there.',
   },
   {
     q: 'Is there a single standard that covers everything?',
-    a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most organizations need to comply with multiple overlapping frameworks \u2014 which is why having a single resource that tracks all of them matters.',
+    a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most people dealing with AI end up touching multiple overlapping frameworks \u2014 which is why having a single resource that tracks all of them matters.',
   },
   {
     q: 'How is this different from hiring an AI consultant?',
-    a: 'AIRegReady is a free self-service starting point. We help you understand the landscape, figure out what applies to you, and take practical first steps. Consultants and law firms are valuable for complex situations \u2014 but most organizations need to understand the right questions to ask before engaging one. We help you get to that point.',
+    a: 'AIRegReady is a free self-service starting point. We help you understand the landscape, figure out what applies to you, and take practical first steps. Consultants and law firms are valuable for complex situations \u2014 but most people need to understand the right questions to ask before engaging one. We help you get to that point.',
   },
   {
     q: 'How fast is the regulatory landscape changing?',

@@ -105,7 +105,7 @@ export default function RootLayout({ children }) {
               name: 'AIRegReady',
               url: 'https://airegready.com',
               description:
-                'Practical AI readiness guidance for founders, startups, and small businesses.',
+                'AI resources, frameworks, and plain-English information for anyone using AI in the real world.',
             }),
           }}
         />

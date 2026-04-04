@@ -4,7 +4,7 @@ import Disclaimer from '@/components/Disclaimer'
 export const metadata = {
   title: 'About AIRegReady',
   description:
-    'AIRegReady provides plain-English, source-linked guidance on AI regulations. Learn what this site is, how content is produced, and what it is not.',
+    'AIRegReady is a free AI resource hub with practical information, frameworks, assessments, and plain-English regulatory guidance for anyone using AI.',
   alternates: {
     canonical: 'https://airegready.com/about',
   },
@@ -23,8 +23,8 @@ export default function AboutPage() {
             About AIRegReady
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed">
-            Plain-English AI regulatory guidance &mdash; source-linked,
-            organized by framework, and built to be useful.
+            Practical AI resources &mdash; frameworks, assessments, and
+            plain-English information for real-world use.
           </p>
         </header>
 
@@ -36,24 +36,24 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
               <p>
-                AI regulation is moving fast. New laws, frameworks, and
-                enforcement actions appear regularly across jurisdictions, and
-                the material is dense, fragmented, and often written in language
-                that assumes you already understand it.
+                AI is changing how people work, but the practical information
+                around it &mdash; what tools to trust, what risks to watch for,
+                what rules apply &mdash; is scattered, dense, and often written
+                for lawyers or enterprise consultants.
               </p>
               <p>
-                AIRegReady exists to fix that. We take AI laws and regulatory
-                frameworks &mdash; the EU AI Act, NIST AI RMF, U.S. state
-                legislation, sector-specific rules, and international governance
-                efforts &mdash; and turn them into clear, structured summaries
-                that explain what each regulation actually requires, who it
-                applies to, and what the practical implications are.
+                AIRegReady brings that information together in one place. We
+                cover AI frameworks, governance approaches, regulatory
+                requirements, and practical next steps &mdash; all in plain
+                English. Whether you need to understand the EU AI Act, figure
+                out what guardrails to put in place, or just get oriented on
+                what matters, this is a starting point.
               </p>
               <p>
-                Every summary links to the source document. Nothing is
-                paraphrased behind a wall or presented without attribution. If
-                you want to verify a claim or read the full text, the link is
-                right there.
+                Every regulatory summary links to the source document. Nothing
+                is paraphrased behind a wall or presented without attribution.
+                If you want to verify a claim or read the full text, the link
+                is right there.
               </p>
             </div>
           </section>
@@ -65,44 +65,43 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
               <p>
-                Anyone trying to understand how AI regulation works in practice.
-                That includes:
+                Anyone using AI in the real world. That includes:
               </p>
               <ul className="flex flex-col gap-2 ml-1">
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Companies and teams that build, deploy, or use AI systems and
-                    need to understand their regulatory obligations
+                    Founders and small businesses introducing AI into their
+                    operations
                   </span>
                 </li>
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Compliance, legal, and policy professionals tracking the
-                    evolving landscape
+                    Solo operators, freelancers, and side-income builders using
+                    AI tools in their work
                   </span>
                 </li>
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Founders and product teams evaluating risk as they build with
-                    AI
+                    Teams at larger companies trying to put practical AI
+                    policies in place
                   </span>
                 </li>
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Individuals affected by AI-driven decisions &mdash; in
-                    hiring, lending, insurance, content moderation &mdash; who
-                    want to understand what protections exist
+                    Anyone exploring AI adoption and wanting to understand the
+                    landscape before diving in
                   </span>
                 </li>
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Researchers, journalists, and students studying AI
-                    governance
+                    People affected by AI-driven decisions &mdash; in hiring,
+                    lending, insurance &mdash; who want to understand what
+                    protections exist
                   </span>
                 </li>
               </ul>
@@ -116,10 +115,10 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
               <p>
-                Regulatory summaries on AIRegReady are written by reviewing the
-                actual legislative text, official guidance, and authoritative
-                analyses. We read the source material and distill it into
-                structured, plain-English explanations.
+                Regulatory summaries are written by reviewing the actual
+                legislative text, official guidance, and authoritative analyses.
+                We read the source material and distill it into structured,
+                plain-English explanations.
               </p>
               <p>
                 Every regulation page includes a &ldquo;Source Documents&rdquo;
@@ -129,9 +128,8 @@ export default function AboutPage() {
               </p>
               <p>
                 Content is dated with a &ldquo;Last reviewed&rdquo; marker so
-                you can see when it was last checked against the current state of
-                the law. AI regulation changes frequently, and we work to keep
-                summaries current.
+                you can see when it was last checked. AI regulation changes
+                frequently, and we work to keep everything current.
               </p>
             </div>
           </section>
@@ -144,16 +142,15 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
               <p>
                 AIRegReady is not a law firm, and this site does not provide
-                legal advice. Regulatory summaries are simplified for clarity and
-                do not capture every nuance of the underlying laws. If you need
-                guidance on your specific compliance obligations, consult
-                qualified legal counsel.
+                legal advice. Regulatory summaries are simplified for clarity
+                and do not capture every nuance of the underlying laws. If you
+                need guidance on your specific situation, consult qualified
+                legal counsel.
               </p>
               <p>
-                This is also not a compliance product &mdash; at least not yet.
-                Right now, AIRegReady is a free resource. We are building tools
-                to help organizations track and manage AI compliance obligations,
-                but those are not yet available.
+                This is also not a hype site, a sales funnel, or generic AI
+                commentary. The goal is to be a genuinely useful resource
+                &mdash; free, practical, and informational first.
               </p>
             </div>
           </section>
@@ -165,15 +162,15 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
               <p>
-                The long-term goal is to make AI compliance less painful. That
-                starts with good information &mdash; organized, current, and
-                actually readable. Over time, we plan to add tools that help you
-                track which regulations apply to you, generate policy documents,
-                and stay on top of changes as they happen.
+                The foundation is good information &mdash; organized, current,
+                and actually readable. Over time, we plan to add practical
+                resources like checklists, policy templates, implementation
+                guides, and tools that help you stay on top of changes as they
+                happen.
               </p>
               <p>
-                But the foundation is the content. If the explanations are not
-                useful, nothing else matters.
+                But the starting point is always the content. If the
+                information is not useful, nothing else matters.
               </p>
             </div>
           </section>

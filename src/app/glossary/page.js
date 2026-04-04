@@ -3,9 +3,9 @@ import Disclaimer from '@/components/Disclaimer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'AI Compliance Glossary | AIRegReady',
+  title: 'AI Glossary | AIRegReady',
   description:
-    'Definitions of key AI compliance terms: GPAI, Annex III, algorithmic discrimination, AEDT, high-risk AI systems, and more. A reference for navigating AI regulation.',
+    'Definitions of key AI terms: GPAI, Annex III, algorithmic discrimination, AEDT, high-risk AI systems, and more. A plain-English reference for understanding AI frameworks and regulation.',
   alternates: { canonical: 'https://airegready.com/glossary' },
 }
 
@@ -553,7 +553,7 @@ export default function GlossaryPage() {
             Reference
           </p>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
-            AI Compliance Glossary
+            AI Glossary
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[640px]">
             Definitions of the key terms you will encounter in AI regulation.
