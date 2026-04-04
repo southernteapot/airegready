@@ -204,8 +204,12 @@ export const BLOG_POSTS = [
 
 export const FAQ_ITEMS = [
   {
-    q: 'Who needs to worry about AI compliance?',
-    a: 'Any organization that develops, deploys, or uses AI systems \u2014 and increasingly, individuals affected by AI-driven decisions in hiring, lending, insurance, or content moderation. If AI influences decisions about people, the regulatory stakes are higher for everyone involved. Even small businesses using off-the-shelf tools like ChatGPT or Copilot can face liability under emerging regulations.',
+    q: 'What does "AI readiness" actually mean?',
+    a: 'AI readiness means knowing how your organization uses AI, what risks that creates, and what guardrails you need in place. It covers practical concerns \u2014 like choosing the right tools, setting policies for your team, and understanding which regulations apply \u2014 not just theoretical frameworks. If you\u2019re using AI or planning to, readiness is about being intentional rather than reactive.',
+  },
+  {
+    q: 'Who needs to think about AI readiness?',
+    a: 'Any organization that develops, deploys, or uses AI systems \u2014 including startups and small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI touches your operations, your customers, or decisions about people, you have readiness and regulatory considerations worth understanding. You don\u2019t need a big team to get started \u2014 but you do need a clear picture of what you\u2019re using and what\u2019s at stake.',
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',
@@ -216,12 +220,20 @@ export const FAQ_ITEMS = [
     a: 'It varies by regulation. The EU AI Act can impose fines up to \u20AC35 million or 7% of global annual revenue. U.S. state laws vary \u2014 some carry civil penalties, others create private rights of action. The reputational and operational costs of enforcement actions often exceed the fines themselves.',
   },
   {
-    q: 'Where should I start with AI compliance?',
-    a: 'Start with an inventory: what AI systems does your organization use, what data do they process, and what decisions do they influence? Then map those against the regulations that apply to your industry and geography. Our free Risk Assessment tool above gives you a quick starting point.',
+    q: 'Where should we start with AI?',
+    a: 'Start with an inventory: what AI tools does your organization use, what data do they process, and what decisions do they influence? From there, put a basic acceptable use policy in place and identify the regulations that apply to your industry and geography. Our free AI Readiness Assessment above gives you a quick starting point.',
+  },
+  {
+    q: 'We\u2019re a small team \u2014 do we really need AI policies?',
+    a: 'Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory puts you ahead of most organizations. You don\u2019t need a 50-page governance manual \u2014 you need clear expectations about what tools are approved, what data can go into them, and who\u2019s responsible for reviewing AI outputs. Start simple and build from there.',
   },
   {
     q: 'Is there a single standard that covers everything?',
     a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most organizations need to comply with multiple overlapping frameworks \u2014 which is why having a single resource that tracks all of them matters.',
+  },
+  {
+    q: 'How is this different from hiring an AI consultant?',
+    a: 'AIRegReady is a free self-service starting point. We help you understand the landscape, figure out what applies to you, and take practical first steps. Consultants and law firms are valuable for complex situations \u2014 but most organizations need to understand the right questions to ask before engaging one. We help you get to that point.',
   },
   {
     q: 'How fast is the regulatory landscape changing?',
@@ -232,19 +244,19 @@ export const FAQ_ITEMS = [
 export const QUESTIONS = [
   {
     id: 1,
-    text: 'What is your relationship with AI systems?',
+    text: 'Where is your organization on the AI adoption journey?',
     options: [
-      { label: 'I/we build or develop AI systems', value: 'develop', risk: 3 },
-      { label: 'I/we use third-party AI tools (ChatGPT, Copilot, etc.)', value: 'deploy', risk: 2 },
+      { label: 'We build or develop AI products or tools', value: 'develop', risk: 3 },
+      { label: 'We use third-party AI tools (ChatGPT, Copilot, etc.)', value: 'deploy', risk: 2 },
       { label: 'Both \u2014 we build and use AI', value: 'both', risk: 4 },
-      { label: 'Exploring or planning to adopt AI', value: 'exploring', risk: 1 },
-      { label: 'I\u2019m an individual affected by or interested in AI regulation', value: 'individual', risk: 1 },
-      { label: 'No involvement with AI currently', value: 'none', risk: 0 },
+      { label: 'Exploring \u2014 researching or planning to adopt AI', value: 'exploring', risk: 1 },
+      { label: 'Individual \u2014 researching AI readiness for personal interest', value: 'individual', risk: 1 },
+      { label: 'Not using AI currently', value: 'none', risk: 0 },
     ],
   },
   {
     id: 2,
-    text: 'What industry are you in?',
+    text: 'What industry does your organization operate in?',
     options: [
       { label: 'Healthcare', value: 'healthcare', risk: 4 },
       { label: 'Financial services', value: 'finance', risk: 4 },
@@ -256,17 +268,17 @@ export const QUESTIONS = [
   },
   {
     id: 3,
-    text: 'Does your AI make or influence decisions about people?',
+    text: 'Will AI influence decisions about people in your organization?',
     options: [
       { label: 'Yes \u2014 hiring, lending, insurance, or benefits', value: 'high-impact', risk: 5 },
-      { label: 'Yes \u2014 content recommendations or personalization', value: 'moderate', risk: 3 },
-      { label: 'No \u2014 internal operations only', value: 'internal', risk: 1 },
-      { label: 'Not sure', value: 'unsure', risk: 3 },
+      { label: 'Yes \u2014 customer recommendations or personalization', value: 'moderate', risk: 3 },
+      { label: 'No \u2014 internal productivity only', value: 'internal', risk: 1 },
+      { label: 'Not sure yet', value: 'unsure', risk: 3 },
     ],
   },
   {
     id: 4,
-    text: 'Do you process personal data from EU residents?',
+    text: 'Do you serve customers in the EU or handle EU personal data?',
     options: [
       { label: 'Yes', value: 'yes', risk: 4 },
       { label: 'No', value: 'no', risk: 0 },
@@ -275,17 +287,17 @@ export const QUESTIONS = [
   },
   {
     id: 5,
-    text: 'How would you describe your current AI governance posture?',
+    text: 'Do you have AI policies, guidelines, or guardrails in place?',
     options: [
-      { label: 'We have documented AI policies and oversight', value: 'mature', risk: 0 },
-      { label: 'We have informal practices but nothing documented', value: 'developing', risk: 2 },
-      { label: "We haven't started thinking about this", value: 'none', risk: 4 },
-      { label: "We're not sure what's needed", value: 'unsure', risk: 3 },
+      { label: 'Yes \u2014 documented and shared with the team', value: 'mature', risk: 0 },
+      { label: 'Partially \u2014 informal practices but nothing written down', value: 'developing', risk: 2 },
+      { label: 'No \u2014 haven\u2019t started on this yet', value: 'none', risk: 4 },
+      { label: 'Not sure what we need', value: 'unsure', risk: 3 },
     ],
   },
   {
     id: 6,
-    text: 'Do you operate across multiple states or countries?',
+    text: 'Where does your organization operate?',
     options: [
       { label: 'Multiple countries', value: 'international', risk: 4 },
       { label: 'Multiple U.S. states', value: 'multi-state', risk: 3 },
@@ -294,12 +306,12 @@ export const QUESTIONS = [
   },
   {
     id: 7,
-    text: 'Are you using generative AI (ChatGPT, Claude, Copilot, etc.)?',
+    text: 'How is your team using generative AI tools (ChatGPT, Claude, Copilot, etc.)?',
     options: [
-      { label: 'Yes \u2014 widely across the organization', value: 'wide', risk: 4 },
-      { label: 'Yes \u2014 limited or pilot use', value: 'limited', risk: 2 },
-      { label: 'No', value: 'no', risk: 0 },
-      { label: 'Employees may be using it unofficially', value: 'shadow', risk: 5 },
+      { label: 'Widely \u2014 approved tools across the organization', value: 'wide', risk: 4 },
+      { label: 'Limited \u2014 pilots or specific team use', value: 'limited', risk: 2 },
+      { label: 'Not yet', value: 'no', risk: 0 },
+      { label: 'Informally \u2014 employees may be using tools without oversight', value: 'shadow', risk: 5 },
     ],
   },
 ]
@@ -331,22 +343,22 @@ export function getRiskProfile(answers) {
     level = 'LOW'
     color = '#4ade80'
     summary =
-      'Your AI compliance risk exposure appears relatively limited. Focus on building foundational policies and monitoring the regulatory landscape.'
+      'You\u2019re in a good starting position. Focus on building foundational policies and staying current as the landscape evolves.'
   } else if (pct <= 55) {
     level = 'MODERATE'
     color = '#fbbf24'
     summary =
-      'You face meaningful compliance obligations across several frameworks. Prioritize documenting your AI practices and assessing high-risk use cases.'
+      'You have some readiness gaps to address. Prioritize documenting your AI practices and reviewing higher-risk use cases.'
   } else if (pct <= 75) {
     level = 'HIGH'
     color = '#fb923c'
     summary =
-      'Your organization has significant regulatory exposure. Immediate action on governance frameworks and compliance documentation is advisable.'
+      'Significant readiness gaps. Governance frameworks and compliance documentation should be near-term priorities.'
   } else {
     level = 'CRITICAL'
     color = '#f87171'
     summary =
-      'Your risk profile indicates substantial, multi-jurisdictional compliance obligations. Comprehensive AI governance should be a top organizational priority.'
+      'Major readiness gaps across multiple areas. Comprehensive AI governance should be a top organizational priority.'
   }
 
   return { pct, level, color, regulations, summary }

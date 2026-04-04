@@ -1,17 +1,17 @@
 const items = [
-  'EU AI Act',
-  'NIST AI RMF',
-  'U.S. State Laws',
-  'Federal Policy',
-  'Sector-Specific Rules',
-  'Global Governance',
+  'AI Readiness',
+  'Guardrails',
+  'Use Cases',
+  'Risk Awareness',
+  'Regulations',
+  'Frameworks',
 ]
 
 export default function TrustStrip() {
   return (
-    <section className="py-6 px-6 border-y border-border/80" aria-label="Frameworks covered">
+    <section className="py-6 px-6 border-y border-border/80" aria-label="Topics covered">
       <div className="max-w-[1100px] mx-auto">
-        {/* Jurisdiction pills */}
+        {/* Topic pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {items.map((item) => (
             <span
@@ -24,11 +24,11 @@ export default function TrustStrip() {
         </div>
         {/* Value props */}
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 font-sans text-[13px] text-secondary/80">
-          <span>Source-Linked Summaries</span>
+          <span>Practical Over Theoretical</span>
           <span className="text-border hidden sm:inline">&middot;</span>
           <span>Plain English, Not Legalese</span>
           <span className="text-border hidden sm:inline">&middot;</span>
-          <span>U.S. and International Coverage</span>
+          <span>Built for Startups &amp; Small Teams</span>
         </div>
       </div>
     </section>

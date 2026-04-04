@@ -1,18 +1,23 @@
-const steps = [
+const themes = [
   {
     num: '01',
-    title: 'Browse Regulations',
-    desc: 'Explore AI laws by framework or jurisdiction. Every summary links back to the actual regulatory text.',
+    title: 'Choose Practical Use Cases',
+    desc: 'Start with AI applications that solve real problems for your business \u2014 not shiny demos.',
   },
   {
     num: '02',
-    title: 'Assess Your Risk',
-    desc: 'Answer 7 questions to see which regulations likely apply to you and where your exposure is highest.',
+    title: 'Set Lightweight Guardrails',
+    desc: 'Put basic policies and guidelines in place before you scale \u2014 they don\u2019t have to be heavy.',
   },
   {
     num: '03',
-    title: 'Get Practical Guidance',
-    desc: 'Understand what each regulation actually requires — who it applies to, what it mandates, and where to find the full text.',
+    title: 'Understand Real Risks',
+    desc: 'Know which regulatory and operational risks actually matter for your situation.',
+  },
+  {
+    num: '04',
+    title: 'Move With Confidence',
+    desc: 'Adopt AI with a clear plan \u2014 not hype, not paralysis.',
   },
 ]
 
@@ -24,29 +29,30 @@ export default function HowItWorks() {
     >
       <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          How It Works
+          Getting Started
         </div>
         <h2
           id="how-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Understand AI Regulation in Three Steps
+          What You Need to Get AI-Ready
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[520px] mx-auto leading-relaxed">
-          Dense regulatory text, turned into guidance you can actually use.
+          Whether you&apos;re adopting AI for the first time or tightening up
+          what you already use.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {steps.map((step) => (
-          <div key={step.num} className="text-center sm:text-left">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {themes.map((theme) => (
+          <div key={theme.num} className="text-center sm:text-left">
             <div className="font-serif text-4xl font-bold text-accent/30 mb-3">
-              {step.num}
+              {theme.num}
             </div>
             <h3 className="font-sans text-lg font-bold text-primary mb-2">
-              {step.title}
+              {theme.title}
             </h3>
             <p className="font-sans text-sm text-secondary leading-relaxed">
-              {step.desc}
+              {theme.desc}
             </p>
           </div>
         ))}

@@ -20,7 +20,7 @@ export default function FAQSection() {
           id="faq-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Common Questions About AI Regulation
+          Common Questions About AI Readiness
         </h2>
       </div>
       <div className="flex flex-col gap-2">

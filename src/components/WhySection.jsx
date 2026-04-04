@@ -1,22 +1,15 @@
-const stats = [
-  { value: '6', label: 'Regulatory Frameworks' },
-  { value: '15', label: 'In-Depth Articles' },
-  { value: '48', label: 'Glossary Terms' },
-  { value: '6', label: 'Frameworks Compared' },
-]
-
 const reasons = [
   {
+    title: 'Built for Real Businesses',
+    desc: 'Not enterprise consultants. Not AI evangelists. Guidance for founders and small teams making real decisions about AI adoption.',
+  },
+  {
     title: 'Plain English',
-    desc: 'Regulatory language translated into clear summaries you can act on \u2014 whether you\u2019re reviewing a framework or explaining obligations to your team.',
+    desc: 'No buzzwords, no jargon walls. If we can\u2019t say it clearly, we won\u2019t say it.',
   },
   {
-    title: 'Source-Linked',
-    desc: 'Every summary traces back to the actual law, rule, or guidance document. Verify anything in one click.',
-  },
-  {
-    title: 'Practice Over Theory',
-    desc: 'Designed for people who need to understand AI regulation in practice \u2014 not decode it.',
+    title: 'Regulation as a Tool, Not a Threat',
+    desc: 'AI rules exist. We help you understand them and use them as guardrails \u2014 not obstacles.',
   },
 ]
 
@@ -34,22 +27,8 @@ export default function WhySection() {
           id="why-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Regulatory Guidance You Can Actually Use
+          Not AI Hype. Not Legalese. Practical Readiness.
         </h2>
-      </div>
-
-      {/* Stats strip */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center py-4">
-            <div className="font-serif text-3xl sm:text-4xl font-bold text-accent mb-1">
-              {stat.value}
-            </div>
-            <div className="font-sans text-sm text-secondary">
-              {stat.label}
-            </div>
-          </div>
-        ))}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

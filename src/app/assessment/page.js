@@ -2,9 +2,9 @@ import AssessmentTool from '@/components/AssessmentTool'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata = {
-  title: 'AI Compliance Risk Assessment',
+  title: 'AI Readiness Assessment',
   description:
-    'Free 7-question assessment to identify which AI regulations may apply to you and where your compliance exposure is highest.',
+    'Free 7-question assessment to see how AI-ready your organization is — including which regulations apply and where to focus first.',
   alternates: {
     canonical: 'https://airegready.com/assessment',
   },

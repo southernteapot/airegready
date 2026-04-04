@@ -1,15 +1,15 @@
 const tools = [
   {
-    title: 'Compliance Tracker',
-    desc: 'Track which regulations apply to you and where you stand on each one.',
+    title: 'Policy & Use Templates',
+    desc: 'Starter documents for acceptable use policies, vendor review checklists, and team AI guidelines.',
   },
   {
-    title: 'Policy Templates',
-    desc: 'Starting points for AI governance policies, acceptable use documents, and risk assessments.',
+    title: 'Implementation Guides',
+    desc: 'Step-by-step guidance for common AI adoption scenarios, from first pilot to scaling.',
   },
   {
     title: 'Regulatory Alerts',
-    desc: 'Get notified when AI regulations change in the jurisdictions you care about.',
+    desc: 'Get notified when AI laws change in the jurisdictions and industries you care about.',
   },
 ]
 
@@ -22,16 +22,17 @@ export default function ToolsTeaser() {
     >
       <div className="text-center mb-12">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          On the Horizon
+          Coming Soon
         </div>
         <h2
           id="tools-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          What&apos;s Coming Next
+          AI Readiness Starter Kit
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Tools we&apos;re building to help you stay on top of AI regulation.
+          Practical tools we&apos;re building for startups and small businesses
+          getting AI-ready.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

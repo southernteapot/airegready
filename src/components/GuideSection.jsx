@@ -9,18 +9,18 @@ export default function GuideSection() {
     >
       <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          Browse by Framework
+          Regulatory Landscape
         </div>
         <h2
           id="guide-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          AI Regulations You Should Know
+          Regulations Worth Knowing About
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[560px] mx-auto leading-relaxed">
-          Each framework summarized in plain English &mdash; what it requires,
-          who it applies to, and what&apos;s changed recently. Every summary
-          links to the source.
+          AI rules are evolving fast. Here&apos;s a plain-English breakdown of
+          the frameworks that matter most &mdash; what they require, who they
+          affect, and where to find the source.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

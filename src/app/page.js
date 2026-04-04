@@ -1,24 +1,24 @@
 import Hero from '@/components/Hero'
 import TrustStrip from '@/components/TrustStrip'
 import HowItWorks from '@/components/HowItWorks'
-import GuideSection from '@/components/GuideSection'
-import AssessmentTool from '@/components/AssessmentTool'
-import BlogSection from '@/components/BlogSection'
 import WhySection from '@/components/WhySection'
 import ResourcesSection from '@/components/ResourcesSection'
-import FAQSection from '@/components/FAQSection'
+import AssessmentTool from '@/components/AssessmentTool'
+import GuideSection from '@/components/GuideSection'
 import ToolsTeaser from '@/components/ToolsTeaser'
+import BlogSection from '@/components/BlogSection'
+import FAQSection from '@/components/FAQSection'
 import Newsletter from '@/components/Newsletter'
 import { FAQ_ITEMS } from '@/lib/data'
 
 export const metadata = {
-  title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+  title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
   description:
-    'Navigate AI regulations with practical guidance, a free risk assessment tool, regulatory comparison tables, a 48-term compliance glossary, and timeline of key deadlines across the EU AI Act, NIST AI RMF, U.S. state AI laws, and global frameworks.',
+    'Practical guidance, lightweight guardrails, and risk-aware frameworks to help founders and small businesses adopt AI with confidence. Free AI readiness assessment, regulatory comparisons, and plain-English guidance on EU AI Act, NIST AI RMF, and U.S. state AI laws.',
   openGraph: {
-    title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
     description:
-      'Free AI compliance tools: risk assessment, regulatory comparison table, glossary of 48 key terms, and deadline timeline. Expert guidance on EU AI Act, NIST AI RMF, and U.S. state AI laws.',
+      'Get AI-ready with practical guidance, a free readiness assessment, regulatory comparisons, and plain-English breakdowns of AI governance frameworks.',
   },
 }
 
@@ -29,7 +29,7 @@ export default function Home() {
     name: 'AIRegReady',
     url: 'https://airegready.com',
     description:
-      'Practical AI regulatory guidance for organizations navigating compliance across jurisdictions.',
+      'Practical AI readiness guidance for founders, startups, and small businesses adopting AI.',
     sameAs: [],
   }
 
@@ -59,13 +59,13 @@ export default function Home() {
       <Hero />
       <TrustStrip />
       <HowItWorks />
-      <GuideSection />
-      <AssessmentTool />
-      <BlogSection />
       <WhySection />
       <ResourcesSection />
-      <FAQSection />
+      <AssessmentTool />
+      <GuideSection />
       <ToolsTeaser />
+      <BlogSection />
+      <FAQSection />
       <Newsletter />
     </>
   )

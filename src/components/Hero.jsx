@@ -10,20 +10,19 @@ export default function Hero() {
       {/* Badge */}
       <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-8 text-[13px] font-semibold text-accent font-sans uppercase tracking-wide relative">
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-[pulse-dot_2s_infinite]" />
-        Tracking AI Laws Across Jurisdictions
+        AI Readiness for Startups &amp; Small Businesses
       </div>
 
       <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-bold text-primary leading-[1.1] max-w-[820px] mb-6 tracking-tight">
-        AI Regulation, Explained{' '}
+        Get AI-Ready &mdash;{' '}
         <span className="bg-gradient-to-br from-accent to-accent-dark bg-clip-text text-transparent">
-          for Real-World Use
+          Without the Hype or the Guesswork
         </span>
       </h1>
 
       <p className="font-sans text-lg sm:text-[19px] text-secondary max-w-[640px] mb-10 leading-relaxed">
-        AI laws and compliance requirements explained in plain English
-        &mdash; so you can understand what applies to you and what to do about
-        it.
+        Practical guidance, lightweight guardrails, and risk-aware frameworks
+        to help founders and small businesses adopt AI with confidence.
       </p>
 
       <div className="flex gap-4 flex-wrap justify-center">
@@ -31,13 +30,13 @@ export default function Hero() {
           href="#assessment"
           className="inline-flex items-center gap-2 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3.5 rounded-lg text-[15px] font-bold font-sans no-underline shadow-[0_4px_24px_rgba(158,122,86,0.18)] hover:shadow-[0_8px_32px_rgba(158,122,86,0.28)] hover:-translate-y-0.5 transition-all"
         >
-          Check Your AI Risk &rarr;
+          Take the AI Readiness Assessment &rarr;
         </a>
         <a
           href="#guide"
           className="inline-flex items-center gap-2 bg-surface border border-border text-primary px-7 py-3.5 rounded-lg text-[15px] font-semibold font-sans no-underline hover:border-accent/50 transition-colors"
         >
-          Browse Regulations
+          Explore Frameworks
         </a>
       </div>
     </section>

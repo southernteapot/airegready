@@ -22,12 +22,14 @@ const dmSans = DM_Sans({
 export const metadata = {
   metadataBase: new URL('https://airegready.com'),
   title: {
-    default: 'AIRegReady — AI Compliance & Regulatory Guidance',
+    default: 'AIRegReady — AI Readiness for Startups & Small Businesses',
     template: '%s | AIRegReady',
   },
   description:
-    'Navigate AI regulations with confidence. Expert guidance on the EU AI Act, NIST AI RMF, U.S. state AI laws, and global AI governance. Free AI compliance risk assessment tool.',
+    'Practical AI readiness guidance for founders and small businesses. Lightweight guardrails, risk-aware frameworks, free readiness assessment, and plain-English regulatory guidance on the EU AI Act, NIST AI RMF, and U.S. state AI laws.',
   keywords: [
+    'AI readiness',
+    'AI for startups',
     'AI compliance',
     'AI regulation',
     'EU AI Act',
@@ -35,10 +37,9 @@ export const metadata = {
     'AI governance',
     'AI risk assessment',
     'AI policy',
-    'artificial intelligence compliance',
-    'AI regulatory framework',
-    'AI risk management',
-    'AI law',
+    'AI adoption',
+    'AI guardrails',
+    'small business AI',
   ],
   authors: [{ name: 'AIRegReady' }],
   creator: 'AIRegReady',
@@ -48,15 +49,15 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://airegready.com',
     siteName: 'AIRegReady',
-    title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
     description:
-      'Navigate AI regulations with confidence. Expert guidance on EU AI Act, NIST AI RMF, state AI laws, and a free risk assessment tool.',
+      'Practical AI readiness guidance, free assessment tool, and plain-English regulatory breakdowns for founders and small businesses.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIRegReady — AI Compliance & Regulatory Guidance',
+    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
     description:
-      'Navigate AI regulations with confidence. Free AI compliance risk assessment tool.',
+      'Get AI-ready with practical guidance, free readiness assessment, and plain-English regulatory breakdowns.',
   },
   robots: {
     index: true,
@@ -105,7 +106,7 @@ export default function RootLayout({ children }) {
               name: 'AIRegReady',
               url: 'https://airegready.com',
               description:
-                'Practical AI regulatory guidance and compliance resources.',
+                'Practical AI readiness guidance for founders, startups, and small businesses.',
             }),
           }}
         />

@@ -3,9 +3,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { FAQ_ITEMS } from '@/lib/data'
 
 export const metadata = {
-  title: 'FAQ — Common Questions About AI Regulation',
+  title: 'FAQ — Common Questions About AI Readiness',
   description:
-    'Answers to common questions about AI compliance, the EU AI Act, U.S. state AI laws, penalties, and where to start with AI governance.',
+    'Answers to common questions about AI readiness, compliance, the EU AI Act, U.S. state AI laws, AI policies, and where to start with AI adoption.',
   alternates: {
     canonical: 'https://airegready.com/faq',
   },
