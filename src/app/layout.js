@@ -1,21 +1,20 @@
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Libre_Baskerville, Inter } from 'next/font/google'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import ReadingProgress from '@/components/ReadingProgress'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const libreBaskerville = Libre_Baskerville({
   subsets: ['latin'],
-  weight: ['700'],
-  variable: '--font-playfair',
+  weight: ['400', '700'],
+  variable: '--font-libre-baskerville',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-dm-sans',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -80,7 +79,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${libreBaskerville.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="7yPLVDgBZG3wROlZt4wxHmVqh4I6KOgJERk-IXgMevM" />
         <script
