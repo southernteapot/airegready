@@ -244,478 +244,387 @@ export const FAQ_ITEMS = [
 export const QUESTIONS = [
   {
     id: 1,
-    text: 'Where are you on the AI adoption journey?',
+    text: 'Which best describes you right now?',
     options: [
-      { label: 'We build or develop AI products or tools', value: 'develop', risk: 3 },
-      { label: 'We use third-party AI tools (ChatGPT, Copilot, etc.)', value: 'deploy', risk: 2 },
-      { label: 'Both \u2014 we build and use AI', value: 'both', risk: 4 },
-      { label: 'Exploring \u2014 researching or planning to adopt AI', value: 'exploring', risk: 1 },
-      { label: 'Individual \u2014 researching AI readiness for personal interest', value: 'individual', risk: 1 },
-      { label: 'Not using AI currently', value: 'none', risk: 0 },
+      { label: 'I\u2019m exploring AI on my own', value: 'solo-exploring' },
+      { label: 'I use AI in freelance, contract, or side-income work', value: 'freelance' },
+      { label: 'I\u2019m part of a small business or team using AI', value: 'small-team' },
+      { label: 'I\u2019m a founder or operator introducing AI into a business', value: 'founder' },
+      { label: 'I\u2019m part of a larger organization working with AI', value: 'larger-org' },
     ],
   },
   {
     id: 2,
-    text: 'What industry do you work in?',
+    text: 'How are you currently using AI?',
     options: [
-      { label: 'Healthcare', value: 'healthcare', risk: 4 },
-      { label: 'Financial services', value: 'finance', risk: 4 },
-      { label: 'Government / public sector', value: 'government', risk: 3 },
-      { label: 'Technology / SaaS', value: 'tech', risk: 2 },
-      { label: 'Education', value: 'education', risk: 2 },
-      { label: 'Other', value: 'other', risk: 1 },
+      { label: 'Not using it yet', value: 'not-using', score: 0 },
+      { label: 'Experimenting occasionally', value: 'experimenting', score: 1 },
+      { label: 'Using it in a few recurring workflows', value: 'recurring', score: 2 },
+      { label: 'Using it regularly across important work', value: 'regular', score: 3 },
+      { label: 'Building AI into products, services, or operations', value: 'building', score: 4 },
     ],
   },
   {
     id: 3,
-    text: 'Will AI influence decisions about people?',
+    text: 'What are you using AI for?',
+    subtitle: 'Select all that apply',
+    multi: true,
     options: [
-      { label: 'Yes \u2014 hiring, lending, insurance, or benefits', value: 'high-impact', risk: 5 },
-      { label: 'Yes \u2014 customer recommendations or personalization', value: 'moderate', risk: 3 },
-      { label: 'No \u2014 internal productivity only', value: 'internal', risk: 1 },
-      { label: 'Not sure yet', value: 'unsure', risk: 3 },
+      { label: 'Writing, summarizing, brainstorming', value: 'writing', sensitivity: 0 },
+      { label: 'Marketing or content production', value: 'marketing', sensitivity: 0 },
+      { label: 'Internal operations or admin work', value: 'internal-ops', sensitivity: 0 },
+      { label: 'Customer support or customer interactions', value: 'customer-support', sensitivity: 2 },
+      { label: 'Software development or product features', value: 'software-dev', sensitivity: 2 },
+      { label: 'Education or training', value: 'education', sensitivity: 2 },
+      { label: 'Hiring or HR decisions', value: 'hiring', sensitivity: 4 },
+      { label: 'Finance, credit, insurance, or pricing', value: 'finance', sensitivity: 4 },
+      { label: 'Healthcare, mental health, or medical contexts', value: 'healthcare', sensitivity: 4 },
+      { label: 'Legal or compliance work', value: 'legal', sensitivity: 4 },
+      { label: 'Still exploring / not using it yet', value: 'exploring', sensitivity: 0 },
     ],
   },
   {
     id: 4,
-    text: 'Do you serve customers in the EU or handle EU personal data?',
+    text: 'Does your AI use involve sensitive or confidential information?',
     options: [
-      { label: 'Yes', value: 'yes', risk: 4 },
-      { label: 'No', value: 'no', risk: 0 },
-      { label: 'Not sure', value: 'unsure', risk: 2 },
+      { label: 'No', value: 'no', score: 0 },
+      { label: 'Maybe / not sure', value: 'maybe', score: 1 },
+      { label: 'Yes, internal business information', value: 'internal', score: 2 },
+      { label: 'Yes, customer/client/personal data', value: 'personal', score: 3 },
+      { label: 'Yes, regulated or highly sensitive data', value: 'regulated', score: 4 },
     ],
   },
   {
     id: 5,
-    text: 'Do you have AI policies, guidelines, or guardrails in place?',
+    text: 'Is AI being used to influence or make decisions about people or important outcomes?',
     options: [
-      { label: 'Yes \u2014 documented and shared with the team', value: 'mature', risk: 0 },
-      { label: 'Partially \u2014 informal practices but nothing written down', value: 'developing', risk: 2 },
-      { label: 'No \u2014 haven\u2019t started on this yet', value: 'none', risk: 4 },
-      { label: 'Not sure what we need', value: 'unsure', risk: 3 },
+      { label: 'No', value: 'no', score: 0 },
+      { label: 'Only for low-stakes internal support', value: 'low-stakes', score: 1 },
+      { label: 'Sometimes, with human review', value: 'with-review', score: 2 },
+      { label: 'Yes, in important decisions or customer-facing workflows', value: 'important', score: 4 },
+      { label: 'Not sure', value: 'unsure', score: 2 },
     ],
   },
   {
     id: 6,
-    text: 'Where do you operate?',
+    text: 'What do you currently have in place for AI use?',
     options: [
-      { label: 'Multiple countries', value: 'international', risk: 4 },
-      { label: 'Multiple U.S. states', value: 'multi-state', risk: 3 },
-      { label: 'Single state only', value: 'single', risk: 1 },
+      { label: 'Nothing formal yet', value: 'nothing', score: 0 },
+      { label: 'Informal common-sense rules only', value: 'informal', score: 1 },
+      { label: 'Basic internal guidelines or policy', value: 'basic', score: 2 },
+      { label: 'Review/approval process for some use cases or tools', value: 'review', score: 3 },
+      { label: 'Clear ownership, policy, and review process', value: 'managed', score: 4 },
     ],
   },
   {
     id: 7,
-    text: 'How is your team using generative AI tools (ChatGPT, Claude, Copilot, etc.)?',
+    text: 'How do you decide which AI tools are okay to use?',
     options: [
-      { label: 'Widely \u2014 approved tools across the organization', value: 'wide', risk: 4 },
-      { label: 'Limited \u2014 pilots or specific team use', value: 'limited', risk: 2 },
-      { label: 'Not yet', value: 'no', risk: 0 },
-      { label: 'Informally \u2014 employees may be using tools without oversight', value: 'shadow', risk: 5 },
+      { label: 'We don\u2019t really have a process', value: 'none', score: 0 },
+      { label: 'People choose tools ad hoc', value: 'ad-hoc', score: 1 },
+      { label: 'We do informal review', value: 'informal-review', score: 2 },
+      { label: 'We usually check privacy/security/terms first', value: 'check-first', score: 3 },
+      { label: 'We have a documented review or approval process', value: 'documented', score: 4 },
+    ],
+  },
+  {
+    id: 8,
+    text: 'What do you most want help with right now?',
+    options: [
+      { label: 'Figuring out where to start', value: 'where-to-start' },
+      { label: 'Using AI more effectively', value: 'more-effective' },
+      { label: 'Setting policies or guardrails', value: 'policies' },
+      { label: 'Understanding risk and compliance', value: 'risk-compliance' },
+      { label: 'Choosing tools and workflows', value: 'tools-workflows' },
+      { label: 'Figuring out what to do next', value: 'what-next' },
     ],
   },
 ]
 
-export function getRiskProfile(answers) {
-  const total = answers.reduce((sum, a) => sum + a.risk, 0)
-  const max = answers.length * 5
-  const pct = Math.round((total / max) * 100)
-
-  const regulations = []
-  const answerMap = {}
-  answers.forEach((a) => (answerMap[a.qId] = a.value))
-
-  if (answerMap[4] === 'yes' || answerMap[6] === 'international')
-    regulations.push('EU AI Act')
-  if (answerMap[3] === 'high-impact')
-    regulations.push('U.S. State AI Laws (CO, IL, TX)')
-  if (answerMap[2] === 'healthcare') regulations.push('HIPAA AI Guidance')
-  if (answerMap[2] === 'finance')
-    regulations.push('FCRA / ECOA / SEC AI Guidance')
-  if (answerMap[2] === 'government')
-    regulations.push('Federal AI Executive Orders & OMB Guidance')
-  regulations.push('NIST AI Risk Management Framework')
-  if (answerMap[7] === 'wide' || answerMap[7] === 'shadow')
-    regulations.push('Generative AI Use Policies')
-
-  let level, color, summary
-  if (pct <= 30) {
-    level = 'LOW'
-    color = '#4ade80'
-    summary =
-      'You\u2019re in a good starting position. Focus on building foundational policies and staying current as the landscape evolves.'
-  } else if (pct <= 55) {
-    level = 'MODERATE'
-    color = '#fbbf24'
-    summary =
-      'You have some readiness gaps to address. Prioritize documenting your AI practices and reviewing higher-risk use cases.'
-  } else if (pct <= 75) {
-    level = 'HIGH'
-    color = '#fb923c'
-    summary =
-      'Significant readiness gaps. Governance frameworks and compliance documentation should be near-term priorities.'
-  } else {
-    level = 'CRITICAL'
-    color = '#f87171'
-    summary =
-      'Major readiness gaps across multiple areas. Comprehensive AI governance should be a top organizational priority.'
-  }
-
-  return { pct, level, color, regulations, summary }
-}
-
 /* ------------------------------------------------------------------ */
-/*  Detailed Report Generator                                         */
+/*  Assessment Scoring & Report Generation                             */
 /* ------------------------------------------------------------------ */
 
-const REGULATION_DETAILS = {
-  'EU AI Act': {
-    slug: 'eu-ai-act',
-    whyApplies: {
-      euData:
-        'You indicated that you process personal data from EU residents. The EU AI Act applies to any AI system whose output affects individuals in the EU, regardless of where the provider is established.',
-      international:
-        'You operate internationally, which likely means your AI systems affect individuals in EU member states. The EU AI Act has extraterritorial reach similar to GDPR.',
-    },
-    actions: [
-      'Classify each AI system by EU AI Act risk tier (unacceptable, high-risk, limited, minimal)',
-      'Review whether any systems fall under Annex III high-risk categories',
-      'Assess General-Purpose AI (GPAI) obligations if you develop or deploy foundation models',
-    ],
-  },
-  'U.S. State AI Laws (CO, IL, TX)': {
-    slug: 'us-state-laws',
-    whyApplies: {
-      default:
-        'Your AI systems make or influence high-impact decisions about people (hiring, lending, insurance, or benefits). Multiple U.S. states now regulate automated decision-making in these areas, including Colorado, Illinois, and Texas.',
-    },
-    actions: [
-      'Audit AI-driven employment and lending decisions for bias and adverse impact',
-      'Implement adverse action notice procedures where AI influences consequential decisions',
-      'Map which state laws apply based on where affected individuals are located',
-    ],
-  },
-  'HIPAA AI Guidance': {
-    slug: 'sector-rules',
-    whyApplies: {
-      default:
-        'You operate in healthcare, where AI systems that process protected health information (PHI) are subject to HIPAA requirements and recent HHS guidance on AI in clinical and administrative settings.',
-    },
-    actions: [
-      'Conduct a HIPAA risk assessment covering all AI systems that touch PHI',
-      'Review AI vendor business associate agreements for AI-specific provisions',
-      'Evaluate FDA Software as a Medical Device (SaMD) classification for clinical AI tools',
-    ],
-  },
-  'FCRA / ECOA / SEC AI Guidance': {
-    slug: 'sector-rules',
-    whyApplies: {
-      default:
-        'You operate in financial services, where AI-driven decisions are subject to FCRA, ECOA, and sector-specific guidance from the SEC, CFPB, and prudential regulators on model risk management.',
-    },
-    actions: [
-      'Review AI lending and credit models for ECOA fair lending compliance and disparate impact',
-      'Implement model risk management practices per SR 11-7 and OCC guidance',
-      'Assess CFPB requirements for algorithmic lending disclosures and adverse action explanations',
-    ],
-  },
-  'Federal AI Executive Orders & OMB Guidance': {
-    slug: 'federal-policy',
-    whyApplies: {
-      default:
-        'You operate in the government or public sector, where federal AI executive orders, OMB memoranda, and agency-specific AI policies create direct compliance obligations for AI procurement, deployment, and oversight.',
-    },
-    actions: [
-      'Review current executive orders on AI and assess which directives apply to your operations',
-      'Ensure AI procurements comply with OMB guidance on responsible AI use in government',
-      'Implement AI impact assessments for public-facing AI systems as required by federal policy',
-    ],
-  },
-  'NIST AI Risk Management Framework': {
-    slug: 'nist-ai-rmf',
-    whyApplies: {
-      default:
-        'The NIST AI RMF is the leading voluntary framework for AI risk management in the United States and is increasingly referenced in regulations, contracts, and procurement requirements. It applies to all organizations using or developing AI.',
-    },
-    actions: [
-      'Map your current AI practices to the NIST AI RMF core functions (Govern, Map, Measure, Manage)',
-      'Identify gaps between your current governance posture and the framework requirements',
-      'Establish AI risk measurement and monitoring processes aligned with NIST guidance',
-    ],
-  },
-  'Generative AI Use Policies': {
-    slug: 'us-state-laws',
-    whyApplies: {
-      wide: 'Generative AI is widely used across your organization, creating risks around data leakage, intellectual property, hallucinated outputs, and unauthorized commitments. Formal policies are essential.',
-      shadow:
-        'You indicated that employees may be using generative AI tools unofficially. Shadow AI usage is one of the most significant and fastest-growing compliance risks, creating uncontrolled data exposure and liability.',
-    },
-    actions: [
-      'Conduct an inventory of all generative AI tools in use, including unofficial employee usage',
-      'Draft and implement an acceptable use policy covering approved tools, prohibited uses, and data handling',
-      'Establish review processes for AI-generated content before external distribution or decision-making',
-    ],
-  },
+function buildAnswerMap(answers) {
+  const map = {}
+  answers.forEach((a) => (map[a.qId] = a.values || a.value))
+  return map
 }
 
-function getRegulationPriority(regName, answerMap) {
-  if (regName === 'EU AI Act') {
-    if (answerMap[4] === 'yes' && answerMap[6] === 'international') return 'High'
-    if (answerMap[4] === 'yes') return 'High'
-    return 'Medium'
-  }
-  if (regName === 'U.S. State AI Laws (CO, IL, TX)') {
-    if (answerMap[3] === 'high-impact' && answerMap[6] === 'multi-state') return 'High'
-    return 'High'
-  }
-  if (regName === 'HIPAA AI Guidance') {
-    if (answerMap[3] === 'high-impact') return 'High'
-    return 'Medium'
-  }
-  if (regName === 'FCRA / ECOA / SEC AI Guidance') {
-    if (answerMap[3] === 'high-impact') return 'High'
-    return 'High'
-  }
-  if (regName === 'Federal AI Executive Orders & OMB Guidance') {
-    return 'Medium'
-  }
-  if (regName === 'Generative AI Use Policies') {
-    if (answerMap[7] === 'shadow') return 'High'
-    return 'Medium'
-  }
-  return 'Low'
+function buildScoreMap(answers) {
+  const map = {}
+  answers.forEach((a) => {
+    if (a.score !== undefined) map[a.qId] = a.score
+  })
+  return map
 }
 
-function getWhyApplies(regName, answerMap) {
-  const detail = REGULATION_DETAILS[regName]
-  if (!detail) return ''
+function calcReadiness(answerMap, scoreMap) {
+  let score = scoreMap[2] || 0
+  const q3 = answerMap[3] || []
+  if (q3.includes('software-dev')) score += 1
+  if (answerMap[5] === 'important') score += 1
+  score = Math.min(score, 5)
 
-  if (regName === 'EU AI Act') {
-    if (answerMap[4] === 'yes') return detail.whyApplies.euData
-    if (answerMap[6] === 'international') return detail.whyApplies.international
-  }
-  if (regName === 'Generative AI Use Policies') {
-    if (answerMap[7] === 'shadow') return detail.whyApplies.shadow
-    if (answerMap[7] === 'wide') return detail.whyApplies.wide
-  }
-  return detail.whyApplies.default || ''
+  let label
+  if (score <= 1) label = 'Exploring'
+  else if (score === 2) label = 'Early Use'
+  else if (score === 3) label = 'Active Adoption'
+  else if (score === 4) label = 'Operationalizing'
+  else label = 'Higher-Impact Use'
+
+  return { score, max: 5, label }
 }
 
-function buildActionPlan(answerMap, pct) {
-  const immediate = []
-  const shortTerm = []
-  const ongoing = []
+function calcGuardrails(scoreMap) {
+  const score = (scoreMap[6] || 0) + (scoreMap[7] || 0)
 
-  // Governance posture actions
-  if (answerMap[5] === 'none' || answerMap[5] === 'unsure') {
-    immediate.push('Establish an AI governance framework with a designated AI risk owner')
-    immediate.push('Draft an internal AI acceptable use policy covering all current AI tools')
-    shortTerm.push('Conduct a formal AI risk assessment across all business units')
-  } else if (answerMap[5] === 'developing') {
-    immediate.push('Document existing informal AI practices into a formal governance policy')
-    shortTerm.push('Assign a dedicated AI compliance lead or working group')
-  }
+  let label
+  if (score <= 1) label = 'Ad Hoc'
+  else if (score <= 3) label = 'Minimal Structure'
+  else if (score <= 5) label = 'Basic Guardrails'
+  else label = 'Managed'
 
-  // Shadow AI actions
-  if (answerMap[7] === 'shadow') {
-    immediate.push('Conduct an emergency AI tool inventory to identify all unofficial AI usage')
-    immediate.push('Issue interim guidance to employees on prohibited AI uses pending formal policy')
-    shortTerm.push('Deploy technical controls to monitor and manage AI tool access')
-  }
-
-  // Wide generative AI use
-  if (answerMap[7] === 'wide') {
-    immediate.push('Review data handling practices for all generative AI tools in use')
-    shortTerm.push('Implement output review processes for AI-generated content used externally')
-    ongoing.push('Maintain an approved AI tools list and review it quarterly')
-  }
-
-  // Healthcare-specific
-  if (answerMap[2] === 'healthcare') {
-    immediate.push('Inventory all AI systems that process or have access to protected health information')
-    shortTerm.push('Review AI vendor contracts for HIPAA business associate agreement coverage')
-    shortTerm.push('Evaluate whether any clinical AI tools require FDA SaMD classification')
-    ongoing.push('Monitor HHS and OCR guidance on AI in healthcare settings')
-  }
-
-  // Finance-specific
-  if (answerMap[2] === 'finance') {
-    immediate.push('Identify all AI models used in lending, underwriting, or credit decisions')
-    shortTerm.push('Conduct a fair lending analysis on AI-driven decision models for ECOA compliance')
-    shortTerm.push('Review model risk management practices against SR 11-7 requirements')
-    ongoing.push('Monitor CFPB enforcement actions and guidance on algorithmic decision-making')
-  }
-
-  // Government-specific
-  if (answerMap[2] === 'government') {
-    shortTerm.push('Map AI procurement and deployment against current federal AI executive orders')
-    shortTerm.push('Implement AI impact assessments for all public-facing AI systems')
-    ongoing.push('Track OMB and agency-specific AI policy updates')
-  }
-
-  // High-impact decisions
-  if (answerMap[3] === 'high-impact') {
-    immediate.push('Identify all AI systems involved in consequential decisions about individuals')
-    shortTerm.push('Implement bias testing and audit procedures for high-impact AI decision systems')
-    shortTerm.push('Establish adverse action notice procedures where AI influences decisions about people')
-    ongoing.push('Conduct periodic disparate impact analyses on AI decision outputs')
-  }
-
-  // EU data processing
-  if (answerMap[4] === 'yes') {
-    immediate.push('Classify all AI systems under the EU AI Act risk tier framework')
-    shortTerm.push('Assess GPAI obligations if you develop, fine-tune, or deploy foundation models')
-    shortTerm.push('Review data governance practices for EU AI Act compliance')
-    ongoing.push('Monitor EU AI Office enforcement guidance and implementing acts')
-  } else if (answerMap[4] === 'unsure') {
-    immediate.push('Determine whether any AI system outputs affect individuals in the EU')
-    shortTerm.push('Conduct a data flow analysis to identify EU personal data processing')
-  }
-
-  // Multi-state operations
-  if (answerMap[6] === 'multi-state') {
-    shortTerm.push('Map applicable state AI laws based on where affected individuals are located')
-    ongoing.push('Track new state AI legislation in jurisdictions where you operate')
-  }
-
-  // International operations
-  if (answerMap[6] === 'international') {
-    shortTerm.push('Conduct a jurisdiction-by-jurisdiction AI regulatory mapping exercise')
-    ongoing.push('Monitor international AI governance developments including ISO/IEC AI standards')
-  }
-
-  // Developer-specific
-  if (answerMap[1] === 'develop' || answerMap[1] === 'both') {
-    shortTerm.push('Implement AI system documentation practices covering design, training data, and testing')
-    ongoing.push('Integrate compliance checkpoints into your AI development lifecycle')
-  }
-
-  // Deployer-specific
-  if (answerMap[1] === 'deploy') {
-    shortTerm.push('Review AI vendor documentation and compliance representations for all third-party tools')
-    ongoing.push('Establish a vendor AI due diligence process for new AI tool procurement')
-  }
-
-  // Universal ongoing items
-  ongoing.push('Subscribe to regulatory updates and review AI compliance posture quarterly')
-  if (pct > 55) {
-    ongoing.push('Consider engaging external counsel for a formal AI compliance program review')
-  }
-
-  return { immediate, shortTerm, ongoing }
+  return { score, max: 8, label }
 }
 
-function getRecommendedReading(answerMap) {
+function calcRisk(scoreMap, guardrailScore) {
+  const useCaseSens = scoreMap[3] || 0
+  const dataSens = scoreMap[4] || 0
+  const decisionImpact = scoreMap[5] || 0
+  let score = useCaseSens + dataSens + decisionImpact
+  if (guardrailScore <= 1 && (dataSens >= 3 || decisionImpact >= 3)) score += 1
+
+  let label
+  if (score <= 2) label = 'Low'
+  else if (score <= 5) label = 'Moderate'
+  else if (score <= 8) label = 'Elevated'
+  else label = 'High'
+
+  return { score, max: 13, label }
+}
+
+function getStandoutItems(readiness, guardrails, risk, answerMap, scoreMap) {
+  const items = []
+  const q3 = answerMap[3] || []
+
+  if (readiness.score >= 3 && guardrails.score <= 2) {
+    items.push('You\u2019re actively using AI, but your guardrails haven\u2019t caught up. Basic policies and review processes would reduce your exposure significantly.')
+  }
+
+  if (readiness.score <= 1 && risk.score <= 2) {
+    items.push('You\u2019re early in AI adoption \u2014 that\u2019s actually an advantage. You have room to set simple habits and boundaries before things get complicated.')
+  }
+
+  if (readiness.score >= 2 && guardrails.score >= 4 && risk.score <= 5) {
+    items.push('You have a reasonable foundation in place. Focus on tightening processes around your highest-impact use cases.')
+  }
+
+  if ((scoreMap[4] || 0) >= 3 && guardrails.score <= 2) {
+    items.push('You\u2019re working with sensitive data but don\u2019t have much structure around AI use. This is your highest-priority gap.')
+  }
+
+  if ((scoreMap[5] || 0) >= 4) {
+    items.push('AI is influencing important decisions or customer-facing workflows. Human review and documentation matter here.')
+  }
+
+  const highSens = q3.filter((v) => ['hiring', 'finance', 'healthcare', 'legal'].includes(v))
+  if (highSens.length >= 2) {
+    items.push('Several of your use cases fall in areas with specific regulatory attention. The frameworks section below is worth reviewing.')
+  } else if (highSens.length === 1) {
+    const labels = { hiring: 'hiring', finance: 'financial services', healthcare: 'healthcare', legal: 'legal work' }
+    items.push('Your use of AI in ' + labels[highSens[0]] + ' puts you in a category with specific regulatory attention.')
+  }
+
+  if ((scoreMap[7] || 0) <= 1 && readiness.score >= 2) {
+    items.push('You don\u2019t have a process for choosing AI tools. As usage grows, this becomes a data security and liability gap.')
+  }
+
+  if (guardrails.score >= 6 && risk.score <= 5) {
+    items.push('Your current guardrails are solid relative to your risk level. Keep building on what you have.')
+  }
+
+  if ((answerMap[1] === 'solo-exploring' || answerMap[1] === 'freelance') && guardrails.score <= 1) {
+    items.push('Even as a solo operator, a few simple rules about what data goes into AI tools and how you review outputs will save you headaches.')
+  }
+
+  return items.slice(0, 5)
+}
+
+function buildActionPlan(readiness, guardrails, risk, answerMap, scoreMap) {
+  const doNow = []
+  const next30 = []
+  const later = []
+  const q3 = answerMap[3] || []
+  const q8 = answerMap[8]
+
+  if (guardrails.score <= 1) {
+    doNow.push('Write down which AI tools you currently use and what you use them for')
+    if ((scoreMap[4] || 0) >= 2) doNow.push('Identify which AI tools have access to sensitive or personal data')
+    next30.push('Draft a simple AI use policy covering approved tools, prohibited uses, and data rules')
+  } else if (guardrails.score <= 3) {
+    doNow.push('Document your current AI tools and what each is used for')
+    next30.push('Formalize your informal guidelines into a written policy')
+  }
+
+  if ((scoreMap[7] || 0) <= 1 && readiness.score >= 1) {
+    next30.push('Review the privacy and security terms of every AI tool you\u2019re currently using')
+  }
+
+  if ((scoreMap[5] || 0) >= 3) {
+    doNow.push('List any AI-influenced decisions that affect people or important outcomes')
+    next30.push('Add human review to your highest-impact AI-influenced workflows')
+  }
+
+  if ((scoreMap[4] || 0) >= 3 && guardrails.score <= 3) {
+    if (!doNow.some((a) => a.includes('sensitive'))) doNow.push('Identify which workflows send sensitive data to AI tools')
+    next30.push('Define clear rules for what data can and cannot go into AI tools')
+  }
+
+  if (q3.includes('hiring')) next30.push('Review AI-assisted hiring processes for bias risk and legal requirements')
+  if (q3.includes('healthcare')) next30.push('Audit AI tools that touch protected health information for HIPAA compliance')
+  if (q3.includes('finance')) next30.push('Review AI-driven financial decisions for fair lending and disclosure requirements')
+
+  if (q8 === 'where-to-start' && !doNow.some((a) => a.includes('Write down'))) {
+    doNow.push('Start with one or two specific use cases rather than trying to do everything at once')
+  }
+  if (q8 === 'policies' && !next30.some((a) => a.includes('policy'))) {
+    next30.push('Create a basic acceptable use document and share it with your team or collaborators')
+  }
+  if (q8 === 'tools-workflows') next30.push('Evaluate your current AI tools against your actual needs \u2014 are you using the right ones?')
+  if (q8 === 'risk-compliance') next30.push('Review the regulatory frameworks flagged in this assessment for relevance to your situation')
+
+  later.push('Reassess your AI readiness as your usage changes or expands')
+  if (risk.score >= 6) later.push('Consider a more formal AI governance review as your risk profile grows')
+  if (guardrails.score <= 3 && readiness.score >= 3) later.push('As AI becomes more central to your work, assign clear ownership for AI policy decisions')
+
+  return { doNow, next30, later }
+}
+
+function getApplicableFrameworks(answerMap, scoreMap, readiness, guardrails, risk) {
+  const frameworks = []
+  const q3 = answerMap[3] || []
+
+  if (readiness.score >= 2 || guardrails.score >= 2) {
+    frameworks.push({
+      name: 'NIST AI Risk Management Framework',
+      slug: 'nist-ai-rmf',
+      why: 'The most widely referenced AI governance framework in the U.S. Useful for structuring how you think about AI risks, even informally.',
+      priority: guardrails.score <= 3 ? 'Worth reviewing' : 'Good reference',
+    })
+  }
+
+  const hasHighSens = q3.some((v) => ['hiring', 'finance', 'healthcare', 'legal'].includes(v))
+  if (hasHighSens || q3.includes('software-dev') || risk.score >= 6) {
+    frameworks.push({
+      name: 'EU AI Act',
+      slug: 'eu-ai-act',
+      why: 'Worth watching if you serve EU users, operate in Europe, or build higher-risk AI use cases. The EU AI Act has extraterritorial reach.',
+      priority: hasHighSens ? 'Worth watching' : 'On your radar',
+    })
+  }
+
+  if (q3.includes('hiring') || q3.includes('customer-support') || (scoreMap[5] || 0) >= 2) {
+    frameworks.push({
+      name: 'U.S. State AI Laws',
+      slug: 'us-state-laws',
+      why: 'Multiple states now regulate AI in hiring, consumer interactions, and automated decisions about people.',
+      priority: q3.includes('hiring') ? 'Worth reviewing' : 'Worth watching',
+    })
+  }
+
+  if (q3.includes('healthcare')) {
+    frameworks.push({
+      name: 'Healthcare AI Rules (HIPAA, FDA)',
+      slug: 'sector-rules',
+      why: 'HIPAA, FDA, and HHS guidance apply when AI touches protected health information or clinical decisions.',
+      priority: 'Worth reviewing',
+    })
+  }
+  if (q3.includes('finance')) {
+    frameworks.push({
+      name: 'Financial Services AI Rules (FCRA, ECOA)',
+      slug: 'sector-rules',
+      why: 'FCRA, ECOA, and financial regulators have specific requirements for AI in lending, credit, insurance, and trading.',
+      priority: 'Worth reviewing',
+    })
+  }
+  if (q3.includes('legal')) {
+    frameworks.push({
+      name: 'Legal & Compliance AI Considerations',
+      slug: 'sector-rules',
+      why: 'Using AI in legal work raises questions about confidentiality, accuracy obligations, and unauthorized practice.',
+      priority: 'Worth watching',
+    })
+  }
+
+  if (answerMap[1] === 'larger-org' || (scoreMap[5] || 0) >= 4) {
+    frameworks.push({
+      name: 'Federal AI Policy & Executive Orders',
+      slug: 'federal-policy',
+      why: 'Relevant for larger organizations, government-adjacent work, or contexts with federal procurement requirements.',
+      priority: 'On your radar',
+    })
+  }
+
+  return frameworks
+}
+
+function getRecommendedReading(readiness, guardrails, risk, answerMap, scoreMap) {
   const readings = []
+  const q3 = answerMap[3] || []
 
-  if (answerMap[4] === 'yes' || answerMap[6] === 'international') {
-    readings.push({
-      title: 'The EU AI Act Risk Classification: What You Actually Need to Know',
-      href: '/blog/eu-ai-act-risk-classification',
-      reason: 'Understand how the EU AI Act categorizes AI systems by risk level',
-    })
-    readings.push({
-      title: 'EU AI Act Compliance Checklist: What to Do Before August 2026',
-      href: '/blog/eu-ai-act-compliance-checklist',
-      reason: 'A phased checklist for meeting the upcoming high-risk compliance deadline',
-    })
+  if (q3.some((v) => ['hiring', 'finance', 'healthcare', 'legal'].includes(v))) {
+    readings.push({ title: 'The EU AI Act Risk Classification: What You Actually Need to Know', href: '/blog/eu-ai-act-risk-classification', reason: 'How AI systems are categorized by risk level' })
   }
-
-  if (answerMap[3] === 'high-impact') {
-    readings.push({
-      title: '5 U.S. States Now Regulate AI in Hiring — Is Yours Next?',
-      href: '/blog/us-states-ai-hiring',
-      reason: 'Learn which state laws govern automated employment decisions',
-    })
+  if (q3.includes('hiring')) {
+    readings.push({ title: '5 U.S. States Now Regulate AI in Hiring \u2014 Is Yours Next?', href: '/blog/us-states-ai-hiring', reason: 'State laws governing automated employment decisions' })
   }
-
-  if (answerMap[7] === 'shadow' || answerMap[7] === 'wide') {
-    readings.push({
-      title: 'Shadow AI Is Your Biggest Compliance Risk (And How to Fix It)',
-      href: '/blog/shadow-ai-compliance',
-      reason: 'Practical steps to manage unofficial AI usage in your organization',
-    })
+  if (guardrails.score <= 2 && readiness.score >= 2) {
+    readings.push({ title: 'AI Compliance for Startups: Where to Start When Resources Are Limited', href: '/blog/ai-compliance-startups', reason: 'Practical first steps when you don\u2019t have a big team' })
   }
-
-  if (answerMap[5] === 'none' || answerMap[5] === 'unsure' || answerMap[5] === 'developing') {
-    readings.push({
-      title: 'NIST AI RMF in Practice: From Framework to Action Plan',
-      href: '/blog/nist-ai-rmf-practice',
-      reason: 'Step-by-step guide to implementing the AI risk management framework',
-    })
+  if (guardrails.score <= 3) {
+    readings.push({ title: 'NIST AI RMF in Practice: From Framework to Action Plan', href: '/blog/nist-ai-rmf-practice', reason: 'A practical guide to implementing AI risk management' })
   }
-
-  if (answerMap[1] === 'deploy' || answerMap[1] === 'both') {
-    readings.push({
-      title: 'AI Vendor Due Diligence: 10 Questions to Ask Before You Buy',
-      href: '/blog/ai-vendor-due-diligence',
-      reason: 'Essential questions for evaluating AI vendor compliance posture',
-    })
+  if ((scoreMap[7] || 0) <= 1) {
+    readings.push({ title: 'AI Vendor Due Diligence: 10 Questions to Ask Before You Buy', href: '/blog/ai-vendor-due-diligence', reason: 'Key questions for evaluating AI tools' })
+  }
+  if (readiness.score >= 3) {
+    readings.push({ title: 'Building an AI Risk Management Program: A Practical Template', href: '/blog/ai-risk-management-program', reason: 'A structured approach as AI use scales' })
   }
 
   if (readings.length < 3) {
     const fallbacks = [
-      {
-        title: 'Building an AI Risk Management Program: A Practical Template',
-        href: '/blog/ai-risk-management-program',
-        reason: 'A four-phase approach to building a formal AI risk management program',
-      },
-      {
-        title: 'AI Compliance for Startups: Where to Start When Resources Are Limited',
-        href: '/blog/ai-compliance-startups',
-        reason: 'Minimum viable AI compliance when you have limited resources',
-      },
-      {
-        title: 'The GPAI Code of Practice: What AI Model Providers Need to Know',
-        href: '/blog/gpai-code-of-practice',
-        reason: 'Key obligations for general-purpose AI model providers under the EU AI Act',
-      },
+      { title: 'Shadow AI Is Your Biggest Compliance Risk (And How to Fix It)', href: '/blog/shadow-ai-compliance', reason: 'Managing unofficial AI usage' },
+      { title: 'When AI Goes Wrong: Building an AI Incident Response Plan', href: '/blog/ai-incident-response', reason: 'Planning for AI failures and problems' },
     ]
     for (const fb of fallbacks) {
       if (readings.length >= 4) break
-      if (!readings.some((r) => r.href === fb.href)) {
-        readings.push(fb)
-      }
+      if (!readings.some((r) => r.href === fb.href)) readings.push(fb)
     }
   }
 
-  return readings.slice(0, 4)
+  const seen = new Set()
+  return readings.filter((r) => { if (seen.has(r.href)) return false; seen.add(r.href); return true }).slice(0, 4)
 }
 
-export function getDetailedReport(answers) {
-  const profile = getRiskProfile(answers)
-  const answerMap = {}
-  answers.forEach((a) => (answerMap[a.qId] = a.value))
+export function getAssessmentReport(answers) {
+  const answerMap = buildAnswerMap(answers)
+  const scoreMap = buildScoreMap(answers)
 
-  // Build detailed regulation cards
-  const regulationCards = profile.regulations.map((regName) => {
-    const detail = REGULATION_DETAILS[regName]
-    return {
-      name: regName,
-      slug: detail ? detail.slug : null,
-      whyApplies: getWhyApplies(regName, answerMap),
-      priority: getRegulationPriority(regName, answerMap),
-      actions: detail ? detail.actions : [],
-    }
-  })
-
-  // Sort: High priority first, then Medium, then Low
-  const priorityOrder = { High: 0, Medium: 1, Low: 2 }
-  regulationCards.sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority])
-
-  const actionPlan = buildActionPlan(answerMap, profile.pct)
-  const recommendedReading = getRecommendedReading(answerMap)
+  const readiness = calcReadiness(answerMap, scoreMap)
+  const guardrails = calcGuardrails(scoreMap)
+  const risk = calcRisk(scoreMap, guardrails.score)
 
   return {
-    ...profile,
-    regulationCards,
-    actionPlan,
-    recommendedReading,
+    readiness,
+    guardrails,
+    risk,
+    standout: getStandoutItems(readiness, guardrails, risk, answerMap, scoreMap),
+    actionPlan: buildActionPlan(readiness, guardrails, risk, answerMap, scoreMap),
+    frameworks: getApplicableFrameworks(answerMap, scoreMap, readiness, guardrails, risk),
+    recommendedReading: getRecommendedReading(readiness, guardrails, risk, answerMap, scoreMap),
     answerMap,
-    generatedAt: new Date().toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }),
+    generatedAt: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
   }
 }
