@@ -22,14 +22,15 @@ const dmSans = DM_Sans({
 export const metadata = {
   metadataBase: new URL('https://airegready.com'),
   title: {
-    default: 'AIRegReady — AI Readiness for Startups & Small Businesses',
+    default: 'AIRegReady — AI Resources for Businesses',
     template: '%s | AIRegReady',
   },
   description:
-    'Practical AI readiness guidance for founders and small businesses. Lightweight guardrails, risk-aware frameworks, free readiness assessment, and plain-English regulatory guidance on the EU AI Act, NIST AI RMF, and U.S. state AI laws.',
+    'Frameworks, assessments, and plain-English information for businesses using AI. Free readiness assessment, regulatory comparisons, checklists, and templates covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
   keywords: [
+    'AI resources',
+    'AI for business',
     'AI readiness',
-    'AI for startups',
     'AI compliance',
     'AI regulation',
     'EU AI Act',
@@ -38,8 +39,7 @@ export const metadata = {
     'AI risk assessment',
     'AI policy',
     'AI adoption',
-    'AI guardrails',
-    'small business AI',
+    'AI frameworks',
   ],
   authors: [{ name: 'AIRegReady' }],
   creator: 'AIRegReady',
@@ -49,15 +49,15 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://airegready.com',
     siteName: 'AIRegReady',
-    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
+    title: 'AIRegReady — AI Resources for Businesses',
     description:
-      'Practical AI readiness guidance, free assessment tool, and plain-English regulatory breakdowns for founders and small businesses.',
+      'Frameworks, assessments, and plain-English information for businesses using AI. Free tools and regulatory breakdowns.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
+    title: 'AIRegReady — AI Resources for Businesses',
     description:
-      'Get AI-ready with practical guidance, free readiness assessment, and plain-English regulatory breakdowns.',
+      'Frameworks, assessments, and plain-English AI information. Free readiness tools and regulatory breakdowns.',
   },
   robots: {
     index: true,

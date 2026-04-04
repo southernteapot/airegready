@@ -1,10 +1,10 @@
 const items = [
-  'AI Readiness',
-  'Guardrails',
-  'Use Cases',
-  'Risk Awareness',
-  'Regulations',
   'Frameworks',
+  'Assessments',
+  'Regulations',
+  'Checklists',
+  'Templates',
+  'Plain-English Guides',
 ]
 
 export default function TrustStrip() {
@@ -28,7 +28,7 @@ export default function TrustStrip() {
           <span className="text-border hidden sm:inline">&middot;</span>
           <span>Plain English, Not Legalese</span>
           <span className="text-border hidden sm:inline">&middot;</span>
-          <span>Built for Startups &amp; Small Teams</span>
+          <span>Free &amp; Open Access</span>
         </div>
       </div>
     </section>

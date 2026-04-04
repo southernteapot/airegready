@@ -1,15 +1,15 @@
 const reasons = [
   {
     title: 'Built for Real Businesses',
-    desc: 'Not enterprise consultants. Not AI evangelists. Guidance for founders and small teams making real decisions about AI adoption.',
+    desc: 'Not enterprise consultants. Not AI evangelists. Information for businesses and teams making real decisions about AI.',
   },
   {
     title: 'Plain English',
     desc: 'No buzzwords, no jargon walls. If we can\u2019t say it clearly, we won\u2019t say it.',
   },
   {
-    title: 'Regulation as a Tool, Not a Threat',
-    desc: 'AI rules exist. We help you understand them and use them as guardrails \u2014 not obstacles.',
+    title: 'Regulation as Context, Not the Whole Story',
+    desc: 'AI rules matter. We cover them in plain English alongside the practical information you actually need.',
   },
 ]
 
@@ -27,7 +27,7 @@ export default function WhySection() {
           id="why-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Not AI Hype. Not Legalese. Practical Readiness.
+          Not AI Hype. Not Legalese. Just Practical Information.
         </h2>
       </div>
 

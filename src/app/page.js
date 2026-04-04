@@ -12,13 +12,13 @@ import Newsletter from '@/components/Newsletter'
 import { FAQ_ITEMS } from '@/lib/data'
 
 export const metadata = {
-  title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
+  title: 'AIRegReady — AI Resources for Businesses',
   description:
-    'Practical guidance, lightweight guardrails, and risk-aware frameworks to help founders and small businesses adopt AI with confidence. Free AI readiness assessment, regulatory comparisons, and plain-English guidance on EU AI Act, NIST AI RMF, and U.S. state AI laws.',
+    'Frameworks, assessments, and plain-English information for businesses using AI. Free readiness assessment, regulatory comparisons, and practical resources covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
   openGraph: {
-    title: 'AIRegReady — AI Readiness for Startups & Small Businesses',
+    title: 'AIRegReady — AI Resources for Businesses',
     description:
-      'Get AI-ready with practical guidance, a free readiness assessment, regulatory comparisons, and plain-English breakdowns of AI governance frameworks.',
+      'Frameworks, assessments, and plain-English AI information. Free readiness tools, regulatory comparisons, and practical resources.',
   },
 }
 
@@ -29,7 +29,7 @@ export default function Home() {
     name: 'AIRegReady',
     url: 'https://airegready.com',
     description:
-      'Practical AI readiness guidance for founders, startups, and small businesses adopting AI.',
+      'AI resources, frameworks, and plain-English information for businesses adopting AI.',
     sameAs: [],
   }
 

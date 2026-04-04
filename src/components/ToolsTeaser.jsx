@@ -28,11 +28,10 @@ export default function ToolsTeaser() {
           id="tools-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          AI Readiness Starter Kit
+          More Resources on the Way
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Practical tools we&apos;re building for startups and small businesses
-          getting AI-ready.
+          Practical tools and resources we&apos;re building next.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -108,11 +108,11 @@ export default function Newsletter() {
           id="newsletter-heading"
           className="font-serif text-2xl sm:text-[30px] font-bold text-primary mb-3"
         >
-          Stay Ahead on AI Readiness
+          Get Updates
         </h2>
         <p className="font-sans text-[15px] text-secondary leading-relaxed mb-7">
-          Weekly updates on AI adoption, governance, and the regulatory
-          developments that matter &mdash; in plain English.
+          New resources, AI regulation updates, and practical information
+          &mdash; delivered weekly in plain English.
         </p>
 
         {status === 'success' ? (

@@ -1,19 +1,29 @@
 # AIRegReady.com
 
 ## What This Is
-AIRegReady is an AI compliance resource website. It provides expert regulatory guidance, a free interactive risk assessment tool, and (eventually) paid compliance tracking tools. The domain is airegready.com, hosted on Cloudflare.
+AIRegReady is an AI resource hub for businesses. It provides frameworks, assessments, plain-English regulatory breakdowns, and practical information for startups, small businesses, and anyone using AI in the real world. The domain is airegready.com, hosted on Cloudflare.
+
+## Positioning
+- **Informational resource hub first** — not a sales funnel, not a compliance-only tracker, not an AI hype site
+- **Broad audience** — businesses adopting AI, startups, small businesses, teams, individuals
+- **Regulation is a supporting pillar**, not the whole identity
+- **Tone**: calm, trustworthy, plain English, anti-hype, practical, informational
+- **Avoid**: consultant-y language, legalese, buzzwords, aggressive sales copy, generic futurist language, enterprise-consulting bloat
 
 ## Current Phase
-Phase 1 — content site with a free risk assessment tool. No paid features yet. This is a side project.
+Phase 1 — free informational resource site with assessments, regulatory guides, and blog content. No paid features yet. This is a side project.
 
 ## Site Structure
-- **Hero section** — value proposition, CTAs to risk assessment and guide
-- **Compliance Guide** — covers 6 regulatory frameworks: EU AI Act, NIST AI RMF, U.S. State AI Laws, Executive Orders & Federal Policy, Sector-Specific Rules, Global AI Governance
-- **AI Compliance Risk Assessment** — interactive 7-question tool that calculates risk level (Low/Moderate/High/Critical) and identifies applicable regulations
-- **Blog / Insights** — articles analyzing AI regulations, enforcement trends, compliance strategies
-- **FAQ** — common questions about AI compliance (accordion-style)
-- **Tools teaser** — previews of future paid tools: Compliance Tracker, Policy Generator, Regulatory Alerts
-- **Newsletter signup** — email capture for weekly AI compliance updates
+- **Hero** — "Resources for Businesses Using AI" with CTAs to assessment and resource library
+- **Orientation section** — what the site covers (use cases, guardrails, risks, next steps)
+- **Differentiation** — not hype, not legalese, practical information
+- **Resource library** — 4 pillars: Frameworks, Checklists (coming soon), Templates (coming soon), Regulations
+- **AI Readiness Assessment** — interactive 7-question tool covering both readiness and regulatory exposure
+- **Regulatory landscape** — 6 frameworks: EU AI Act, NIST AI RMF, U.S. State AI Laws, Executive Orders & Federal Policy, Sector-Specific Rules, Global AI Governance
+- **Blog / guidance** — articles on AI adoption, governance, and regulatory developments
+- **FAQ** — common questions about AI readiness and regulation (accordion-style)
+- **Tools teaser** — previews of future resources: templates, implementation guides, regulatory alerts
+- **Newsletter** — weekly updates on AI resources and regulatory developments
 - **Footer** — includes legal disclaimer: "Content is educational and does not constitute legal advice"
 
 ## Design System
@@ -36,13 +46,14 @@ Phase 1 — content site with a free risk assessment tool. No paid features yet.
 ## Privacy & Branding Notes
 - Do NOT include any personal name or attorney references on the site
 - WHOIS privacy is enabled on Cloudflare
-- Keep all copy neutral — "expert guidance" not "from an attorney"
+- Keep all copy neutral — "expert information" not "from an attorney"
 - Always include the legal disclaimer that content is not legal advice
 
 ## Future Roadmap
-- Phase 2: Compliance dashboard for companies to track AI systems and obligations
-- Phase 3: Semi-automated compliance workflows using AI
-- Phase 4 (moonshot): Autonomous Compliance Officer — AI agent that continuously monitors and manages compliance
+- Phase 2: Downloadable checklists, templates, and policy starter packs
+- Phase 3: Compliance dashboard for companies to track AI systems and obligations
+- Phase 4: Semi-automated compliance workflows using AI
+- Phase 5 (moonshot): Autonomous Compliance Officer — AI agent that continuously monitors and manages compliance
 - Privacy-first architecture: sensitive customer data never leaves their environment
 
 ## Related Projects

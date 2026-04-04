@@ -1,23 +1,23 @@
 const themes = [
   {
     num: '01',
-    title: 'Choose Practical Use Cases',
-    desc: 'Start with AI applications that solve real problems for your business \u2014 not shiny demos.',
+    title: 'Practical Use Cases',
+    desc: 'Information on AI applications that solve real problems \u2014 not shiny demos.',
   },
   {
     num: '02',
-    title: 'Set Lightweight Guardrails',
-    desc: 'Put basic policies and guidelines in place before you scale \u2014 they don\u2019t have to be heavy.',
+    title: 'Lightweight Guardrails',
+    desc: 'Frameworks and templates for putting basic AI policies in place without the overhead.',
   },
   {
     num: '03',
-    title: 'Understand Real Risks',
-    desc: 'Know which regulatory and operational risks actually matter for your situation.',
+    title: 'Real Risks',
+    desc: 'Plain-English breakdowns of the regulatory and operational risks that actually matter.',
   },
   {
     num: '04',
-    title: 'Move With Confidence',
-    desc: 'Adopt AI with a clear plan \u2014 not hype, not paralysis.',
+    title: 'Clear Next Steps',
+    desc: 'Assessments and checklists to figure out where you stand and what to focus on first.',
   },
 ]
 
@@ -29,17 +29,17 @@ export default function HowItWorks() {
     >
       <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          Getting Started
+          What This Site Covers
         </div>
         <h2
           id="how-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          What You Need to Get AI-Ready
+          Getting Oriented on AI
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[520px] mx-auto leading-relaxed">
-          Whether you&apos;re adopting AI for the first time or tightening up
-          what you already use.
+          Whether you&apos;re adopting AI for the first time or reviewing what
+          you already have in place.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -27,22 +27,23 @@ const cardClasses =
 export default function ResourcesSection() {
   return (
     <section
+      id="resources"
       className="py-20 px-6 max-w-[1100px] mx-auto"
       aria-labelledby="resources-heading"
     >
       <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          Explore by Topic
+          Resource Library
         </div>
         <h2
           id="resources-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          Pick What&apos;s Most Useful to You
+          Browse by Topic
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[560px] mx-auto leading-relaxed">
-          Whether you need frameworks, templates, or regulatory guidance
-          &mdash; start where it matters most.
+          Frameworks, templates, regulations, and checklists &mdash; all in
+          plain English, all free.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
