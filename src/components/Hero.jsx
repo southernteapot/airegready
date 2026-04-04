@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(158,122,86,0.07)_0%,transparent_70%)] pointer-events-none" />
 
-      <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-bold text-primary leading-[1.1] max-w-[820px] mb-6 tracking-tight">
+      <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-bold text-primary leading-[1.1] mb-6 tracking-tight">
         AI Resources for{' '}
         <span className="bg-gradient-to-br from-accent to-accent-dark bg-clip-text text-transparent">
           Real-World Use
