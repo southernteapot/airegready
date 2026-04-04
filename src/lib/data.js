@@ -205,7 +205,7 @@ export const BLOG_POSTS = [
 export const FAQ_ITEMS = [
   {
     q: 'What does "AI readiness" actually mean?',
-    a: 'AI readiness means knowing how your organization uses AI, what risks that creates, and what guardrails you need in place. It covers practical concerns \u2014 like choosing the right tools, setting policies for your team, and understanding which regulations apply \u2014 not just theoretical frameworks. If you\u2019re using AI or planning to, readiness is about being intentional rather than reactive.',
+    a: 'AI readiness means knowing how you use AI, what risks that creates, and what guardrails you need in place. It covers practical concerns \u2014 like choosing the right tools, setting policies, and understanding which regulations apply \u2014 not just theoretical frameworks. If you\u2019re using AI or planning to, readiness is about being intentional rather than reactive.',
   },
   {
     q: 'Who needs to think about AI readiness?',
@@ -221,7 +221,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Where should we start with AI?',
-    a: 'Start with an inventory: what AI tools does your organization use, what data do they process, and what decisions do they influence? From there, put a basic acceptable use policy in place and identify the regulations that apply to your industry and geography. Our free AI Readiness Assessment above gives you a quick starting point.',
+    a: 'Start with an inventory: what AI tools do you use, what data do they process, and what decisions do they influence? From there, put a basic acceptable use policy in place and identify the regulations that apply to your industry and geography. Our free AI Readiness Assessment above gives you a quick starting point.',
   },
   {
     q: 'We\u2019re a small team \u2014 do we really need AI policies?',
@@ -244,7 +244,7 @@ export const FAQ_ITEMS = [
 export const QUESTIONS = [
   {
     id: 1,
-    text: 'Where is your organization on the AI adoption journey?',
+    text: 'Where are you on the AI adoption journey?',
     options: [
       { label: 'We build or develop AI products or tools', value: 'develop', risk: 3 },
       { label: 'We use third-party AI tools (ChatGPT, Copilot, etc.)', value: 'deploy', risk: 2 },
@@ -256,7 +256,7 @@ export const QUESTIONS = [
   },
   {
     id: 2,
-    text: 'What industry does your organization operate in?',
+    text: 'What industry do you work in?',
     options: [
       { label: 'Healthcare', value: 'healthcare', risk: 4 },
       { label: 'Financial services', value: 'finance', risk: 4 },
@@ -268,7 +268,7 @@ export const QUESTIONS = [
   },
   {
     id: 3,
-    text: 'Will AI influence decisions about people in your organization?',
+    text: 'Will AI influence decisions about people?',
     options: [
       { label: 'Yes \u2014 hiring, lending, insurance, or benefits', value: 'high-impact', risk: 5 },
       { label: 'Yes \u2014 customer recommendations or personalization', value: 'moderate', risk: 3 },
@@ -297,7 +297,7 @@ export const QUESTIONS = [
   },
   {
     id: 6,
-    text: 'Where does your organization operate?',
+    text: 'Where do you operate?',
     options: [
       { label: 'Multiple countries', value: 'international', risk: 4 },
       { label: 'Multiple U.S. states', value: 'multi-state', risk: 3 },

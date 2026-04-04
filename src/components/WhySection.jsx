@@ -1,7 +1,7 @@
 const reasons = [
   {
-    title: 'Built for Real Businesses',
-    desc: 'Not enterprise consultants. Not AI evangelists. Information for businesses and teams making real decisions about AI.',
+    title: 'Built for Real Use',
+    desc: 'Not enterprise consultants. Not AI evangelists. Information for people and teams making real decisions about AI.',
   },
   {
     title: 'Plain English',

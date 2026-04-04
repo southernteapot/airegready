@@ -22,7 +22,7 @@ export default function BlogSection() {
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
           Practical breakdowns of AI adoption, governance, regulatory
-          developments, and what they mean for your business.
+          developments, and what they mean for you.
         </p>
       </div>
 

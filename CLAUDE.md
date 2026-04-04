@@ -14,7 +14,7 @@ AIRegReady is an AI resource hub for businesses. It provides frameworks, assessm
 Phase 1 — free informational resource site with assessments, regulatory guides, and blog content. No paid features yet. This is a side project.
 
 ## Site Structure
-- **Hero** — "Resources for Businesses Using AI" with CTAs to assessment and resource library
+- **Hero** — "AI Resources for Real-World Use" with CTAs to assessment and resource library
 - **Orientation section** — what the site covers (use cases, guardrails, risks, next steps)
 - **Differentiation** — not hype, not legalese, practical information
 - **Resource library** — 4 pillars: Frameworks, Checklists (coming soon), Templates (coming soon), Regulations

@@ -478,7 +478,7 @@ export default function AssessmentTool() {
           id="assessment-heading"
           className="font-serif text-3xl sm:text-4xl font-bold text-primary"
         >
-          How AI-Ready Is Your Organization?
+          How AI-Ready Are You?
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
           7 questions. 2 minutes. See where you stand &mdash; including which

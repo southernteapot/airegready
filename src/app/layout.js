@@ -22,11 +22,11 @@ const dmSans = DM_Sans({
 export const metadata = {
   metadataBase: new URL('https://airegready.com'),
   title: {
-    default: 'AIRegReady — AI Resources for Businesses',
+    default: 'AIRegReady — AI Resources for Real-World Use',
     template: '%s | AIRegReady',
   },
   description:
-    'Frameworks, assessments, and plain-English information for businesses using AI. Free readiness assessment, regulatory comparisons, checklists, and templates covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
+    'Frameworks, assessments, and plain-English AI information for real-world use. Free readiness assessment, regulatory comparisons, checklists, and templates covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
   keywords: [
     'AI resources',
     'AI for business',
@@ -49,13 +49,13 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://airegready.com',
     siteName: 'AIRegReady',
-    title: 'AIRegReady — AI Resources for Businesses',
+    title: 'AIRegReady — AI Resources for Real-World Use',
     description:
-      'Frameworks, assessments, and plain-English information for businesses using AI. Free tools and regulatory breakdowns.',
+      'Frameworks, assessments, and plain-English AI information. Free tools and regulatory breakdowns.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIRegReady — AI Resources for Businesses',
+    title: 'AIRegReady — AI Resources for Real-World Use',
     description:
       'Frameworks, assessments, and plain-English AI information. Free readiness tools and regulatory breakdowns.',
   },
