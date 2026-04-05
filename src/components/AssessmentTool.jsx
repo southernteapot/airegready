@@ -372,6 +372,37 @@ function ReportResults({ result, onReset }) {
         </button>
       </div>
 
+      {/* Next steps */}
+      <div className="mt-8 pt-8 border-t border-border/60 print:hidden">
+        <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+          Keep Going
+        </h3>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/checklist"
+            className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
+          >
+            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+              AI Readiness Checklist
+            </div>
+            <p className="font-sans text-xs text-secondary">
+              Work through a practical checklist based on what this assessment flagged
+            </p>
+          </Link>
+          <Link
+            href="/blog/minimum-viable-guardrails"
+            className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
+          >
+            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+              Minimum Viable AI Guardrails
+            </div>
+            <p className="font-sans text-xs text-secondary">
+              Five guardrails you can put in place in an afternoon
+            </p>
+          </Link>
+        </div>
+      </div>
+
       {/* Print-only footer */}
       <div className="hidden print:block mt-8 pt-4 border-t border-border">
         <p className="font-sans text-xs text-secondary">

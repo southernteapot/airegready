@@ -7,7 +7,7 @@ const resources = [
   {
     title: 'Checklists',
     desc: 'Step-by-step checklists for AI adoption, governance, and vendor review',
-    href: null,
+    href: '/checklist',
   },
   {
     title: 'Templates',

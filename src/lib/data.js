@@ -200,6 +200,46 @@ export const BLOG_POSTS = [
       'The first international AI management system standard. What certification involves, how it maps to the EU AI Act and NIST, and whether it\u2019s worth it.',
     featured: false,
   },
+  {
+    slug: 'ai-use-policy-starter',
+    title: 'What to Put in an AI Use Policy (Even If It\u2019s Just One Page)',
+    category: 'Practical Guide',
+    date: 'Apr 2026',
+    readTime: '7 min read',
+    excerpt:
+      'A practical guide to writing your first AI use policy. Covers what to include, what to skip, and how to make it something people actually read.',
+    featured: false,
+  },
+  {
+    slug: 'evaluating-ai-tools',
+    title: 'How to Evaluate an AI Tool Before You Commit',
+    category: 'Practical Guide',
+    date: 'Apr 2026',
+    readTime: '6 min read',
+    excerpt:
+      'A practical framework for deciding whether an AI tool is worth using. Covers privacy, security, cost, and the questions most people forget to ask.',
+    featured: false,
+  },
+  {
+    slug: 'ai-side-projects',
+    title: 'AI for Side Projects: Where to Start Without Overthinking It',
+    category: 'Practical Guide',
+    date: 'Apr 2026',
+    readTime: '4 min read',
+    excerpt:
+      'A short guide for solo operators, freelancers, and side-income builders who want to use AI without getting bogged down in enterprise frameworks.',
+    featured: false,
+  },
+  {
+    slug: 'minimum-viable-guardrails',
+    title: 'The Minimum Viable AI Guardrails for a Small Team',
+    category: 'Practical Guide',
+    date: 'Apr 2026',
+    readTime: '8 min read',
+    excerpt:
+      'You don\u2019t need a governance committee or a 40-page policy. Here are the guardrails that actually matter when you\u2019re a small team using AI.',
+    featured: false,
+  },
 ]
 
 export const FAQ_ITEMS = [

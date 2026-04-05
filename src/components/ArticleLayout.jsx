@@ -1,7 +1,79 @@
+import Link from 'next/link'
 import Breadcrumb from './Breadcrumb'
 import Disclaimer from './Disclaimer'
 import { ContentBlock, renderText } from './ContentRenderer'
 import { getRegulation } from '@/lib/regulations'
+
+function TableOfContents({ sections }) {
+  const headings = sections.filter((s) => s.title).map((s) => s.title)
+  if (headings.length < 3) return null
+
+  return (
+    <nav className="bg-surface border border-border/60 rounded-xl p-5 sm:p-6 mb-10" aria-label="Table of contents">
+      <h2 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+        In This Article
+      </h2>
+      <ul className="flex flex-col gap-1.5">
+        {headings.map((title) => {
+          const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+          return (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className="font-sans text-sm text-secondary hover:text-accent transition-colors no-underline"
+              >
+                {title}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  )
+}
+
+function RelatedResources({ article }) {
+  const resources = []
+
+  if (article.slug !== 'ai-use-policy-starter') {
+    resources.push({
+      title: 'AI Readiness Checklist',
+      href: '/checklist',
+      desc: 'A practical checklist for getting AI-ready',
+    })
+  }
+  if (article.slug !== 'minimum-viable-guardrails' && article.slug !== 'ai-compliance-startups') {
+    resources.push({
+      title: 'AI Readiness Assessment',
+      href: '/assessment',
+      desc: '8 questions to see where you stand',
+    })
+  }
+
+  if (resources.length === 0) return null
+
+  return (
+    <section className="mt-10 pt-8 border-t border-border/60">
+      <h2 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+        Related Resources
+      </h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {resources.map((r) => (
+          <Link
+            key={r.href}
+            href={r.href}
+            className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
+          >
+            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+              {r.title}
+            </div>
+            <p className="font-sans text-xs text-secondary">{r.desc}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
+  )
+}
 
 export default function ArticleLayout({ article }) {
   const relatedRegs = (article.relatedRegulations || [])
@@ -33,11 +105,17 @@ export default function ArticleLayout({ article }) {
           </h1>
         </header>
 
+        {/* Table of Contents */}
+        <TableOfContents sections={article.sections} />
+
         {/* Content Sections */}
         {article.sections.map((section, i) => (
           <section key={i} className="mb-8">
             {section.title && (
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-4 mt-10">
+              <h2
+                id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
+                className="font-serif text-xl sm:text-2xl font-bold text-primary mb-4 mt-10 scroll-mt-24"
+              >
                 {section.title}
               </h2>
             )}
@@ -176,6 +254,9 @@ export default function ArticleLayout({ article }) {
         )}
 
         <Disclaimer />
+
+        {/* Related Resources */}
+        <RelatedResources article={article} />
       </article>
     </div>
   )

@@ -13,6 +13,10 @@ import { aiInsuranceUnderwriting } from './ai-insurance-underwriting'
 import { aiLiteracyRequirement } from './ai-literacy-requirement'
 import { aiIncidentResponse } from './ai-incident-response'
 import { iso42001Explained } from './iso-42001-explained'
+import { aiUsePolicyStarter } from './ai-use-policy-starter'
+import { evaluatingAiTools } from './evaluating-ai-tools'
+import { aiSideProjects } from './ai-side-projects'
+import { minimumViableGuardrails } from './minimum-viable-guardrails'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
@@ -30,6 +34,10 @@ const articles = {
   'ai-literacy-requirement': aiLiteracyRequirement,
   'ai-incident-response': aiIncidentResponse,
   'iso-42001-explained': iso42001Explained,
+  'ai-use-policy-starter': aiUsePolicyStarter,
+  'evaluating-ai-tools': evaluatingAiTools,
+  'ai-side-projects': aiSideProjects,
+  'minimum-viable-guardrails': minimumViableGuardrails,
 }
 
 export function getAllArticles() {

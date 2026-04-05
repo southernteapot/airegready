@@ -26,6 +26,10 @@ export default function sitemap() {
     'ai-literacy-requirement',
     'ai-incident-response',
     'iso-42001-explained',
+    'ai-use-policy-starter',
+    'evaluating-ai-tools',
+    'ai-side-projects',
+    'minimum-viable-guardrails',
   ]
 
   return [
@@ -94,6 +98,12 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${base}/checklist`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${base}/legal`,
