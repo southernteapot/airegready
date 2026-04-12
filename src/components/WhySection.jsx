@@ -25,7 +25,7 @@ export default function WhySection() {
         </div>
         <h2
           id="why-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           Not AI Hype. Not Legalese. Just Practical Information.
         </h2>
@@ -35,9 +35,9 @@ export default function WhySection() {
         {reasons.map((reason) => (
           <div
             key={reason.title}
-            className="bg-surface border border-border/60 rounded-xl p-7"
+            className="bg-surface border border-border/60 rounded-xl p-6"
           >
-            <h3 className="font-sans text-[17px] font-bold text-primary mb-2">
+            <h3 className="font-sans text-base font-bold text-primary mb-2">
               {reason.title}
             </h3>
             <p className="font-sans text-sm text-secondary leading-relaxed">

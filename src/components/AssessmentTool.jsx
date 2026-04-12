@@ -37,7 +37,7 @@ const RISK_COLORS = {
 function SnapshotCard({ title, label, colorMap }) {
   return (
     <div className="bg-bg border border-border rounded-xl p-5 text-center">
-      <div className="font-sans text-[11px] font-bold uppercase tracking-wide text-secondary mb-2">
+      <div className="font-sans text-xs font-bold uppercase tracking-wide text-secondary mb-2">
         {title}
       </div>
       <div
@@ -66,7 +66,7 @@ function FrameworkCard({ framework }) {
             framework.name
           )}
         </h4>
-        <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-0.5 rounded-full whitespace-nowrap">
+        <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-0.5 rounded-full whitespace-nowrap">
           {framework.priority}
         </span>
       </div>
@@ -120,7 +120,7 @@ function ReadingCard({ reading }) {
       href={reading.href}
       className="block bg-bg border border-border rounded-xl p-4 sm:p-5 hover:border-accent/50 hover:bg-accent/[0.03] transition-all print-link"
     >
-      <h4 className="font-serif text-[15px] font-bold text-primary leading-snug mb-1.5">
+      <h4 className="font-serif text-sm font-bold text-primary leading-snug mb-1.5">
         {reading.title}
       </h4>
       <p className="font-sans text-xs text-secondary leading-relaxed">
@@ -293,7 +293,7 @@ function ReportResults({ result, onReset }) {
             {result.standout.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 font-sans text-[15px] text-secondary leading-relaxed"
+                className="flex items-start gap-3 font-sans text-sm text-secondary leading-relaxed"
               >
                 <span className="text-accent mt-0.5 shrink-0">&#8226;</span>
                 <span>{item}</span>
@@ -382,7 +382,7 @@ function ReportResults({ result, onReset }) {
             href="/checklist"
             className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
-            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+            <div className="font-serif text-sm font-bold text-primary mb-1">
               AI Readiness Checklist
             </div>
             <p className="font-sans text-xs text-secondary">
@@ -393,7 +393,7 @@ function ReportResults({ result, onReset }) {
             href="/blog/minimum-viable-guardrails"
             className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
-            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+            <div className="font-serif text-sm font-bold text-primary mb-1">
               Minimum Viable AI Guardrails
             </div>
             <p className="font-sans text-xs text-secondary">
@@ -497,13 +497,13 @@ export default function AssessmentTool() {
       className="py-24 px-6 max-w-[800px] mx-auto"
       aria-labelledby="assessment-heading"
     >
-      <div className="text-center mb-12 print:hidden">
+      <div className="text-center mb-14 print:hidden">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
           Free Tool
         </div>
         <h2
           id="assessment-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           How AI-Ready Is Your Work?
         </h2>
@@ -523,7 +523,7 @@ export default function AssessmentTool() {
           <>
             {/* Progress bar */}
             <div className="flex justify-between items-center mb-8">
-              <span className="font-sans text-[13px] text-secondary font-semibold">
+              <span className="font-sans text-xs text-secondary font-semibold">
                 Question {step + 1} of {QUESTIONS.length}
               </span>
               <div className="w-[120px] h-1 bg-border rounded-full overflow-hidden" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-label={`Question ${step + 1} of ${QUESTIONS.length}`}>
@@ -552,7 +552,7 @@ export default function AssessmentTool() {
                       <button
                         key={opt.value}
                         onClick={() => toggleMultiSelect(opt.value)}
-                        className={`flex items-center gap-3 border rounded-[10px] px-5 py-3.5 font-sans text-[15px] font-medium text-left transition-all cursor-pointer ${
+                        className={`flex items-center gap-3 border rounded-[10px] px-5 py-3.5 font-sans text-sm font-medium text-left transition-all cursor-pointer ${
                           selected
                             ? 'border-accent bg-accent/[0.08] text-primary'
                             : 'bg-bg border-border text-secondary hover:border-accent/50 hover:bg-accent/[0.04] hover:text-primary'
@@ -580,7 +580,7 @@ export default function AssessmentTool() {
                 <button
                   onClick={handleMultiNext}
                   disabled={multiSelected.length === 0}
-                  className="mt-5 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3 rounded-lg text-[15px] font-bold font-sans shadow-[0_4px_24px_rgba(158,122,86,0.18)] hover:shadow-[0_8px_32px_rgba(158,122,86,0.28)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_4px_24px_rgba(158,122,86,0.18)] cursor-pointer"
+                  className="mt-5 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3 rounded-lg text-sm font-bold font-sans shadow-[0_4px_24px_rgba(158,122,86,0.18)] hover:shadow-[0_8px_32px_rgba(158,122,86,0.28)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_4px_24px_rgba(158,122,86,0.18)] cursor-pointer"
                 >
                   Next &rarr;
                 </button>
@@ -596,7 +596,7 @@ export default function AssessmentTool() {
                     <button
                       key={opt.value}
                       onClick={() => handleSingleAnswer(opt)}
-                      className="bg-bg border border-border rounded-[10px] px-5 py-3.5 text-secondary font-sans text-[15px] font-medium text-left transition-all hover:border-accent/50 hover:bg-accent/[0.04] hover:text-primary cursor-pointer"
+                      className="bg-bg border border-border rounded-[10px] px-5 py-3.5 text-secondary font-sans text-sm font-medium text-left transition-all hover:border-accent/50 hover:bg-accent/[0.04] hover:text-primary cursor-pointer"
                     >
                       {opt.label}
                     </button>

@@ -25,7 +25,7 @@ export default function NavBar() {
         <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-dark rounded-md flex items-center justify-center font-extrabold text-base text-accent-text font-sans" aria-hidden="true">
           A
         </div>
-        <span className="font-sans font-bold text-[19px] text-primary tracking-tight">
+        <span className="font-sans font-bold text-lg text-primary tracking-tight">
           AIReg<span className="text-accent">Ready</span>
         </span>
       </a>

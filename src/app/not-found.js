@@ -36,7 +36,7 @@ export default function NotFound() {
         />
 
         <div className="text-center mb-14">
-          <p className="font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-accent mb-4">
+          <p className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-accent mb-4">
             Error 404
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary mb-4">
@@ -70,7 +70,7 @@ export default function NotFound() {
 
         {/* Helpful links */}
         <div>
-          <h2 className="font-sans text-[11px] font-bold uppercase tracking-[0.15em] text-accent mb-5">
+          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-accent mb-5">
             Helpful Links
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">

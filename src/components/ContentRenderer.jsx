@@ -34,7 +34,7 @@ export function ContentBlock({ content }) {
   return content.split('\n\n').map((p, i) => (
     <p
       key={i}
-      className="font-sans text-[15px] text-secondary leading-relaxed mb-4 last:mb-0"
+      className="font-sans text-sm text-secondary leading-relaxed mb-4 last:mb-0"
     >
       {renderText(p)}
     </p>

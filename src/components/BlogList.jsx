@@ -92,25 +92,25 @@ export default function BlogList({ articles }) {
         {featured && (
           <a
             href={`/blog/${featured.slug}`}
-            className="bg-surface border border-border rounded-[14px] p-7 sm:p-9 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
+            className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
           >
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
             <div className="flex flex-wrap gap-3 items-center mb-4">
-              <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+              <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
                 Featured
               </span>
-              <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+              <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
                 {featured.category}
               </span>
-              <span className="font-sans text-[13px] text-secondary">
+              <span className="font-sans text-xs text-secondary">
                 <time>{featured.displayDate}</time> &middot;{' '}
                 {featured.readTime}
               </span>
             </div>
-            <h2 className="font-serif text-xl sm:text-[26px] font-bold text-primary mb-3 leading-tight">
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-3 leading-tight">
               {featured.title}
             </h2>
-            <p className="font-sans text-[15px] text-secondary leading-relaxed max-w-[700px]">
+            <p className="font-sans text-sm text-secondary leading-relaxed max-w-[700px]">
               {featured.description}
             </p>
           </a>
@@ -123,17 +123,17 @@ export default function BlogList({ articles }) {
               <a
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="bg-surface border border-border rounded-xl p-7 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+                className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
               >
                 <div className="flex flex-wrap gap-2 items-center mb-3">
-                  <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+                  <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
                     {post.category}
                   </span>
                   <span className="font-sans text-xs text-secondary">
                     <time>{post.displayDate}</time> &middot; {post.readTime}
                   </span>
                 </div>
-                <h2 className="font-sans text-[17px] font-bold text-primary mb-2.5 leading-snug">
+                <h2 className="font-sans text-base font-bold text-primary mb-2.5 leading-snug">
                   {post.title}
                 </h2>
                 <p className="font-sans text-sm text-secondary leading-relaxed">

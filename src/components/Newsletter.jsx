@@ -106,11 +106,11 @@ export default function Newsletter() {
       <div className="bg-accent/10 border border-accent/20 rounded-2xl p-8 sm:p-12">
         <h2
           id="newsletter-heading"
-          className="font-serif text-[28px] sm:text-[34px] font-bold text-primary mb-3"
+          className="font-serif text-3xl sm:text-4xl font-bold text-primary mb-3"
         >
           Get Updates
         </h2>
-        <p className="font-sans text-[15px] text-secondary leading-relaxed mb-7">
+        <p className="font-sans text-sm text-secondary leading-relaxed mb-7">
           New resources, AI regulation updates, and practical information
           &mdash; delivered weekly in plain English.
         </p>
@@ -121,7 +121,7 @@ export default function Newsletter() {
             role="status"
           >
             <span
-              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-700 mb-1"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent mb-1"
               aria-hidden="true"
             >
               <svg
@@ -137,10 +137,10 @@ export default function Newsletter() {
                 />
               </svg>
             </span>
-            <p className="font-sans text-[15px] text-accent font-semibold">
+            <p className="font-sans text-sm text-accent font-semibold">
               You&apos;re subscribed!
             </p>
-            <p className="font-sans text-[13px] text-secondary">
+            <p className="font-sans text-xs text-secondary">
               Check your inbox for a confirmation.
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function Newsletter() {
               <p
                 id="newsletter-error"
                 role="alert"
-                className="mt-3 font-sans text-[13px] text-red-600 animate-fade-in"
+                className="mt-3 font-sans text-xs text-red-600 animate-fade-in"
               >
                 {errorMsg}
               </p>
@@ -188,7 +188,7 @@ export default function Newsletter() {
 
             {/* Progressive enhancement: message for no-JS users */}
             <noscript>
-              <p className="mt-4 font-sans text-[13px] text-secondary">
+              <p className="mt-4 font-sans text-xs text-secondary">
                 JavaScript is required for newsletter signup. Please enable
                 JavaScript or email us directly.
               </p>

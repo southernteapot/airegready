@@ -69,7 +69,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="text-center">
-          <p className="font-sans text-[13px] text-secondary">
+          <p className="font-sans text-xs text-secondary">
             &copy; 2026 AIRegReady. AI resources for real-world use.
           </p>
           <p className="font-sans text-xs text-secondary/70 mt-1">

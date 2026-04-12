@@ -224,7 +224,7 @@ export default function ChecklistPage() {
                       <li key={key}>
                         <button
                           onClick={() => toggle(key)}
-                          className={`flex items-start gap-3 w-full text-left font-sans text-[15px] leading-relaxed transition-colors cursor-pointer bg-transparent border-none p-0 ${
+                          className={`flex items-start gap-3 w-full text-left font-sans text-sm leading-relaxed transition-colors cursor-pointer bg-transparent border-none p-0 ${
                             isChecked ? 'text-secondary/60 line-through' : 'text-secondary'
                           }`}
                         >
@@ -279,7 +279,7 @@ export default function ChecklistPage() {
               href="/assessment"
               className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
             >
-              <div className="font-serif text-[15px] font-bold text-primary mb-1">
+              <div className="font-serif text-sm font-bold text-primary mb-1">
                 AI Readiness Assessment
               </div>
               <p className="font-sans text-xs text-secondary">
@@ -290,7 +290,7 @@ export default function ChecklistPage() {
               href="/blog/ai-compliance-startups"
               className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
             >
-              <div className="font-serif text-[15px] font-bold text-primary mb-1">
+              <div className="font-serif text-sm font-bold text-primary mb-1">
                 AI Compliance for Startups
               </div>
               <p className="font-sans text-xs text-secondary">

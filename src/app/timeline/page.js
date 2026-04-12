@@ -294,7 +294,7 @@ export default function TimelinePage() {
                         </Link>
                       </div>
                       <p
-                        className={`font-sans text-[15px] leading-relaxed ${
+                        className={`font-sans text-sm leading-relaxed ${
                           past ? 'text-secondary' : 'text-primary'
                         }`}
                       >

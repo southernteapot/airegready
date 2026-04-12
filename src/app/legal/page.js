@@ -24,7 +24,7 @@ export default function LegalPage() {
               <p className="uppercase text-xs font-sans font-semibold tracking-widest text-accent mb-4">
                 Terms of Use
               </p>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 By accessing or using AIRegReady.com (&ldquo;the Site&rdquo;),
                 you agree to the following terms. If you do not agree, please do
                 not use the Site.
@@ -36,7 +36,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Educational Content Only
               </h2>
-              <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
                 <p>
                   All content on AIRegReady &mdash; including regulatory
                   summaries, blog articles, guides, and assessment tool
@@ -59,7 +59,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 No Guarantee of Accuracy
               </h2>
-              <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
                 <p>
                   We strive to keep content accurate and current, but AI
                   regulation evolves rapidly. We do not guarantee the accuracy,
@@ -79,7 +79,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Risk Assessment Tool
               </h2>
-              <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
                 <p>
                   The AI Readiness Assessment tool provides a general,
                   informational estimate of potential regulatory exposure based
@@ -100,7 +100,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Intellectual Property
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 All original content on the Site &mdash; including text,
                 graphics, logos, and site design &mdash; is the property of
                 AIRegReady and is protected by applicable intellectual property
@@ -116,7 +116,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Changes to Content and Terms
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 We reserve the right to modify, update, or remove any content on
                 the Site at any time without notice. These Terms of Use may also
                 be updated periodically. Continued use of the Site after changes
@@ -130,7 +130,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Limitation of Liability
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 To the fullest extent permitted by applicable law, AIRegReady
                 and its operators shall not be liable for any direct, indirect,
                 incidental, consequential, or special damages arising out of or
@@ -144,7 +144,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Governing Law
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 These terms are governed by and construed in accordance with
                 applicable law. Any disputes arising from the use of this Site
                 shall be resolved in accordance with applicable law and in the
@@ -162,7 +162,7 @@ export default function LegalPage() {
               <p className="uppercase text-xs font-sans font-semibold tracking-widest text-accent mb-4">
                 Privacy Policy
               </p>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 AIRegReady respects your privacy. This policy explains what
                 data we collect, how we use it, and what control you have over
                 it.
@@ -174,7 +174,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Data We Collect
               </h2>
-              <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
                 <p>We collect minimal data:</p>
                 <ul className="flex flex-col gap-2 ml-1">
                   <li className="flex gap-2.5">
@@ -210,7 +210,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Cookies and Tracking
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 AIRegReady does not use cookies for tracking purposes.
                 Cloudflare Web Analytics operates via a lightweight JavaScript
                 beacon that is entirely cookieless. No tracking cookies, pixels,
@@ -223,7 +223,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Assessment Tool Data
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 The AI Readiness Assessment tool processes all data
                 entirely in your browser (client-side). Your answers and results
                 are not transmitted to our servers, stored in any database, or
@@ -237,7 +237,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Data Sharing
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 We do not sell, rent, or share your personal data with third
                 parties. Email addresses collected through the newsletter are
                 used exclusively by AIRegReady to deliver the content you
@@ -250,7 +250,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Data Deletion
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 If you would like to unsubscribe from the newsletter or request
                 deletion of your email address from our records, you can email
                 us at{' '}
@@ -269,7 +269,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Changes to This Policy
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 We may update this privacy policy from time to time. Changes
                 will be reflected on this page with an updated &ldquo;Last
                 updated&rdquo; date. We encourage you to review this page
@@ -282,7 +282,7 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Contact
               </h2>
-              <p className="font-sans text-[15px] text-secondary leading-relaxed">
+              <p className="font-sans text-sm text-secondary leading-relaxed">
                 If you have questions about these terms or this privacy policy,
                 contact us at{' '}
                 <a

@@ -34,7 +34,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-bold text-primary mb-3">
               What This Site Does
             </h2>
-            <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+            <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
                 AI is changing how people work, but the practical information
                 around it &mdash; what tools to trust, what risks to watch for,
@@ -63,7 +63,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-bold text-primary mb-3">
               Who This Is For
             </h2>
-            <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+            <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
                 Anyone using AI in the real world. That includes:
               </p>
@@ -113,7 +113,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-bold text-primary mb-3">
               How Content Is Produced
             </h2>
-            <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+            <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
                 Regulatory summaries are written by reviewing the actual
                 legislative text, official guidance, and authoritative analyses.
@@ -139,7 +139,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-bold text-primary mb-3">
               What This Is Not
             </h2>
-            <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+            <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
                 AIRegReady is not a law firm, and this site does not provide
                 legal advice. Regulatory summaries are simplified for clarity
@@ -160,7 +160,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-bold text-primary mb-3">
               Where This Is Going
             </h2>
-            <div className="flex flex-col gap-3 font-sans text-[15px] text-secondary leading-relaxed">
+            <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
                 The foundation is good information &mdash; organized, current,
                 and actually readable. Over time, we plan to add practical

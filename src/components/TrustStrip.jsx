@@ -16,14 +16,14 @@ export default function TrustStrip() {
           {items.map((item) => (
             <span
               key={item}
-              className="font-sans text-[13px] font-medium text-secondary bg-surface border border-border rounded-full px-3.5 py-1"
+              className="font-sans text-xs font-medium text-secondary bg-surface border border-border rounded-full px-3.5 py-1"
             >
               {item}
             </span>
           ))}
         </div>
         {/* Value props */}
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 font-sans text-[13px] text-secondary/80">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 font-sans text-xs text-secondary/80">
           <span>Practical Over Theoretical</span>
           <span className="text-border hidden sm:inline">&middot;</span>
           <span>Plain English, Not Legalese</span>

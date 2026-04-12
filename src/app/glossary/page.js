@@ -606,12 +606,12 @@ export default function GlossaryPage() {
                   <div
                     key={entry.id}
                     id={entry.id}
-                    className="bg-surface border border-border rounded-xl p-7 scroll-mt-32"
+                    className="bg-surface border border-border/60 rounded-xl p-6 scroll-mt-32"
                   >
                     <h3 className="font-serif text-lg font-bold text-primary mb-2">
                       {entry.term}
                     </h3>
-                    <p className="font-sans text-[15px] text-secondary leading-relaxed mb-3">
+                    <p className="font-sans text-sm text-secondary leading-relaxed mb-3">
                       {entry.definition}
                     </p>
                     {entry.seeAlso && entry.seeAlso.length > 0 && (

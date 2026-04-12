@@ -33,7 +33,7 @@ export default function HowItWorks() {
         </div>
         <h2
           id="how-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           Getting Oriented on AI
         </h2>

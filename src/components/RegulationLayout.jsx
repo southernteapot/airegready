@@ -25,7 +25,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 {regulation.title}
               </h1>
             </div>
-            <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-3 py-1.5 rounded-full whitespace-nowrap flex-shrink-0 mt-2">
+            <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-3 py-1.5 rounded-full whitespace-nowrap flex-shrink-0 mt-2">
               {regulation.status}
             </span>
           </div>
@@ -39,7 +39,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
 
         {/* Key Facts */}
         {regulation.keyFacts && (
-          <div className="bg-surface border border-border rounded-xl p-6 mb-10">
+          <div className="bg-surface border border-border/60 rounded-xl p-6 mb-10">
             <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-4">
               Key Facts
             </h2>
@@ -59,7 +59,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
         )}
 
         {/* Table of Contents */}
-        <nav aria-label="Table of contents" className="bg-surface border border-border rounded-xl p-6 mb-12">
+        <nav aria-label="Table of contents" className="bg-surface border border-border/60 rounded-xl p-6 mb-12">
           <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-3">
             On This Page
           </h2>
@@ -109,7 +109,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 {section.items.map((item) => (
                   <div
                     key={item.term}
-                    className="bg-surface border border-border rounded-lg p-4"
+                    className="bg-surface border border-border/60 rounded-lg p-4"
                   >
                     <dt className="font-sans text-sm font-bold text-primary mb-1">
                       {item.term}
@@ -128,7 +128,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 {section.list.map((item, i) => (
                   <li
                     key={i}
-                    className="flex gap-2.5 font-sans text-[15px] text-secondary leading-relaxed"
+                    className="flex gap-2.5 font-sans text-sm text-secondary leading-relaxed"
                   >
                     <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                     <span>{renderText(item)}</span>
@@ -218,7 +218,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-surface border border-border rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group"
+                className="bg-surface border border-border/60 rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group"
               >
                 <span className="text-accent text-sm mt-0.5 flex-shrink-0" aria-hidden="true">
                   &#8599;
@@ -250,13 +250,13 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 <a
                   key={article.slug}
                   href={`/blog/${article.slug}`}
-                  className="bg-surface border border-border rounded-xl p-5 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+                  className="bg-surface border border-border/60 rounded-xl p-5 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
                 >
                   <div className="font-sans text-xs text-secondary mb-2">
                     {article.category} &middot; {article.displayDate} &middot;{' '}
                     {article.readTime}
                   </div>
-                  <h3 className="font-sans text-[15px] font-bold text-primary leading-snug">
+                  <h3 className="font-sans text-sm font-bold text-primary leading-snug">
                     {article.title}
                   </h3>
                 </a>

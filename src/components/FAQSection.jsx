@@ -12,13 +12,13 @@ export default function FAQSection() {
       className="py-24 px-6 max-w-[840px] mx-auto"
       aria-labelledby="faq-heading"
     >
-      <div className="text-center mb-12">
+      <div className="text-center mb-14">
         <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
           FAQ
         </div>
         <h2
           id="faq-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           Common Questions About AI Readiness
         </h2>
@@ -44,13 +44,16 @@ export default function FAQSection() {
               >
                 {item.q}
               </span>
-              <span
-                className={`text-secondary text-xl font-light flex-shrink-0 transition-transform duration-300 select-none ${
-                  open === i ? 'rotate-45' : ''
+              <svg
+                className={`w-5 h-5 text-secondary flex-shrink-0 transition-transform duration-300 ${
+                  open === i ? 'rotate-180' : ''
                 }`}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
               >
-                +
-              </span>
+                <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.168l3.71-3.938a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clipRule="evenodd" />
+              </svg>
             </button>
             <div
               id={`faq-answer-${i}`}
@@ -60,7 +63,7 @@ export default function FAQSection() {
               }`}
             >
               <div className="px-6 pb-5">
-                <p className="font-sans text-[15px] text-secondary leading-relaxed">
+                <p className="font-sans text-sm text-secondary leading-relaxed">
                   {item.a}
                 </p>
               </div>

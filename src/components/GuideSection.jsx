@@ -13,7 +13,7 @@ export default function GuideSection() {
         </div>
         <h2
           id="guide-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           Regulations Worth Knowing About
         </h2>
@@ -28,17 +28,17 @@ export default function GuideSection() {
           <a
             key={reg.id}
             href={`/regulations/${reg.slug}`}
-            className="bg-surface border border-border/60 rounded-xl p-7 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline block"
+            className="bg-surface border border-border/60 rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline block"
           >
             <div className="flex justify-between items-start mb-3">
               <span className="text-[28px]" role="img" aria-hidden="true">
                 {reg.icon}
               </span>
-              <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+              <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
                 {reg.tag}
               </span>
             </div>
-            <h3 className="font-sans text-[17px] font-bold text-primary mb-2">
+            <h3 className="font-sans text-base font-bold text-primary mb-2">
               {reg.title}
             </h3>
             <p className="font-sans text-sm text-secondary leading-relaxed">

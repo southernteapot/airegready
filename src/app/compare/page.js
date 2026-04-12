@@ -325,7 +325,7 @@ export default function ComparePage() {
                     >
                       <div className="flex flex-col gap-2">
                         <span
-                          className={`self-start font-sans text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${getStatusClasses(
+                          className={`self-start font-sans text-xs font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${getStatusClasses(
                             f.statusColor
                           )}`}
                         >
@@ -398,7 +398,7 @@ export default function ComparePage() {
                     {f.name}
                   </a>
                   <span
-                    className={`shrink-0 font-sans text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${getStatusClasses(
+                    className={`shrink-0 font-sans text-xs font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${getStatusClasses(
                       f.statusColor
                     )}`}
                   >
@@ -446,7 +446,7 @@ export default function ComparePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <a
               href="/assessment"
-              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Readiness Assessment
@@ -458,7 +458,7 @@ export default function ComparePage() {
             </a>
             <a
               href="/glossary"
-              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Glossary
@@ -470,7 +470,7 @@ export default function ComparePage() {
             </a>
             <a
               href="/blog"
-              className="bg-surface border border-border rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Blog

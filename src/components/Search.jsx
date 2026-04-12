@@ -376,7 +376,7 @@ export default function Search() {
                               >
                                 <div className="flex items-start justify-between gap-3">
                                   <div className="min-w-0 flex-1">
-                                    <p className="text-primary font-sans font-medium text-[15px] leading-snug">
+                                    <p className="text-primary font-sans font-medium text-sm leading-snug">
                                       {highlightMatch(item.title, query)}
                                     </p>
                                     <p className="text-secondary text-sm font-sans mt-1 line-clamp-2 leading-relaxed">
@@ -384,7 +384,7 @@ export default function Search() {
                                     </p>
                                   </div>
                                   <span
-                                    className={`shrink-0 text-[11px] font-sans font-medium px-2 py-0.5 rounded-full ${TYPE_BADGE_CLASSES[item.type]}`}
+                                    className={`shrink-0 text-xs font-sans font-medium px-2 py-0.5 rounded-full ${TYPE_BADGE_CLASSES[item.type]}`}
                                   >
                                     {TYPE_LABELS[item.type]}
                                   </span>
@@ -405,22 +405,22 @@ export default function Search() {
           <div className="w-full max-w-2xl px-6 pb-5">
             <div className="flex items-center justify-center gap-4 text-secondary/40 text-xs font-sans">
               <span>
-                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-[11px] font-mono">
+                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-xs font-mono">
                   Esc
                 </kbd>{' '}
                 to close
               </span>
               <span>
-                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-[11px] font-mono">
+                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-xs font-mono">
                   &uarr;
                 </kbd>
-                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-[11px] font-mono ml-0.5">
+                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-xs font-mono ml-0.5">
                   &darr;
                 </kbd>{' '}
                 to navigate
               </span>
               <span>
-                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-[11px] font-mono">
+                <kbd className="px-1.5 py-0.5 bg-surface border border-border rounded text-xs font-mono">
                   Enter
                 </kbd>{' '}
                 to select

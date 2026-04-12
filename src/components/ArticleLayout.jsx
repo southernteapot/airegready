@@ -9,7 +9,7 @@ function TableOfContents({ sections }) {
   if (headings.length < 3) return null
 
   return (
-    <nav className="bg-surface border border-border/60 rounded-xl p-5 sm:p-6 mb-10" aria-label="Table of contents">
+    <nav className="bg-surface border border-border/60 rounded-xl p-6 mb-10" aria-label="Table of contents">
       <h2 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
         In This Article
       </h2>
@@ -64,7 +64,7 @@ function RelatedResources({ article }) {
             href={r.href}
             className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
-            <div className="font-serif text-[15px] font-bold text-primary mb-1">
+            <div className="font-serif text-sm font-bold text-primary mb-1">
               {r.title}
             </div>
             <p className="font-sans text-xs text-secondary">{r.desc}</p>
@@ -92,15 +92,15 @@ export default function ArticleLayout({ article }) {
 
         {/* Header */}
         <header className="mb-10">
-          <div className="flex flex-wrap gap-2 items-center mb-4 font-sans text-[13px] text-secondary">
-            <span className="font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full text-[11px]">
+          <div className="flex flex-wrap gap-2 items-center mb-4 font-sans text-xs text-secondary">
+            <span className="font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full text-xs">
               {article.category}
             </span>
             <span>
               <time>{article.displayDate}</time> &middot; {article.readTime}
             </span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-[38px] font-bold text-primary leading-tight">
+          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight">
             {article.title}
           </h1>
         </header>
@@ -126,7 +126,7 @@ export default function ArticleLayout({ article }) {
                 {section.list.map((item, j) => (
                   <li
                     key={j}
-                    className="flex gap-2.5 font-sans text-[15px] text-secondary leading-relaxed"
+                    className="flex gap-2.5 font-sans text-sm text-secondary leading-relaxed"
                   >
                     <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                     <span>{renderText(item)}</span>
@@ -184,7 +184,7 @@ export default function ArticleLayout({ article }) {
               {article.takeaways.map((item, i) => (
                 <li
                   key={i}
-                  className="flex gap-2.5 font-sans text-[15px] text-accent-dark leading-relaxed"
+                  className="flex gap-2.5 font-sans text-sm text-accent-dark leading-relaxed"
                 >
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>{renderText(item)}</span>
@@ -205,7 +205,7 @@ export default function ArticleLayout({ article }) {
                 <a
                   key={reg.slug}
                   href={`/regulations/${reg.slug}`}
-                  className="bg-surface border border-border rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group no-underline"
+                  className="bg-surface border border-border/60 rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group no-underline"
                 >
                   <span className="text-[24px] flex-shrink-0 mt-0.5" role="img" aria-hidden="true">
                     {reg.icon}
@@ -215,7 +215,7 @@ export default function ArticleLayout({ article }) {
                       <span className="font-sans text-sm font-semibold text-primary group-hover:text-accent transition-colors">
                         {reg.title}
                       </span>
-                      <span className="font-sans text-[10px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2 py-0.5 rounded-full flex-shrink-0">
+                      <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2 py-0.5 rounded-full flex-shrink-0">
                         {reg.status}
                       </span>
                     </div>

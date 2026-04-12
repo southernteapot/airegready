@@ -22,7 +22,7 @@ const resources = [
 ]
 
 const cardClasses =
-  'bg-surface border border-border rounded-xl p-7 block transition-all duration-300 no-underline'
+  'bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 no-underline'
 
 export default function ResourcesSection() {
   return (
@@ -37,7 +37,7 @@ export default function ResourcesSection() {
         </div>
         <h2
           id="resources-heading"
-          className="font-serif text-4xl sm:text-[42px] font-bold text-primary"
+          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
         >
           Browse by Topic
         </h2>
@@ -54,7 +54,7 @@ export default function ResourcesSection() {
               href={resource.href}
               className={`${cardClasses} hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] group`}
             >
-              <h3 className="font-sans text-[17px] font-bold text-primary mb-2">
+              <h3 className="font-sans text-base font-bold text-primary mb-2">
                 {resource.title}
               </h3>
               <p className="font-sans text-sm text-secondary leading-relaxed mb-3">
@@ -70,10 +70,10 @@ export default function ResourcesSection() {
               className={`${cardClasses} opacity-80`}
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="font-sans text-[17px] font-bold text-primary">
+                <h3 className="font-sans text-base font-bold text-primary">
                   {resource.title}
                 </h3>
-                <span className="font-sans text-[11px] font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+                <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
                   Coming Soon
                 </span>
               </div>
