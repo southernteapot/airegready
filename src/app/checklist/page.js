@@ -283,7 +283,7 @@ export default function ChecklistPage() {
                 AI Readiness Assessment
               </div>
               <p className="font-sans text-xs text-secondary">
-                8 questions to see where you stand and what to focus on
+                A few quick questions to see where you stand and what to focus on
               </p>
             </Link>
             <Link

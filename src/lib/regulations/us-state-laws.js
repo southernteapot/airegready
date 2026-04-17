@@ -7,12 +7,12 @@ export const usStateLaws = {
     'With no comprehensive federal AI law in place, U.S. states are writing their own rules. The result is a fast-moving patchwork of requirements covering hiring, insurance, housing, and more.',
   icon: '\u2696\uFE0F',
   status: 'Evolving',
-  lastReviewed: 'March 2026',
+  lastReviewed: 'April 2026',
   keyFacts: [
-    { label: 'Federal AI Law', value: 'None (as of early 2026)' },
+    { label: 'Federal AI Law', value: 'None (as of April 2026)' },
     {
       label: 'States with AI Laws',
-      value: 'Colorado, Illinois, Texas, New York City, and growing',
+      value: 'California, Colorado, Illinois, Texas, New York City, and growing',
     },
     {
       label: 'Common Focus',
@@ -75,6 +75,87 @@ export const usStateLaws = {
       ],
     },
     {
+      id: 'texas-traiga',
+      title: 'Texas TRAIGA: In Effect Since January 1, 2026',
+      content:
+        'Governor Greg Abbott signed **HB 149**, the Texas Responsible Artificial Intelligence Governance Act (TRAIGA), on June 22, 2025. It took effect on **January 1, 2026**, making Texas the third state with a comprehensive AI law, after Colorado and California.\n\nTRAIGA is different in character from Colorado\'s law. Colorado regulates AI systems used in broad categories of "consequential decisions." TRAIGA is narrower and more intent-based — it targets purposeful misuse of AI rather than high-risk categories. Most of its prohibitions only bite if a developer or deployer acts with intent.\n\nApplicability is broad in scope: TRAIGA applies to anyone who promotes or conducts business in Texas, produces a product or service used by Texas residents, or develops or deploys an AI system in Texas. Enforcement is exclusively by the **Texas Attorney General** — there is no private right of action, and the AG must give notice and an opportunity to cure before bringing an action.',
+      items: [
+        {
+          term: 'Prohibited Uses',
+          description:
+            'Categorical bans on AI systems developed or deployed with intent to manipulate behavior to encourage self-harm or criminal activity, unlawfully discriminate against protected classes, generate child sexual abuse material or unlawful deepfakes, or infringe constitutional rights. Most prohibitions include an intent requirement.',
+        },
+        {
+          term: 'Government Use Disclosure',
+          description:
+            'Government agencies that use AI to interact with consumers must disclose that fact before or at the time of the interaction — even if the AI is obvious. Government social scoring and biometric identification (fingerprint, iris, voiceprint) are banned outright, except for routine photos and audio.',
+        },
+        {
+          term: 'Healthcare Disclosure',
+          description:
+            'Healthcare providers must disclose AI use to patients. Private employers are not subject to the same disclosure requirement under TRAIGA (a notable contrast with Colorado and Illinois).',
+        },
+        {
+          term: 'Penalties',
+          description:
+            'Civil penalties range from **$10,000 to $200,000 per violation** depending on curability, or **$2,000 to $40,000 per day** for continued violations. The AG must provide notice and a cure period before bringing an action.',
+        },
+        {
+          term: 'NIST AI RMF Safe Harbor',
+          description:
+            'TRAIGA provides a safe harbor for organizations that substantially comply with the NIST AI Risk Management Framework. This is one of the most concrete examples of a state law rewarding NIST adoption, and a strong reason to build compliance programs around NIST from the start.',
+        },
+        {
+          term: 'Regulatory Sandbox (First in the Nation)',
+          description:
+            'TRAIGA establishes a **first-in-the-nation state AI regulatory sandbox**, administered by the Texas Department of Information Resources. Approved participants can test AI systems for up to **36 months** without obtaining standard state licenses, and the AG cannot pursue enforcement actions for violations of waived state laws during that window. Core prohibitions still apply. Participants must submit a detailed application, a benefit assessment, a mitigation plan, and file quarterly and annual reports.',
+        },
+        {
+          term: 'Texas AI Advisory Council',
+          description:
+            'TRAIGA establishes a seven-member Texas AI Advisory Council that advises on AI governance, the sandbox program, ethics, and public safety. The Council runs training programs for state agencies but cannot promulgate binding rules.',
+        },
+      ],
+    },
+    {
+      id: 'california-tfaia',
+      title: 'California TFAIA: Frontier AI Transparency Rules',
+      content:
+        'California Governor Gavin Newsom signed **SB 53**, the Transparency in Frontier Artificial Intelligence Act (TFAIA), on September 29, 2025. It took effect on **January 1, 2026**. TFAIA is the first U.S. state law targeting the largest AI model developers specifically, rather than deployers of AI across sectors.\n\nThe scope is narrow but the impact is high. TFAIA applies to a small number of **frontier developers** — companies training foundation models using more than 10^26 FLOPs of compute — and imposes additional obligations on **large frontier developers** whose group annual revenue exceeds $500 million. In practice this captures roughly five to eight companies (OpenAI, Anthropic, Google DeepMind, Meta, Microsoft, and a handful of others).\n\nTFAIA is not limited to California-based developers. California applies the law to any frontier developer whose products are sold into or used within the state, on the same "sufficient contacts" theory the state uses for its other consumer protection laws. Enforcement is exclusively by the **California Attorney General**, with civil penalties up to **$1 million per violation**.\n\nTFAIA sits alongside two other California AI laws that took effect the same day: **AB 2013** (GAI Training Data Transparency Act) and **SB 942** (AI Transparency Act). Together they form California\'s most comprehensive AI regulatory package to date.',
+      items: [
+        {
+          term: 'Transparency Reports (All Frontier Developers)',
+          description:
+            'Before or at the time of launching a new or substantially modified frontier model, developers must publish a transparency report covering the model release date, supported languages, and intended use. A sufficient model card counts. Redactions are permitted for trade secrets, cybersecurity, public safety, and national security — but must be described, justified, and the unredacted version retained for five years.',
+        },
+        {
+          term: 'Frontier AI Framework (Large Developers Only)',
+          description:
+            'Large frontier developers must publish a Frontier AI Framework on their website detailing the technical and organizational measures in place to assess, manage, and mitigate catastrophic risks. The framework must be reviewed and updated at least annually, cover alignment with national and international standards, include third-party risk assessments, and describe cybersecurity measures protecting unreleased model weights. Material changes require public justification within 30 days.',
+        },
+        {
+          term: 'Critical Safety Incident Reporting',
+          description:
+            'Frontier developers must report critical safety incidents to the California Office of Emergency Services (Cal OES) **within 15 days** of discovery. If the incident poses imminent risk of death or serious physical injury, notification to law enforcement or public safety agencies is required **within 24 hours**. "Critical safety incident" includes unauthorized access to model weights, catastrophic risk materialization, loss of control causing death or injury, and models using deceptive techniques to subvert developer controls.',
+        },
+        {
+          term: 'Catastrophic Risk Assessment',
+          description:
+            'TFAIA defines "catastrophic risk" as a foreseeable material risk that a frontier model could contribute to the death or serious injury of 50+ people or cause $1 billion+ in damages — from weapons of mass destruction assistance, autonomous criminal conduct or cyberattacks, or a model evading developer/user control. Large frontier developers must confidentially submit catastrophic risk assessments to Cal OES.',
+        },
+        {
+          term: 'Whistleblower Protections',
+          description:
+            'Employers cannot retaliate against employees or contractors who report catastrophic risks. Notices must be posted in the workplace and provided annually to employees responsible for risk assessment. Anonymous reporting channels are required.',
+        },
+        {
+          term: 'Annual Scope Review',
+          description:
+            'The California Department of Technology must annually assess the 10^26 FLOPs threshold and the $500 million large-developer definition, and recommend updates to the legislature. The scope is expected to evolve as compute and revenue thresholds shift with industry growth.',
+        },
+      ],
+    },
+    {
       id: 'illinois',
       title: 'Illinois: AI in Hiring and Biometric Data',
       content:
@@ -123,27 +204,15 @@ export const usStateLaws = {
         rows: [
           [
             'Texas',
-            'TRAIGA (HB 149)',
-            'Signed June 2025, effective Jan 1, 2026',
-            'Texas Responsible AI Governance Act. Prohibits AI designed for encouraging self-harm/criminal activity, generating CSAM or deepfake pornography, or simulating sexual content involving minors. Requires government entities and healthcare providers to disclose AI use. Bans government social scoring AI. Prohibits intentional AI discrimination (disparate impact alone not sufficient). Private employers NOT required to disclose AI use. Enforcement by TX AG only, no private right of action. Civil penalties $10,000-$200,000/violation. Safe harbor for NIST AI RMF adopters. Includes regulatory sandbox program.',
-          ],
-          [
-            'Texas',
             'HB 1709',
             'Signed 2025',
-            'Establishes an AI advisory council, requires state agencies to inventory AI systems, sets governance standards for government use of AI.',
-          ],
-          [
-            'California',
-            'SB 53 (Transparency in Frontier AI Act)',
-            'Signed Sept 2025, effective Jan 1, 2026',
-            'California\'s first comprehensive frontier AI law. Applies to "frontier models" trained above 10^26 FLOPs and "large frontier developers" with >$500M annual revenue (~5-8 companies including OpenAI, Anthropic, Google DeepMind, Meta, Microsoft). Requires published safety frameworks updated annually, transparency reports before releasing new models, catastrophic risk assessments reported to CA Office of Emergency Services, critical safety incident reporting, and whistleblower protections. Penalties up to $1M per violation, enforced by CA Attorney General.',
+            'Establishes an AI advisory council, requires state agencies to inventory AI systems, sets governance standards for government use of AI. (See the dedicated TRAIGA section above for the main Texas AI law, HB 149.)',
           ],
           [
             'California',
             'AB 2013, SB 942',
-            'Effective Jan 1, 2026',
-            'AB 2013 (GAI Training Data Transparency Act) requires transparency about data used to train generative AI models. SB 942 (AI Transparency Act) requires disclosure when consumers interact with AI systems. Together with SB 53, these form California\'s comprehensive AI regulatory framework.',
+            'In effect since Jan 1, 2026',
+            'AB 2013 (GAI Training Data Transparency Act) requires transparency about data used to train generative AI models. SB 942 (AI Transparency Act) requires disclosure when consumers interact with AI systems. Together with SB 53 (TFAIA, see dedicated section above), these form California\'s AI regulatory package now in force.',
           ],
           [
             'California',
@@ -210,7 +279,7 @@ export const usStateLaws = {
       id: 'compliance-challenges',
       title: 'Multi-State Compliance Challenges and Federal Preemption Risk',
       content:
-        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems. And a new complication emerged in late 2025: the threat of federal preemption.\n\n**Federal preemption threat.** In December 2025, the Trump administration issued an executive order titled **"Ensuring a National Policy Framework for AI"** that directly targets the state AI regulatory patchwork. The order established a **DOJ AI Litigation Task Force** (operational January 10, 2026) tasked with challenging state AI laws that conflict with federal AI policy. The Commerce Department is evaluating state laws for conflicts, and states with conflicting AI laws may lose federal funding eligibility. The order includes carve-outs for child safety, procurement, and data center infrastructure. A **March 2026 legislative blueprint** urges Congress to pass federal preemption legislation. This creates major uncertainty for organizations investing in state-level compliance — laws they are preparing for may be challenged or preempted before they are fully enforced.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as a "high-risk AI system" in Colorado. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Colorado requires impact assessments. Connecticut does too, but with different specifications. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With over 1,200 AI bills introduced across all 50 states in 2025 alone, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. The federal preemption threat adds another layer — organizations may invest in compliance with state laws that are subsequently struck down or preempted.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
+        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems. And a complication has been unfolding since late 2025: federal preemption pressure.\n\n**Federal preemption pressure.** On December 11, 2025, President Trump signed an executive order titled **"Ensuring a National Policy Framework for AI"** that directly targets the state AI regulatory patchwork. The order established a **DOJ AI Litigation Task Force** (stood up by AG Bondi on January 9, 2026) tasked with challenging state AI laws on interstate commerce, preemption, and other grounds. As of April 2026 the Task Force has not yet filed any lawsuits — the Executive Order contemplates a sequenced process in which the Department of Commerce first identifies specific state laws for referral. On **March 20, 2026**, the White House released its **National Policy Framework for AI**, a set of legislative recommendations covering seven areas (child safety, communities, IP, censorship, innovation, workforce, and state preemption). The Framework is non-binding but is shaping the federal legislative agenda. Constitutional scholars have noted that Congress — not the executive branch — has the exclusive power to preempt state law, so an executive order alone has limited strength. This creates major uncertainty for organizations investing in state-level compliance; laws they are preparing for may face federal challenges before they are fully enforced.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as a "high-risk AI system" in Colorado. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Colorado requires impact assessments. Connecticut does too, but with different specifications. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With over 1,200 AI bills introduced across all 50 states in 2025 alone, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. The federal preemption threat adds another layer — organizations may invest in compliance with state laws that are subsequently struck down or preempted.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
     },
     {
       id: 'practical-steps',
@@ -294,10 +363,20 @@ export const usStateLaws = {
     {
       date: 'January 2026',
       event:
-        'Multiple state AI laws take effect: California SB 53, AB 2013, and SB 942; Texas TRAIGA (HB 149); and others.',
+        'Multiple state AI laws take effect: California SB 53 (TFAIA), AB 2013, and SB 942; Texas TRAIGA (HB 149); and others.',
     },
     {
-      date: 'June 2026',
+      date: 'January 9, 2026',
+      event:
+        'AG Pam Bondi establishes the DOJ AI Litigation Task Force to challenge state AI laws in federal court. No lawsuits filed as of April 2026 \u2014 the Executive Order contemplates Commerce Department referrals first.',
+    },
+    {
+      date: 'March 20, 2026',
+      event:
+        'White House releases its National Policy Framework for Artificial Intelligence, a non-binding legislative blueprint covering child safety, innovation, workforce development, and state preemption.',
+    },
+    {
+      date: 'June 30, 2026',
       event:
         'Colorado SB 24-205 (delayed) takes effect, marking the first enforcement date for a comprehensive state AI law.',
     },

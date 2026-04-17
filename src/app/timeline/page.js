@@ -17,7 +17,7 @@ const SOURCE_COLORS = {
 
 const ALL_SOURCES = Object.keys(SOURCE_COLORS)
 
-const NOW = new Date(2026, 2, 30) // March 30, 2026
+const NOW = new Date(2026, 3, 16) // April 16, 2026
 
 function getYear(parsedDate) {
   return parsedDate.getFullYear()
@@ -237,7 +237,7 @@ export default function TimelinePage() {
                           Now
                         </span>
                         <span className="font-sans text-xs text-secondary">
-                          March 2026
+                          April 2026
                         </span>
                         <div className="h-px w-16 sm:w-32 bg-accent/40" />
                       </div>

@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata = {
   title: 'AI Readiness Assessment',
   description:
-    'Free 8-question assessment to see where you stand on AI readiness — including what gaps matter most, what to do next, and which frameworks deserve attention.',
+    'Free AI readiness assessment — see where you stand on adoption, guardrails, and risk, what gaps matter most, and which frameworks deserve attention.',
   alternates: {
     canonical: 'https://airegready.com/assessment',
   },

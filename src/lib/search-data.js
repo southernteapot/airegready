@@ -31,7 +31,7 @@ export function getSearchIndex() {
       type: 'page',
       title: 'AI Readiness Assessment',
       description:
-        'Free 8-question assessment to see where you stand on AI readiness.',
+        'Free AI readiness assessment to see where you stand on adoption, guardrails, and risk.',
       url: '/assessment',
       tags: [],
     },

@@ -17,6 +17,9 @@ import { aiUsePolicyStarter } from './ai-use-policy-starter'
 import { evaluatingAiTools } from './evaluating-ai-tools'
 import { aiSideProjects } from './ai-side-projects'
 import { minimumViableGuardrails } from './minimum-viable-guardrails'
+import { californiaTfaiaExplained } from './california-tfaia-explained'
+import { texasTraigaGuide } from './texas-traiga-guide'
+import { coloradoAiActCountdown } from './colorado-ai-act-countdown'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
@@ -38,6 +41,9 @@ const articles = {
   'evaluating-ai-tools': evaluatingAiTools,
   'ai-side-projects': aiSideProjects,
   'minimum-viable-guardrails': minimumViableGuardrails,
+  'california-tfaia-explained': californiaTfaiaExplained,
+  'texas-traiga-guide': texasTraigaGuide,
+  'colorado-ai-act-countdown': coloradoAiActCountdown,
 }
 
 export function getAllArticles() {

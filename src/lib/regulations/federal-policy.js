@@ -333,14 +333,14 @@ export const federalPolicy = {
         'President Trump signs "Ensuring a National Policy Framework for Artificial Intelligence," establishing federal preemption of state AI laws and creating the DOJ AI Litigation Task Force.',
     },
     {
-      date: 'January 2026',
+      date: 'January 9, 2026',
       event:
-        'DOJ AI Litigation Task Force begins operations, directed to challenge state AI laws in federal court.',
+        'AG Pam Bondi establishes the DOJ AI Litigation Task Force. As of April 2026, no lawsuits have been filed \u2014 the Executive Order contemplates Commerce Department referrals first.',
     },
     {
-      date: 'March 2026',
+      date: 'March 20, 2026',
       event:
-        'White House releases legislative blueprint urging Congress to adopt a unified federal AI framework codifying federal preemption of state AI laws.',
+        'White House releases the National Policy Framework for Artificial Intelligence, a non-binding legislative blueprint covering child safety, communities, IP, innovation, workforce, and state preemption.',
     },
   ],
   sources: [

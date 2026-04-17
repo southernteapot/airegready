@@ -18,7 +18,7 @@ Phase 1 — free informational resource site with assessments, regulatory guides
 - **Orientation section** — what the site covers (use cases, guardrails, risks, next steps)
 - **Differentiation** — not hype, not legalese, practical information
 - **Resource library** — 4 pillars: Frameworks, Checklists (coming soon), Templates (coming soon), Regulations
-- **AI Readiness Assessment** — interactive 7-question tool covering both readiness and regulatory exposure
+- **AI Readiness Assessment** — interactive 8-question tool with 3-axis scoring (Readiness / Guardrails / Risk), multi-select Q3, and tailored action plans
 - **Regulatory landscape** — 6 frameworks: EU AI Act, NIST AI RMF, U.S. State AI Laws, Executive Orders & Federal Policy, Sector-Specific Rules, Global AI Governance
 - **Blog / guidance** — articles on AI adoption, governance, and regulatory developments
 - **FAQ** — common questions about AI readiness and regulation (accordion-style)
@@ -34,9 +34,10 @@ Phase 1 — free informational resource site with assessments, regulatory guides
 - **Secondary text**: Muted gray (#646A6F)
 - **Accent / CTA**: Warm brown (#9E7A56) with lighter (#B8956E) and darker (#86653F) variants
 - **Accent text** (on accent backgrounds): Warm white (#FFF9F2)
-- **Fonts**: Playfair Display (serif, headings) + DM Sans (sans-serif, body)
+- **Fonts**: Libre Baskerville (serif, headings) + Inter (sans-serif, body)
 - **Interactions**: Accent border highlights on hover, subtle shadows, smooth transitions
 - **Section labels**: Uppercase, small, accent-colored, letterspaced
+- **Layout**: Max content width 1280px, section padding py-24, card borders softened to 60% opacity
 
 ## Tech Stack
 - Next.js

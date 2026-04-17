@@ -1,8 +1,47 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { QUESTIONS, getAssessmentReport } from '@/lib/data'
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+function rehydrateAnswersFromUrl() {
+  if (typeof window === 'undefined') return null
+  const params = new URLSearchParams(window.location.search)
+  const encoded = params.get('r')
+  if (!encoded) return null
+
+  try {
+    const decoded = atob(encoded)
+    const urlParams = new URLSearchParams(decoded)
+    const answers = []
+    for (const q of QUESTIONS) {
+      const raw = urlParams.get(`q${q.id}`)
+      if (!raw) continue
+      if (q.multi) {
+        const values = raw.split(',').filter(Boolean)
+        const score = Math.min(
+          6,
+          values.reduce((s, v) => {
+            const opt = q.options.find((o) => o.value === v)
+            return s + (opt?.sensitivity || 0)
+          }, 0)
+        )
+        answers.push({ qId: q.id, values, score })
+      } else {
+        const opt = q.options.find((o) => o.value === raw)
+        if (!opt) continue
+        const answer = { qId: q.id, value: raw }
+        if (opt.score !== undefined) answer.score = opt.score
+        answers.push(answer)
+      }
+    }
+    return answers.length > 0 ? answers : null
+  } catch {
+    return null
+  }
+}
 
 /* ------------------------------------------------------------------ */
 /*  Color maps for the three axes                                      */
@@ -130,6 +169,126 @@ function ReadingCard({ reading }) {
   )
 }
 
+function EmailResultsCard({ shareUrl }) {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+  const [linkCopied, setLinkCopied] = useState(false)
+
+  const copyLink = useCallback(() => {
+    if (!shareUrl) return
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setLinkCopied(true)
+      setTimeout(() => setLinkCopied(false), 2000)
+    })
+  }, [shareUrl])
+
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault()
+      const trimmed = email.trim().toLowerCase()
+      if (!EMAIL_RE.test(trimmed)) {
+        setStatus('error')
+        setErrorMsg('Please enter a valid email address.')
+        return
+      }
+
+      setStatus('loading')
+      setErrorMsg('')
+      try {
+        const res = await fetch('/api/newsletter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: trimmed }),
+        })
+        const data = await res.json()
+        if (!res.ok) {
+          setStatus('error')
+          setErrorMsg(
+            typeof data.error === 'string'
+              ? data.error
+              : 'Could not subscribe. Please try again.'
+          )
+          return
+        }
+        setStatus('success')
+      } catch {
+        setStatus('error')
+        setErrorMsg('Could not connect. Please try again later.')
+      }
+    },
+    [email]
+  )
+
+  return (
+    <div className="bg-accent/5 border border-accent/20 rounded-xl p-5 sm:p-6 mb-8 print:hidden">
+      <h3 className="font-serif text-base font-bold text-primary mb-1">
+        Want to come back to this?
+      </h3>
+      <p className="font-sans text-sm text-secondary mb-4 leading-relaxed">
+        Save your results link, or subscribe for weekly updates on AI resources
+        and regulation in plain English.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-2 mb-3">
+        <input
+          type="text"
+          value={shareUrl}
+          readOnly
+          onClick={(e) => e.target.select()}
+          className="flex-1 bg-bg border border-border rounded-lg px-3 py-2 text-xs text-secondary font-mono truncate min-w-0"
+          aria-label="Shareable results URL"
+        />
+        <button
+          type="button"
+          onClick={copyLink}
+          className="bg-bg border border-border rounded-lg px-4 py-2 text-sm font-semibold text-secondary hover:text-primary hover:border-accent/50 transition-colors whitespace-nowrap cursor-pointer"
+        >
+          {linkCopied ? 'Copied' : 'Copy Link'}
+        </button>
+      </div>
+
+      {status === 'success' ? (
+        <p className="font-sans text-sm text-accent font-semibold mt-3">
+          You&apos;re subscribed. We&apos;ll send updates weekly.
+        </p>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row gap-2 mt-3"
+          noValidate
+        >
+          <label htmlFor="assessment-email" className="sr-only">
+            Email address
+          </label>
+          <input
+            id="assessment-email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@email.com"
+            disabled={status === 'loading'}
+            aria-invalid={status === 'error' ? 'true' : undefined}
+            className="flex-1 bg-bg border border-border rounded-lg px-3 py-2 text-sm text-primary outline-none focus:border-accent/50 transition-colors placeholder:text-secondary/60 disabled:opacity-60 min-w-0"
+          />
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="bg-accent text-accent-text rounded-lg px-5 py-2 text-sm font-semibold hover:bg-accent-dark transition-colors whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+          >
+            {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+          </button>
+        </form>
+      )}
+      {status === 'error' && errorMsg && (
+        <p role="alert" className="mt-2 font-sans text-xs text-red-600">
+          {errorMsg}
+        </p>
+      )}
+    </div>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /*  PDF generation                                                     */
 /* ------------------------------------------------------------------ */
@@ -148,6 +307,10 @@ function buildPdfHtml(result) {
         </div>`
     )
     .join('')
+
+  const peerContextHtml = result.peerContext
+    ? `<p style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px;color:#555;line-height:1.6;text-align:center;max-width:560px;margin:0 auto 28px;">${result.peerContext}</p>`
+    : ''
 
   const standoutHtml =
     result.standout.length > 0
@@ -204,7 +367,8 @@ function buildPdfHtml(result) {
       <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#20262B;">AIRegReady &mdash; AI Readiness Assessment</div>
       <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;margin-top:4px;">Generated ${result.generatedAt}</div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:28px;">${snapshotHtml}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">${snapshotHtml}</div>
+    ${peerContextHtml}
     ${standoutHtml}
     <div style="margin-bottom:28px;">
       <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">What to Do Next</h3>
@@ -232,8 +396,6 @@ function buildPdfHtml(result) {
 /* ------------------------------------------------------------------ */
 
 function ReportResults({ result, onReset }) {
-  const [copied, setCopied] = useState(false)
-
   const handleDownloadPDF = useCallback(() => {
     const html = buildPdfHtml(result)
     const printWindow = window.open('', '_blank')
@@ -247,16 +409,13 @@ function ReportResults({ result, onReset }) {
     setTimeout(() => { if (!printWindow.closed) printWindow.print() }, 1500)
   }, [result])
 
-  const handleShare = useCallback(() => {
+  const shareUrl = useMemo(() => {
+    if (typeof window === 'undefined') return ''
     const params = new URLSearchParams()
     Object.entries(result.answerMap).forEach(([qId, value]) => {
       params.set(`q${qId}`, Array.isArray(value) ? value.join(',') : value)
     })
-    const url = `${window.location.origin}/assessment?r=${btoa(params.toString())}`
-    navigator.clipboard.writeText(url).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2500)
-    })
+    return `${window.location.origin}/assessment?r=${btoa(params.toString())}`
   }, [result.answerMap])
 
   return (
@@ -272,7 +431,7 @@ function ReportResults({ result, onReset }) {
       </div>
 
       {/* Section 1: Snapshot */}
-      <div className="mb-10">
+      <div className="mb-6">
         <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
           Your AI Readiness Snapshot
         </h3>
@@ -281,6 +440,11 @@ function ReportResults({ result, onReset }) {
           <SnapshotCard title="Guardrails" label={result.guardrails.label} colorMap={GUARDRAIL_COLORS} />
           <SnapshotCard title="Risk Exposure" label={result.risk.label} colorMap={RISK_COLORS} />
         </div>
+        {result.peerContext && (
+          <p className="font-sans text-sm text-secondary italic leading-relaxed text-center max-w-[560px] mx-auto mt-5">
+            {result.peerContext}
+          </p>
+        )}
       </div>
 
       {/* Section 2: What stands out */}
@@ -339,6 +503,9 @@ function ReportResults({ result, onReset }) {
         </div>
       )}
 
+      {/* Save / subscribe */}
+      <EmailResultsCard shareUrl={shareUrl} />
+
       {/* Disclaimer */}
       <div className="bg-accent/10 border border-accent/20 rounded-[10px] p-5 mb-8">
         <p className="font-sans text-sm text-accent-dark leading-relaxed">
@@ -357,12 +524,6 @@ function ReportResults({ result, onReset }) {
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF Report
-        </button>
-        <button
-          onClick={handleShare}
-          className="bg-bg border border-border rounded-lg px-6 py-3 text-secondary font-sans text-sm font-semibold hover:text-primary hover:border-accent/50 transition-colors cursor-pointer"
-        >
-          {copied ? 'Link Copied' : 'Share Results'}
         </button>
         <button
           onClick={onReset}
@@ -427,6 +588,13 @@ export default function AssessmentTool() {
 
   const currentQ = QUESTIONS[step]
 
+  useEffect(() => {
+    const rehydrated = rehydrateAnswersFromUrl()
+    if (rehydrated) {
+      setResult(getAssessmentReport(rehydrated))
+    }
+  }, [])
+
   const handleSingleAnswer = (option) => {
     const answer = { qId: currentQ.id, value: option.value }
     if (option.score !== undefined) answer.score = option.score
@@ -441,22 +609,33 @@ export default function AssessmentTool() {
   }
 
   const toggleMultiSelect = (value) => {
-    setMultiSelected((prev) =>
-      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
-    )
+    const option = currentQ.options.find((o) => o.value === value)
+    const isExclusive = option?.exclusive
+
+    setMultiSelected((prev) => {
+      if (prev.includes(value)) {
+        return prev.filter((v) => v !== value)
+      }
+      if (isExclusive) {
+        return [value]
+      }
+      const withoutExclusive = prev.filter((v) => {
+        const opt = currentQ.options.find((o) => o.value === v)
+        return !opt?.exclusive
+      })
+      return [...withoutExclusive, value]
+    })
   }
 
   const handleMultiNext = () => {
-    const maxSens = Math.max(
-      0,
-      ...multiSelected.map((v) => {
-        const opt = currentQ.options.find((o) => o.value === v)
-        return opt?.sensitivity || 0
-      })
-    )
+    const sumSens = multiSelected.reduce((sum, v) => {
+      const opt = currentQ.options.find((o) => o.value === v)
+      return sum + (opt?.sensitivity || 0)
+    }, 0)
+    const cappedSens = Math.min(sumSens, 6)
     const newAnswers = [
       ...answers,
-      { qId: currentQ.id, values: multiSelected, score: maxSens },
+      { qId: currentQ.id, values: multiSelected, score: cappedSens },
     ]
     setAnswers(newAnswers)
     setMultiSelected([])
@@ -489,6 +668,9 @@ export default function AssessmentTool() {
     setAnswers([])
     setMultiSelected([])
     setResult(null)
+    if (typeof window !== 'undefined' && window.location.search) {
+      window.history.replaceState({}, '', window.location.pathname)
+    }
   }
 
   return (
@@ -508,8 +690,8 @@ export default function AssessmentTool() {
           How AI-Ready Is Your Work?
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Answer 8 quick questions to see where you stand, what gaps matter
-          most, and what to focus on next.
+          {QUESTIONS.length} short questions, about 3 minutes. See where you
+          stand, what gaps matter most, and what to focus on next.
         </p>
       </div>
 
@@ -588,10 +770,15 @@ export default function AssessmentTool() {
             ) : (
               /* Single-select question */
               <fieldset className="border-none p-0 m-0">
-                <legend className="font-sans text-lg sm:text-xl font-semibold text-primary mb-6 leading-snug">
+                <legend className="font-sans text-lg sm:text-xl font-semibold text-primary mb-2 leading-snug">
                   {currentQ.text}
                 </legend>
-                <div className="flex flex-col gap-2.5">
+                {currentQ.subtitle && (
+                  <p className="font-sans text-sm text-secondary mb-5 leading-relaxed">
+                    {currentQ.subtitle}
+                  </p>
+                )}
+                <div className={`flex flex-col gap-2.5 ${currentQ.subtitle ? '' : 'mt-4'}`}>
                   {currentQ.options.map((opt) => (
                     <button
                       key={opt.value}

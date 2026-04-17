@@ -242,14 +242,19 @@ export const euAiAct = {
         'Obligations for general-purpose AI (GPAI) model providers take effect. The governance framework for the European AI Office and national competent authorities also applies.',
     },
     {
-      date: 'February 2026',
+      date: 'November 19, 2025',
       event:
-        'Commission expected to publish guidelines on classification of high-risk AI systems.',
+        'European Commission adopts the Digital Omnibus package and proposes postponing some Annex III high-risk obligations to December 2027. Parliament and Council negotiations ongoing as of April 2026 \u2014 plan as if August 2026 still applies.',
+    },
+    {
+      date: 'February 2, 2026',
+      event:
+        'Statutory deadline for the Commission to publish guidelines on classification of high-risk AI systems under Article 6.',
     },
     {
       date: 'August 2, 2026',
       event:
-        'Requirements for high-risk AI systems listed in Annex III become enforceable, including conformity assessments, risk management, data governance, and human oversight obligations.',
+        'Requirements for high-risk AI systems listed in Annex III become enforceable, including conformity assessments, risk management, data governance, and human oversight obligations. AI literacy (Article 4) enforcement also begins.',
     },
     {
       date: 'August 2, 2027',

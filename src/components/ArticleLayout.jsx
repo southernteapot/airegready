@@ -46,7 +46,7 @@ function RelatedResources({ article }) {
     resources.push({
       title: 'AI Readiness Assessment',
       href: '/assessment',
-      desc: '8 questions to see where you stand',
+      desc: 'A few quick questions to see where you stand',
     })
   }
 

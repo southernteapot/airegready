@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Search from './Search'
 import DarkModeToggle from './DarkModeToggle'
+import Logo from './Logo'
 
 const links = [
   { label: 'Regulations', href: '/regulations' },
@@ -21,13 +22,8 @@ export default function NavBar() {
       aria-label="Main navigation"
       className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border px-6 h-16 flex items-center justify-between"
     >
-      <a href="/" className="flex items-center gap-2.5 no-underline">
-        <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-dark rounded-md flex items-center justify-center font-extrabold text-base text-accent-text font-sans" aria-hidden="true">
-          A
-        </div>
-        <span className="font-sans font-bold text-lg text-primary tracking-tight">
-          AIReg<span className="text-accent">Ready</span>
-        </span>
+      <a href="/" className="no-underline" aria-label="AIRegReady home">
+        <Logo size={32} textSize="lg" />
       </a>
 
       {/* Desktop nav */}

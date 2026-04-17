@@ -240,6 +240,7 @@ const glossaryTerms = [
       'A large AI model trained on broad data that can be adapted for a wide range of downstream tasks. GPT-4, Claude, Llama, and Gemini are foundation models. The EU AI Act regulates these under its GPAI provisions, and the term is also used in various U.S. policy documents. Foundation models are significant from a regulatory perspective because a single model can power many different applications — including high-risk ones.',
     seeAlso: [
       { label: 'GPAI', href: '#gpai' },
+      { label: 'Frontier Model', href: '#frontier-model' },
       { label: 'Generative AI', href: '#generative-ai' },
       { label: 'GPAI Code of Practice', href: '/blog/gpai-code-of-practice' },
     ],
@@ -441,6 +442,7 @@ const glossaryTerms = [
     seeAlso: [
       { label: 'GPAI', href: '#gpai' },
       { label: 'FLOPs', href: '#flops' },
+      { label: 'Catastrophic Risk', href: '#catastrophic-risk' },
       { label: 'GPAI Code of Practice', href: '/blog/gpai-code-of-practice' },
     ],
   },
@@ -518,6 +520,109 @@ const glossaryTerms = [
     seeAlso: [
       { label: 'Systemic Risk', href: '#systemic-risk' },
       { label: 'GPAI', href: '#gpai' },
+    ],
+  },
+  {
+    id: 'catastrophic-risk',
+    term: 'Catastrophic Risk',
+    definition:
+      'Under California\'s TFAIA, a foreseeable and material risk that a frontier AI model could contribute to the death or serious injury of 50 or more people, or cause at least $1 billion in property damage, in a single incident — through expert-level assistance with weapons of mass destruction, autonomous criminal conduct or cyberattacks, or evading developer control. Large frontier developers must assess this risk and submit confidential assessments to the California Office of Emergency Services.',
+    seeAlso: [
+      { label: 'TFAIA', href: '#tfaia' },
+      { label: 'Frontier Model', href: '#frontier-model' },
+      { label: 'Critical Safety Incident', href: '#critical-safety-incident' },
+      { label: 'California TFAIA Explained', href: '/blog/california-tfaia-explained' },
+    ],
+  },
+  {
+    id: 'critical-safety-incident',
+    term: 'Critical Safety Incident',
+    definition:
+      'A defined event under California\'s TFAIA that triggers mandatory reporting to the California Office of Emergency Services within 15 days (or 24 hours to law enforcement if there is imminent risk of death or serious injury). Covered incidents include unauthorized access to or exfiltration of frontier model weights causing harm, the materialization of a catastrophic risk, loss of control of a frontier model causing death or bodily injury, and a frontier model using deceptive techniques against its own developer to subvert controls.',
+    seeAlso: [
+      { label: 'TFAIA', href: '#tfaia' },
+      { label: 'Catastrophic Risk', href: '#catastrophic-risk' },
+      { label: 'Frontier Developer', href: '#frontier-developer' },
+    ],
+  },
+  {
+    id: 'digital-omnibus',
+    term: 'Digital Omnibus (EU)',
+    definition:
+      'A legislative package the European Commission adopted on November 19, 2025 and proposed to the European Parliament and Council, which could postpone the EU AI Act\'s high-risk Annex III obligations until December 2027. As of April 2026 the proposal is still in negotiation. Organizations should treat the possible delay as a contingency, not a given — August 2, 2026 remains the statutory deadline until and unless the package is adopted.',
+    seeAlso: [
+      { label: 'AI Act', href: '#ai-act' },
+      { label: 'Annex III', href: '#annex-iii' },
+      { label: 'EU AI Act Compliance Checklist', href: '/blog/eu-ai-act-compliance-checklist' },
+    ],
+  },
+  {
+    id: 'frontier-developer',
+    term: 'Frontier Developer',
+    definition:
+      'Under California\'s TFAIA, any company that has trained or initiated training of a frontier model. A "large frontier developer" is a frontier developer whose group had more than $500 million in annual gross revenue in the prior calendar year — a category that captures roughly five to eight companies today. Large frontier developers face additional obligations including the publication of a Frontier AI Framework.',
+    seeAlso: [
+      { label: 'Frontier Model', href: '#frontier-model' },
+      { label: 'TFAIA', href: '#tfaia' },
+      { label: 'California TFAIA Explained', href: '/blog/california-tfaia-explained' },
+    ],
+  },
+  {
+    id: 'frontier-model',
+    term: 'Frontier Model',
+    definition:
+      'Under California\'s TFAIA, a foundation model (or general-purpose model trained on broad data) trained using, or intended to be trained using, more than 10^26 integer or floating-point operations. The definition is compute-based rather than parameter-count or capability-based. As of early 2026, only a small number of models cross the threshold. The California Department of Technology is required to assess the threshold annually and recommend updates.',
+    seeAlso: [
+      { label: 'Foundation Model', href: '#foundation-model' },
+      { label: 'TFAIA', href: '#tfaia' },
+      { label: 'FLOPs', href: '#flops' },
+      { label: 'Systemic Risk', href: '#systemic-risk' },
+    ],
+  },
+  {
+    id: 'notified-body',
+    term: 'Notified Body',
+    definition:
+      'An independent organization designated by an EU member state to perform third-party conformity assessments under EU product legislation. Under the EU AI Act, certain Annex III high-risk AI systems (particularly in biometrics) must be assessed by a notified body before they can be CE-marked and placed on the market. Notified body capacity is a known constraint ahead of the August 2, 2026 enforcement date — Q2 2026 slots are already booked.',
+    seeAlso: [
+      { label: 'Conformity Assessment', href: '#conformity-assessment' },
+      { label: 'CE Marking', href: '#ce-marking' },
+      { label: 'High-Risk AI System', href: '#high-risk-ai-system' },
+    ],
+  },
+  {
+    id: 'preemption',
+    term: 'Preemption (AI Law)',
+    definition:
+      'The legal doctrine by which federal law displaces conflicting state law. In AI, this has become a live question since December 2025, when the Trump administration issued an executive order directing the DOJ to challenge state AI laws. Under the Constitution, only Congress — not the executive branch — can actually preempt state law. As of April 2026 the DOJ AI Litigation Task Force has not filed any lawsuits, and state AI laws (Colorado, California, Texas) remain fully enforceable.',
+    seeAlso: [
+      { label: 'U.S. State AI Laws', href: '/regulations/us-state-laws' },
+      { label: 'Federal AI Policy', href: '/regulations/federal-policy' },
+      { label: 'Federal AI Preemption', href: '/blog/federal-ai-preemption' },
+    ],
+  },
+  {
+    id: 'tfaia',
+    term: 'TFAIA (Transparency in Frontier AI Act)',
+    definition:
+      'California\'s SB 53, the Transparency in Frontier Artificial Intelligence Act, signed September 29, 2025 and in effect since January 1, 2026. It is the first U.S. state law to impose binding transparency and safety-reporting obligations on developers of the largest AI models. All frontier developers must publish transparency reports and report critical safety incidents. Large frontier developers must additionally publish a Frontier AI Framework. Enforcement is exclusive to the California AG with penalties up to $1 million per violation.',
+    seeAlso: [
+      { label: 'Frontier Model', href: '#frontier-model' },
+      { label: 'Frontier Developer', href: '#frontier-developer' },
+      { label: 'Catastrophic Risk', href: '#catastrophic-risk' },
+      { label: 'California TFAIA Explained', href: '/blog/california-tfaia-explained' },
+    ],
+  },
+  {
+    id: 'traiga',
+    term: 'TRAIGA (Texas Responsible AI Governance Act)',
+    definition:
+      "Texas HB 149, signed June 22, 2025 and in effect since January 1, 2026. It makes Texas the third U.S. state with a comprehensive AI law, with a focus on prohibiting specific intentional misuses of AI (behavioral manipulation, intentional discrimination, CSAM and unlawful deepfakes, constitutional-rights infringement). Features include a NIST AI RMF safe harbor, a first-in-the-nation 36-month regulatory sandbox, and exclusive enforcement by the Texas Attorney General with penalties from $10,000 to $200,000 per violation.",
+    seeAlso: [
+      { label: 'AI RMF', href: '#ai-rmf' },
+      { label: 'Regulatory Sandbox', href: '#regulatory-sandbox' },
+      { label: 'U.S. State AI Laws', href: '/regulations/us-state-laws' },
+      { label: 'Texas TRAIGA Guide', href: '/blog/texas-traiga-guide' },
     ],
   },
 ]

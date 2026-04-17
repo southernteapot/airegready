@@ -14,7 +14,7 @@ export const euAiActComplianceChecklist = {
     {
       title: null,
       content:
-        'August 2, 2026 is the date the EU AI Act\'s full high-risk requirements kick in for Annex III AI systems. That\'s roughly four months from now. If you\'re reading this and haven\'t started your compliance program, you\'re behind — but you\'re not out of time. Not quite.\n\nThis article is a practical checklist organized by urgency. It won\'t repeat what the Act says — we\'ve covered the [risk classification system](/blog/eu-ai-act-risk-classification) in detail already. Instead, this is about what to do and in what order, so you can walk into August with a defensible compliance posture even if you\'re starting from a standing position.',
+        'August 2, 2026 is the date the EU AI Act\'s full high-risk requirements kick in for Annex III AI systems. That is now less than four months away. If you haven\'t started your compliance program, you\'re behind — but you\'re not out of time. Not quite. (Note: the European Commission\'s Digital Omnibus package, adopted on November 19, 2025, is under negotiation and could push some high-risk obligations into December 2027. Treat that as a possibility, not a given.)\n\nThis article is a practical checklist organized by urgency. It won\'t repeat what the Act says — we\'ve covered the [risk classification system](/blog/eu-ai-act-risk-classification) in detail already. Instead, this is about what to do and in what order, so you can walk into August with a defensible compliance posture even if you\'re starting from a standing position.',
     },
     {
       title: 'Phase 1: Do This Now (Weeks 1-2)',
@@ -58,7 +58,7 @@ export const euAiActComplianceChecklist = {
   ],
 
   takeaways: [
-    'The August 2, 2026 deadline for full Annex III high-risk compliance is roughly four months away. Start with an AI system inventory and a compliance owner.',
+    'The August 2, 2026 deadline for full Annex III high-risk compliance is less than four months away. Start with an AI system inventory and a compliance owner.',
     'Classify every system against the Act\'s risk tiers and document your rationale. When in doubt, classify up.',
     'Deployers have real obligations under the Act even when using vendor-supplied systems. Vendor compliance does not cover your deployer responsibilities.',
     'If you modify a high-risk system or use it outside the provider\'s intended purpose, you may become the provider under Article 25 and inherit the full set of provider obligations.',

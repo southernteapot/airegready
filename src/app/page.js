@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import CountdownStrip from '@/components/CountdownStrip'
 import TrustStrip from '@/components/TrustStrip'
 import HowItWorks from '@/components/HowItWorks'
 import WhySection from '@/components/WhySection'
@@ -57,6 +58,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Hero />
+      <CountdownStrip />
       <TrustStrip />
       <HowItWorks />
       <WhySection />
