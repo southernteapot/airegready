@@ -10,44 +10,54 @@ export default function BlogSection() {
       className="py-24 px-6 max-w-[1280px] mx-auto"
       aria-labelledby="blog-heading"
     >
-      <div className="text-center mb-14">
-        <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
-          Latest Guidance
+      <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
+        <div className="max-w-[620px]">
+          <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+            Latest Guidance
+          </div>
+          <h2
+            id="blog-heading"
+            className="font-serif text-4xl sm:text-5xl font-bold text-primary leading-[1.05] tracking-tight"
+          >
+            What&apos;s new in AI readiness.
+          </h2>
+          <p className="font-sans text-base text-secondary mt-3 leading-relaxed">
+            Practical breakdowns of AI adoption, governance, and regulatory
+            developments &mdash; and what they actually mean for you.
+          </p>
         </div>
-        <h2
-          id="blog-heading"
-          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
+        <a
+          href="/blog"
+          className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors whitespace-nowrap"
         >
-          What&apos;s New in AI Readiness
-        </h2>
-        <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          Practical breakdowns of AI adoption, governance, regulatory
-          developments, and what they mean for you.
-        </p>
+          All {BLOG_POSTS.length} articles &rarr;
+        </a>
       </div>
 
-      {/* Featured post */}
-      <a
-        href={`/blog/${featured.slug}`}
-        className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
-      >
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-        <div className="flex flex-wrap gap-3 items-center mb-4">
-          <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
-            Featured
-          </span>
-          <span className="font-sans text-xs text-secondary">
-            {featured.category} &middot;{' '}
-            <time>{featured.date}</time> &middot; {featured.readTime}
-          </span>
-        </div>
-        <h3 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-3 leading-tight">
-          {featured.title}
-        </h3>
-        <p className="font-sans text-sm text-secondary leading-relaxed max-w-[700px]">
-          {featured.excerpt}
-        </p>
-      </a>
+      {/* Featured post — gap layout, no fixed min-height, prevents overlap */}
+      {featured && (
+        <a
+          href={`/blog/${featured.slug}`}
+          className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 flex flex-col gap-5 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
+        >
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+          <div className="flex flex-wrap gap-3 items-center">
+            <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+              Featured
+            </span>
+            <span className="font-sans text-xs text-secondary">
+              {featured.category} &middot; <time>{featured.date}</time> &middot;{' '}
+              {featured.readTime}
+            </span>
+          </div>
+          <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-primary leading-[1.15] tracking-tight">
+            {featured.title}
+          </h3>
+          <p className="font-sans text-sm text-secondary leading-relaxed max-w-[680px]">
+            {featured.excerpt}
+          </p>
+        </a>
+      )}
 
       {/* Recent posts — 5 most recent non-featured */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -55,13 +65,13 @@ export default function BlogSection() {
           <a
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+            className="bg-surface border border-border/60 rounded-xl p-6 flex flex-col gap-3 min-w-0 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
           >
-            <div className="font-sans text-xs text-secondary mb-3">
+            <div className="font-sans text-xs text-secondary">
               {post.category} &middot; <time>{post.date}</time> &middot;{' '}
               {post.readTime}
             </div>
-            <h3 className="font-sans text-base font-bold text-primary mb-2.5 leading-snug">
+            <h3 className="font-sans text-base font-bold text-primary leading-snug">
               {post.title}
             </h3>
             <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -69,15 +79,6 @@ export default function BlogSection() {
             </p>
           </a>
         ))}
-      </div>
-
-      <div className="text-center mt-8">
-        <a
-          href="/blog"
-          className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
-        >
-          View all {BLOG_POSTS.length} articles &rarr;
-        </a>
       </div>
     </section>
   )
