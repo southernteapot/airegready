@@ -12,8 +12,9 @@ const DEADLINES = [
   },
   {
     label: 'EU AI Act Annex III',
+    note: 'delay pending',
     date: new Date('2026-08-02T00:00:00'),
-    href: '/regulations/eu-ai-act',
+    href: '/blog/eu-ai-act-digital-omnibus-delay',
     passedLabel: 'Enforceable',
   },
 ]
@@ -60,6 +61,11 @@ export default function CountdownStrip() {
                   ? d.passedLabel
                   : `${days} day${days === 1 ? '' : 's'}`}
               </span>
+              {d.note && (
+                <span className="font-sans text-[10px] italic text-secondary/80 tracking-wide">
+                  ({d.note})
+                </span>
+              )}
             </Link>
           )
         })}

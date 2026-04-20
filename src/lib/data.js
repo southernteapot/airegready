@@ -19,7 +19,7 @@ export const REGULATIONS = [
     id: 'state-laws',
     slug: 'us-state-laws',
     title: 'U.S. State AI Laws',
-    desc: 'A patchwork of state-level requirements from Colorado, Illinois, Texas, California, and more.',
+    desc: 'A patchwork of state-level requirements from Colorado, Illinois, Texas, California, New York, and more.',
     tag: 'Evolving',
     icon: '\u{2696}\u{FE0F}',
   },
@@ -51,6 +51,26 @@ export const REGULATIONS = [
 
 export const BLOG_POSTS = [
   {
+    slug: 'eu-ai-act-digital-omnibus-delay',
+    title: "The EU AI Act's August Deadline Is Wobbling: The Digital Omnibus, the High-Risk Delay, and What to Do Now",
+    category: 'EU AI Act',
+    date: 'Apr 2026',
+    readTime: '9 min read',
+    excerpt:
+      "The European Commission's Digital Omnibus would push the EU AI Act's high-risk compliance deadline from August 2026 out to December 2027. Parliament committees have agreed. The Council has a different view. Here's what's actually happening and how to plan.",
+    featured: true,
+  },
+  {
+    slug: 'doj-ai-task-force-three-months',
+    title: 'Three Months In: Where the DOJ AI Litigation Task Force Actually Stands',
+    category: 'Federal Policy',
+    date: 'Apr 2026',
+    readTime: '8 min read',
+    excerpt:
+      "The executive order landed December 11, 2025. The DOJ Task Force stood up January 9, 2026. Ninety days of federal deadlines came and went on March 11, 2026. Here's what's happened, what hasn't, and what deployers should and shouldn't change.",
+    featured: false,
+  },
+  {
     slug: 'california-tfaia-explained',
     title: "California's TFAIA Explained: What the Frontier AI Transparency Act Actually Requires",
     category: 'State Laws',
@@ -58,7 +78,7 @@ export const BLOG_POSTS = [
     readTime: '8 min read',
     excerpt:
       "California's Transparency in Frontier AI Act took effect Jan 1, 2026. Here's who it covers, what transparency and incident-reporting obligations apply, and what every other business should take from it.",
-    featured: true,
+    featured: false,
   },
   {
     slug: 'texas-traiga-guide',
@@ -307,7 +327,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'How fast is the regulatory landscape changing?',
-    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. Over the past year, dozens of U.S. states passed AI-related legislation, the EU AI Act moved into active enforcement, Japan and South Korea adopted comprehensive AI laws, and the federal policy landscape shifted sharply \u2014 including a December 2025 executive order targeting state AI laws for preemption and a White House National Policy Framework for AI released in March 2026. Staying current is a real challenge \u2014 and a core reason this resource exists.',
+    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. Over the past year, dozens of U.S. states passed AI-related legislation, the EU AI Act moved into active enforcement, Japan and South Korea adopted comprehensive AI laws, and the federal policy landscape shifted sharply. A December 2025 executive order set up a DOJ AI Litigation Task Force to challenge state AI laws, followed by a White House National Policy Framework in March 2026. Meanwhile, the European Commission\u2019s Digital Omnibus proposal \u2014 backed by Parliament committees in March 2026 \u2014 would push the EU AI Act\u2019s high-risk compliance deadline from August 2026 out to December 2027. Staying current is a real challenge \u2014 and a core reason this resource exists.',
   },
 ]
 

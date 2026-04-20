@@ -8,7 +8,7 @@ export const californiaTfaiaExplained = {
   date: '2026-04-16',
   displayDate: 'April 16, 2026',
   readTime: '8 min read',
-  featured: true,
+  featured: false,
 
   sections: [
     {

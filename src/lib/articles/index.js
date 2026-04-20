@@ -20,6 +20,8 @@ import { minimumViableGuardrails } from './minimum-viable-guardrails'
 import { californiaTfaiaExplained } from './california-tfaia-explained'
 import { texasTraigaGuide } from './texas-traiga-guide'
 import { coloradoAiActCountdown } from './colorado-ai-act-countdown'
+import { euAiActDigitalOmnibusDelay } from './eu-ai-act-digital-omnibus-delay'
+import { dojAiTaskForceThreeMonths } from './doj-ai-task-force-three-months'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
@@ -44,6 +46,8 @@ const articles = {
   'california-tfaia-explained': californiaTfaiaExplained,
   'texas-traiga-guide': texasTraigaGuide,
   'colorado-ai-act-countdown': coloradoAiActCountdown,
+  'eu-ai-act-digital-omnibus-delay': euAiActDigitalOmnibusDelay,
+  'doj-ai-task-force-three-months': dojAiTaskForceThreeMonths,
 }
 
 export function getAllArticles() {
