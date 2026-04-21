@@ -8,6 +8,7 @@ export const nistAiRmf = {
   icon: '\u{1F3DB}\u{FE0F}',
   status: 'Framework',
   lastReviewed: 'March 2026',
+  lastReviewedIso: '2026-03-01',
 
   keyFacts: [
     { label: 'Published By', value: 'National Institute of Standards and Technology (NIST), U.S. Department of Commerce' },

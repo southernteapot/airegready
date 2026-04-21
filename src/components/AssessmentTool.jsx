@@ -171,6 +171,7 @@ function ReadingCard({ reading }) {
 
 function EmailResultsCard({ shareUrl }) {
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
   const [linkCopied, setLinkCopied] = useState(false)
@@ -199,7 +200,7 @@ function EmailResultsCard({ shareUrl }) {
         const res = await fetch('/api/newsletter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: trimmed }),
+          body: JSON.stringify({ email: trimmed, website }),
         })
         const data = await res.json()
         if (!res.ok) {
@@ -217,7 +218,7 @@ function EmailResultsCard({ shareUrl }) {
         setErrorMsg('Could not connect. Please try again later.')
       }
     },
-    [email]
+    [email, website]
   )
 
   return (
@@ -270,6 +271,16 @@ function EmailResultsCard({ shareUrl }) {
             disabled={status === 'loading'}
             aria-invalid={status === 'error' ? 'true' : undefined}
             className="flex-1 bg-bg border border-border rounded-lg px-3 py-2 text-sm text-primary outline-none focus:border-accent/50 transition-colors placeholder:text-secondary/60 disabled:opacity-60 min-w-0"
+          />
+          <input
+            type="text"
+            name="website"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
           />
           <button
             type="submit"

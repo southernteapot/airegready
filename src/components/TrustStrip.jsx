@@ -1,5 +1,5 @@
 import { getAllArticles } from '@/lib/articles'
-import { REGULATIONS } from '@/lib/data'
+import { getAllRegulations } from '@/lib/regulations'
 
 const topics = [
   'Frameworks',
@@ -12,7 +12,7 @@ const topics = [
 
 export default function TrustStrip() {
   const articleCount = getAllArticles().length
-  const frameworkCount = REGULATIONS.length
+  const frameworkCount = getAllRegulations().length
 
   return (
     <section

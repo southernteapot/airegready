@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Breadcrumb from './Breadcrumb'
 import Disclaimer from './Disclaimer'
+import BackToTop from './BackToTop'
 import { ContentBlock, renderText } from './ContentRenderer'
 import { getRegulation } from '@/lib/regulations'
+import ReadingProgress from './ReadingProgress'
 
 function TableOfContents({ sections }) {
   const headings = sections.filter((s) => s.title).map((s) => s.title)
@@ -81,6 +83,7 @@ export default function ArticleLayout({ article }) {
     .filter(Boolean)
   return (
     <div className="pt-28 pb-20 px-6">
+      <ReadingProgress />
       <article className="max-w-[720px] mx-auto">
         <Breadcrumb
           items={[
@@ -202,7 +205,7 @@ export default function ArticleLayout({ article }) {
             </h2>
             <div className="flex flex-col gap-2">
               {relatedRegs.map((reg) => (
-                <a
+                <Link
                   key={reg.slug}
                   href={`/regulations/${reg.slug}`}
                   className="bg-surface border border-border/60 rounded-lg p-4 flex items-start gap-3 hover:border-accent/50 transition-colors group no-underline"
@@ -223,7 +226,7 @@ export default function ArticleLayout({ article }) {
                       {reg.description}
                     </p>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </section>
@@ -258,6 +261,7 @@ export default function ArticleLayout({ article }) {
         {/* Related Resources */}
         <RelatedResources article={article} />
       </article>
+      <BackToTop />
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import { Libre_Baskerville, Inter } from 'next/font/google'
+import Script from 'next/script'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
-import BackToTop from '@/components/BackToTop'
-import ReadingProgress from '@/components/ReadingProgress'
+import { absoluteUrl, buildSocialImage } from '@/lib/seo'
 import './globals.css'
 
 const libreBaskerville = Libre_Baskerville({
@@ -19,7 +19,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://airegready.com'),
+  metadataBase: new URL(absoluteUrl('/')),
   title: {
     default: 'AIRegReady — AI Resources for Real-World Use',
     template: '%s | AIRegReady',
@@ -46,17 +46,19 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://airegready.com',
+    url: absoluteUrl('/'),
     siteName: 'AIRegReady',
     title: 'AIRegReady — AI Resources for Real-World Use',
     description:
       'Frameworks, assessments, and plain-English AI information. Free tools and regulatory breakdowns.',
+    images: [buildSocialImage('/opengraph-image', 'AIRegReady — AI Resources for Real-World Use')],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AIRegReady — AI Resources for Real-World Use',
     description:
       'Frameworks, assessments, and plain-English AI information. Free readiness tools and regulatory breakdowns.',
+    images: [absoluteUrl('/opengraph-image')],
   },
   robots: {
     index: true,
@@ -70,9 +72,9 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://airegready.com',
+    canonical: absoluteUrl('/'),
     types: {
-      'application/rss+xml': 'https://airegready.com/feed.xml',
+      'application/rss+xml': absoluteUrl('/feed.xml'),
     },
   },
 }
@@ -82,11 +84,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${libreBaskerville.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="7yPLVDgBZG3wROlZt4wxHmVqh4I6KOgJERk-IXgMevM" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
-          }}
-        />
+        <Script src="/theme.js" strategy="beforeInteractive" />
       </head>
       <body className="font-sans antialiased">
         <a
@@ -95,7 +93,6 @@ export default function RootLayout({ children }) {
         >
           Skip to main content
         </a>
-        <ReadingProgress />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -114,7 +111,6 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
-        <BackToTop />
         {process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN && (
           <script
             defer

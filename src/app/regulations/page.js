@@ -1,14 +1,14 @@
+import Link from 'next/link'
 import { getAllRegulations } from '@/lib/regulations'
 import Breadcrumb from '@/components/Breadcrumb'
+import { buildPageMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'AI Frameworks & Regulations',
   description:
     'Plain-English guides to the AI frameworks and regulations that matter most. EU AI Act, NIST AI RMF, U.S. state laws, federal policy, sector-specific rules, and global AI governance.',
-  alternates: {
-    canonical: 'https://airegready.com/regulations',
-  },
-}
+  path: '/regulations',
+})
 
 export default function RegulationsIndex() {
   const regulations = getAllRegulations()
@@ -39,7 +39,7 @@ export default function RegulationsIndex() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {regulations.map((reg) => (
-            <a
+            <Link
               key={reg.slug}
               href={`/regulations/${reg.slug}`}
               className="bg-surface border border-border/60 rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline block"
@@ -58,7 +58,7 @@ export default function RegulationsIndex() {
               <p className="font-sans text-sm text-secondary leading-relaxed">
                 {reg.description}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -108,10 +108,8 @@ body {
   nav[aria-label="Main navigation"],
   footer,
   nav[aria-label="Breadcrumb"],
-  [aria-label="Search site (Ctrl+K)"],
-  [aria-label="Toggle dark mode"],
-  [aria-label="Switch to light mode"],
-  [aria-label="Switch to dark mode"],
+  [aria-label="Search site"],
+  [data-theme-toggle],
   [data-back-to-top],
   [data-filter-pills],
   .no-print {

@@ -8,6 +8,7 @@ export const sectorRules = {
   icon: '\u{1F3E5}',
   status: 'Cross-Cutting',
   lastReviewed: 'March 2026',
+  lastReviewedIso: '2026-03-01',
   keyFacts: [
     { label: 'Sectors Covered', value: 'Healthcare, Finance, Employment, Insurance, Education' },
     { label: 'Primary Regulators', value: 'FDA, CFPB, EEOC, SEC, OCC, NAIC, Dept. of Education' },

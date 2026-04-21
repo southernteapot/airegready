@@ -31,6 +31,7 @@ function isAlreadySubscribed(email) {
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [status, setStatus] = useState('idle') // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -76,7 +77,7 @@ export default function Newsletter() {
         const res = await fetch('/api/newsletter', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: trimmed }),
+          body: JSON.stringify({ email: trimmed, website }),
         })
 
         const data = await res.json()
@@ -95,7 +96,7 @@ export default function Newsletter() {
         setErrorMsg('Could not connect. Please try again later.')
       }
     },
-    [email]
+    [email, website]
   )
 
   return (
@@ -166,6 +167,16 @@ export default function Newsletter() {
                 aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
                 aria-invalid={status === 'error' ? 'true' : undefined}
                 className="flex-1 bg-surface border border-border rounded-lg px-4 py-3 text-primary font-sans text-sm outline-none focus:border-accent/50 transition-colors placeholder:text-secondary/60 disabled:opacity-60"
+              />
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
               />
               <button
                 type="submit"

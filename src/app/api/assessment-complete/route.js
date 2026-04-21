@@ -1,19 +1,37 @@
+function isNonEmptyString(value) {
+  return typeof value === 'string' && value.trim().length > 0
+}
+
 export async function POST(request) {
   try {
-    const { riskLevel, score, regulationCount, timestamp } = await request.json()
+    const { readiness, guardrails, risk, frameworkCount, timestamp } = await request.json()
 
-    // Log to server console (visible in Cloudflare Pages function logs)
+    if (
+      !isNonEmptyString(readiness) ||
+      !isNonEmptyString(guardrails) ||
+      !isNonEmptyString(risk) ||
+      !Number.isInteger(frameworkCount) ||
+      frameworkCount < 0 ||
+      !isNonEmptyString(timestamp)
+    ) {
+      return Response.json({ ok: false }, { status: 400 })
+    }
+
     console.log(
       JSON.stringify({
         event: 'assessment_complete',
-        riskLevel,
-        score,
-        regulationCount,
+        readiness,
+        guardrails,
+        risk,
+        frameworkCount,
         timestamp,
       })
     )
 
-    return Response.json({ ok: true })
+    return Response.json(
+      { ok: true },
+      { headers: { 'Cache-Control': 'no-store' } }
+    )
   } catch {
     return Response.json({ ok: false }, { status: 400 })
   }

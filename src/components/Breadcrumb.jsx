@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Breadcrumb({ items }) {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -8,7 +10,6 @@ export default function Breadcrumb({ items }) {
         position: i + 1,
         name: item.label,
       }
-      // Last item (current page) should not have an "item" URL per Google's guidelines
       if (i < items.length - 1 && item.href) {
         entry.item = `https://airegready.com${item.href}`
       }
@@ -28,14 +29,17 @@ export default function Breadcrumb({ items }) {
             <li key={i} className="flex items-center gap-1.5">
               {i > 0 && <span className="text-border">/</span>}
               {item.href ? (
-                <a
+                <Link
                   href={item.href}
                   className="hover:text-accent transition-colors"
+                  aria-current={i === items.length - 1 ? 'page' : undefined}
                 >
                   {item.label}
-                </a>
+                </Link>
               ) : (
-                <span className="text-primary font-medium">{item.label}</span>
+                <span className="text-primary font-medium" aria-current="page">
+                  {item.label}
+                </span>
               )}
             </li>
           ))}

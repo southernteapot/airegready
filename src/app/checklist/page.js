@@ -222,13 +222,19 @@ export default function ChecklistPage() {
                     const isChecked = checked.has(key)
                     return (
                       <li key={key}>
-                        <button
-                          onClick={() => toggle(key)}
-                          className={`flex items-start gap-3 w-full text-left font-sans text-sm leading-relaxed transition-colors cursor-pointer bg-transparent border-none p-0 ${
+                        <label
+                          className={`flex items-start gap-3 w-full text-left font-sans text-sm leading-relaxed transition-colors cursor-pointer ${
                             isChecked ? 'text-secondary/60 line-through' : 'text-secondary'
                           }`}
                         >
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => toggle(key)}
+                            className="sr-only"
+                          />
                           <span
+                            aria-hidden="true"
                             className={`inline-flex items-center justify-center w-5 h-5 shrink-0 rounded border mt-0.5 transition-colors ${
                               isChecked
                                 ? 'bg-accent border-accent text-accent-text'
@@ -241,8 +247,8 @@ export default function ChecklistPage() {
                               </svg>
                             )}
                           </span>
-                          {item}
-                        </button>
+                          <span>{item}</span>
+                        </label>
                       </li>
                     )
                   })}

@@ -1,0 +1,73 @@
+import assert from 'node:assert/strict'
+import path from 'node:path'
+import test from 'node:test'
+import { pathToFileURL } from 'node:url'
+
+async function importLocalModule(relativePath) {
+  const absolutePath = path.join(process.cwd(), relativePath)
+  return import(pathToFileURL(absolutePath).href)
+}
+
+function escapeForRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+const { buildPageMetadata } = await importLocalModule('src/lib/seo.js')
+const {
+  buildFeedXml,
+  getArticleRecords,
+  getRegulationRecords,
+  getSearchIndex,
+  getSitemapEntries,
+} = await importLocalModule('src/lib/site-content.js')
+
+test('regulation records expose stable machine-readable review dates', () => {
+  const usStateLaws = getRegulationRecords().find((regulation) => regulation.slug === 'us-state-laws')
+
+  assert.ok(usStateLaws)
+  assert.equal(usStateLaws.modifiedAt, '2026-04-01')
+})
+
+test('sitemap entries use canonical stable dates instead of build-time dates', () => {
+  const regulationEntry = getSitemapEntries().find(
+    (entry) => entry.url === 'https://airegready.com/regulations/us-state-laws'
+  )
+
+  assert.ok(regulationEntry?.lastModified instanceof Date)
+  assert.equal(regulationEntry.lastModified.toISOString().slice(0, 10), '2026-04-01')
+})
+
+test('search index is generated from the canonical live content layer', () => {
+  const searchIndex = getSearchIndex()
+
+  assert.ok(searchIndex.some((entry) => entry.type === 'regulation' && entry.url === '/regulations/eu-ai-act'))
+  assert.ok(searchIndex.some((entry) => entry.type === 'article' && entry.url === '/blog/texas-traiga-guide'))
+  assert.ok(searchIndex.some((entry) => entry.type === 'page' && entry.url === '/timeline'))
+})
+
+test('feed XML uses the latest article date rather than the current build date', () => {
+  const articleRecords = getArticleRecords()
+  const latestArticle = articleRecords[0]
+  const feedXml = buildFeedXml()
+  const expectedLastBuildDate = new Date(latestArticle.modifiedAt).toUTCString()
+
+  assert.match(
+    feedXml,
+    new RegExp(`<lastBuildDate>${escapeForRegExp(expectedLastBuildDate)}</lastBuildDate>`)
+  )
+  assert.match(feedXml, /<link>https:\/\/airegready\.com\/blog\/texas-traiga-guide<\/link>/)
+})
+
+test('page metadata helper emits canonical and social metadata', () => {
+  const metadata = buildPageMetadata({
+    title: 'Example Title',
+    description: 'Example Description',
+    path: '/example',
+    imagePath: '/example/opengraph-image',
+    type: 'article',
+  })
+
+  assert.equal(metadata.alternates.canonical, 'https://airegready.com/example')
+  assert.equal(metadata.openGraph.images[0].url, 'https://airegready.com/example/opengraph-image')
+  assert.deepEqual(metadata.twitter.images, ['https://airegready.com/example/opengraph-image'])
+})

@@ -4,24 +4,21 @@ import TrustStrip from '@/components/TrustStrip'
 import HowItWorks from '@/components/HowItWorks'
 import WhySection from '@/components/WhySection'
 import ResourcesSection from '@/components/ResourcesSection'
-import AssessmentTool from '@/components/AssessmentTool'
+import AssessmentTeaserSection from '@/components/AssessmentTeaserSection'
 import GuideSection from '@/components/GuideSection'
 import ToolsTeaser from '@/components/ToolsTeaser'
 import BlogSection from '@/components/BlogSection'
 import FAQSection from '@/components/FAQSection'
 import Newsletter from '@/components/Newsletter'
 import { FAQ_ITEMS } from '@/lib/data'
+import { buildPageMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'AIRegReady — AI Resources for Real-World Use',
   description:
     'Frameworks, assessments, and plain-English AI information for real-world use. Free readiness assessment, regulatory comparisons, and practical resources covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
-  openGraph: {
-    title: 'AIRegReady — AI Resources for Real-World Use',
-    description:
-      'Frameworks, assessments, and plain-English AI information. Free readiness tools, regulatory comparisons, and practical resources.',
-  },
-}
+  path: '/',
+})
 
 export default function Home() {
   const organizationSchema = {
@@ -63,7 +60,7 @@ export default function Home() {
       <HowItWorks />
       <WhySection />
       <ResourcesSection />
-      <AssessmentTool />
+      <AssessmentTeaserSection />
       <GuideSection />
       <ToolsTeaser />
       <BlogSection />

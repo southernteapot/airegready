@@ -8,6 +8,7 @@ export const globalGovernance = {
   icon: '\u{1F310}',
   status: 'Expanding',
   lastReviewed: 'March 2026',
+  lastReviewedIso: '2026-03-01',
   keyFacts: [
     { label: 'Key Jurisdictions', value: 'EU, China, UK, Canada, Brazil, Japan, Singapore, Australia' },
     { label: 'International Frameworks', value: 'OECD AI Principles, G7 Hiroshima Process, Council of Europe Convention, ISO/IEC 42001' },

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState, useMemo } from 'react'
 
 export default function BlogList({ articles }) {
@@ -90,7 +91,7 @@ export default function BlogList({ articles }) {
       >
         {/* Featured post (only when visible in current filter) */}
         {featured && (
-          <a
+          <Link
             href={`/blog/${featured.slug}`}
             className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
           >
@@ -113,14 +114,14 @@ export default function BlogList({ articles }) {
             <p className="font-sans text-sm text-secondary leading-relaxed max-w-[700px]">
               {featured.description}
             </p>
-          </a>
+          </Link>
         )}
 
         {/* Other posts grid */}
         {rest.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {rest.map((post) => (
-              <a
+              <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
@@ -139,7 +140,7 @@ export default function BlogList({ articles }) {
                 <p className="font-sans text-sm text-secondary leading-relaxed">
                   {post.description}
                 </p>
-              </a>
+              </Link>
             ))}
           </div>
         ) : (

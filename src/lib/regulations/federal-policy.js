@@ -8,6 +8,7 @@ export const federalPolicy = {
   icon: '\uD83D\uDCDC',
   status: 'Active',
   lastReviewed: 'March 2026',
+  lastReviewedIso: '2026-03-01',
   keyFacts: [
     { label: 'Comprehensive Federal AI Law', value: 'None (as of early 2026)' },
     {

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const resources = [
   {
     title: 'Regulations',
@@ -78,7 +80,7 @@ export default function ResourcesSection() {
           }
 
           return (
-            <a
+            <Link
               key={resource.title}
               href={resource.href}
               className={`${baseCard} ${spanClass} hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] group ${
@@ -98,7 +100,7 @@ export default function ResourcesSection() {
               <span className="font-sans text-sm font-semibold text-accent group-hover:text-accent-dark transition-colors mt-auto">
                 {resource.hero ? 'Browse all regulations' : 'View'} &rarr;
               </span>
-            </a>
+            </Link>
           )
         })}
       </div>

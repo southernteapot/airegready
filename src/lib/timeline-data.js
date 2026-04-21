@@ -43,14 +43,20 @@ function parseDate(dateStr) {
   return new Date(0)
 }
 
-export const timelineEvents = sources
-  .flatMap(({ data, source, sourceSlug }) =>
-    (data.timeline || []).map((entry) => ({
-      date: entry.date,
-      event: entry.event,
-      source,
-      sourceSlug,
-      parsedDate: parseDate(entry.date),
-    }))
-  )
-  .sort((a, b) => a.parsedDate - b.parsedDate)
+export function getTimelineEvents() {
+  return sources
+    .flatMap(({ data, source, sourceSlug }) =>
+      (data.timeline || []).map((entry) => {
+        const parsedDate = parseDate(entry.date)
+
+        return {
+          date: entry.date,
+          event: entry.event,
+          source,
+          sourceSlug,
+          parsedTimestamp: parsedDate.getTime(),
+        }
+      })
+    )
+    .sort((a, b) => a.parsedTimestamp - b.parsedTimestamp)
+}

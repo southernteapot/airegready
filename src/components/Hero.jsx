@@ -1,12 +1,15 @@
+import Link from 'next/link'
 import { getAllArticles } from '@/lib/articles'
-import { REGULATIONS } from '@/lib/data'
+import { getAllRegulations } from '@/lib/regulations'
 import HeroAssessmentPreview from './HeroAssessmentPreview'
 
 export default function Hero() {
-  const latest = getAllArticles()[0]
+  const articles = getAllArticles()
+  const regulations = getAllRegulations()
+  const latest = articles[0]
   const lastUpdated = latest?.displayDate
-  const frameworkCount = REGULATIONS.length
-  const articleCount = getAllArticles().length
+  const frameworkCount = regulations.length
+  const articleCount = articles.length
 
   return (
     <section
@@ -36,18 +39,18 @@ export default function Hero() {
           </p>
 
           <div className="flex gap-3 flex-wrap">
-            <a
+            <Link
               href="/assessment"
               className="inline-flex items-center gap-2 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3.5 rounded-lg text-sm font-bold font-sans no-underline shadow-[0_4px_24px_rgba(158,122,86,0.18)] hover:shadow-[0_8px_32px_rgba(158,122,86,0.28)] hover:-translate-y-0.5 transition-all"
             >
               Start the assessment &rarr;
-            </a>
-            <a
+            </Link>
+            <Link
               href="/regulations"
               className="inline-flex items-center gap-2 bg-surface border border-border text-primary px-7 py-3.5 rounded-lg text-sm font-semibold font-sans no-underline hover:border-accent/50 transition-colors"
             >
               Browse regulations instead
-            </a>
+            </Link>
           </div>
 
           {/* 3-stat row */}

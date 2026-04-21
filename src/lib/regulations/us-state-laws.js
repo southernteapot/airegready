@@ -8,6 +8,7 @@ export const usStateLaws = {
   icon: '\u2696\uFE0F',
   status: 'Evolving',
   lastReviewed: 'April 2026',
+  lastReviewedIso: '2026-04-01',
   keyFacts: [
     { label: 'Federal AI Law', value: 'None (as of April 2026)' },
     {

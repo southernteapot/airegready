@@ -1,6 +1,7 @@
 import { getRegulation, getAllRegulationSlugs } from '@/lib/regulations'
 import { getArticlesForRegulation } from '@/lib/articles'
 import RegulationLayout from '@/components/RegulationLayout'
+import { buildPageMetadata } from '@/lib/seo'
 import { notFound } from 'next/navigation'
 
 export function generateStaticParams() {
@@ -12,18 +13,15 @@ export async function generateMetadata({ params }) {
   const regulation = getRegulation(slug)
   if (!regulation) return {}
 
-  return {
+  return buildPageMetadata({
     title: `${regulation.title} — Guide & Requirements`,
     description: regulation.description,
-    alternates: {
-      canonical: `https://airegready.com/regulations/${slug}`,
-    },
-    openGraph: {
-      title: `${regulation.title} — AIRegReady`,
-      description: regulation.description,
-      url: `https://airegready.com/regulations/${slug}`,
-    },
-  }
+    path: `/regulations/${slug}`,
+    imagePath: `/regulations/${slug}/opengraph-image`,
+    type: 'article',
+    modifiedTime: regulation.lastReviewedIso,
+    section: 'AI Regulation',
+  })
 }
 
 export default async function RegulationPage({ params }) {
@@ -38,7 +36,7 @@ export default async function RegulationPage({ params }) {
     '@type': 'WebPage',
     name: `${regulation.title} — Comprehensive Guide`,
     description: regulation.description,
-    dateModified: new Date().toISOString().split('T')[0],
+    ...(regulation.lastReviewedIso ? { dateModified: regulation.lastReviewedIso } : {}),
     publisher: {
       '@type': 'Organization',
       name: 'AIRegReady',

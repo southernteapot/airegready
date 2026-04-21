@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Breadcrumb from '@/components/Breadcrumb'
 import Disclaimer from '@/components/Disclaimer'
 
@@ -282,6 +283,7 @@ export default function ComparePage() {
           <div className="flex flex-wrap items-center justify-center gap-2">
             <button
               onClick={selectAll}
+              aria-pressed={selected.size === frameworks.length}
               className={`font-sans text-xs font-semibold px-3.5 py-2 rounded-full border transition-all duration-200 ${
                 selected.size === frameworks.length
                   ? 'bg-accent text-accent-text border-accent'
@@ -294,6 +296,7 @@ export default function ComparePage() {
               <button
                 key={f.id}
                 onClick={() => toggle(f.id)}
+                aria-pressed={selected.has(f.id)}
                 className={`font-sans text-xs font-semibold px-3.5 py-2 rounded-full border transition-all duration-200 ${
                   selected.has(f.id)
                     ? 'bg-accent text-accent-text border-accent'
@@ -331,18 +334,18 @@ export default function ComparePage() {
                         >
                           {f.status}
                         </span>
-                        <a
+                        <Link
                           href={`/regulations/${f.slug}`}
                           className="font-sans text-base font-bold text-primary hover:text-accent transition-colors"
                         >
                           {f.name}
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                           href={`/regulations/${f.slug}`}
                           className="font-sans text-xs text-accent hover:text-accent-dark transition-colors"
                         >
                           View full guide &rarr;
-                        </a>
+                        </Link>
                       </div>
                     </th>
                   ))}
@@ -391,12 +394,12 @@ export default function ComparePage() {
               {/* Card header */}
               <div className="p-5 border-b border-border">
                 <div className="flex items-start justify-between gap-3 mb-2">
-                  <a
+                  <Link
                     href={`/regulations/${f.slug}`}
                     className="font-sans text-lg font-bold text-primary hover:text-accent transition-colors"
                   >
                     {f.name}
-                  </a>
+                  </Link>
                   <span
                     className={`shrink-0 font-sans text-xs font-bold uppercase tracking-wide px-2 py-0.5 rounded-full ${getStatusClasses(
                       f.statusColor
@@ -405,12 +408,12 @@ export default function ComparePage() {
                     {f.status}
                   </span>
                 </div>
-                <a
+                <Link
                   href={`/regulations/${f.slug}`}
                   className="font-sans text-xs text-accent hover:text-accent-dark transition-colors"
                 >
                   View full guide &rarr;
-                </a>
+                </Link>
               </div>
 
               {/* Card body — dimension rows */}
@@ -444,7 +447,7 @@ export default function ComparePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <a
+            <Link
               href="/assessment"
               className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
@@ -455,8 +458,8 @@ export default function ComparePage() {
                 See where you stand on AI readiness and which frameworks
                 matter most with our free assessment.
               </p>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/glossary"
               className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
@@ -467,8 +470,8 @@ export default function ComparePage() {
                 Plain-English definitions for AI terms, from
                 algorithmic impact assessments to risk tiers.
               </p>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/blog"
               className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
             >
@@ -479,7 +482,7 @@ export default function ComparePage() {
                 Practical analysis of AI adoption, governance, and
                 regulatory developments you can act on.
               </p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ export const euAiAct = {
   icon: '\u{1F1EA}\u{1F1FA}',
   status: 'In Effect',
   lastReviewed: 'March 2026',
+  lastReviewedIso: '2026-03-01',
 
   keyFacts: [
     {

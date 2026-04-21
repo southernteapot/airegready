@@ -1,10 +1,14 @@
+import Link from 'next/link'
+import BackToTop from './BackToTop'
 import Breadcrumb from './Breadcrumb'
 import Disclaimer from './Disclaimer'
 import { ContentBlock, renderText } from './ContentRenderer'
+import ReadingProgress from './ReadingProgress'
 
 export default function RegulationLayout({ regulation, relatedArticles = [] }) {
   return (
     <div className="pt-28 pb-20 px-6">
+      <ReadingProgress />
       <div className="max-w-[820px] mx-auto">
         <Breadcrumb
           items={[
@@ -247,7 +251,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedArticles.map((article) => (
-                <a
+                <Link
                   key={article.slug}
                   href={`/blog/${article.slug}`}
                   className="bg-surface border border-border/60 rounded-xl p-5 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
@@ -259,7 +263,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                   <h3 className="font-sans text-sm font-bold text-primary leading-snug">
                     {article.title}
                   </h3>
-                </a>
+                </Link>
               ))}
             </div>
           </section>
@@ -267,6 +271,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
 
         <Disclaimer />
       </div>
+      <BackToTop />
     </div>
   )
 }

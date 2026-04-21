@@ -1,15 +1,14 @@
 import { getAllArticles } from '@/lib/articles'
 import Breadcrumb from '@/components/Breadcrumb'
 import BlogList from '@/components/BlogList'
+import { buildPageMetadata } from '@/lib/seo'
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: 'AI Guidance & Updates',
   description:
     'Practical analysis of AI adoption, governance, regulatory developments, and what they mean for real-world use. Written in plain English.',
-  alternates: {
-    canonical: 'https://airegready.com/blog',
-  },
-}
+  path: '/blog',
+})
 
 export default function BlogIndex() {
   const articles = getAllArticles()

@@ -1,5 +1,6 @@
 import { getArticle, getAllArticleSlugs } from '@/lib/articles'
 import ArticleLayout from '@/components/ArticleLayout'
+import { buildPageMetadata } from '@/lib/seo'
 import { notFound } from 'next/navigation'
 
 export function generateStaticParams() {
@@ -11,20 +12,16 @@ export async function generateMetadata({ params }) {
   const article = getArticle(slug)
   if (!article) return {}
 
-  return {
+  return buildPageMetadata({
     title: article.title,
     description: article.description,
-    alternates: {
-      canonical: `https://airegready.com/blog/${slug}`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.description,
-      url: `https://airegready.com/blog/${slug}`,
-      type: 'article',
-      publishedTime: article.date,
-    },
-  }
+    path: `/blog/${slug}`,
+    imagePath: `/blog/${slug}/opengraph-image`,
+    type: 'article',
+    publishedTime: article.date,
+    modifiedTime: article.dateModified || article.date,
+    section: article.category,
+  })
 }
 
 export default async function ArticlePage({ params }) {

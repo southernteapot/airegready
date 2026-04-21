@@ -1,8 +1,10 @@
-import { BLOG_POSTS } from '@/lib/data'
+import Link from 'next/link'
+import { getAllArticles } from '@/lib/articles'
 
 export default function BlogSection() {
-  const featured = BLOG_POSTS.find((p) => p.featured)
-  const recent = BLOG_POSTS.filter((p) => !p.featured).slice(0, 5)
+  const articles = getAllArticles()
+  const featured = articles.find((article) => article.featured)
+  const recent = articles.filter((article) => !article.featured).slice(0, 5)
 
   return (
     <section
@@ -26,17 +28,17 @@ export default function BlogSection() {
             developments &mdash; and what they actually mean for you.
           </p>
         </div>
-        <a
+        <Link
           href="/blog"
           className="font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors whitespace-nowrap"
         >
-          All {BLOG_POSTS.length} articles &rarr;
-        </a>
+          All {articles.length} articles &rarr;
+        </Link>
       </div>
 
       {/* Featured post — gap layout, no fixed min-height, prevents overlap */}
       {featured && (
-        <a
+        <Link
           href={`/blog/${featured.slug}`}
           className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 flex flex-col gap-5 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
         >
@@ -46,7 +48,7 @@ export default function BlogSection() {
               Featured
             </span>
             <span className="font-sans text-xs text-secondary">
-              {featured.category} &middot; <time>{featured.date}</time> &middot;{' '}
+              {featured.category} &middot; <time>{featured.displayDate}</time> &middot;{' '}
               {featured.readTime}
             </span>
           </div>
@@ -54,30 +56,30 @@ export default function BlogSection() {
             {featured.title}
           </h3>
           <p className="font-sans text-sm text-secondary leading-relaxed max-w-[680px]">
-            {featured.excerpt}
+            {featured.description}
           </p>
-        </a>
+        </Link>
       )}
 
       {/* Recent posts — 5 most recent non-featured */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {recent.map((post) => (
-          <a
+          <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
             className="bg-surface border border-border/60 rounded-xl p-6 flex flex-col gap-3 min-w-0 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
           >
             <div className="font-sans text-xs text-secondary">
-              {post.category} &middot; <time>{post.date}</time> &middot;{' '}
+              {post.category} &middot; <time>{post.displayDate}</time> &middot;{' '}
               {post.readTime}
             </div>
             <h3 className="font-sans text-base font-bold text-primary leading-snug">
               {post.title}
             </h3>
             <p className="font-sans text-sm text-secondary leading-relaxed">
-              {post.excerpt}
+              {post.description}
             </p>
-          </a>
+          </Link>
         ))}
       </div>
     </section>
