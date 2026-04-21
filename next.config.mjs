@@ -10,7 +10,7 @@ const cspHeaderValue = [
   "frame-ancestors 'none'",
   "form-action 'self'",
   "object-src 'none'",
-  "script-src 'self' https://static.cloudflareinsights.com https://cloudflareinsights.com https://*.cloudflareinsights.com",
+  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cloudflareinsights.com https://*.cloudflareinsights.com",
   "script-src-attr 'none'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
