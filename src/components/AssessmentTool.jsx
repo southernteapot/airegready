@@ -414,9 +414,9 @@ function buildPdfHtml(result) {
     : ''
 
   const snapshotHtml = [
-    { title: 'AI Footprint', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#9E7A56' },
+    { title: 'AI Adoption', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#9E7A56' },
     { title: 'Guardrails', label: result.guardrails.label, color: GUARDRAIL_COLORS[result.guardrails.label] || '#fbbf24' },
-    { title: 'Residual Risk', label: result.risk.label, color: RISK_COLORS[result.risk.label] || '#fbbf24' },
+    { title: 'Risk Exposure', label: result.risk.label, color: RISK_COLORS[result.risk.label] || '#fbbf24' },
   ]
     .map(
       (s) =>
@@ -681,9 +681,9 @@ function ReportResults({ result, onReset }) {
           The Three Axes
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <SnapshotCard title="AI Footprint" label={result.readiness.label} colorMap={READINESS_COLORS} />
+          <SnapshotCard title="AI Adoption" label={result.readiness.label} colorMap={READINESS_COLORS} />
           <SnapshotCard title="Guardrails" label={result.guardrails.label} colorMap={GUARDRAIL_COLORS} />
-          <SnapshotCard title="Residual Risk" label={result.risk.label} colorMap={RISK_COLORS} />
+          <SnapshotCard title="Risk Exposure" label={result.risk.label} colorMap={RISK_COLORS} />
         </div>
         {result.peerContext && (
           <p className="font-sans text-sm text-secondary italic leading-relaxed text-center max-w-[560px] mx-auto mt-5">
