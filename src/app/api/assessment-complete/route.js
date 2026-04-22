@@ -18,9 +18,14 @@ export async function POST(request) {
       return Response.json({ ok: false }, { status: 400 })
     }
 
+    const schemaVersion = Number.isInteger(payload?.schemaVersion) && payload.schemaVersion > 0
+      ? payload.schemaVersion
+      : null
+
     console.log(
       JSON.stringify({
         event: 'assessment_complete',
+        schemaVersion,
         shortTrack: payload?.shortTrack === true,
         entity: normalizeString(payload?.entity),
         location: normalizeString(payload?.location),

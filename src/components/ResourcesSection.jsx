@@ -22,11 +22,6 @@ const resources = [
     desc: 'Key dates and deadlines across AI regulations — what is in effect, what is coming, and when.',
     href: '/timeline',
   },
-  {
-    title: 'Templates',
-    desc: 'Starter templates for AI policies, acceptable use, and risk assessments.',
-    href: null,
-  },
 ]
 
 const baseCard =
@@ -48,19 +43,19 @@ export default function ResourcesSection() {
             id="resources-heading"
             className="font-serif text-4xl sm:text-5xl font-bold text-primary leading-[1.05] tracking-tight"
           >
-            Four pillars,<br />one plain-English library.
+            Practical resources,<br />in plain English.
           </h2>
           <p className="font-sans text-base text-secondary mt-3 leading-relaxed">
             Regulations first &mdash; because they set the stakes &mdash; plus
-            frameworks, checklists, and templates as they roll out.
+            frameworks, checklists, and a live regulatory timeline.
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {resources.map((resource) => {
           const spanClass = resource.hero
-            ? 'md:col-span-2 lg:col-span-4 md:p-8 md:gap-4'
+            ? 'md:col-span-3 md:p-8 md:gap-4'
             : 'md:col-span-1'
 
           if (!resource.href) {

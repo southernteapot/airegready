@@ -12,12 +12,12 @@ export const federalPolicy = {
   keyFacts: [
     { label: 'Comprehensive Federal AI Law', value: 'None (as of early 2026)' },
     {
-      label: 'Current Executive Order',
-      value: 'EO 14148 — pro-innovation approach (Jan 2025)',
+      label: 'Current AI Executive Order',
+      value: 'EO 14179 — "Removing Barriers to American Leadership in AI" (Jan 23, 2025)',
     },
     {
       label: 'Prior Executive Order',
-      value: 'EO 14110 — revoked January 20, 2025',
+      value: 'EO 14110 — revoked by EO 14148 on January 20, 2025',
     },
     {
       label: 'Primary Enforcement',
@@ -73,35 +73,35 @@ export const federalPolicy = {
         {
           term: 'Status: Revoked (January 20, 2025)',
           description:
-            'This executive order was revoked when President Trump signed EO 14148. However, not everything initiated under EO 14110 disappeared. Work already completed by NIST — including updates to the AI RMF and development of evaluation tools — continues, as NIST operates on Congressional funding independent of executive orders. Some agency guidance issued under EO 14110 also remains in effect unless specifically rescinded by the issuing agency. The practical impact of the revocation was to eliminate the mandatory safety reporting requirements for AI developers, halt new regulatory initiatives that were still in development, and signal a shift in federal policy from precautionary regulation toward a more permissive approach.',
+            'This executive order was revoked on January 20, 2025, when President Trump signed **EO 14148** ("Initial Rescissions of Harmful Executive Orders and Actions"), which rescinded 78 Biden-era presidential orders and memoranda, including EO 14110. Three days later, on January 23, 2025, President Trump signed **EO 14179** ("Removing Barriers to American Leadership in Artificial Intelligence"), which set a new pro-innovation direction for federal AI policy. Not everything initiated under EO 14110 disappeared. Work already completed by NIST — including updates to the AI RMF and development of evaluation tools — continues, as NIST operates on Congressional funding independent of executive orders. Some agency guidance issued under EO 14110 also remains in effect unless specifically rescinded by the issuing agency. The practical impact of the revocation was to eliminate the mandatory safety reporting requirements for AI developers, halt new regulatory initiatives that were still in development, and signal a shift in federal policy from precautionary regulation toward a more permissive approach.',
         },
       ],
     },
     {
-      id: 'eo-14148',
+      id: 'eo-14179',
       title:
-        'Executive Order 14148: Removing Barriers to American Leadership in AI',
+        'Executive Order 14179: Removing Barriers to American Leadership in AI',
       content:
-        'On **January 20, 2025** — his first day in office — President Trump signed **Executive Order 14148**, titled "Removing Barriers to American Leadership in Artificial Intelligence." The order revoked EO 14110 in its entirety and set a markedly different direction for federal AI policy.\n\nThe core premise of EO 14148 is that excessive regulation threatens American competitiveness in AI. The order frames AI development primarily as an economic and national security opportunity rather than a risk to be managed. It directs federal agencies to remove regulatory barriers to AI innovation and to avoid imposing new requirements that could slow AI development.\n\n**Key elements of EO 14148:**',
+        'On **January 23, 2025**, President Trump signed **Executive Order 14179**, titled "Removing Barriers to American Leadership in Artificial Intelligence." This order set a markedly different direction for federal AI policy than the prior administration. (EO 14110 itself had been revoked three days earlier, on January 20, 2025, as part of EO 14148\u2019s mass rescission of 78 Biden-era orders.)\n\nThe core premise of EO 14179 is that excessive regulation threatens American competitiveness in AI. The order frames AI development primarily as an economic and national security opportunity rather than a risk to be managed. It directs federal agencies to remove regulatory barriers to AI innovation and to avoid imposing new requirements that could slow AI development.\n\n**Key elements of EO 14179:**',
       list: [
-        '**Revocation of EO 14110.** All provisions of the Biden-era executive order were revoked, including the safety testing and reporting requirements for powerful AI models.',
+        '**Alignment with the revocation of EO 14110.** EO 14110 had already been revoked on January 20, 2025, via EO 14148. EO 14179 builds on that revocation by directing agencies to identify and unwind any lingering actions, regulations, or guidance still inconsistent with a pro-innovation posture.',
         '**Pro-innovation directive.** Federal agencies were instructed to review and consider suspending, revising, or rescinding any regulations or guidance that could be seen as barriers to AI development and deployment.',
         '**Emphasis on American leadership.** The order frames AI policy through the lens of international competition, particularly with China. Maintaining U.S. dominance in AI technology is presented as a national security priority.',
         '**Reduced federal oversight.** The order moves away from centralized federal AI governance and does not establish new reporting requirements, safety testing mandates, or disclosure obligations for AI developers.',
-        '**Agency review.** Agencies were directed to review all AI-related policies, guidance, and regulations issued under the previous administration and to identify anything inconsistent with the new order\'s pro-innovation approach.',
+        '**AI Action Plan.** The order directed senior White House officials to develop and submit a U.S. AI Action Plan to the President within 180 days, setting the agenda for follow-on executive actions.',
       ],
     },
     {
-      id: 'eo-14148-impact',
-      title: 'What EO 14148 Means in Practice',
+      id: 'eo-14179-impact',
+      title: 'What EO 14179 Means in Practice',
       content:
-        'The shift from EO 14110 to EO 14148 does not create a regulatory vacuum. Federal agencies still have their existing statutory authority to regulate AI within their domains — the FTC can still pursue deceptive AI practices, the EEOC can still enforce anti-discrimination law in AI hiring tools, and the FDA can still regulate AI medical devices. What changed is the top-level policy direction: from proactive AI-specific regulation toward reliance on existing authority and market forces.\n\nFor organizations, the practical takeaway is that voluntary compliance and self-governance are now the federal expectation rather than mandatory requirements. However, this does not reduce legal risk — it shifts the enforcement mechanism from prescriptive rules to after-the-fact agency action under existing law.',
+        'The shift from EO 14110 to EO 14179 does not create a regulatory vacuum. Federal agencies still have their existing statutory authority to regulate AI within their domains — the FTC can still pursue deceptive AI practices, the EEOC can still enforce anti-discrimination law in AI hiring tools, and the FDA can still regulate AI medical devices. What changed is the top-level policy direction: from proactive AI-specific regulation toward reliance on existing authority and market forces.\n\nFor organizations, the practical takeaway is that voluntary compliance and self-governance are now the federal expectation rather than mandatory requirements. However, this does not reduce legal risk — it shifts the enforcement mechanism from prescriptive rules to after-the-fact agency action under existing law.',
     },
     {
       id: 'eo-december-2025',
       title: 'December 2025: Federal Preemption of State AI Laws',
       content:
-        'On **December 11, 2025**, President Trump signed an executive order titled "Ensuring a National Policy Framework for Artificial Intelligence," representing the most significant federal AI policy action since the revocation of EO 14110. The order establishes federal policy to "sustain and enhance" U.S. global AI dominance through a "minimally burdensome national policy framework" — and directly targets state-level AI regulation as an obstacle to that goal.\n\nThe December 2025 EO is a major development because it moves beyond the deregulatory posture of EO 14148 into active federal preemption of state AI laws. It creates enforcement mechanisms and institutional structures designed to challenge and override state AI regulation.\n\n**Key provisions:**',
+        'On **December 11, 2025**, President Trump signed an executive order titled "Ensuring a National Policy Framework for Artificial Intelligence," representing the most significant federal AI policy action since the revocation of EO 14110. The order establishes federal policy to "sustain and enhance" U.S. global AI dominance through a "minimally burdensome national policy framework" — and directly targets state-level AI regulation as an obstacle to that goal.\n\nThe December 2025 EO is a major development because it moves beyond the deregulatory posture of EO 14179 into active federal preemption of state AI laws. It creates enforcement mechanisms and institutional structures designed to challenge and override state AI regulation.\n\n**Key provisions:**',
       items: [
         {
           term: 'DOJ AI Litigation Task Force',
@@ -321,7 +321,7 @@ export const federalPolicy = {
     {
       date: 'January 20, 2025',
       event:
-        'President Trump signs EO 14148, revoking EO 14110 and directing agencies to remove barriers to AI innovation. OMB M-24-10 is subsequently rescinded.',
+        'President Trump signs EO 14148 ("Initial Rescissions of Harmful Executive Orders and Actions"), which rescinds 78 Biden-era orders including EO 14110. Three days later, on January 23, he signs EO 14179 ("Removing Barriers to American Leadership in AI") directing agencies to remove barriers to AI innovation. OMB M-24-10 is subsequently rescinded.',
     },
     {
       date: 'April 2025',
@@ -353,10 +353,17 @@ export const federalPolicy = {
     },
     {
       title:
-        'Executive Order 14148 — Removing Barriers to American Leadership in AI',
-      url: 'https://www.whitehouse.gov/presidential-actions/removing-barriers-to-american-leadership-in-artificial-intelligence/',
+        'Executive Order 14148 — Initial Rescissions of Harmful Executive Orders and Actions',
+      url: 'https://www.federalregister.gov/documents/2025/01/28/2025-01901/initial-rescissions-of-harmful-executive-orders-and-actions',
       description:
-        'Full text of the Trump administration executive order revoking EO 14110 and setting a pro-innovation AI policy direction.',
+        'The January 20, 2025 order rescinding 78 Biden-era presidential orders, including EO 14110.',
+    },
+    {
+      title:
+        'Executive Order 14179 — Removing Barriers to American Leadership in Artificial Intelligence',
+      url: 'https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence',
+      description:
+        'Full text of the January 23, 2025 Trump administration executive order setting a pro-innovation AI policy direction.',
     },
     {
       title: 'Blueprint for an AI Bill of Rights',

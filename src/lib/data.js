@@ -336,6 +336,7 @@ export const FAQ_ITEMS = [
 /* ------------------------------------------------------------------ */
 
 export {
+  ASSESSMENT_SCHEMA_VERSION,
   QUESTIONS,
   getApplicableQuestions,
   getAssessmentReport,

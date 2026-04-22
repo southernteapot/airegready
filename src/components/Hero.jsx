@@ -57,10 +57,10 @@ export default function Hero() {
           <div className="mt-10 pt-6 border-t border-border/70 grid grid-cols-3 gap-6 max-w-[440px]">
             <div>
               <div className="font-serif text-3xl font-bold text-primary tabular-nums leading-none">
-                11
+                ~4
               </div>
               <div className="font-sans text-xs text-secondary mt-1.5 leading-tight">
-                short questions<br />~3 minutes
+                minutes to<br />your result
               </div>
             </div>
             <div>

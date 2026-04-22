@@ -223,13 +223,33 @@ export default function LegalPage() {
               <h2 className="font-serif text-xl font-bold text-primary mb-3">
                 Assessment Tool Data
               </h2>
-              <p className="font-sans text-sm text-secondary leading-relaxed">
-                The AI Readiness Assessment tool processes all data
-                entirely in your browser (client-side). Your answers and results
-                are not transmitted to our servers, stored in any database, or
-                shared with anyone. When you close or refresh the page, the data
-                is gone.
-              </p>
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
+                <p>
+                  The AI Readiness Assessment runs entirely in your browser.
+                  Your raw answers and full results are not transmitted to our
+                  servers, stored in any database, or shared with anyone.
+                </p>
+                <p>
+                  While you are taking the assessment, your in-progress answers
+                  are saved to your browser&rsquo;s local storage so you can
+                  resume if you refresh or close the tab. Clearing your browser
+                  data or clicking &ldquo;Start fresh&rdquo; removes them.
+                  Completing or resetting the assessment also clears them.
+                </p>
+                <p>
+                  When you finish, we log a small aggregate record to help us
+                  improve the tool: the assessment schema version, which tier
+                  labels your answers produced (e.g. AI Adoption tier,
+                  Guardrails tier, Risk Exposure tier), your high-level
+                  situational selections (organization size, U.S. state or
+                  international, AI role, market exposure, top priority), the
+                  number of regulatory frameworks flagged, the slug of the top
+                  product recommendation, and a timestamp. We do not log the
+                  individual option text you selected for every question, your
+                  free-text input, or any identifier that ties the record to
+                  you.
+                </p>
+              </div>
             </section>
 
             {/* Data Sharing */}

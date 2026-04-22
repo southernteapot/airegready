@@ -1,3 +1,5 @@
+export const ASSESSMENT_SCHEMA_VERSION = 2
+
 const TEAM_ENTITIES = ['small-team', 'mid-size', 'larger-org']
 const DEPLOYER_ROLES = ['deployer', 'both']
 const PROVIDER_ROLES = ['provider', 'both']

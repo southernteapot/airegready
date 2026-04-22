@@ -2,7 +2,9 @@
 
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { QUESTIONS, getAssessmentReport } from '@/lib/data'
+import { ASSESSMENT_SCHEMA_VERSION, QUESTIONS, getAssessmentReport } from '@/lib/data'
+
+const PROGRESS_STORAGE_KEY = `airegready-assessment-progress-v${ASSESSMENT_SCHEMA_VERSION}`
 
 function buildAnswerMapFromArray(answerArray) {
   const map = {}
@@ -16,6 +18,47 @@ function findNextApplicableStep(currentStep, answerMap) {
     if (!q.appliesTo || q.appliesTo(answerMap)) return i
   }
   return null
+}
+
+function loadSavedProgress() {
+  if (typeof window === 'undefined') return null
+  try {
+    const raw = window.localStorage.getItem(PROGRESS_STORAGE_KEY)
+    if (!raw) return null
+    const data = JSON.parse(raw)
+    if (data?.version !== ASSESSMENT_SCHEMA_VERSION) return null
+    if (!Array.isArray(data.answers) || data.answers.length === 0) return null
+    if (typeof data.step !== 'number' || data.step < 0 || data.step >= QUESTIONS.length) return null
+    return data
+  } catch {
+    return null
+  }
+}
+
+function saveProgress(answers, step) {
+  if (typeof window === 'undefined') return
+  try {
+    if (!answers || answers.length === 0) {
+      window.localStorage.removeItem(PROGRESS_STORAGE_KEY)
+      return
+    }
+    window.localStorage.setItem(
+      PROGRESS_STORAGE_KEY,
+      JSON.stringify({
+        version: ASSESSMENT_SCHEMA_VERSION,
+        answers,
+        step,
+        savedAt: Date.now(),
+      })
+    )
+  } catch {}
+}
+
+function clearSavedProgress() {
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage.removeItem(PROGRESS_STORAGE_KEY)
+  } catch {}
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -849,6 +892,7 @@ export default function AssessmentTool() {
   const [answers, setAnswers] = useState([])
   const [multiSelected, setMultiSelected] = useState([])
   const [result, setResult] = useState(null)
+  const [resumeOffer, setResumeOffer] = useState(null)
 
   const currentQ = QUESTIONS[step]
 
@@ -869,23 +913,46 @@ export default function AssessmentTool() {
     const rehydrated = rehydrateAnswersFromUrl()
     if (rehydrated) {
       setResult(getAssessmentReport(rehydrated))
+      clearSavedProgress()
       return
     }
 
     const params = new URLSearchParams(window.location.search)
     const start = params.get('start')
-    if (!start) return
+    if (start) {
+      const q1 = QUESTIONS[0]
+      const option = q1.options.find((o) => o.value === start)
+      if (option) {
+        const answer = { qId: q1.id, value: start }
+        if (option.score !== undefined) answer.score = option.score
+        setAnswers([answer])
+        const nextStep = findNextApplicableStep(0, { [q1.id]: start })
+        setStep(nextStep !== null ? nextStep : 0)
+        clearSavedProgress()
+        return
+      }
+    }
 
-    const q1 = QUESTIONS[0]
-    const option = q1.options.find((o) => o.value === start)
-    if (!option) return
-
-    const answer = { qId: q1.id, value: start }
-    if (option.score !== undefined) answer.score = option.score
-    setAnswers([answer])
-    const nextStep = findNextApplicableStep(0, { [q1.id]: start })
-    setStep(nextStep !== null ? nextStep : 0)
+    const saved = loadSavedProgress()
+    if (saved) setResumeOffer(saved)
   }, [])
+
+  useEffect(() => {
+    if (result) return
+    saveProgress(answers, step)
+  }, [answers, step, result])
+
+  const handleResume = () => {
+    if (!resumeOffer) return
+    setAnswers(resumeOffer.answers)
+    setStep(resumeOffer.step)
+    setResumeOffer(null)
+  }
+
+  const handleDeclineResume = () => {
+    clearSavedProgress()
+    setResumeOffer(null)
+  }
 
   const handleSingleAnswer = (option) => {
     const answer = { qId: currentQ.id, value: option.value }
@@ -944,7 +1011,9 @@ export default function AssessmentTool() {
   const finishAssessment = (finalAnswers) => {
     const report = getAssessmentReport(finalAnswers)
     setResult(report)
+    clearSavedProgress()
     const telemetry = {
+      schemaVersion: ASSESSMENT_SCHEMA_VERSION,
       shortTrack: report.shortTrack,
       entity: report.answerMap?.[1] || null,
       location: report.answerMap?.[2] || null,
@@ -970,6 +1039,8 @@ export default function AssessmentTool() {
     setAnswers([])
     setMultiSelected([])
     setResult(null)
+    setResumeOffer(null)
+    clearSavedProgress()
     if (typeof window !== 'undefined' && window.location.search) {
       window.history.replaceState({}, '', window.location.pathname)
     }
@@ -1002,6 +1073,33 @@ export default function AssessmentTool() {
         <div aria-live="polite" className="sr-only">
           {!result && `Question ${answers.length + 1} of ${applicableTotal}: ${currentQ.text}`}
         </div>
+
+        {resumeOffer && !result && (
+          <div className="mb-6 bg-accent/10 border border-accent/30 rounded-xl p-5 sm:p-6">
+            <h3 className="font-serif text-lg font-bold text-primary mb-1">
+              Pick up where you left off?
+            </h3>
+            <p className="font-sans text-sm text-secondary mb-4 leading-relaxed">
+              You answered {resumeOffer.answers.length} question
+              {resumeOffer.answers.length === 1 ? '' : 's'} earlier in this browser.
+              Saved locally — nothing was sent to our servers.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={handleResume}
+                className="bg-accent text-accent-text rounded-lg px-5 py-2 text-sm font-semibold hover:bg-accent-dark transition-colors cursor-pointer"
+              >
+                Resume
+              </button>
+              <button
+                onClick={handleDeclineResume}
+                className="bg-bg border border-border rounded-lg px-5 py-2 text-sm font-semibold text-secondary hover:text-primary hover:border-accent/50 transition-colors cursor-pointer"
+              >
+                Start fresh
+              </button>
+            </div>
+          </div>
+        )}
 
         {!result ? (
           <>

@@ -101,7 +101,7 @@ const frameworks = [
     riskBased:
       'No unified risk framework at the federal level. Individual agencies apply risk-based approaches within their domains (FDA risk classification, EEOC adverse impact analysis).',
     keyRequirements: [
-      'EO 14148 (Jan 2025): Pro-innovation directive; agencies instructed to remove barriers to AI development',
+      'EO 14179 (Jan 23, 2025): Pro-innovation directive ("Removing Barriers to American Leadership in AI"); agencies instructed to remove barriers to AI development. EO 14148 (Jan 20, 2025) separately rescinded the prior EO 14110.',
       'Existing statutory authority: FTC Act (deceptive AI practices), Title VII (AI hiring discrimination), ECOA/FCRA (AI lending), FDA (AI medical devices)',
       'OMB M-25-21: Innovation-focused guidance replacing Biden-era risk management requirements for federal AI use',
       'December 2025 EO: Federal preemption of state AI laws, DOJ AI Litigation Task Force, FCC federal reporting standard',
@@ -110,7 +110,7 @@ const frameworks = [
     penalties:
       'No standalone AI penalties. Enforcement through existing statutory mechanisms: FTC fines for deceptive practices, EEOC enforcement for employment discrimination, FDA enforcement for non-compliant medical devices, SEC penalties for AI washing.',
     effectiveDate:
-      'Ongoing. EO 14148 signed January 20, 2025. December 2025 EO on federal preemption. OMB M-25-21 issued April 2025. Agency enforcement is continuous.',
+      'Ongoing. EO 14148 signed January 20, 2025 (rescinded EO 14110). EO 14179 signed January 23, 2025 (pro-innovation AI policy). December 2025 EO on federal preemption. OMB M-25-21 issued April 2025. Agency enforcement is continuous.',
     enforcementBody:
       'Multiple agencies: FTC, EEOC, FDA, SEC, CFPB, HUD, DOJ. Each enforces existing law within its jurisdiction. DOJ AI Litigation Task Force targets state AI laws.',
     bestFor:
