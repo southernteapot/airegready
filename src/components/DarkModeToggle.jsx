@@ -7,6 +7,7 @@ export default function DarkModeToggle() {
       aria-label="Toggle theme"
       title="Toggle theme"
       aria-pressed="false"
+      suppressHydrationWarning
     >
       <svg
         className="block dark:hidden"

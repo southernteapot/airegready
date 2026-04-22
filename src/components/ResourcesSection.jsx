@@ -18,6 +18,11 @@ const resources = [
     href: '/checklist',
   },
   {
+    title: 'Timeline',
+    desc: 'Key dates and deadlines across AI regulations — what is in effect, what is coming, and when.',
+    href: '/timeline',
+  },
+  {
     title: 'Templates',
     desc: 'Starter templates for AI policies, acceptable use, and risk assessments.',
     href: null,
@@ -52,10 +57,10 @@ export default function ResourcesSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {resources.map((resource) => {
           const spanClass = resource.hero
-            ? 'md:col-span-3 md:p-8 md:gap-4'
+            ? 'md:col-span-2 lg:col-span-4 md:p-8 md:gap-4'
             : 'md:col-span-1'
 
           if (!resource.href) {

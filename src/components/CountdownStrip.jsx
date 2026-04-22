@@ -70,11 +70,13 @@ export default function CountdownStrip() {
           )
         })}
 
+        <span className="text-border hidden sm:inline" aria-hidden="true">|</span>
+
         <Link
           href="/timeline"
-          className="font-sans text-xs text-secondary/80 hover:text-accent transition-colors no-underline"
+          className="inline-flex items-center gap-1.5 font-sans text-sm font-semibold text-accent hover:text-accent-dark transition-colors no-underline"
         >
-          Full timeline &rarr;
+          See the full timeline &rarr;
         </Link>
       </div>
     </section>

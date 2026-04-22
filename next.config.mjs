@@ -4,13 +4,24 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 })
 
+const isDev = process.env.NODE_ENV !== 'production'
+
+const scriptSrc = [
+  "'self'",
+  "'unsafe-inline'",
+  ...(isDev ? ["'unsafe-eval'"] : []),
+  'https://static.cloudflareinsights.com',
+  'https://cloudflareinsights.com',
+  'https://*.cloudflareinsights.com',
+].join(' ')
+
 const cspHeaderValue = [
   "default-src 'self'",
   "base-uri 'self'",
   "frame-ancestors 'none'",
   "form-action 'self'",
   "object-src 'none'",
-  "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://cloudflareinsights.com https://*.cloudflareinsights.com",
+  `script-src ${scriptSrc}`,
   "script-src-attr 'none'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",

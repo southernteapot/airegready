@@ -3,6 +3,7 @@ import DarkModeToggle from './DarkModeToggle'
 import Logo from './Logo'
 
 const links = [
+  { label: 'Resources', href: '/resources' },
   { label: 'Regulations', href: '/regulations' },
   { label: 'Compare', href: '/compare' },
   { label: 'Assessment', href: '/assessment' },

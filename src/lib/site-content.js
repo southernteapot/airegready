@@ -4,6 +4,16 @@ import { SITE_URL } from './seo.js'
 
 const STATIC_PAGE_DEFINITIONS = [
   {
+    url: '/resources',
+    title: 'Resource Library',
+    description:
+      'Plain-English AI regulations, framework comparisons, readiness checklists, and templates in one place.',
+    searchTags: [],
+    changeFrequency: 'monthly',
+    priority: 0.8,
+    lastModifiedSource: 'latest',
+  },
+  {
     url: '/compare',
     title: 'AI Regulatory Comparison',
     description: 'Side-by-side comparison of major AI regulations and frameworks.',
