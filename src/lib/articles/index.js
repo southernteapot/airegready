@@ -22,6 +22,7 @@ import { texasTraigaGuide } from './texas-traiga-guide.js'
 import { coloradoAiActCountdown } from './colorado-ai-act-countdown.js'
 import { euAiActDigitalOmnibusDelay } from './eu-ai-act-digital-omnibus-delay.js'
 import { dojAiTaskForceThreeMonths } from './doj-ai-task-force-three-months.js'
+import { xaiSuesColoradoAiAct } from './xai-sues-colorado-ai-act.js'
 
 const articles = {
   'eu-ai-act-risk-classification': euAiActRiskClassification,
@@ -48,6 +49,7 @@ const articles = {
   'colorado-ai-act-countdown': coloradoAiActCountdown,
   'eu-ai-act-digital-omnibus-delay': euAiActDigitalOmnibusDelay,
   'doj-ai-task-force-three-months': dojAiTaskForceThreeMonths,
+  'xai-sues-colorado-ai-act': xaiSuesColoradoAiAct,
 }
 
 export function getAllArticles() {

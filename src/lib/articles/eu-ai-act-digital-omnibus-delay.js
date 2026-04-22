@@ -8,7 +8,7 @@ export const euAiActDigitalOmnibusDelay = {
   date: '2026-04-19',
   displayDate: 'April 19, 2026',
   readTime: '9 min read',
-  featured: true,
+  featured: false,
 
   sections: [
     {
