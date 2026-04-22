@@ -4,6 +4,20 @@ import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { QUESTIONS, getAssessmentReport } from '@/lib/data'
 
+function buildAnswerMapFromArray(answerArray) {
+  const map = {}
+  answerArray.forEach((a) => (map[a.qId] = a.values || a.value))
+  return map
+}
+
+function findNextApplicableStep(currentStep, answerMap) {
+  for (let i = currentStep + 1; i < QUESTIONS.length; i++) {
+    const q = QUESTIONS[i]
+    if (!q.appliesTo || q.appliesTo(answerMap)) return i
+  }
+  return null
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function rehydrateAnswersFromUrl() {
@@ -15,6 +29,7 @@ function rehydrateAnswersFromUrl() {
   try {
     const decoded = atob(encoded)
     const urlParams = new URLSearchParams(decoded)
+    if (urlParams.get('v') !== '2') return null
     const answers = []
     for (const q of QUESTIONS) {
       const raw = urlParams.get(`q${q.id}`)
@@ -49,16 +64,16 @@ function rehydrateAnswersFromUrl() {
 
 const READINESS_COLORS = {
   Exploring: '#9ca3af',
-  'Early Use': '#60a5fa',
-  'Active Adoption': '#9E7A56',
-  Operationalizing: '#4ade80',
-  'Higher-Impact Use': '#22c55e',
+  'Internal Use': '#60a5fa',
+  'Operational Use': '#9E7A56',
+  'Customer-Facing': '#22c55e',
+  'Higher-Impact': '#15803d',
 }
 
 const GUARDRAIL_COLORS = {
   'Ad Hoc': '#f87171',
-  'Minimal Structure': '#fbbf24',
-  'Basic Guardrails': '#a3e635',
+  Patchy: '#fbbf24',
+  Structured: '#84cc16',
   Managed: '#4ade80',
 }
 
@@ -85,6 +100,87 @@ function SnapshotCard({ title, label, colorMap }) {
       >
         {label}
       </div>
+    </div>
+  )
+}
+
+function ActionLink({ href, className, children }) {
+  if (!href) return null
+
+  if (href.startsWith('/')) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+      </Link>
+    )
+  }
+
+  return (
+    <a href={href} className={className}>
+      {children}
+    </a>
+  )
+}
+
+function ProductCard({ product, featured = false }) {
+  return (
+    <div
+      className={`bg-bg border rounded-xl p-5 sm:p-6 ${
+        featured
+          ? 'border-accent/50 shadow-[0_20px_50px_-36px_rgba(158,122,86,0.45)]'
+          : 'border-border'
+      }`}
+    >
+      <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+        <h4 className="font-serif text-base font-bold text-primary leading-snug">
+          {product.name}
+        </h4>
+        <span
+          className={`font-sans text-xs font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full whitespace-nowrap ${
+            featured ? 'text-accent bg-accent/10' : 'text-secondary bg-border/40'
+          }`}
+        >
+          {product.priority}
+        </span>
+      </div>
+      <p className="font-sans text-sm text-secondary leading-relaxed">
+        {product.why}
+      </p>
+      {product.includes?.length > 0 && (
+        <div className="mt-4">
+          <div className="font-sans text-[11px] font-bold uppercase tracking-[0.12em] text-secondary/80 mb-2">
+            Includes
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {product.includes.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center rounded-full bg-surface border border-border px-2.5 py-1 font-sans text-xs text-secondary"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+      {(product.href || product.learnHref) && (
+        <div className="mt-5 flex flex-wrap gap-2 print:hidden">
+          <ActionLink
+            href={product.href}
+            className="inline-flex items-center justify-center rounded-lg bg-accent text-accent-text px-4 py-2 font-sans text-sm font-semibold hover:bg-accent-dark transition-colors no-underline"
+          >
+            {product.ctaLabel || 'Ask about this pack'}
+          </ActionLink>
+          {product.learnHref && (
+            <ActionLink
+              href={product.learnHref}
+              className="inline-flex items-center justify-center rounded-lg border border-border px-4 py-2 font-sans text-sm font-semibold text-secondary hover:text-primary hover:border-accent/50 transition-colors no-underline"
+            >
+              {product.learnLabel || 'Learn more'}
+            </ActionLink>
+          )}
+        </div>
+      )}
     </div>
   )
 }
@@ -305,10 +401,22 @@ function EmailResultsCard({ shareUrl }) {
 /* ------------------------------------------------------------------ */
 
 function buildPdfHtml(result) {
+  const whoYouAreHtml = result.whoYouAre
+    ? `<div style="margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #eee;"><h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 8px;">Who You Are</h3><p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#20262B;line-height:1.6;margin:0;">${result.whoYouAre}</p></div>`
+    : ''
+
+  const preparednessHtml = result.preparedness
+    ? `<div style="margin-bottom:28px;padding:20px;border:1px solid #e0d5c5;background:#faf5ee;text-align:center;page-break-inside:avoid;"><div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin-bottom:8px;">AI Readiness Score</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:700;color:#20262B;line-height:1;">${result.preparedness.score}<span style="font-family:'DM Sans',sans-serif;font-size:20px;color:#888;font-weight:600;"> / 100</span></div><div style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#86653F;margin-top:8px;">${result.preparedness.label}</div></div>`
+    : ''
+
+  const summaryHtml = result.summary
+    ? `<p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;text-align:center;max-width:560px;margin:0 auto 28px;">${result.summary}</p>`
+    : ''
+
   const snapshotHtml = [
-    { title: 'AI Adoption', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#9E7A56' },
+    { title: 'AI Footprint', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#9E7A56' },
     { title: 'Guardrails', label: result.guardrails.label, color: GUARDRAIL_COLORS[result.guardrails.label] || '#fbbf24' },
-    { title: 'Risk Exposure', label: result.risk.label, color: RISK_COLORS[result.risk.label] || '#fbbf24' },
+    { title: 'Residual Risk', label: result.risk.label, color: RISK_COLORS[result.risk.label] || '#fbbf24' },
   ]
     .map(
       (s) =>
@@ -323,39 +431,34 @@ function buildPdfHtml(result) {
     ? `<p style="font-family:'DM Sans',sans-serif;font-style:italic;font-size:13px;color:#555;line-height:1.6;text-align:center;max-width:560px;margin:0 auto 28px;">${result.peerContext}</p>`
     : ''
 
-  const standoutHtml =
-    result.standout.length > 0
+  const gapsHtml =
+    result.gaps?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">What Stands Out</h3>
-          <ul style="margin:0;padding:0;list-style:none;">${result.standout.map((s) => `<li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:8px;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#8E6C48;">&#8226;</span>${s}</li>`).join('')}</ul>
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Top Gaps to Close</h3>
+          <ul style="margin:0;padding:0;list-style:none;">${result.gaps.map((s) => `<li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:8px;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#8E6C48;">&#8226;</span>${s}</li>`).join('')}</ul>
         </div>`
       : ''
 
-  const actionBorders = { doNow: '#9E7A56', next30: '#fcd34d', later: '#86efac' }
-  const actionLabels = { doNow: 'Do Now', next30: 'Next 30 Days', later: 'Later' }
-  const actionPlanHtml = ['doNow', 'next30', 'later']
-    .filter((key) => result.actionPlan[key].length > 0)
-    .map(
-      (key) =>
-        `<div style="border:1px solid #ddd;border-left:4px solid ${actionBorders[key]};padding:16px;margin-bottom:10px;page-break-inside:avoid;">
-          <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;margin-bottom:8px;">${actionLabels[key]}</div>
-          <ul style="margin:0;padding:0;list-style:none;">${result.actionPlan[key].map((item) => `<li style="display:flex;align-items:flex-start;gap:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:6px;"><span style="display:inline-block;width:14px;height:14px;flex-shrink:0;border:1.5px solid #999;border-radius:2px;margin-top:3px;"></span><span>${item}</span></li>`).join('')}</ul>
+  const productsHtml =
+    result.productRecommendations?.length > 0
+      ? `<div style="margin-bottom:28px;">
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Recommended for Your Situation</h3>
+          ${result.productRecommendations.map((p) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${p.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f0e8;color:#8E6C48;border:1px solid #e0d5c5;">${p.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${p.why}</div></div>`).join('')}
         </div>`
-    )
-    .join('')
+      : ''
 
   const frameworksHtml =
-    result.frameworks.length > 0
+    result.frameworks?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Risks &amp; Frameworks Worth Watching</h3>
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Regulations &amp; Frameworks Worth Watching</h3>
           ${result.frameworks.map((f) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${f.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f0e8;color:#8E6C48;border:1px solid #e0d5c5;">${f.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${f.why}</div></div>`).join('')}
         </div>`
       : ''
 
   const readingHtml =
-    result.recommendedReading.length > 0
+    result.recommendedReading?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Recommended Resources</h3>
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Recommended Reading</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">${result.recommendedReading.map((r) => `<div style="border:1px solid #ddd;padding:14px;page-break-inside:avoid;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;color:#20262B;margin-bottom:4px;">${r.title}</div><div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#555;line-height:1.5;">${r.reason}</div></div>`).join('')}</div>
         </div>`
       : ''
@@ -378,13 +481,13 @@ function buildPdfHtml(result) {
       <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:700;color:#20262B;">AIRegReady &mdash; AI Readiness Assessment</div>
       <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;margin-top:4px;">Generated ${result.generatedAt}</div>
     </div>
+    ${whoYouAreHtml}
+    ${preparednessHtml}
+    ${summaryHtml}
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">${snapshotHtml}</div>
     ${peerContextHtml}
-    ${standoutHtml}
-    <div style="margin-bottom:28px;">
-      <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">What to Do Next</h3>
-      ${actionPlanHtml}
-    </div>
+    ${gapsHtml}
+    ${productsHtml}
     ${frameworksHtml}
     ${readingHtml}
     <div style="border:1px solid #ccc;background:#f9f6f2;padding:16px;margin-bottom:24px;page-break-inside:avoid;">
@@ -423,11 +526,105 @@ function ReportResults({ result, onReset }) {
   const shareUrl = useMemo(() => {
     if (typeof window === 'undefined') return ''
     const params = new URLSearchParams()
+    params.set('v', '2')
     Object.entries(result.answerMap).forEach(([qId, value]) => {
       params.set(`q${qId}`, Array.isArray(value) ? value.join(',') : value)
     })
     return `${window.location.origin}/assessment?r=${btoa(params.toString())}`
   }, [result.answerMap])
+
+  const primaryRecommendation = result.primaryRecommendation
+  const secondaryRecommendations = result.secondaryRecommendations || []
+
+  if (result.shortTrack) {
+    return (
+      <div className="print-report">
+        <div className="mb-8">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+            Your Starting Point
+          </h3>
+          <p className="font-sans text-base text-primary leading-relaxed">
+            {result.whoYouAre}
+          </p>
+        </div>
+
+        <div className="mb-10">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+            What This Means
+          </h3>
+          <p className="font-sans text-sm text-secondary leading-relaxed">
+            {result.summary}
+          </p>
+          {result.marketContext && (
+            <p className="font-sans text-sm text-secondary leading-relaxed mt-3">
+              {result.marketContext}
+            </p>
+          )}
+        </div>
+
+        {result.actionPlan && (
+          <div className="mb-10">
+            <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+              Recommended First Moves
+            </h3>
+            <ActionPlanSection actionPlan={result.actionPlan} />
+          </div>
+        )}
+
+        {primaryRecommendation && (
+          <div className="mb-10">
+            <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+              Start Here
+            </h3>
+            <ProductCard product={primaryRecommendation} featured />
+          </div>
+        )}
+
+        {secondaryRecommendations.length > 0 && (
+          <div className="mb-10">
+            <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+              Also Worth Considering
+            </h3>
+            <div className="space-y-3">
+              {secondaryRecommendations.map((product, i) => (
+                <ProductCard key={i} product={product} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {result.recommendedReading?.length > 0 && (
+          <div className="mb-10">
+            <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+              Worth Reading
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {result.recommendedReading.map((reading, i) => (
+                <ReadingCard key={i} reading={reading} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <EmailResultsCard shareUrl={shareUrl} />
+
+        <div className="bg-accent/10 border border-accent/20 rounded-[10px] p-5 mb-8">
+          <p className="font-sans text-sm text-accent-dark leading-relaxed">
+            <strong>Important:</strong> This assessment provides general information based on your responses and does not constitute legal advice. Requirements vary by jurisdiction and situation. Consult qualified legal counsel for decisions specific to your circumstances.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-3 print:hidden">
+          <button
+            onClick={onReset}
+            className="bg-bg border border-border rounded-lg px-6 py-3 text-secondary font-sans text-sm font-semibold hover:text-primary hover:border-accent/50 transition-colors cursor-pointer"
+          >
+            Start Over
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="print-report">
@@ -441,15 +638,52 @@ function ReportResults({ result, onReset }) {
         </div>
       </div>
 
-      {/* Section 1: Snapshot */}
+      {/* Who you are */}
+      <div className="mb-8">
+        <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+          Who You Are
+        </h3>
+        <p className="font-sans text-base text-primary leading-relaxed">
+          {result.whoYouAre}
+        </p>
+      </div>
+
+      {/* Headline score */}
+      {result.preparedness && (
+        <div className="mb-10 bg-gradient-to-br from-accent/[0.06] to-transparent border border-accent/25 rounded-2xl p-6 sm:p-8 text-center">
+          <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
+            Your AI Readiness Score
+          </div>
+          <div className="font-serif text-6xl sm:text-7xl font-bold text-primary tabular-nums leading-none">
+            {result.preparedness.score}
+            <span className="font-sans text-2xl sm:text-3xl text-secondary/70 font-semibold"> / 100</span>
+          </div>
+          <div className="font-serif text-xl sm:text-2xl text-accent-dark font-bold mt-3">
+            {result.preparedness.label}
+          </div>
+          <div className="mt-5 max-w-[420px] mx-auto h-2 bg-border/60 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-accent to-accent-light rounded-full transition-all duration-700"
+              style={{ width: `${result.preparedness.score}%` }}
+            />
+          </div>
+          {result.summary && (
+            <p className="mt-5 max-w-[560px] mx-auto font-sans text-sm text-secondary leading-relaxed">
+              {result.summary}
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* Snapshot */}
       <div className="mb-6">
         <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
-          Your AI Readiness Snapshot
+          The Three Axes
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <SnapshotCard title="AI Adoption" label={result.readiness.label} colorMap={READINESS_COLORS} />
+          <SnapshotCard title="AI Footprint" label={result.readiness.label} colorMap={READINESS_COLORS} />
           <SnapshotCard title="Guardrails" label={result.guardrails.label} colorMap={GUARDRAIL_COLORS} />
-          <SnapshotCard title="Risk Exposure" label={result.risk.label} colorMap={RISK_COLORS} />
+          <SnapshotCard title="Residual Risk" label={result.risk.label} colorMap={RISK_COLORS} />
         </div>
         {result.peerContext && (
           <p className="font-sans text-sm text-secondary italic leading-relaxed text-center max-w-[560px] mx-auto mt-5">
@@ -458,14 +692,14 @@ function ReportResults({ result, onReset }) {
         )}
       </div>
 
-      {/* Section 2: What stands out */}
-      {result.standout.length > 0 && (
+      {/* Top gaps */}
+      {result.gaps?.length > 0 && (
         <div className="mb-10">
           <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
-            What Stands Out
+            Top Gaps to Close
           </h3>
           <ul className="space-y-3">
-            {result.standout.map((item, i) => (
+            {result.gaps.map((item, i) => (
               <li
                 key={i}
                 className="flex items-start gap-3 font-sans text-sm text-secondary leading-relaxed"
@@ -478,19 +712,43 @@ function ReportResults({ result, onReset }) {
         </div>
       )}
 
-      {/* Section 3: What to do next */}
-      <div className="mb-10">
-        <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
-          What to Do Next
-        </h3>
-        <ActionPlanSection actionPlan={result.actionPlan} />
-      </div>
-
-      {/* Section 4: Frameworks */}
-      {result.frameworks.length > 0 && (
+      {result.actionPlan && (
         <div className="mb-10">
           <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
-            Risks &amp; Frameworks Worth Watching
+            Action Plan
+          </h3>
+          <ActionPlanSection actionPlan={result.actionPlan} />
+        </div>
+      )}
+
+      {/* Product recommendations */}
+      {primaryRecommendation && (
+        <div className="mb-10">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+            Start Here
+          </h3>
+          <ProductCard product={primaryRecommendation} featured />
+        </div>
+      )}
+
+      {secondaryRecommendations.length > 0 && (
+        <div className="mb-10">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+            Also Worth Considering
+          </h3>
+          <div className="space-y-3">
+            {secondaryRecommendations.map((product, i) => (
+              <ProductCard key={i} product={product} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Frameworks */}
+      {result.frameworks?.length > 0 && (
+        <div className="mb-10">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
+            Regulations & Frameworks Worth Watching
           </h3>
           <div className="space-y-3">
             {result.frameworks.map((fw, i) => (
@@ -500,11 +758,11 @@ function ReportResults({ result, onReset }) {
         </div>
       )}
 
-      {/* Section 5: Recommended resources */}
-      {result.recommendedReading.length > 0 && (
+      {/* Recommended reading */}
+      {result.recommendedReading?.length > 0 && (
         <div className="mb-10">
           <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
-            Recommended Resources
+            Recommended Reading
           </h3>
           <div className="grid gap-3 sm:grid-cols-2">
             {result.recommendedReading.map((reading, i) => (
@@ -514,10 +772,8 @@ function ReportResults({ result, onReset }) {
         </div>
       )}
 
-      {/* Save / subscribe */}
       <EmailResultsCard shareUrl={shareUrl} />
 
-      {/* Disclaimer */}
       <div className="bg-accent/10 border border-accent/20 rounded-[10px] p-5 mb-8">
         <p className="font-sans text-sm text-accent-dark leading-relaxed">
           <strong>Important:</strong> This assessment provides general information
@@ -527,7 +783,6 @@ function ReportResults({ result, onReset }) {
         </p>
       </div>
 
-      {/* Action Buttons */}
       <div className="flex flex-wrap gap-3 print:hidden">
         <button
           onClick={handleDownloadPDF}
@@ -544,7 +799,6 @@ function ReportResults({ result, onReset }) {
         </button>
       </div>
 
-      {/* Next steps */}
       <div className="mt-8 pt-8 border-t border-border/60 print:hidden">
         <h3 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-4">
           Keep Going
@@ -562,25 +816,24 @@ function ReportResults({ result, onReset }) {
             </p>
           </Link>
           <Link
-            href="/blog/minimum-viable-guardrails"
+            href="/resources"
             className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
             <div className="font-serif text-sm font-bold text-primary mb-1">
-              Minimum Viable AI Guardrails
+              Resource Library
             </div>
             <p className="font-sans text-xs text-secondary">
-              Five guardrails you can put in place in an afternoon
+              Browse all our plain-English AI resources and frameworks
             </p>
           </Link>
         </div>
       </div>
 
-      {/* Print-only footer */}
       <div className="hidden print:block mt-8 pt-4 border-t border-border">
         <p className="font-sans text-xs text-secondary">
-          This report was generated by the free AI Readiness Assessment tool
-          at airegready.com. Content is for informational purposes only and does
-          not constitute legal advice.
+          This report was generated by the free AI Readiness Assessment tool at
+          airegready.com. Content is for informational purposes only and does not
+          constitute legal advice.
         </p>
       </div>
     </div>
@@ -599,11 +852,39 @@ export default function AssessmentTool() {
 
   const currentQ = QUESTIONS[step]
 
+  const applicableTotal = useMemo(() => {
+    const answerMap = buildAnswerMapFromArray(answers)
+    // If the current question isn't yet in answerMap, also account for whichever
+    // branch it represents — include current in the count so progress reads right.
+    const speculativeMap = { ...answerMap }
+    if (currentQ && !(currentQ.id in speculativeMap)) {
+      speculativeMap[currentQ.id] = null
+    }
+    return QUESTIONS.filter((q) => !q.appliesTo || q.appliesTo(speculativeMap)).length || QUESTIONS.length
+  }, [answers, currentQ])
+
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const rehydrated = rehydrateAnswersFromUrl()
     if (rehydrated) {
       setResult(getAssessmentReport(rehydrated))
+      return
     }
+
+    const params = new URLSearchParams(window.location.search)
+    const start = params.get('start')
+    if (!start) return
+
+    const q1 = QUESTIONS[0]
+    const option = q1.options.find((o) => o.value === start)
+    if (!option) return
+
+    const answer = { qId: q1.id, value: start }
+    if (option.score !== undefined) answer.score = option.score
+    setAnswers([answer])
+    const nextStep = findNextApplicableStep(0, { [q1.id]: start })
+    setStep(nextStep !== null ? nextStep : 0)
   }, [])
 
   const handleSingleAnswer = (option) => {
@@ -612,8 +893,9 @@ export default function AssessmentTool() {
     const newAnswers = [...answers, answer]
     setAnswers(newAnswers)
 
-    if (step < QUESTIONS.length - 1) {
-      setStep(step + 1)
+    const nextStep = findNextApplicableStep(step, buildAnswerMapFromArray(newAnswers))
+    if (nextStep !== null) {
+      setStep(nextStep)
     } else {
       finishAssessment(newAnswers)
     }
@@ -651,8 +933,9 @@ export default function AssessmentTool() {
     setAnswers(newAnswers)
     setMultiSelected([])
 
-    if (step < QUESTIONS.length - 1) {
-      setStep(step + 1)
+    const nextStep = findNextApplicableStep(step, buildAnswerMapFromArray(newAnswers))
+    if (nextStep !== null) {
+      setStep(nextStep)
     } else {
       finishAssessment(newAnswers)
     }
@@ -661,16 +944,24 @@ export default function AssessmentTool() {
   const finishAssessment = (finalAnswers) => {
     const report = getAssessmentReport(finalAnswers)
     setResult(report)
+    const telemetry = {
+      shortTrack: report.shortTrack,
+      entity: report.answerMap?.[1] || null,
+      location: report.answerMap?.[2] || null,
+      role: report.answerMap?.[3] || null,
+      marketExposure: report.answerMap?.[7] || null,
+      priority: report.answerMap?.[17] || null,
+      readiness: report.readiness?.label || null,
+      guardrails: report.guardrails?.label || null,
+      risk: report.risk?.label || null,
+      frameworkCount: report.frameworks?.length || 0,
+      primaryRecommendation: report.primaryRecommendation?.slug || null,
+      timestamp: new Date().toISOString(),
+    }
     fetch('/api/assessment-complete', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        readiness: report.readiness.label,
-        guardrails: report.guardrails.label,
-        risk: report.risk.label,
-        frameworkCount: report.frameworks.length,
-        timestamp: new Date().toISOString(),
-      }),
+      body: JSON.stringify(telemetry),
     }).catch(() => {})
   }
 
@@ -701,15 +992,15 @@ export default function AssessmentTool() {
           How AI-Ready Is Your Work?
         </h2>
         <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">
-          {QUESTIONS.length} short questions, about 3 minutes. See where you
-          stand, what gaps matter most, and what to focus on next.
+          A few short questions tailored to your role, market exposure, and use case,
+          about 4 minutes. See where you stand, what gaps matter most, and what to do next.
         </p>
       </div>
 
-      <div className={`bg-surface border border-border rounded-2xl p-6 sm:p-10 ${result ? 'print:border-0 print:p-0 print:bg-transparent' : ''}`}>
+      <div className={`bg-surface border-2 border-border/80 rounded-2xl p-6 sm:p-10 shadow-[0_12px_40px_-20px_rgba(32,38,43,0.18)] ${result ? 'print:border-0 print:p-0 print:bg-transparent print:shadow-none' : ''}`}>
         {/* Screen reader progress */}
         <div aria-live="polite" className="sr-only">
-          {!result && `Question ${step + 1} of ${QUESTIONS.length}: ${currentQ.text}`}
+          {!result && `Question ${answers.length + 1} of ${applicableTotal}: ${currentQ.text}`}
         </div>
 
         {!result ? (
@@ -717,18 +1008,44 @@ export default function AssessmentTool() {
             {/* Progress bar */}
             <div className="flex justify-between items-center mb-8">
               <span className="font-sans text-xs text-secondary font-semibold">
-                Question {step + 1} of {QUESTIONS.length}
+                Question {answers.length + 1} of {applicableTotal}
               </span>
-              <div className="w-[120px] h-1 bg-border rounded-full overflow-hidden" role="progressbar" aria-valuenow={step + 1} aria-valuemin={1} aria-valuemax={QUESTIONS.length} aria-label={`Question ${step + 1} of ${QUESTIONS.length}`}>
+              <div className="w-[120px] h-1 bg-border rounded-full overflow-hidden" role="progressbar" aria-valuenow={answers.length + 1} aria-valuemin={1} aria-valuemax={applicableTotal} aria-label={`Question ${answers.length + 1} of ${applicableTotal}`}>
                 <div
                   className="h-full bg-gradient-to-r from-accent to-accent-light rounded-full transition-all duration-500"
-                  style={{ width: `${((step + 1) / QUESTIONS.length) * 100}%` }}
+                  style={{ width: `${((answers.length + 1) / applicableTotal) * 100}%` }}
                 />
               </div>
             </div>
 
-            {currentQ.multi ? (
-              /* Multi-select question (Q3) */
+            {currentQ.type === 'dropdown' ? (
+              /* Dropdown question (Q2 state) */
+              <fieldset className="border-none p-0 m-0">
+                <legend className="font-sans text-lg sm:text-xl font-semibold text-primary mb-2 leading-snug">
+                  {currentQ.text}
+                </legend>
+                {currentQ.subtitle && (
+                  <p className="font-sans text-sm text-secondary mb-5 leading-relaxed">
+                    {currentQ.subtitle}
+                  </p>
+                )}
+                <select
+                  className="w-full bg-bg border border-border rounded-[10px] px-4 py-3 font-sans text-sm text-primary outline-none focus:border-accent transition-colors cursor-pointer"
+                  defaultValue=""
+                  onChange={(e) => {
+                    const opt = currentQ.options.find((o) => o.value === e.target.value)
+                    if (opt) handleSingleAnswer(opt)
+                  }}
+                  aria-label={currentQ.text}
+                >
+                  <option value="" disabled>Select one...</option>
+                  {currentQ.options.map((opt) => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
+                </select>
+              </fieldset>
+            ) : currentQ.multi ? (
+              /* Multi-select question */
               <fieldset className="border-none p-0 m-0">
                 <legend className="font-sans text-lg sm:text-xl font-semibold text-primary mb-2 leading-snug">
                   {currentQ.text}

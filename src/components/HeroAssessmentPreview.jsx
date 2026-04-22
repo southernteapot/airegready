@@ -1,11 +1,7 @@
 import Link from 'next/link'
+import { QUESTIONS } from '@/lib/data'
 
-const OPTIONS = [
-  'Figuring out where to start',
-  'Using AI more effectively',
-  'Setting policies or guardrails',
-  'Understanding risk and compliance',
-]
+const Q1 = QUESTIONS[0]
 
 export default function HeroAssessmentPreview() {
   return (
@@ -15,56 +11,32 @@ export default function HeroAssessmentPreview() {
           AI Readiness Assessment
         </div>
         <div className="font-mono text-[11px] text-secondary/80 tabular-nums">
-          11 questions
+          ~4 minutes
         </div>
       </div>
 
-      <div className="h-[3px] bg-border/60 rounded-full overflow-hidden mb-5">
-        <div className="h-full w-[22%] bg-accent" />
-      </div>
-
       <h3 className="font-serif text-[22px] sm:text-[24px] font-bold text-primary leading-snug tracking-tight mb-1.5">
-        Start with the question you actually need answered.
+        {Q1.text}
       </h3>
-      <p className="font-sans text-[13px] text-secondary mb-5 leading-relaxed">
-        The full assessment turns your answers into a practical next-step
-        report with frameworks worth watching and recommended reading.
-      </p>
+      {Q1.subtitle && (
+        <p className="font-sans text-[13px] text-secondary mb-5 leading-relaxed">
+          {Q1.subtitle}
+        </p>
+      )}
 
-      <div className="grid gap-2 mb-5">
-        {OPTIONS.map((label, index) => {
-          return (
-            <div
-              key={label}
-              className={`flex items-center gap-3 px-3.5 py-3 rounded-md font-sans text-sm text-left transition-all border ${
-                index === 0
-                  ? 'border-primary bg-primary/[0.03] text-primary'
-                  : 'border-border bg-transparent text-primary/90'
-              }`}
-            >
-              <span
-                className={`w-5 h-5 rounded grid place-items-center font-mono text-[11px] border ${
-                  index === 0
-                    ? 'bg-primary text-surface border-primary'
-                    : 'bg-surface text-secondary border-border'
-                }`}
-              >
-                {String.fromCharCode(65 + index)}
-              </span>
-              {label}
-            </div>
-          )
-        })}
-      </div>
-
-      <div className="flex justify-between items-center font-sans text-xs text-secondary/80 pt-1">
-        <span>Dedicated page, better performance</span>
-        <Link
-          href="/assessment"
-          className="font-sans text-xs font-semibold text-accent hover:text-accent-dark transition-colors no-underline"
-        >
-          Take the full assessment &rarr;
-        </Link>
+      <div className="grid gap-2">
+        {Q1.options.map((option, index) => (
+          <Link
+            key={option.value}
+            href={`/assessment?start=${option.value}`}
+            className="flex items-center gap-3 px-3.5 py-3 rounded-md font-sans text-sm text-left border border-border bg-transparent text-primary/90 hover:border-accent hover:bg-accent/5 hover:text-primary transition-all no-underline"
+          >
+            <span className="w-5 h-5 rounded grid place-items-center font-mono text-[11px] bg-surface text-secondary border border-border flex-shrink-0">
+              {String.fromCharCode(65 + index)}
+            </span>
+            {option.label}
+          </Link>
+        ))}
       </div>
     </div>
   )
