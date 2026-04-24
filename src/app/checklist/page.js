@@ -80,7 +80,7 @@ function buildChecklistPdfHtml(checked) {
         const key = `${section.title}-${i}`
         const isChecked = checked.has(key)
         return `<li style="display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:13px;color:#333;line-height:1.6;margin-bottom:6px;">
-          <span style="display:inline-block;width:14px;height:14px;flex-shrink:0;border:1.5px solid ${isChecked ? '#8E6C48' : '#999'};border-radius:2px;margin-top:3px;background:${isChecked ? '#8E6C48' : 'transparent'};color:#fff;text-align:center;line-height:14px;font-size:10px;">${isChecked ? '\u2713' : ''}</span>
+          <span style="display:inline-block;width:14px;height:14px;flex-shrink:0;border:1.5px solid ${isChecked ? '#0F5E9C' : '#999'};border-radius:2px;margin-top:3px;background:${isChecked ? '#0F5E9C' : 'transparent'};color:#fff;text-align:center;line-height:14px;font-size:10px;">${isChecked ? '\u2713' : ''}</span>
           <span${isChecked ? ' style="text-decoration:line-through;color:#999;"' : ''}>${item}</span>
         </li>`
       })

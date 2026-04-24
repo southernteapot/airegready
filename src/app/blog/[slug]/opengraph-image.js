@@ -27,8 +27,8 @@ export default async function OpenGraphImage({ params }) {
           display: 'flex',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(180deg, #fffaf5 0%, #f4ede4 100%)',
-          color: '#20262B',
+          background: 'linear-gradient(135deg, #07111F 0%, #0B1B2F 54%, #123253 100%)',
+          color: '#F8FAFD',
           padding: '56px',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -53,7 +53,7 @@ export default async function OpenGraphImage({ params }) {
                 fontSize: 18,
                 letterSpacing: '0.16em',
                 textTransform: 'uppercase',
-                color: '#9E7A56',
+                color: '#9BE1DC',
                 fontWeight: 700,
               }}
             >
@@ -65,12 +65,12 @@ export default async function OpenGraphImage({ params }) {
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: '#9E7A56',
+                background: '#9BE1DC',
               }}
             />
-            <div style={{ display: 'flex', fontSize: 20, color: '#5B6770' }}>{article.displayDate}</div>
+            <div style={{ display: 'flex', fontSize: 20, color: '#ADC4DE' }}>{article.displayDate}</div>
           </div>
-          <div style={{ display: 'flex', fontSize: 26, fontWeight: 700, color: '#9E7A56' }}>AIRegReady</div>
+          <div style={{ display: 'flex', fontSize: 26, fontWeight: 700, color: '#9BE1DC' }}>AIRegReady</div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: 1000 }}>
@@ -89,7 +89,7 @@ export default async function OpenGraphImage({ params }) {
               display: 'flex',
               fontSize: 28,
               lineHeight: 1.35,
-              color: '#46515A',
+              color: '#D8E6F5',
               maxWidth: 980,
             }}
           >
@@ -109,15 +109,15 @@ export default async function OpenGraphImage({ params }) {
               display: 'flex',
               padding: '10px 18px',
               borderRadius: 999,
-              background: 'rgba(158,122,86,0.12)',
-              color: '#6A4F33',
+              background: 'rgba(155,225,220,0.12)',
+              color: '#9BE1DC',
               fontSize: 22,
               fontWeight: 600,
             }}
           >
             Practical AI guidance and regulatory analysis
           </div>
-          <div style={{ display: 'flex', fontSize: 22, color: '#5B6770' }}>{article.readTime}</div>
+          <div style={{ display: 'flex', fontSize: 22, color: '#ADC4DE' }}>{article.readTime}</div>
         </div>
       </div>
     ),

@@ -24,7 +24,7 @@ export default function BlogIndex() {
           <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
             Latest Guidance
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary">
             What&apos;s New in AI Readiness
           </h1>
           <p className="font-sans text-base text-secondary mt-3 max-w-[540px] mx-auto leading-relaxed">

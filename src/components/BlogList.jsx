@@ -93,7 +93,7 @@ export default function BlogList({ articles }) {
         {featured && (
           <Link
             href={`/blog/${featured.slug}`}
-            className="bg-surface border border-border/60 rounded-xl p-6 sm:p-8 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] relative overflow-hidden no-underline"
+            className="bg-surface border border-border/70 rounded-2xl p-6 sm:p-8 mb-4 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] relative overflow-hidden no-underline shadow-sm"
           >
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
             <div className="flex flex-wrap gap-3 items-center mb-4">
@@ -108,7 +108,7 @@ export default function BlogList({ articles }) {
                 {featured.readTime}
               </span>
             </div>
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary mb-3 leading-tight">
+            <h2 className="font-sans text-xl sm:text-2xl font-black text-primary mb-3 leading-tight">
               {featured.title}
             </h2>
             <p className="font-sans text-sm text-secondary leading-relaxed max-w-[700px]">
@@ -124,7 +124,7 @@ export default function BlogList({ articles }) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+                className="bg-surface border border-border/70 rounded-2xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] no-underline shadow-sm"
               >
                 <div className="flex flex-wrap gap-2 items-center mb-3">
                   <span className="font-sans text-xs font-bold uppercase tracking-wide text-accent bg-accent/10 px-2.5 py-1 rounded-full">

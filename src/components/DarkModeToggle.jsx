@@ -3,7 +3,7 @@ export default function DarkModeToggle() {
     <button
       type="button"
       data-theme-toggle
-      className="text-secondary hover:text-accent transition-colors bg-transparent border-none cursor-pointer p-1.5 flex items-center"
+      className="flex cursor-pointer items-center border-none bg-transparent p-1.5 text-[#ADC4DE] transition-colors hover:text-[#9BE1DC]"
       aria-label="Toggle theme"
       title="Toggle theme"
       aria-pressed="false"

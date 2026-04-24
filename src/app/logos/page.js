@@ -15,8 +15,8 @@ function WarmCheckMark({ size = 32 }) {
     >
       <defs>
         <linearGradient id="v1-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B8956E" />
-          <stop offset="100%" stopColor="#86653F" />
+          <stop offset="0%" stopColor="#0F5E9C" />
+          <stop offset="100%" stopColor="#2CA6A4" />
         </linearGradient>
       </defs>
       <rect width="32" height="32" rx="7" fill="url(#v1-grad)" />
@@ -52,8 +52,8 @@ function SerifMonogram({ size = 32 }) {
     >
       <defs>
         <linearGradient id="v2-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B8956E" />
-          <stop offset="100%" stopColor="#86653F" />
+          <stop offset="0%" stopColor="#0F5E9C" />
+          <stop offset="100%" stopColor="#2CA6A4" />
         </linearGradient>
       </defs>
       <circle cx="16" cy="16" r="15" fill="url(#v2-grad)" />
@@ -87,13 +87,13 @@ function FocusBrackets({ size = 32 }) {
            M21 4.5 L27.5 4.5 L27.5 11
            M27.5 21 L27.5 27.5 L21 27.5
            M11 27.5 L4.5 27.5 L4.5 21"
-        stroke="#9E7A56"
+        stroke="#0F5E9C"
         strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
       />
       {/* Center dot */}
-      <circle cx="16" cy="16" r="2.5" fill="#9E7A56" />
+      <circle cx="16" cy="16" r="2.5" fill="#2CA6A4" />
     </svg>
   )
 }
@@ -109,8 +109,8 @@ function CompassMark({ size = 32 }) {
     >
       <defs>
         <linearGradient id="v4-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B8956E" />
-          <stop offset="100%" stopColor="#86653F" />
+          <stop offset="0%" stopColor="#0F5E9C" />
+          <stop offset="100%" stopColor="#2CA6A4" />
         </linearGradient>
       </defs>
       <rect width="32" height="32" rx="7" fill="url(#v4-grad)" />
@@ -119,7 +119,7 @@ function CompassMark({ size = 32 }) {
       {/* South arrow (lighter) */}
       <path d="M16 26 L12 16 L16 18 L20 16 Z" fill="#FFF9F2" opacity="0.5" />
       {/* Center dot */}
-      <circle cx="16" cy="16" r="1.25" fill="#86653F" />
+      <circle cx="16" cy="16" r="1.25" fill="#06101F" />
     </svg>
   )
 }
@@ -136,8 +136,8 @@ function StackedLines({ size = 32 }) {
     >
       <defs>
         <linearGradient id="v5-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B8956E" />
-          <stop offset="100%" stopColor="#86653F" />
+          <stop offset="0%" stopColor="#0F5E9C" />
+          <stop offset="100%" stopColor="#2CA6A4" />
         </linearGradient>
       </defs>
       <rect width="32" height="32" rx="7" fill="url(#v5-grad)" />
@@ -169,8 +169,8 @@ function ArMonogram({ size = 32 }) {
     >
       <defs>
         <linearGradient id="v6-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#B8956E" />
-          <stop offset="100%" stopColor="#86653F" />
+          <stop offset="0%" stopColor="#0F5E9C" />
+          <stop offset="100%" stopColor="#2CA6A4" />
         </linearGradient>
       </defs>
       <rect width="32" height="32" rx="7" fill="url(#v6-grad)" />
@@ -290,7 +290,7 @@ function VariantCard({ number, name, description, mark, wordmark }) {
           {mark && mark({ size: 28 })}
           {wordmark && (
             <span className="font-sans font-bold text-base tracking-tight text-[#FFF9F2]">
-              AIReg<span className="text-[#D4B896]">Ready</span>
+              AIReg<span className="text-[#9BE1DC]">Ready</span>
             </span>
           )}
         </span>
@@ -308,24 +308,24 @@ function VariantCard({ number, name, description, mark, wordmark }) {
 /* ------------------------------------------------------------------ */
 
 export const metadata = {
-  title: 'Logo Options',
+  title: 'Brand Mark Options',
   robots: { index: false, follow: false },
 }
 
 const variants = [
   {
     number: 1,
-    name: 'Warm Check (current)',
+    name: 'Shield Check',
     description:
-      'Rounded accent square with a custom checkmark and a subtle verified-baseline underline. Says "ready / done." Matches the current sans wordmark.',
+      'Rounded blue-forward mark with a custom check and verified-baseline underline. This is the closest option to the current product-site direction.',
     mark: WarmCheckMark,
     wordmark: SansWordmark,
   },
   {
     number: 2,
-    name: 'Serif Monogram',
+    name: 'Regulatory Monogram',
     description:
-      'Accent-filled circle with a serif "R" in Libre Baskerville, paired with a matching serif wordmark. Editorial, classical, refined. Best for a more authoritative feel.',
+      'Accent-filled circle with a monogram treatment. More formal, but less explicit about documents, governance, or readiness.',
     mark: SerifMonogram,
     wordmark: SerifWordmark,
   },
@@ -341,7 +341,7 @@ const variants = [
     number: 4,
     name: 'Compass Mark',
     description:
-      'Minimalist N/S compass needle inside the rounded accent square. Says "navigation / guidance." Fits the site’s orientation / readiness framing.',
+      'Minimalist N/S compass needle inside the rounded accent square. Says navigation and guidance, but is less product-specific than the shield/check direction.',
     mark: CompassMark,
     wordmark: SansWordmark,
   },
@@ -349,7 +349,7 @@ const variants = [
     number: 5,
     name: 'Stacked Lines + Check',
     description:
-      'Three lines like a document stack, with a small checkmark at the bottom corner. Evokes reference material and review. A nod to "library of practical AI info."',
+      'Three lines like a document stack, with a small checkmark at the bottom corner. Stronger fit for a resource catalog and document library.',
     mark: StackedLines,
     wordmark: SansWordmark,
   },
@@ -365,7 +365,7 @@ const variants = [
     number: 7,
     name: 'Pure Serif Wordmark',
     description:
-      'No icon at all. Just the wordmark in Libre Baskerville serif, matching the site’s heading treatment. Elegant, editorial, less "tech," more "journal."',
+      'No icon at all. Just the wordmark. Clean, but less distinctive for favicon, social previews, and product cards.',
     mark: null,
     wordmark: SerifWordmark,
   },
@@ -373,7 +373,7 @@ const variants = [
     number: 8,
     name: 'Serif Wordmark + Dot',
     description:
-      'Small accent dot followed by the Libre Baskerville serif wordmark. A lightweight version of the serif direction. Feels like a byline or a published work.',
+      'Small accent dot followed by the wordmark. Lightweight and restrained, but closer to a publication identity than a product business.',
     mark: null,
     wordmark: SerifWordmarkWithDot,
   },
@@ -396,13 +396,12 @@ export default function LogosPage() {
             Internal — Not Indexed
           </p>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-3">
-            Logo Options
+            Brand Mark Options
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[640px]">
-            Nine logo directions to choose from. Each is shown at NavBar size
+            Logo directions for the newer AIRegReady product-site identity. Each is shown at NavBar size
             (32&thinsp;px mark + wordmark), then at large / medium / favicon
-            sizes, then on a dark background. Pick the one you like and I’ll
-            wire it into the site.
+            sizes, then on a dark background.
           </p>
         </div>
 
@@ -414,20 +413,19 @@ export default function LogosPage() {
 
         <div className="mt-12 bg-accent/10 border border-accent/20 rounded-xl p-6">
           <h2 className="font-serif text-lg font-bold text-primary mb-2">
-            How to pick
+            Current recommendation
           </h2>
           <ul className="font-sans text-sm text-secondary leading-relaxed space-y-1.5 list-disc pl-5">
             <li>
-              <strong>1, 4, 5</strong> — currently feel closest to the
-              warm-professional brand (accent-filled mark, sans wordmark).
+              <strong>1 and 5</strong> — best match the new resource-catalog
+              positioning because they imply readiness, documents, and review.
             </li>
             <li>
-              <strong>2, 7, 8</strong> — shift toward a more
-              editorial/authoritative feel (serif wordmark). Biggest
-              identity change.
+              <strong>2, 7, 8</strong> — quieter and more editorial. They fit
+              reference content but do not communicate a practical product catalog as strongly.
             </li>
             <li>
-              <strong>3</strong> — most minimalist. Works if you want the
+              <strong>3</strong> — most minimalist. Works if the
               site to read as a tool rather than a publication.
             </li>
             <li>

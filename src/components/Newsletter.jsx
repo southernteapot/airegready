@@ -181,7 +181,7 @@ export default function Newsletter() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="bg-gradient-to-br from-accent to-accent-dark text-accent-text px-6 py-3 rounded-lg font-sans text-sm font-bold cursor-pointer whitespace-nowrap hover:shadow-[0_4px_24px_rgba(158,122,86,0.2)] transition-shadow border-none disabled:opacity-70 disabled:cursor-not-allowed"
+                className="bg-gradient-to-br from-accent to-accent-dark text-accent-text px-6 py-3 rounded-lg font-sans text-sm font-bold cursor-pointer whitespace-nowrap hover:shadow-[0_14px_32px_-22px_rgba(11,27,47,0.75)] transition-shadow border-none disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
               </button>

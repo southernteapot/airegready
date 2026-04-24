@@ -27,7 +27,7 @@ export default function RegulationsIndex() {
           <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
             Browse by Framework
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary">
             AI Regulations You Should Know
           </h1>
           <p className="font-sans text-base text-secondary mt-3 max-w-[560px] mx-auto leading-relaxed">
@@ -42,7 +42,7 @@ export default function RegulationsIndex() {
             <Link
               key={reg.slug}
               href={`/regulations/${reg.slug}`}
-              className="bg-surface border border-border/60 rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline block"
+              className="block rounded-2xl border border-border/70 bg-surface p-6 no-underline shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)]"
             >
               <div className="flex justify-between items-start mb-3">
                 <span className="text-[28px]" role="img" aria-hidden="true">

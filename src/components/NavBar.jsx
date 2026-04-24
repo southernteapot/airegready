@@ -6,17 +6,18 @@ const links = [
   { label: 'Resources', href: '/resources' },
   { label: 'Regulations', href: '/regulations' },
   { label: 'Compare', href: '/compare' },
-  { label: 'Assessment', href: '/assessment' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Catalog', href: '/catalog' },
   { label: 'FAQ', href: '/faq' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 function SearchLink() {
   return (
     <Link
       href="/search"
-      className="text-secondary hover:text-accent transition-colors bg-transparent p-1.5 flex items-center no-underline"
+      className="flex items-center bg-transparent p-1.5 text-[#ADC4DE] no-underline transition-colors hover:text-[#9BE1DC]"
       aria-label="Search site"
       title="Search"
     >
@@ -42,18 +43,18 @@ export default function NavBar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border px-6 h-16 flex items-center justify-between"
+      className="fixed left-0 right-0 top-0 z-50 flex h-16 items-center justify-between border-b border-[#1E3147] bg-[#07111F]/95 px-4 shadow-[0_18px_60px_-46px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:px-6"
     >
       <Link href="/" className="no-underline" aria-label="AIRegReady home">
-        <Logo size={32} textSize="lg" />
+        <Logo size={32} textSize="lg" tone="dark" />
       </Link>
 
-      <div className="hidden md:flex gap-8 items-center">
+      <div className="hidden items-center gap-7 lg:flex">
         {links.map((link) => (
           <Link
             key={link.label}
             href={link.href}
-            className="text-secondary text-sm font-sans font-medium hover:text-accent transition-colors no-underline"
+            className="font-sans text-sm font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
           >
             {link.label}
           </Link>
@@ -61,11 +62,17 @@ export default function NavBar() {
       </div>
 
       <div className="flex items-center gap-2">
+        <Link
+          href="/assessment"
+          className="hidden rounded-lg bg-[#123253] px-4 py-2 font-sans text-sm font-bold text-white no-underline transition hover:bg-[#19436D] sm:inline-flex"
+        >
+          Start assessment
+        </Link>
         <SearchLink />
         <DarkModeToggle />
-        <details className="relative md:hidden">
+        <details className="relative lg:hidden">
           <summary
-            className="list-none text-secondary hover:text-primary bg-transparent cursor-pointer p-1"
+            className="cursor-pointer list-none bg-transparent p-1 text-[#ADC4DE] hover:text-[#9BE1DC]"
             aria-label="Toggle menu"
           >
             <span className="sr-only">Toggle menu</span>
@@ -85,21 +92,27 @@ export default function NavBar() {
 
           <div
             id="mobile-nav"
-            className="absolute top-11 right-0 w-[220px] bg-bg/95 backdrop-blur-xl border border-border rounded-xl shadow-lg md:hidden"
+            className="absolute right-0 top-11 w-[240px] rounded-xl border border-[#1E3147] bg-[#07111F]/97 shadow-lg backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col p-4 gap-3">
               {links.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-secondary text-base font-sans font-medium hover:text-accent transition-colors no-underline"
+                  className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
+                href="/assessment"
+                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
+              >
+                Assessment
+              </Link>
+              <Link
                 href="/search"
-                className="text-secondary text-base font-sans font-medium hover:text-accent transition-colors no-underline"
+                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
               >
                 Search
               </Link>

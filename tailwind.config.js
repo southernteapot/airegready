@@ -20,7 +20,7 @@ module.exports = {
         border: 'rgb(var(--color-border) / <alpha-value>)',
       },
       fontFamily: {
-        serif: ['var(--font-libre-baskerville)', 'Georgia', 'Times New Roman', 'serif'],
+        serif: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },

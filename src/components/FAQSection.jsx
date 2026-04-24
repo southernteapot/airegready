@@ -20,7 +20,7 @@ export default function FAQSection() {
           </div>
           <h2
             id="faq-heading"
-            className="font-serif text-4xl sm:text-5xl font-bold text-primary leading-[1.05] tracking-tight"
+            className="font-sans text-4xl sm:text-5xl font-black text-primary leading-[1.05] tracking-tight"
           >
             Common questions.<br />Straight answers.
           </h2>
@@ -52,7 +52,7 @@ export default function FAQSection() {
                   aria-controls={`faq-answer-${i}`}
                 >
                   <span
-                    className={`font-serif text-lg sm:text-xl font-bold leading-snug tracking-tight transition-colors duration-300 ${
+                    className={`font-sans text-lg sm:text-xl font-black leading-snug tracking-tight transition-colors duration-300 ${
                       isOpen ? 'text-primary' : 'text-primary/90'
                     }`}
                   >

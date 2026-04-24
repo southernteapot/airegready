@@ -15,8 +15,8 @@ export default function OpenGraphImage() {
           display: 'flex',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #f6efe6 0%, #fffaf5 48%, #efe3d3 100%)',
-          color: '#20262B',
+          background: 'linear-gradient(135deg, #07111F 0%, #0B1B2F 52%, #123253 100%)',
+          color: '#F8FAFD',
           padding: '56px',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -43,7 +43,7 @@ export default function OpenGraphImage() {
                 width: 54,
                 height: 54,
                 borderRadius: 16,
-                background: '#9E7A56',
+                background: 'linear-gradient(135deg, #0F5E9C 0%, #2CA6A4 100%)',
                 color: '#fff',
                 display: 'flex',
                 alignItems: 'center',
@@ -55,8 +55,8 @@ export default function OpenGraphImage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span>AIRegReady</span>
-              <span style={{ fontSize: 18, fontWeight: 500, color: '#5B6770' }}>
-                Plain-English AI regulation guidance
+              <span style={{ fontSize: 18, fontWeight: 500, color: '#ADC4DE' }}>
+                Practical AI governance resources
               </span>
             </div>
           </div>
@@ -66,17 +66,17 @@ export default function OpenGraphImage() {
               display: 'flex',
               gap: '12px',
               fontSize: 18,
-              color: '#6A4F33',
+              color: '#9BE1DC',
             }}
           >
-            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(158,122,86,0.12)' }}>
-              Regulations
+            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(155,225,220,0.12)' }}>
+              Catalog
             </span>
-            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(158,122,86,0.12)' }}>
-              Assessment
+            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(155,225,220,0.12)' }}>
+              Templates
             </span>
-            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(158,122,86,0.12)' }}>
-              Timeline
+            <span style={{ padding: '8px 14px', borderRadius: 999, background: 'rgba(155,225,220,0.12)' }}>
+              Trackers
             </span>
           </div>
         </div>
@@ -88,11 +88,11 @@ export default function OpenGraphImage() {
               fontSize: 18,
               letterSpacing: '0.16em',
               textTransform: 'uppercase',
-              color: '#9E7A56',
+              color: '#9BE1DC',
               fontWeight: 700,
             }}
           >
-            AI resources for real-world use
+            AI governance resource library
           </div>
           <div
             style={{
@@ -102,7 +102,7 @@ export default function OpenGraphImage() {
               fontWeight: 700,
             }}
           >
-            Regulations, frameworks, and practical AI readiness guidance.
+            AI governance documents your team can actually use.
           </div>
         </div>
 
@@ -112,13 +112,13 @@ export default function OpenGraphImage() {
             justifyContent: 'space-between',
             alignItems: 'flex-end',
             fontSize: 24,
-            color: '#5B6770',
+            color: '#ADC4DE',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: 780 }}>
-            <span>EU AI Act, NIST AI RMF, U.S. state laws, timelines, checklists, and explainers.</span>
+            <span>Templates, checklists, playbooks, trackers, and jurisdiction guides for internal readiness work.</span>
           </div>
-          <div style={{ color: '#9E7A56', fontWeight: 700 }}>airegready.com</div>
+          <div style={{ color: '#9BE1DC', fontWeight: 700 }}>airegready.com</div>
         </div>
       </div>
     ),

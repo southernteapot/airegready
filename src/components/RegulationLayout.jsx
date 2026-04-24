@@ -25,7 +25,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
               <span className="text-[36px]" role="img" aria-hidden="true">
                 {regulation.icon}
               </span>
-              <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight">
+              <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight">
                 {regulation.title}
               </h1>
             </div>
@@ -43,7 +43,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
 
         {/* Key Facts */}
         {regulation.keyFacts && (
-          <div className="bg-surface border border-border/60 rounded-xl p-6 mb-10">
+          <div className="mb-10 rounded-2xl border border-border/70 bg-surface p-6 shadow-sm">
             <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-4">
               Key Facts
             </h2>
@@ -63,7 +63,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
         )}
 
         {/* Table of Contents */}
-        <nav aria-label="Table of contents" className="bg-surface border border-border/60 rounded-xl p-6 mb-12">
+        <nav aria-label="Table of contents" className="mb-12 rounded-2xl border border-border/70 bg-surface p-6 shadow-sm">
           <h2 className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-3">
             On This Page
           </h2>
@@ -102,7 +102,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
         {/* Content Sections */}
         {regulation.sections.map((section) => (
           <section key={section.id} id={section.id} className="mb-12 scroll-mt-24">
-            <h2 className="font-serif text-2xl font-bold text-primary mb-4">
+            <h2 className="font-sans text-2xl font-black text-primary mb-4">
               {section.title}
             </h2>
             <ContentBlock content={section.content} />
@@ -184,7 +184,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
         {/* Timeline */}
         {regulation.timeline && regulation.timeline.length > 0 && (
           <section id="timeline" className="mb-12 scroll-mt-24">
-            <h2 className="font-serif text-2xl font-bold text-primary mb-6">
+            <h2 className="font-sans text-2xl font-black text-primary mb-6">
               Timeline
             </h2>
             <div className="flex flex-col">
@@ -212,7 +212,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
 
         {/* Sources */}
         <section id="sources" className="mb-8 scroll-mt-24">
-          <h2 className="font-serif text-2xl font-bold text-primary mb-4">
+          <h2 className="font-sans text-2xl font-black text-primary mb-4">
             Source Documents
           </h2>
           <div className="flex flex-col gap-2">
@@ -254,7 +254,7 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
                 <Link
                   key={article.slug}
                   href={`/blog/${article.slug}`}
-                  className="bg-surface border border-border/60 rounded-xl p-5 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline"
+                  className="block rounded-2xl border border-border/70 bg-surface p-5 no-underline shadow-sm transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)]"
                 >
                   <div className="font-sans text-xs text-secondary mb-2">
                     {article.category} &middot; {article.displayDate} &middot;{' '}

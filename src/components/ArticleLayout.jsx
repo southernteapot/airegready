@@ -11,7 +11,7 @@ function TableOfContents({ sections }) {
   if (headings.length < 3) return null
 
   return (
-    <nav className="bg-surface border border-border/60 rounded-xl p-6 mb-10" aria-label="Table of contents">
+    <nav className="mb-10 rounded-2xl border border-border/70 bg-surface p-6 shadow-sm" aria-label="Table of contents">
       <h2 className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
         In This Article
       </h2>
@@ -64,9 +64,9 @@ function RelatedResources({ article }) {
           <Link
             key={r.href}
             href={r.href}
-            className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
+            className="block rounded-2xl border border-border/70 bg-surface p-5 no-underline shadow-sm transition-all hover:border-accent/50"
           >
-            <div className="font-serif text-sm font-bold text-primary mb-1">
+            <div className="font-sans text-sm font-black text-primary mb-1">
               {r.title}
             </div>
             <p className="font-sans text-xs text-secondary">{r.desc}</p>
@@ -103,7 +103,7 @@ export default function ArticleLayout({ article }) {
               <time>{article.displayDate}</time> &middot; {article.readTime}
             </span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight">
             {article.title}
           </h1>
         </header>
@@ -117,7 +117,7 @@ export default function ArticleLayout({ article }) {
             {section.title && (
               <h2
                 id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
-                className="font-serif text-xl sm:text-2xl font-bold text-primary mb-4 mt-10 scroll-mt-24"
+                className="font-sans text-xl sm:text-2xl font-black text-primary mb-4 mt-10 scroll-mt-24"
               >
                 {section.title}
               </h2>

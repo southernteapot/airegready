@@ -19,7 +19,7 @@ export default function AboutPage() {
         />
 
         <header className="mb-10">
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight mb-4">
             About AIRegReady
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed">
@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="flex flex-col gap-10">
           {/* What This Is */}
           <section>
-            <h2 className="font-serif text-xl font-bold text-primary mb-3">
+            <h2 className="font-sans text-xl font-black text-primary mb-3">
               What This Site Does
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
           {/* Who It's For */}
           <section>
-            <h2 className="font-serif text-xl font-bold text-primary mb-3">
+            <h2 className="font-sans text-xl font-black text-primary mb-3">
               Who This Is For
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
           {/* How Content Is Produced */}
           <section>
-            <h2 className="font-serif text-xl font-bold text-primary mb-3">
+            <h2 className="font-sans text-xl font-black text-primary mb-3">
               How Content Is Produced
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -136,7 +136,7 @@ export default function AboutPage() {
 
           {/* What This Is Not */}
           <section>
-            <h2 className="font-serif text-xl font-bold text-primary mb-3">
+            <h2 className="font-sans text-xl font-black text-primary mb-3">
               What This Is Not
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -157,7 +157,7 @@ export default function AboutPage() {
 
           {/* Vision */}
           <section>
-            <h2 className="font-serif text-xl font-bold text-primary mb-3">
+            <h2 className="font-sans text-xl font-black text-primary mb-3">
               Where This Is Going
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">

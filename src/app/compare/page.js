@@ -449,7 +449,7 @@ export default function ComparePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               href="/assessment"
-              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/70 rounded-2xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] no-underline text-center shadow-sm"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Readiness Assessment
@@ -461,7 +461,7 @@ export default function ComparePage() {
             </Link>
             <Link
               href="/glossary"
-              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/70 rounded-2xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] no-underline text-center shadow-sm"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Glossary
@@ -473,7 +473,7 @@ export default function ComparePage() {
             </Link>
             <Link
               href="/blog"
-              className="bg-surface border border-border/60 rounded-xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] no-underline text-center"
+              className="bg-surface border border-border/70 rounded-2xl p-6 block transition-all duration-300 hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] no-underline text-center shadow-sm"
             >
               <div className="font-sans text-sm font-bold uppercase tracking-wide text-accent mb-2">
                 Blog

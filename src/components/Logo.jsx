@@ -3,6 +3,7 @@ export default function Logo({
   withText = true,
   textSize = 'lg',
   className = '',
+  tone = 'light',
 }) {
   const textClass =
     textSize === 'sm'
@@ -10,6 +11,8 @@ export default function Logo({
       : textSize === 'base'
       ? 'text-base'
       : 'text-lg'
+  const nameClass = tone === 'dark' ? 'text-white' : 'text-primary'
+  const readyClass = tone === 'dark' ? 'text-cyan-200' : 'text-[#0F5E9C]'
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
@@ -29,40 +32,36 @@ export default function Logo({
             x2="100%"
             y2="100%"
           >
-            <stop offset="0%" stopColor="#B8956E" />
-            <stop offset="100%" stopColor="#86653F" />
+            <stop offset="0%" stopColor="#123253" />
+            <stop offset="58%" stopColor="#0F5E9C" />
+            <stop offset="100%" stopColor="#2CA6A4" />
           </linearGradient>
         </defs>
 
-        {/* Rounded accent square */}
-        <rect width="32" height="32" rx="7" fill="url(#arr-logo-grad)" />
-
-        {/* Custom checkmark glyph */}
+        <rect width="32" height="32" rx="8" fill="#06101F" />
+        <rect x="1" y="1" width="30" height="30" rx="7" fill="url(#arr-logo-grad)" opacity="0.96" />
         <path
-          d="M8.5 16.5 L13.5 21.2 L23.5 10.2"
+          d="M16 5.2l8 3.4v6.1c0 5.3-3.2 8.4-8 10.1-4.8-1.7-8-4.8-8-10.1V8.6z"
+          fill="#06101F"
+          opacity="0.34"
+        />
+
+        <path
+          d="M9.2 16.4l4.2 4.1 9.1-10.1"
           fill="none"
-          stroke="#FFF9F2"
-          strokeWidth="2.6"
+          stroke="#FFFFFF"
+          strokeWidth="2.7"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
 
-        {/* Subtle baseline — suggests a signed / verified mark */}
-        <rect
-          x="8"
-          y="24.2"
-          width="16"
-          height="1.4"
-          rx="0.7"
-          fill="#FFF9F2"
-          opacity="0.45"
-        />
+        <path d="M10 24.4h12" stroke="#9BE1DC" strokeWidth="1.3" strokeLinecap="round" opacity="0.75" />
       </svg>
       {withText && (
         <span
-          className={`font-sans font-bold ${textClass} text-primary tracking-tight`}
+          className={`font-sans font-bold ${textClass} ${nameClass} tracking-tight`}
         >
-          AIReg<span className="text-accent">Ready</span>
+          AIReg<span className={readyClass}>Ready</span>
         </span>
       )}
     </span>

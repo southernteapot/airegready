@@ -30,7 +30,7 @@ const cspHeaderValue = [
   "frame-src 'none'",
   "manifest-src 'self'",
   "worker-src 'self' blob:",
-  "upgrade-insecure-requests",
+  ...(!isDev ? ["upgrade-insecure-requests"] : []),
 ].join('; ')
 
 const securityHeaders = [
@@ -41,7 +41,9 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()",
   },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  ...(!isDev
+    ? [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" }]
+    : []),
   { key: "Content-Security-Policy", value: cspHeaderValue },
 ]
 

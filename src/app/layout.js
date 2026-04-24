@@ -21,11 +21,11 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL(absoluteUrl('/')),
   title: {
-    default: 'AIRegReady — AI Resources for Real-World Use',
+    default: 'AIRegReady - AI Governance Resource Catalog',
     template: '%s | AIRegReady',
   },
   description:
-    'Frameworks, assessments, and plain-English AI information for real-world use. Free readiness assessment, regulatory comparisons, checklists, and templates covering the EU AI Act, NIST AI RMF, U.S. state AI laws, and more.',
+    'Plain-English AI governance templates, checklists, playbooks, trackers, and jurisdiction guides for practical internal readiness work.',
   keywords: [
     'AI resources',
     'AI for business',
@@ -48,16 +48,16 @@ export const metadata = {
     locale: 'en_US',
     url: absoluteUrl('/'),
     siteName: 'AIRegReady',
-    title: 'AIRegReady — AI Resources for Real-World Use',
+    title: 'AIRegReady - AI Governance Resource Catalog',
     description:
-      'Frameworks, assessments, and plain-English AI information. Free tools and regulatory breakdowns.',
-    images: [buildSocialImage('/opengraph-image', 'AIRegReady — AI Resources for Real-World Use')],
+      'Plain-English AI governance templates, checklists, playbooks, trackers, and jurisdiction guides.',
+    images: [buildSocialImage('/opengraph-image', 'AIRegReady - AI Governance Resource Catalog')],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIRegReady — AI Resources for Real-World Use',
+    title: 'AIRegReady - AI Governance Resource Catalog',
     description:
-      'Frameworks, assessments, and plain-English AI information. Free readiness tools and regulatory breakdowns.',
+      'Plain-English AI governance templates, checklists, playbooks, trackers, and jurisdiction guides.',
     images: [absoluteUrl('/opengraph-image')],
   },
   robots: {
@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
               name: 'AIRegReady',
               url: 'https://airegready.com',
               description:
-                'AI resources, frameworks, and plain-English information for anyone using AI in the real world.',
+                'Plain-English AI governance resource kits, templates, checklists, trackers, and jurisdiction guides for internal readiness work.',
             }),
           }}
         />

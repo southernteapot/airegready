@@ -24,14 +24,14 @@ export default function Breadcrumb({ items }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <nav aria-label="Breadcrumb" className="mb-8">
-        <ol className="flex flex-wrap gap-1.5 font-sans text-sm text-secondary">
+        <ol className="flex flex-wrap gap-1.5 font-sans text-sm font-semibold text-secondary">
           {items.map((item, i) => (
             <li key={i} className="flex items-center gap-1.5">
               {i > 0 && <span className="text-border">/</span>}
               {item.href ? (
                 <Link
                   href={item.href}
-                  className="hover:text-accent transition-colors"
+                  className="text-secondary no-underline transition-colors hover:text-accent"
                   aria-current={i === items.length - 1 ? 'page' : undefined}
                 >
                   {item.label}

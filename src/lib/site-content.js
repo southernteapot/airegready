@@ -4,6 +4,16 @@ import { SITE_URL } from './seo.js'
 
 const STATIC_PAGE_DEFINITIONS = [
   {
+    url: '/catalog',
+    title: 'AI Governance Catalog',
+    description:
+      'AI governance starter kits, acceptable use policy kits, risk tools, vendor review packets, training resources, and jurisdiction guides.',
+    searchTags: [],
+    changeFrequency: 'monthly',
+    priority: 0.85,
+    lastModifiedSource: 'latest',
+  },
+  {
     url: '/resources',
     title: 'Resource Library',
     description:
@@ -66,6 +76,16 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.7,
+    lastModifiedSource: 'articles',
+  },
+  {
+    url: '/contact',
+    title: 'Contact AIRegReady',
+    description:
+      'Contact AIRegReady about practical AI governance resources, catalog questions, corrections, and general inquiries.',
+    searchTags: [],
+    changeFrequency: 'yearly',
+    priority: 0.5,
     lastModifiedSource: 'articles',
   },
   {

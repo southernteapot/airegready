@@ -25,7 +25,7 @@ const resources = [
 ]
 
 const baseCard =
-  'bg-surface border border-border/60 rounded-xl p-6 flex flex-col gap-3 transition-all duration-300 no-underline min-w-0'
+  'bg-surface border border-border/70 rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 no-underline min-w-0 shadow-sm'
 
 export default function ResourcesSection() {
   return (
@@ -41,7 +41,7 @@ export default function ResourcesSection() {
           </div>
           <h2
             id="resources-heading"
-            className="font-serif text-4xl sm:text-5xl font-bold text-primary leading-[1.05] tracking-tight"
+            className="font-sans text-4xl sm:text-5xl font-black text-primary leading-[1.05] tracking-tight"
           >
             Practical resources,<br />in plain English.
           </h2>
@@ -83,13 +83,13 @@ export default function ResourcesSection() {
             <Link
               key={resource.title}
               href={resource.href}
-              className={`${baseCard} ${spanClass} hover:border-accent/50 hover:shadow-[0_2px_16px_rgba(158,122,86,0.08)] group ${
+              className={`${baseCard} ${spanClass} hover:border-accent/50 hover:shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)] group ${
                 resource.hero ? 'bg-gradient-to-br from-accent/[0.04] to-transparent' : ''
               }`}
             >
               <h3
                 className={`font-sans font-bold text-primary ${
-                  resource.hero ? 'text-xl sm:text-2xl font-serif tracking-tight' : 'text-base'
+                  resource.hero ? 'text-xl sm:text-2xl font-sans tracking-tight' : 'text-base'
                 }`}
               >
                 {resource.title}

@@ -108,7 +108,7 @@ function rehydrateAnswersFromUrl() {
 const READINESS_COLORS = {
   Exploring: '#9ca3af',
   'Internal Use': '#60a5fa',
-  'Operational Use': '#9E7A56',
+  'Operational Use': '#0F5E9C',
   'Customer-Facing': '#22c55e',
   'Higher-Impact': '#15803d',
 }
@@ -139,7 +139,7 @@ function SnapshotCard({ title, label, colorMap }) {
       </div>
       <div
         className="font-serif text-lg sm:text-xl font-bold leading-tight"
-        style={{ color: colorMap[label] || '#9E7A56' }}
+        style={{ color: colorMap[label] || '#0F5E9C' }}
       >
         {label}
       </div>
@@ -170,7 +170,7 @@ function ProductCard({ product, featured = false }) {
     <div
       className={`bg-bg border rounded-xl p-5 sm:p-6 ${
         featured
-          ? 'border-accent/50 shadow-[0_20px_50px_-36px_rgba(158,122,86,0.45)]'
+          ? 'border-accent/50 shadow-[0_24px_70px_-54px_rgba(11,27,47,0.45)]'
           : 'border-border'
       }`}
     >
@@ -445,11 +445,11 @@ function EmailResultsCard({ shareUrl }) {
 
 function buildPdfHtml(result) {
   const whoYouAreHtml = result.whoYouAre
-    ? `<div style="margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #eee;"><h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 8px;">Who You Are</h3><p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#20262B;line-height:1.6;margin:0;">${result.whoYouAre}</p></div>`
+    ? `<div style="margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #d6e2ef;"><h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin:0 0 8px;">Who You Are</h3><p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#20262B;line-height:1.6;margin:0;">${result.whoYouAre}</p></div>`
     : ''
 
   const preparednessHtml = result.preparedness
-    ? `<div style="margin-bottom:28px;padding:20px;border:1px solid #e0d5c5;background:#faf5ee;text-align:center;page-break-inside:avoid;"><div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin-bottom:8px;">AI Readiness Score</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:700;color:#20262B;line-height:1;">${result.preparedness.score}<span style="font-family:'DM Sans',sans-serif;font-size:20px;color:#888;font-weight:600;"> / 100</span></div><div style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#86653F;margin-top:8px;">${result.preparedness.label}</div></div>`
+    ? `<div style="margin-bottom:28px;padding:20px;border:1px solid #c9d7e6;background:#f3f6fa;text-align:center;page-break-inside:avoid;"><div style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin-bottom:8px;">AI Readiness Score</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:700;color:#20262B;line-height:1;">${result.preparedness.score}<span style="font-family:'DM Sans',sans-serif;font-size:20px;color:#888;font-weight:600;"> / 100</span></div><div style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#0B4A7D;margin-top:8px;">${result.preparedness.label}</div></div>`
     : ''
 
   const summaryHtml = result.summary
@@ -457,7 +457,7 @@ function buildPdfHtml(result) {
     : ''
 
   const snapshotHtml = [
-    { title: 'AI Adoption', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#9E7A56' },
+    { title: 'AI Adoption', label: result.readiness.label, color: READINESS_COLORS[result.readiness.label] || '#0F5E9C' },
     { title: 'Guardrails', label: result.guardrails.label, color: GUARDRAIL_COLORS[result.guardrails.label] || '#fbbf24' },
     { title: 'Risk Exposure', label: result.risk.label, color: RISK_COLORS[result.risk.label] || '#fbbf24' },
   ]
@@ -477,31 +477,31 @@ function buildPdfHtml(result) {
   const gapsHtml =
     result.gaps?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Top Gaps to Close</h3>
-          <ul style="margin:0;padding:0;list-style:none;">${result.gaps.map((s) => `<li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:8px;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#8E6C48;">&#8226;</span>${s}</li>`).join('')}</ul>
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin:0 0 12px;">Top Gaps to Close</h3>
+          <ul style="margin:0;padding:0;list-style:none;">${result.gaps.map((s) => `<li style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.6;margin-bottom:8px;padding-left:14px;position:relative;"><span style="position:absolute;left:0;color:#0F5E9C;">&#8226;</span>${s}</li>`).join('')}</ul>
         </div>`
       : ''
 
   const productsHtml =
     result.productRecommendations?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Recommended for Your Situation</h3>
-          ${result.productRecommendations.map((p) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${p.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f0e8;color:#8E6C48;border:1px solid #e0d5c5;">${p.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${p.why}</div></div>`).join('')}
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin:0 0 12px;">Recommended for Your Situation</h3>
+          ${result.productRecommendations.map((p) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${p.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#eaf4ff;color:#0F5E9C;border:1px solid #c9d7e6;">${p.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${p.why}</div></div>`).join('')}
         </div>`
       : ''
 
   const frameworksHtml =
     result.frameworks?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Regulations &amp; Frameworks Worth Watching</h3>
-          ${result.frameworks.map((f) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${f.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#f5f0e8;color:#8E6C48;border:1px solid #e0d5c5;">${f.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${f.why}</div></div>`).join('')}
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin:0 0 12px;">Regulations &amp; Frameworks Worth Watching</h3>
+          ${result.frameworks.map((f) => `<div style="border:1px solid #ddd;padding:14px;margin-bottom:8px;page-break-inside:avoid;"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#20262B;">${f.name}</div><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:#eaf4ff;color:#0F5E9C;border:1px solid #c9d7e6;">${f.priority}</span></div><div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#555;line-height:1.5;">${f.why}</div></div>`).join('')}
         </div>`
       : ''
 
   const readingHtml =
     result.recommendedReading?.length > 0
       ? `<div style="margin-bottom:28px;">
-          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#8E6C48;margin:0 0 12px;">Recommended Reading</h3>
+          <h3 style="font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#0F5E9C;margin:0 0 12px;">Recommended Reading</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">${result.recommendedReading.map((r) => `<div style="border:1px solid #ddd;padding:14px;page-break-inside:avoid;"><div style="font-family:'Playfair Display',Georgia,serif;font-size:14px;font-weight:700;color:#20262B;margin-bottom:4px;">${r.title}</div><div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#555;line-height:1.5;">${r.reason}</div></div>`).join('')}</div>
         </div>`
       : ''
@@ -1188,7 +1188,7 @@ export default function AssessmentTool() {
                 <button
                   onClick={handleMultiNext}
                   disabled={multiSelected.length === 0}
-                  className="mt-5 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3 rounded-lg text-sm font-bold font-sans shadow-[0_4px_24px_rgba(158,122,86,0.18)] hover:shadow-[0_8px_32px_rgba(158,122,86,0.28)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_4px_24px_rgba(158,122,86,0.18)] cursor-pointer"
+                  className="mt-5 bg-gradient-to-br from-accent to-accent-dark text-accent-text px-7 py-3 rounded-lg text-sm font-bold font-sans shadow-[0_14px_32px_-22px_rgba(11,27,47,0.75)] hover:shadow-[0_18px_42px_-26px_rgba(11,27,47,0.85)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_14px_32px_-22px_rgba(11,27,47,0.75)] cursor-pointer"
                 >
                   Next &rarr;
                 </button>
