@@ -10,40 +10,40 @@ export default function Footer() {
             <Logo size={28} textSize="base" tone="dark" />
           </Link>
           <nav aria-label="Footer navigation" className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <Link href="/catalog" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/catalog" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Catalog
             </Link>
-            <Link href="/resources" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/resources" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Resources
             </Link>
-            <Link href="/regulations" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/regulations" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Regulations
             </Link>
-            <Link href="/compare" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/compare" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Compare
             </Link>
-            <Link href="/assessment" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/assessment" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Assessment
             </Link>
-            <Link href="/blog" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/blog" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Blog
             </Link>
-            <Link href="/glossary" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/glossary" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Glossary
             </Link>
-            <Link href="/timeline" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/timeline" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Timeline
             </Link>
-            <Link href="/faq" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/faq" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               FAQ
             </Link>
-            <Link href="/about" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/about" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               About
             </Link>
-            <Link href="/legal" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/legal" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Legal
             </Link>
-            <Link href="/contact" className="font-sans text-sm text-[#C8D7EA] hover:text-[#9BE1DC] transition-colors no-underline">
+            <Link href="/contact" className="font-sans text-sm text-[#C8D7EA] hover:text-[#58D4FF] transition-colors no-underline">
               Contact
             </Link>
           </nav>

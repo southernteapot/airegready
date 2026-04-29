@@ -17,7 +17,7 @@ function SearchLink() {
   return (
     <Link
       href="/search"
-      className="flex items-center bg-transparent p-1.5 text-[#ADC4DE] no-underline transition-colors hover:text-[#9BE1DC]"
+      className="flex items-center bg-transparent p-1.5 text-[#ADC4DE] no-underline transition-colors hover:text-[#58D4FF]"
       aria-label="Search site"
       title="Search"
     >
@@ -54,7 +54,7 @@ export default function NavBar() {
           <Link
             key={link.label}
             href={link.href}
-            className="font-sans text-sm font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
+            className="font-sans text-sm font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
           >
             {link.label}
           </Link>
@@ -64,7 +64,7 @@ export default function NavBar() {
       <div className="flex items-center gap-2">
         <Link
           href="/assessment"
-          className="hidden rounded-lg bg-[#123253] px-4 py-2 font-sans text-sm font-bold text-white no-underline transition hover:bg-[#19436D] sm:inline-flex"
+          className="hidden rounded-lg bg-[#174EA6] px-4 py-2 font-sans text-sm font-bold text-white no-underline shadow-[0_16px_34px_-24px_rgba(23,78,166,0.95)] transition hover:bg-[#2C6BFF] sm:inline-flex"
         >
           Start assessment
         </Link>
@@ -72,7 +72,7 @@ export default function NavBar() {
         <DarkModeToggle />
         <details className="relative lg:hidden">
           <summary
-            className="cursor-pointer list-none bg-transparent p-1 text-[#ADC4DE] hover:text-[#9BE1DC]"
+            className="cursor-pointer list-none bg-transparent p-1 text-[#ADC4DE] hover:text-[#58D4FF]"
             aria-label="Toggle menu"
           >
             <span className="sr-only">Toggle menu</span>
@@ -99,20 +99,20 @@ export default function NavBar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
+                  className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 href="/assessment"
-                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
+                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
               >
                 Assessment
               </Link>
               <Link
                 href="/search"
-                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#9BE1DC]"
+                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
               >
                 Search
               </Link>

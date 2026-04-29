@@ -9,9 +9,9 @@
   --color-border: 201 215 230;
   --color-primary: 11 27 47;
   --color-secondary: 82 103 127;
-  --color-accent: 15 94 156;
-  --color-accent-light: 44 166 164;
-  --color-accent-dark: 11 74 125;
+  --color-accent: 44 107 255;
+  --color-accent-light: 88 212 255;
+  --color-accent-dark: 23 78 166;
   --color-accent-text: 255 255 255;
 }
 
@@ -22,9 +22,9 @@
   --color-border: 30 49 71;
   --color-primary: 248 250 253;
   --color-secondary: 173 196 222;
-  --color-accent: 155 225 220;
-  --color-accent-light: 191 242 239;
-  --color-accent-dark: 47 128 194;
+  --color-accent: 88 212 255;
+  --color-accent-light: 124 243 255;
+  --color-accent-dark: 44 107 255;
   --color-accent-text: 7 17 31;
 }
 
