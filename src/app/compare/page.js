@@ -269,7 +269,7 @@ export default function ComparePage() {
           <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
             Side-by-Side Analysis
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary">
             AI Regulatory Comparison
           </h1>
           <p className="font-sans text-base text-secondary mt-3 max-w-[640px] mx-auto leading-relaxed">
@@ -442,7 +442,7 @@ export default function ComparePage() {
             <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
               Keep Going
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+            <h2 className="font-sans text-2xl sm:text-3xl font-black text-primary">
               Explore More
             </h2>
           </div>

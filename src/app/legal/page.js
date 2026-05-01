@@ -9,11 +9,11 @@ export default function LegalPage() {
         />
 
         <header className="mb-10">
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight mb-4">
             Terms of Use &amp; Privacy Policy
           </h1>
           <p className="font-sans text-sm text-secondary">
-            Last updated: March 30, 2026
+            Last updated: May 1, 2026
           </p>
         </header>
 
@@ -33,7 +33,7 @@ export default function LegalPage() {
 
             {/* Educational Content Only */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Educational Content Only
               </h2>
               <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -56,7 +56,7 @@ export default function LegalPage() {
 
             {/* No Guarantee of Accuracy */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 No Guarantee of Accuracy
               </h2>
               <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -76,7 +76,7 @@ export default function LegalPage() {
 
             {/* Risk Assessment Tool */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Risk Assessment Tool
               </h2>
               <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -97,7 +97,7 @@ export default function LegalPage() {
 
             {/* Intellectual Property */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Intellectual Property
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -113,7 +113,7 @@ export default function LegalPage() {
 
             {/* Changes to Content and Terms */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Changes to Content and Terms
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -127,7 +127,7 @@ export default function LegalPage() {
 
             {/* Limitation of Liability */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Limitation of Liability
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -141,7 +141,7 @@ export default function LegalPage() {
 
             {/* Governing Law */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Governing Law
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -171,7 +171,7 @@ export default function LegalPage() {
 
             {/* Data We Collect */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Data We Collect
               </h2>
               <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -193,6 +193,19 @@ export default function LegalPage() {
                     <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                     <span>
                       <strong className="font-semibold text-primary">
+                        Preview request details
+                      </strong>{' '}
+                      &mdash; if you request a catalog preview, we collect the
+                      email address, optional name, organization type, package
+                      requested, use-case note, source page, follow-up
+                      preference, and timestamp you submit. We use this to
+                      respond to the request and understand catalog interest.
+                    </span>
+                  </li>
+                  <li className="flex gap-2.5">
+                    <span className="text-accent mt-1 text-[8px]">&#9679;</span>
+                    <span>
+                      <strong className="font-semibold text-primary">
                         Anonymous analytics
                       </strong>{' '}
                       &mdash; we use Cloudflare Web Analytics, which collects
@@ -207,7 +220,7 @@ export default function LegalPage() {
 
             {/* Cookies and Tracking */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Cookies and Tracking
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -220,7 +233,7 @@ export default function LegalPage() {
 
             {/* Assessment Tool Data */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Assessment Tool Data
               </h2>
               <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
@@ -252,28 +265,50 @@ export default function LegalPage() {
               </div>
             </section>
 
+            {/* Preview Request Forms */}
+            <section>
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
+                Preview Request Forms
+              </h2>
+              <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
+                <p>
+                  Catalog preview request forms send the information you submit
+                  to AIRegReady so we can respond to the request. Submitting a
+                  request does not create a legal engagement, attorney-client
+                  relationship, or compliance determination.
+                </p>
+                <p>
+                  Please do not include sensitive personal information,
+                  confidential business information, privileged material, or
+                  detailed legal facts in the use-case note.
+                </p>
+              </div>
+            </section>
+
             {/* Data Sharing */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Data Sharing
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
                 We do not sell, rent, or share your personal data with third
                 parties. Email addresses collected through the newsletter are
-                used exclusively by AIRegReady to deliver the content you
-                subscribed to.
+                used by AIRegReady to deliver the content you subscribed to.
+                Preview request submissions are used to handle the request and
+                may be processed through site infrastructure, logging, and any
+                configured notification endpoint used for request handling.
               </p>
             </section>
 
             {/* Data Deletion */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Data Deletion
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
                 If you would like to unsubscribe from the newsletter or request
-                deletion of your email address from our records, you can email
-                us at{' '}
+                deletion of your email address or preview request details from
+                our records, you can email us at{' '}
                 <a
                   href="mailto:info@airegready.com"
                   className="text-accent hover:text-accent-dark transition-colors underline underline-offset-2"
@@ -286,7 +321,7 @@ export default function LegalPage() {
 
             {/* Changes to This Policy */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Changes to This Policy
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">
@@ -299,7 +334,7 @@ export default function LegalPage() {
 
             {/* Contact */}
             <section>
-              <h2 className="font-serif text-xl font-bold text-primary mb-3">
+              <h2 className="font-sans text-xl font-black text-primary mb-3">
                 Contact
               </h2>
               <p className="font-sans text-sm text-secondary leading-relaxed">

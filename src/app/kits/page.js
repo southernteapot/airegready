@@ -1,19 +1,61 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { buildPageMetadata } from '@/lib/seo'
+import { absoluteUrl, buildPageMetadata } from '@/lib/seo'
 import {
+  getAvailableProducts,
+  getProductHref,
   getProductKind,
-  productCards,
+  getRoadmapProducts,
   starterContents,
   trackedTopics,
 } from '@/lib/marketing'
 
 export const metadata = buildPageMetadata({
-  title: 'AI Governance Catalog - AIRegReady',
+  title: 'AI Governance Catalog',
   description:
     'Browse AI governance starter kits, acceptable use policy kits, risk tools, vendor review packets, training resources, and jurisdiction guides.',
   path: '/catalog',
 })
+
+function buildCatalogSchema(availableProducts) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'AI Governance Catalog',
+    description:
+      'AI governance document packages, templates, checklists, trackers, and jurisdiction guides for practical internal readiness work.',
+    url: absoluteUrl('/catalog'),
+    numberOfItems: availableProducts.length,
+    itemListElement: availableProducts.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: absoluteUrl(getProductHref(product)),
+      item: {
+        '@type': 'Product',
+        name: product.title,
+        category: getProductKind(product),
+        description: product.helps,
+        audience: {
+          '@type': 'Audience',
+          audienceType: product.audience,
+        },
+        isRelatedTo: product.inside.map((name) => ({
+          '@type': 'CreativeWork',
+          name,
+        })),
+        brand: {
+          '@type': 'Brand',
+          name: 'AIRegReady',
+        },
+        offers: {
+          '@type': 'Offer',
+          url: absoluteUrl(getProductHref(product)),
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    })),
+  }
+}
 
 function PrimaryLink({ href, children }) {
   return (
@@ -56,8 +98,16 @@ function SectionHeader({ eyebrow, title, body, id, compact = false }) {
 }
 
 export default function KitsPage() {
+  const availableProducts = getAvailableProducts()
+  const roadmapProducts = getRoadmapProducts()
+  const catalogSchema = buildCatalogSchema(availableProducts)
+
   return (
     <div className="overflow-x-hidden bg-[#F3F6FA] text-[#0B1B2F] dark:bg-[#09111D] dark:text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }}
+      />
       <section className="relative overflow-hidden border-b border-[#1E3147] bg-[#07111F] px-4 pb-12 pt-24 text-white sm:px-6" aria-labelledby="kits-heading">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(44,166,164,0.16),transparent_32%),radial-gradient(circle_at_82%_16%,rgba(47,128,194,0.18),transparent_30%)]" aria-hidden="true" />
         <div className="relative mx-auto grid min-w-0 max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
@@ -80,11 +130,12 @@ export default function KitsPage() {
           </div>
           <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-3 shadow-[0_36px_96px_-68px_rgba(0,0,0,0.9)]">
             <Image
-              src="/assets/airegready-home-v3-starter-kit.png"
+              src="/assets/airegready-home-v3-starter-kit.avif"
               width="1586"
               height="992"
               alt="AI governance starter kit product preview with organized policy packets, checklists, and tabbed resources."
               className="aspect-[16/10] h-auto w-full rounded-xl object-cover"
+              sizes="(max-width: 1024px) 100vw, 54vw"
               priority
             />
           </div>
@@ -140,12 +191,12 @@ export default function KitsPage() {
             body="Each resource is framed as an educational starting point for internal governance work. Do not treat templates as legal advice or a compliance guarantee."
           />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {productCards.map((product) => (
+            {availableProducts.map((product) => (
               <article key={product.title} className="group flex min-h-[360px] flex-col rounded-2xl border border-[#C9D7E6] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2F80C2] hover:shadow-[0_24px_70px_-52px_rgba(11,27,47,0.75)] dark:border-slate-800 dark:bg-slate-950">
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <h3 className="font-sans text-xl font-black leading-tight text-[#0B1B2F] dark:text-white">{product.title}</h3>
                   <span className="rounded-full border border-[#D6E2EF] bg-[#F8FAFD] px-2.5 py-1 font-sans text-[11px] font-black uppercase tracking-wide text-[#0F6B8F] dark:border-slate-700 dark:bg-slate-900 dark:text-cyan-300">
-                    {getProductKind(product.title)}
+                    {getProductKind(product)}
                   </span>
                 </div>
                 <div className="space-y-4">
@@ -168,18 +219,44 @@ export default function KitsPage() {
                     <p className="mt-1 font-sans text-sm leading-relaxed text-[#40546C] dark:text-slate-300">{product.helps}</p>
                   </div>
                 </div>
-                {product.cta === 'Coming soon' ? (
-                  <span className="mt-auto pt-5 font-sans text-sm font-black text-[#8A5A00] dark:text-amber-200">
-                    Coming soon
-                  </span>
-                ) : (
-                  <Link href="#starter-kit" className="mt-auto pt-5 font-sans text-sm font-black text-[#0F5E9C] no-underline transition group-hover:text-[#0B4A7D] dark:text-cyan-300">
-                    {product.cta} <span aria-hidden="true">-&gt;</span>
+                <div className="mt-auto flex flex-wrap items-center gap-4 pt-5">
+                  <Link href={getProductHref(product)} className="font-sans text-sm font-black text-[#0F5E9C] no-underline transition group-hover:text-[#0B4A7D] dark:text-cyan-300">
+                    View details <span aria-hidden="true">-&gt;</span>
                   </Link>
-                )}
+                  <Link href={`${getProductHref(product)}#request-preview`} className="font-sans text-sm font-bold text-[#52677F] no-underline transition hover:text-[#0B4A7D] dark:text-slate-300 dark:hover:text-cyan-200">
+                    Request preview
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
+          {roadmapProducts.length > 0 && (
+            <div className="mt-10 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+              <div className="max-w-[760px]">
+                <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#0F6B8F] dark:text-cyan-300">
+                  Roadmap
+                </p>
+                <h3 className="mt-2 font-sans text-2xl font-black leading-tight text-[#0B1B2F] dark:text-white">
+                  More resource packages are being prepared.
+                </h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-[#52677F] dark:text-slate-300">
+                  These items are not yet available for preview. They stay on the roadmap until the contents are ready to share.
+                </p>
+              </div>
+              <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-3">
+                {roadmapProducts.map((product) => (
+                  <article key={product.title} className="rounded-xl border border-[#D6E2EF] bg-[#F8FAFD] p-4 dark:border-slate-800 dark:bg-slate-900">
+                    <h4 className="font-sans text-base font-black leading-tight text-[#0B1B2F] dark:text-white">
+                      {product.title}
+                    </h4>
+                    <p className="mt-2 font-sans text-sm leading-relaxed text-[#52677F] dark:text-slate-300">
+                      {product.helps}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

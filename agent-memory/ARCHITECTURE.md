@@ -26,6 +26,7 @@ AIRegReady is a Next.js App Router site for a practical AI governance resource c
 - Start command: `npm run start` (`next start`)
 - Lint command: `npm run lint` (`eslint . --max-warnings=0`)
 - Test command: `npm run test` (`node --experimental-default-type=module --test`)
+- Preview request smoke command: `npm run smoke:preview-request -- http://127.0.0.1:3000`
 - Bundle analysis command: `npm run analyze` (`ANALYZE=true next build`)
 
 ## Deployment
@@ -41,6 +42,7 @@ AIRegReady is a Next.js App Router site for a practical AI governance resource c
 - `src/app/` - Next.js App Router routes, layouts, API routes, metadata, robots, sitemap, feed route, and preview routes.
 - `src/components/` - Shared UI components such as navigation, footer, logo, assessment, newsletter, article/regulation layouts, and content sections.
 - `src/lib/` - Site data, SEO helpers, search/sitemap/feed builders, assessment logic, marketing data, article records, regulation records, and timeline data.
+- `scripts/` - Local maintenance and smoke-test utilities.
 - `content/products/` - Internal markdown working drafts for paid products/templates. README says these are not published to the public site yet.
 - `public/assets/` - Public visual assets used by the site, including homepage/product imagery.
 - `public/theme.js` - Early theme bootstrap script loaded by the app layout.
@@ -68,24 +70,27 @@ AIRegReady is a Next.js App Router site for a practical AI governance resource c
 
 - Current homepage/front page: `src/app/page.js` for route `/`.
 - The homepage imports `src/lib/marketing.js` and `src/components/MarketingNewsletter`.
-- `/catalog` is the canonical catalog route; `/kits` is retained as a compatibility route.
-- Preserved/prototype homepage routes include `/front-page-v2`, `/preview/home-v3`, `/preview/home-v4`, and `/preview/home-old`.
-- API routes currently identifiable: `src/app/api/newsletter/route.js` and `src/app/api/assessment-complete/route.js`.
+- `/catalog` is the canonical catalog route; `/catalog/[slug]` contains product detail/preview pages for requestable packages; `/kits` is retained as a compatibility route.
+- Preserved/prototype homepage routes include `/preview/front-page-v2`, `/preview/home-v3`, `/preview/home-v4`, and `/preview/home-old`. The old root `/front-page-v2` route redirects to `/preview/front-page-v2`.
+- API routes currently identifiable: `src/app/api/newsletter/route.js`, `src/app/api/assessment-complete/route.js`, and `src/app/api/preview-request/route.js`.
 - Feed route: `src/app/feed.xml/route.js`.
 
 ## Brand And Design Assets
 
 - Shared logo implementation: `src/components/Logo.jsx`, an inline blue/cyan shield-check mark with `AIRegReady` wordmark text.
+- App icon/manifest assets: `src/app/icon.svg`, `src/app/apple-icon.png`, and `src/app/manifest.webmanifest`.
 - Logo/brand exploration route: `src/app/logos/page.js`.
 - Current design direction from docs and styles: professional dark navy/slate regulatory technology/product site with white/soft-blue content panels, restrained blue/cyan accents, and a subtle circuit-board motif limited to the homepage hero.
 - Global theme tokens live in `src/app/globals.css` and are mapped in `tailwind.config.js`.
 - Fonts loaded in `src/app/layout.js`: Inter and Libre Baskerville from `next/font/google`.
-- Public homepage/product assets live in `public/assets/`, including `airegready-home-v3-hero-workspace.png`, `airegready-home-v3-regulation-library.png`, `airegready-home-v3-starter-kit.png`, and several SVG hero/stack/workspace assets.
-- Raw/generated logo and image candidates live under `images/` and `images/logos1/` / `images/logos2/`; these are not currently app-referenced according to README/CLAUDE.
+- Public homepage/product assets live in `public/assets/`, including compressed `airegready-home-v3-*.avif` and `.webp` derivatives plus several SVG hero/stack/workspace assets. The previous large v3 PNG assets were removed on 2026-04-30 after live and preview routes were moved to AVIF.
+- Raw/generated logo and image candidates live under `images/` and `images/logos1/` / `images/logos2/`; these are gitignored and not currently app-referenced according to README/CLAUDE.
 
 ## Environment Variables And Services
 
 - `BUTTONDOWN_API_KEY` - used by `src/app/api/newsletter/route.js` to subscribe emails through Buttondown.
+- `PREVIEW_REQUEST_WEBHOOK_URL` - optional endpoint for forwarding catalog preview requests after validation.
+- `PREVIEW_REQUEST_WEBHOOK_TOKEN` - optional bearer token sent to the preview request webhook.
 - `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` - optionally enables Cloudflare Web Analytics in `src/app/layout.js`.
 - `ANALYZE=true` - enables bundle analyzer in `next.config.mjs`.
 - External services identifiable from code/config: Buttondown newsletter API, Cloudflare Workers/OpenNext/Wrangler, optional Cloudflare Web Analytics.

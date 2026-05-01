@@ -423,11 +423,12 @@ export default function HomeV3Page() {
                   </p>
                 </div>
                 <Image
-                  src="/assets/airegready-home-v3-hero-workspace.png"
+                  src="/assets/airegready-home-v3-hero-workspace.avif"
                   width="1586"
                   height="992"
                   alt="Photorealistic AI governance workspace with binders, checklists, risk review materials, vendor forms, jurisdiction folders, and a laptop dashboard."
                   className="aspect-[16/9] h-auto w-full max-w-full rounded-lg object-cover saturate-[0.92]"
+                  sizes="(max-width: 1024px) 100vw, 54vw"
                   priority
                 />
                 <div className="absolute inset-2 rounded-lg bg-gradient-to-t from-[#050B16]/88 via-[#050B16]/8 to-[#050B16]/8" aria-hidden="true" />
@@ -568,11 +569,12 @@ export default function HomeV3Page() {
           <div className="overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FAFD] p-3 text-[#0B1B2F] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
             <div className="relative overflow-hidden rounded-xl">
               <Image
-                src="/assets/airegready-home-v3-starter-kit.png"
+                src="/assets/airegready-home-v3-starter-kit.avif"
                 width="1586"
                 height="992"
                 alt="Premium AI governance starter kit product photo with tabbed documents, checklist cards, policy packets, and an organized binder."
                 className="aspect-[16/10] h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 54vw"
               />
               <div className="absolute left-4 top-4 rounded-full border border-white/[0.22] bg-[#06101F]/82 px-3 py-1.5 font-sans text-xs font-black uppercase tracking-[0.12em] text-white backdrop-blur-md">
                 Starter kit preview
@@ -662,11 +664,12 @@ export default function HomeV3Page() {
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-[#C9D7E6] bg-white p-3 shadow-[0_34px_90px_-70px_rgba(11,27,47,0.9)] dark:border-slate-800 dark:bg-slate-950">
             <Image
-              src="/assets/airegready-home-v3-regulation-library.png"
+              src="/assets/airegready-home-v3-regulation-library.avif"
               width="1586"
               height="992"
               alt="Professional AI regulation library with jurisdiction guide folders, policy update cards, binders, and a world map."
               className="aspect-[16/10] h-auto w-full rounded-xl object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
           <div>

@@ -43,11 +43,12 @@ export default function ResourcesSection() {
             id="resources-heading"
             className="font-sans text-4xl sm:text-5xl font-black text-primary leading-[1.05] tracking-tight"
           >
-            Practical resources,<br />in plain English.
+            Free AI governance reading and reference.
           </h2>
           <p className="font-sans text-base text-secondary mt-3 leading-relaxed">
-            Regulations first &mdash; because they set the stakes &mdash; plus
-            frameworks, checklists, and a live regulatory timeline.
+            Use this hub for explainers, framework comparisons, checklists, and
+            timelines. Use the catalog when you want document kits, templates,
+            and editable governance materials.
           </p>
         </div>
       </div>

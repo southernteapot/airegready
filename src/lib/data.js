@@ -323,7 +323,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'How is this different from hiring an AI consultant?',
-    a: 'AIRegReady is a free self-service starting point. We help you understand the landscape, figure out what applies to you, and take practical first steps. Consultants and law firms are valuable for complex situations \u2014 but most people need to understand the right questions to ask before engaging one. We help you get to that point.',
+    a: 'AIRegReady is a practical self-service starting point for AI governance documents and readiness work. It helps you understand the landscape, organize internal records, and identify better questions before engaging a consultant or law firm. Consultants and law firms remain valuable for complex situations and legal advice.',
   },
   {
     q: 'How fast is the regulatory landscape changing?',

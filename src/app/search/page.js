@@ -11,11 +11,18 @@ export const metadata = {
   },
 }
 
-const GROUP_ORDER = ['regulation', 'article', 'page']
+const GROUP_ORDER = ['regulation', 'article', 'product', 'page']
 const GROUP_LABELS = {
   regulation: 'Regulations',
   article: 'Articles',
+  product: 'Catalog',
   page: 'Pages',
+}
+const GROUP_BADGES = {
+  regulation: 'Regulation',
+  article: 'Article',
+  product: 'Product',
+  page: 'Page',
 }
 
 function filterIndex(index, query) {
@@ -49,11 +56,11 @@ export default async function SearchPage({ searchParams }) {
           <p className="font-sans text-xs font-semibold tracking-widest uppercase text-accent mb-3">
             Site Search
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight mb-4">
             Search AIRegReady
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[620px]">
-            Search regulations, explainers, and tools across the live site.
+            Search regulations, explainers, catalog pages, and tools across the live site.
           </p>
         </header>
 
@@ -130,7 +137,7 @@ export default async function SearchPage({ searchParams }) {
                           </p>
                         </div>
                         <span className="shrink-0 font-sans text-xs font-medium px-2 py-0.5 rounded-full bg-border text-secondary">
-                          {group.label.slice(0, -1)}
+                          {GROUP_BADGES[group.type]}
                         </span>
                       </div>
                     </Link>

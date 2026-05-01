@@ -23,12 +23,16 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - Main commands: `npm run dev`, `npm run build`, `npm run lint`, and `npm run test`.
 - Deployment target identifiable from config: Cloudflare Workers through OpenNext for Cloudflare and Wrangler.
 - Canonical site URL in code: `https://airegready.com`.
+- Public contact email in site copy and mailto links: `info@airegready.com`.
 - Current homepage route `/` is implemented at `src/app/page.js`.
-- `/catalog` is the canonical product/resource catalog route; `/kits` remains as a compatibility route.
+- `/catalog` is the canonical product/resource catalog route; `/catalog/[slug]` pages preview requestable packages; `/kits` remains as a compatibility route.
 - Product/template working drafts live in `content/products/` and are documented as internal drafts, not yet published to the public site.
 - The public app uses `public/assets/` for homepage/product visuals; the root `images/` tree contains raw/generated image and logo source candidates.
+- Live homepage/catalog v3 visuals use compressed AVIF assets in `public/assets/`; WebP derivatives are retained as fallback/source-ready assets.
 - The shared logo is currently implemented in `src/components/Logo.jsx` as an inline blue/cyan shield-check mark with the `AIRegReady` wordmark.
+- App icon/manifest assets live in `src/app/icon.svg`, `src/app/apple-icon.png`, and `src/app/manifest.webmanifest`.
 - Newsletter signup uses Buttondown through `src/app/api/newsletter/route.js` when `BUTTONDOWN_API_KEY` is configured.
+- Catalog preview requests use `src/app/api/preview-request/route.js` with a honeypot, origin check, in-process rate limit, structured logging, and optional webhook forwarding through `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN`.
 - Optional Cloudflare Web Analytics is enabled through `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`.
 
 ## Product/Content Facts
@@ -36,4 +40,5 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - The site is positioned as a resource catalog and readiness command center, not a generic blog or legal services site.
 - The legal boundary is important: educational information and templates only, not legal advice, compliance guarantees, or attorney-client services.
 - The catalog/product direction includes AI governance starter resources, acceptable use policy kits, risk assessment tools, vendor review packets, training materials, jurisdiction guides, and regulation trackers.
-- Old homepage/prototype routes are intentionally preserved under preview/front-page routes.
+- Requestable catalog products have public detail/preview pages and hosted preview request forms, but checkout, pricing, and delivery are not implemented yet.
+- Old homepage/prototype routes are intentionally preserved under `/preview`; `/front-page-v2` redirects to `/preview/front-page-v2`.

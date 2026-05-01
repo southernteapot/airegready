@@ -138,7 +138,7 @@ function SnapshotCard({ title, label, colorMap }) {
         {title}
       </div>
       <div
-        className="font-serif text-lg sm:text-xl font-bold leading-tight"
+        className="font-sans text-lg sm:text-xl font-bold leading-tight"
         style={{ color: colorMap[label] || '#0F5E9C' }}
       >
         {label}
@@ -175,7 +175,7 @@ function ProductCard({ product, featured = false }) {
       }`}
     >
       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-        <h4 className="font-serif text-base font-bold text-primary leading-snug">
+        <h4 className="font-sans text-base font-bold text-primary leading-snug">
           {product.name}
         </h4>
         <span
@@ -232,7 +232,7 @@ function FrameworkCard({ framework }) {
   return (
     <div className="bg-bg border border-border rounded-xl p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-        <h4 className="font-serif text-base font-bold text-primary leading-snug">
+        <h4 className="font-sans text-base font-bold text-primary leading-snug">
           {framework.slug ? (
             <Link
               href={`/regulations/${framework.slug}`}
@@ -271,7 +271,7 @@ function ActionPlanSection({ actionPlan }) {
               key={section.key}
               className={`bg-bg border border-border rounded-xl p-5 sm:p-6 border-l-4 ${section.accent}`}
             >
-              <h4 className="font-serif text-base font-bold text-primary mb-3">
+              <h4 className="font-sans text-base font-bold text-primary mb-3">
                 {section.label}
               </h4>
               <ul className="space-y-2">
@@ -298,7 +298,7 @@ function ReadingCard({ reading }) {
       href={reading.href}
       className="block bg-bg border border-border rounded-xl p-4 sm:p-5 hover:border-accent/50 hover:bg-accent/[0.03] transition-all print-link"
     >
-      <h4 className="font-serif text-sm font-bold text-primary leading-snug mb-1.5">
+      <h4 className="font-sans text-sm font-bold text-primary leading-snug mb-1.5">
         {reading.title}
       </h4>
       <p className="font-sans text-xs text-secondary leading-relaxed">
@@ -362,7 +362,7 @@ function EmailResultsCard({ shareUrl }) {
 
   return (
     <div className="bg-accent/5 border border-accent/20 rounded-xl p-5 sm:p-6 mb-8 print:hidden">
-      <h3 className="font-serif text-base font-bold text-primary mb-1">
+      <h3 className="font-sans text-base font-bold text-primary mb-1">
         Want to come back to this?
       </h3>
       <p className="font-sans text-sm text-secondary mb-4 leading-relaxed">
@@ -673,7 +673,7 @@ function ReportResults({ result, onReset }) {
     <div className="print-report">
       {/* Print-only header */}
       <div className="hidden print:block mb-6 pb-4 border-b border-border">
-        <div className="font-serif text-2xl font-bold text-primary">
+        <div className="font-sans text-2xl font-bold text-primary">
           AI Readiness Assessment Report
         </div>
         <div className="font-sans text-sm text-secondary mt-1">
@@ -697,11 +697,11 @@ function ReportResults({ result, onReset }) {
           <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
             Your AI Readiness Score
           </div>
-          <div className="font-serif text-6xl sm:text-7xl font-bold text-primary tabular-nums leading-none">
+          <div className="font-sans text-6xl sm:text-7xl font-bold text-primary tabular-nums leading-none">
             {result.preparedness.score}
             <span className="font-sans text-2xl sm:text-3xl text-secondary/70 font-semibold"> / 100</span>
           </div>
-          <div className="font-serif text-xl sm:text-2xl text-accent-dark font-bold mt-3">
+          <div className="font-sans text-xl sm:text-2xl text-accent-dark font-bold mt-3">
             {result.preparedness.label}
           </div>
           <div className="mt-5 max-w-[420px] mx-auto h-2 bg-border/60 rounded-full overflow-hidden">
@@ -851,7 +851,7 @@ function ReportResults({ result, onReset }) {
             href="/checklist"
             className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
-            <div className="font-serif text-sm font-bold text-primary mb-1">
+            <div className="font-sans text-sm font-bold text-primary mb-1">
               AI Readiness Checklist
             </div>
             <p className="font-sans text-xs text-secondary">
@@ -862,7 +862,7 @@ function ReportResults({ result, onReset }) {
             href="/resources"
             className="block bg-bg border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
           >
-            <div className="font-serif text-sm font-bold text-primary mb-1">
+            <div className="font-sans text-sm font-bold text-primary mb-1">
               Resource Library
             </div>
             <p className="font-sans text-xs text-secondary">
@@ -1058,7 +1058,7 @@ export default function AssessmentTool() {
         </div>
         <h2
           id="assessment-heading"
-          className="font-serif text-4xl sm:text-5xl font-bold text-primary"
+          className="font-sans text-4xl sm:text-5xl font-bold text-primary"
         >
           How AI-Ready Is Your Work?
         </h2>
@@ -1076,7 +1076,7 @@ export default function AssessmentTool() {
 
         {resumeOffer && !result && (
           <div className="mb-6 bg-accent/10 border border-accent/30 rounded-xl p-5 sm:p-6">
-            <h3 className="font-serif text-lg font-bold text-primary mb-1">
+            <h3 className="font-sans text-lg font-bold text-primary mb-1">
               Pick up where you left off?
             </h3>
             <p className="font-sans text-sm text-secondary mb-4 leading-relaxed">

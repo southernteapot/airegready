@@ -534,7 +534,7 @@ function buildOfferEmailLink(name, answerMap) {
     `- Priority: ${priority}`,
   ].join('\n')
 
-  return `mailto:bdclark1@gmail.com?subject=${encodeURIComponent(`Assessment recommendation: ${name}`)}&body=${encodeURIComponent(body)}`
+  return `mailto:info@airegready.com?subject=${encodeURIComponent(`Assessment recommendation: ${name}`)}&body=${encodeURIComponent(body)}`
 }
 
 function createOffer(key, answerMap, badge) {

@@ -1,0 +1,23 @@
+{
+  "name": "AIRegReady",
+  "short_name": "AIRegReady",
+  "description": "Plain-English AI governance resource kits, templates, checklists, trackers, and jurisdiction guides.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07111F",
+  "theme_color": "#07111F",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

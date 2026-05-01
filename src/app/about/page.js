@@ -2,9 +2,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Disclaimer from '@/components/Disclaimer'
 
 export const metadata = {
-  title: 'About AIRegReady',
+  title: 'About',
   description:
-    'AIRegReady is a free AI resource hub with practical information, frameworks, assessments, and plain-English regulatory guidance for anyone using AI.',
+    'AIRegReady is a practical AI governance document catalog and readiness resource for teams that need plain-English templates, trackers, and guidance.',
   alternates: {
     canonical: 'https://airegready.com/about',
   },
@@ -23,8 +23,8 @@ export default function AboutPage() {
             About AIRegReady
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed">
-            Practical AI resources &mdash; frameworks, assessments, and
-            plain-English information for real-world use.
+            Practical AI governance documents, frameworks, assessments, and
+            plain-English guidance for internal readiness work.
           </p>
         </header>
 
@@ -36,18 +36,16 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
-                AI is changing how people work, but the practical information
-                around it &mdash; what tools to trust, what risks to watch for,
-                what rules apply &mdash; is scattered, dense, and often written
-                for lawyers or enterprise consultants.
+                AIRegReady is a practical catalog of AI governance documents
+                for teams that need to write a policy, review a vendor, train
+                staff, document AI use, or track regulatory topics without
+                buying enterprise tooling.
               </p>
               <p>
-                AIRegReady brings that information together in one place. We
-                cover AI frameworks, governance approaches, regulatory
-                requirements, and practical next steps &mdash; all in plain
-                English. Whether you need to understand the EU AI Act, figure
-                out what guardrails to put in place, or just get oriented on
-                what matters, this is a starting point.
+                The site combines plain-English regulatory explainers with
+                editable resource kits, checklists, trackers, playbooks, and
+                readiness prompts. The goal is to help teams create better
+                internal records and better questions for qualified counsel.
               </p>
               <p>
                 Every regulatory summary links to the source document. Nothing
@@ -65,7 +63,8 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
-                Anyone using AI in the real world. That includes:
+                Teams and operators that need practical AI governance records.
+                That includes:
               </p>
               <ul className="flex flex-col gap-2 ml-1">
                 <li className="flex gap-2.5">
@@ -78,8 +77,8 @@ export default function AboutPage() {
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Solo operators, freelancers, and side-income builders using
-                    AI tools in their work
+                    Schools, nonprofits, and lean operations teams formalizing
+                    AI use
                   </span>
                 </li>
                 <li className="flex gap-2.5">
@@ -99,9 +98,8 @@ export default function AboutPage() {
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    People affected by AI-driven decisions &mdash; in hiring,
-                    lending, insurance &mdash; who want to understand what
-                    protections exist
+                    Consultants who need educational templates and workshop
+                    materials for client conversations
                   </span>
                 </li>
               </ul>
@@ -148,9 +146,10 @@ export default function AboutPage() {
                 legal counsel.
               </p>
               <p>
-                This is also not a hype site, a sales funnel, or generic AI
-                commentary. The goal is to be a genuinely useful resource
-                &mdash; free, practical, and informational first.
+                This is also not a compliance guarantee, legal-services
+                substitute, or generic AI commentary site. The goal is practical
+                readiness support: clearer records, clearer roles, and better
+                preparation for legal or operational review.
               </p>
             </div>
           </section>
@@ -162,15 +161,15 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
-                The foundation is good information &mdash; organized, current,
-                and actually readable. Over time, we plan to add practical
-                resources like checklists, policy templates, implementation
-                guides, and tools that help you stay on top of changes as they
-                happen.
+                The foundation is practical information and editable documents
+                that teams can adapt. Over time, AIRegReady will connect the
+                catalog to delivery formats, product pages, and update workflows
+                for the document kits already being drafted.
               </p>
               <p>
-                But the starting point is always the content. If the
-                information is not useful, nothing else matters.
+                The boundary stays the same: educational resources only, not
+                legal advice or a promise that a template satisfies a specific
+                obligation.
               </p>
             </div>
           </section>

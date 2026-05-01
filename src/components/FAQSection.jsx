@@ -71,7 +71,7 @@ export default function FAQSection() {
                   id={`faq-answer-${i}`}
                   role="region"
                   className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'max-h-[480px] opacity-100 pb-5' : 'max-h-0 opacity-0'
+                    isOpen ? 'max-h-none opacity-100 pb-5' : 'max-h-0 opacity-0'
                   }`}
                 >
                   <p className="font-sans text-base text-secondary leading-relaxed max-w-[62ch]">

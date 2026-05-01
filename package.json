@@ -8,6 +8,7 @@
     "analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
+    "smoke:preview-request": "node scripts/smoke-preview-request.mjs",
     "test": "node --experimental-default-type=module --test"
   },
   "dependencies": {

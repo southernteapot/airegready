@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import DarkModeToggle from './DarkModeToggle'
 import Logo from './Logo'
@@ -13,10 +16,11 @@ const links = [
   { label: 'Contact', href: '/contact' },
 ]
 
-function SearchLink() {
+function SearchLink({ onClick }) {
   return (
     <Link
       href="/search"
+      onClick={onClick}
       className="flex items-center bg-transparent p-1.5 text-[#ADC4DE] no-underline transition-colors hover:text-[#58D4FF]"
       aria-label="Search site"
       title="Search"
@@ -40,12 +44,15 @@ function SearchLink() {
 }
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const closeMenu = () => setIsOpen(false)
+
   return (
     <nav
       aria-label="Main navigation"
       className="fixed left-0 right-0 top-0 z-50 flex h-16 items-center justify-between border-b border-[#1E3147] bg-[#07111F]/95 px-4 shadow-[0_18px_60px_-46px_rgba(0,0,0,0.9)] backdrop-blur-xl sm:px-6"
     >
-      <Link href="/" className="no-underline" aria-label="AIRegReady home">
+      <Link href="/" className="no-underline" aria-label="AIRegReady home" onClick={closeMenu}>
         <Logo size={32} textSize="lg" tone="dark" />
       </Link>
 
@@ -64,16 +71,21 @@ export default function NavBar() {
       <div className="flex items-center gap-2">
         <Link
           href="/assessment"
+          onClick={closeMenu}
           className="hidden rounded-lg bg-[#174EA6] px-4 py-2 font-sans text-sm font-bold text-white no-underline shadow-[0_16px_34px_-24px_rgba(23,78,166,0.95)] transition hover:bg-[#2C6BFF] sm:inline-flex"
         >
           Start assessment
         </Link>
-        <SearchLink />
+        <SearchLink onClick={closeMenu} />
         <DarkModeToggle />
-        <details className="relative lg:hidden">
-          <summary
-            className="cursor-pointer list-none bg-transparent p-1 text-[#ADC4DE] hover:text-[#58D4FF]"
+        <div className="relative lg:hidden">
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="cursor-pointer border-none bg-transparent p-1 text-[#ADC4DE] hover:text-[#58D4FF]"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
           >
             <span className="sr-only">Toggle menu</span>
             <svg
@@ -88,37 +100,42 @@ export default function NavBar() {
             >
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-          </summary>
+          </button>
 
-          <div
-            id="mobile-nav"
-            className="absolute right-0 top-11 w-[240px] rounded-xl border border-[#1E3147] bg-[#07111F]/97 shadow-lg backdrop-blur-xl lg:hidden"
-          >
-            <div className="flex flex-col p-4 gap-3">
-              {links.map((link) => (
+          {isOpen && (
+            <div
+              id="mobile-nav"
+              className="absolute right-0 top-11 w-[260px] rounded-xl border border-[#1E3147] bg-[#07111F]/97 shadow-lg backdrop-blur-xl lg:hidden"
+            >
+              <div className="flex flex-col gap-3 p-4">
                 <Link
-                  key={link.label}
-                  href={link.href}
+                  href="/assessment"
+                  onClick={closeMenu}
+                  className="rounded-lg bg-[#174EA6] px-4 py-2.5 text-center font-sans text-sm font-bold text-white no-underline shadow-[0_16px_34px_-24px_rgba(23,78,166,0.95)] transition hover:bg-[#2C6BFF]"
+                >
+                  Start assessment
+                </Link>
+                {links.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/search"
+                  onClick={closeMenu}
                   className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
                 >
-                  {link.label}
+                  Search
                 </Link>
-              ))}
-              <Link
-                href="/assessment"
-                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
-              >
-                Assessment
-              </Link>
-              <Link
-                href="/search"
-                className="font-sans text-base font-semibold text-[#C8D7EA] no-underline transition-colors hover:text-[#58D4FF]"
-              >
-                Search
-              </Link>
+              </div>
             </div>
-          </div>
-        </details>
+          )}
+        </div>
       </div>
     </nav>
   )

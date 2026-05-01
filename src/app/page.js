@@ -4,6 +4,7 @@ import MarketingNewsletter from '@/components/MarketingNewsletter'
 import { buildPageMetadata } from '@/lib/seo'
 import {
   assessmentRows,
+  getProductHref,
   heroProofCards,
   heroWorkspaceItems,
   productCards,
@@ -13,7 +14,7 @@ import {
 } from '@/lib/marketing'
 
 export const metadata = buildPageMetadata({
-  title: 'AIRegReady - AI Governance Resource Catalog',
+  title: 'AI Governance Resource Catalog',
   description:
     'Plain-English AI governance templates, checklists, playbooks, trackers, and jurisdiction guides for practical internal readiness work.',
   path: '/',
@@ -183,7 +184,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="overflow-x-hidden bg-[#F3F6FA] text-[#0B1B2F] dark:bg-[#09111D] dark:text-white">
         <section className="relative overflow-hidden border-b border-[#1E3147] bg-[#07111F] px-4 pb-10 pt-24 text-white sm:px-6" aria-labelledby="home-heading">
@@ -264,11 +265,12 @@ export default function Home() {
                     </p>
                   </div>
                   <Image
-                    src="/assets/airegready-home-v3-hero-workspace.png"
+                    src="/assets/airegready-home-v3-hero-workspace.avif"
                     width="1586"
                     height="992"
                     alt="AI governance workspace with binders, checklists, risk review materials, vendor forms, jurisdiction folders, and a laptop dashboard."
                     className="aspect-[16/9] h-auto w-full max-w-full rounded-lg object-cover saturate-[0.92]"
+                    sizes="(max-width: 1024px) 100vw, 54vw"
                     priority
                   />
                   <div className="absolute inset-2 rounded-lg bg-gradient-to-t from-[#050B16]/82 via-[#050B16]/5 to-[#050B16]/8" aria-hidden="true" />
@@ -284,7 +286,7 @@ export default function Home() {
                   {heroWorkspaceItems.map((item) => (
                     <Link key={item.title} href={item.href} className="group grid grid-cols-[1fr_auto] gap-4 rounded-xl border border-white/[0.12] bg-[#0B1626] p-4 no-underline shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition hover:border-[#58D4FF]/40 hover:bg-[#0E1C30]">
                       <div>
-                        <h2 className="font-sans text-sm font-black leading-tight text-white">{item.title}</h2>
+                        <h3 className="font-sans text-sm font-black leading-tight text-white">{item.title}</h3>
                         <p className="mt-1 font-sans text-xs font-semibold leading-relaxed text-[#ADC4DE]">{item.body}</p>
                       </div>
                       <span className={`self-start rounded-full px-2.5 py-1 font-sans text-[10px] font-black uppercase ${
@@ -305,7 +307,7 @@ export default function Home() {
             <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-5">
               {stripCategories.map(([title, body]) => (
                 <article key={title} className="rounded-2xl border border-white/[0.12] bg-[#050B16]/86 p-4 shadow-sm">
-                  <h2 className="font-sans text-sm font-black text-white">{title}</h2>
+                  <h3 className="font-sans text-sm font-black text-white">{title}</h3>
                   <p className="mt-2 font-sans text-xs font-semibold leading-relaxed text-[#ADC4DE]">{body}</p>
                 </article>
               ))}
@@ -328,7 +330,7 @@ export default function Home() {
                   <article key={product.title} className="rounded-2xl border border-[#C9D7E6] bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950">
                     <h3 className="font-sans text-lg font-black leading-tight text-[#06132E] dark:text-white">{product.title}</h3>
                     <p className="mt-3 font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">{product.helps}</p>
-                    <Link href="/catalog" className="mt-4 inline-flex font-sans text-sm font-black text-[#2C6BFF] no-underline dark:text-[#58D4FF]">
+                    <Link href={getProductHref(product)} className="mt-4 inline-flex font-sans text-sm font-black text-[#2C6BFF] no-underline dark:text-[#58D4FF]">
                       View resource <span aria-hidden="true">&nbsp;-&gt;</span>
                     </Link>
                   </article>
@@ -356,16 +358,17 @@ export default function Home() {
                 and keep update notes in one organized place.
               </p>
               <div className="mt-6">
-                <PrimaryLink href="/catalog#starter-kit">Preview starter kit</PrimaryLink>
+                <PrimaryLink href="/catalog/ai-governance-starter-kit">Preview starter kit</PrimaryLink>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FBFF] p-3 text-[#06132E] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
               <Image
-                src="/assets/airegready-home-v3-starter-kit.png"
+                src="/assets/airegready-home-v3-starter-kit.avif"
                 width="1586"
                 height="992"
                 alt="AI governance starter kit product preview with tabbed documents, checklist cards, policy packets, and an organized binder."
                 className="aspect-[16/9] h-auto w-full rounded-xl object-cover"
+                sizes="(max-width: 1024px) 100vw, 54vw"
               />
               <div className="grid grid-cols-1 gap-3 p-2 pt-5 sm:grid-cols-2 sm:p-5">
                 {starterContents.slice(0, 6).map((item, index) => (
@@ -418,11 +421,12 @@ export default function Home() {
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="overflow-hidden rounded-2xl border border-[#C9D7E6] bg-white p-3 shadow-[0_34px_90px_-70px_rgba(11,27,47,0.9)] dark:border-slate-800 dark:bg-slate-950">
               <Image
-                src="/assets/airegready-home-v3-regulation-library.png"
+                src="/assets/airegready-home-v3-regulation-library.avif"
                 width="1586"
                 height="992"
                 alt="AI regulation library with jurisdiction guide folders, policy update cards, binders, and a map."
                 className="aspect-[16/10] h-auto w-full rounded-xl object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>

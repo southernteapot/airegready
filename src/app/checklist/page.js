@@ -162,7 +162,7 @@ export default function ChecklistPage() {
           <div className="font-sans text-xs font-bold uppercase tracking-[0.12em] text-accent mb-3">
             Free Resource
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight mb-4">
             AI Readiness Checklist
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[620px]">
@@ -206,7 +206,7 @@ export default function ChecklistPage() {
                 }`}
               >
                 <div className="flex justify-between items-start mb-1">
-                  <h2 className="font-serif text-xl font-bold text-primary">
+                  <h2 className="font-sans text-xl font-black text-primary">
                     {section.title}
                   </h2>
                   <span className="font-sans text-xs font-semibold text-secondary whitespace-nowrap ml-4">
@@ -285,7 +285,7 @@ export default function ChecklistPage() {
               href="/assessment"
               className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
             >
-              <div className="font-serif text-sm font-bold text-primary mb-1">
+              <div className="font-sans text-sm font-black text-primary mb-1">
                 AI Readiness Assessment
               </div>
               <p className="font-sans text-xs text-secondary">
@@ -296,7 +296,7 @@ export default function ChecklistPage() {
               href="/blog/ai-compliance-startups"
               className="block bg-surface border border-border/60 rounded-xl p-5 hover:border-accent/50 transition-all no-underline"
             >
-              <div className="font-serif text-sm font-bold text-primary mb-1">
+              <div className="font-sans text-sm font-black text-primary mb-1">
                 AI Compliance for Startups
               </div>
               <p className="font-sans text-xs text-secondary">

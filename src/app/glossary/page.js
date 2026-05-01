@@ -3,7 +3,7 @@ import Disclaimer from '@/components/Disclaimer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'AI Glossary | AIRegReady',
+  title: 'AI Glossary',
   description:
     'Definitions of key AI terms: GPAI, Annex III, algorithmic discrimination, AEDT, high-risk AI systems, and more. A plain-English reference for understanding AI frameworks and regulation.',
   alternates: { canonical: 'https://airegready.com/glossary' },
@@ -657,7 +657,7 @@ export default function GlossaryPage() {
           <p className="uppercase text-xs font-sans font-semibold text-accent tracking-[0.15em] mb-3">
             Reference
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-black text-primary leading-tight mb-4">
             AI Glossary
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[640px]">
@@ -700,7 +700,7 @@ export default function GlossaryPage() {
           {letters.map((letter) => (
             <section key={letter} id={`letter-${letter}`}>
               <div className="flex items-center gap-3 mb-5">
-                <h2 className="font-serif text-2xl font-bold text-accent">
+                <h2 className="font-sans text-2xl font-black text-accent">
                   {letter}
                 </h2>
                 <div className="flex-1 h-px bg-border" />
@@ -713,7 +713,7 @@ export default function GlossaryPage() {
                     id={entry.id}
                     className="bg-surface border border-border/60 rounded-xl p-6 scroll-mt-32"
                   >
-                    <h3 className="font-serif text-lg font-bold text-primary mb-2">
+                    <h3 className="font-sans text-lg font-black text-primary mb-2">
                       {entry.term}
                     </h3>
                     <p className="font-sans text-sm text-secondary leading-relaxed mb-3">

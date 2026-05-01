@@ -3,9 +3,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { buildPageMetadata } from '@/lib/seo'
 
 export const metadata = buildPageMetadata({
-  title: 'Resource Library — AIRegReady',
+  title: 'Resource Library',
   description:
-    'Plain-English AI regulations, framework comparisons, readiness checklists, and templates — all in one place.',
+    'Free AI governance reading, regulation explainers, framework comparisons, readiness checklists, timelines, and reference materials.',
   path: '/resources',
 })
 

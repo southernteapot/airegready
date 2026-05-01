@@ -1,4 +1,5 @@
 import { getAllArticles } from './articles/index.js'
+import { getAvailableProducts, getProductHref, getProductKind } from './marketing.js'
 import { getAllRegulations } from './regulations/index.js'
 import { SITE_URL } from './seo.js'
 
@@ -40,7 +41,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.8,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/glossary',
@@ -49,7 +50,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.7,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/timeline',
@@ -67,7 +68,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.6,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/about',
@@ -76,7 +77,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.7,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/contact',
@@ -86,7 +87,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'yearly',
     priority: 0.5,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/checklist',
@@ -95,16 +96,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.8,
-    lastModifiedSource: 'articles',
-  },
-  {
-    url: '/logos',
-    title: 'Logos',
-    description: 'Brand assets and logos for AIRegReady.',
-    searchTags: [],
-    changeFrequency: 'yearly',
-    priority: 0.4,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
   {
     url: '/legal',
@@ -113,7 +105,7 @@ const STATIC_PAGE_DEFINITIONS = [
     searchTags: [],
     changeFrequency: 'yearly',
     priority: 0.3,
-    lastModifiedSource: 'articles',
+    lastModifiedSource: null,
   },
 ]
 
@@ -161,6 +153,15 @@ export function getRegulationRecords() {
     })),
     (regulation) => parseDate(regulation.modifiedAt)
   )
+}
+
+export function getProductRecords() {
+  return getAvailableProducts().map((product) => ({
+    ...product,
+    url: getProductHref(product),
+    description: product.helps,
+    tags: [getProductKind(product), ...product.inside],
+  }))
 }
 
 export function getLatestArticleDate() {
@@ -219,12 +220,21 @@ export function getSearchIndex() {
     tags: page.searchTags,
   }))
 
-  return [...regulations, ...articles, ...pages]
+  const products = getProductRecords().map((product) => ({
+    type: 'product',
+    title: product.title,
+    description: product.description,
+    url: product.url,
+    tags: product.tags,
+  }))
+
+  return [...regulations, ...articles, ...products, ...pages]
 }
 
 export function getSitemapEntries(siteUrl = SITE_URL) {
   const articles = getArticleRecords()
   const regulations = getRegulationRecords()
+  const products = getProductRecords()
   const staticPages = getStaticPageRecords()
   const latestArticleDate = getLatestArticleDate()
   const latestRegulationDate = getLatestRegulationDate()
@@ -277,6 +287,11 @@ export function getSitemapEntries(siteUrl = SITE_URL) {
         parseDate(article.modifiedAt)
       )
     ),
+    ...products.map((product) => ({
+      url: `${siteUrl}${product.url}`,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    })),
     ...staticPages.map((page) =>
       addOptionalLastModified(
         {

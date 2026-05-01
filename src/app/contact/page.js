@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { buildPageMetadata } from '@/lib/seo'
 
 export const metadata = buildPageMetadata({
-  title: 'Contact AIRegReady',
+  title: 'Contact',
   description:
     'Contact AIRegReady about practical AI governance resources, catalog questions, corrections, and general inquiries.',
   path: '/contact',
@@ -37,15 +37,12 @@ export default function ContactPage() {
               Contact AIRegReady
             </p>
             <h1 className="mt-4 max-w-[12ch] break-words font-sans text-[30px] font-extrabold leading-[1.08] tracking-tight text-white min-[430px]:max-w-[720px] min-[430px]:text-[34px] sm:text-5xl">
-              <span>Questions about AI</span>{' '}
-              <span className="block sm:inline">governance</span>{' '}
-              <span className="block sm:inline">resources?</span>
+              Questions about AI governance resources?
             </h1>
             <p className="mt-5 max-w-[34ch] break-words font-sans text-base leading-relaxed text-[#D8E6F5] min-[430px]:max-w-[680px] sm:text-lg">
-              <span className="block sm:inline">Contact us about the resource catalog,</span>{' '}
-              <span className="block sm:inline">corrections, licensing questions,</span>{' '}
-              <span className="block sm:inline">or practical AI governance education.</span>{' '}
-              <span className="block sm:inline">AIRegReady does not provide legal advice.</span>
+              Contact us about the resource catalog, corrections, licensing
+              questions, or practical AI governance education. AIRegReady does
+              not provide legal advice.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
@@ -69,9 +66,7 @@ export default function ContactPage() {
                 Best way to reach us
               </p>
               <h2 className="mt-2 max-w-[22ch] break-words font-sans text-2xl font-black leading-tight text-white sm:max-w-none">
-                <span className="block sm:inline">Tell us which resource,</span>{' '}
-                <span className="block sm:inline">page, or use case</span>{' '}
-                <span className="block sm:inline">you mean.</span>
+                Tell us which resource, page, or use case you mean.
               </h2>
               <dl className="mt-5 grid gap-3">
                 {[

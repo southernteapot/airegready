@@ -112,7 +112,7 @@ export default function TimelineView({ events }) {
           <p className="font-sans text-xs font-semibold tracking-widest uppercase text-accent mb-3">
             Key Dates
           </p>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
+          <h1 className="font-sans text-3xl sm:text-4xl font-bold text-primary leading-tight mb-4">
             AI Regulation Timeline
           </h1>
           <p className="font-sans text-base text-secondary leading-relaxed max-w-[640px]">
@@ -210,7 +210,7 @@ export default function TimelineView({ events }) {
                       <div className="w-[31px] sm:w-[39px] flex justify-center relative z-10">
                         <div className="w-3 h-3 rounded-full bg-accent border-2 border-bg" />
                       </div>
-                      <h2 className="font-serif text-xl sm:text-2xl font-bold text-primary ml-4">
+                      <h2 className="font-sans text-xl sm:text-2xl font-bold text-primary ml-4">
                         {item.year}
                       </h2>
                     </div>

@@ -40,7 +40,7 @@ export default function NotFound() {
           <p className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-accent mb-4">
             Error 404
           </p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-primary mb-4">
+          <h1 className="font-sans text-4xl sm:text-5xl font-black text-primary mb-4">
             Page Not Found
           </h1>
           <p className="font-sans text-lg text-secondary leading-relaxed max-w-md mx-auto">
@@ -55,17 +55,12 @@ export default function NotFound() {
           <p className="font-sans text-sm text-secondary mb-4">
             Try searching for what you need using the site search.
           </p>
-          <kbd className="inline-flex items-center gap-1.5 font-sans text-sm text-secondary bg-bg border border-border rounded-lg px-3 py-1.5">
-            Press 
-            <span className="font-mono text-xs bg-surface border border-border rounded px-1.5 py-0.5">
-              Ctrl
-            </span>
-            +
-            <span className="font-mono text-xs bg-surface border border-border rounded px-1.5 py-0.5">
-              K
-            </span>{" "}
-            to search
-          </kbd>
+          <Link
+            href="/search"
+            className="inline-flex min-h-10 items-center justify-center rounded-lg bg-accent px-4 py-2 font-sans text-sm font-semibold text-accent-text no-underline transition-colors hover:bg-accent-dark"
+          >
+            Search the site
+          </Link>
         </div>
 
         <div>
