@@ -27,6 +27,7 @@ Track current project tasks here.
 - 2026-04-30 follow-up cleanup completed: catalog ItemList/Product JSON-LD was added without inventing prices, FAQ answers no longer use the 480px open-height cap, MarketingNewsletter has a noscript fallback, homepage dense-card headings were demoted, app icon/manifest files were added, explicit product `kind` values were added, and `/front-page-v2` now redirects to `/preview/front-page-v2`.
 - 2026-05-01 catalog expansion completed: `/catalog/[slug]` pages now exist for the 9 requestable packages with product JSON-LD, search/sitemap inclusion, visual previews, use-case sections, and request-preview CTAs.
 - 2026-05-01 preview-request flow completed: catalog preview CTAs now point to hosted request forms backed by `/api/preview-request` with honeypot, origin checks, in-process rate limiting, structured logs, and optional webhook forwarding.
+- 2026-05-08 EU Digital Omnibus update completed: added `/blog/eu-ai-act-digital-omnibus-agreement` covering the May 7, 2026 political agreement, updated high-risk AI Act timelines, formal-adoption caveat, and practical readiness steps.
 
 ## Later
 

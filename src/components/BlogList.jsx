@@ -33,7 +33,9 @@ export default function BlogList({ articles }) {
   }, [articles, activeCategory])
 
   const featured = filtered.find((a) => a.featured)
-  const rest = filtered.filter((a) => !a.featured)
+  const rest = featured
+    ? filtered.filter((a) => a.slug !== featured.slug)
+    : filtered
 
   return (
     <>

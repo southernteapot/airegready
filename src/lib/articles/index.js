@@ -23,8 +23,10 @@ import { coloradoAiActCountdown } from './colorado-ai-act-countdown.js'
 import { euAiActDigitalOmnibusDelay } from './eu-ai-act-digital-omnibus-delay.js'
 import { dojAiTaskForceThreeMonths } from './doj-ai-task-force-three-months.js'
 import { xaiSuesColoradoAiAct } from './xai-sues-colorado-ai-act.js'
+import { euAiActDigitalOmnibusAgreement } from './eu-ai-act-digital-omnibus-agreement.js'
 
 const articles = {
+  'eu-ai-act-digital-omnibus-agreement': euAiActDigitalOmnibusAgreement,
   'eu-ai-act-risk-classification': euAiActRiskClassification,
   'eu-ai-act-compliance-checklist': euAiActComplianceChecklist,
   'us-states-ai-hiring': usStatesAiHiring,
