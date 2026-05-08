@@ -7,7 +7,7 @@ Track current project tasks here.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Decide payment and delivery stack for paid products. `content/products/README.md` names Gumroad, Lemon Squeezy, and Stripe as pending options.
 - Wire product detail pages to actual product documents, checkout, and delivery.
-- Convert drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs.
+- Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Configure `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN` or choose another durable CRM/contact backend for preview request notifications, then verify with `npm run smoke:preview-request -- https://airegready.com --live`.
 - Review the professional hybrid homepage refresh in-browser and decide whether the restrained blue/cyan logo and hero treatment should also be applied to social images and older preview pages.
 - Decide when to retire older homepage preview routes after the current homepage has been live long enough.

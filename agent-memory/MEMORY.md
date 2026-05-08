@@ -41,4 +41,5 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - The legal boundary is important: educational information and templates only, not legal advice, compliance guarantees, or attorney-client services.
 - The catalog/product direction includes AI governance starter resources, acceptable use policy kits, risk assessment tools, vendor review packets, training materials, jurisdiction guides, and regulation trackers.
 - Requestable catalog products have public detail/preview pages and hosted preview request forms, but checkout, pricing, and delivery are not implemented yet.
+- AI Governance Starter Kit v1 deliverable exists at `deliverables/ai-governance-starter-kit-v1/` and matches the public catalog contents: AI use inventory, acceptable use policy, risk intake form, and update tracker. Markdown, DOCX, PDF, and ZIP exports exist.
 - Old homepage/prototype routes are intentionally preserved under `/preview`; `/front-page-v2` redirects to `/preview/front-page-v2`.
