@@ -5,8 +5,8 @@ Track current project tasks here.
 ## Current
 
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
-- Decide payment and delivery stack for paid products. `content/products/README.md` names Gumroad, Lemon Squeezy, and Stripe as pending options.
-- Wire product detail pages to actual product documents, checkout, and delivery.
+- Create a Gumroad product for the first paid AI Governance Starter Kit test sale. Use Lemon Squeezy as Plan B and Stripe Payment Link + manual email only as fallback. After the payment URL exists, add the purchase URL and $19 paid-test CTA to the catalog/product pages.
+- After a payment link exists, wire the AI Governance Starter Kit detail/card CTAs to purchase while keeping preview/contact as secondary; do not expose a public direct ZIP download.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Configure `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN` or choose another durable CRM/contact backend for preview request notifications, then verify with `npm run smoke:preview-request -- https://airegready.com --live`.
 - Review the professional hybrid homepage refresh in-browser and decide whether the restrained blue/cyan logo and hero treatment should also be applied to social images and older preview pages.

@@ -4,7 +4,7 @@
 **Version:** 1.0  
 **Prepared:** 2026-05-08  
 
-This folder is the website-aligned deliverable for the AIRegReady catalog item at `/catalog/ai-governance-starter-kit`.
+This packet contains editable templates and reference PDFs for a basic AI governance file. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
 
 ## Included documents
 
@@ -25,16 +25,11 @@ This folder is the website-aligned deliverable for the AIRegReady catalog item a
 - `markdown/` — editable Markdown source
 - `docx/` — Word-compatible editable documents
 - `pdf/` — PDF exports
-- `source-notes/` — source mapping for traceability
+- `START-HERE.md` — buyer-facing setup guide and recommended first pass
 - `LEGAL-NOTICE.md` — educational-use and legal-boundary notice
 
-## Website alignment
+## Important legal boundary
 
-The public catalog card says this kit includes: **AI use inventory, acceptable use policy, risk intake form, update tracker**. This deliverable now matches that advertised list.
+These materials are educational templates and informational starting points only. They are not legal advice, do not create an attorney-client relationship, and do not guarantee compliance with any law, regulation, contract, or industry requirement.
 
-## Before selling
-
-- Review placeholders and bracketed fields.
-- Decide whether to include Markdown, DOCX, PDF, or all formats in the customer ZIP.
-- Add a short buyer-facing cover letter if selling manually.
-- Keep the educational/templates-only legal boundary.
+Review and adapt these materials for your organization, industry, jurisdictions, contracts, and actual AI use. Consult qualified counsel before relying on them for legal compliance or regulated use cases.

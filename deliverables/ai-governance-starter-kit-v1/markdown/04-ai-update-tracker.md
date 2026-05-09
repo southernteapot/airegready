@@ -123,3 +123,7 @@ Each entry captures:
 - Don't delete entries; correct with a new entry if needed
 - Archive with the system when retired (see Retirement Checklist)
 - Retention aligns with sector rules and the longer of: operational need, EU AI Act 10-year (for high-risk), sector-specific retention, or 3 years minimum
+
+## Disclaimer
+
+This document is a template for educational and informational purposes only. It is not legal advice and does not create an attorney-client relationship. Do not treat it as a compliance guarantee. Consult qualified legal counsel before relying on this template for legal compliance or regulated use cases.

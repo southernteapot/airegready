@@ -161,10 +161,6 @@ export const starterContents = [
   'AI use inventory',
   'Acceptable use policy',
   'Risk intake form',
-  'Vendor review checklist',
-  'Training outline',
-  'Incident response worksheet',
-  'Governance meeting agenda',
   'Update tracker',
 ]
 
