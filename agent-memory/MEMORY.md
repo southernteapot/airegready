@@ -43,3 +43,5 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - Requestable catalog products have public detail/preview pages and hosted preview request forms, but checkout, pricing, and delivery are not implemented yet.
 - AI Governance Starter Kit v1 deliverable exists at `deliverables/ai-governance-starter-kit-v1/` and matches the public catalog contents: AI use inventory, acceptable use policy, risk intake form, and update tracker. Markdown, DOCX, PDF, and ZIP exports exist.
 - Old homepage/prototype routes are intentionally preserved under `/preview`; `/front-page-v2` redirects to `/preview/front-page-v2`.
+- Dedicated Texas AI regulation guide route exists at `/regulations/texas-ai-regulation`, last reviewed May 18, 2026, covering TRAIGA, Texas public-sector AI laws, privacy/biometrics, synthetic media, financial exploitation, and sector guidance.
+- Blog post `/blog/regulators-ai-made-the-mistake` frames FTC/Texas AI privacy enforcement as a practical claim-review/evidence-file workflow for AIRegReady readers.

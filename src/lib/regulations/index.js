@@ -1,6 +1,7 @@
 import { euAiAct } from './eu-ai-act.js'
 import { nistAiRmf } from './nist-ai-rmf.js'
 import { usStateLaws } from './us-state-laws.js'
+import { texasAiRegulation } from './texas-ai-regulation.js'
 import { federalPolicy } from './federal-policy.js'
 import { sectorRules } from './sector-rules.js'
 import { globalGovernance } from './global.js'
@@ -8,6 +9,7 @@ import { globalGovernance } from './global.js'
 const regulations = {
   'eu-ai-act': euAiAct,
   'nist-ai-rmf': nistAiRmf,
+  'texas-ai-regulation': texasAiRegulation,
   'us-state-laws': usStateLaws,
   'federal-policy': federalPolicy,
   'sector-rules': sectorRules,

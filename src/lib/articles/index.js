@@ -24,8 +24,14 @@ import { euAiActDigitalOmnibusDelay } from './eu-ai-act-digital-omnibus-delay.js
 import { dojAiTaskForceThreeMonths } from './doj-ai-task-force-three-months.js'
 import { xaiSuesColoradoAiAct } from './xai-sues-colorado-ai-act.js'
 import { euAiActDigitalOmnibusAgreement } from './eu-ai-act-digital-omnibus-agreement.js'
+import { coloradoSb26189AdmtRewrite } from './colorado-sb26-189-admt-rewrite.js'
+import { aiCompanionChatbotLaws } from './ai-companion-chatbot-laws.js'
+import { regulatorsAiMadeTheMistake } from './regulators-ai-made-the-mistake.js'
 
 const articles = {
+  'regulators-ai-made-the-mistake': regulatorsAiMadeTheMistake,
+  'colorado-sb26-189-admt-rewrite': coloradoSb26189AdmtRewrite,
+  'ai-companion-chatbot-laws': aiCompanionChatbotLaws,
   'eu-ai-act-digital-omnibus-agreement': euAiActDigitalOmnibusAgreement,
   'eu-ai-act-risk-classification': euAiActRiskClassification,
   'eu-ai-act-compliance-checklist': euAiActComplianceChecklist,

@@ -28,6 +28,10 @@ Track current project tasks here.
 - 2026-05-01 catalog expansion completed: `/catalog/[slug]` pages now exist for the 9 requestable packages with product JSON-LD, search/sitemap inclusion, visual previews, use-case sections, and request-preview CTAs.
 - 2026-05-01 preview-request flow completed: catalog preview CTAs now point to hosted request forms backed by `/api/preview-request` with honeypot, origin checks, in-process rate limiting, structured logs, and optional webhook forwarding.
 - 2026-05-08 EU Digital Omnibus update completed: added `/blog/eu-ai-act-digital-omnibus-agreement` covering the May 7, 2026 political agreement, updated high-risk AI Act timelines, formal-adoption caveat, and practical readiness steps.
+- 2026-05-18 blog update completed: added `/blog/colorado-sb26-189-admt-rewrite` and `/blog/ai-companion-chatbot-laws` covering the Colorado ADMT rewrite and the state companion-chatbot regulation trend.
+
+- 2026-05-18 Texas AI regulation guide completed: added `/regulations/texas-ai-regulation` with sourced coverage of TRAIGA, public-sector AI governance, training, privacy/biometrics, synthetic media, financial exploitation, and sector guidance.
+- 2026-05-25 blog update completed: added `/blog/regulators-ai-made-the-mistake` covering AI-generated claims, FTC active-listening enforcement, Texas WhatsApp privacy litigation, and practical claim-review files.
 
 ## Later
 

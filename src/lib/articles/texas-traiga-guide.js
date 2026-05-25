@@ -180,5 +180,5 @@ export const texasTraigaGuide = {
   ],
 
   relatedArticles: ['federal-ai-preemption', 'nist-ai-rmf-practice', 'us-states-ai-hiring'],
-  relatedRegulations: ['us-state-laws', 'federal-policy'],
+  relatedRegulations: ['texas-ai-regulation', 'us-state-laws', 'federal-policy'],
 }
