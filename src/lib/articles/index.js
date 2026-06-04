@@ -27,8 +27,10 @@ import { euAiActDigitalOmnibusAgreement } from './eu-ai-act-digital-omnibus-agre
 import { coloradoSb26189AdmtRewrite } from './colorado-sb26-189-admt-rewrite.js'
 import { aiCompanionChatbotLaws } from './ai-companion-chatbot-laws.js'
 import { regulatorsAiMadeTheMistake } from './regulators-ai-made-the-mistake.js'
+import { whenAiGeneratedImagesAreIllegal } from './when-ai-generated-images-are-illegal.js'
 
 const articles = {
+  'when-ai-generated-images-are-illegal': whenAiGeneratedImagesAreIllegal,
   'regulators-ai-made-the-mistake': regulatorsAiMadeTheMistake,
   'colorado-sb26-189-admt-rewrite': coloradoSb26189AdmtRewrite,
   'ai-companion-chatbot-laws': aiCompanionChatbotLaws,

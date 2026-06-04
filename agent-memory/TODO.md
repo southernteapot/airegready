@@ -33,6 +33,8 @@ Track current project tasks here.
 - 2026-05-18 Texas AI regulation guide completed: added `/regulations/texas-ai-regulation` with sourced coverage of TRAIGA, public-sector AI governance, training, privacy/biometrics, synthetic media, financial exploitation, and sector guidance.
 - 2026-05-25 blog update completed: added `/blog/regulators-ai-made-the-mistake` covering AI-generated claims, FTC active-listening enforcement, Texas WhatsApp privacy litigation, and practical claim-review files.
 
+- 2026-06-04 blog update completed: added `/blog/when-ai-generated-images-are-illegal` covering AI-generated images, Texas bestiality/obscenity context, AI-CSAM enforcement, nonconsensual intimate deepfakes, and jurisdiction differences.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.
