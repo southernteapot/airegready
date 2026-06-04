@@ -35,6 +35,8 @@ Track current project tasks here.
 
 - 2026-06-04 blog update completed: added `/blog/when-ai-generated-images-are-illegal` covering AI-generated images, Texas bestiality/obscenity context, AI-CSAM enforcement, nonconsensual intimate deepfakes, and jurisdiction differences.
 
+- 2026-06-04 blog update completed: added `/blog/white-house-ai-cybersecurity-order` and `/blog/agentic-ai-security-guidance` covering the June 2026 White House AI cybersecurity order, the AI cybersecurity clearinghouse, frontier-model cyber review, and agentic AI security controls.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

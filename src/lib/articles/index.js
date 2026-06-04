@@ -28,8 +28,12 @@ import { coloradoSb26189AdmtRewrite } from './colorado-sb26-189-admt-rewrite.js'
 import { aiCompanionChatbotLaws } from './ai-companion-chatbot-laws.js'
 import { regulatorsAiMadeTheMistake } from './regulators-ai-made-the-mistake.js'
 import { whenAiGeneratedImagesAreIllegal } from './when-ai-generated-images-are-illegal.js'
+import { whiteHouseAiCybersecurityOrder } from './white-house-ai-cybersecurity-order.js'
+import { agenticAiSecurityGuidance } from './agentic-ai-security-guidance.js'
 
 const articles = {
+  'white-house-ai-cybersecurity-order': whiteHouseAiCybersecurityOrder,
+  'agentic-ai-security-guidance': agenticAiSecurityGuidance,
   'when-ai-generated-images-are-illegal': whenAiGeneratedImagesAreIllegal,
   'regulators-ai-made-the-mistake': regulatorsAiMadeTheMistake,
   'colorado-sb26-189-admt-rewrite': coloradoSb26189AdmtRewrite,
