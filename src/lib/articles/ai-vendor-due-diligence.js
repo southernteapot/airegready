@@ -14,7 +14,7 @@ export const aiVendorDueDiligence = {
     {
       title: null,
       content:
-        'Buying an AI tool is not like buying a SaaS subscription. When you deploy a vendor\'s AI system, you don\'t outsource the risk — you inherit it. Under the EU AI Act, you\'re a deployer with independent legal obligations. Under Colorado\'s SB 24-205, you\'re a "deployer" responsible for impact assessments and disclosure. Under NYC Local Law 144, you\'re the employer on the hook for bias audits even though you didn\'t build the algorithm.\n\nThe vendor built the system. You chose to use it. Regulators hold you accountable for that choice.\n\nThis means your procurement process needs to change. A vendor\'s sales deck is not due diligence. Here are ten questions you should be asking before you sign — and what the answers tell you.',
+        'Buying an AI tool is not like buying a SaaS subscription. When you deploy a vendor\'s AI system, you don\'t outsource the risk — you inherit it. Under the EU AI Act, you\'re a deployer with independent legal obligations. Under Colorado\'s SB 26-189, covered ADMT developers and deployers need documentation, notices, adverse-outcome explanations, data-correction workflows, records, and meaningful human review. Under NYC Local Law 144, you\'re the employer on the hook for bias audits even though you didn\'t build the algorithm.\n\nThe vendor built the system. You chose to use it. Regulators hold you accountable for that choice.\n\nThis means your procurement process needs to change. A vendor\'s sales deck is not due diligence. Here are ten questions you should be asking before you sign — and what the answers tell you.',
     },
     {
       title: '1. What Data Does the Model Train On?',
@@ -107,6 +107,10 @@ export const aiVendorDueDiligence = {
       title:
         'NYC Department of Consumer and Worker Protection — Automated Employment Decision Tools (Local Law 144)',
       url: 'https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page',
+    },
+    {
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
     },
   ],
 

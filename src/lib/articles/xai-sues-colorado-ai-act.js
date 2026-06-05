@@ -1,10 +1,10 @@
 export const xaiSuesColoradoAiAct = {
   slug: 'xai-sues-colorado-ai-act',
-  title: 'xAI Sues Colorado While Colorado Quietly Prepares to Replace Its Own AI Act',
+  title: 'xAI Sued Colorado Before Colorado Replaced Its Original AI Act',
   description:
-    "Within a three-week window, Elon Musk's xAI filed a federal lawsuit to block the Colorado AI Act and Governor Polis's own AI Policy Workgroup unanimously proposed replacing it. Here's what each move actually does, what it changes for deployers preparing for the June 30 effective date, and what to watch for between now and the end of Colorado's legislative session on May 13.",
+    "Elon Musk's xAI sued to block Colorado's original AI Act in April 2026. Colorado then replaced that law with SB 26-189 before the June 30 effective date. Here is what the lawsuit showed, what changed, and what still matters for ADMT compliance.",
   category: 'State Laws',
-  categorySlug: 'state-laws',
+  categorySlug: 'us-state-laws',
   date: '2026-04-22',
   displayDate: 'April 22, 2026',
   readTime: '9 min read',
@@ -14,7 +14,7 @@ export const xaiSuesColoradoAiAct = {
     {
       title: null,
       content:
-        "Colorado's AI Act — the first comprehensive U.S. state law targeting high-risk AI — is simultaneously being attacked in federal court and rewritten in Denver.\n\nOn **April 9, 2026**, xAI filed a federal lawsuit asking a federal judge to declare the Colorado AI Act unconstitutional and permanently enjoin its enforcement before it takes effect on June 30. Three weeks earlier, on **March 17, 2026**, Governor Jared Polis's own AI Policy Workgroup unanimously endorsed a proposed rewrite that would, if enacted, scrap much of the current law and replace it with a narrower framework focused on automated decision-making technology (ADMT).\n\nThese two stories are less contradictory than they look. Both reflect the same pressure: the Colorado AI Act, as currently written, has more critics than defenders — including the governor who signed it. What is unclear is whether the law survives to its effective date in its current form, gets replaced by the ADMT Framework, gets blocked by a federal court, or some combination of all three.\n\nHere is what each development actually does, what it does not do, and what deployers should be doing right now.",
+        "Colorado's original AI Act — the first comprehensive U.S. state law targeting high-risk AI — became a national test case before it ever took effect.\n\nOn **April 9, 2026**, xAI filed a federal lawsuit asking a federal judge to declare the original Colorado AI Act unconstitutional and permanently enjoin enforcement before its June 30 effective date. Three weeks earlier, on **March 17, 2026**, Governor Jared Polis's AI Policy Workgroup had unanimously endorsed a proposed rewrite focused on automated decision-making technology (ADMT).\n\nThe rewrite is no longer hypothetical. On **May 14, 2026**, Colorado signed **SB 26-189**, repealing and replacing the original SB 24-205 framework before it took effect. The new law still regulates AI-influenced consequential decisions, but it does so through a narrower covered-ADMT model that starts **January 1, 2027**.\n\nThis article now reads as a historical explainer: what xAI challenged, why Colorado was already preparing a replacement, and what the episode says about the direction of state AI law.",
     },
     {
       title: 'The Lawsuit: X.AI LLC v. Weiser',
@@ -35,24 +35,24 @@ export const xaiSuesColoradoAiAct = {
     {
       title: 'Why the Timing Matters',
       content:
-        'The case is a near-perfect test vehicle for the legal arguments the December 2025 federal executive order teed up. **Executive Order 14365**, "Ensuring a National Policy Framework for Artificial Intelligence," specifically named SB 24-205 as an example of a state AI law that, in the administration\'s view, "may even force AI models to produce false results to avoid a \'differential treatment or impact\' on protected groups." That executive order also created the DOJ AI Litigation Task Force, which, as of April 2026, has not yet filed a case of its own against any state AI law.\n\nxAI\'s private suit runs the same playbook the Task Force was built to run — preemption, dormant Commerce Clause, and First Amendment challenges — but from the private side and without having to wait for DOJ to act. If xAI succeeds in getting a preliminary injunction, it would create a de facto pause on SB 24-205 while the case proceeds. If it loses the preliminary motion, the substantive obligations remain fully enforceable on June 30.\n\nxAI has been through a version of this before. In March 2026, a federal court denied xAI\'s request for a preliminary injunction against California\'s training-data transparency law in a separate case. That loss informs the Colorado playbook: xAI is emphasizing compelled-speech and viewpoint-discrimination theories in the Colorado complaint, which tend to trigger higher First Amendment scrutiny than disclosure-focused claims.',
+        'The case became the first practical test of the federal preemption pressure created by the December 2025 executive order. **Executive Order 14365**, "Ensuring a National Policy Framework for Artificial Intelligence," specifically named SB 24-205 as an example of a state AI law that, in the administration\'s view, could force AI models toward impermissible differential-treatment outcomes.\n\nThe Justice Department did not stay on the sidelines. On **April 24, 2026**, DOJ moved to intervene in xAI\'s lawsuit, arguing that the original Colorado law\'s algorithmic-discrimination framework raised constitutional problems. That intervention mattered even though Colorado later replaced the law, because it showed how federal agencies may pressure state AI laws without waiting for Congress to pass a comprehensive federal statute.\n\nThe original June 30 enforcement date is now historical. The live Colorado date is **January 1, 2027** under SB 26-189, subject to the remaining litigation and implementation dynamics around the replacement law.',
     },
     {
       title: "Colorado's Other Problem: The ADMT Replacement Framework",
       content:
-        'Three weeks before xAI filed suit, Governor Polis\'s AI Policy Workgroup unanimously proposed a new legal framework that would **replace** the Colorado AI Act rather than amend it. The working group — a mix of industry, consumer, healthcare, and education stakeholders convened by the governor in October 2025 — agreed on the proposal on **March 17, 2026**. Polis immediately endorsed it.\n\nThe draft bill is titled "Concerning the Use of Automated Decision Making Technology in Consequential Decisions." If enacted, it would take effect **January 1, 2027**, giving covered developers and deployers the rest of 2026 to modify existing compliance programs.',
+        'Three weeks before xAI filed suit, Governor Polis\'s AI Policy Workgroup unanimously proposed a new legal framework that would **replace** the Colorado AI Act rather than amend it. The working group — a mix of industry, consumer, healthcare, and education stakeholders convened by the governor in October 2025 — agreed on the proposal on **March 17, 2026**. Polis immediately endorsed it.\n\nThat proposal became **SB 26-189, Automated Decision-Making Technology**, which Colorado signed on **May 14, 2026**. The replacement takes effect **January 1, 2027**, giving covered developers and deployers the rest of 2026 to modify existing compliance programs.',
     },
     {
       title: 'What the ADMT Framework Actually Changes',
       content:
-        'The proposed framework is not a cosmetic revision. It rewrites the law\'s footing in several concrete ways.',
+        'The replacement was not a cosmetic revision. It rewrote the law\'s footing in several concrete ways.',
       list: [
-        '**From "high-risk AI systems" to "Covered ADMT."** The new law would regulate automated decision-making technology that processes personal information to generate outputs used in consequential decisions. The scope is closer to California\'s CCPA ADMT rules than to the original EU-style Colorado AI Act.',
-        '**Higher trigger threshold.** The current CAIA kicks in when an AI system is a "substantial factor" in a consequential decision. The proposal raises the bar to "materially influence," which requires the output to be a non-de-minimis factor that actually affects the outcome.',
-        '**Several obligations removed.** The proposal drops the requirement to report known or reasonably foreseeable algorithmic discrimination risks to the Attorney General, eliminates the mandatory impact-assessment requirement, and removes the mandate to implement a formal risk-management policy (such as NIST AI RMF or ISO 42001).',
-        '**Consumer protections retained.** Coloradans would still get an up-front notice when ADMT is used in life-altering decisions, an explanation for adverse decisions, the ability to correct inaccurate personal information, and the right to request human review.',
-        '**Liability allocated by relative fault.** Developer and deployer liability is split based on who caused the harm. Indemnification clauses that shift a party\'s own liability to the other are explicitly void as against public policy.',
-        '**No private right of action, 90-day cure period.** Enforcement stays exclusive to the Attorney General. Violators get 90 days to cure before civil penalties attach, unless the violation was knowing or repeated.',
+        '**From "high-risk AI systems" to "Covered ADMT."** The new law regulates automated decision-making technology that processes personal data and generates outputs used to make, guide, or assist consequential decisions.',
+        '**Higher trigger threshold.** The old CAIA kicked in when an AI system was a "substantial factor" in a consequential decision. SB 26-189 uses "materially influence," which asks whether the output meaningfully affects the outcome.',
+        '**Several obligations removed.** The replacement drops the old AG algorithmic-discrimination risk reporting requirement, mandatory annual impact assessments, and formal risk-management policy mandate.',
+        '**Consumer protections retained.** Coloradans still get point-of-interaction notice, a post-adverse-outcome explanation, the ability to correct inaccurate personal data, and meaningful human review and reconsideration.',
+        '**Developer documentation remains central.** Developers of covered ADMT must give deployers information about intended uses, training-data categories, known limitations, appropriate use, human review, and material updates.',
+        '**No new private right of action; cure opportunity.** Enforcement stays with the Colorado Attorney General through the Colorado Consumer Protection Act. Before January 1, 2030, the AG generally must provide a 60-day notice and opportunity to cure if cure is possible.',
       ],
     },
     {
@@ -61,40 +61,47 @@ export const xaiSuesColoradoAiAct = {
         "Polis signed SB 24-205 reluctantly in May 2024, publicly asking the legislature to \"reexamine\" the bill before it took effect. In his signing statement he criticized the law for regulating outcomes rather than intent, and raised concerns about Colorado \"going it alone\" on AI regulation while other states stayed on the sidelines.\n\nThe 2025 session produced several failed attempts to amend the law. After a special session pushed the effective date from February 1, 2026 to June 30, 2026, Polis convened the working group in October 2025. The ADMT Framework is the product of that group.\n\nThere is also a federal funding angle. The December 2025 executive order on national AI policy conditions access to roughly $21 billion in undeployed Broadband Equity, Access and Deployment (BEAD) funds on the repeal of state AI laws the administration considers \"onerous.\" A replacement law aligned closer to federal preferences is one way to reduce the risk of BEAD-eligibility disputes, regardless of how the Commerce Department's list of \"burdensome\" state laws eventually lands.",
     },
     {
-      title: 'The Two Scenarios That Matter',
+      title: 'What Actually Happened',
       content:
-        "Between now and the end of Colorado's legislative session on **May 13, 2026**, two paths are actively in motion, and the outcome for compliance teams depends on which one plays out first.\n\n**Scenario 1: The ADMT Framework is enacted.** If the legislature picks up the workgroup proposal and passes it before session ends, SB 24-205 is effectively superseded. The June 30 effective date becomes a paper deadline rather than a substantive one, because the repeal-and-replace bill would take over with a January 1, 2027 effective date. Compliance programs then pivot from \"high-risk AI system\" framing to \"Covered ADMT\" framing. Impact assessments, AG risk reporting, and NIST-aligned risk-management programs become optional rather than required.\n\n**Scenario 2: SB 24-205 takes effect on June 30 as written.** If the legislature does not act, or only tinkers at the edges, the current law becomes enforceable on June 30 with its existing obligations intact. In that case xAI's lawsuit becomes the main near-term wildcard. A preliminary injunction would freeze enforcement statewide; a denial leaves the law in force and xAI facing the full statute.\n\nA third possibility is that both happen — the legislature passes the ADMT Framework, and xAI's suit is mooted before it produces a substantive ruling because SB 24-205 has been repealed.",
+        'The April article framed two scenarios: either Colorado would enact the ADMT replacement before the original June 30 date, or SB 24-205 would take effect as written while xAI\'s lawsuit proceeded. The first scenario happened.\n\nColorado signed SB 26-189 on **May 14, 2026**, replacing the original law before its effective date. That made the old June 30 SB 24-205 countdown a historical planning problem rather than the live compliance calendar.\n\nThe lawsuit still matters as a signal. xAI and DOJ forced the constitutional and preemption arguments into the open, and those arguments may be reused against other state AI laws. But for day-to-day Colorado compliance, teams should now plan around covered ADMT and the January 1, 2027 start date.',
     },
     {
       title: "What Deployers Should Be Doing Right Now",
       content:
-        "None of this changes the practical posture for most organizations preparing for Colorado compliance, and following the headlines is not a substitute for doing the work.",
+        'The right move is not to throw away Colorado work. It is to reframe that work around SB 26-189\'s covered-ADMT trigger.',
       list: [
-        "**Do not stop your Colorado compliance program.** Until the legislature passes the ADMT Framework *or* a federal court enjoins SB 24-205, the current law is on track for a June 30 effective date. A company that deprioritizes Colorado prep based on either the lawsuit or the workgroup proposal is betting on an outcome that has not happened yet.",
-        "**Keep the work portable.** Most of the CAIA compliance artifacts — AI inventory, impact assessments, consumer notices, human review procedures, incident response — also satisfy the ADMT Framework's requirements or come close. Work done for SB 24-205 is not wasted if the ADMT bill passes.",
-        '**Track the "materially influence" shift.** The single biggest scope change between the two laws is the trigger for coverage. Under SB 24-205, almost any AI used in a consequential decision is in scope. Under the ADMT Framework, only systems that "materially influence" the outcome are covered. Once the legislature acts, expect scope reviews to trim a meaningful fraction of previously in-scope systems.',
-        '**Watch the preliminary injunction motion.** If xAI files a preliminary injunction motion (it has not yet, as of filing day), the briefing schedule and hearing date will be the next decisive milestones. A ruling one way or the other before June 30 will substantially change the enforcement picture in the short run.',
-        '**Do not over-read the First Amendment argument.** Even if xAI wins the compelled-speech claim, the most likely remedy is a narrow injunction limiting how Colorado interprets "algorithmic discrimination" with respect to generative output — not the wholesale collapse of the law. Disclosure, documentation, consumer-notice, and human-review obligations are far less exposed to First Amendment challenge.',
+        '**Keep the inventory.** Identify systems that process personal data and influence employment, housing, lending, insurance, healthcare, education, or essential government-services decisions.',
+        '**Map material influence.** Decide which automated outputs actually affect outcomes, and document why each tool is in scope or out of scope.',
+        '**Ask vendors for developer documentation.** Covered ADMT deployers need intended uses, training-data categories, known limitations, appropriate-use instructions, human-review guidance, and material-update notices.',
+        '**Build notices and adverse-outcome explanations.** Colorado now centers consumer-facing notice and plain-language explanations more than formal annual impact assessments.',
+        '**Design meaningful human review.** Decide who can reconsider an AI-influenced adverse outcome, what records they see, and what authority they have to change the result.',
+        '**Retain records.** Keep documentation that shows what the system was, how it was used, what notice was given, what data was involved, and how review worked.',
       ],
     },
     {
       title: 'The Bigger Pattern',
       content:
-        'Taken together, the two developments tell you more about the state of U.S. AI regulation than either does on its own. The first comprehensive state AI law in the country is under pressure on three fronts simultaneously: the governor who signed it is actively working to replace it, a private company is challenging it in federal court on constitutional grounds, and a federal executive order has publicly named it as a target for preemption litigation.\n\nThis does not mean state AI laws are going away. California\'s TFAIA and SB 942, Texas\'s TRAIGA, New York\'s RAISE Act, NYC Local Law 144, and Illinois AIVIA remain in force on their existing schedules. But it does mean that Colorado, which was the first-mover on comprehensive AI regulation, may not be the model the other states ultimately follow. The ADMT Framework, if it passes, will likely become the template for a second wave of state laws that trade comprehensive coverage for narrower, more defensible rules focused on automated decision-making in specific consequential contexts.\n\nThe next six weeks — through the close of Colorado\'s legislative session on May 13 and the original SB 24-205 effective date on June 30 — will determine which version of Colorado\'s AI law compliance teams are actually working against.',
+        'Taken together, the lawsuit, DOJ intervention, and SB 26-189 tell you more about the state of U.S. AI regulation than any one development does alone. The first comprehensive state AI law in the country was pressured from three directions simultaneously: the governor who signed it pushed for a replacement, a private company challenged it in federal court, and the federal government intervened against it.\n\nThis does not mean state AI laws are going away. California\'s TFAIA and SB 942, Texas\'s TRAIGA, New York\'s RAISE Act, NYC Local Law 144, Illinois employment AI rules, and Colorado\'s new SB 26-189 remain part of the patchwork. But Colorado is no longer an EU-style high-risk AI system model. It is now a U.S. ADMT law focused on notice, explanation, correction, human review, and records in consequential-decision workflows.\n\nFor compliance teams, that is the durable lesson: the broadest state AI law was narrowed, but the operational evidence work did not disappear.',
     },
   ],
 
   takeaways: [
-    'xAI filed a federal lawsuit in the District of Colorado on April 9, 2026 (*X.AI LLC v. Weiser*, No. 1:26-cv-01515) seeking a declaratory judgment that SB 24-205 is unconstitutional and a permanent injunction against enforcement.',
-    'The complaint raises four constitutional theories: unconstitutional vagueness, First Amendment compelled speech, dormant Commerce Clause extraterritorial reach, and dormant Commerce Clause undue burden.',
-    "On March 17, 2026, Governor Polis's AI Policy Workgroup unanimously proposed a new framework — \"Concerning the Use of Automated Decision Making Technology in Consequential Decisions\" — to replace SB 24-205 entirely. Polis immediately endorsed it.",
-    'The proposed ADMT Framework would take effect January 1, 2027 and narrows scope from "high-risk AI systems" to "Covered ADMT" that "materially influence" consequential decisions, eliminating AG risk reporting, mandatory impact assessments, and required risk-management policies.',
-    'Colorado\'s legislative session ends May 13, 2026. If the ADMT Framework passes before then, it replaces SB 24-205 before the June 30 effective date. If not, SB 24-205 takes effect as written — with xAI\'s lawsuit as the main near-term wildcard.',
-    'Posture for deployers: do not pause Colorado compliance work. Most of the CAIA artifacts port directly to ADMT Framework requirements. Track the preliminary injunction motion and the legislative calendar, not the headlines.',
-    'Even a First Amendment win by xAI is unlikely to invalidate disclosure, documentation, consumer-notice, or human-review obligations, which are less exposed to compelled-speech arguments than generative output constraints.',
+    'xAI filed a federal lawsuit in the District of Colorado on April 9, 2026 challenging the original SB 24-205 framework.',
+    'DOJ moved to intervene on April 24, 2026, making Colorado the first major test of the federal anti-state-AI-law posture.',
+    'Colorado signed SB 26-189 on May 14, 2026, replacing SB 24-205 before the old June 30 effective date.',
+    'The current Colorado law starts January 1, 2027 and focuses on covered ADMT that materially influences consequential decisions.',
+    'Deployers should keep inventory, vendor documentation, notice, explanation, data-correction, human-review, and recordkeeping work moving under the new ADMT model.',
   ],
 
   sources: [
+    {
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
+    },
+    {
+      title: 'U.S. Department of Justice — xAI Colorado AI Act Intervention',
+      url: 'https://www.justice.gov/opa/pr/justice-department-intervenes-xai-lawsuit-challenging-colorados-algorithmic-discrimination',
+    },
     {
       title: 'X.AI LLC v. Weiser, No. 1:26-cv-01515 (D. Colo.) — Baker Botts analysis',
       url: 'https://ourtake.bakerbotts.com/post/102mpre/xai-sues-to-enjoin-colorados-ai-act-before-june-30-effective-date',

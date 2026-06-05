@@ -7,8 +7,8 @@ export const euAiAct = {
     'The world\'s first comprehensive AI law, establishing a risk-based regulatory framework for artificial intelligence systems placed on the European market.',
   icon: '\u{1F1EA}\u{1F1FA}',
   status: 'In Effect',
-  lastReviewed: 'May 2026',
-  lastReviewedIso: '2026-05-29',
+  lastReviewed: 'June 2026',
+  lastReviewedIso: '2026-06-05',
 
   keyFacts: [
     {

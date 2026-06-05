@@ -7,8 +7,8 @@ export const nistAiRmf = {
     'The NIST AI Risk Management Framework (AI RMF 1.0) is a voluntary U.S. framework for managing risks throughout the AI lifecycle, rapidly becoming the de facto standard for AI governance in federal procurement, state regulation, and industry practice.',
   icon: '\u{1F3DB}\u{FE0F}',
   status: 'Framework',
-  lastReviewed: 'May 2026',
-  lastReviewedIso: '2026-05-29',
+  lastReviewed: 'June 2026',
+  lastReviewedIso: '2026-06-05',
 
   keyFacts: [
     { label: 'Published By', value: 'National Institute of Standards and Technology (NIST), U.S. Department of Commerce' },

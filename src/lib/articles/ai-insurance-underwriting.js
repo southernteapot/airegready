@@ -2,7 +2,7 @@ export const aiInsuranceUnderwriting = {
   slug: 'ai-insurance-underwriting',
   title: 'AI in Insurance: What Underwriters Need to Know About Compliance',
   description:
-    'Insurers using AI for underwriting, pricing, and claims face a tightening regulatory environment. From the NAIC model bulletin to Colorado\'s specific provisions, here\'s what compliance looks like for insurance AI.',
+    'Insurers using AI for underwriting, pricing, and claims face a tightening regulatory environment. From the NAIC model bulletin to Colorado\'s covered-ADMT rules, here\'s what compliance looks like for insurance AI.',
   category: 'Sector Rules',
   categorySlug: 'sector-rules',
   date: '2026-03-08',
@@ -24,7 +24,7 @@ export const aiInsuranceUnderwriting = {
     {
       title: 'Colorado\'s Insurance AI Provisions',
       content:
-        'Colorado has gone further than any other state. SB 24-205 includes specific provisions for insurance that go beyond the general AI governance requirements.\n\nThe law prohibits insurers from using AI in ways that result in unfair discrimination based on protected characteristics — race, color, national origin, sex, sexual orientation, disability, and others. Critically, it targets not just intentional discrimination but **disparate impact**: if your model produces discriminatory outcomes, you\'re on the hook even if no one designed it that way.\n\nInsurers must conduct impact assessments for AI systems used in consequential decisions. For insurance, that means underwriting, pricing, claims processing, and fraud detection. The assessment must evaluate whether the system produces outcomes that disproportionately affect protected classes.\n\nColorado also requires insurers to provide notice to consumers when AI is used in decisions that affect them and to offer a mechanism to appeal adverse decisions. This is operationally significant — it means you need to be able to explain, at least at a high level, why the AI system reached the decision it did.',
+        'Colorado\'s original SB 24-205 insurance framework was replaced before it took effect, but insurance remains squarely in scope under the new SB 26-189 ADMT law. The current trigger is narrower and more operational: is automated decision-making technology processing personal data and materially influencing an insurance decision about a Colorado consumer?\n\nFor insurers, that can include underwriting, pricing, eligibility, claims triage, fraud scoring, and other workflows where an automated score, recommendation, ranking, or classification meaningfully affects the outcome. The old mandatory impact-assessment model is gone, but the new law still expects practical controls: point-of-interaction notice, plain-language descriptions after adverse outcomes, personal-data access and correction, meaningful human review, and records that show how the process worked.\n\nThe compliance lesson did not disappear. Insurers need to know where automated decisioning appears, what vendor documentation supports it, how protected-class and proxy-discrimination risks are tested, and how a person can get a meaningful review when an AI-influenced decision hurts them.',
     },
     {
       title: 'The Proxy Variable Problem',
@@ -59,7 +59,7 @@ export const aiInsuranceUnderwriting = {
 
   takeaways: [
     'The NAIC model bulletin makes insurers responsible for AI outputs, including those from vendor-built systems. You cannot outsource accountability.',
-    'Colorado\'s law targets disparate impact, not just intentional discrimination. Removing protected characteristics from model inputs is not sufficient — you must test outputs.',
+    'Colorado\'s new ADMT law replaced the old impact-assessment model, but insurance decisions still need notices, explanations, data-correction paths, human review, and defensible records.',
     'Claims processing and fraud detection AI face the same fairness requirements as underwriting models, and state AG investigations are already producing enforcement actions.',
     'Start with an inventory of every AI system, test for disparate impact, and build explanation capabilities for consumer-facing decisions.',
   ],
@@ -71,8 +71,8 @@ export const aiInsuranceUnderwriting = {
       url: 'https://content.naic.org/sites/default/files/inline-files/2023-12-4%20Model%20Bulletin_AI.pdf',
     },
     {
-      title: 'Colorado SB 24-205 — Algorithmic Discrimination Prevention',
-      url: 'https://leg.colorado.gov/bills/sb24-205',
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
     },
     {
       title:

@@ -594,7 +594,7 @@ const glossaryTerms = [
     id: 'preemption',
     term: 'Preemption (AI Law)',
     definition:
-      'The legal doctrine by which federal law displaces conflicting state law. In AI, this has become a live question since December 2025, when the Trump administration issued an executive order directing the DOJ to challenge state AI laws. Under the Constitution, only Congress — not the executive branch — can actually preempt state law. As of May 2026 the DOJ AI Litigation Task Force has not filed its own standalone lawsuit, while California and Texas AI laws are in force and Colorado\'s replacement ADMT obligations are scheduled for January 1, 2027.',
+      'The legal doctrine by which federal law displaces conflicting state law. In AI, this has become a live question since December 2025, when the Trump administration issued an executive order directing the DOJ to challenge state AI laws. Under the Constitution, only Congress — not the executive branch — can actually preempt state law. By early June 2026, DOJ had intervened in xAI\'s lawsuit against Colorado\'s original AI Act rather than filing a standalone task-force case, while California and Texas AI laws are in force and Colorado\'s replacement ADMT obligations are scheduled for January 1, 2027.',
     seeAlso: [
       { label: 'U.S. State AI Laws', href: '/regulations/us-state-laws' },
       { label: 'Federal AI Policy', href: '/regulations/federal-policy' },

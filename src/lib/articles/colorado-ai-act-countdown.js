@@ -1,8 +1,8 @@
 export const coloradoAiActCountdown = {
   slug: 'colorado-ai-act-countdown',
-  title: 'Colorado\u2019s AI Act Takes Effect June 30: What Developers and Deployers Need to Do Now',
+  title: 'Colorado\u2019s Original AI Act Was Replaced: What SB 24-205 Would Have Required',
   description:
-    'Colorado SB 24-205 \u2014 the first comprehensive U.S. state AI law \u2014 takes effect June 30, 2026. A practical walk-through of the duty of reasonable care, impact assessments, consumer notices, and the NIST AI RMF safe harbor.',
+    'Colorado SB 24-205 was repealed and replaced before taking effect. This historical guide explains what the original duty-of-care, impact-assessment, consumer-notice, and NIST AI RMF model would have required.',
   category: 'State Laws',
   categorySlug: 'us-state-laws',
   date: '2026-04-14',
@@ -14,17 +14,17 @@ export const coloradoAiActCountdown = {
     {
       title: null,
       content:
-        'Colorado\u2019s **SB 24-205**, the Colorado Artificial Intelligence Act, takes effect on **June 30, 2026**. That is roughly two and a half months away. It will be the first enforcement date for a comprehensive, cross-sector U.S. state AI law \u2014 and in a real sense, the first time a U.S. attorney general can bring AI-specific actions against broad categories of private businesses using high-risk AI systems.\n\nThis article is a practical walk-through. Who is covered. What the duty of reasonable care actually means. How impact assessments, consumer notices, and the NIST AI RMF safe harbor work. What 90-day preparation looks like if you are starting now.\n\nColorado passed this law in May 2024, delayed it in August 2025, and is expected to consider further amendments during its 2026 regular legislative session. As of April 2026 the core obligations are unchanged. Assume it takes effect as written.',
+        'Historical update: Colorado\u2019s **SB 24-205**, the original Colorado Artificial Intelligence Act, did **not** take effect as written. On May 14, 2026, Colorado signed **SB 26-189**, which repealed and replaced the original high-risk AI framework before the June 30, 2026 effective date arrived.\n\nThis article is now an archive of what SB 24-205 would have required: the duty of reasonable care, annual impact assessments, consumer notices, public statements, AG disclosures, and the NIST AI RMF affirmative-defense structure. For current Colorado planning, use the newer [Colorado SB 26-189 ADMT rewrite](/blog/colorado-sb26-189-admt-rewrite) and the [U.S. State AI Laws guide](/regulations/us-state-laws).',
     },
     {
-      title: 'What SB 24-205 Is (and Isn\u2019t)',
+      title: 'What SB 24-205 Would Have Required',
       content:
-        'SB 24-205 regulates **high-risk artificial intelligence systems** used in **consequential decisions** about Colorado consumers. That framing is narrower than \"any AI used in Colorado\" and broader than \"AI in hiring.\" It cuts across eight regulated domains and splits obligations between the companies that build AI (\"developers\") and the companies that use AI to make decisions (\"deployers\").\n\nIt is not a frontier-model law. It is not a transparency-only law. It does not prohibit specific use cases. It imposes governance, documentation, and consumer-notice obligations on any organization using AI in ways that affect access to the things that matter most \u2014 housing, credit, employment, insurance, healthcare, education, essential government services, and legal services.\n\nSB 24-205 was modeled in part on the EU AI Act, but it was written to function in the U.S. legal system. Instead of conformity assessments and notified bodies, it uses a **duty of reasonable care** standard enforceable by the Colorado Attorney General.',
+        'SB 24-205 would have regulated **high-risk artificial intelligence systems** used in **consequential decisions** about Colorado consumers. That framing is narrower than \"any AI used in Colorado\" and broader than \"AI in hiring.\" It cuts across eight regulated domains and splits obligations between the companies that build AI (\"developers\") and the companies that use AI to make decisions (\"deployers\").\n\nIt was not a frontier-model law. It was not a transparency-only law. It did not prohibit specific use cases. It would have imposed governance, documentation, and consumer-notice obligations on any organization using AI in ways that affect access to the things that matter most \u2014 housing, credit, employment, insurance, healthcare, education, essential government services, and legal services.\n\nSB 24-205 was modeled in part on the EU AI Act, but it was written to function in the U.S. legal system. Instead of conformity assessments and notified bodies, it uses a **duty of reasonable care** standard enforceable by the Colorado Attorney General.',
     },
     {
       title: 'Who Counts as a \"Deployer\"',
       content:
-        'A **deployer** is any entity that uses a high-risk AI system to make, or as a substantial factor in making, a consequential decision about a Colorado consumer.\n\nThree things are worth flagging about that definition.',
+        'Under the original law, a **deployer** was any entity that uses a high-risk AI system to make, or as a substantial factor in making, a consequential decision about a Colorado consumer.\n\nThree things are worth flagging about that definition.',
       list: [
         '**The key question is not where the system was built.** It is where the decision is made and who is affected. An out-of-state company using a high-risk AI system on Colorado consumers is covered.',
         '**\"Substantial factor\" does real work.** You don\u2019t have to be fully automating a decision. If the AI system is a meaningful input to the decision \u2014 even with a human in the loop \u2014 you are likely a deployer.',
@@ -34,7 +34,7 @@ export const coloradoAiActCountdown = {
     {
       title: 'What Counts as a \"High-Risk AI System\"',
       content:
-        'An AI system is high-risk under SB 24-205 when it is deployed to make, or is a substantial factor in making, a **consequential decision** in one of eight domains.',
+        'An AI system would have been high-risk under SB 24-205 when it is deployed to make, or is a substantial factor in making, a **consequential decision** in one of eight domains.',
       list: [
         '**Education enrollment or education opportunities** \u2014 admissions, scholarships, placement decisions.',
         '**Employment or employment opportunities** \u2014 hiring, promotion, termination, task assignment.',
@@ -49,7 +49,7 @@ export const coloradoAiActCountdown = {
     {
       title: 'The Central Obligation: Duty of Reasonable Care',
       content:
-        'At the heart of SB 24-205 is a **duty of reasonable care**: on and after June 30, 2026, a deployer of a high-risk AI system must use reasonable care to protect consumers from any known or reasonably foreseeable risks of **algorithmic discrimination**.\n\nThe statute is clear about what \"reasonable care\" looks like. A deployer demonstrates it by doing the following.',
+        'At the heart of SB 24-205 was a **duty of reasonable care**: a deployer of a high-risk AI system would have had to use reasonable care to protect consumers from any known or reasonably foreseeable risks of **algorithmic discrimination**.\n\nThe statute is clear about what \"reasonable care\" looks like. A deployer demonstrates it by doing the following.',
       list: [
         'Implementing a **risk management policy and program** governing the deployment of the high-risk AI system.',
         'Completing an **annual impact assessment**.',
@@ -62,12 +62,12 @@ export const coloradoAiActCountdown = {
     {
       title: 'Risk Management Policy and Program',
       content:
-        'Every deployer must implement a risk management policy and program. SB 24-205 does not dictate the exact shape of that program, but it explicitly references the **NIST AI Risk Management Framework** as a benchmark \u2014 and a safe harbor.\n\nOrganizations that build their AI governance program around NIST AI RMF get affirmative protection against SB 24-205 enforcement actions, provided they are substantially complying. This is one of the most consequential design choices in the law: it effectively makes NIST AI RMF the default U.S. baseline for AI governance programs, because Colorado rewards adopters.\n\nAt a minimum, a SB 24-205 risk management program should cover who is responsible for AI governance, what AI systems fall within scope, how risks are identified and measured, what mitigations are in place, how the program is reviewed and updated, and how issues are documented and escalated.',
+        'Every deployer would have needed to implement a risk management policy and program. SB 24-205 would not have dictated the exact shape of that program, but it explicitly referenced the **NIST AI Risk Management Framework** as a benchmark \u2014 and a safe harbor.\n\nOrganizations that built their AI governance program around NIST AI RMF would have gotten affirmative-defense protection against SB 24-205 enforcement actions, provided they were substantially complying. This is one of the most consequential design choices in the law: it effectively makes NIST AI RMF the default U.S. baseline for AI governance programs, because Colorado rewards adopters.\n\nAt a minimum, a SB 24-205 risk management program would have covered who is responsible for AI governance, what AI systems fall within scope, how risks are identified and measured, what mitigations are in place, how the program is reviewed and updated, and how issues are documented and escalated.',
     },
     {
       title: 'Annual Impact Assessments',
       content:
-        'Deployers must complete an **impact assessment** before deploying a high-risk AI system and must update it **annually**. Impact assessments must be retained for at least **three years** after the final deployment of the system.\n\nAt minimum an impact assessment must cover the following elements. This is a distilled list based on the statute and common-sense practice.',
+        'Deployers would have needed to complete an **impact assessment** before deploying a high-risk AI system and would have needed to update it **annually**. Impact assessments would have needed to be retained for at least **three years** after the final deployment of the system.\n\nAt minimum an impact assessment would have needed to cover the following elements. This is a distilled list based on the statute and common-sense practice.',
       list: [
         'The purpose of the high-risk AI system and the nature of the consequential decision it supports.',
         'The categories of data used as inputs and outputs.',
@@ -80,7 +80,7 @@ export const coloradoAiActCountdown = {
     {
       title: 'Consumer Disclosures',
       content:
-        'Before (or at the time of) deploying a high-risk AI system to make or substantially assist in a consequential decision about a consumer, the deployer must notify the consumer. That notice must include specific elements.',
+        'Before (or at the time of) deploying a high-risk AI system to make or substantially assist in a consequential decision about a consumer, the deployer would have needed to notify the consumer. That notice would have needed to include specific elements.',
       list: [
         '**That the deployer has deployed a high-risk AI system** to make, or be a substantial factor in making, a consequential decision.',
         '**A statement disclosing the purpose of the AI system** and the nature of the consequential decision.',
@@ -91,12 +91,12 @@ export const coloradoAiActCountdown = {
     {
       title: 'Appeal Rights and Human Review',
       content:
-        'When a high-risk AI system contributes to an **adverse** consequential decision (denial, unfavorable terms, revocation), the deployer must provide the consumer with an opportunity to **appeal**. The appeal must include **human review where technically feasible**.\n\nThis is one of the most operationally demanding parts of SB 24-205. To implement appeal rights at scale, an organization typically needs a documented process for receiving appeals, a trained human reviewer who can override or adjust the AI-assisted decision, audit-trail records tying each decision (and each appeal outcome) back to the underlying AI system, and the ability to issue corrected outcomes and notices.',
+        'When a high-risk AI system contributes to an **adverse** consequential decision (denial, unfavorable terms, revocation), the deployer would have needed to provide the consumer with an opportunity to **appeal**. The appeal would have needed to include **human review where technically feasible**.\n\nThis is one of the most operationally demanding parts of SB 24-205. To implement appeal rights at scale, an organization typically needs a documented process for receiving appeals, a trained human reviewer who can override or adjust the AI-assisted decision, audit-trail records tying each decision (and each appeal outcome) back to the underlying AI system, and the ability to issue corrected outcomes and notices.',
     },
     {
       title: 'Public Statement',
       content:
-        'Every deployer must publish a **public statement** (usually on its website) summarizing three things.',
+        'Every deployer would have needed to publish a **public statement** (usually on its website) summarizing three things.',
       list: [
         'The types of high-risk AI systems the deployer currently deploys.',
         'How the deployer manages known or reasonably foreseeable risks of algorithmic discrimination for each of those systems.',
@@ -106,12 +106,12 @@ export const coloradoAiActCountdown = {
     {
       title: 'Disclosure to the Colorado Attorney General',
       content:
-        'If a deployer discovers that a high-risk AI system has caused **algorithmic discrimination**, the deployer must disclose that fact to the Colorado Attorney General **within 90 days of discovery**. This is a hard deadline, not a best-effort window.\n\nTwo practical implications. **First**, deployers need an internal process for identifying and escalating algorithmic-discrimination findings \u2014 because the 90 days runs from discovery, not from resolution. **Second**, the disclosure requirement creates a structural preference for finding and fixing problems internally, because the alternative is a self-reported disclosure to the AG that is likely to become an enforcement-action lead.',
+        'If a deployer discovers that a high-risk AI system has caused **algorithmic discrimination**, the deployer would have needed to disclose that fact to the Colorado Attorney General **within 90 days of discovery**. That would have been a hard deadline, not a best-effort window.\n\nTwo practical implications. **First**, deployers would have needed an internal process for identifying and escalating algorithmic-discrimination findings \u2014 because the 90 days would have run from discovery, not from resolution. **Second**, the disclosure requirement creates a structural preference for finding and fixing problems internally, because the alternative is a self-reported disclosure to the AG that is likely to become an enforcement-action lead.',
     },
     {
       title: 'What Developers Owe Deployers',
       content:
-        'SB 24-205 also imposes obligations on the **developers** that build high-risk AI systems or substantially modify them. These obligations are structured as disclosure duties to deployers, so deployers have the information they need to do their own risk management.',
+        'SB 24-205 also would have imposed obligations on the **developers** that build high-risk AI systems or substantially modify them. These obligations are structured as disclosure duties to deployers, so deployers have the information they need to do their own risk management.',
       list: [
         'Documentation describing the intended uses, limitations, and known or reasonably foreseeable risks of the system.',
         'Information about the types of data used to train the system and the steps taken to mitigate algorithmic discrimination.',
@@ -123,50 +123,51 @@ export const coloradoAiActCountdown = {
     {
       title: 'Enforcement and the Affirmative Defense',
       content:
-        'SB 24-205 is enforced **exclusively by the Colorado Attorney General**. Violations are treated as **unfair trade practices** under Colorado\u2019s Consumer Protection Act. There is no private right of action.\n\nBoth developers and deployers have an **affirmative defense** if they discover a violation through their own testing, feedback, or internal review processes and cure the violation. Substantial compliance with a recognized AI risk management framework \u2014 NIST AI RMF is explicitly named \u2014 supports the affirmative defense.\n\nThis is important design: the law is not trying to catch companies that are actively trying to comply. It is trying to catch companies that are not. Documentation of good-faith compliance effort is your first and best defense.',
+        'SB 24-205 would have been enforced **exclusively by the Colorado Attorney General**. Violations would have been treated as **unfair trade practices** under Colorado\u2019s Consumer Protection Act. There is no private right of action.\n\nBoth developers and deployers would have had an **affirmative defense** if they discover a violation through their own testing, feedback, or internal review processes and cure the violation. Substantial compliance with a recognized AI risk management framework \u2014 NIST AI RMF is explicitly named \u2014 supports the affirmative defense.\n\nThis is important design: the law was not trying to catch companies that are actively trying to comply. It was trying to catch companies that are not. Documentation of good-faith compliance effort would have been the first and best defense.',
     },
     {
       title: 'Federal Preemption in the Background',
       content:
-        'SB 24-205 sits in the same federal-state crosscurrent as Colorado\u2019s sister state laws (California TFAIA, Texas TRAIGA). The December 11, 2025 executive order \"Ensuring a National Policy Framework for AI\" explicitly targets state AI laws for preemption, and the **DOJ AI Litigation Task Force** (established January 9, 2026) is tasked with challenging them.\n\nAs of April 2026, the Task Force has not filed any lawsuits. Under the Constitution, an executive order alone cannot preempt state law \u2014 only Congress can do that. The White House\'s **National Policy Framework for AI** (released March 20, 2026) sets a legislative agenda, but does not itself preempt anything. Until Congress acts, SB 24-205 takes effect as written on June 30, 2026, and the Colorado AG can enforce it.\n\nFor deeper coverage, see [The Federal Push to Preempt State AI Laws](/blog/federal-ai-preemption).',
+        'SB 24-205 sat in the same federal-state crosscurrent as Colorado\u2019s sister state laws (California TFAIA, Texas TRAIGA). The December 11, 2025 executive order "Ensuring a National Policy Framework for AI" explicitly targeted state AI laws for preemption, and the **DOJ AI Litigation Task Force** (established January 9, 2026) was tasked with challenging them.\n\nThe federal pressure became concrete in April 2026 when the Justice Department intervened in xAI\'s lawsuit challenging SB 24-205. Colorado then replaced the original law with SB 26-189 before the June 30 effective date. That replacement did not eliminate state AI regulation, but it did move Colorado away from the broad duty-of-care and impact-assessment framework this article originally covered.\n\nFor deeper coverage, see [The Federal Push to Preempt State AI Laws](/blog/federal-ai-preemption) and [Colorado Rewrote Its AI Act](/blog/colorado-sb26-189-admt-rewrite).',
     },
     {
-      title: 'A 90-Day Preparation Plan',
+      title: 'What Work Still Carries Forward',
       content:
-        'If you are reading this in April 2026 and just starting your SB 24-205 preparation, you have roughly 90 days until the effective date. Here is a realistic action plan in order of priority.',
+        'The original SB 24-205 checklist is no longer the current Colorado compliance plan. But much of the work still carries forward into SB 26-189 and other state AI rules because it produces the evidence organizations need to explain automated decisions.',
       list: [
-        '**Inventory your AI systems** and flag which ones are being used to make, or substantially support, consequential decisions about Colorado consumers. Don\u2019t overthink the inventory format \u2014 a spreadsheet is fine. Completeness matters more than polish.',
-        '**Classify each flagged system** as high-risk or not, and document the rationale. If a system is borderline, assume it is high-risk and prepare accordingly. Misclassifying down is far more expensive than classifying up.',
-        '**Build (or align) your AI risk management program to NIST AI RMF.** This is your safe harbor. If you already have NIST-aligned governance, map it onto the SB 24-205 obligations explicitly. If you don\u2019t, start with the four NIST functions (Govern, Map, Measure, Manage) and a named program owner.',
-        '**Draft impact assessments for every high-risk system.** Use the elements listed earlier in this article as your template. Get the first version done \u2014 you will refine it over time.',
-        '**Implement consumer notice and disclosure flows.** Update your customer-facing touchpoints (emails, portals, paper notices) to include the required disclosures before or at the time of the consequential decision.',
-        '**Stand up the appeal process.** Define who reviews appeals, what records are kept, how overturns are logged, and what notices go back to the consumer.',
-        '**Publish the public statement.** A single page on your website, written in plain language, covering the three required topics. Do not bury it.',
-        '**Define your internal discovery-and-escalation process** for algorithmic discrimination findings. Make sure the 90-day clock to disclose to the AG cannot start running without the right people being notified first.',
-        '**Ask your AI vendors for their SB 24-205 documentation.** The developer obligations above are what you should be receiving from the companies that built your AI systems. If a vendor can\u2019t provide them, treat it as a red flag.',
+        '**Keep the AI inventory.** You still need to know which tools influence employment, lending, housing, insurance, healthcare, education, or public-benefit decisions.',
+        '**Keep vendor diligence.** SB 26-189 still depends on developer documentation about intended uses, training-data categories, known limitations, appropriate use, human review, and material updates.',
+        '**Reframe impact assessments as decision records.** The old annual impact-assessment duty is gone, but documenting scope, data, model limitations, bias testing, human review, and outcomes remains useful evidence.',
+        '**Keep consumer-facing notice work.** The new law still expects clear notices and plain-language descriptions after adverse outcomes involving covered ADMT.',
+        '**Keep human-review workflows.** A real reviewer with authority to reconsider an AI-influenced adverse outcome is still central to Colorado compliance.',
+        '**Retain records.** SB 26-189 expects records that show how covered ADMT was used and how notices, data correction, and human review worked.',
       ],
     },
     {
-      title: 'What to Watch Between Now and June 30',
+      title: 'What Replaced It',
       content:
-        'Two things are worth keeping an eye on before SB 24-205 takes effect.',
+        'SB 26-189 replaced the old high-risk AI system model with a covered-ADMT model. The new law starts January 1, 2027 and focuses on automated decision-making technology that processes personal data and materially influences consequential decisions.',
       list: [
-        '**Possible amendments.** The Colorado General Assembly\'s 2026 regular session is when additional amendments to SB 24-205 could move. Stakeholders have been pushing to narrow the definition of \"high-risk AI system,\" shift more responsibility to developers, and expand exemptions. As of April 2026 nothing fundamental has changed, but the law has already been delayed once. It could be amended again before June 30.',
-        '**AG rulemaking and guidance.** The Colorado AG has the authority to issue guidance on how SB 24-205 will be interpreted and enforced. Anyone who is going to deploy high-risk AI in Colorado should be watching that guidance closely \u2014 it will shape practical compliance expectations more than any outside commentary.',
+        '**Scope changed.** The trigger is now covered ADMT that materially influences covered consequential decisions, not the broader high-risk AI system framing.',
+        '**Obligations changed.** The new law emphasizes developer documentation, consumer notice, adverse-outcome explanations, data access and correction, meaningful human review, reconsideration, and record retention.',
+        '**Enforcement remains public.** The Colorado Attorney General enforces through the Colorado Consumer Protection Act; the law does not create a new private right of action.',
       ],
     },
   ],
 
   takeaways: [
-    'Colorado SB 24-205 takes effect June 30, 2026 \u2014 the first enforcement date for a comprehensive U.S. state AI law.',
-    'It covers \"high-risk\" AI systems used in consequential decisions across eight domains: employment, education, lending, housing, insurance, healthcare, essential government services, and legal services.',
-    'Deployers have a duty of reasonable care demonstrated through a risk management program, annual impact assessments, consumer notices, appeal rights, a public statement, and 90-day AG disclosure for algorithmic discrimination findings.',
-    'Substantial compliance with the NIST AI Risk Management Framework provides an affirmative defense. Colorado is effectively making NIST the U.S. baseline.',
-    'Enforcement is by the Colorado AG only, under the Consumer Protection Act. No private right of action.',
-    'Amendments are possible in the 2026 legislative session and additional AG guidance is likely. Prepare as if the law takes effect as written.',
+    'Colorado SB 24-205 was repealed and replaced by SB 26-189 before the original June 30, 2026 effective date.',
+    'The original law would have covered high-risk AI systems used in consequential decisions and required risk programs, impact assessments, consumer notices, public statements, and AG disclosures.',
+    'The current Colorado framework is narrower: covered ADMT that materially influences consequential decisions, effective January 1, 2027.',
+    'Useful SB 24-205 prep still carries forward: AI inventories, vendor documentation, bias testing, decision records, notices, and human-review workflows.',
+    'For current Colorado compliance planning, use the SB 26-189 ADMT rewrite rather than the original high-risk AI checklist.',
   ],
 
   sources: [
+    {
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
+    },
     {
       title: 'Colorado SB 24-205 \u2014 Full Text',
       url: 'https://leg.colorado.gov/bills/sb24-205',
@@ -189,6 +190,6 @@ export const coloradoAiActCountdown = {
     },
   ],
 
-  relatedArticles: ['nist-ai-rmf-practice', 'california-tfaia-explained', 'texas-traiga-guide'],
+  relatedArticles: ['colorado-sb26-189-admt-rewrite', 'nist-ai-rmf-practice', 'california-tfaia-explained', 'texas-traiga-guide'],
   relatedRegulations: ['us-state-laws', 'nist-ai-rmf'],
 }

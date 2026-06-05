@@ -2,7 +2,7 @@ export const usStatesAiHiring = {
   slug: 'us-states-ai-hiring',
   title: '5 U.S. States Now Regulate AI in Hiring — Is Yours Next?',
   description:
-    'A practical comparison of state laws governing AI-driven hiring tools, covering NYC LL144, Illinois AIVITA, Colorado SB 24-205, Maryland HB 1202, and New Jersey\'s new disclosure rules.',
+    'A practical comparison of state laws governing AI-driven hiring tools, covering NYC LL144, Illinois AIVITA, Colorado SB 26-189, Maryland HB 1202, and New Jersey\'s disclosure rules.',
   category: 'State Laws',
   categorySlug: 'us-state-laws',
   date: '2026-03-10',
@@ -45,10 +45,10 @@ export const usStatesAiHiring = {
           ],
           [
             'Colorado',
-            'SB 24-205',
-            'June 2026 (delayed)',
-            'Impact assessments; notice to applicants; opt-out rights for certain decisions; duty to avoid algorithmic discrimination',
-            'Enforced by AG; civil penalties',
+            'SB 26-189',
+            'January 2027',
+            'Covered ADMT notices, adverse-outcome explanations, data access/correction, and meaningful human review for materially influenced consequential decisions',
+            'Enforced by AG under the Colorado Consumer Protection Act',
           ],
           [
             'Maryland',
@@ -73,9 +73,9 @@ export const usStatesAiHiring = {
         'New York City\'s law gets the most attention because it was the first to require a bias audit — a statistical analysis of the tool\'s selection and scoring rates across race, ethnicity, and sex categories. The audit must be conducted by an independent third party, and the results must be published on the employer\'s website.\n\nThe scope is narrow in some ways: it covers "automated employment decision tools" that substantially assist or replace discretionary decision-making. A system that simply searches a database doesn\'t qualify. But the definition has teeth. If your AI tool scores, ranks, or filters candidates in a way that materially influences who gets an interview, it\'s probably covered.\n\nThe tricky part: the audit requirement resets annually. You can\'t do it once and forget about it. And the published summary must include the selection rate for each demographic category and the impact ratio — the selection rate of each group compared to the most-selected group. That data is public.',
     },
     {
-      title: 'Colorado SB 24-205: The Most Comprehensive (and Delayed)',
+      title: 'Colorado SB 26-189: The ADMT Rewrite',
       content:
-        'Colorado took the broadest approach. SB 24-205 doesn\'t just apply to hiring — it covers any "high-risk AI system" that makes consequential decisions about people, including employment, education, financial services, insurance, and housing. But the employment provisions are particularly detailed.\n\nImportant update: the original February 2026 effective date has been pushed back. The Colorado legislature held a special session in 2025 to try to amend the law, but lawmakers couldn\'t reach a compromise. Governor Polis, citing concerns about the high compliance costs the law would impose on businesses, signed SB 25B-004 on August 28, 2025, postponing implementation to June 30, 2026. The underlying requirements haven\'t changed — they just take effect later.\n\nDeployers must conduct impact assessments before deploying a high-risk system and annually thereafter. The assessment must analyze the system\'s purpose, how it was evaluated for risks, the data it uses, its expected outputs, and any safeguards against algorithmic discrimination. This isn\'t a checkbox exercise — the statute expects a substantive analysis.\n\nApplicants must receive notice that an AI system is being used, a description of what it does, and instructions for requesting a human alternative or appealing the outcome. That last part is significant. If a candidate asks for a human to review their application instead of the AI, you need a process for that.',
+        'Colorado was the broadest state AI law story in early 2026, but the target changed before the original law took effect. SB 26-189 repealed and replaced the original SB 24-205 framework with a narrower law focused on automated decision-making technology, or ADMT, that materially influences consequential decisions. Employment remains one of the covered domains.\n\nFor hiring teams, the practical trigger is no longer "do we have a high-risk AI system?" It is whether a tool processes personal data and generates a prediction, recommendation, ranking, score, classification, or similar output that materially influences a Colorado consumer\'s employment opportunity. Resume screeners, candidate-ranking systems, interview-scoring tools, and vendor recommendations can all deserve review if they affect who advances.\n\nThe old mandatory impact-assessment model is gone. The current Colorado obligations are more operational: clear notice at the point of interaction with covered ADMT, a plain-language description after an adverse outcome, personal-data access and correction, meaningful human review and reconsideration, developer documentation, material-update notices, and records that show the process worked. The effective date is January 1, 2027.',
     },
     {
       title: 'The Others: Illinois, Maryland, New Jersey',
@@ -91,22 +91,22 @@ export const usStatesAiHiring = {
         'Map your candidate geography. Which states are your applicants in? That determines which laws apply to which candidates.',
         'Get your bias audit done if you have NYC applicants. Use an independent auditor. Publish the results. Repeat annually.',
         'Build a consent and disclosure workflow. Most of these laws require notice before the AI system is used, not after. Retrofit your application process.',
-        'Prepare for Colorado\'s impact assessment requirement. Even if you\'re not deploying there yet, the assessment framework is a useful model for any jurisdiction.',
-        'Create an opt-out or alternative process. New Jersey and Colorado both require it. Having a human-review path ready is good practice regardless.',
+        'Prepare for Colorado\'s covered-ADMT workflow. Even if you\'re not deploying there yet, the notice, explanation, data-correction, human-review, and vendor-documentation pieces are useful models for any jurisdiction.',
+        'Create an alternative or human-review process. Colorado expects meaningful human review after adverse outcomes, and other jurisdictions are moving in the same direction. Having that path ready is good practice regardless.',
       ],
     },
     {
       title: 'More States Are Coming',
       content:
-        'At least a dozen states had active AI hiring bills in their 2025-2026 legislative sessions, including California, Massachusetts, Texas, and Washington. The trend is clear: more states, more requirements, more variation.\n\nOne wildcard: the federal government\'s December 2025 executive order on AI preemption has introduced real uncertainty about whether new state AI laws will survive federal preemption challenges. Some argue the order signals an intent to establish a unified federal framework that overrides the state patchwork. Others contend that executive orders can\'t preempt state legislation on their own. Until Congress acts or courts weigh in, the legal landscape is genuinely unsettled. Don\'t assume future state laws will stick — but don\'t assume they won\'t either.\n\nThe pragmatic move is still to build toward the most demanding standard — right now, that\'s Colorado — and treat everything else as a subset. If you can satisfy Colorado\'s impact assessment and applicant-rights requirements, you\'re well-positioned for whatever comes next.',
+        'At least a dozen states had active AI hiring bills in their 2025-2026 legislative sessions, including California, Massachusetts, Texas, and Washington. The trend is clear: more states, more requirements, more variation.\n\nOne wildcard: the federal government\'s December 2025 executive order on AI preemption has introduced real uncertainty about whether new state AI laws will survive federal preemption challenges. Some argue the order signals an intent to establish a unified federal framework that overrides the state patchwork. Others contend that executive orders can\'t preempt state legislation on their own. Until Congress acts or courts weigh in, the legal landscape is genuinely unsettled. Don\'t assume future state laws will stick — but don\'t assume they won\'t either.\n\nThe pragmatic move is still to build toward a combined high-water mark. For hiring, that means NYC-style bias audit readiness, Illinois-style notice and consent where applicable, Colorado-style ADMT notice and review, and vendor documentation that explains how the tool works. No single jurisdiction now covers all of that, but the combined baseline is more durable than chasing one statute at a time.',
     },
   ],
 
   takeaways: [
     'Five U.S. jurisdictions now regulate AI in hiring: NYC, Illinois, Colorado, Maryland, and New Jersey. Each has different requirements.',
     'Compliance depends on where your candidates are located, not where your company is based.',
-    'Colorado\'s SB 24-205 is the most comprehensive — impact assessments, applicant notice, opt-out rights, and annual reviews. The effective date was delayed to June 30, 2026 after Governor Polis signed a postponement bill.',
-    'Building to the most demanding standard (Colorado) is the most efficient long-term strategy.',
+    'Colorado\'s current SB 26-189 model starts January 1, 2027 and focuses on covered ADMT notices, adverse-outcome explanations, data correction, records, and meaningful human review.',
+    'The durable baseline is a combined program: bias-audit readiness, clear notices, vendor documentation, data-correction paths, and human review for AI-influenced hiring decisions.',
   ],
 
   sources: [
@@ -119,8 +119,8 @@ export const usStatesAiHiring = {
       url: 'https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015',
     },
     {
-      title: 'Colorado SB 24-205 — Consumer Protections for AI',
-      url: 'https://leg.colorado.gov/bills/sb24-205',
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
     },
     {
       title: 'Maryland HB 1202 — Facial Recognition in Interviews',
