@@ -4,7 +4,6 @@ Track current project tasks here.
 
 ## Current
 
-- Productize the Vendor AI Review Packet as the likely second paid offer: use existing vendor assessment, scoring guide, and procurement checklist drafts; add vendor request email, decision memo, red-flag list, Start Here guide, legal-boundary notice, DOCX/PDF/Markdown exports, and ZIP QA.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Before product conversion, audit `content/products/` for stale Colorado/EU timing references and align delivery copy with the public SB 26-189 / Digital Omnibus updates.
@@ -62,6 +61,8 @@ Track current project tasks here.
 - 2026-06-05 discovery landing page pass completed: added five buyer-intent guide pages for AI policy, ChatGPT employee rules, AI use inventory, AI risk assessment, and AI governance checklist searches; linked them from the homepage; wired them into sitemap/search; improved the free checklist positioning; added Starter Kit best-for/not-for/first-hour copy; and drafted a LinkedIn/distribution plan under `marketing/`.
 
 - 2026-06-05 SEO support article pass completed: added three practical blog posts for first AI policy, AI use inventory, and first-pass AI risk assessment; registered them in the blog index/feed/sitemap; linked them from matching discovery landing pages; validated rendering with build and browser QA.
+
+- 2026-06-05 Vendor AI Review Packet v1 completed: created a 6-document vendor review deliverable with request email, lite procurement checklist, full vendor risk assessment, scoring guide, red flag list, decision memo, Start Here, legal notice, source notes, DOCX/PDF/Markdown exports, ZIP integrity QA, PDF text/page-count checks, rendered PDF sanity checks, and preview-only catalog metadata update.
 
 ## Later
 
