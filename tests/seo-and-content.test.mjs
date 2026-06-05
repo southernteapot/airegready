@@ -56,7 +56,10 @@ test('starter kit exposes live purchase metadata and buyer FAQ', () => {
   assert.equal(starterKit.purchaseCta, 'Buy for $19')
   assert.equal(starterKit.faq.length, 8)
   assert.ok(starterKit.faq.some((item) => item.question === 'Is this legal advice?'))
+  assert.ok(starterKit.inside.includes('risk tiering decision tree'))
+  assert.ok(starterKit.inside.includes('risk register'))
   assert.ok(starterKit.faq.some((item) => item.question === 'Couldn’t I just ask ChatGPT to make this?'))
+  assert.ok(starterKit.faq.some((item) => item.answer.includes('Fourteen editable documents')))
 })
 
 test('feed XML uses the latest article date rather than the current build date', () => {

@@ -13,8 +13,23 @@ export const productCards = [
     kind: 'Kit',
     previewImage: '/assets/airegready-home-v3-starter-kit.avif',
     audience: 'Founders, operators, and small teams starting from scattered AI use.',
-    inside: ['AI use inventory', 'acceptable use policy', 'risk intake form', 'update tracker'],
-    helps: 'Creates a first governance file that explains what AI is used, who owns it, and what review steps exist.',
+    inside: [
+      'AI use inventory',
+      'acceptable use policy',
+      'risk intake / impact assessment',
+      'update tracker',
+      'readiness checklist',
+      '30-day setup plan',
+      'green/yellow/red use rules',
+      'tool approval mini-checklist',
+      'team rollout message',
+      'governance meeting agenda',
+      'completion scorecard',
+      'risk tiering decision tree',
+      'risk register',
+      'risk review notes',
+    ],
+    helps: 'Creates a first governance and risk assessment file that explains what AI is used, who owns it, what rules apply, and which higher-risk workflows need review.',
     cta: 'Buy for $19',
     purchaseUrl: 'https://airegready.gumroad.com/l/kfadzn',
     purchaseCta: 'Buy for $19',
@@ -39,17 +54,17 @@ export const productCards = [
       {
         question: 'What exactly do I get?',
         answer:
-          'Four editable templates: AI use inventory, acceptable use policy, risk intake form, and update tracker. The download includes DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice.',
+          'Fourteen editable documents: core governance records, a readiness checklist, 30-day setup plan, staff-facing AI use rules, a tool approval mini-checklist, rollout aids, a completion scorecard, risk tiering, a risk register, and risk review notes. The download includes DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice.',
       },
       {
         question: 'How long does the first setup take?',
         answer:
-          'The first pass is meant to be lightweight. A small team can usually start by listing active tools, assigning owners, marking sensitive-data rules, and flagging review triggers in one working session.',
+          'The first pass is meant to be lightweight. A small team can usually start by listing active tools, assigning owners, marking sensitive-data rules, tiering higher-risk uses, and choosing first follow-up actions in one working session.',
       },
       {
         question: 'Couldn’t I just ask ChatGPT to make this?',
         answer:
-          'You can generate generic policy text. The value here is the coherent packet: inventory, rules, intake, update tracking, Start Here guidance, editable formats, and consistent legal-boundary language in one place.',
+          'You can generate generic policy text. The value here is the coherent packet: inventory, rules, intake and impact assessment, readiness checklist, setup plan, risk tiering, risk register, update tracking, rollout aids, editable formats, and consistent legal-boundary language in one place.',
       },
       {
         question: 'Are updates included?',
@@ -59,7 +74,7 @@ export const productCards = [
       {
         question: 'What if my team uses vendor AI tools?',
         answer:
-          'Start by listing those tools in the inventory and noting what data, workflows, and owners are involved. If vendor approval is the main problem, the next AIRegReady packet is planned around vendor AI review.',
+          'Start by listing those tools in the inventory and noting what data, workflows, and owners are involved. The kit includes a mini approval checklist for low-risk tools; if vendor approval is the main problem, the deeper Vendor AI Review Packet is still the better fit.',
       },
     ],
   },
@@ -75,12 +90,12 @@ export const productCards = [
   },
   {
     slug: 'ai-risk-assessment-toolkit',
-    title: 'AI Risk Assessment Toolkit',
+    title: 'Advanced AI Risk Assessment Toolkit',
     kind: 'Kit',
     previewImage: '/assets/airegready-home-v3-hero-workspace.avif',
-    audience: 'Organizations reviewing higher-impact AI use cases or customer-facing workflows.',
-    inside: ['impact assessment', 'tiering decision tree', 'risk register', 'review notes'],
-    helps: 'Turns risk conversations into structured records that can be revisited as systems change.',
+    audience: 'Organizations that already have starter controls and need deeper review for high-impact AI systems.',
+    inside: ['advanced assessment workflow', 'control evidence review', 'residual risk scoring', 'review evidence log'],
+    helps: 'Extends the starter packet for teams that need deeper risk review beyond first-pass templates.',
     cta: 'Preview kit',
   },
   {
@@ -223,8 +238,10 @@ export function getProductPriceLabel(product) {
 export const starterContents = [
   'AI use inventory',
   'Acceptable use policy',
-  'Risk intake form',
-  'Update tracker',
+  'Risk intake / impact assessment',
+  'Risk tiering decision tree',
+  'Risk register',
+  '30-day setup plan',
 ]
 
 export const assessmentRows = [
@@ -250,7 +267,7 @@ export const heroProofCards = [
   {
     icon: 'documents',
     title: '12 catalog packages',
-    body: 'One paid starter kit is live, eight resources are available for preview requests, and three stay in the roadmap.',
+    body: 'One paid 14-document starter kit is live, with preview resources and roadmap items kept separate.',
   },
   {
     icon: 'workflow',
@@ -267,7 +284,7 @@ export const heroProofCards = [
 export const heroWorkspaceItems = [
   {
     title: 'AI Governance Starter Kit',
-    body: 'Policy, inventory, risk intake',
+    body: 'Governance and risk assessment',
     status: 'Ready to adapt',
     href: '/catalog/ai-governance-starter-kit',
   },

@@ -1,33 +1,69 @@
 # AI Governance Starter Kit v1
 
-**Product:** AI Governance Starter Kit  
-**Version:** 1.0.1
-**Prepared:** 2026-05-08  
+**Product:** AI Governance Starter Kit
+**Version:** 1.1.0
+**Prepared:** 2026-05-08
 **Updated:** 2026-06-05
 
-This packet contains editable templates and reference PDFs for a basic AI governance file. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
+This packet contains editable templates and reference PDFs for a combined first-pass AI governance and risk assessment file. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
 
 ## Included documents
 
-1. **AI Use Inventory**  
+### Core governance records
+
+1. **AI Use Inventory**
    A field schema and starter template for tracking AI tools, owners, data use, risk tier, approval status, and review cadence.
 
-2. **AI Acceptable Use Policy**  
+2. **AI Acceptable Use Policy**
    A practical internal policy template covering approved tools, prohibited uses, data handling, human review, disclosure, escalation, and acknowledgment.
 
-3. **AI Risk Intake Form**  
-   A structured intake/review form for proposed AI tools or workflows, adapted from the broader AI Impact Assessment template.
+3. **AI Risk Intake and Impact Assessment**
+   A structured intake and assessment form for proposed AI tools, workflows, material changes, and higher-risk uses.
 
-4. **AI Update Tracker**  
+4. **AI Update Tracker**
    A change log template for model, prompt, vendor, system, policy, and workflow updates.
+
+### Readiness and rollout helpers
+
+5. **AI Readiness Checklist**
+   A first-pass checklist for ownership, data rules, approved tools, review paths, rollout, higher-risk workflows, and update rhythm.
+
+6. **30-Day AI Governance Setup Plan**
+   A week-by-week implementation plan for turning the packet into an operating first pass.
+
+7. **Green / Yellow / Red AI Use Rules**
+   A short staff-facing version of the AI use rules.
+
+8. **AI Tool Approval Mini-Checklist**
+   A quick triage checklist for low-risk AI tool requests, with stop triggers for deeper review.
+
+9. **Team Rollout Message**
+   Email, Slack/Teams, manager follow-up, FAQ, acknowledgment, and launch checklist language.
+
+10. **First AI Governance Meeting Agenda**
+    A 30-minute and 60-minute agenda for the first governance review meeting.
+
+11. **What Good Looks Like**
+    A completion scorecard and evidence-file checklist for the first setup pass.
+
+### Risk assessment tools
+
+12. **AI Risk Tiering Decision Tree**
+    A tiering worksheet for deciding whether a use is low, medium, high, or paused/prohibited.
+
+13. **AI Risk Register Template**
+    A living register for identified AI risks, owners, mitigations, residual scores, and review dates.
+
+14. **AI Risk Review Notes**
+    A meeting/review notes template for documenting decisions, rationale, conditions, and follow-up actions.
 
 ## Folder structure
 
-- `markdown/` — editable Markdown source
-- `docx/` — Word-compatible editable documents
-- `pdf/` — PDF exports
-- `START-HERE.md` — buyer-facing setup guide and recommended first pass
-- `LEGAL-NOTICE.md` — educational-use and legal-boundary notice
+- `markdown/` - editable Markdown source
+- `docx/` - Word-compatible editable documents
+- `pdf/` - PDF exports
+- `START-HERE.md` - buyer-facing setup guide and recommended first pass
+- `LEGAL-NOTICE.md` - educational-use and legal-boundary notice
 
 ## Important legal boundary
 

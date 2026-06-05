@@ -2,12 +2,12 @@ export const aiGovernanceStarterKitLaunch = {
   slug: 'ai-governance-starter-kit-launch',
   title: 'New: AI Governance Starter Kit for Small Teams',
   description:
-    'AIRegReady now offers a $19 AI Governance Starter Kit with editable templates for an AI use inventory, acceptable use policy, risk intake form, and update tracker.',
+    'AIRegReady now offers a $19 AI Governance Starter Kit with 14 editable governance, rollout, and first-pass risk assessment documents.',
   category: 'Product Update',
   categorySlug: null,
   date: '2026-06-05',
   displayDate: 'June 5, 2026',
-  readTime: '4 min read',
+  readTime: '5 min read',
   featured: true,
   relatedRegulations: ['nist-ai-rmf', 'us-state-laws'],
 
@@ -32,12 +32,12 @@ export const aiGovernanceStarterKitLaunch = {
     {
       title: 'What is included',
       content:
-        'The starter kit includes four practical templates in DOCX, PDF, and Markdown formats:',
+        'The starter kit now includes 14 practical documents in DOCX, PDF, and Markdown formats:',
       list: [
-        '**AI Tool Inventory** — a working record of tools, owners, vendors, use cases, data categories, risk tiers, and review status.',
-        '**One-Page AI Use Rules / Acceptable Use Policy** — plain-English internal rules for approved tools, sensitive data, output review, prohibited uses, and questions.',
-        '**New AI Tool Approval / Risk Intake Checklist** — a lightweight intake form for new tools, vendors, features, and higher-risk use cases.',
-        '**AI Update Tracker** — a log for vendor changes, prompt updates, model changes, notices, reviews, and follow-up actions.',
+        '**Core governance records** - an AI use inventory, acceptable use policy, risk intake/impact assessment, and update tracker.',
+        '**Readiness and rollout helpers** - a readiness checklist, 30-day setup plan, green/yellow/red use rules, tool approval mini-checklist, rollout message, first meeting agenda, and completion scorecard.',
+        '**Risk assessment tools** - a tiering decision tree, risk register, and risk review notes for documenting higher-risk workflow decisions.',
+        '**Editable formats** - DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice.',
       ],
     },
     {
@@ -58,8 +58,8 @@ export const aiGovernanceStarterKitLaunch = {
   ],
 
   takeaways: [
-    'The AI Governance Starter Kit gives small teams four editable templates for a basic AI governance file.',
-    'The packet includes DOCX, PDF, and Markdown versions of the inventory, use rules, risk intake, and update tracker.',
+    'The AI Governance Starter Kit gives small teams 14 editable documents for a first-pass governance and risk assessment file.',
+    'The packet includes DOCX, PDF, and Markdown versions of the core records, readiness checklist, setup plan, rollout aids, risk tiering, risk register, review notes, and update tracker.',
     'The kit is educational template material only, not legal advice or a compliance guarantee.',
     'The first practical step is to document the AI tools already in use, then assign owners and review higher-risk workflows.',
   ],

@@ -5,7 +5,7 @@
 **Last reviewed:** ______________________________
 **Review cadence:** Quarterly
 
-> **How to use.** This is the master record of every AI tool, workflow, and system in use at [COMPANY NAME]. Keep it current. Under state AI laws such as Colorado SB 26-189, the EU AI Act, NIST AI RMF, and most enterprise audit frameworks, a current inventory is foundational — it's the first thing a regulator or customer will ask for.
+> **How to use.** This is the master record of every AI tool, workflow, and system in use at [COMPANY NAME]. Keep it current. Under state AI laws such as Colorado SB 26-189, the EU AI Act, NIST AI RMF, and most enterprise audit frameworks, a current inventory is foundational - it's the first thing a regulator or customer will ask for.
 >
 > In practice: keep this as a spreadsheet (Google Sheet / Airtable / Excel) and use this document as the field schema. The fields below match the columns of the spreadsheet.
 
@@ -22,7 +22,7 @@ List it if any of these are true:
 
 Do **not** list systems that have no AI component (classic rule-based software, spreadsheets, databases, calculators).
 
-If you're not sure: list it and mark the AI role as "uncertain — to classify."
+If you're not sure: list it and mark the AI role as "uncertain - to classify."
 
 ---
 
@@ -139,7 +139,7 @@ Delete these and replace with your actual systems.
 
 ---
 
-## Quarterly review — what the owner checks
+## Quarterly review - what the owner checks
 
 - Are there any new systems in use that aren't in the inventory?
 - Have any systems been retired? Move them to "Retired" but retain the record.

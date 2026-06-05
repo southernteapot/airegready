@@ -3,7 +3,7 @@
 **Company:** [COMPANY NAME]
 **Version:** 1.0
 **Effective date:** [DATE]
-**Owner:** [POLICY OWNER — e.g., Head of Operations, General Counsel]
+**Owner:** [POLICY OWNER - e.g., Head of Operations, General Counsel]
 **Next review:** [DATE + 12 months]
 
 > **How to use this template.** Fill in every `[BRACKETED FIELD]`. Delete any sections that don't apply to your business. Have your HR lead and (if available) your legal counsel review before you roll it out. Share the one-page summary and the acknowledgment form with every employee.
@@ -14,7 +14,7 @@
 
 [COMPANY NAME] uses artificial intelligence ("AI") tools to work faster and serve our customers better. This policy sets clear rules for how AI may be used at work so that we get the benefits without creating legal, security, reputational, or quality risks.
 
-This policy is written to be read and understood by every employee — not just the legal or IT team.
+This policy is written to be read and understood by every employee - not just the legal or IT team.
 
 ## 2. Scope
 
@@ -28,11 +28,11 @@ It covers all AI tools including but not limited to: large language model chatbo
 
 ## 3. Definitions
 
-- **AI tool** — any software that uses machine learning or generative AI to produce text, code, images, audio, video, decisions, or recommendations.
-- **Confidential information** — any non-public information of [COMPANY NAME], our customers, our employees, or our partners. Includes business plans, source code, financial data, customer lists, and employee records.
-- **Personal data** — information that identifies a specific person, including names, email addresses, phone numbers, home addresses, payment details, health information, and government ID numbers.
-- **Approved tools list** — the current list of AI tools [COMPANY NAME] has vetted and permits for specific uses. The current list is maintained at [LOCATION — e.g., in the employee handbook, Notion page URL, SharePoint].
-- **Customer-facing work** — anything a customer, client, patient, or end user will see or rely on.
+- **AI tool** - any software that uses machine learning or generative AI to produce text, code, images, audio, video, decisions, or recommendations.
+- **Confidential information** - any non-public information of [COMPANY NAME], our customers, our employees, or our partners. Includes business plans, source code, financial data, customer lists, and employee records.
+- **Personal data** - information that identifies a specific person, including names, email addresses, phone numbers, home addresses, payment details, health information, and government ID numbers.
+- **Approved tools list** - the current list of AI tools [COMPANY NAME] has vetted and permits for specific uses. The current list is maintained at [LOCATION - e.g., in the employee handbook, Notion page URL, SharePoint].
+- **Customer-facing work** - anything a customer, client, patient, or end user will see or rely on.
 
 ## 4. Guiding principles
 
@@ -49,7 +49,7 @@ You may use approved AI tools to:
 - Research topics, summarize documents, and brainstorm ideas
 - Draft and edit emails, memos, and documents
 - Help write, review, or debug code
-- Transcribe and summarize meetings (with participant consent — see Section 9)
+- Transcribe and summarize meetings (with participant consent - see Section 9)
 - Translate text between languages
 - Generate first-draft images, slides, or marketing copy
 - Analyze public data and produce charts or summaries
@@ -109,22 +109,22 @@ A sample starting list:
 | [TOOL 2] | Code assistance | Public code, no proprietary | Company SSO required |
 | [TOOL 3] | Meeting transcription | Internal meetings | Guest consent required |
 
-Requests to add a new tool should be submitted to [APPROVAL CONTACT] using the [APPROVAL PROCESS — see AI Vendor Risk Assessment].
+Requests to add a new tool should be submitted to [APPROVAL CONTACT] using the [APPROVAL PROCESS - see AI Vendor Risk Assessment].
 
 ## 8. Data handling rules
 
 Use the following rules when deciding whether to paste or upload something into an AI tool:
 
-**Green — generally OK in any approved tool**
+**Green - generally OK in any approved tool**
 - Information already published on [COMPANY NAME]'s public website
 - Generic industry information, public regulations, publicly known facts
 
-**Yellow — only in tools approved for internal use**
+**Yellow - only in tools approved for internal use**
 - Internal memos, draft strategies, organizational plans
 - Non-sensitive business documents
 - Anonymized, aggregated data
 
-**Red — never paste into any AI tool unless that specific tool has been explicitly approved for this data class**
+**Red - never paste into any AI tool unless that specific tool has been explicitly approved for this data class**
 - Customer names, emails, phone numbers, addresses, or other personal data
 - Employee records, payroll, benefits, or HR information
 - Health, financial, or biometric data
@@ -150,19 +150,19 @@ Before relying on AI output, verify:
 - Factual claims, especially names, numbers, dates, citations, and quotes
 - Legal and regulatory assertions
 - Source links (AI tools routinely invent plausible-looking URLs)
-- Code (run and test it — don't ship untested code)
+- Code (run and test it - don't ship untested code)
 - Tone and cultural appropriateness
 
 If you find errors in an AI output that you have already sent or published, correct them promptly and notify [POLICY OWNER].
 
 ## 11. Roles and responsibilities
 
-- **Every employee** — Follow this policy. Ask when unsure. Report concerns.
-- **Managers** — Ensure your team understands this policy and applies it in their work. Address misuse.
-- **[POLICY OWNER]** — Owns this policy. Approves updates. Fields questions.
-- **[IT OWNER]** — Maintains the approved tools list. Handles tool vetting. Monitors for unapproved tool usage where possible.
-- **[HR OWNER]** — Handles acknowledgments, training, and disciplinary matters arising under this policy.
-- **[LEGAL CONTACT]** — Advises on jurisdictional issues, contractual restrictions, and disclosure obligations.
+- **Every employee** - Follow this policy. Ask when unsure. Report concerns.
+- **Managers** - Ensure your team understands this policy and applies it in their work. Address misuse.
+- **[POLICY OWNER]** - Owns this policy. Approves updates. Fields questions.
+- **[IT OWNER]** - Maintains the approved tools list. Handles tool vetting. Monitors for unapproved tool usage where possible.
+- **[HR OWNER]** - Handles acknowledgments, training, and disciplinary matters arising under this policy.
+- **[LEGAL CONTACT]** - Advises on jurisdictional issues, contractual restrictions, and disclosure obligations.
 
 ## 12. Training
 
@@ -195,7 +195,7 @@ Accidental mistakes reported promptly and in good faith will be handled more len
 
 Direct questions to [POLICY OWNER] at [EMAIL].
 
-Report suspected violations or unsafe AI behavior to [REPORTING CHANNEL — e.g., compliance@company.com, anonymous ethics hotline].
+Report suspected violations or unsafe AI behavior to [REPORTING CHANNEL - e.g., compliance@company.com, anonymous ethics hotline].
 
 ## 16. Review cycle
 

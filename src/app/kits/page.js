@@ -181,7 +181,7 @@ export default function KitsPage() {
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {starterContents.map((item, index) => (
                 <div key={item} className="min-w-0 rounded-xl border border-[#D6E2EF] bg-white p-4">
-                  <span className="font-sans text-xs font-black text-[#7B8DA3]">0{index + 1}</span>
+                  <span className="font-sans text-xs font-black text-[#7B8DA3]">{String(index + 1).padStart(2, '0')}</span>
                   <p className="mt-2 font-sans text-sm font-black text-[#0B1B2F]">{item}</p>
                 </div>
               ))}

@@ -131,9 +131,9 @@ function buildDeliveryDetails(product) {
   if (!isPurchasableProduct(product)) return null
 
   return [
-    'Four editable templates: AI tool inventory, acceptable use policy, risk intake checklist, and update tracker.',
+    'Fourteen editable documents spanning governance basics, readiness, rollout, risk tiering, impact assessment, risk register, review notes, and update tracking.',
     'DOCX files for editing, PDF reference copies, and Markdown versions for teams that work in docs or repositories.',
-    'A Start Here guide and legal-use notice so buyers understand how to adapt the packet without treating it as legal advice.',
+    'A Start Here guide and legal-use notice so buyers understand how to adapt the combined packet without treating it as legal advice.',
     'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
     'Designed for small teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
   ]
@@ -188,7 +188,7 @@ function PreviewPanel({ product }) {
       <div className="grid grid-cols-1 gap-3 p-2 pt-5 sm:grid-cols-2 sm:p-5">
         {product.inside.map((item, index) => (
           <div key={item} className="rounded-xl border border-[#D7E5F8] bg-white p-4 text-[#06132E]">
-            <span className="font-sans text-xs font-black text-[#2C6BFF]">0{index + 1}</span>
+            <span className="font-sans text-xs font-black text-[#2C6BFF]">{String(index + 1).padStart(2, '0')}</span>
             <p className="mt-2 font-sans text-sm font-black">{item}</p>
           </div>
         ))}

@@ -1,14 +1,14 @@
-# AI Risk Intake Form
+# AI Risk Intake and Impact Assessment
 
 **Proposed AI use / system name:** ______________________________
 **Request prepared by:** ______________________________
 **Business owner:** ______________________________
 **Date:** ______________________________
 **Version:** 1.0
-**Type:** ☐ Initial (pre-deployment)  ☐ Annual review  ☐ Material change  ☐ Incident-triggered
-**Tier (from AI Governance Framework):** ☐ Tier 1  ☐ Tier 2  ☐ Tier 3
+**Type:** [ ] Initial (pre-deployment)  [ ] Annual review  [ ] Material change  [ ] Incident-triggered
+**Tier (from AI Risk Tiering Decision Tree):** [ ] Tier 1  [ ] Tier 2  [ ] Tier 3
 
-> **How to use.** Use this intake form before approving a new AI tool, workflow, or material change to an existing system. For low-risk uses, complete Sections 1–4. For medium-risk uses, complete Sections 1–8. For high-impact or regulated use cases, complete the full form and route it for legal/compliance review.
+> **How to use.** Use this form before approving a new AI tool, workflow, or material change to an existing system. For low-risk uses, complete Sections 1-4. For medium-risk uses, complete Sections 1-8. For higher-impact or regulated use cases, use the full form as the starter impact assessment record and route it for qualified review.
 
 ---
 
@@ -30,7 +30,7 @@
 
 > ____________________________________________________
 
-1.5 How does it fit into our work? (upstream input → model → downstream action)
+1.5 How does it fit into our work? (upstream input -> model -> downstream action)
 
 > ____________________________________________________
 
@@ -61,7 +61,7 @@
 3.1 Does the system make or materially inform a decision about a person?
 
 - [ ] No
-- [ ] Yes — describe:
+- [ ] Yes - describe:
 
 > ____________________________________________________
 
@@ -76,7 +76,7 @@
 - [ ] Government services or benefits
 - [ ] Physical safety
 - [ ] Personal dignity (privacy, reputation, identity)
-- [ ] None of the above — explain:
+- [ ] None of the above - explain:
 
 > ____________________________________________________
 
@@ -97,9 +97,9 @@
 
 3.4 Overall stakes (pick one):
 
-- [ ] Low — mistakes cost time or money to fix, not much more
-- [ ] Medium — mistakes inconvenience people or cause reputational harm
-- [ ] High — mistakes affect livelihoods, rights, safety, or access to essential services
+- [ ] Low - mistakes cost time or money to fix, not much more
+- [ ] Medium - mistakes inconvenience people or cause reputational harm
+- [ ] High - mistakes affect livelihoods, rights, safety, or access to essential services
 
 ## 4. Data
 
@@ -110,7 +110,7 @@
 4.2 Does it include personal data?
 
 - [ ] No
-- [ ] Yes — what categories? (contact info, identifiers, behavioral, financial, health, biometric, children's, location, special categories)
+- [ ] Yes - what categories? (contact info, identifiers, behavioral, financial, health, biometric, children's, location, special categories)
 
 > ____________________________________________________
 
@@ -118,7 +118,7 @@
 
 > ____________________________________________________
 
-4.4 Do we have a lawful basis to use it for this purpose? (consent, contract, legitimate interest, legal obligation — GDPR/CCPA terms)
+4.4 Do we have a lawful basis to use it for this purpose? (consent, contract, legitimate interest, legal obligation - GDPR/CCPA terms)
 
 > ____________________________________________________
 
@@ -307,7 +307,7 @@ For each risk identified above, describe the control, the owner, and how you'll 
 
 - [ ] Approved
 - [ ] Approved with conditions (list below)
-- [ ] Not approved — remediate and re-submit
+- [ ] Not approved - remediate and re-submit
 - [ ] Retire
 
 **Conditions:**
@@ -318,14 +318,14 @@ For each risk identified above, describe the control, the owner, and how you'll 
 
 ---
 
-## Appendix A — Evidence attached
+## Appendix A - Evidence attached
 
 - [ ] Vendor documentation
 - [ ] Bias/fairness test results
 - [ ] Security test results
 - [ ] Data Processing Agreement (DPA)
-- [ ] Business Associate Agreement (BAA) — if health
-- [ ] Standard Contractual Clauses (SCCs) — if EU
+- [ ] Business Associate Agreement (BAA) - if health
+- [ ] Standard Contractual Clauses (SCCs) - if EU
 - [ ] Test outputs / sample runs
 - [ ] User disclosures (screenshots)
 - [ ] Monitoring dashboards

@@ -54,8 +54,8 @@ Each entry captures:
 | Expected impact | Fewer pricing errors; slightly longer responses |
 | Testing | Functional test suite passed; price-query regression set added |
 | Approver(s) | AI Governance Lead (async) |
-| Deployed by | Engineering — Jane S. |
-| Rollout strategy | Canary 10% → 50% → 100% over 3 days |
+| Deployed by | Engineering - Jane S. |
+| Rollout strategy | Canary 10% -> 50% -> 100% over 3 days |
 | Rollback plan | Revert prompt to v2.3; tested |
 | Post-deploy check | Price-error rate dropped 60% in first 72h; no regressions detected |
 | User / customer notice | Not required (quality improvement) |
@@ -77,13 +77,13 @@ Each entry captures:
 | Expected impact | Behavior shifts in ambiguous queries; some tone changes; lower latency |
 | Testing | Full functional regression; bias regression (no subgroup change); red-team round (no new issues); performance benchmarking |
 | Approver(s) | AI Review Committee (meeting 2026-04-22); Executive Sponsor |
-| Deployed by | Engineering — Platform team |
-| Rollout strategy | Canary 5% → 25% → 100% over 10 days |
+| Deployed by | Engineering - Platform team |
+| Rollout strategy | Canary 5% -> 25% -> 100% over 10 days |
 | Rollback plan | Prior model remains available for 90 days |
 | Post-deploy check | No behavior regressions at 72h; customer-support ticket volume stable |
 | User / customer notice | Enterprise customers notified 14 days in advance; no individual-customer-facing UX changes |
 | Regulatory records updated | No (system not registered in EU database; Colorado ADMT records unchanged) |
-| Linked documents | Impact Assessment v2.0; Model Card v2.4 → v3.0; red-team report 2026-04-15 |
+| Linked documents | Impact Assessment v2.0; Model Card v2.4 -> v3.0; red-team report 2026-04-15 |
 | Author | Platform Lead |
 
 ### Entry #25 (Emergency)

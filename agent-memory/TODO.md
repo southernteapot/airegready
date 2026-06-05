@@ -41,9 +41,11 @@ Track current project tasks here.
 - 2026-06-05 first paid product wiring completed: Gumroad AI Governance Starter Kit link `https://airegready.gumroad.com/l/kfadzn` is attached to the starter kit product metadata, catalog card CTA, product detail CTA, and Product/Offer JSON-LD at $19 USD while preview request remains secondary.
 - 2026-06-05 AI Governance Starter Kit ZIP QA/rebuild completed: customer archive contains the advertised DOCX, PDF, Markdown, Start Here, and legal notice files; ZIP integrity passed; PDFs were regenerated through HTML-rendered Markdown; Colorado references were updated to SB 26-189 / covered ADMT language.
 - 2026-06-05 first-sale lift completed: homepage primary CTAs point to the $19 AI Governance Starter Kit, product detail page includes a concrete "What you get" section, and launch article `/blog/ai-governance-starter-kit-launch` announces the paid kit.
-- 2026-06-05 catalog consistency cleanup completed: live Starter Kit copy now matches the four-file paid kit, preview-only products no longer emit fake Offer/InStock schema, assessment recommendations point to real catalog/guide routes, Gumroad listing availability returned HTTP 200, and public contact copy uses `support@airegready.com`.
+- 2026-06-05 catalog consistency cleanup completed: live Starter Kit copy matched the paid kit, preview-only products no longer emitted fake Offer/InStock schema, assessment recommendations pointed to real catalog/guide routes, Gumroad listing availability returned HTTP 200, and public contact copy used `support@airegready.com`.
 
 - 2026-06-05 public 200px logo asset completed: generated `public/assets/airegready-logo-200.png` from the current shield-check mark as a 200x200 RGB PNG with flat brand colors and no transparent padding.
+
+- 2026-06-05 Starter Kit expansion completed: the paid packet was expanded into a 14-document governance + first-pass risk assessment bundle with readiness, rollout, tiering, risk register, and review-note tools.
 
 - 2026-06-05 visual stripe cleanup completed: homepage, catalog, and catalog detail pages now use continuous dark/slate section foundations with light surfaces kept inside cards/forms.
 

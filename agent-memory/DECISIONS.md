@@ -46,6 +46,14 @@ Decision: Use `support@airegready.com` for public contact and mailto links. Emit
 Reason: The public site now has one real paid product and several preview-request products. Search, assessment, and customer-facing copy need to avoid implying that preview-only products are in stock, priced, or directly downloadable.
 Consequences: Future paid products should add explicit purchase metadata before buy CTAs or Offer schema are shown. Preview-only catalog pages can describe contents and collect requests, but should not publish fake prices, downloads, or availability claims. Public support/contact copy should use `support@airegready.com`.
 
+
+## 2026-06-05 - Combine starter governance and first-pass risk assessment packet
+
+Project/system: AIRegReady paid Starter Kit and catalog positioning
+Decision: Expand the paid AI Governance Starter Kit into a combined 14-document governance + first-pass risk assessment packet by adding readiness, rollout, tiering, risk register, and review-note tools. Keep full vendor due diligence positioned as a deeper separate Vendor AI Review Packet.
+Reason: The four-document starter kit was useful but too thin for a first paid product. Folding first-pass risk assessment into the starter packet gives buyers a more complete operating file without pretending to replace legal, privacy, security, HR, or regulated-use review.
+Consequences: Public Starter Kit copy should describe the expanded packet. The separate risk-assessment catalog item should be treated as an advanced follow-on preview, not as the same basic toolkit duplicated outside the paid kit.
+
 ## 2026-06-05 - Avoid stripe-like full-width light bands
 
 Project/system: AIRegReady live homepage and catalog routes
