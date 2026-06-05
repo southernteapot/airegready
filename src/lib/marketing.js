@@ -250,7 +250,7 @@ export const heroProofCards = [
   {
     icon: 'documents',
     title: '12 catalog packages',
-    body: 'Nine are available for preview requests now; three stay in the roadmap until contents are ready.',
+    body: 'One paid starter kit is live, eight resources are available for preview requests, and three stay in the roadmap.',
   },
   {
     icon: 'workflow',

@@ -23,7 +23,7 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - Main commands: `npm run dev`, `npm run build`, `npm run lint`, and `npm run test`.
 - Deployment target identifiable from config: Cloudflare Workers through OpenNext for Cloudflare and Wrangler.
 - Canonical site URL in code: `https://airegready.com`.
-- Public contact email in site copy and mailto links: `info@airegready.com`.
+- Public contact email in site copy and mailto links: `support@airegready.com`.
 - Current homepage route `/` is implemented at `src/app/page.js`.
 - `/catalog` is the canonical product/resource catalog route; `/catalog/[slug]` pages preview requestable packages; `/kits` remains as a compatibility route.
 - Product/template working drafts live in `content/products/` and are documented as internal drafts, not yet published to the public site.
@@ -40,7 +40,7 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - The site is positioned as a resource catalog and readiness command center, not a generic blog or legal services site.
 - The legal boundary is important: educational information and templates only, not legal advice, compliance guarantees, or attorney-client services.
 - The catalog/product direction includes AI governance starter resources, acceptable use policy kits, risk assessment tools, vendor review packets, training materials, jurisdiction guides, and regulation trackers.
-- Requestable catalog products have public detail/preview pages and hosted preview request forms, but checkout, pricing, and delivery are not implemented yet.
+- Catalog products have public detail pages. The AI Governance Starter Kit is purchasable through Gumroad at $19 with instant Gumroad delivery; other non-roadmap catalog products remain preview-request pages until pricing, checkout, and delivery are wired for those products.
 - AI Governance Starter Kit v1.0.1 deliverable exists at `deliverables/ai-governance-starter-kit-v1/` and matches the paid product contents: AI use inventory, acceptable use policy, risk intake form, and update tracker. Markdown, DOCX, PDF, and ZIP exports exist; the 2026-06-05 rebuild updated Colorado language to SB 26-189 / covered ADMT wording.
 - Old homepage/prototype routes are intentionally preserved under `/preview`; `/front-page-v2` redirects to `/preview/front-page-v2`.
 - Dedicated Texas AI regulation guide route exists at `/regulations/texas-ai-regulation`, last reviewed May 18, 2026, covering TRAIGA, Texas public-sector AI laws, privacy/biometrics, synthetic media, financial exploitation, and sector guidance.

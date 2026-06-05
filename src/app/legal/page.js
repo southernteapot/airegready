@@ -310,10 +310,10 @@ export default function LegalPage() {
                 deletion of your email address or preview request details from
                 our records, you can email us at{' '}
                 <a
-                  href="mailto:info@airegready.com"
+                  href="mailto:support@airegready.com"
                   className="text-accent hover:text-accent-dark transition-colors underline underline-offset-2"
                 >
-                  info@airegready.com
+                  support@airegready.com
                 </a>{' '}
                 and we will process your request promptly.
               </p>
@@ -341,10 +341,10 @@ export default function LegalPage() {
                 If you have questions about these terms or this privacy policy,
                 contact us at{' '}
                 <a
-                  href="mailto:info@airegready.com"
+                  href="mailto:support@airegready.com"
                   className="text-accent hover:text-accent-dark transition-colors underline underline-offset-2"
                 >
-                  info@airegready.com
+                  support@airegready.com
                 </a>
                 .
               </p>

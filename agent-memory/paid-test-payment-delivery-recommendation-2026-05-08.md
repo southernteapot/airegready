@@ -143,13 +143,13 @@ Download the ZIP file and start with `START-HERE.md`. Most buyers should begin w
 
 These templates are educational starting points. Please adapt them to your organization, industry, jurisdictions, contracts, and actual AI use before relying on them internally.
 
-Support contact: `info@airegready.com`
+Support contact: `support@airegready.com`
 
 ## Refund / support note
 
 Suggested public support/refund note:
 
-If you have trouble downloading or opening the files, email `info@airegready.com` with your order email and we’ll help. Because this is a digital download, refunds are handled case by case for duplicate purchases, technical delivery problems, or clear product mismatch. These materials are templates and educational starting points; they do not include legal advice, custom compliance review, or implementation consulting.
+If you have trouble downloading or opening the files, email `support@airegready.com` with your order email and we’ll help. Because this is a digital download, refunds are handled case by case for duplicate purchases, technical delivery problems, or clear product mismatch. These materials are templates and educational starting points; they do not include legal advice, custom compliance review, or implementation consulting.
 
 ## AIRegReady site metadata needed after Brian creates the payment link
 

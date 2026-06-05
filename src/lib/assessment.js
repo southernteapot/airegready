@@ -43,84 +43,92 @@ const MARKET_LABELS = {
 
 const OFFER_CATALOG = {
   governanceStarter: {
-    slug: 'governance-starter-stack',
-    name: 'Governance Starter Stack',
-    why: 'Best first purchase when AI use has outpaced written rules, ownership, and training.',
+    slug: 'ai-governance-starter-kit',
+    name: 'AI Governance Starter Kit',
+    why: 'Best first purchase when AI use has outpaced written rules, ownership, and update tracking.',
     includes: [
-      'AI Acceptable Use Policy',
-      'AI System Inventory',
-      'AI Employee Training Program',
-      'AI Governance Framework',
+      'AI use inventory',
+      'Acceptable use policy',
+      'Risk intake form',
+      'Update tracker',
     ],
-    ctaLabel: 'Email about this stack',
-    learnHref: '/blog/ai-use-policy-starter',
-    learnLabel: 'See the policy guidance',
+    ctaLabel: 'View $19 kit',
+    href: '/catalog/ai-governance-starter-kit',
+    learnHref: '/blog/ai-governance-starter-kit-launch',
+    learnLabel: 'Read the launch note',
   },
   vendorReview: {
-    slug: 'vendor-review-pack',
-    name: 'Vendor Review Pack',
+    slug: 'vendor-ai-review-packet',
+    name: 'Vendor AI Review Packet',
     why: 'Best fit when teams are adopting third-party AI tools faster than procurement and contract review can keep up.',
     includes: [
-      'AI Vendor Risk Assessment',
-      'AI Procurement Checklist Lite',
-      'AI DPA Standalone',
-      'AI Subprocessor Management Procedure',
+      'Vendor questionnaire',
+      'Scoring guide',
+      'Procurement checklist',
+      'Red flag list',
     ],
-    ctaLabel: 'Email about this pack',
+    ctaLabel: 'Request preview',
+    href: '/catalog/vendor-ai-review-packet#request-preview',
     learnHref: '/blog/ai-vendor-due-diligence',
     learnLabel: 'Read the due diligence guide',
   },
   providerAssurance: {
-    slug: 'provider-assurance-pack',
-    name: 'Provider Assurance Pack',
-    why: 'Best fit when you build or ship AI-enabled features and need release review, documentation, and incident handling.',
+    slug: 'founder-ai-governance-track',
+    name: 'Founder AI Governance Track',
+    why: 'Best fit when you build or ship AI-enabled features and need lightweight product, customer, vendor, and board-question materials.',
     includes: [
-      'AI Model Card Templates',
-      'AI Update Log Template',
-      'AI Incident Response Plan',
-      'AI System Inventory',
+      'Minimum guardrails',
+      'SaaS AI checklist',
+      'Customer FAQ',
+      'Board update template',
     ],
-    ctaLabel: 'Email about this pack',
+    ctaLabel: 'Request preview',
+    href: '/catalog/founder-ai-governance-track#request-preview',
     learnHref: '/blog/ai-compliance-startups',
     learnLabel: 'Read the startup guide',
   },
   disclosure: {
-    slug: 'customer-disclosure-pack',
-    name: 'Customer Disclosure Pack',
-    why: 'Best fit when customers, applicants, or consumers interact with AI or are affected by AI-assisted decisions.',
+    slug: 'jurisdiction-guide-library',
+    name: 'Jurisdiction Guide Library',
+    why: 'Best fit when customer, applicant, or consumer-facing AI raises disclosure and jurisdiction-tracking questions.',
     includes: [
-      'Customer AI Disclosure Templates',
-      'AI FAQ for Customers',
-      'Customer Notice Templates',
+      'Topic briefs',
+      'Readiness checklists',
+      'Change logs',
+      'Counsel review prompts',
     ],
-    ctaLabel: 'Email about this pack',
+    ctaLabel: 'Request preview',
+    href: '/catalog/jurisdiction-guide-library#request-preview',
     learnHref: '/regulations/eu-ai-act',
     learnLabel: 'Review transparency obligations',
   },
   impactOversight: {
-    slug: 'high-impact-oversight-pack',
-    name: 'High-Impact Oversight Pack',
+    slug: 'ai-risk-assessment-toolkit',
+    name: 'AI Risk Assessment Toolkit',
     why: 'Best fit for high-stakes use cases touching sensitive data, regulated workflows, or decisions about people.',
     includes: [
-      'AI Impact Assessment',
-      'AI Risk Register Template',
-      'AI Incident Response Plan',
-      'AI Complaint Handling Procedure',
+      'Impact assessment',
+      'Tiering decision tree',
+      'Risk register',
+      'Review notes',
     ],
-    ctaLabel: 'Email about this pack',
+    ctaLabel: 'Request preview',
+    href: '/catalog/ai-risk-assessment-toolkit#request-preview',
     learnHref: '/blog/ai-incident-response',
     learnLabel: 'Read the incident guide',
   },
   founderTrack: {
-    slug: 'founder-small-team-track',
-    name: 'Founder & Small-Team Track',
+    slug: 'founder-ai-governance-track',
+    name: 'Founder AI Governance Track',
     why: 'Best fit when you want lightweight templates before AI use, vendor sprawl, and customer commitments get harder to unwind.',
     includes: [
-      'AI for SaaS Startups Pack',
-      'AI Acceptable Use Policy',
-      'AI System Inventory',
+      'Minimum guardrails',
+      'SaaS AI checklist',
+      'Customer FAQ',
+      'Board update template',
     ],
-    ctaLabel: 'Email about this track',
+    ctaLabel: 'Request preview',
+    href: '/catalog/founder-ai-governance-track#request-preview',
     learnHref: '/blog/ai-side-projects',
     learnLabel: 'Read the solo starting guide',
   },
@@ -129,39 +137,43 @@ const OFFER_CATALOG = {
     name: 'Colorado AI Act Readiness Kit',
     why: 'Best fit when Colorado consumers or applicants may be affected by your AI use.',
     includes: [
-      'Colorado AI Act Checklist',
-      'Impact Assessment Template',
-      'Colorado-specific Readiness Materials',
+      'Overview',
+      'Readiness checklist',
+      'Impact assessment template',
+      'Update tracker',
     ],
-    ctaLabel: 'Email about this kit',
-    learnHref: '/blog/colorado-ai-act-countdown',
-    learnLabel: 'See Colorado obligations',
+    ctaLabel: 'Request preview',
+    href: '/catalog/colorado-ai-act-readiness-kit#request-preview',
+    learnHref: '/blog/colorado-sb26-189-admt-rewrite',
+    learnLabel: 'See Colorado ADMT guidance',
   },
   californiaKit: {
-    slug: 'california-ai-readiness-kit',
-    name: 'California AI Readiness Kit',
-    why: 'Best fit when California exposure makes transparency, claims review, or training-data questions more concrete.',
+    slug: 'us-state-laws-guide',
+    name: 'U.S. State AI Law Guide',
+    why: 'Best fit when California exposure makes transparency, training-data, or state-law patchwork questions more concrete.',
     includes: [
-      'California AI Checklist',
-      'California Readiness Materials',
-      'State-specific Templates',
+      'California frontier AI context',
+      'State law patchwork',
+      'Disclosure and claims prompts',
     ],
-    ctaLabel: 'Email about this kit',
+    ctaLabel: 'Review guide',
+    href: '/regulations/us-state-laws',
     learnHref: '/blog/california-tfaia-explained',
-    learnLabel: 'See California obligations',
+    learnLabel: 'See California guidance',
   },
   texasKit: {
-    slug: 'texas-traiga-readiness-kit',
-    name: 'Texas TRAIGA Readiness Kit',
-    why: 'Best fit when Texas operations or customers make state-specific documentation worth buying now.',
+    slug: 'texas-ai-regulation-guide',
+    name: 'Texas AI Regulation Guide',
+    why: 'Best fit when Texas operations or customers make state-specific AI rules worth reviewing now.',
     includes: [
-      'Texas TRAIGA Checklist',
-      'Texas Readiness Materials',
-      'State-specific Templates',
+      'TRAIGA overview',
+      'Public-sector AI rules',
+      'Privacy and biometric context',
     ],
-    ctaLabel: 'Email about this kit',
+    ctaLabel: 'Read Texas guide',
+    href: '/regulations/texas-ai-regulation',
     learnHref: '/blog/texas-traiga-guide',
-    learnLabel: 'See Texas obligations',
+    learnLabel: 'Read the TRAIGA guide',
   },
 }
 
@@ -534,7 +546,7 @@ function buildOfferEmailLink(name, answerMap) {
     `- Priority: ${priority}`,
   ].join('\n')
 
-  return `mailto:info@airegready.com?subject=${encodeURIComponent(`Assessment recommendation: ${name}`)}&body=${encodeURIComponent(body)}`
+  return `mailto:support@airegready.com?subject=${encodeURIComponent(`Assessment recommendation: ${name}`)}&body=${encodeURIComponent(body)}`
 }
 
 function createOffer(key, answerMap, badge) {
@@ -542,7 +554,7 @@ function createOffer(key, answerMap, badge) {
   if (!offer) return null
   return {
     ...offer,
-    href: buildOfferEmailLink(offer.name, answerMap),
+    href: offer.href || buildOfferEmailLink(offer.name, answerMap),
     priority: badge,
   }
 }
@@ -1076,8 +1088,8 @@ function getRecommendedReading(answerMap, scoreMap, readiness, guardrails) {
 
   if (answerMap[2] === 'co') {
     readings.push({
-      title: "Colorado's AI Act Takes Effect June 30: What Developers and Deployers Need to Do Now",
-      href: '/blog/colorado-ai-act-countdown',
+      title: 'Colorado SB 26-189 Rewrote the AI Act: What Developers and Deployers Need to Know',
+      href: '/blog/colorado-sb26-189-admt-rewrite',
       reason: 'Colorado-specific context for your operating environment.',
     })
   }
@@ -1243,18 +1255,11 @@ function buildShortTrackRecommendations(answerMap) {
   const priority = answerMap[17]
   const offers = []
 
-  if (entity === 'solo' || entity === 'small-team' || priority === 'pilot') {
-    pushUnique(offers, createOffer('founderTrack', answerMap, 'Start here'))
-  }
+  pushUnique(offers, createOffer('governanceStarter', answerMap, 'Start here'))
 
-  pushUnique(
-    offers,
-    createOffer(
-      'governanceStarter',
-      answerMap,
-      offers.length === 0 ? 'Start here' : 'Next best fit'
-    )
-  )
+  if (entity === 'solo' || entity === 'small-team' || priority === 'pilot') {
+    pushUnique(offers, createOffer('founderTrack', answerMap, 'Next best fit'))
+  }
 
   if (location === 'co') pushUnique(offers, createOffer('coloradoKit', answerMap, 'State-specific'))
   if (location === 'ca') pushUnique(offers, createOffer('californiaKit', answerMap, 'State-specific'))

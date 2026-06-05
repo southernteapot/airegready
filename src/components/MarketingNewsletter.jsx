@@ -112,7 +112,7 @@ export default function MarketingNewsletter() {
       )}
       <noscript>
         <p className="font-sans text-xs leading-relaxed text-[#536684] dark:text-[#B2C9ED]">
-          Newsletter signup requires JavaScript. Email info@airegready.com to
+          Newsletter signup requires JavaScript. Email support@airegready.com to
           request updates.
         </p>
       </noscript>

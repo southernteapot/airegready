@@ -322,7 +322,7 @@ export default function Home() {
                 id="home-products-heading"
                 eyebrow="Featured resources"
                 title="Start with the core governance file, then add focused packets."
-                body="The full catalog now has the detailed resource list. The homepage highlights what most teams need first: governance, acceptable use, risk review, vendor review, and training."
+                body="The full catalog now has the detailed resource list. Start with the live starter kit, then add focused catalog resources for acceptable use, risk review, vendor review, and training."
                 compact
               />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -354,8 +354,8 @@ export default function Home() {
               <p className="mt-4 font-sans text-base leading-relaxed text-[#D9E7FF]">
                 A practical starting package for teams that need a credible,
                 editable governance file before AI use grows further. Use it to
-                document tools, assign ownership, review vendors, train staff,
-                and keep update notes in one organized place.
+                document tools, assign ownership, set use rules, triage higher-risk
+                workflows, and keep update notes in one organized place.
               </p>
               <div className="mt-6">
                 <PrimaryLink href="/catalog/ai-governance-starter-kit">Get the starter kit — $19</PrimaryLink>

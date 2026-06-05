@@ -46,10 +46,10 @@ export default function ContactPage() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a
-                href="mailto:info@airegready.com"
+                href="mailto:support@airegready.com"
                 className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#0F5E9C] px-5 py-3 font-sans text-sm font-bold text-white no-underline shadow-[0_14px_30px_-22px_rgba(15,94,156,0.95)] transition hover:bg-[#0B4A7D]"
               >
-                Email info@airegready.com
+                Email support@airegready.com
               </a>
               <Link
                 href="/catalog"

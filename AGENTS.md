@@ -24,8 +24,8 @@ This repo has local project memory files. Read them before making changes.
 ## AIRegReady Site Rules
 
 - Treat `/catalog` as the canonical customer-facing catalog; `/kits` is compatibility only.
-- Keep catalog claims honest until pricing, checkout, and delivery are implemented. `/catalog/[slug]` pages are preview/sales pages only; use the hosted preview-request form or contact CTAs rather than fake downloads or prices.
-- Use `info@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.
+- Keep catalog claims honest. The AI Governance Starter Kit is the only currently wired paid product; other `/catalog/[slug]` pages are preview/sales pages only until pricing, checkout, and delivery are implemented for those products. Use hosted preview-request forms or contact CTAs rather than fake downloads or prices.
+- Use `support@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.
 - The preview request flow posts to `/api/preview-request`, not a public personal mailbox. Keep privacy disclosures aligned with any changes to collected fields, logging, or notification webhooks.
 - Keep the live design aligned with the dark navy/slate product-catalog direction. The older cream/serif editorial look should remain only in archived preview routes unless Brian asks to revive it.
 - Use compressed public assets in `public/assets/` for live UI. Keep raw/generated source images under `images/`, which is local-only and gitignored.

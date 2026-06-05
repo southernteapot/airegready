@@ -5,7 +5,6 @@ import {
   getAvailableProducts,
   getProductHref,
   getProductKind,
-  getProductOfferUrl,
   getProductPriceLabel,
   getRoadmapProducts,
   isPurchasableProduct,
@@ -50,19 +49,17 @@ function buildCatalogSchema(availableProducts) {
           '@type': 'Brand',
           name: 'AIRegReady',
         },
-        offers: {
-          '@type': 'Offer',
-          url: getProductOfferUrl(product).startsWith('http')
-            ? getProductOfferUrl(product)
-            : absoluteUrl(getProductOfferUrl(product)),
-          availability: 'https://schema.org/InStock',
-          ...(isPurchasableProduct(product)
-            ? {
+        ...(isPurchasableProduct(product)
+          ? {
+              offers: {
+                '@type': 'Offer',
+                url: product.purchaseUrl,
+                availability: 'https://schema.org/InStock',
                 price: String(product.price),
                 priceCurrency: product.priceCurrency,
-              }
-            : {}),
-        },
+              },
+            }
+          : {}),
       },
     })),
   }
@@ -163,8 +160,8 @@ export default function KitsPage() {
             <p className="mt-4 break-words font-sans text-base leading-relaxed text-[#CFE0F2]">
               A practical starting package for teams that need a credible,
               editable governance file before AI use grows further. Use it to
-              document tools, assign ownership, review vendors, train staff, and
-              keep update notes in one organized place.
+              document tools, assign ownership, set use rules, triage higher-risk
+              workflows, and keep update notes in one organized place.
             </p>
             <p className="mt-4 font-sans text-sm leading-relaxed text-[#ADC4DE]">
               Educational starting point only. Review specific obligations with

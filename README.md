@@ -121,19 +121,20 @@ law firm and does not provide legal advice. Resources are starting points for
 internal governance work and should be reviewed with qualified counsel for
 specific legal obligations.
 
-Public contact links should use `info@airegready.com`. Do not add personal email
+Public contact links should use `support@airegready.com`. Do not add personal email
 addresses, personal names, attorney references, legal advice claims, or
 compliance guarantees.
 
 ## Catalog Status
 
-The catalog is currently an honest preview-request flow. Requestable packages
-have `/catalog/[slug]` detail pages with audience, contents, preview structure,
-use cases, and hosted request forms. The form posts to `/api/preview-request`
-with a honeypot, origin check, in-process rate limit, and optional webhook
-forwarding. Coming-soon items are separated into a roadmap strip until their
-contents are ready. Do not invent prices, downloads, checkout links, or product
-availability until the product delivery stack is chosen.
+The catalog is currently a mixed paid/preview flow. The AI Governance Starter
+Kit is purchasable through the configured Gumroad URL, while other available
+catalog packages remain preview-request pages until pricing, checkout, and
+delivery are explicitly implemented for those products. Preview forms post to
+`/api/preview-request` with a honeypot, origin check, in-process rate limit,
+and optional webhook forwarding. Coming-soon items are separated into a roadmap
+strip until their contents are ready. Do not invent prices, downloads, checkout
+links, or product availability for products that are not actually wired.
 
 ## Assets
 

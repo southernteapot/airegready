@@ -14,7 +14,7 @@ const organizationOptions = [
   ['other', 'Other'],
 ]
 
-export default function PreviewRequestForm({ product }) {
+export default function PreviewRequestForm({ product, submitLabel = 'Send preview request' }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [organizationType, setOrganizationType] = useState('')
@@ -187,7 +187,7 @@ export default function PreviewRequestForm({ product }) {
         disabled={status === 'loading'}
         className="min-h-12 w-full rounded-lg bg-[#174EA6] px-5 py-3 font-sans text-sm font-bold text-white transition hover:bg-[#2C6BFF] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
-        {status === 'loading' ? 'Sending...' : 'Send preview request'}
+        {status === 'loading' ? 'Sending...' : submitLabel}
       </button>
       {message && (
         <p
@@ -200,7 +200,7 @@ export default function PreviewRequestForm({ product }) {
       )}
       <noscript>
         <p className="font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
-          Preview requests require JavaScript. Email info@airegready.com with the
+          Preview requests require JavaScript. Email support@airegready.com with the
           package name and your use case.
         </p>
       </noscript>

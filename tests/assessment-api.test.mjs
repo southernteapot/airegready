@@ -14,7 +14,7 @@ test('assessment completion API accepts short-track telemetry', async () => {
       role: 'not-yet',
       marketExposure: 'us-multi',
       priority: 'pilot',
-      primaryRecommendation: 'founder-small-team-track',
+      primaryRecommendation: 'ai-governance-starter-kit',
       timestamp: '2026-04-22T12:00:00.000Z',
     }),
   })
@@ -38,7 +38,7 @@ test('assessment completion API accepts full telemetry shape', async () => {
       guardrails: 'Patchy',
       risk: 'Elevated',
       frameworkCount: 3,
-      primaryRecommendation: 'provider-assurance-pack',
+      primaryRecommendation: 'founder-ai-governance-track',
       timestamp: '2026-04-22T12:00:00.000Z',
     }),
   })

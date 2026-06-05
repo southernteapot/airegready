@@ -53,7 +53,7 @@ Post-redesign commercial front page is live. The site is positioned around a res
 
 ## Privacy & Branding Notes
 - Do NOT include any personal name or attorney references on the site
-- Use `info@airegready.com` for public contact and mailto links; do not publish personal email addresses
+- Use `support@airegready.com` for public contact and mailto links; do not publish personal email addresses
 - Catalog preview requests collect email, optional name, organization type, use case, requested package, source page, follow-up preference, and timestamp; keep privacy/legal copy aligned when changing this flow
 - WHOIS privacy is enabled on Cloudflare
 - Keep all copy neutral — "expert information" not "from an attorney"
@@ -84,9 +84,9 @@ Post-redesign commercial front page is live. The site is positioned around a res
 ## Recent Checkpoint
 Commit `7d1ebc0` (`Redesign AIRegReady front page and catalog`) promoted the new homepage, added `/catalog` and `/contact`, preserved old previews, updated the shared shell/style direction, and added product visuals. Validation at that checkpoint: lint, tests, build, local route checks, and Chromium render/overflow checks passed.
 
-Working-tree cleanup on 2026-04-30 replaced the public personal-email mailto with `info@airegready.com`, made catalog CTAs request-preview links, separated coming-soon cards into a roadmap strip, converted the large v3 homepage/catalog PNGs to compressed AVIF/WebP, removed the old PNGs, added app icons/manifest, moved `front-page-v2` under `/preview`, and updated production secondary-route copy/metadata away from the obsolete editorial positioning.
+Working-tree cleanup on 2026-04-30 replaced the public personal-email mailto with `support@airegready.com`, made catalog CTAs request-preview links, separated coming-soon cards into a roadmap strip, converted the large v3 homepage/catalog PNGs to compressed AVIF/WebP, removed the old PNGs, added app icons/manifest, moved `front-page-v2` under `/preview`, and updated production secondary-route copy/metadata away from the obsolete editorial positioning.
 
-Catalog expansion on 2026-05-01 added `/catalog/[slug]` detail pages for the 9 requestable packages, with product JSON-LD, sitemap/search inclusion, visual previews, audience/contents/use-case sections, and request-preview CTAs. These pages are preview/sales pages only; they do not publish prices, checkout, direct downloads, or legal-service claims. Preview CTAs now use the hosted `/api/preview-request` form flow instead of public mailto links.
+Catalog expansion on 2026-05-01 added `/catalog/[slug]` detail pages for the requestable packages, with product JSON-LD, sitemap/search inclusion, visual previews, audience/contents/use-case sections, and request-preview CTAs. As of 2026-06-05, the AI Governance Starter Kit is purchasable through Gumroad at $19; other available catalog pages remain preview/sales pages without invented prices, checkout, direct downloads, or legal-service claims. Preview CTAs use the hosted `/api/preview-request` form flow instead of public mailto links.
 
 ## Loose Cleanup
 - Root `images/` exists as local raw/generated source images and is ignored by git. It is not referenced by the app.

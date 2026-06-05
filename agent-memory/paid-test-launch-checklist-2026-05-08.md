@@ -144,7 +144,7 @@ Manual browser checks:
 3. `/kits` does not overpromise vendor review, staff training, incident response, or broader governance materials as part of this four-document paid kit.
 4. No public page links directly to the ZIP.
 5. The hosted payment page delivers the uploaded ZIP and not a stale ZIP.
-6. Receipt/support copy points buyers to `START-HERE.md` and `info@airegready.com`.
+6. Receipt/support copy points buyers to `START-HERE.md` and `support@airegready.com`.
 
 ## Post-sale follow-up
 

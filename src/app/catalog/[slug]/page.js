@@ -7,7 +7,6 @@ import {
   getProductBySlug,
   getProductHref,
   getProductKind,
-  getProductOfferUrl,
   getProductPriceLabel,
   isPurchasableProduct,
 } from '@/lib/marketing'
@@ -61,19 +60,17 @@ function buildProductSchema(product) {
         '@type': 'Brand',
         name: 'AIRegReady',
       },
-      offers: {
-        '@type': 'Offer',
-        url: getProductOfferUrl(product).startsWith('http')
-          ? getProductOfferUrl(product)
-          : absoluteUrl(getProductOfferUrl(product)),
-        availability: 'https://schema.org/InStock',
-        ...(isPurchasableProduct(product)
-          ? {
+      ...(isPurchasableProduct(product)
+        ? {
+            offers: {
+              '@type': 'Offer',
+              url: product.purchaseUrl,
+              availability: 'https://schema.org/InStock',
               price: String(product.price),
               priceCurrency: product.priceCurrency,
-            }
-          : {}),
-      },
+            },
+          }
+        : {}),
     },
     {
       '@type': 'BreadcrumbList',
@@ -303,15 +300,16 @@ export default async function CatalogProductPage({ params }) {
                 </ol>
               </nav>
               <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
-                {getProductKind(product)} preview
+                {isPurchasable ? `${getProductKind(product)} available now` : `${getProductKind(product)} preview`}
               </p>
               <h1 className="mt-4 max-w-[760px] break-words font-sans text-[34px] font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl">
                 {product.title}
               </h1>
               <p className="mt-5 max-w-[720px] font-sans text-base leading-relaxed text-[#D8E6F5] sm:text-lg">
-                {product.helps} This page shows the audience, file contents,
-                delivery structure, and request path without implying legal
-                advice or a compliance guarantee.
+                {product.helps}{' '}
+                {isPurchasable
+                  ? 'This page shows what is included, the delivery structure, and the educational-use boundary before you buy.'
+                  : 'This page shows the audience, file contents, delivery structure, and request path without implying legal advice or a compliance guarantee.'}
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 {isPurchasable ? (
@@ -324,7 +322,7 @@ export default async function CatalogProductPage({ params }) {
                   </PrimaryAction>
                 )}
                 <SecondaryAction href={isPurchasable ? '#request-preview' : '/assessment'}>
-                  {isPurchasable ? 'Request preview first' : 'Start assessment first'}
+                  {isPurchasable ? 'Ask a question first' : 'Start assessment first'}
                 </SecondaryAction>
               </div>
             </div>
@@ -346,7 +344,7 @@ export default async function CatalogProductPage({ params }) {
               </p>
               <div className="mt-6 rounded-xl border border-[#D7E5F8] bg-[#F8FBFF] p-4 dark:border-slate-800 dark:bg-slate-900">
                 <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-[#7B8DA3]">
-                  Preview status
+                  {isPurchasable ? 'Availability' : 'Preview status'}
                 </p>
                 <p className="mt-2 font-sans text-sm font-bold leading-relaxed text-[#06132E] dark:text-white">
                   {isPurchasable ? (
@@ -384,7 +382,7 @@ export default async function CatalogProductPage({ params }) {
               </p>
               <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
                 {isPurchasable
-                  ? 'Buy the kit now, or request a preview first.'
+                  ? 'Buy the kit now, or ask a question first.'
                   : 'Request the preview, then decide whether the package fits.'}
               </h2>
               <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
@@ -392,7 +390,7 @@ export default async function CatalogProductPage({ params }) {
                   <>
                     The paid kit is delivered by Gumroad as an instant digital
                     download. If you want to ask a question before buying, the
-                    preview form still captures the package name, organization
+                    form captures the package name, organization
                     type, and use case.
                   </>
                 ) : (
@@ -433,10 +431,12 @@ export default async function CatalogProductPage({ params }) {
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-6 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm lg:grid-cols-[0.8fr_1.2fr] dark:border-slate-800 dark:bg-slate-950">
             <div>
               <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
-                Preview request
+                {isPurchasable ? 'Product question' : 'Preview request'}
               </p>
               <h2 className="mt-3 font-sans text-2xl font-black leading-tight text-[#06132E] dark:text-white">
-                Ask for the {product.title} preview.
+                {isPurchasable
+                  ? `Ask a question about the ${product.title}.`
+                  : `Ask for the ${product.title} preview.`}
               </h2>
               <p className="mt-2 font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
                 AIRegReady resources are starting points for internal governance
@@ -444,7 +444,10 @@ export default async function CatalogProductPage({ params }) {
                 sensitive personal, legal, or confidential business information.
               </p>
             </div>
-            <PreviewRequestForm product={{ slug: product.slug, title: product.title }} />
+            <PreviewRequestForm
+              product={{ slug: product.slug, title: product.title }}
+              submitLabel={isPurchasable ? 'Send question' : 'Send preview request'}
+            />
           </div>
         </section>
       </div>
