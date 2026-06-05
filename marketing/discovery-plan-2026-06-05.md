@@ -67,3 +67,45 @@ Do not claim legal compliance, certification, attorney review, or guaranteed reg
 - Add the same four Starter Kit gallery images to Gumroad.
 - Post the first 3 LinkedIn items across one week and watch which landing page gets clicks.
 - If one page gets traction, turn it into a deeper blog article and link back to the Starter Kit.
+
+
+## Public Copy Guardrails
+
+Avoid public claims that imply legal advice, legal protection, automated compliance, or guaranteed outcomes.
+
+Do not use:
+
+- "Comply with AI laws"
+- "Stay compliant"
+- "Regulator-ready"
+- "Legal protection"
+- "Attorney-drafted"
+- "Avoid fines"
+- "Guaranteed compliance"
+- "Everything you need"
+
+Safer phrasing:
+
+- "Organize your first AI governance file"
+- "Document the AI tools your team already uses"
+- "Set plain-English internal rules"
+- "Create a review path for higher-risk uses"
+- "Track vendor, model, prompt, workflow, and policy changes"
+- "Educational templates only"
+
+## Product #2 Candidate
+
+The strongest follow-on offer is the Vendor AI Review Packet. It naturally follows the Starter Kit because buyers who inventory AI tools will soon ask, "Can we approve this AI vendor or SaaS AI feature?"
+
+Likely contents:
+
+- AI vendor risk assessment questionnaire
+- Scoring guide
+- Procurement checklist lite
+- Vendor review request email template
+- Vendor decision memo / approval record
+- Red-flag list
+- Start Here guide
+- Educational-use and legal-boundary notice
+
+Suggested first test price: $29, with $39 as a later test if the purchase path and objections support it.

@@ -4,6 +4,7 @@ Track current project tasks here.
 
 ## Current
 
+- Productize the Vendor AI Review Packet as the likely second paid offer: use existing vendor assessment, scoring guide, and procurement checklist drafts; add vendor request email, decision memo, red-flag list, Start Here guide, legal-boundary notice, DOCX/PDF/Markdown exports, and ZIP QA.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Before product conversion, audit `content/products/` for stale Colorado/EU timing references and align delivery copy with the public SB 26-189 / Digital Omnibus updates.
