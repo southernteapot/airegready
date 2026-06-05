@@ -46,7 +46,7 @@ test('search index is generated from the canonical live content layer', () => {
   assert.ok(searchIndex.some((entry) => entry.type === 'page' && entry.url === '/timeline'))
 })
 
-test('starter kit exposes live purchase metadata', () => {
+test('starter kit exposes live purchase metadata and buyer FAQ', () => {
   const starterKit = getProductBySlug('ai-governance-starter-kit')
 
   assert.ok(starterKit)
@@ -54,6 +54,9 @@ test('starter kit exposes live purchase metadata', () => {
   assert.equal(starterKit.priceCurrency, 'USD')
   assert.equal(starterKit.purchaseUrl, 'https://airegready.gumroad.com/l/kfadzn')
   assert.equal(starterKit.purchaseCta, 'Buy for $19')
+  assert.equal(starterKit.faq.length, 8)
+  assert.ok(starterKit.faq.some((item) => item.question === 'Is this legal advice?'))
+  assert.ok(starterKit.faq.some((item) => item.question === 'Couldn’t I just ask ChatGPT to make this?'))
 })
 
 test('feed XML uses the latest article date rather than the current build date', () => {

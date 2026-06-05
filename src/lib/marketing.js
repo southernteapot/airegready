@@ -20,6 +20,48 @@ export const productCards = [
     purchaseCta: 'Buy for $19',
     price: 19,
     priceCurrency: 'USD',
+    faq: [
+      {
+        question: 'Is this legal advice?',
+        answer:
+          'No. This is an editable educational template packet for organizing your AI tools, internal rules, review steps, and update records. Use qualified professional review where your situation requires it.',
+      },
+      {
+        question: 'Will this make us compliant?',
+        answer:
+          'No template can decide your legal obligations or guarantee an outcome. The kit helps you document current AI use, set internal rules, triage higher-risk workflows, and track changes over time.',
+      },
+      {
+        question: 'Who is this for?',
+        answer:
+          'Founders, operators, consultants, nonprofits, schools, and small teams already using AI at work but missing a basic inventory, policy, intake path, and update log.',
+      },
+      {
+        question: 'What exactly do I get?',
+        answer:
+          'Four editable templates: AI use inventory, acceptable use policy, risk intake form, and update tracker. The download includes DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice.',
+      },
+      {
+        question: 'How long does the first setup take?',
+        answer:
+          'The first pass is meant to be lightweight. A small team can usually start by listing active tools, assigning owners, marking sensitive-data rules, and flagging review triggers in one working session.',
+      },
+      {
+        question: 'Couldn’t I just ask ChatGPT to make this?',
+        answer:
+          'You can generate generic policy text. The value here is the coherent packet: inventory, rules, intake, update tracking, Start Here guidance, editable formats, and consistent legal-boundary language in one place.',
+      },
+      {
+        question: 'Are updates included?',
+        answer:
+          'The kit includes an update tracker so you can record vendor, model, prompt, workflow, and policy changes. Future AIRegReady product updates may be made available through Gumroad when the packet is revised.',
+      },
+      {
+        question: 'What if my team uses vendor AI tools?',
+        answer:
+          'Start by listing those tools in the inventory and noting what data, workflows, and owners are involved. If vendor approval is the main problem, the next AIRegReady packet is planned around vendor AI review.',
+      },
+    ],
   },
   {
     slug: 'acceptable-use-policy-kit',

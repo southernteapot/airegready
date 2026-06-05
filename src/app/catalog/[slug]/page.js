@@ -31,70 +31,86 @@ export async function generateMetadata({ params }) {
 
 function buildProductSchema(product) {
   const url = absoluteUrl(getProductHref(product))
+  const graph = [
+    {
+      '@type': 'WebPage',
+      '@id': url,
+      name: product.title,
+      description: product.helps,
+      url,
+      mainEntity: {
+        '@id': `${url}#product`,
+      },
+    },
+    {
+      '@type': 'Product',
+      '@id': `${url}#product`,
+      name: product.title,
+      description: product.helps,
+      category: getProductKind(product),
+      image: absoluteUrl(product.previewImage),
+      audience: {
+        '@type': 'Audience',
+        audienceType: product.audience,
+      },
+      isRelatedTo: product.inside.map((name) => ({
+        '@type': 'CreativeWork',
+        name,
+      })),
+      brand: {
+        '@type': 'Brand',
+        name: 'AIRegReady',
+      },
+      offers: {
+        '@type': 'Offer',
+        url: getProductOfferUrl(product).startsWith('http')
+          ? getProductOfferUrl(product)
+          : absoluteUrl(getProductOfferUrl(product)),
+        availability: 'https://schema.org/InStock',
+        ...(isPurchasableProduct(product)
+          ? {
+              price: String(product.price),
+              priceCurrency: product.priceCurrency,
+            }
+          : {}),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Catalog',
+          item: absoluteUrl('/catalog'),
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: product.title,
+        },
+      ],
+    },
+  ]
+
+  if (product.faq?.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: product.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    })
+  }
 
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': url,
-        name: product.title,
-        description: product.helps,
-        url,
-        mainEntity: {
-          '@id': `${url}#product`,
-        },
-      },
-      {
-        '@type': 'Product',
-        '@id': `${url}#product`,
-        name: product.title,
-        description: product.helps,
-        category: getProductKind(product),
-        image: absoluteUrl(product.previewImage),
-        audience: {
-          '@type': 'Audience',
-          audienceType: product.audience,
-        },
-        isRelatedTo: product.inside.map((name) => ({
-          '@type': 'CreativeWork',
-          name,
-        })),
-        brand: {
-          '@type': 'Brand',
-          name: 'AIRegReady',
-        },
-        offers: {
-          '@type': 'Offer',
-          url: getProductOfferUrl(product).startsWith('http')
-            ? getProductOfferUrl(product)
-            : absoluteUrl(getProductOfferUrl(product)),
-          availability: 'https://schema.org/InStock',
-          ...(isPurchasableProduct(product)
-            ? {
-                price: String(product.price),
-                priceCurrency: product.priceCurrency,
-              }
-            : {}),
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Catalog',
-            item: absoluteUrl('/catalog'),
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: product.title,
-          },
-        ],
-      },
-    ],
+    '@graph': graph,
   }
 }
 
@@ -199,6 +215,54 @@ function DetailList({ title, items, id }) {
             </p>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+function ProductFaq({ faq, product }) {
+  if (!faq?.length) return null
+
+  return (
+    <section id="faq" className="bg-white px-4 py-16 sm:px-6 sm:py-20 dark:bg-slate-950">
+      <div className="mx-auto max-w-[1120px]">
+        <div className="max-w-[760px]">
+          <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
+            Buyer questions
+          </p>
+          <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
+            Before you buy the {product.title}
+          </h2>
+          <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+            The short version: this is a practical starter packet, not a legal
+            opinion or compliance guarantee. These are the questions that matter
+            before a small team spends money on it.
+          </p>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          {faq.map((item) => (
+            <article key={item.question} className="rounded-2xl border border-[#D7E5F8] bg-[#F8FBFF] p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="font-sans text-lg font-black leading-snug text-[#06132E] dark:text-white">
+                {item.question}
+              </h3>
+              <p className="mt-3 font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+                {item.answer}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        {isPurchasableProduct(product) && (
+          <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#BED2F4] bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:bg-slate-950">
+            <p className="font-sans text-sm font-bold leading-relaxed text-[#06132E] dark:text-white">
+              Ready to start from a coherent packet instead of a blank-page prompt loop?
+            </p>
+            <ExternalPrimaryAction href={product.purchaseUrl}>
+              {product.purchaseCta || `Buy for ${getProductPriceLabel(product)}`}
+            </ExternalPrimaryAction>
+          </div>
+        )}
       </div>
     </section>
   )
@@ -362,6 +426,8 @@ export default async function CatalogProductPage({ params }) {
             </div>
           </div>
         </section>
+
+        <ProductFaq faq={product.faq} product={product} />
 
         <section id="request-preview" className="px-4 py-12 sm:px-6">
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-6 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm lg:grid-cols-[0.8fr_1.2fr] dark:border-slate-800 dark:bg-slate-950">
