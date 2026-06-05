@@ -60,6 +60,8 @@ Track current project tasks here.
 
 - 2026-06-05 discovery landing page pass completed: added five buyer-intent guide pages for AI policy, ChatGPT employee rules, AI use inventory, AI risk assessment, and AI governance checklist searches; linked them from the homepage; wired them into sitemap/search; improved the free checklist positioning; added Starter Kit best-for/not-for/first-hour copy; and drafted a LinkedIn/distribution plan under `marketing/`.
 
+- 2026-06-05 SEO support article pass completed: added three practical blog posts for first AI policy, AI use inventory, and first-pass AI risk assessment; registered them in the blog index/feed/sitemap; linked them from matching discovery landing pages; validated rendering with build and browser QA.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

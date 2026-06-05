@@ -29,6 +29,7 @@ export const discoveryPages = [
     related: [
       ['Free AI readiness checklist', '/checklist'],
       ['AI Governance Starter Kit', '/catalog/ai-governance-starter-kit'],
+      ['First AI policy article', '/blog/first-ai-policy-for-new-business'],
       ['Acceptable Use Policy Kit preview', '/catalog/acceptable-use-policy-kit'],
     ],
     faq: [
@@ -102,8 +103,8 @@ export const discoveryPages = [
       'The Starter Kit includes an editable AI Use Inventory plus risk tiering, a tool approval mini-checklist, and an update tracker so the inventory becomes a maintained operating record.',
     related: [
       ['AI Governance Starter Kit', '/catalog/ai-governance-starter-kit'],
+      ['How to make an AI use inventory', '/blog/how-to-make-ai-use-inventory'],
       ['Free AI readiness checklist', '/checklist'],
-      ['Vendor AI Review Packet preview', '/catalog/vendor-ai-review-packet'],
     ],
     faq: [
       ['Is an AI inventory only for companies with employees?', 'No. Solo founders and consultants also benefit because vendor AI features, client data, and customer-facing workflows can spread quickly.'],
@@ -139,8 +140,8 @@ export const discoveryPages = [
       'The Starter Kit includes a risk intake and impact assessment, green/yellow/red use rules, a risk tiering decision tree, risk register, and risk review notes for first-pass documentation.',
     related: [
       ['AI Governance Starter Kit', '/catalog/ai-governance-starter-kit'],
+      ['First-pass AI risk assessment article', '/blog/first-pass-ai-risk-assessment'],
       ['Advanced AI Risk Assessment Toolkit preview', '/catalog/ai-risk-assessment-toolkit'],
-      ['AI readiness assessment', '/assessment'],
     ],
     faq: [
       ['Is this the same as a formal impact assessment?', 'No. This is a first-pass internal review structure. Higher-risk, regulated, consequential, or contract-sensitive uses may need a more formal process and qualified review.'],
@@ -177,7 +178,7 @@ export const discoveryPages = [
     related: [
       ['Free AI readiness checklist', '/checklist'],
       ['AI Governance Starter Kit', '/catalog/ai-governance-starter-kit'],
-      ['Minimum viable guardrails article', '/blog/minimum-viable-guardrails'],
+      ['First-pass risk assessment article', '/blog/first-pass-ai-risk-assessment'],
     ],
     faq: [
       ['Do new businesses need AI governance?', 'If AI tools touch customer data, client work, employee tasks, vendor systems, public content, or important decisions, basic governance records are useful even before the business is large.'],

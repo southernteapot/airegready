@@ -31,8 +31,14 @@ import { whenAiGeneratedImagesAreIllegal } from './when-ai-generated-images-are-
 import { whiteHouseAiCybersecurityOrder } from './white-house-ai-cybersecurity-order.js'
 import { agenticAiSecurityGuidance } from './agentic-ai-security-guidance.js'
 import { aiGovernanceStarterKitLaunch } from './ai-governance-starter-kit-launch.js'
+import { firstAiPolicyForNewBusiness } from './first-ai-policy-for-new-business.js'
+import { howToMakeAiUseInventory } from './how-to-make-ai-use-inventory.js'
+import { firstPassAiRiskAssessment } from './first-pass-ai-risk-assessment.js'
 
 const articles = {
+  'first-pass-ai-risk-assessment': firstPassAiRiskAssessment,
+  'how-to-make-ai-use-inventory': howToMakeAiUseInventory,
+  'first-ai-policy-for-new-business': firstAiPolicyForNewBusiness,
   'ai-governance-starter-kit-launch': aiGovernanceStarterKitLaunch,
   'white-house-ai-cybersecurity-order': whiteHouseAiCybersecurityOrder,
   'agentic-ai-security-guidance': agenticAiSecurityGuidance,
