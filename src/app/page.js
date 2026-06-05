@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MarketingNewsletter from '@/components/MarketingNewsletter'
 import { buildPageMetadata } from '@/lib/seo'
+import { discoveryPages } from '@/lib/discovery-pages'
 import {
   assessmentRows,
   getProductHref,
@@ -311,6 +312,30 @@ export default function Home() {
                   <p className="mt-2 font-sans text-xs font-semibold leading-relaxed text-[#ADC4DE]">{body}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+
+        <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-14 text-white sm:px-6 sm:py-16" aria-labelledby="popular-guides-heading">
+          <div className="mx-auto max-w-[1240px]">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+              <SectionHeader
+                id="popular-guides-heading"
+                eyebrow="Popular starter guides"
+                title="Entry points for the searches founders are already making."
+                body="Start with a specific question, then move into the free checklist or the paid Starter Kit when you need editable documents."
+                compact
+              />
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {discoveryPages.map((guide) => (
+                  <Link key={guide.slug} href={`/${guide.slug}`} className="rounded-2xl border border-slate-800 bg-slate-950 p-5 no-underline transition hover:border-cyan-300/60 hover:bg-slate-900">
+                    <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-cyan-300">{guide.eyebrow}</p>
+                    <h3 className="mt-2 font-sans text-lg font-black leading-tight text-white">{guide.title}</h3>
+                    <p className="mt-3 font-sans text-sm leading-relaxed text-[#B2C9ED]">{guide.description}</p>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -266,6 +266,86 @@ function ProductGallery({ product }) {
   )
 }
 
+function StarterKitFitSection({ product }) {
+  if (product.slug !== 'ai-governance-starter-kit') return null
+
+  const bestFor = [
+    'Founders and new business owners who are already using AI but have no written inventory, policy, intake path, or update log.',
+    'Consultants and operators who need a practical internal file before AI usage spreads across client work, vendor tools, or team workflows.',
+    'Lean teams that want editable first-pass governance and risk assessment documents before involving legal, privacy, security, HR, or procurement review.',
+  ]
+  const notFor = [
+    'A business that needs legal advice, a legal opinion, or a guaranteed compliance determination.',
+    'A regulated, high-impact, or enterprise AI program that needs a full formal assessment, procurement review, technical audit, or counsel-led implementation.',
+    'A buyer looking for software automation, monitoring, certification, or a managed compliance service.',
+  ]
+  const firstHour = [
+    'Open the AI Use Inventory and list every AI tool, vendor feature, and account currently used for work.',
+    'Mark sensitive data, customer-facing outputs, decision-support uses, and any unapproved tools.',
+    'Use the green/yellow/red rules and risk tiering decision tree to pick the workflows that need review first.',
+    'Send the rollout message, assign owners, and start the update tracker so the file does not go stale.',
+  ]
+
+  return (
+    <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="starter-fit-heading">
+      <div className="mx-auto max-w-[1240px]">
+        <div className="max-w-[780px]">
+          <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
+            Buyer fit
+          </p>
+          <h2 id="starter-fit-heading" className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
+            Use it when you need credible basics, not a giant compliance program.
+          </h2>
+          <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
+            The Starter Kit is built for the moment when AI use is already
+            happening, but the written process is missing. It helps you create
+            the first working file before deeper legal, privacy, security, or
+            procurement review is needed.
+          </p>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 className="font-sans text-xl font-black text-white">Best for</h3>
+            <div className="mt-5 grid grid-cols-1 gap-3">
+              {bestFor.map((item) => (
+                <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#58D4FF]" aria-hidden="true" />
+                  <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+            <h3 className="font-sans text-xl font-black text-white">Not for</h3>
+            <div className="mt-5 grid grid-cols-1 gap-3">
+              {notFor.map((item) => (
+                <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#F59E0B]" aria-hidden="true" />
+                  <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-6 shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
+            <h3 className="font-sans text-xl font-black text-white">Use it in your first hour</h3>
+            <ol className="mt-5 grid grid-cols-1 gap-3">
+              {firstHour.map((item, index) => (
+                <li key={item} className="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                  <span className="font-sans text-xs font-black text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
+                  <p className="mt-2 font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ProductFaq({ faq, product }) {
   if (!faq?.length) return null
 
@@ -380,6 +460,8 @@ export default async function CatalogProductPage({ params }) {
         </section>
 
         <ProductGallery product={product} />
+
+        <StarterKitFitSection product={product} />
 
         <section className="bg-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">

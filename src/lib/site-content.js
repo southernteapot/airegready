@@ -1,9 +1,19 @@
 import { getAllArticles } from './articles/index.js'
+import { discoveryPages } from './discovery-pages.js'
 import { getAvailableProducts, getProductHref, getProductKind } from './marketing.js'
 import { getAllRegulations } from './regulations/index.js'
 import { SITE_URL } from './seo.js'
 
 const STATIC_PAGE_DEFINITIONS = [
+  ...discoveryPages.map((page) => ({
+    url: `/${page.slug}`,
+    title: page.title,
+    description: page.description,
+    searchTags: [page.eyebrow, 'AI governance', 'template', 'checklist'],
+    changeFrequency: 'monthly',
+    priority: 0.72,
+    lastModifiedSource: null,
+  })),
   {
     url: '/catalog',
     title: 'AI Governance Catalog',

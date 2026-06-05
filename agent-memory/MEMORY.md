@@ -28,6 +28,7 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - `/catalog` is the canonical product/resource catalog route; `/catalog/[slug]` pages preview requestable packages; `/kits` remains as a compatibility route.
 - Product/template working drafts live in `content/products/` and are documented as internal drafts, not yet published to the public site.
 - The public app uses `public/assets/` for homepage/product visuals; the root `images/` tree contains raw/generated image and logo source candidates.
+- Discovery landing pages now exist for `/ai-policy-template-small-business`, `/chatgpt-policy-for-employees`, `/ai-use-inventory-template`, `/ai-risk-assessment-template`, and `/ai-governance-checklist`; they funnel search visitors toward the free checklist and paid Starter Kit.
 - Live homepage/catalog v3 visuals use compressed AVIF assets in `public/assets/`; WebP derivatives are retained as fallback/source-ready assets.
 - The shared logo is currently implemented in `src/components/Logo.jsx` as an inline blue/cyan shield-check mark with the `AIRegReady` wordmark.
 - App icon/manifest assets live in `src/app/icon.svg`, `src/app/apple-icon.png`, and `src/app/manifest.webmanifest`.

@@ -57,6 +57,9 @@ Track current project tasks here.
 
 - 2026-06-05 Starter Kit gallery integration completed: four product-preview PNGs were added to `public/assets/`, `/catalog` now uses the overview visual, and the Starter Kit product page has a four-image preview gallery.
 
+
+- 2026-06-05 discovery landing page pass completed: added five buyer-intent guide pages for AI policy, ChatGPT employee rules, AI use inventory, AI risk assessment, and AI governance checklist searches; linked them from the homepage; wired them into sitemap/search; improved the free checklist positioning; added Starter Kit best-for/not-for/first-hour copy; and drafted a LinkedIn/distribution plan under `marketing/`.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.
