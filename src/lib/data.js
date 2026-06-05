@@ -299,7 +299,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'Who needs to think about AI readiness?',
-    a: 'Anyone who develops, deploys, or uses AI \u2014 including solo operators, freelancers, startups, and small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI touches your work, your customers, or decisions about people, you have readiness and regulatory considerations worth understanding. You don\u2019t need a big team to get started \u2014 but you do need a clear picture of what you\u2019re using and what\u2019s at stake.',
+    a: 'Anyone who develops, deploys, or uses AI \u2014 including new business owners, solo operators, freelancers, consultants, startups, and small businesses using off-the-shelf tools like ChatGPT or Copilot. If AI touches your work, your customers, or decisions about people, you have readiness and regulatory considerations worth understanding. You don\u2019t need a big team to get started \u2014 but you do need a clear picture of what you\u2019re using and what\u2019s at stake.',
   },
   {
     q: 'Does the EU AI Act apply to U.S. companies?',
@@ -314,8 +314,8 @@ export const FAQ_ITEMS = [
     a: 'Start with an inventory: what AI tools do you use, what data do they process, and what decisions do they influence? From there, put a basic acceptable use policy in place and identify the regulations that apply to your industry and geography. Our free AI Readiness Assessment above gives you a quick starting point.',
   },
   {
-    q: 'We\u2019re a small team \u2014 do we really need AI policies?',
-    a: 'Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory puts you ahead of the curve. You don\u2019t need a 50-page governance manual \u2014 you need clear expectations about what tools are approved, what data can go into them, and who\u2019s responsible for reviewing AI outputs. Start simple and build from there.',
+    q: "I'm starting a business - do I really need AI policies?",
+    a: "Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory put you ahead of the curve. You don't need a 50-page governance manual - you need clear expectations about what tools are approved, what data can go into them, and who is responsible for reviewing AI outputs. Start simple and build from there.",
   },
   {
     q: 'Is there a single standard that covers everything?',

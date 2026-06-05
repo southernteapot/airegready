@@ -12,7 +12,7 @@ export const productCards = [
     title: 'AI Governance Starter Kit',
     kind: 'Kit',
     previewImage: '/assets/airegready-home-v3-starter-kit.avif',
-    audience: 'Founders, operators, and small teams starting from scattered AI use.',
+    audience: 'Founders, new business owners, consultants, and lean teams starting from scattered AI use.',
     inside: [
       'AI use inventory',
       'acceptable use policy',
@@ -49,7 +49,7 @@ export const productCards = [
       {
         question: 'Who is this for?',
         answer:
-          'Founders, operators, consultants, nonprofits, schools, and small teams already using AI at work but missing a basic inventory, policy, intake path, and update log.',
+          'People starting or growing a business, solo founders, consultants, operators, nonprofits, schools, and small organizations already using AI or expecting to use it soon but missing a basic inventory, policy, intake path, and update log.',
       },
       {
         question: 'What exactly do I get?',
@@ -59,7 +59,7 @@ export const productCards = [
       {
         question: 'How long does the first setup take?',
         answer:
-          'The first pass is meant to be lightweight. A small team can usually start by listing active tools, assigning owners, marking sensitive-data rules, tiering higher-risk uses, and choosing first follow-up actions in one working session.',
+          'The first pass is meant to be lightweight. A founder, operator, or lean team can usually start by listing active tools, assigning owners, marking sensitive-data rules, tiering higher-risk uses, and choosing first follow-up actions in one working session.',
       },
       {
         question: 'Couldn’t I just ask ChatGPT to make this?',
@@ -95,7 +95,7 @@ export const productCards = [
     previewImage: '/assets/airegready-home-v3-hero-workspace.avif',
     audience: 'Organizations that already have starter controls and need deeper review for high-impact AI systems.',
     inside: ['advanced assessment workflow', 'control evidence review', 'residual risk scoring', 'review evidence log'],
-    helps: 'Extends the starter packet for teams that need deeper risk review beyond first-pass templates.',
+    helps: 'Extends the starter packet for founders and teams that need deeper risk review beyond first-pass templates.',
     cta: 'Preview kit',
   },
   {

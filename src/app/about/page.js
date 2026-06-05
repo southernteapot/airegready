@@ -63,15 +63,15 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-3 font-sans text-sm text-secondary leading-relaxed">
               <p>
-                Teams and operators that need practical AI governance records.
+                Founders, new business owners, consultants, and operators who need practical AI governance records.
                 That includes:
               </p>
               <ul className="flex flex-col gap-2 ml-1">
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Founders and small businesses introducing AI into their
-                    operations
+                    People starting or growing a business and introducing AI
+                    into their operations
                   </span>
                 </li>
                 <li className="flex gap-2.5">
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <li className="flex gap-2.5">
                   <span className="text-accent mt-1 text-[8px]">&#9679;</span>
                   <span>
-                    Teams at larger companies trying to put practical AI
+                    Lean teams and departments trying to put practical AI
                     policies in place
                   </span>
                 </li>

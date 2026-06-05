@@ -158,8 +158,9 @@ export default function KitsPage() {
               AI Governance Starter Kit
             </h2>
             <p className="mt-4 break-words font-sans text-base leading-relaxed text-[#CFE0F2]">
-              A practical starting package for teams that need a credible,
-              editable governance file before AI use grows further. Use it to
+              A practical starting package for founders, new business owners,
+              consultants, and lean teams that need a credible, editable
+              governance file before AI use grows further. Use it to
               document tools, assign ownership, set use rules, triage higher-risk
               workflows, and keep update notes in one organized place.
             </p>

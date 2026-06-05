@@ -197,7 +197,7 @@ export default function Home() {
                   Resource library
                 </span>
                 <span className="min-w-0 max-w-full break-words font-sans text-sm font-semibold leading-snug text-[#D8E6F5]">
-                  New: buy the AI Governance Starter Kit for $19 and start with editable templates today.
+                  $19 AI Governance Starter Kit for founders, new business owners, and lean teams.
                 </span>
               </div>
               <div className="grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 lg:flex lg:flex-wrap">
@@ -216,13 +216,13 @@ export default function Home() {
                   Document kits for real governance work
                 </p>
                 <h1 id="home-heading" className="mt-4 max-w-[650px] break-words font-sans text-[32px] font-extrabold leading-[1.09] text-white sm:text-[44px] lg:text-[50px]">
-                  AI governance documents your team can actually use.
+                  AI governance documents founders and operators can actually use.
                 </h1>
                 <p className="mt-5 max-w-[680px] font-sans text-base leading-relaxed text-[#D8E6F5] sm:text-lg">
                   AIRegReady is a practical resource library for plain-English
                   templates, checklists, playbooks, trackers, and jurisdiction
-                  guides that help teams prepare internal AI governance
-                  documentation. Educational resources only, not legal advice.
+                  guides that help founders, consultants, and teams prepare
+                  practical AI governance documentation. Educational resources only, not legal advice.
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-nowrap">
                   <PrimaryLink href="/catalog/ai-governance-starter-kit">Get the AI Governance Starter Kit — $19</PrimaryLink>
@@ -352,8 +352,9 @@ export default function Home() {
                 AI Governance Starter Kit
               </h2>
               <p className="mt-4 font-sans text-base leading-relaxed text-[#D9E7FF]">
-                A practical starting package for teams that need a credible,
-                editable governance file before AI use grows further. Use it to
+                A practical starting package for founders, new business owners,
+                consultants, and lean teams that need a credible, editable
+                governance file before AI use grows further. Use it to
                 document tools, assign ownership, set use rules, triage higher-risk
                 workflows, and keep update notes in one organized place.
               </p>

@@ -737,9 +737,9 @@ function getPeerContext(answerMap, guardrails) {
 
   if (entity === 'small-team') {
     if (level === 'Ad Hoc' || level === 'Patchy') {
-      return 'Small teams usually hit the same wall: real AI usage appears before ownership, policy, and review exist.'
+      return 'Newer businesses and lean teams usually hit the same wall: real AI usage appears before ownership, policy, and review exist.'
     }
-    return 'You have more structure than most teams your size. The next step is proving it is repeatable, not just informal.'
+    return 'You have more structure than most businesses your size. The next step is proving it is repeatable, not just informal.'
   }
 
   if (entity === 'mid-size') {

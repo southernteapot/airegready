@@ -61,6 +61,14 @@ Decision: Keep the production homepage and catalog stack on a continuous dark na
 Reason: Brian said the hard dark-to-very-light section changes made the site look striped.
 Consequences: Future homepage/catalog layout work should use subtle dark gradients or dark slate bands between sections, and reserve pale backgrounds for bounded panels unless Brian explicitly wants a lighter page direction.
 
+
+## 2026-06-05 - Lead Starter Kit audience with founders and new businesses
+
+Project/system: AIRegReady public positioning and Starter Kit copy
+Decision: Lead AI Governance Starter Kit audience language with founders, new business owners, consultants, operators, and people starting or growing AI-enabled businesses. Keep small organizations and lean teams in the audience, but do not make "small teams" the primary buyer identity.
+Reason: Brian expects the biggest early market to be individuals starting businesses, not only existing teams.
+Consequences: Future Starter Kit, homepage, catalog, and Gumroad-adjacent copy should speak directly to solo founders, new business owners, consultants, and operators while preserving the educational/legal-boundary framing.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

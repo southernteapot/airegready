@@ -1,6 +1,6 @@
 export const aiGovernanceStarterKitLaunch = {
   slug: 'ai-governance-starter-kit-launch',
-  title: 'New: AI Governance Starter Kit for Small Teams',
+  title: 'New: AI Governance Starter Kit for Founders and New Businesses',
   description:
     'AIRegReady now offers a $19 AI Governance Starter Kit with 14 editable governance, rollout, and first-pass risk assessment documents.',
   category: 'Product Update',
@@ -15,12 +15,12 @@ export const aiGovernanceStarterKitLaunch = {
     {
       title: null,
       content:
-        'AIRegReady now has its first paid document packet: the [AI Governance Starter Kit](/catalog/ai-governance-starter-kit). It is a $19 set of editable templates for small teams that need to start documenting AI use without pretending they have a full compliance department.\n\nThe goal is deliberately modest: give a team a basic governance file they can open today, adapt, and improve over time. Not a magic compliance shield. Not legal advice. Not a 200-page binder nobody reads.',
+        'AIRegReady now has its first paid document packet: the [AI Governance Starter Kit](/catalog/ai-governance-starter-kit). It is a $19 set of editable templates for founders, new business owners, consultants, and lean teams that need to start documenting AI use without pretending they have a full compliance department.\n\nThe goal is deliberately modest: give a founder or operator a basic governance file they can open today, adapt, and improve over time. Not a magic compliance shield. Not legal advice. Not a 200-page binder nobody reads.',
     },
     {
       title: 'Why this kit exists',
       content:
-        'Most small teams using AI are in an awkward middle zone. They are already using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, image generators, or vendor AI features. But their documentation is usually scattered, informal, or nonexistent.\n\nThat becomes a problem when a client, investor, insurer, regulator, procurement team, or internal leader asks basic questions:',
+        'Most people starting or growing a business with AI are in an awkward middle zone. They are already using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, image generators, or vendor AI features. But their documentation is usually scattered, informal, or nonexistent.\n\nThat becomes a problem when a client, investor, insurer, regulator, procurement team, partner, or internal leader asks basic questions:',
       list: [
         'Which AI tools are you using?',
         'Who owns each tool or workflow?',
@@ -43,7 +43,7 @@ export const aiGovernanceStarterKitLaunch = {
     {
       title: 'Who it is for',
       content:
-        'This is best for founders, operators, consultants, small businesses, professional-services teams, and internal leads who need a first governance file. It is especially useful if AI use has grown through informal adoption: one team starts using ChatGPT, another adds Copilot, someone starts recording meetings with an AI tool, and nobody has written down the rules.\n\nIf you already have a mature legal, privacy, security, and compliance program, this is probably too basic. That is fine. It is a starter kit, not enterprise theater.',
+        'This is best for people starting or growing a business, solo founders, consultants, operators, small businesses, professional-services teams, nonprofits, schools, and internal leads who need a first governance file. It is especially useful if AI use has grown through informal adoption: a founder starts using ChatGPT, a contractor adds Copilot, someone records meetings with an AI tool, and nobody has written down the rules.\n\nIf you already have a mature legal, privacy, security, and compliance program, this is probably too basic. That is fine. It is a starter kit, not enterprise theater.',
     },
     {
       title: 'What it does not do',
@@ -58,7 +58,7 @@ export const aiGovernanceStarterKitLaunch = {
   ],
 
   takeaways: [
-    'The AI Governance Starter Kit gives small teams 14 editable documents for a first-pass governance and risk assessment file.',
+    'The AI Governance Starter Kit gives founders, new business owners, consultants, and lean teams 14 editable documents for a first-pass governance and risk assessment file.',
     'The packet includes DOCX, PDF, and Markdown versions of the core records, readiness checklist, setup plan, rollout aids, risk tiering, risk register, review notes, and update tracker.',
     'The kit is educational template material only, not legal advice or a compliance guarantee.',
     'The first practical step is to document the AI tools already in use, then assign owners and review higher-risk workflows.',

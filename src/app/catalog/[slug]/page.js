@@ -114,14 +114,14 @@ function buildProductSchema(product) {
 function buildUseCases(product) {
   return [
     `Turn ${product.inside[0]} and related notes into a working record your team can revisit.`,
-    'Give non-legal staff a plain-English starting point before counsel or leadership review.',
+    'Give founders, operators, and non-legal staff a plain-English starting point before counsel or leadership review.',
     'Create a consistent file structure for governance updates, vendor questions, training, and internal decisions.',
   ]
 }
 
 function buildReviewPrompts(product) {
   return [
-    `Which team owns this ${getProductKind(product).toLowerCase()} after the first draft is created?`,
+    `Who owns this ${getProductKind(product).toLowerCase()} after the first draft is created?`,
     'Which AI tools, workflows, vendors, or data categories should be documented first?',
     'Which decisions need qualified legal, privacy, security, procurement, or leadership review?',
   ]
@@ -135,7 +135,7 @@ function buildDeliveryDetails(product) {
     'DOCX files for editing, PDF reference copies, and Markdown versions for teams that work in docs or repositories.',
     'A Start Here guide and legal-use notice so buyers understand how to adapt the combined packet without treating it as legal advice.',
     'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
-    'Designed for small teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
+    'Designed for founders, new business owners, consultants, operators, and lean teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
   ]
 }
 
@@ -233,7 +233,7 @@ function ProductFaq({ faq, product }) {
           <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
             The short version: this is a practical starter packet, not a legal
             opinion or compliance guarantee. These are the questions that matter
-            before a small team spends money on it.
+            before a founder, operator, or new business owner spends money on it.
           </p>
         </div>
 

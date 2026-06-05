@@ -49,6 +49,8 @@ Track current project tasks here.
 
 - 2026-06-05 visual stripe cleanup completed: homepage, catalog, and catalog detail pages now use continuous dark/slate section foundations with light surfaces kept inside cards/forms.
 
+- 2026-06-05 Starter Kit buyer-positioning update completed: public copy now leads with founders, new business owners, consultants, operators, and people starting or growing AI-enabled businesses while keeping small organizations as a secondary audience.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

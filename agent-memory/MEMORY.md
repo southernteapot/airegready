@@ -8,7 +8,7 @@ AIRegReady is a website and document/template business focused on AI regulation 
 
 ## Current Known Direction
 
-The site should look professional, trustworthy, and polished. It is aimed at people starting businesses and also people with established businesses who need practical AI readiness materials.
+The site should look professional, trustworthy, and polished. It is aimed first at people starting or growing businesses with AI, including founders, new business owners, consultants, and operators, while still serving established businesses that need practical AI readiness materials.
 
 As of 2026-04-29, the visible brand direction is a professional hybrid of the previous site and the ad reference at `images/airegad.png`: dark navy/slate regulatory-product styling, restrained blue/cyan accents, a subtle circuit-board motif in the homepage hero only, and no rocket accent.
 
