@@ -120,6 +120,7 @@ export default function KitsPage() {
   const availableProducts = getAvailableProducts()
   const roadmapProducts = getRoadmapProducts()
   const starterProduct = availableProducts.find((product) => product.slug === 'ai-governance-starter-kit')
+  const starterHeroImage = starterProduct?.galleryImages?.[0]
   const starterPriceLabel = starterProduct ? getProductPriceLabel(starterProduct) : null
   const followOnProducts = starterProduct
     ? availableProducts.filter((product) => product.slug !== starterProduct.slug)
@@ -176,11 +177,11 @@ export default function KitsPage() {
           </div>
           <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-3 shadow-[0_36px_96px_-68px_rgba(0,0,0,0.9)]">
             <Image
-              src={starterProduct?.previewImage || '/assets/airegready-home-v3-starter-kit.avif'}
-              width="1586"
-              height="992"
-              alt="AI governance starter kit product preview with organized policy packets, checklists, and tabbed resources."
-              className="aspect-[16/10] h-auto w-full rounded-xl object-cover"
+              src={starterHeroImage?.src || starterProduct?.previewImage || '/assets/airegready-home-v3-starter-kit.avif'}
+              width={starterHeroImage ? 1280 : 1586}
+              height={starterHeroImage ? 720 : 992}
+              alt={starterHeroImage?.alt || 'AI governance starter kit product preview with organized policy packets, checklists, and tabbed resources.'}
+              className={starterHeroImage ? 'aspect-[16/9] h-auto w-full rounded-xl object-cover' : 'aspect-[16/10] h-auto w-full rounded-xl object-cover'}
               sizes="(max-width: 1024px) 100vw, 54vw"
               priority
             />

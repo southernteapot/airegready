@@ -11,7 +11,33 @@ export const productCards = [
     slug: 'ai-governance-starter-kit',
     title: 'AI Governance Starter Kit',
     kind: 'Kit',
-    previewImage: '/assets/airegready-home-v3-starter-kit.avif',
+    previewImage: '/assets/ai-governance-starter-kit-gallery-01-overview.png',
+    galleryImages: [
+      {
+        src: '/assets/ai-governance-starter-kit-gallery-01-overview.png',
+        alt: 'AI Governance Starter Kit overview with product summary, document previews, and delivery notes.',
+        title: 'Starter Kit overview',
+        body: 'A quick view of the paid packet, format mix, and educational-use boundary.',
+      },
+      {
+        src: '/assets/ai-governance-starter-kit-gallery-02-included-documents.png',
+        alt: 'AI Governance Starter Kit gallery image listing all fourteen included documents.',
+        title: 'Fourteen included documents',
+        body: 'Governance basics, rollout aids, and first-pass risk review tools in one packet.',
+      },
+      {
+        src: '/assets/ai-governance-starter-kit-gallery-03-document-previews.png',
+        alt: 'Actual PDF previews from the AI Governance Starter Kit showing sample document pages.',
+        title: 'Actual PDF previews',
+        body: 'Representative pages rendered from the kit reference PDFs.',
+      },
+      {
+        src: '/assets/ai-governance-starter-kit-gallery-04-file-formats.png',
+        alt: 'AI Governance Starter Kit file-format structure showing DOCX, PDF, Markdown, Start Here, and legal notice files.',
+        title: 'Organized download structure',
+        body: 'DOCX files, PDF reference copies, Markdown source, Start Here guide, and legal-use notice.',
+      },
+    ],
     audience: 'Founders, new business owners, consultants, and lean teams starting from scattered AI use.',
     inside: [
       'AI use inventory',

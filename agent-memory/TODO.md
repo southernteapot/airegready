@@ -55,6 +55,8 @@ Track current project tasks here.
 
 - 2026-06-05 Starter Kit catalog landing clarity completed: `/catalog` now opens with the AI Governance Starter Kit H1, shows all 14 included resources near the top, and labels lower catalog cards as separate follow-on resources/previews.
 
+- 2026-06-05 Starter Kit gallery integration completed: four product-preview PNGs were added to `public/assets/`, `/catalog` now uses the overview visual, and the Starter Kit product page has a four-image preview gallery.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

@@ -174,14 +174,21 @@ function SecondaryAction({ href, children }) {
 }
 
 function PreviewPanel({ product }) {
+  const heroImage = product.galleryImages?.[0]
+  const previewSrc = heroImage?.src || product.previewImage
+  const previewAlt = heroImage?.alt || `${product.title} preview workspace with organized AI governance documents and trackers.`
+  const previewClass = heroImage
+    ? 'aspect-[16/9] h-auto w-full rounded-xl object-cover'
+    : 'aspect-[16/10] h-auto w-full rounded-xl object-cover'
+
   return (
     <div className="overflow-hidden rounded-2xl border border-white/[0.14] bg-[#050B16] p-3 shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
       <Image
-        src={product.previewImage}
-        width="1586"
-        height="992"
-        alt={`${product.title} preview workspace with organized AI governance documents and trackers.`}
-        className="aspect-[16/10] h-auto w-full rounded-xl object-cover"
+        src={previewSrc}
+        width={heroImage ? 1280 : 1586}
+        height={heroImage ? 720 : 992}
+        alt={previewAlt}
+        className={previewClass}
         sizes="(max-width: 1024px) 100vw, 48vw"
         priority
       />
@@ -212,6 +219,48 @@ function DetailList({ title, items, id }) {
             </p>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+function ProductGallery({ product }) {
+  if (!product.galleryImages?.length) return null
+
+  return (
+    <section id="product-gallery" className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="product-gallery-heading">
+      <div className="mx-auto max-w-[1240px]">
+        <div className="max-w-[760px]">
+          <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
+            Product preview
+          </p>
+          <h2 id="product-gallery-heading" className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
+            Preview the actual Starter Kit package.
+          </h2>
+          <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
+            These visuals show the kit overview, included-file list, rendered
+            PDF samples, and delivery structure so buyers know what the download
+            contains before leaving for Gumroad.
+          </p>
+        </div>
+        <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {product.galleryImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-2xl border border-white/[0.14] bg-slate-950 shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
+              <Image
+                src={image.src}
+                width={1280}
+                height={720}
+                alt={image.alt}
+                className="aspect-[16/9] h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <figcaption className="border-t border-slate-800 p-5">
+                <h3 className="font-sans text-lg font-black leading-tight text-white">{image.title}</h3>
+                <p className="mt-2 font-sans text-sm leading-relaxed text-[#B2C9ED]">{image.body}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -330,7 +379,9 @@ export default async function CatalogProductPage({ params }) {
           </div>
         </section>
 
-        <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20">
+        <ProductGallery product={product} />
+
+        <section className="bg-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <aside className="rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
               <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
