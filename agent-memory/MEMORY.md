@@ -41,7 +41,7 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - The legal boundary is important: educational information and templates only, not legal advice, compliance guarantees, or attorney-client services.
 - The catalog/product direction includes AI governance starter resources, acceptable use policy kits, risk assessment tools, vendor review packets, training materials, jurisdiction guides, and regulation trackers.
 - Requestable catalog products have public detail/preview pages and hosted preview request forms, but checkout, pricing, and delivery are not implemented yet.
-- AI Governance Starter Kit v1 deliverable exists at `deliverables/ai-governance-starter-kit-v1/` and matches the public catalog contents: AI use inventory, acceptable use policy, risk intake form, and update tracker. Markdown, DOCX, PDF, and ZIP exports exist.
+- AI Governance Starter Kit v1.0.1 deliverable exists at `deliverables/ai-governance-starter-kit-v1/` and matches the paid product contents: AI use inventory, acceptable use policy, risk intake form, and update tracker. Markdown, DOCX, PDF, and ZIP exports exist; the 2026-06-05 rebuild updated Colorado language to SB 26-189 / covered ADMT wording.
 - Old homepage/prototype routes are intentionally preserved under `/preview`; `/front-page-v2` redirects to `/preview/front-page-v2`.
 - Dedicated Texas AI regulation guide route exists at `/regulations/texas-ai-regulation`, last reviewed May 18, 2026, covering TRAIGA, Texas public-sector AI laws, privacy/biometrics, synthetic media, financial exploitation, and sector guidance.
 - Blog post `/blog/regulators-ai-made-the-mistake` frames FTC/Texas AI privacy enforcement as a practical claim-review/evidence-file workflow for AIRegReady readers.

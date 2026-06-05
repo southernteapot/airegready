@@ -32,7 +32,7 @@ Each entry captures:
 | **Rollback plan** | Yes/No; method |
 | **Post-deploy check** | What's monitored; result |
 | **User / customer notice** | Yes/No; link to notice |
-| **Regulatory filings updated** | EU database / CAIA public statement / other |
+| **Regulatory records updated** | EU database / Colorado ADMT records / other |
 | **Linked documents** | Impact Assessment / Model Card / Incident records / tickets |
 | **Author of log entry** | Name |
 
@@ -59,7 +59,7 @@ Each entry captures:
 | Rollback plan | Revert prompt to v2.3; tested |
 | Post-deploy check | Price-error rate dropped 60% in first 72h; no regressions detected |
 | User / customer notice | Not required (quality improvement) |
-| Regulatory filings updated | No |
+| Regulatory records updated | No |
 | Linked documents | Impact Assessment v1.5; ticket PROD-4821 |
 | Author | Jane S. |
 
@@ -82,7 +82,7 @@ Each entry captures:
 | Rollback plan | Prior model remains available for 90 days |
 | Post-deploy check | No behavior regressions at 72h; customer-support ticket volume stable |
 | User / customer notice | Enterprise customers notified 14 days in advance; no individual-customer-facing UX changes |
-| Regulatory filings updated | No (system not registered in EU database; CAIA statement unchanged) |
+| Regulatory records updated | No (system not registered in EU database; Colorado ADMT records unchanged) |
 | Linked documents | Impact Assessment v2.0; Model Card v2.4 → v3.0; red-team report 2026-04-15 |
 | Author | Platform Lead |
 
@@ -105,7 +105,7 @@ Each entry captures:
 | Rollback plan | Prior version preserved; monitoring for unintended effects |
 | Post-deploy check | Exploit blocked; no new issues at 48h |
 | User / customer notice | Internal only; enterprise customers notified via support |
-| Regulatory filings updated | Security incident log updated; no external filings required |
+| Regulatory records updated | Security incident log updated; no external filings required |
 | Linked documents | Incident record INC-2026-05-02; red-team ticket RT-447 |
 | Author | Security Lead |
 

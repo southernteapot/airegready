@@ -138,7 +138,7 @@ When in doubt, ask [POLICY OWNER] or [IT OWNER] before pasting.
 
 - **Meeting transcription.** Before recording or transcribing a meeting with an AI tool, announce it and give attendees a chance to object. If any attendee objects, do not record. This applies whether the meeting is internal or external.
 - **Customer communications.** When a customer is interacting with an AI system (chatbot, automated email, synthetic voice), they must be told clearly. Use the standard disclosure language from [CUSTOMER AI DISCLOSURE TEMPLATES].
-- **Hiring and HR.** Candidates and employees must be told when AI is materially involved in decisions about them, as required by applicable law (including the Colorado AI Act, Illinois AIVIA, NYC Local Law 144, and EU AI Act).
+- **Hiring and HR.** Candidates and employees must be told when AI is materially involved in decisions about them, as required by applicable law (including Colorado SB 26-189 where covered ADMT is involved, Illinois AIVIA, NYC Local Law 144, and the EU AI Act).
 - **Public content.** When AI meaningfully authored or generated public-facing content in a context where authorship matters (editorials, official statements, creative work), disclose that AI was used.
 
 ## 10. Review and quality obligations

@@ -1,8 +1,9 @@
 # AI Governance Starter Kit v1
 
 **Product:** AI Governance Starter Kit  
-**Version:** 1.0  
+**Version:** 1.0.1
 **Prepared:** 2026-05-08  
+**Updated:** 2026-06-05
 
 This packet contains editable templates and reference PDFs for a basic AI governance file. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
 

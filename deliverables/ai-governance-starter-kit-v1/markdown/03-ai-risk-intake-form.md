@@ -82,7 +82,7 @@
 
 3.3 Is the system subject to one or more of these laws for this use? (Check all)
 
-- [ ] Colorado AI Act
+- [ ] Colorado SB 26-189 / covered ADMT
 - [ ] California TFAIA / other California AI law
 - [ ] Texas TRAIGA
 - [ ] Illinois AIVIA / BIPA

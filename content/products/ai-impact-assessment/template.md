@@ -8,7 +8,7 @@
 **Type:** ☐ Initial (pre-deployment)  ☐ Annual review  ☐ Material change  ☐ Incident-triggered
 **Tier (from AI Governance Framework):** ☐ Tier 1  ☐ Tier 2  ☐ Tier 3
 
-> **How to use.** A single Impact Assessment template usable under the AI Governance Framework and most AI regulations, including NIST AI RMF, ISO/IEC 42001, Colorado AI Act (alongside the CAIA template), EU AI Act deployer obligations, and sector rules. For Tier 1, fill the short form (Sections 1–4). For Tier 2, complete Sections 1–8. For Tier 3 and regulated use cases, complete everything.
+> **How to use.** A single Impact Assessment template usable under the AI Governance Framework and most AI regulations, including NIST AI RMF, ISO/IEC 42001, Colorado SB 26-189 / covered ADMT review patterns, EU AI Act deployer obligations, and sector rules. For Tier 1, fill the short form (Sections 1–4). For Tier 2, complete Sections 1–8. For Tier 3 and regulated use cases, complete everything.
 
 ---
 
@@ -82,7 +82,7 @@
 
 3.3 Is the system subject to one or more of these laws for this use? (Check all)
 
-- [ ] Colorado AI Act
+- [ ] Colorado SB 26-189 / covered ADMT
 - [ ] California TFAIA / other California AI law
 - [ ] Texas TRAIGA
 - [ ] Illinois AIVIA / BIPA

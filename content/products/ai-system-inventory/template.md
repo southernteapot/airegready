@@ -5,7 +5,7 @@
 **Last reviewed:** ______________________________
 **Review cadence:** Quarterly
 
-> **How to use.** This is the master record of every AI system in use at [COMPANY NAME]. Keep it current. Under Colorado AI Act, EU AI Act, NIST RMF, and most enterprise audit frameworks, a current inventory is foundational — it's the first thing a regulator will ask for.
+> **How to use.** This is the master record of every AI system in use at [COMPANY NAME]. Keep it current. Under state AI laws such as Colorado SB 26-189, the EU AI Act, NIST AI RMF, and most enterprise audit frameworks, a current inventory is foundational — it's the first thing a regulator or customer will ask for.
 >
 > In practice: keep this as a spreadsheet (Google Sheet / Airtable / Excel) and use this document as the field schema. The fields below match the columns of the spreadsheet.
 
@@ -81,7 +81,7 @@ If you're not sure: list it and mark the AI role as "uncertain — to classify."
 | Field | Description |
 | --- | --- |
 | **Tier** | Tier 1 (low) / Tier 2 (medium) / Tier 3 (high) / Tier 4 (prohibited) |
-| **CAIA high-risk?** | Yes / No / N/A |
+| **Colorado covered ADMT?** | Yes / No / N/A |
 | **EU AI Act classification** | Prohibited / High-risk (Annex I) / High-risk (Annex III) / Limited-risk / Minimal-risk / Out of scope |
 | **EU role** | Provider / Deployer / Importer / Distributor / Not applicable |
 | **Other applicable laws** | GDPR / CCPA / HIPAA / PCI / NYC LL 144 / Illinois AIVIA / California TFAIA / Texas TRAIGA / sector rules |
@@ -129,7 +129,7 @@ If you're not sure: list it and mark the AI role as "uncertain — to classify."
 
 Delete these and replace with your actual systems.
 
-| ID | Name | Vendor | Business owner | Tier | EU classification | CAIA high-risk | Status |
+| ID | Name | Vendor | Business owner | Tier | EU classification | Colorado covered ADMT | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | AIS-001 | Customer support chatbot | [VENDOR] | [NAME] | Tier 2 | Limited-risk (Art 50) | No | In production |
 | AIS-002 | Resume screener | [VENDOR] | [HR LEAD] | Tier 3 | High-risk (Annex III, employment) | Yes | Under review |

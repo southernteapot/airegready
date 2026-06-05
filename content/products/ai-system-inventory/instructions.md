@@ -43,7 +43,7 @@ For each system, fill in at minimum:
 - Name, vendor, description
 - Business owner
 - Tier (1 / 2 / 3 / 4)
-- CAIA high-risk (Yes / No)
+- Colorado covered ADMT (Yes / No)
 - EU AI Act classification
 - Status
 
