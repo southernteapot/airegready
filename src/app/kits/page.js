@@ -5,7 +5,10 @@ import {
   getAvailableProducts,
   getProductHref,
   getProductKind,
+  getProductOfferUrl,
+  getProductPriceLabel,
   getRoadmapProducts,
+  isPurchasableProduct,
   starterContents,
   trackedTopics,
 } from '@/lib/marketing'
@@ -49,8 +52,16 @@ function buildCatalogSchema(availableProducts) {
         },
         offers: {
           '@type': 'Offer',
-          url: absoluteUrl(getProductHref(product)),
+          url: getProductOfferUrl(product).startsWith('http')
+            ? getProductOfferUrl(product)
+            : absoluteUrl(getProductOfferUrl(product)),
           availability: 'https://schema.org/InStock',
+          ...(isPurchasableProduct(product)
+            ? {
+                price: String(product.price),
+                priceCurrency: product.priceCurrency,
+              }
+            : {}),
         },
       },
     })),
@@ -191,7 +202,11 @@ export default function KitsPage() {
             body="Each resource is framed as an educational starting point for internal governance work. Do not treat templates as legal advice or a compliance guarantee."
           />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {availableProducts.map((product) => (
+            {availableProducts.map((product) => {
+              const isPurchasable = isPurchasableProduct(product)
+              const priceLabel = getProductPriceLabel(product)
+
+              return (
               <article key={product.title} className="group flex min-h-[360px] flex-col rounded-2xl border border-[#C9D7E6] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2F80C2] hover:shadow-[0_24px_70px_-52px_rgba(11,27,47,0.75)] dark:border-slate-800 dark:bg-slate-950">
                 <div className="mb-4 flex items-start justify-between gap-4">
                   <h3 className="font-sans text-xl font-black leading-tight text-[#0B1B2F] dark:text-white">{product.title}</h3>
@@ -220,15 +235,22 @@ export default function KitsPage() {
                   </div>
                 </div>
                 <div className="mt-auto flex flex-wrap items-center gap-4 pt-5">
-                  <Link href={getProductHref(product)} className="font-sans text-sm font-black text-[#0F5E9C] no-underline transition group-hover:text-[#0B4A7D] dark:text-cyan-300">
-                    View details <span aria-hidden="true">-&gt;</span>
-                  </Link>
-                  <Link href={`${getProductHref(product)}#request-preview`} className="font-sans text-sm font-bold text-[#52677F] no-underline transition hover:text-[#0B4A7D] dark:text-slate-300 dark:hover:text-cyan-200">
-                    Request preview
+                  {isPurchasable ? (
+                    <a href={product.purchaseUrl} rel="noopener noreferrer" className="font-sans text-sm font-black text-[#0F5E9C] no-underline transition group-hover:text-[#0B4A7D] dark:text-cyan-300">
+                      Buy for {priceLabel} <span aria-hidden="true">-&gt;</span>
+                    </a>
+                  ) : (
+                    <Link href={getProductHref(product)} className="font-sans text-sm font-black text-[#0F5E9C] no-underline transition group-hover:text-[#0B4A7D] dark:text-cyan-300">
+                      View details <span aria-hidden="true">-&gt;</span>
+                    </Link>
+                  )}
+                  <Link href={isPurchasable ? getProductHref(product) : `${getProductHref(product)}#request-preview`} className="font-sans text-sm font-bold text-[#52677F] no-underline transition hover:text-[#0B4A7D] dark:text-slate-300 dark:hover:text-cyan-200">
+                    {isPurchasable ? 'View details' : 'Request preview'}
                   </Link>
                 </div>
               </article>
-            ))}
+              )
+            })}
           </div>
           {roadmapProducts.length > 0 && (
             <div className="mt-10 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">

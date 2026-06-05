@@ -7,6 +7,9 @@ import {
   getProductBySlug,
   getProductHref,
   getProductKind,
+  getProductOfferUrl,
+  getProductPriceLabel,
+  isPurchasableProduct,
 } from '@/lib/marketing'
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo'
 
@@ -63,8 +66,16 @@ function buildProductSchema(product) {
         },
         offers: {
           '@type': 'Offer',
-          url,
+          url: getProductOfferUrl(product).startsWith('http')
+            ? getProductOfferUrl(product)
+            : absoluteUrl(getProductOfferUrl(product)),
           availability: 'https://schema.org/InStock',
+          ...(isPurchasableProduct(product)
+            ? {
+                price: String(product.price),
+                priceCurrency: product.priceCurrency,
+              }
+            : {}),
         },
       },
       {
@@ -111,6 +122,18 @@ function PrimaryAction({ href, children }) {
     >
       {children}
     </Link>
+  )
+}
+
+function ExternalPrimaryAction({ href, children }) {
+  return (
+    <a
+      href={href}
+      rel="noopener noreferrer"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#174EA6] px-5 py-3 font-sans text-sm font-bold text-white no-underline shadow-[0_16px_34px_-24px_rgba(23,78,166,0.95)] transition hover:bg-[#2C6BFF]"
+    >
+      {children}
+    </a>
   )
 }
 
@@ -177,6 +200,8 @@ export default async function CatalogProductPage({ params }) {
   const productSchema = buildProductSchema(product)
   const useCases = buildUseCases(product)
   const reviewPrompts = buildReviewPrompts(product)
+  const isPurchasable = isPurchasableProduct(product)
+  const priceLabel = getProductPriceLabel(product)
 
   return (
     <>
@@ -208,15 +233,21 @@ export default async function CatalogProductPage({ params }) {
               </h1>
               <p className="mt-5 max-w-[720px] font-sans text-base leading-relaxed text-[#D8E6F5] sm:text-lg">
                 {product.helps} This page shows the audience, file contents,
-                preview structure, and request path without implying legal
-                advice, pricing, or a compliance guarantee.
+                delivery structure, and request path without implying legal
+                advice or a compliance guarantee.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <PrimaryAction href="#request-preview">
-                  Request preview
-                </PrimaryAction>
-                <SecondaryAction href="/assessment">
-                  Start assessment first
+                {isPurchasable ? (
+                  <ExternalPrimaryAction href={product.purchaseUrl}>
+                    {product.purchaseCta || `Buy for ${priceLabel}`}
+                  </ExternalPrimaryAction>
+                ) : (
+                  <PrimaryAction href="#request-preview">
+                    Request preview
+                  </PrimaryAction>
+                )}
+                <SecondaryAction href={isPurchasable ? '#request-preview' : '/assessment'}>
+                  {isPurchasable ? 'Request preview first' : 'Start assessment first'}
                 </SecondaryAction>
               </div>
             </div>
@@ -241,8 +272,18 @@ export default async function CatalogProductPage({ params }) {
                   Preview status
                 </p>
                 <p className="mt-2 font-sans text-sm font-bold leading-relaxed text-[#06132E] dark:text-white">
-                  Available by request. No published price or direct download is
-                  attached to this page yet.
+                  {isPurchasable ? (
+                    <>
+                      Available now for {priceLabel} through Gumroad. Purchase
+                      includes instant delivery from Gumroad; no public direct ZIP
+                      download is exposed on this site.
+                    </>
+                  ) : (
+                    <>
+                      Available by request. No published price or direct download is
+                      attached to this page yet.
+                    </>
+                  )}
                 </p>
               </div>
             </aside>
@@ -262,20 +303,40 @@ export default async function CatalogProductPage({ params }) {
                 Request workflow
               </p>
               <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
-                Request the preview, then decide whether the package fits.
+                {isPurchasable
+                  ? 'Buy the kit now, or request a preview first.'
+                  : 'Request the preview, then decide whether the package fits.'}
               </h2>
               <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
-                The request form captures the package name, organization type,
-                and use case so the preview can be handled cleanly. It does not
-                create a legal engagement or promise a compliance outcome.
+                {isPurchasable ? (
+                  <>
+                    The paid kit is delivered by Gumroad as an instant digital
+                    download. If you want to ask a question before buying, the
+                    preview form still captures the package name, organization
+                    type, and use case.
+                  </>
+                ) : (
+                  <>
+                    The request form captures the package name, organization type,
+                    and use case so the preview can be handled cleanly. It does not
+                    create a legal engagement or promise a compliance outcome.
+                  </>
+                )}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-3">
-              {[
-                ['01', 'Request preview', `Ask for the ${product.title} preview with a short note about your organization and use case.`],
-                ['02', 'Review internally', 'Use the preview to decide whether the document structure matches your current governance gap.'],
-                ['03', 'Adapt with review', 'Treat any template as an educational starting point and route legal obligations to qualified counsel.'],
-              ].map(([number, title, body]) => (
+              {(isPurchasable
+                ? [
+                    ['01', `Buy for ${priceLabel}`, 'Purchase through Gumroad and receive the digital download from Gumroad.'],
+                    ['02', 'Start with DOCX files', 'Use the editable Word-compatible files for the first pass, with PDFs as reference copies.'],
+                    ['03', 'Adapt with review', 'Treat every template as an educational starting point and route legal obligations to qualified counsel.'],
+                  ]
+                : [
+                    ['01', 'Request preview', `Ask for the ${product.title} preview with a short note about your organization and use case.`],
+                    ['02', 'Review internally', 'Use the preview to decide whether the document structure matches your current governance gap.'],
+                    ['03', 'Adapt with review', 'Treat any template as an educational starting point and route legal obligations to qualified counsel.'],
+                  ]
+              ).map(([number, title, body]) => (
                 <div key={number} className="rounded-2xl border border-[#D7E5F8] bg-[#F8FBFF] p-5 dark:border-slate-800 dark:bg-slate-900">
                   <span className="font-sans text-xs font-black text-[#2C6BFF] dark:text-[#58D4FF]">{number}</span>
                   <h3 className="mt-2 font-sans text-lg font-black text-[#06132E] dark:text-white">{title}</h3>

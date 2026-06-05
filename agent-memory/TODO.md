@@ -5,8 +5,6 @@ Track current project tasks here.
 ## Current
 
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
-- Create a Gumroad product for the first paid AI Governance Starter Kit test sale. Use Lemon Squeezy as Plan B and Stripe Payment Link + manual email only as fallback. After the payment URL exists, add the purchase URL and $19 paid-test CTA to the catalog/product pages.
-- After a payment link exists, wire the AI Governance Starter Kit detail/card CTAs to purchase while keeping preview/contact as secondary; do not expose a public direct ZIP download.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Configure `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN` or choose another durable CRM/contact backend for preview request notifications, then verify with `npm run smoke:preview-request -- https://airegready.com --live`.
 - Review the professional hybrid homepage refresh in-browser and decide whether the restrained blue/cyan logo and hero treatment should also be applied to social images and older preview pages.
@@ -38,6 +36,7 @@ Track current project tasks here.
 - 2026-06-04 blog update completed: added `/blog/white-house-ai-cybersecurity-order` and `/blog/agentic-ai-security-guidance` covering the June 2026 White House AI cybersecurity order, the AI cybersecurity clearinghouse, frontier-model cyber review, and agentic AI security controls.
 
 - 2026-06-04 regulatory refresh completed: updated EU AI Act / Digital Omnibus timing, Colorado SB 26-189 ADMT replacement language, U.S. state AI law patchwork guidance, NIST/Texas TRAIGA references, glossary entries, compare page, and related SEO/content tests.
+- 2026-06-05 first paid product wiring completed: Gumroad AI Governance Starter Kit link `https://airegready.gumroad.com/l/kfadzn` is attached to the starter kit product metadata, catalog card CTA, product detail CTA, and Product/Offer JSON-LD at $19 USD while preview request remains secondary.
 
 ## Later
 

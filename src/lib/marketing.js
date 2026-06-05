@@ -15,7 +15,11 @@ export const productCards = [
     audience: 'Founders, operators, and small teams starting from scattered AI use.',
     inside: ['AI use inventory', 'acceptable use policy', 'risk intake form', 'update tracker'],
     helps: 'Creates a first governance file that explains what AI is used, who owns it, and what review steps exist.',
-    cta: 'Preview kit',
+    cta: 'Buy for $19',
+    purchaseUrl: 'https://airegready.gumroad.com/l/kfadzn',
+    purchaseCta: 'Buy for $19',
+    price: 19,
+    priceCurrency: 'USD',
   },
   {
     slug: 'acceptable-use-policy-kit',
@@ -155,6 +159,23 @@ export function getAvailableProductSlugs() {
 
 export function getProductHref(product) {
   return `/catalog/${product.slug}`
+}
+
+export function isPurchasableProduct(product) {
+  return Boolean(product.purchaseUrl && product.price && product.priceCurrency)
+}
+
+export function getProductOfferUrl(product) {
+  return product.purchaseUrl || getProductHref(product)
+}
+
+export function getProductPriceLabel(product) {
+  if (!isPurchasableProduct(product)) return null
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: product.priceCurrency,
+    maximumFractionDigits: 0,
+  }).format(product.price)
 }
 
 export const starterContents = [
