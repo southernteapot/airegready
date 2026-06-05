@@ -549,7 +549,7 @@ const glossaryTerms = [
     id: 'digital-omnibus',
     term: 'Digital Omnibus (EU)',
     definition:
-      'A legislative package the European Commission adopted on November 19, 2025 and proposed to the European Parliament and Council, which could postpone the EU AI Act\'s high-risk Annex III obligations until December 2027. As of April 2026 the proposal is still in negotiation. Organizations should treat the possible delay as a contingency, not a given — August 2, 2026 remains the statutory deadline until and unless the package is adopted.',
+      'A legislative simplification package for EU digital rules. On May 7, 2026, the European Parliament and Council reached a political agreement on the AI portion, setting December 2, 2027 for many stand-alone high-risk AI systems and August 2, 2028 for high-risk systems integrated into regulated products, subject to formal adoption and publication.',
     seeAlso: [
       { label: 'AI Act', href: '#ai-act' },
       { label: 'Annex III', href: '#annex-iii' },
@@ -583,7 +583,7 @@ const glossaryTerms = [
     id: 'notified-body',
     term: 'Notified Body',
     definition:
-      'An independent organization designated by an EU member state to perform third-party conformity assessments under EU product legislation. Under the EU AI Act, certain Annex III high-risk AI systems (particularly in biometrics) must be assessed by a notified body before they can be CE-marked and placed on the market. Notified body capacity is a known constraint ahead of the August 2, 2026 enforcement date — Q2 2026 slots are already booked.',
+      'An independent organization designated by an EU member state to perform third-party conformity assessments under EU product legislation. Under the EU AI Act, certain high-risk AI systems, especially biometric systems and product-integrated systems, may need notified-body assessment before they can be CE-marked and placed on the market. The Digital Omnibus political agreement gives much of this work a longer runway, but notified-body capacity remains a planning constraint.',
     seeAlso: [
       { label: 'Conformity Assessment', href: '#conformity-assessment' },
       { label: 'CE Marking', href: '#ce-marking' },
@@ -594,7 +594,7 @@ const glossaryTerms = [
     id: 'preemption',
     term: 'Preemption (AI Law)',
     definition:
-      'The legal doctrine by which federal law displaces conflicting state law. In AI, this has become a live question since December 2025, when the Trump administration issued an executive order directing the DOJ to challenge state AI laws. Under the Constitution, only Congress — not the executive branch — can actually preempt state law. As of April 2026 the DOJ AI Litigation Task Force has not filed any lawsuits, and state AI laws (Colorado, California, Texas) remain fully enforceable.',
+      'The legal doctrine by which federal law displaces conflicting state law. In AI, this has become a live question since December 2025, when the Trump administration issued an executive order directing the DOJ to challenge state AI laws. Under the Constitution, only Congress — not the executive branch — can actually preempt state law. As of May 2026 the DOJ AI Litigation Task Force has not filed its own standalone lawsuit, while California and Texas AI laws are in force and Colorado\'s replacement ADMT obligations are scheduled for January 1, 2027.',
     seeAlso: [
       { label: 'U.S. State AI Laws', href: '/regulations/us-state-laws' },
       { label: 'Federal AI Policy', href: '/regulations/federal-policy' },

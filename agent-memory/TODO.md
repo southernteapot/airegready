@@ -37,6 +37,8 @@ Track current project tasks here.
 
 - 2026-06-04 blog update completed: added `/blog/white-house-ai-cybersecurity-order` and `/blog/agentic-ai-security-guidance` covering the June 2026 White House AI cybersecurity order, the AI cybersecurity clearinghouse, frontier-model cyber review, and agentic AI security controls.
 
+- 2026-06-04 regulatory refresh completed: updated EU AI Act / Digital Omnibus timing, Colorado SB 26-189 ADMT replacement language, U.S. state AI law patchwork guidance, NIST/Texas TRAIGA references, glossary entries, compare page, and related SEO/content tests.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

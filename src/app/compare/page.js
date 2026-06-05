@@ -30,7 +30,7 @@ const frameworks = [
     penalties:
       'Up to EUR 35 million or 7% of global annual turnover for prohibited practices; EUR 15 million or 3% for other violations; EUR 7.5 million or 1.5% for misleading information. Lower-of calculation for SMEs and startups.',
     effectiveDate:
-      'Entered into force August 1, 2024. Phased enforcement: prohibited practices (Feb 2025), GPAI rules (Aug 2025), high-risk systems (Aug 2026), full enforcement (Aug 2027).',
+      'Entered into force August 1, 2024. Phased enforcement: prohibited practices and AI literacy (Feb 2025), GPAI rules (Aug 2025), transparency duties (Aug 2026), and expected high-risk AI dates under the Digital Omnibus political agreement: many stand-alone systems in Dec 2027 and product-integrated systems in Aug 2028, pending formal adoption.',
     enforcementBody: 'European AI Office (GPAI models) and national competent authorities in each EU member state',
     bestFor:
       'Any organization placing AI systems on the EU market or whose AI outputs reach EU users. Essential for AI providers, tech companies with European customers, and multinationals.',
@@ -54,11 +54,11 @@ const frameworks = [
       'Generative AI Profile (AI 600-1) addresses risks specific to large language models and generative systems',
     ],
     penalties:
-      'None directly — the framework is voluntary. However, adoption is referenced as an affirmative defense or evidence of reasonable care under Colorado SB 24-205 and other state laws.',
+      'None directly — the framework is voluntary. However, adoption is referenced in reasonable-care defenses and compliance expectations under laws and programs such as Texas TRAIGA and other state AI frameworks.',
     effectiveDate:
       'Published January 26, 2023. Generative AI Profile (AI 600-1) published July 2024. Continuously updated with community profiles and companion resources.',
     enforcementBody:
-      'NIST is a non-regulatory agency (no enforcement power). The framework is referenced by regulators including state attorneys general (Colorado) and federal agencies (OMB).',
+      'NIST is a non-regulatory agency (no enforcement power). The framework is referenced by regulators, state AI laws such as Texas TRAIGA, federal procurement expectations, and industry governance programs.',
     bestFor:
       'U.S.-based organizations seeking a recognized governance baseline. Essential for federal contractors, companies subject to state AI laws, and organizations wanting a defensible AI risk management program.',
   },
@@ -70,20 +70,20 @@ const frameworks = [
     statusColor: 'amber',
     type: 'Binding laws (state-level statutes and local ordinances)',
     geographicScope: 'United States — varies by state (Colorado, Illinois, Texas, California, NYC, Connecticut, and others)',
-    whoItAppliesTo: 'Developers and deployers of AI systems used in consequential decisions, varying by state. Colorado covers both; NYC targets employers using automated hiring tools.',
+    whoItAppliesTo: 'Developers and deployers of AI systems used in consequential decisions, varying by state. Colorado covers covered ADMT developers and deployers; NYC targets employers using automated hiring tools.',
     riskBased:
       'Partially — most laws focus on "high-risk" or "consequential" decisions (employment, lending, insurance, housing, healthcare, education). Low-risk AI uses generally unaffected.',
     keyRequirements: [
-      'Algorithmic impact assessments for high-risk AI (Colorado, Connecticut)',
+      'Colorado ADMT notices, adverse-outcome explanations, data access and correction, human review, and developer documentation',
       'Annual bias audits for automated hiring tools (NYC Local Law 144)',
-      'Consumer disclosure when AI is used in decisions affecting individuals (Colorado, Utah, Texas)',
-      'Developer-to-deployer documentation requirements (Colorado)',
+      'Consumer disclosure when AI is used in decisions or interactions affecting individuals (Colorado, Utah, Texas)',
+      'Developer-to-deployer documentation requirements for covered ADMT and high-risk systems',
       'Frontier AI transparency: safety frameworks, catastrophic risk assessments, incident reporting (California SB 53)',
     ],
     penalties:
       'Varies widely. NYC: $500-$1,500 per violation. Illinois BIPA: $1,000-$5,000 per violation (private right of action). California SB 53: up to $1M per violation. Texas TRAIGA: $10,000-$200,000 per violation. Colorado: AG enforcement only.',
     effectiveDate:
-      'Varies by state. NYC LL144 in effect since July 2023. Colorado SB 24-205 effective June 30, 2026. California SB 53 and Texas TRAIGA effective January 2026. New laws introduced constantly — 1,208 AI bills across 50 states in 2025.',
+      'Varies by state. NYC LL144 has been in effect since July 2023. California SB 53 and Texas TRAIGA have been in effect since January 2026. Colorado SB 26-189 obligations start January 1, 2027. NCSL reports that all 50 states introduced AI legislation in 2025 and 38 states adopted or enacted around 100 measures.',
     enforcementBody:
       'State attorneys general (Colorado, Texas, California). NYC Department of Consumer and Worker Protection. Illinois: private right of action under BIPA. Federal preemption threat from DOJ AI Litigation Task Force (est. Jan 2026).',
     bestFor:

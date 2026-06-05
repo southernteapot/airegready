@@ -7,8 +7,8 @@ export const euAiAct = {
     'The world\'s first comprehensive AI law, establishing a risk-based regulatory framework for artificial intelligence systems placed on the European market.',
   icon: '\u{1F1EA}\u{1F1FA}',
   status: 'In Effect',
-  lastReviewed: 'March 2026',
-  lastReviewedIso: '2026-03-01',
+  lastReviewed: 'May 2026',
+  lastReviewedIso: '2026-05-29',
 
   keyFacts: [
     {
@@ -24,8 +24,8 @@ export const euAiAct = {
       value: 'August 1, 2024',
     },
     {
-      label: 'Full Enforcement',
-      value: 'August 2, 2027',
+      label: 'High-Risk Timeline',
+      value: 'Expected December 2, 2027 for many stand-alone high-risk systems; August 2, 2028 for product-integrated systems under the Digital Omnibus political agreement, pending formal adoption',
     },
     {
       label: 'Regulator',
@@ -50,7 +50,7 @@ export const euAiAct = {
       id: 'overview',
       title: 'Overview',
       content:
-        'The EU AI Act \u2014 formally Regulation (EU) 2024/1689 \u2014 is the world\'s first comprehensive law regulating artificial intelligence. Adopted by the European Parliament and Council on June 13, 2024, and published in the Official Journal of the European Union on July 12, 2024, it entered into force on August 1, 2024. The regulation establishes a harmonized legal framework for AI across all 27 EU member states, replacing the previous patchwork of national approaches.\n\nThe core philosophy is a **risk-based approach**. Rather than regulating AI technology itself, the Act classifies AI systems by the level of risk they pose to health, safety, and fundamental rights. Systems that pose minimal risk face almost no regulation, while those posing unacceptable risk are banned outright. Everything in between is subject to obligations proportional to the risk level.\n\nThis matters beyond Europe. Because the Act applies to anyone placing AI systems on the EU market or whose AI output is used in the EU, it has global reach similar to GDPR. Companies headquartered in the United States, China, or anywhere else must comply if their AI systems touch the European market. For many organizations, the EU AI Act will effectively set the global baseline for AI compliance.\n\nThe Act also creates the **European AI Office**, a new body within the European Commission responsible for overseeing general-purpose AI models and coordinating enforcement across member states. The AI Office is now fully operational and serves as the central coordinator for GPAI oversight. It has the authority to request documentation from GPAI model providers, conduct evaluations of models, and demand access to source code when necessary. National competent authorities in each member state handle enforcement for other AI systems, with the AI Office providing guidance and ensuring consistency.\n\nEnforcement is phased in gradually between 2025 and 2027. The prohibited AI practices took effect in February 2025. Rules for general-purpose AI (GPAI) models apply from August 2025. High-risk AI system obligations kick in by August 2026, and full enforcement \u2014 including all remaining provisions \u2014 begins August 2027. This phased timeline gives organizations a window to assess their AI systems and build compliance programs, but that window is closing.',
+        "The EU AI Act — formally Regulation (EU) 2024/1689 — is the world's first comprehensive law regulating artificial intelligence. Adopted by the European Parliament and Council on June 13, 2024, and published in the Official Journal of the European Union on July 12, 2024, it entered into force on August 1, 2024. The regulation establishes a harmonized legal framework for AI across all 27 EU member states, replacing the previous patchwork of national approaches.\n\nThe core philosophy is a **risk-based approach**. Rather than regulating AI technology itself, the Act classifies AI systems by the level of risk they pose to health, safety, and fundamental rights. Systems that pose minimal risk face almost no regulation, while those posing unacceptable risk are banned outright. Everything in between is subject to obligations proportional to the risk level.\n\nThis matters beyond Europe. Because the Act applies to anyone placing AI systems on the EU market or whose AI output is used in the EU, it has global reach similar to GDPR. Companies headquartered in the United States, China, or anywhere else must comply if their AI systems touch the European market. For many organizations, the EU AI Act will effectively set the global baseline for AI compliance.\n\nThe Act also creates the **European AI Office**, a new body within the European Commission responsible for overseeing general-purpose AI models and coordinating enforcement across member states. The AI Office is now fully operational and serves as the central coordinator for GPAI oversight. It has the authority to request documentation from GPAI model providers, conduct evaluations of models, and demand access to source code when necessary. National competent authorities in each member state handle enforcement for other AI systems, with the AI Office providing guidance and ensuring consistency.\n\nEnforcement is phased in gradually. The prohibited AI practices and AI literacy obligation took effect in February 2025. Rules for general-purpose AI (GPAI) models apply from August 2025. Transparency duties for chatbots, AI-generated or manipulated content, deepfakes, and certain biometric or emotion-recognition uses remain on the August 2, 2026 track. After the May 7, 2026 Digital Omnibus political agreement, many stand-alone high-risk AI rules are expected to apply from December 2, 2027, while high-risk systems integrated into regulated products are expected to apply from August 2, 2028. Formal legal adoption and publication still matter, but the planning calendar has shifted.",
     },
     {
       id: 'who-it-applies-to',
@@ -170,7 +170,7 @@ export const euAiAct = {
       id: 'practical-steps',
       title: 'Practical Steps for Compliance',
       content:
-        'The phased enforcement timeline gives organizations a progressively narrowing window to prepare. Prohibited practices are already enforceable as of February 2025. GPAI model rules apply from August 2025. High-risk obligations begin in August 2026. Organizations should be building their compliance programs now, not waiting for their specific deadline.\n\nBelow are concrete steps organizations should take to prepare, whether they are providers, deployers, or both. The earlier you start, the more manageable the process. Organizations that treated GDPR preparation as a last-minute scramble learned that lesson the hard way.',
+        "The phased enforcement timeline gives organizations a progressively narrowing window to prepare, even after the Digital Omnibus reset. Prohibited practices and AI literacy are already in force. GPAI model rules have applied since August 2025. Transparency obligations remain a near-term August 2, 2026 issue. Many high-risk system obligations now have a longer runway, but the inventory, classification, documentation, vendor, and governance work still needs to start well before the formal application date.\n\nBelow are concrete steps organizations should take to prepare, whether they are providers, deployers, or both. The earlier you start, the more manageable the process. Organizations that treated GDPR preparation as a last-minute scramble learned that lesson the hard way.",
       list: [
         '**Inventory your AI systems.** Create a comprehensive register of every AI system your organization develops, deploys, or distributes. Include internal tools, third-party integrations, and AI components embedded in other products. For each system, document its intended purpose, the data it processes, who it affects, and where it is deployed.',
         '**Classify each system by risk tier.** Using the Act\'s criteria (Article 6 and Annex III), determine whether each AI system is unacceptable, high risk, limited risk, or minimal risk. Pay particular attention to AI used in HR decisions, credit assessments, critical infrastructure, law enforcement support, or education \u2014 these are likely high risk. If you have any systems that fall into the prohibited category, stop using them immediately.',
@@ -245,7 +245,7 @@ export const euAiAct = {
     {
       date: 'November 19, 2025',
       event:
-        'European Commission adopts the Digital Omnibus package and proposes postponing some Annex III high-risk obligations to December 2027. Parliament and Council negotiations ongoing as of April 2026 \u2014 plan as if August 2026 still applies.',
+        'European Commission adopts the Digital Omnibus package and proposes linking some high-risk obligations to the availability of standards, guidance, and support tools.',
     },
     {
       date: 'February 2, 2026',
@@ -253,14 +253,34 @@ export const euAiAct = {
         'Statutory deadline for the Commission to publish guidelines on classification of high-risk AI systems under Article 6.',
     },
     {
-      date: 'August 2, 2026',
+      date: 'May 7, 2026',
       event:
-        'Requirements for high-risk AI systems listed in Annex III become enforceable, including conformity assessments, risk management, data governance, and human oversight obligations. AI literacy (Article 4) enforcement also begins.',
+        'European Parliament and Council reach political agreement on the Digital Omnibus on AI, setting December 2, 2027 for many stand-alone high-risk systems and August 2, 2028 for high-risk systems integrated into regulated products, subject to formal adoption and publication.',
     },
     {
-      date: 'August 2, 2027',
+      date: 'May 8, 2026',
       event:
-        'Full enforcement of all remaining provisions, including obligations for high-risk AI systems embedded in products already covered by EU harmonization legislation (Annex I).',
+        'European Commission opens feedback on draft transparency-obligation guidelines. Stakeholders can comment until June 3, 2026.',
+    },
+    {
+      date: 'May 19, 2026',
+      event:
+        'European Commission opens feedback on draft high-risk classification guidelines. The targeted consultation runs until June 23, 2026.',
+    },
+    {
+      date: 'August 2, 2026',
+      event:
+        'Transparency obligations for users interacting with AI systems, AI-generated or manipulated content, deepfakes, and certain biometric or emotion-recognition uses are scheduled to apply. GPAI enforcement actions may also begin one year after GPAI obligations became applicable.',
+    },
+    {
+      date: 'December 2, 2027',
+      event:
+        'Under the Digital Omnibus political agreement, rules for systems used in certain high-risk areas such as biometrics, critical infrastructure, education, employment, migration, asylum, and border control are expected to apply.',
+    },
+    {
+      date: 'August 2, 2028',
+      event:
+        'Under the Digital Omnibus political agreement, high-risk AI rules for systems integrated into regulated products such as robotics, industrial machinery, lifts, or toys are expected to apply.',
     },
   ],
 
@@ -294,6 +314,24 @@ export const euAiAct = {
       url: 'https://digital-strategy.ec.europa.eu/en/policies/ai-act-implementation',
       description:
         'Official implementation page with guidance documents, timelines, and updates on delegated and implementing acts.',
+    },
+    {
+      title: 'European Commission \u2014 Digital Omnibus AI agreement',
+      url: 'https://digital-strategy.ec.europa.eu/en/news/eu-agrees-simplify-ai-rules-boost-innovation-and-ban-nudification-apps-protect-citizens',
+      description:
+        'May 2026 political agreement setting the updated high-risk AI Act implementation timeline.',
+    },
+    {
+      title: 'European Commission \u2014 Draft high-risk classification guidelines',
+      url: 'https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-high-risk-systems',
+      description:
+        'Draft guidance and consultation information for classifying high-risk AI systems.',
+    },
+    {
+      title: 'European Commission \u2014 Draft transparency obligation guidelines',
+      url: 'https://digital-strategy.ec.europa.eu/en/news/commission-opens-consultation-draft-guidelines-ai-transparency-obligations',
+      description:
+        'May 2026 consultation on transparency obligations under the AI Act.',
     },
     {
       title: 'GPAI Code of Practice',

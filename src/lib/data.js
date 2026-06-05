@@ -57,7 +57,7 @@ export const BLOG_POSTS = [
     date: 'Apr 2026',
     readTime: '9 min read',
     excerpt:
-      "The European Commission's Digital Omnibus would push the EU AI Act's high-risk compliance deadline from August 2026 out to December 2027. Parliament committees have agreed. The Council has a different view. Here's what's actually happening and how to plan.",
+      "The EU Digital Omnibus political agreement now points many stand-alone high-risk AI obligations to December 2027 and product-integrated systems to August 2028. Here's what changed and how to plan.",
     featured: true,
   },
   {
@@ -92,12 +92,12 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'colorado-ai-act-countdown',
-    title: 'Colorado\u2019s AI Act Takes Effect June 30: What Developers and Deployers Need to Do Now',
+    title: 'Colorado\'s Original AI Act Was Replaced: What SB 24-205 Would Have Required',
     category: 'State Laws',
     date: 'Apr 2026',
     readTime: '9 min read',
     excerpt:
-      'The first comprehensive U.S. state AI law takes effect June 30, 2026. A practical walk-through of the duty of reasonable care, impact assessments, consumer notices, appeal rights, and the NIST AI RMF safe harbor.',
+      'Colorado\'s original SB 24-205 framework was replaced before taking effect. A historical walk-through of what the old duty-of-care model would have required.',
     featured: false,
   },
   {
@@ -152,12 +152,12 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'eu-ai-act-compliance-checklist',
-    title: 'EU AI Act Compliance Checklist: What to Do Before August 2026',
+    title: 'EU AI Act Compliance Checklist After the Digital Omnibus Deal',
     category: 'EU AI Act',
     date: 'Mar 2026',
     readTime: '9 min read',
     excerpt:
-      'The August 2, 2026 deadline for Annex III high-risk compliance is now less than four months away. A phased checklist to get your organization ready.',
+      'The Digital Omnibus deal moved key high-risk dates, but AI inventory, classification, documentation, vendor evidence, and governance work still need to start now.',
     featured: false,
   },
   {
@@ -327,7 +327,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: 'How fast is the regulatory landscape changing?',
-    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. Over the past year, dozens of U.S. states passed AI-related legislation, the EU AI Act moved into active enforcement, Japan and South Korea adopted comprehensive AI laws, and the federal policy landscape shifted sharply. A December 2025 executive order set up a DOJ AI Litigation Task Force to challenge state AI laws, followed by a White House National Policy Framework in March 2026. Meanwhile, the European Commission\u2019s Digital Omnibus proposal \u2014 backed by Parliament committees in March 2026 \u2014 would push the EU AI Act\u2019s high-risk compliance deadline from August 2026 out to December 2027. Staying current is a real challenge \u2014 and a core reason this resource exists.',
+    a: 'Extremely fast. New AI laws, amendments, and enforcement actions are appearing monthly. Over the past year, dozens of U.S. states passed AI-related legislation, the EU AI Act moved into active enforcement, Japan and South Korea adopted comprehensive AI laws, and the federal policy landscape shifted sharply. A December 2025 executive order set up a DOJ AI Litigation Task Force to challenge state AI laws, followed by a White House National Policy Framework in March 2026. Meanwhile, the May 2026 EU Digital Omnibus political agreement shifted many high-risk AI Act planning dates to December 2027 or August 2028, while transparency duties remain on the August 2026 track. Staying current is a real challenge \u2014 and a core reason this resource exists.',
   },
 ]
 

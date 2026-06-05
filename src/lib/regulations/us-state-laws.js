@@ -7,10 +7,10 @@ export const usStateLaws = {
     'With no comprehensive federal AI law in place, U.S. states are writing their own rules. The result is a fast-moving patchwork of requirements covering hiring, insurance, housing, and more.',
   icon: '\u2696\uFE0F',
   status: 'Evolving',
-  lastReviewed: 'April 2026',
-  lastReviewedIso: '2026-04-01',
+  lastReviewed: 'May 2026',
+  lastReviewedIso: '2026-05-29',
   keyFacts: [
-    { label: 'Federal AI Law', value: 'None (as of April 2026)' },
+    { label: 'Federal AI Law', value: 'None (as of May 2026)' },
     {
       label: 'States with AI Laws',
       value: 'California, Colorado, Illinois, Texas, New York City, and growing',
@@ -21,57 +21,60 @@ export const usStateLaws = {
     },
     {
       label: 'Key Trend',
-      value: 'Algorithmic impact assessments and bias audits',
+      value: 'ADMT notice, human review, bias audits, and frontier-model transparency',
     },
     {
       label: 'Tracking Resource',
       value:
-        '[NCSL AI Legislation Tracker](https://www.ncsl.org/technology-and-communication/artificial-intelligence-2024-legislation)',
+        '[NCSL AI Legislation Tracker](https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation)',
     },
-    { label: 'Pace of Change', value: '1,208 AI bills introduced across 50 states in 2025; 145 enacted' },
+    {
+      label: 'Pace of Change',
+      value: 'All 50 states introduced AI legislation in 2025; 38 states adopted or enacted around 100 measures',
+    },
   ],
   sections: [
     {
       id: 'overview',
       title: 'The Patchwork Problem',
       content:
-        'The United States has no federal law that comprehensively regulates artificial intelligence. Congress has held hearings and introduced bills, but nothing has passed. In the absence of federal action, states have stepped in, each with their own approach, definitions, and enforcement mechanisms.\n\nThis creates a patchwork. A company operating in multiple states may face different disclosure requirements, different definitions of "automated decision," and different penalties depending on where its customers or employees are located. For organizations deploying AI at scale, this is one of the most challenging compliance environments in the world.\n\nThe pace is accelerating rapidly. In 2024, over 40 states introduced AI-related legislation. In 2025, that number surged — **1,208 AI-related bills were introduced across all 50 states, with 145 enacted into law**. According to the National Conference of State Legislatures, 38 states adopted or enacted around 100 AI-related measures in 2025. Some of these bills target narrow use cases like deepfakes or AI in elections. Others, like Colorado\'s SB 24-205, attempt to regulate AI broadly across multiple high-risk domains. Understanding which laws apply to your organization requires tracking legislation across every state where you do business.\n\nThis guide covers the most significant state-level AI laws that are enacted or in effect, the common themes across them, and practical steps for building a multi-state compliance strategy.',
+        "The United States has no federal law that comprehensively regulates artificial intelligence. Congress has held hearings and introduced bills, but nothing has passed. In the absence of federal action, states have stepped in, each with their own approach, definitions, and enforcement mechanisms.\n\nThis creates a patchwork. A company operating in multiple states may face different disclosure requirements, different definitions of automated decision-making, and different penalties depending on where its customers or employees are located. For organizations deploying AI at scale, this is one of the most challenging compliance environments in the world.\n\nThe pace is accelerating rapidly. According to the National Conference of State Legislatures, all 50 states, Puerto Rico, the Virgin Islands, and Washington, D.C. introduced AI-related legislation in the 2025 legislative session, and 38 states adopted or enacted around 100 measures. Some of these bills target narrow use cases like deepfakes or AI in elections. Others, like Colorado's original SB 24-205 and its 2026 replacement SB 26-189, regulate automated decision tools used in high-stakes decisions about people. Understanding which laws apply to your organization requires tracking legislation across every state where you do business.\n\nThis guide covers the most significant state-level AI laws that are enacted or in effect, the common themes across them, and practical steps for building a multi-state compliance strategy.",
     },
     {
       id: 'colorado',
-      title: 'Colorado SB 24-205: The First Comprehensive State AI Law',
+      title: 'Colorado SB 26-189: ADMT Rules for Consequential Decisions',
       content:
-        'Colorado made history in May 2024 when Governor Jared Polis signed **SB 24-205**, the Colorado Artificial Intelligence Act. It is widely recognized as the first comprehensive state law regulating AI in the United States. The law was originally set to take effect on February 1, 2026, but on **August 28, 2025**, Governor Polis signed **SB 25B-004**, delaying the effective date to **June 30, 2026**. The delay came after a special legislative session failed to produce a compromise on amendments. Polis cited concerns about the high compliance costs the law would impose on state and local governments as well as businesses.\n\nUnlike narrower laws that target a single use case (like AI in hiring), Colorado\'s law applies broadly to any AI system used in **"consequential decisions"** — decisions that have a material legal or similarly significant effect on a person. The law covers seven domains: **employment, education, financial services, housing, insurance, healthcare, and legal services**.\n\nThe law creates obligations for two groups. **Developers** are companies that build or substantially modify AI systems. **Deployers** are companies that use those systems to make or substantially support consequential decisions. Both have distinct obligations.',
+        "Colorado remains one of the most important state AI law jurisdictions, but the compliance target changed materially in May 2026. Colorado originally passed SB 24-205, the Colorado Artificial Intelligence Act, in 2024. That law would have created a broad high-risk AI framework with risk management, impact assessment, public statement, and algorithmic-discrimination obligations. Before that framework took effect, Colorado passed and signed SB 26-189, Automated Decision-Making Technology, on May 14, 2026.\n\nSB 26-189 repeals and reenacts the prior Colorado AI Act framework. The new law is narrower and more operational. It focuses on automated decision-making technology, or ADMT, that processes personal data and materially influences consequential decisions about people. The effective date for the new framework is January 1, 2027.\n\nThe practical question is now: are you using computation over personal data to generate a prediction, recommendation, classification, ranking, score, or similar output that materially influences access to employment, housing, financial or lending services, insurance, healthcare, education, or essential government services? If yes, Colorado may expect notices, records, data access and correction, adverse-outcome explanations, and meaningful human review.",
       items: [
         {
-          term: 'Algorithmic Impact Assessments',
+          term: 'Covered ADMT',
           description:
-            'Deployers of high-risk AI systems must complete impact assessments before deployment and update them annually. Assessments must describe the system\'s purpose, intended benefits, known limitations, data used, outputs, and how the deployer manages risks of algorithmic discrimination.',
+            'The new law focuses on automated decision-making technology that processes personal data and generates outputs used to make, guide, or assist consequential decisions. It is not limited to generative AI; scoring models, ranking systems, screening tools, and recommendation systems can all be covered.',
         },
         {
-          term: 'Risk Management Policy',
+          term: 'Materially Influences',
           description:
-            'Deployers must implement a risk management policy and program that governs the use of high-risk AI. Colorado explicitly references the **NIST AI Risk Management Framework** as a benchmark, making it one of the first state laws to tie compliance to a specific federal standard.',
+            'Coverage turns on whether the ADMT output meaningfully affects the outcome. A tool used only for drafting, formatting, analytics, or quality control is lower risk. A tool that affects who gets a job interview, loan offer, insurance outcome, healthcare access, education opportunity, or public benefit needs review.',
         },
         {
-          term: 'Consumer Disclosure',
+          term: 'Covered Domains',
           description:
-            'Deployers must notify consumers when a high-risk AI system is being used in a consequential decision about them. The notice must explain what the system does and give the consumer an opportunity to correct inaccurate data and appeal the decision.',
+            'The law targets consequential decisions in education, employment, housing, financial or lending services, insurance, healthcare services, and essential government services. The original SB 24-205 framing around broad high-risk AI systems is no longer the right starting point.',
         },
         {
-          term: 'Developer Obligations',
+          term: 'Developer Documentation',
           description:
-            'Developers must provide deployers with documentation about the system\'s capabilities, limitations, intended uses, known risks, and the types of data used in training. They must also disclose known or reasonably foreseeable risks of algorithmic discrimination.',
+            'Developers of covered ADMT must provide deployers with information about intended uses, training-data categories, known limitations, appropriate use, human review, and material updates or modifications.',
+        },
+        {
+          term: 'Deployer Duties',
+          description:
+            'Deployers must give clear notices, provide plain-language descriptions after adverse outcomes, support access and correction of personal data used by covered ADMT, offer meaningful human review and reconsideration, and retain compliance records.',
         },
         {
           term: 'Enforcement',
           description:
-            'The Colorado Attorney General has exclusive enforcement authority. There is no private right of action. However, the AG can investigate complaints, issue civil investigative demands, and seek penalties.',
-        },
-        {
-          term: 'Why Colorado Matters Beyond Colorado',
-          description:
-            'The Colorado law is significant beyond its own borders because it establishes a template that other states are studying. Its emphasis on impact assessments, NIST alignment, and shared responsibility between developers and deployers reflects where U.S. AI regulation is heading.',
+            'Enforcement remains with the Colorado Attorney General through the Colorado Consumer Protection Act. The law does not create a new private right of action, and the Attorney General generally must provide notice and an opportunity to cure if cure is possible.',
         },
       ],
     },
@@ -79,7 +82,7 @@ export const usStateLaws = {
       id: 'texas-traiga',
       title: 'Texas TRAIGA: In Effect Since January 1, 2026',
       content:
-        'Governor Greg Abbott signed **HB 149**, the Texas Responsible Artificial Intelligence Governance Act (TRAIGA), on June 22, 2025. It took effect on **January 1, 2026**, making Texas the third state with a comprehensive AI law, after Colorado and California.\n\nTRAIGA is different in character from Colorado\'s law. Colorado regulates AI systems used in broad categories of "consequential decisions." TRAIGA is narrower and more intent-based — it targets purposeful misuse of AI rather than high-risk categories. Most of its prohibitions only bite if a developer or deployer acts with intent.\n\nApplicability is broad in scope: TRAIGA applies to anyone who promotes or conducts business in Texas, produces a product or service used by Texas residents, or develops or deploys an AI system in Texas. Enforcement is exclusively by the **Texas Attorney General** — there is no private right of action, and the AG must give notice and an opportunity to cure before bringing an action.',
+        'Governor Greg Abbott signed **HB 149**, the Texas Responsible Artificial Intelligence Governance Act (TRAIGA), on June 22, 2025. It took effect on **January 1, 2026**, making Texas one of the first states with a broad AI governance statute in force.\n\nTRAIGA is different in character from Colorado\'s law. Colorado regulates automated decision-making technology used in consequential decisions. TRAIGA is narrower and more intent-based — it targets purposeful misuse of AI rather than high-risk categories. Most of its prohibitions only bite if a developer or deployer acts with intent.\n\nApplicability is broad in scope: TRAIGA applies to anyone who promotes or conducts business in Texas, produces a product or service used by Texas residents, or develops or deploys an AI system in Texas. Enforcement is exclusively by the **Texas Attorney General** — there is no private right of action, and the AG must give notice and an opportunity to cure before bringing an action.',
       items: [
         {
           term: 'Prohibited Uses',
@@ -102,9 +105,9 @@ export const usStateLaws = {
             'Civil penalties range from **$10,000 to $200,000 per violation** depending on curability, or **$2,000 to $40,000 per day** for continued violations. The AG must provide notice and a cure period before bringing an action.',
         },
         {
-          term: 'NIST AI RMF Safe Harbor',
+          term: 'NIST AI RMF Defense',
           description:
-            'TRAIGA provides a safe harbor for organizations that substantially comply with the NIST AI Risk Management Framework. This is one of the most concrete examples of a state law rewarding NIST adoption, and a strong reason to build compliance programs around NIST from the start.',
+            'TRAIGA rewards organizations that substantially comply with NIST\'s Generative AI Profile or another recognized AI risk management framework through its enforcement defenses and reasonable-care structure. This is one of the most concrete examples of a state law giving practical value to NIST adoption.',
         },
         {
           term: 'Regulatory Sandbox (First in the Nation)',
@@ -267,12 +270,12 @@ export const usStateLaws = {
         'Despite the patchwork, clear patterns are emerging across state AI legislation. Understanding these themes helps organizations build compliance programs that will hold up as more states act.',
       list: [
         '**Transparency and disclosure.** Nearly every state AI law requires organizations to tell people when AI is being used in decisions that affect them. The specifics vary — some require disclosure before the interaction, others after — but the principle is universal.',
-        '**Algorithmic impact assessments.** Colorado and Connecticut require formal impact assessments for high-risk AI systems. Other states are likely to follow. These assessments typically require documenting the system\'s purpose, the data it uses, its known limitations, and its potential for discriminatory outcomes.',
+        '**Impact assessments and decision records.** Connecticut and several proposals require formal impact assessments for high-risk AI systems. Colorado\'s 2026 ADMT law moved away from mandatory impact assessments, but still expects records, notices, data-correction processes, and human-review workflows for covered consequential decisions.',
         '**Focus on high-risk decisions.** States are not trying to regulate all AI. The consistent focus is on AI used in decisions with significant consequences: employment, lending, insurance, housing, healthcare, education, and legal services. Low-risk uses like spam filters or autocomplete are generally unaffected.',
         '**Bias auditing.** NYC\'s bias audit requirement for hiring tools is being studied by other jurisdictions. The expectation that AI systems should be independently tested for discriminatory outcomes is becoming mainstream.',
         '**Consumer rights.** Multiple laws give individuals the right to know when AI is used in decisions about them, to access information about how the system works, to correct inaccurate data, and in some cases to opt out of automated decision-making entirely.',
-        '**Shared responsibility between developers and deployers.** Colorado\'s model of placing obligations on both the companies that build AI systems and the companies that use them is emerging as a standard approach. Developers must provide documentation; deployers must implement safeguards.',
-        '**Reference to federal standards.** Colorado explicitly references the NIST AI Risk Management Framework. This trend — tying state compliance to existing federal frameworks — simplifies implementation for organizations that have already adopted NIST.',
+        '**Shared responsibility between developers and deployers.** State AI laws increasingly split obligations between the companies that build AI systems and the companies that use them. Developers provide documentation and update notices; deployers implement the consumer-facing notices, review processes, and records.',
+        '**Reference to federal standards.** Texas TRAIGA points to NIST\'s Generative AI Profile and other recognized AI risk frameworks in its enforcement defenses, and state proposals continue to reference recognized AI risk frameworks. Tying state compliance to existing federal frameworks simplifies implementation for organizations that have already adopted NIST.',
         '**No private right of action (mostly).** With the notable exception of Illinois BIPA, most state AI laws are enforced by state attorneys general rather than through private lawsuits. This may limit individual enforcement but concentrates regulatory action.',
       ],
     },
@@ -280,22 +283,22 @@ export const usStateLaws = {
       id: 'compliance-challenges',
       title: 'Multi-State Compliance Challenges and Federal Preemption Risk',
       content:
-        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems. And a complication has been unfolding since late 2025: federal preemption pressure.\n\n**Federal preemption pressure.** On December 11, 2025, President Trump signed an executive order titled **"Ensuring a National Policy Framework for AI"** that directly targets the state AI regulatory patchwork. The order established a **DOJ AI Litigation Task Force** (stood up by AG Bondi on January 9, 2026) tasked with challenging state AI laws on interstate commerce, preemption, and other grounds. As of April 2026 the Task Force has not yet filed any lawsuits — the Executive Order contemplates a sequenced process in which the Department of Commerce first identifies specific state laws for referral. On **March 20, 2026**, the White House released its **National Policy Framework for AI**, a set of legislative recommendations covering seven areas (child safety, communities, IP, censorship, innovation, workforce, and state preemption). The Framework is non-binding but is shaping the federal legislative agenda. Constitutional scholars have noted that Congress — not the executive branch — has the exclusive power to preempt state law, so an executive order alone has limited strength. This creates major uncertainty for organizations investing in state-level compliance; laws they are preparing for may face federal challenges before they are fully enforced.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as a "high-risk AI system" in Colorado. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Colorado requires impact assessments. Connecticut does too, but with different specifications. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With over 1,200 AI bills introduced across all 50 states in 2025 alone, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. The federal preemption threat adds another layer — organizations may invest in compliance with state laws that are subsequently struck down or preempted.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
+        'For organizations that operate across state lines — which includes most businesses with an online presence — the current state of AI regulation creates real practical problems. And a complication has been unfolding since late 2025: federal preemption pressure.\n\n**Federal preemption pressure.** On December 11, 2025, President Trump signed an executive order titled **"Ensuring a National Policy Framework for AI"** that directly targets the state AI regulatory patchwork. The order established a **DOJ AI Litigation Task Force** (stood up by AG Bondi on January 9, 2026) tasked with challenging state AI laws on interstate commerce, preemption, and other grounds. As of May 2026 the Task Force has not filed its own standalone lawsuit — the Executive Order contemplates a sequenced process in which the Department of Commerce first identifies specific state laws for referral. On **March 20, 2026**, the White House released its **National Policy Framework for AI**, a set of legislative recommendations covering seven areas (child safety, communities, IP, censorship, innovation, workforce, and state preemption). The Framework is non-binding but is shaping the federal legislative agenda. Constitutional scholars have noted that Congress — not the executive branch — has the exclusive power to preempt state law, so an executive order alone has limited strength. This creates major uncertainty for organizations investing in state-level compliance; laws they are preparing for may face federal challenges before they are fully enforced.\n\n**Conflicting definitions.** States define key terms differently. What counts as an "automated decision tool" in New York City is not the same as what qualifies as covered ADMT in Colorado or prohibited AI under Texas TRAIGA. An AI system might trigger obligations in one state but not another, even though it does the same thing.\n\n**Overlapping requirements with different timelines.** Some states require impact assessments. Others, like Colorado after SB 26-189, focus more on notice, records, data correction, and human review. If a company deploys the same AI system in both states, it may need separate assessments or a combined approach that satisfies both. Timing requirements for consumer notifications also differ.\n\n**Monitoring the legislative landscape.** With over 1,200 AI bills introduced across all 50 states in 2025 alone, keeping track of what has passed, what is pending, and what has been signed is a significant operational burden. Laws can move quickly — a bill introduced in January can be signed by June.\n\n**Enforcement uncertainty.** Many of these laws are new, and enforcement patterns have not yet been established. Organizations face the challenge of interpreting vague statutory language without the benefit of regulatory guidance or case law. The federal preemption threat adds another layer — organizations may invest in compliance with state laws that are subsequently struck down or preempted.\n\n**Resource constraints.** Compliance requires legal analysis, technical assessment, documentation, and ongoing monitoring. For smaller organizations that lack dedicated compliance teams, meeting the requirements of even one state law can be demanding. Meeting the requirements of several simultaneously is a significant undertaking.',
     },
     {
       id: 'practical-steps',
       title: 'What Organizations Should Do',
       content:
-        'The patchwork is not going away soon, though the December 2025 executive order on federal preemption introduces new uncertainty. Even if federal action eventually preempts some state laws, organizations that have built compliance programs around frameworks like NIST AI RMF will be well-positioned regardless of how the federal-state dynamic resolves. Building a compliance strategy now is both a legal necessity and a competitive advantage.',
+        'The patchwork is not going away soon, though federal preemption pressure continues to create uncertainty. Even if federal action eventually preempts some state laws, organizations that have built compliance programs around frameworks like NIST AI RMF will be well-positioned regardless of how the federal-state dynamic resolves. Building a compliance strategy now is both a legal necessity and a competitive advantage.',
       list: [
         '**Map your AI footprint.** Inventory every AI system your organization develops or uses. For each one, document what it does, what data it processes, what decisions it influences, and where those decisions affect people geographically.',
         '**Identify your highest-risk systems first.** Focus initial compliance efforts on AI systems used in consequential decisions — hiring, lending, insurance, housing, healthcare, education, and legal services. These are the domains every state law targets.',
-        '**Adopt NIST AI RMF as your baseline.** The NIST AI Risk Management Framework is voluntary at the federal level, but Colorado already references it, and other states are likely to follow. Building your governance program around NIST gives you a defensible foundation that aligns with where regulation is heading.',
+        '**Adopt NIST AI RMF as your baseline.** The NIST AI Risk Management Framework is voluntary at the federal level, but Texas TRAIGA gives practical enforcement value to substantial compliance with NIST\'s Generative AI Profile or another recognized AI risk framework, and other state laws or proposals continue to use NIST as a recognized baseline. Building your governance program around NIST gives you a defensible foundation that aligns with where regulation is heading.',
         '**Build bias auditing into your process.** Whether or not your state requires it yet, establishing regular independent audits of your AI systems for discriminatory outcomes is becoming a standard expectation. Start before you are required to.',
         '**Implement consumer disclosure now.** Transparency is the single most consistent requirement across all state AI laws. If your AI system affects decisions about people, build notification and disclosure mechanisms into the product. It is cheaper to build these in from the start than to retrofit them later.',
         '**Create a legislative monitoring process.** Assign someone — or subscribe to a service — to track AI legislation in every state where you operate. The NCSL tracker is a good starting point. Review new developments at least quarterly.',
         '**Document everything.** Impact assessments, risk management policies, audit results, consumer notices, and internal decisions about AI deployment should all be documented. Documentation is both a compliance requirement under most laws and your best defense in an enforcement action.',
-        '**Engage your vendors.** If you use third-party AI tools, you need documentation from those vendors about how their systems work, what data they use, and what risks they present. Colorado explicitly requires developers to provide this information to deployers. Start requesting it now.',
+        '**Engage your vendors.** If you use third-party AI tools, you need documentation from those vendors about how their systems work, what data they use, what limitations they have, and what risks they present. Colorado\'s ADMT law and the EU AI Act both make vendor documentation a practical requirement. Start requesting it now.',
         '**Plan for the strictest standard.** When requirements conflict across states, consider building your compliance program to the most demanding standard. This is more work upfront but avoids the complexity of maintaining different compliance postures for different jurisdictions.',
       ],
     },
@@ -314,7 +317,7 @@ export const usStateLaws = {
     {
       date: 'May 2024',
       event:
-        'Colorado Governor Polis signs SB 24-205, the first comprehensive state AI law covering high-risk AI across multiple domains.',
+        'Colorado Governor Polis signs SB 24-205, the first comprehensive state AI law covering high-risk AI across multiple domains. The framework is later repealed and replaced before taking effect.',
     },
     {
       date: 'June 2024',
@@ -339,7 +342,7 @@ export const usStateLaws = {
     {
       date: '2025',
       event:
-        'Texas signs HB 1709 establishing AI governance for state agencies. Over 1,200 AI bills introduced across all 50 states, with 145 enacted into law.',
+        'Texas signs HB 1709 establishing AI governance for state agencies. NCSL reports that all 50 states introduced AI legislation in 2025 and 38 states adopted or enacted around 100 measures.',
     },
     {
       date: 'June 2025',
@@ -349,7 +352,7 @@ export const usStateLaws = {
     {
       date: 'August 2025',
       event:
-        'Colorado Governor Polis signs SB 25B-004, delaying the Colorado AI Act (SB 24-205) effective date from February 1, 2026 to June 30, 2026.',
+        'Colorado Governor Polis signs SB 25B-004, delaying the original SB 24-205 effective date from February 1, 2026 to June 30, 2026 while lawmakers work on a replacement.',
     },
     {
       date: 'September 2025',
@@ -369,7 +372,7 @@ export const usStateLaws = {
     {
       date: 'January 9, 2026',
       event:
-        'AG Pam Bondi establishes the DOJ AI Litigation Task Force to challenge state AI laws in federal court. No lawsuits filed as of April 2026 \u2014 the Executive Order contemplates Commerce Department referrals first.',
+        'AG Pam Bondi establishes the DOJ AI Litigation Task Force to challenge state AI laws in federal court. No standalone DOJ task-force lawsuit filed as of May 2026 \u2014 the Executive Order contemplates Commerce Department referrals first.',
     },
     {
       date: 'March 20, 2026',
@@ -377,17 +380,23 @@ export const usStateLaws = {
         'White House releases its National Policy Framework for Artificial Intelligence, a non-binding legislative blueprint covering child safety, innovation, workforce development, and state preemption.',
     },
     {
-      date: 'June 30, 2026',
+      date: 'May 14, 2026',
       event:
-        'Colorado SB 24-205 (delayed) takes effect, marking the first enforcement date for a comprehensive state AI law.',
+        'Colorado signs SB 26-189, repealing and reenacting the original Colorado AI Act framework as a narrower ADMT law effective January 1, 2027.',
     },
   ],
   sources: [
     {
-      title: 'Colorado SB 24-205 — Full Text',
+      title: 'Colorado SB 26-189 — Automated Decision-Making Technology',
+      url: 'https://leg.colorado.gov/bills/sb26-189',
+      description:
+        'The 2026 Colorado ADMT law that replaced the original SB 24-205 framework before it took effect.',
+    },
+    {
+      title: 'Colorado SB 24-205 — Original Colorado AI Act',
       url: 'https://leg.colorado.gov/bills/sb24-205',
       description:
-        'The Colorado Artificial Intelligence Act. First comprehensive state AI law in the U.S.',
+        'Historical source for the original Colorado Artificial Intelligence Act framework.',
     },
     {
       title: 'NYC Local Law 144 — Automated Employment Decision Tools',
@@ -402,8 +411,8 @@ export const usStateLaws = {
         'Full text of the Illinois law regulating AI analysis of video interviews.',
     },
     {
-      title: 'NCSL Artificial Intelligence 2024 Legislation Tracker',
-      url: 'https://www.ncsl.org/technology-and-communication/artificial-intelligence-2024-legislation',
+      title: 'NCSL Artificial Intelligence 2025 Legislation Tracker',
+      url: 'https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation',
       description:
         'National Conference of State Legislatures tracker of AI bills across all 50 states.',
     },
