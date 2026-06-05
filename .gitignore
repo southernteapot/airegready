@@ -21,6 +21,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .render-checks/
+.playwright-cli/
+output/
+
+# local agent/tool settings
+.claude/
 
 # local env files
 .env*.local
