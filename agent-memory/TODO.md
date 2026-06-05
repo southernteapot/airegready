@@ -45,6 +45,8 @@ Track current project tasks here.
 
 - 2026-06-05 public 200px logo asset completed: generated `public/assets/airegready-logo-200.png` from the current shield-check mark as a 200x200 RGB PNG with flat brand colors and no transparent padding.
 
+- 2026-06-05 visual stripe cleanup completed: homepage, catalog, and catalog detail pages now use continuous dark/slate section foundations with light surfaces kept inside cards/forms.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

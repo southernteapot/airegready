@@ -221,16 +221,16 @@ function ProductFaq({ faq, product }) {
   if (!faq?.length) return null
 
   return (
-    <section id="faq" className="bg-white px-4 py-16 sm:px-6 sm:py-20 dark:bg-slate-950">
+    <section id="faq" className="bg-[#0A1524] px-4 py-16 text-white sm:px-6 sm:py-20">
       <div className="mx-auto max-w-[1120px]">
         <div className="max-w-[760px]">
-          <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
+          <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
             Buyer questions
           </p>
-          <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
+          <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
             Before you buy the {product.title}
           </h2>
-          <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+          <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
             The short version: this is a practical starter packet, not a legal
             opinion or compliance guarantee. These are the questions that matter
             before a small team spends money on it.
@@ -283,8 +283,8 @@ export default async function CatalogProductPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
-      <div className="overflow-x-hidden bg-[#F3F6FA] text-[#0B1B2F] dark:bg-[#09111D] dark:text-white">
-        <section className="relative overflow-hidden border-b border-[#1E3147] bg-[#07111F] px-4 pb-12 pt-24 text-white sm:px-6">
+      <div className="overflow-x-hidden bg-[#07111F] text-white">
+        <section className="relative overflow-hidden border-b border-white/[0.06] bg-[#07111F] px-4 pb-12 pt-24 text-white sm:px-6">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(88,212,255,0.14),transparent_32%),radial-gradient(circle_at_82%_16%,rgba(44,107,255,0.16),transparent_30%)]" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div>
@@ -330,7 +330,7 @@ export default async function CatalogProductPage({ params }) {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 sm:py-20">
+        <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <aside className="rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
               <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
@@ -374,18 +374,18 @@ export default async function CatalogProductPage({ params }) {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 dark:bg-slate-950">
+        <section className="bg-gradient-to-b from-[#091321] to-[#0A1524] px-4 py-16 text-white sm:px-6 sm:py-20">
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">
+              <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
                 Request workflow
               </p>
-              <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
+              <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
                 {isPurchasable
                   ? 'Buy the kit now, or ask a question first.'
                   : 'Request the preview, then decide whether the package fits.'}
               </h2>
-              <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+              <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
                 {isPurchasable ? (
                   <>
                     The paid kit is delivered by Gumroad as an instant digital
@@ -427,7 +427,7 @@ export default async function CatalogProductPage({ params }) {
 
         <ProductFaq faq={product.faq} product={product} />
 
-        <section id="request-preview" className="px-4 py-12 sm:px-6">
+        <section id="request-preview" className="bg-gradient-to-b from-[#0A1524] to-[#07111F] px-4 py-12 sm:px-6">
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-6 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm lg:grid-cols-[0.8fr_1.2fr] dark:border-slate-800 dark:bg-slate-950">
             <div>
               <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#2C6BFF] dark:text-[#58D4FF]">

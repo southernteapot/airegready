@@ -46,6 +46,13 @@ Decision: Use `support@airegready.com` for public contact and mailto links. Emit
 Reason: The public site now has one real paid product and several preview-request products. Search, assessment, and customer-facing copy need to avoid implying that preview-only products are in stock, priced, or directly downloadable.
 Consequences: Future paid products should add explicit purchase metadata before buy CTAs or Offer schema are shown. Preview-only catalog pages can describe contents and collect requests, but should not publish fake prices, downloads, or availability claims. Public support/contact copy should use `support@airegready.com`.
 
+## 2026-06-05 - Avoid stripe-like full-width light bands
+
+Project/system: AIRegReady live homepage and catalog routes
+Decision: Keep the production homepage and catalog stack on a continuous dark navy/slate foundation. Use very light surfaces as contained cards/forms instead of full-width sections immediately after dark sections.
+Reason: Brian said the hard dark-to-very-light section changes made the site look striped.
+Consequences: Future homepage/catalog layout work should use subtle dark gradients or dark slate bands between sections, and reserve pale backgrounds for bounded panels unless Brian explicitly wants a lighter page direction.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

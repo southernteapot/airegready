@@ -56,14 +56,14 @@ function LightSecondaryLink({ href, children }) {
 function SectionHeader({ eyebrow, title, body, id, compact = false }) {
   return (
     <div className={compact ? 'max-w-[760px]' : 'mx-auto max-w-[820px] text-center'}>
-      <p className="font-sans text-xs font-black uppercase text-[#2C6BFF] dark:text-[#58D4FF]">
+      <p className="font-sans text-xs font-black uppercase text-[#8EF1FF]">
         {eyebrow}
       </p>
-      <h2 id={id} className="mt-3 font-sans text-3xl font-black leading-tight text-[#06132E] sm:text-4xl dark:text-white">
+      <h2 id={id} className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
         {title}
       </h2>
       {body && (
-        <p className="mt-4 font-sans text-base leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+        <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
           {body}
         </p>
       )}
@@ -186,8 +186,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <div className="overflow-x-hidden bg-[#F3F6FA] text-[#0B1B2F] dark:bg-[#09111D] dark:text-white">
-        <section className="relative overflow-hidden border-b border-[#1E3147] bg-[#07111F] px-4 pb-10 pt-24 text-white sm:px-6" aria-labelledby="home-heading">
+      <div className="overflow-x-hidden bg-[#07111F] text-white">
+        <section className="relative overflow-hidden border-b border-white/[0.06] bg-[#07111F] px-4 pb-10 pt-24 text-white sm:px-6" aria-labelledby="home-heading">
           <CircuitBackdrop className="opacity-40" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(88,212,255,0.1),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(44,107,255,0.12),transparent_30%)]" aria-hidden="true" />
           <div className="relative mx-auto max-w-[1320px]">
@@ -315,7 +315,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="home-products-heading">
+        <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="home-products-heading">
           <div className="mx-auto max-w-[1240px]">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <SectionHeader
@@ -344,7 +344,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="starter-kit" className="bg-[#0B1B2F] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="starter-kit-heading">
+        <section id="starter-kit" className="bg-gradient-to-b from-[#091321] to-[#0B1B2F] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="starter-kit-heading">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.86fr_1.14fr]">
             <div className="rounded-2xl border border-white/[0.14] bg-white/[0.06] p-6 sm:p-8">
               <p className="font-sans text-xs font-black uppercase text-[#58D4FF]">Flagship kit</p>
@@ -382,7 +382,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 dark:bg-[#09111D]" aria-labelledby="assessment-heading">
+        <section className="bg-gradient-to-b from-[#0B1B2F] to-[#0A1524] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="assessment-heading">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <SectionHeader
               id="assessment-heading"
@@ -417,7 +417,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="tracker-heading">
+        <section className="bg-[#0A1524] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="tracker-heading">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div className="overflow-hidden rounded-2xl border border-[#C9D7E6] bg-white p-3 shadow-[0_34px_90px_-70px_rgba(11,27,47,0.9)] dark:border-slate-800 dark:bg-slate-950">
               <Image
@@ -448,7 +448,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#0B1B2F] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="newsletter-heading">
+        <section className="bg-gradient-to-b from-[#0A1524] to-[#0B1B2F] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="newsletter-heading">
           <div className="mx-auto grid max-w-[1120px] grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="font-sans text-xs font-black uppercase text-[#58D4FF]">AIRegReady updates</p>
@@ -475,7 +475,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-4 py-12 sm:px-6" aria-labelledby="legal-boundary-heading">
+        <section className="bg-gradient-to-b from-[#0B1B2F] to-[#07111F] px-4 py-12 sm:px-6" aria-labelledby="legal-boundary-heading">
           <div className="mx-auto max-w-[980px] rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
             <h2 id="legal-boundary-heading" className="font-sans text-2xl font-black text-[#06132E] dark:text-white">
               Educational resources, not legal services.
