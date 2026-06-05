@@ -8,14 +8,13 @@ import {
   getProductPriceLabel,
   getRoadmapProducts,
   isPurchasableProduct,
-  starterContents,
   trackedTopics,
 } from '@/lib/marketing'
 
 export const metadata = buildPageMetadata({
-  title: 'AI Governance Catalog',
+  title: 'AI Governance Starter Kit and Catalog',
   description:
-    'Browse AI governance starter kits, acceptable use policy kits, risk tools, vendor review packets, training resources, and jurisdiction guides.',
+    'See what is included in the paid AI Governance Starter Kit, plus separate AI governance resource packets, preview tools, and jurisdiction guides.',
   path: '/catalog',
 })
 
@@ -23,9 +22,9 @@ function buildCatalogSchema(availableProducts) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'AI Governance Catalog',
+    name: 'AI Governance Starter Kit and Catalog',
     description:
-      'AI governance document packages, templates, checklists, trackers, and jurisdiction guides for practical internal readiness work.',
+      'The paid AI Governance Starter Kit with separate AI governance document packages, templates, checklists, trackers, and jurisdiction guides for practical internal readiness work.',
     url: absoluteUrl('/catalog'),
     numberOfItems: availableProducts.length,
     itemListElement: availableProducts.map((product, index) => ({
@@ -76,6 +75,18 @@ function PrimaryLink({ href, children }) {
   )
 }
 
+function PrimaryExternalLink({ href, children }) {
+  return (
+    <a
+      href={href}
+      rel="noopener noreferrer"
+      className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#0F5E9C] px-5 py-3 font-sans text-sm font-bold text-white no-underline shadow-[0_14px_30px_-22px_rgba(15,94,156,0.95)] transition hover:bg-[#0B4A7D]"
+    >
+      {children}
+    </a>
+  )
+}
+
 function SecondaryLink({ href, children }) {
   return (
     <Link
@@ -108,6 +119,11 @@ function SectionHeader({ eyebrow, title, body, id, compact = false }) {
 export default function KitsPage() {
   const availableProducts = getAvailableProducts()
   const roadmapProducts = getRoadmapProducts()
+  const starterProduct = availableProducts.find((product) => product.slug === 'ai-governance-starter-kit')
+  const starterPriceLabel = starterProduct ? getProductPriceLabel(starterProduct) : null
+  const followOnProducts = starterProduct
+    ? availableProducts.filter((product) => product.slug !== starterProduct.slug)
+    : availableProducts
   const catalogSchema = buildCatalogSchema(availableProducts)
 
   return (
@@ -116,29 +132,51 @@ export default function KitsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogSchema) }}
       />
-      <section className="relative overflow-hidden border-b border-white/[0.06] bg-[#07111F] px-4 pb-12 pt-24 text-white sm:px-6" aria-labelledby="kits-heading">
+      <section id="starter-kit" className="relative overflow-hidden border-b border-white/[0.06] bg-[#07111F] px-4 pb-12 pt-24 text-white sm:px-6" aria-labelledby="kits-heading">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_24%,rgba(44,166,164,0.16),transparent_32%),radial-gradient(circle_at_82%_16%,rgba(47,128,194,0.18),transparent_30%)]" aria-hidden="true" />
-        <div className="relative mx-auto grid min-w-0 max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+        <div className="relative mx-auto grid min-w-0 max-w-[1240px] grid-cols-1 gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div className="min-w-0">
             <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-cyan-200">
-              AI governance resource catalog
+              Paid starter kit
             </p>
-            <h1 id="kits-heading" className="mt-4 max-w-[13ch] break-words font-sans text-[30px] font-extrabold leading-[1.08] tracking-tight text-white min-[430px]:max-w-[720px] min-[430px]:text-[34px] sm:text-5xl">
-              <span>AI governance resources</span>{' '}
-              <span className="block sm:inline">for practical documentation.</span>
+            <h1 id="kits-heading" className="mt-4 max-w-[760px] break-words font-sans text-[34px] font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl">
+              AI Governance Starter Kit
             </h1>
-            <p className="mt-5 max-w-[34ch] break-words font-sans text-base leading-relaxed text-[#D8E6F5] min-[430px]:max-w-[720px] sm:text-lg">
-              <span className="block sm:inline">Browse educational templates, checklists, trackers, guides, and document packages for internal AI governance work.</span>{' '}
-              <span className="block sm:inline">No resource promises compliance or replaces qualified legal advice.</span>
+            <p className="mt-5 max-w-[720px] break-words font-sans text-base leading-relaxed text-[#D8E6F5] sm:text-lg">
+              This page shows what is included in the paid Starter Kit: a
+              coherent governance and first-pass risk assessment packet for
+              founders, new business owners, consultants, operators, and lean
+              teams that need a working AI documentation file.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <PrimaryLink href="#kit-catalog">Browse all resources</PrimaryLink>
-              <SecondaryLink href="/assessment">Take the readiness assessment</SecondaryLink>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {starterProduct && isPurchasableProduct(starterProduct) ? (
+                <PrimaryExternalLink href={starterProduct.purchaseUrl}>
+                  Buy for {starterPriceLabel}
+                </PrimaryExternalLink>
+              ) : starterProduct ? (
+                <PrimaryLink href={getProductHref(starterProduct)}>View kit details</PrimaryLink>
+              ) : null}
+              <SecondaryLink href="#included-files">See included files</SecondaryLink>
+              {starterProduct && (
+                <SecondaryLink href={`${getProductHref(starterProduct)}#faq`}>Read buyer FAQ</SecondaryLink>
+              )}
+            </div>
+            <div className="mt-6 grid grid-cols-1 gap-3 border-t border-white/[0.12] pt-5 sm:grid-cols-3">
+              {[
+                [starterProduct ? `${starterProduct.inside.length} documents` : '14 documents', 'Editable governance and risk assessment files'],
+                ['DOCX, PDF, Markdown', 'Word-compatible files, reference copies, and source files'],
+                ['Educational use', 'Templates for internal readiness, not legal advice'],
+              ].map(([label, body]) => (
+                <div key={label} className="rounded-xl border border-white/[0.12] bg-white/[0.07] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <p className="font-sans text-sm font-black leading-tight text-white">{label}</p>
+                  <p className="mt-2 font-sans text-xs font-semibold leading-relaxed text-[#ADC4DE]">{body}</p>
+                </div>
+              ))}
             </div>
           </div>
           <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-3 shadow-[0_36px_96px_-68px_rgba(0,0,0,0.9)]">
             <Image
-              src="/assets/airegready-home-v3-starter-kit.avif"
+              src={starterProduct?.previewImage || '/assets/airegready-home-v3-starter-kit.avif'}
               width="1586"
               height="992"
               alt="AI governance starter kit product preview with organized policy packets, checklists, and tabbed resources."
@@ -148,59 +186,50 @@ export default function KitsPage() {
             />
           </div>
         </div>
-      </section>
 
-      <section id="starter-kit" className="bg-gradient-to-b from-[#07111F] to-[#0B1B2F] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="starter-heading">
-        <div className="mx-auto grid min-w-0 max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.86fr_1.14fr]">
-          <div className="min-w-0 rounded-2xl border border-white/[0.14] bg-white/[0.06] p-6 sm:p-8">
-            <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#9BE1DC]">Flagship kit</p>
-            <h2 id="starter-heading" className="mt-3 break-words font-sans text-3xl font-black leading-tight tracking-tight sm:text-4xl">
-              AI Governance Starter Kit
-            </h2>
-            <p className="mt-4 break-words font-sans text-base leading-relaxed text-[#CFE0F2]">
-              A practical starting package for founders, new business owners,
-              consultants, and lean teams that need a credible, editable
-              governance file before AI use grows further. Use it to
-              document tools, assign ownership, set use rules, triage higher-risk
-              workflows, and keep update notes in one organized place.
-            </p>
-            <p className="mt-4 font-sans text-sm leading-relaxed text-[#ADC4DE]">
-              Educational starting point only. Review specific obligations with
-              qualified counsel.
-            </p>
-          </div>
-          <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FAFD] p-5 text-[#0B1B2F] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)] dark:border-slate-800 dark:bg-slate-950 dark:text-white">
-            <div className="mb-4 flex items-center justify-between gap-4 border-b border-[#D6E2EF] pb-4 dark:border-slate-800">
-              <div>
-                <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-[#0F6B8F] dark:text-cyan-300">Included resources</p>
-                <h3 className="mt-1 font-sans text-xl font-black">Starter kit file index</h3>
-              </div>
-              <span className="rounded-full bg-[#E6F7F3] px-3 py-1 font-sans text-xs font-black text-[#137A72] dark:bg-cyan-300/10 dark:text-cyan-200">
-                Ready to adapt
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {starterContents.map((item, index) => (
-                <div key={item} className="min-w-0 rounded-xl border border-[#D6E2EF] bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
-                  <span className="font-sans text-xs font-black text-[#7B8DA3] dark:text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="mt-2 font-sans text-sm font-black text-[#0B1B2F] dark:text-white">{item}</p>
+        {starterProduct && (
+          <div id="included-files" className="relative mx-auto mt-8 max-w-[1240px] scroll-mt-24">
+            <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-white/[0.14] bg-slate-950 p-5 text-white shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)] sm:p-6">
+              <div className="mb-5 flex flex-col gap-4 border-b border-slate-800 pb-5 sm:flex-row sm:items-start sm:justify-between">
+                <div className="max-w-[760px]">
+                  <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-cyan-300">Included resources</p>
+                  <h2 className="mt-2 font-sans text-2xl font-black leading-tight text-white sm:text-3xl">
+                    What is included in the Starter Kit
+                  </h2>
+                  <p className="mt-3 font-sans text-sm leading-relaxed text-[#B2C9ED]">
+                    These are the editable resources included in the paid kit.
+                    The separate catalog cards lower on the page are follow-on
+                    resources and previews, not extra files silently bundled
+                    into this purchase.
+                  </p>
                 </div>
-              ))}
+                <span className="w-fit rounded-full bg-cyan-300/10 px-3 py-1 font-sans text-xs font-black text-cyan-200">
+                  Ready to adapt
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {starterProduct.inside.map((item, index) => (
+                  <div key={item} className="min-w-0 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <span className="font-sans text-xs font-black text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
+                    <p className="mt-2 font-sans text-sm font-black leading-snug text-white">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
 
-      <section id="kit-catalog" className="bg-gradient-to-b from-[#0B1B2F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="catalog-heading">
+      <section id="kit-catalog" className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="catalog-heading">
         <div className="mx-auto max-w-[1320px]">
           <SectionHeader
             id="catalog-heading"
-            eyebrow="Full catalog"
-            title="Choose the resource package that fits the governance job."
-            body="Each resource is framed as an educational starting point for internal governance work. Do not treat templates as legal advice or a compliance guarantee."
+            eyebrow="Separate catalog resources"
+            title="Follow-on packets and previews live below the Starter Kit."
+            body="The paid Starter Kit contents are listed above. The cards below are separate catalog resources, preview pages, and deeper follow-on packets for teams that need more specialized documents."
           />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {availableProducts.map((product) => {
+            {followOnProducts.map((product) => {
               const isPurchasable = isPurchasableProduct(product)
               const priceLabel = getProductPriceLabel(product)
 

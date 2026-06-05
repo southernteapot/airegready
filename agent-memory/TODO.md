@@ -53,6 +53,8 @@ Track current project tasks here.
 
 - 2026-06-05 dark-default production theme completed: root HTML now starts in dark mode, the theme bootstrap defaults unsaved visitors to dark rather than OS preference, and the toggle still persists an explicit light choice.
 
+- 2026-06-05 Starter Kit catalog landing clarity completed: `/catalog` now opens with the AI Governance Starter Kit H1, shows all 14 included resources near the top, and labels lower catalog cards as separate follow-on resources/previews.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

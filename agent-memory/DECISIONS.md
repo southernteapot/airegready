@@ -77,6 +77,14 @@ Decision: Render production pages with the dark navy/slate theme by default. Kee
 Reason: Brian liked the darker front-page direction and wanted the rest of the site to match instead of opening secondary pages in light mode.
 Consequences: New production UI should assume dark mode as the default presentation. Light-mode classes can remain for the toggle, but full-width production pages and sections should not rely on light mode as the primary design.
 
+
+## 2026-06-05 - Lead catalog with Starter Kit contents
+
+Project/system: AIRegReady `/catalog` and `/kits` compatibility page
+Decision: Open the catalog page as a Starter Kit-first landing page: the H1 is `AI Governance Starter Kit`, the 14 included resources appear near the top, and lower catalog cards are labeled as separate follow-on resources/previews.
+Reason: Brian said the Starter Kit name was too far down the page and the page did not make clear what was included in the kit.
+Consequences: Future catalog page edits should keep the paid Starter Kit contents clearly above the fold and avoid making separate preview products look bundled into the purchase.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title
