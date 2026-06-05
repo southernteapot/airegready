@@ -187,8 +187,8 @@ function PreviewPanel({ product }) {
       />
       <div className="grid grid-cols-1 gap-3 p-2 pt-5 sm:grid-cols-2 sm:p-5">
         {product.inside.map((item, index) => (
-          <div key={item} className="rounded-xl border border-[#D7E5F8] bg-white p-4 text-[#06132E]">
-            <span className="font-sans text-xs font-black text-[#2C6BFF]">{String(index + 1).padStart(2, '0')}</span>
+          <div key={item} className="rounded-xl border border-[#D7E5F8] bg-white p-4 text-[#06132E] dark:border-slate-800 dark:bg-slate-900 dark:text-white">
+            <span className="font-sans text-xs font-black text-[#2C6BFF] dark:text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
             <p className="mt-2 font-sans text-sm font-black">{item}</p>
           </div>
         ))}

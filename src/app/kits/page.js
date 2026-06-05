@@ -169,21 +169,21 @@ export default function KitsPage() {
               qualified counsel.
             </p>
           </div>
-          <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FAFD] p-5 text-[#0B1B2F] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
-            <div className="mb-4 flex items-center justify-between gap-4 border-b border-[#D6E2EF] pb-4">
+          <div className="min-w-0 max-w-full overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FAFD] p-5 text-[#0B1B2F] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)] dark:border-slate-800 dark:bg-slate-950 dark:text-white">
+            <div className="mb-4 flex items-center justify-between gap-4 border-b border-[#D6E2EF] pb-4 dark:border-slate-800">
               <div>
-                <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-[#0F6B8F]">Included resources</p>
+                <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-[#0F6B8F] dark:text-cyan-300">Included resources</p>
                 <h3 className="mt-1 font-sans text-xl font-black">Starter kit file index</h3>
               </div>
-              <span className="rounded-full bg-[#E6F7F3] px-3 py-1 font-sans text-xs font-black text-[#137A72]">
+              <span className="rounded-full bg-[#E6F7F3] px-3 py-1 font-sans text-xs font-black text-[#137A72] dark:bg-cyan-300/10 dark:text-cyan-200">
                 Ready to adapt
               </span>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {starterContents.map((item, index) => (
-                <div key={item} className="min-w-0 rounded-xl border border-[#D6E2EF] bg-white p-4">
-                  <span className="font-sans text-xs font-black text-[#7B8DA3]">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="mt-2 font-sans text-sm font-black text-[#0B1B2F]">{item}</p>
+                <div key={item} className="min-w-0 rounded-xl border border-[#D6E2EF] bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                  <span className="font-sans text-xs font-black text-[#7B8DA3] dark:text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
+                  <p className="mt-2 font-sans text-sm font-black text-[#0B1B2F] dark:text-white">{item}</p>
                 </div>
               ))}
             </div>
