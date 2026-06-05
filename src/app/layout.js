@@ -81,7 +81,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${libreBaskerville.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${libreBaskerville.variable} ${inter.variable} dark`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="7yPLVDgBZG3wROlZt4wxHmVqh4I6KOgJERk-IXgMevM" />
         <Script src="/theme.js" strategy="beforeInteractive" />

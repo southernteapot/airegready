@@ -2,12 +2,10 @@
   try {
     var storageKey = 'theme'
     var root = document.documentElement
-    var media = window.matchMedia('(prefers-color-scheme: dark)')
-
     function getTheme() {
       var saved = localStorage.getItem(storageKey)
       if (saved === 'light' || saved === 'dark') return saved
-      return media.matches ? 'dark' : 'light'
+      return 'dark'
     }
 
     function applyTheme(theme) {
@@ -40,22 +38,6 @@
       event.preventDefault()
       setTheme(root.classList.contains('dark') ? 'light' : 'dark', true)
     })
-
-    if (typeof media.addEventListener === 'function') {
-      media.addEventListener('change', function (event) {
-        var saved = localStorage.getItem(storageKey)
-        if (saved !== 'light' && saved !== 'dark') {
-          setTheme(event.matches ? 'dark' : 'light', false)
-        }
-      })
-    } else if (typeof media.addListener === 'function') {
-      media.addListener(function (event) {
-        var saved = localStorage.getItem(storageKey)
-        if (saved !== 'light' && saved !== 'dark') {
-          setTheme(event.matches ? 'dark' : 'light', false)
-        }
-      })
-    }
 
     syncButtons()
   } catch (error) {

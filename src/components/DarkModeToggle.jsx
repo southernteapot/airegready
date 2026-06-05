@@ -4,9 +4,9 @@ export default function DarkModeToggle() {
       type="button"
       data-theme-toggle
       className="flex cursor-pointer items-center border-none bg-transparent p-1.5 text-[#ADC4DE] transition-colors hover:text-[#9BE1DC]"
-      aria-label="Toggle theme"
-      title="Toggle theme"
-      aria-pressed="false"
+      aria-label="Switch to light mode"
+      title="Switch to light mode"
+      aria-pressed="true"
       suppressHydrationWarning
     >
       <svg

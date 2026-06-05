@@ -51,6 +51,8 @@ Track current project tasks here.
 
 - 2026-06-05 Starter Kit buyer-positioning update completed: public copy now leads with founders, new business owners, consultants, operators, and people starting or growing AI-enabled businesses while keeping small organizations as a secondary audience.
 
+- 2026-06-05 dark-default production theme completed: root HTML now starts in dark mode, the theme bootstrap defaults unsaved visitors to dark rather than OS preference, and the toggle still persists an explicit light choice.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

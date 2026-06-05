@@ -69,6 +69,14 @@ Decision: Lead AI Governance Starter Kit audience language with founders, new bu
 Reason: Brian expects the biggest early market to be individuals starting businesses, not only existing teams.
 Consequences: Future Starter Kit, homepage, catalog, and Gumroad-adjacent copy should speak directly to solo founders, new business owners, consultants, and operators while preserving the educational/legal-boundary framing.
 
+
+## 2026-06-05 - Use dark theme as production default
+
+Project/system: AIRegReady live site theme
+Decision: Render production pages with the dark navy/slate theme by default. Keep the existing theme toggle so a visitor can explicitly save light mode, but do not follow OS light preference for new visitors.
+Reason: Brian liked the darker front-page direction and wanted the rest of the site to match instead of opening secondary pages in light mode.
+Consequences: New production UI should assume dark mode as the default presentation. Light-mode classes can remain for the toggle, but full-width production pages and sections should not rely on light mode as the primary design.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title
