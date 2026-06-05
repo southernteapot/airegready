@@ -2,7 +2,7 @@
 
 Canonical long-term project note:
 
-/home/brian/Vault/projects/airegready.com.md
+/home/brian/Vault/projects/airegready.com/airegready.com.md
 
 Vault agent entry point:
 

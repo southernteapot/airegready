@@ -85,6 +85,22 @@ Decision: Open the catalog page as a Starter Kit-first landing page: the H1 is `
 Reason: Brian said the Starter Kit name was too far down the page and the page did not make clear what was included in the kit.
 Consequences: Future catalog page edits should keep the paid Starter Kit contents clearly above the fold and avoid making separate preview products look bundled into the purchase.
 
+
+## 2026-06-05 - Keep guided services as document setup, not consulting
+
+Project/system: AIRegReady services and public positioning
+Decision: If Brian offers calls or paid help, frame the service as guided document setup or educational implementation support for filling out AIRegReady packets, not AI compliance consulting, legal advice, or expert advisory services.
+Reason: Brian is concerned about overstating his expertise, and the business must preserve the educational-template boundary. A guided setup offer can still be useful without claiming legal or compliance authority.
+Consequences: Future service copy should emphasize organizing a working file, filling in inventories/rules/review notes, identifying open questions, and routing legal/privacy/security/procurement issues to qualified reviewers. Avoid titles or claims such as compliance consultant, legal advisor, compliance guarantee, or regulator-ready assessment.
+
+
+## 2026-06-05 - Prepare Vendor AI Review Packet as second paid product
+
+Project/system: AIRegReady product catalog and deliverables
+Decision: Use the Vendor AI Review Packet as the next paid-product candidate after the Starter Kit. A v1.0.0 deliverable now exists locally, but the public catalog remains preview-only until Gumroad checkout, pricing, and delivery are explicitly wired.
+Reason: Vendor review is the natural follow-on once buyers inventory AI tools and ask whether a vendor or SaaS AI feature can be approved. It has clearer buyer pain than another basic policy kit and does not cannibalize the Starter Kit.
+Consequences: Future public updates can describe the packet contents but must not show buy buttons, Offer schema, in-stock status, or instant download language until the Gumroad product exists and has been QA'd.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

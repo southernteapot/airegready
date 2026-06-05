@@ -4,6 +4,8 @@ Track current project tasks here.
 
 ## Current
 
+- Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
+- Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Before product conversion, audit `content/products/` for stale Colorado/EU timing references and align delivery copy with the public SB 26-189 / Digital Omnibus updates.
@@ -12,7 +14,6 @@ Track current project tasks here.
 - Decide when to retire older homepage preview routes after the current homepage has been live long enough.
 - Verify production newsletter configuration for Buttondown (`BUTTONDOWN_API_KEY`) and Cloudflare analytics token setup if analytics should run.
 - Tighten production CSP script handling if the inline theme/bootstrap and JSON-LD strategy is revisited.
-- Connect this repo-local memory to the Obsidian project note.
 
 ## Confirmed
 
@@ -63,6 +64,8 @@ Track current project tasks here.
 - 2026-06-05 SEO support article pass completed: added three practical blog posts for first AI policy, AI use inventory, and first-pass AI risk assessment; registered them in the blog index/feed/sitemap; linked them from matching discovery landing pages; validated rendering with build and browser QA.
 
 - 2026-06-05 Vendor AI Review Packet v1 completed: created a 6-document vendor review deliverable with request email, lite procurement checklist, full vendor risk assessment, scoring guide, red flag list, decision memo, Start Here, legal notice, source notes, DOCX/PDF/Markdown exports, ZIP integrity QA, PDF text/page-count checks, rendered PDF sanity checks, and preview-only catalog metadata update.
+
+- 2026-06-05 memory sync completed: repo memory files and the Obsidian project note were updated to reflect the paid Starter Kit launch work, discovery pages, support articles, product visuals, sitemap submission, Vendor AI Review Packet v1, and AI adoption post bank.
 
 ## Later
 
