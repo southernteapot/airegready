@@ -197,12 +197,12 @@ export default function Home() {
                   Resource library
                 </span>
                 <span className="min-w-0 max-w-full break-words font-sans text-sm font-semibold leading-snug text-[#D8E6F5]">
-                  AI regulation is changing fast. Build practical governance records before questions arrive.
+                  New: buy the AI Governance Starter Kit for $19 and start with editable templates today.
                 </span>
               </div>
               <div className="grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 lg:flex lg:flex-wrap">
-                <Link href="/catalog" className="rounded-lg px-3 py-2 text-center font-sans text-sm font-bold text-[#8EF1FF] no-underline hover:bg-white/[0.08]">
-                  Browse catalog
+                <Link href="/catalog/ai-governance-starter-kit" className="rounded-lg px-3 py-2 text-center font-sans text-sm font-bold text-[#8EF1FF] no-underline hover:bg-white/[0.08]">
+                  Get starter kit
                 </Link>
                 <Link href="/assessment" className="rounded-lg bg-[#174EA6] px-4 py-2 text-center font-sans text-sm font-bold text-white no-underline hover:bg-[#2C6BFF]">
                   Run assessment
@@ -225,8 +225,8 @@ export default function Home() {
                   documentation. Educational resources only, not legal advice.
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-nowrap">
-                  <PrimaryLink href="/catalog">Browse governance resources</PrimaryLink>
-                  <HeroSecondaryLink href="/assessment">Take the free readiness assessment</HeroSecondaryLink>
+                  <PrimaryLink href="/catalog/ai-governance-starter-kit">Get the AI Governance Starter Kit — $19</PrimaryLink>
+                  <HeroSecondaryLink href="/catalog/ai-governance-starter-kit#what-you-get">See what&apos;s included</HeroSecondaryLink>
                 </div>
                 <div className="mt-6 grid grid-cols-1 gap-3 border-t border-white/[0.12] pt-5 sm:grid-cols-3">
                   {heroProofCards.map((card) => (
@@ -358,7 +358,7 @@ export default function Home() {
                 and keep update notes in one organized place.
               </p>
               <div className="mt-6">
-                <PrimaryLink href="/catalog/ai-governance-starter-kit">Preview starter kit</PrimaryLink>
+                <PrimaryLink href="/catalog/ai-governance-starter-kit">Get the starter kit — $19</PrimaryLink>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-white/[0.14] bg-[#F8FBFF] p-3 text-[#06132E] shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">

@@ -41,6 +41,7 @@ Track current project tasks here.
 - 2026-06-05 regulatory consistency cleanup completed: public articles now frame Colorado SB 24-205 and pre-agreement EU Digital Omnibus posts as historical where needed, route readers to SB 26-189 / May 7 Digital Omnibus guidance, and review-date tests expect 2026-06-05.
 - 2026-06-05 first paid product wiring completed: Gumroad AI Governance Starter Kit link `https://airegready.gumroad.com/l/kfadzn` is attached to the starter kit product metadata, catalog card CTA, product detail CTA, and Product/Offer JSON-LD at $19 USD while preview request remains secondary.
 - 2026-06-05 AI Governance Starter Kit ZIP QA/rebuild completed: customer archive contains the advertised DOCX, PDF, Markdown, Start Here, and legal notice files; ZIP integrity passed; PDFs were regenerated through HTML-rendered Markdown; Colorado references were updated to SB 26-189 / covered ADMT language.
+- 2026-06-05 first-sale lift completed: homepage primary CTAs point to the $19 AI Governance Starter Kit, product detail page includes a concrete "What you get" section, and launch article `/blog/ai-governance-starter-kit-launch` announces the paid kit.
 
 ## Later
 

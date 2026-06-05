@@ -114,6 +114,18 @@ function buildReviewPrompts(product) {
   ]
 }
 
+function buildDeliveryDetails(product) {
+  if (!isPurchasableProduct(product)) return null
+
+  return [
+    'Four editable templates: AI tool inventory, acceptable use policy, risk intake checklist, and update tracker.',
+    'DOCX files for editing, PDF reference copies, and Markdown versions for teams that work in docs or repositories.',
+    'A Start Here guide and legal-use notice so buyers understand how to adapt the packet without treating it as legal advice.',
+    'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
+    'Designed for small teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
+  ]
+}
+
 function PrimaryAction({ href, children }) {
   return (
     <Link
@@ -172,9 +184,9 @@ function PreviewPanel({ product }) {
   )
 }
 
-function DetailList({ title, items }) {
+function DetailList({ title, items, id }) {
   return (
-    <section className="rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+    <section id={id} className="scroll-mt-24 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
       <h2 className="font-sans text-2xl font-black leading-tight text-[#06132E] dark:text-white">
         {title}
       </h2>
@@ -202,6 +214,7 @@ export default async function CatalogProductPage({ params }) {
   const reviewPrompts = buildReviewPrompts(product)
   const isPurchasable = isPurchasableProduct(product)
   const priceLabel = getProductPriceLabel(product)
+  const deliveryDetails = buildDeliveryDetails(product)
 
   return (
     <>
@@ -289,6 +302,9 @@ export default async function CatalogProductPage({ params }) {
             </aside>
 
             <div className="grid grid-cols-1 gap-6">
+              {deliveryDetails && (
+                <DetailList id="what-you-get" title="What you get" items={deliveryDetails} />
+              )}
               <DetailList title="What is inside" items={product.inside} />
               <DetailList title="How teams can use it" items={useCases} />
               <DetailList title="Questions to answer before adapting it" items={reviewPrompts} />
