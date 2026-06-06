@@ -28,3 +28,10 @@ Do not paste raw terminal logs here.
 - Added `marketing/ai-adoption-post-bank-2026-06-05.md` with short, long, and very-short AI adoption posts for LinkedIn/Gumroad/newsletter use.
 - Preserved public-claim guardrails: educational templates only, not legal advice, not compliance guarantees, and guided calls should be framed as document setup rather than consulting.
 - Validation across the work included lint, tests, build, ZIP integrity checks, PDF text/page-count/render checks, and Playwright browser QA where UI changed.
+
+## 2026-06-06 - AI readiness checklist distribution asset
+
+- Added `/blog/ai-readiness-checklist-new-business` as a founder/new-business checklist article that ties inventory, data rules, owners, green/yellow/red triage, human review, risk intake, vendor notes, and update tracking back to the Starter Kit.
+- Created `marketing/ai-readiness-checklist-distribution-2026-06-06.md` with LinkedIn/Facebook, short social, Reddit-safe discussion, direct message/email, and follow-up comment copy.
+- Updated the Mission Control source note to make AIRegReady distribution the active session focus and remove stale Mission Control checkpoint language.
+- Validation passed: `npm run test`, `npm run lint`, `npm run build`, `git diff --check`, and Playwright route/mobile/console QA for the new article.

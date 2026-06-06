@@ -67,6 +67,8 @@ Track current project tasks here.
 
 - 2026-06-05 memory sync completed: repo memory files and the Obsidian project note were updated to reflect the paid Starter Kit launch work, discovery pages, support articles, product visuals, sitemap submission, Vendor AI Review Packet v1, and AI adoption post bank.
 
+- 2026-06-06 AIRegReady distribution content pass completed: added `/blog/ai-readiness-checklist-new-business`, registered it in the article index/feed/sitemap layer, created `marketing/ai-readiness-checklist-distribution-2026-06-06.md`, and validated with tests, lint, build, and browser QA.
+
 ## Later
 
 - Add download/delivery pages as needed for the paid document catalog.

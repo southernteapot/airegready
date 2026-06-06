@@ -34,8 +34,10 @@ import { aiGovernanceStarterKitLaunch } from './ai-governance-starter-kit-launch
 import { firstAiPolicyForNewBusiness } from './first-ai-policy-for-new-business.js'
 import { howToMakeAiUseInventory } from './how-to-make-ai-use-inventory.js'
 import { firstPassAiRiskAssessment } from './first-pass-ai-risk-assessment.js'
+import { aiReadinessChecklistNewBusiness } from './ai-readiness-checklist-new-business.js'
 
 const articles = {
+  'ai-readiness-checklist-new-business': aiReadinessChecklistNewBusiness,
   'first-pass-ai-risk-assessment': firstPassAiRiskAssessment,
   'how-to-make-ai-use-inventory': howToMakeAiUseInventory,
   'first-ai-policy-for-new-business': firstAiPolicyForNewBusiness,

@@ -30,6 +30,7 @@ Add durable project facts here as they become clear. Do not add temporary sessio
 - The public app uses `public/assets/` for homepage/product visuals; the root `images/` tree contains raw/generated image and logo source candidates.
 - Discovery landing pages now exist for `/ai-policy-template-small-business`, `/chatgpt-policy-for-employees`, `/ai-use-inventory-template`, `/ai-risk-assessment-template`, and `/ai-governance-checklist`; they funnel search visitors toward the free checklist and paid Starter Kit.
 - Marketing/distribution planning files now exist under `marketing/`, including `discovery-plan-2026-06-05.md` and `ai-adoption-post-bank-2026-06-05.md` for ready-to-post AI adoption content.
+- Distribution support now includes `/blog/ai-readiness-checklist-new-business` and `marketing/ai-readiness-checklist-distribution-2026-06-06.md` for founder/new-business AI readiness outreach.
 - Brian submitted the sitemap to Google Search Console on 2026-06-05 after the discovery pages and product gallery work were pushed.
 - Live homepage/catalog v3 visuals use compressed AVIF assets in `public/assets/`; WebP derivatives are retained as fallback/source-ready assets.
 - The shared logo is currently implemented in `src/components/Logo.jsx` as an inline blue/cyan shield-check mark with the `AIRegReady` wordmark.
