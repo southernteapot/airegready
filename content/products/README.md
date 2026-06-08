@@ -6,6 +6,8 @@ Each product lives in its own folder. Drafts are written in plain-English markdo
 
 Naming note: the internal folder `side-gig-ai-readiness-kit` is retained for now, but the public product name is **Solo Builder AI Launch Kit**. Use "side gig" only as audience language, not as the main product name.
 
+Solo Builder AI Launch Kit draft deliverable source files live under `content/products/side-gig-ai-readiness-kit/deliverables/`. They are source Markdown only until DOCX/PDF/ZIP exports, pricing, checkout, and delivery QA are completed.
+
 ---
 
 ## Product catalog
@@ -158,6 +160,7 @@ Naming note: the internal folder `side-gig-ai-readiness-kit` is retained for now
 
 - Word (.docx) — primary editable deliverable
 - PDF — reading copy
+- Markdown — optional bonus/source-reference format for products where source files are useful, including the Solo Builder AI Launch Kit
 - Google Doc — available on request for some products
 
 ## Standard disclaimer (appears in every product)

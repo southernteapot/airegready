@@ -4,7 +4,7 @@ Track current project tasks here.
 
 ## Current
 
-- Prepare the Solo Builder AI Launch Kit for paid launch: decide whether to expand/rename the internal `side-gig-ai-readiness-kit` draft set to match the 14-document public copy, create DOCX/PDF exports, QA the ZIP, choose pricing, write Gumroad/checkout copy, create product visuals, and wire real purchase/delivery metadata only after checkout and delivery are ready.
+- Prepare the Solo Builder AI Launch Kit for paid launch: compare the older root-level side-gig draft files against the new `deliverables/` source files, fold in unique useful language, delete redundant old drafts, review/polish the 14-document Markdown source kit, create DOCX/PDF exports with Markdown as a bonus format, QA the ZIP, choose pricing, write Gumroad/checkout copy, create product visuals, and wire real purchase/delivery metadata only after checkout and delivery are ready.
 - Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
 - Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.

@@ -2,6 +2,7 @@
 
 Public product name: **Solo Builder AI Launch Kit**
 Internal folder name: `side-gig-ai-readiness-kit`
+Draft deliverable source files: `content/products/side-gig-ai-readiness-kit/deliverables/`
 
 The Solo Builder AI Launch Kit is educational material only. It is not legal advice, does not create an attorney-client relationship, does not guarantee compliance, and is not a substitute for qualified counsel or other appropriate professional review.
 
