@@ -101,6 +101,31 @@ Decision: Use the Vendor AI Review Packet as the next paid-product candidate aft
 Reason: Vendor review is the natural follow-on once buyers inventory AI tools and ask whether a vendor or SaaS AI feature can be approved. It has clearer buyer pain than another basic policy kit and does not cannibalize the Starter Kit.
 Consequences: Future public updates can describe the packet contents but must not show buy buttons, Offer schema, in-stock status, or instant download language until the Gumroad product exists and has been QA'd.
 
+
+## 2026-06-08 - Add side-gig AI readiness as pre-advertising buyer lane
+
+Project/system: AIRegReady positioning, marketing, and product catalog
+Decision: Add a Side-Gig AI Readiness lane for solo side-income builders, freelancers, creators, consultants, and people using AI to build sellable products, services, templates, automations, content, apps, courses, or client deliverables. Keep the existing founder/new-business/small-team positioning, but prepare the Side-Gig AI Readiness Kit as the clearer entry offer before paid advertising.
+Reason: The first advertised buyer may be a person trying to make a little money with AI while avoiding obvious trouble before selling, publishing, advertising, or taking clients. That buyer has a more concrete anxiety than generic AI governance and needs simpler language than small/medium business compliance positioning.
+Consequences: Future marketing should include side-gig language around tools used, data avoided, claims checked, disclosures, human review, platform/client terms, and launch readiness. Do not advertise the kit as purchasable until exports, ZIP QA, pricing, Gumroad copy, and honest checkout/delivery wiring are complete. Vendor AI Review Packet remains the business follow-on offer, not the first ad test.
+
+
+## 2026-06-08 - Name solo-builder product publicly
+
+Project/system: AIRegReady product content
+Decision: Use **Solo Builder AI Launch Kit** as the public product name for the draft stored internally at `content/products/side-gig-ai-readiness-kit/`. Keep "side gig" as audience language only, not the main product name.
+Reason: The public name needs to fit solo founders, indie hackers, freelancers, consultants, no-code/app/site builders, micro-SaaS creators, AI automation sellers, digital product creators, productized-service sellers, and one-person businesses without sounding narrow or casual.
+Consequences: Future catalog, route, Gumroad, ZIP/export, FAQ, and marketing copy should use Solo Builder AI Launch Kit as the product name and avoid casual public audience labels that narrow or cheapen the offer. The product remains preview-only until pricing, checkout, exports, and delivery are wired honestly.
+
+
+## 2026-06-08 - Wire Solo Builder as preview-only catalog product
+
+Project/system: AIRegReady catalog, homepage, assessment, and FAQ
+Decision: Publish the Solo Builder AI Launch Kit at /catalog/solo-builder-ai-launch-kit as a preview-request / coming-soon catalog product, not a purchasable product. Keep the AI Governance Starter Kit as the only currently wired paid product.
+Reason: The marketing path can start before the Solo Builder exports, pricing, checkout, ZIP QA, Gumroad listing, and delivery files are finished, but the site must not imply a fake purchase, instant download, legal advice, or compliance guarantee.
+Consequences: Future Solo Builder launch work must add real delivery assets, pricing, checkout metadata, product visuals, and QA before adding purchaseUrl, price, priceCurrency, buy CTAs, Offer/InStock schema, Gumroad copy, or download language.
+
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

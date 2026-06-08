@@ -20,7 +20,7 @@ const {
   getSearchIndex,
   getSitemapEntries,
 } = await importLocalModule('src/lib/site-content.js')
-const { getProductBySlug } = await importLocalModule('src/lib/marketing.js')
+const { getProductBySlug, isPurchasableProduct } = await importLocalModule('src/lib/marketing.js')
 
 test('regulation records expose stable machine-readable review dates', () => {
   const usStateLaws = getRegulationRecords().find((regulation) => regulation.slug === 'us-state-laws')
@@ -60,6 +60,22 @@ test('starter kit exposes live purchase metadata and buyer FAQ', () => {
   assert.ok(starterKit.inside.includes('risk register'))
   assert.ok(starterKit.faq.some((item) => item.question === 'Couldn’t I just ask ChatGPT to make this?'))
   assert.ok(starterKit.faq.some((item) => item.answer.includes('Fourteen editable documents')))
+})
+
+test('solo builder launch kit is preview-only in product, search, and sitemap records', () => {
+  const soloBuilder = getProductBySlug('solo-builder-ai-launch-kit')
+  const searchIndex = getSearchIndex()
+  const sitemapEntries = getSitemapEntries()
+
+  assert.ok(soloBuilder)
+  assert.equal(soloBuilder.title, 'Solo Builder AI Launch Kit')
+  assert.equal(soloBuilder.purchaseUrl, undefined)
+  assert.equal(soloBuilder.price, undefined)
+  assert.equal(soloBuilder.priceCurrency, undefined)
+  assert.equal(isPurchasableProduct(soloBuilder), false)
+  assert.ok(soloBuilder.inside.includes('AI Claims Checklist'))
+  assert.ok(searchIndex.some((entry) => entry.type === 'product' && entry.url === '/catalog/solo-builder-ai-launch-kit'))
+  assert.ok(sitemapEntries.some((entry) => entry.url === 'https://airegready.com/catalog/solo-builder-ai-launch-kit'))
 })
 
 test('feed XML uses the latest article date rather than the current build date', () => {

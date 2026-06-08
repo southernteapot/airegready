@@ -362,6 +362,20 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            <div className="mt-6 rounded-2xl border border-cyan-200/[0.16] bg-[#050B16] p-5 shadow-[0_30px_90px_-70px_rgba(0,0,0,0.9)]">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div>
+                  <p className="font-sans text-xs font-black uppercase tracking-[0.14em] text-cyan-300">Building solo?</p>
+                  <h3 className="mt-2 font-sans text-xl font-black leading-tight text-white">Start with the Solo Builder AI Launch Kit.</h3>
+                  <p className="mt-2 max-w-[820px] font-sans text-sm leading-relaxed text-[#B2C9ED]">
+                    A lighter launch-focused kit for solo founders, indie hackers,
+                    consultants, and side-gig builders using AI in apps, websites,
+                    automations, or paid offers.
+                  </p>
+                </div>
+                <LightSecondaryLink href="/catalog/solo-builder-ai-launch-kit">Preview the Solo Builder AI Launch Kit</LightSecondaryLink>
+              </div>
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <PrimaryLink href="/catalog">Browse full catalog</PrimaryLink>
               <LightSecondaryLink href="/assessment">Start the assessment first</LightSecondaryLink>

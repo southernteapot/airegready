@@ -318,6 +318,14 @@ export const FAQ_ITEMS = [
     a: "Yes, but they can be lightweight. An acceptable use policy and a simple tool inventory put you ahead of the curve. You don't need a 50-page governance manual - you need clear expectations about what tools are approved, what data can go into them, and who is responsible for reviewing AI outputs. Start simple and build from there.",
   },
   {
+    q: 'I am just one person. Do I really need AI governance?',
+    a: 'If you are using AI in a paid product, client work, automation, app, website, or business process, you should at least know what the AI does, what data it touches, what claims you make about it, and what you would change if something goes wrong. You do not need an enterprise governance manual. You need a simple record that keeps the basics from becoming invisible.',
+  },
+  {
+    q: 'What is the difference between the Solo Builder AI Launch Kit and the AI Governance Starter Kit?',
+    a: 'The Solo Builder AI Launch Kit is for one-person AI projects and focuses on launch claims, user data, disclosures, red flags, customer questions, model/vendor notes, incident notes, and change logs. The AI Governance Starter Kit is broader and better for founders, new businesses, consultants, operators, and lean teams that need inventories, use rules, risk intake, approval records, rollout materials, and governance basics.',
+  },
+  {
     q: 'Is there a single standard that covers everything?',
     a: 'Not yet. AI regulation is fragmented across jurisdictions and sectors. The NIST AI Risk Management Framework is the closest thing to a universal baseline, but it\'s voluntary. Most people dealing with AI end up touching multiple overlapping frameworks \u2014 which is why having a single resource that tracks all of them matters.',
   },

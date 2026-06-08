@@ -4,6 +4,7 @@ Track current project tasks here.
 
 ## Current
 
+- Prepare the Solo Builder AI Launch Kit for paid launch: decide whether to expand/rename the internal `side-gig-ai-readiness-kit` draft set to match the 14-document public copy, create DOCX/PDF exports, QA the ZIP, choose pricing, write Gumroad/checkout copy, create product visuals, and wire real purchase/delivery metadata only after checkout and delivery are ready.
 - Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
 - Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
@@ -69,7 +70,11 @@ Track current project tasks here.
 
 - 2026-06-06 AIRegReady distribution content pass completed: added `/blog/ai-readiness-checklist-new-business`, registered it in the article index/feed/sitemap layer, created `marketing/ai-readiness-checklist-distribution-2026-06-06.md`, and validated with tests, lint, build, and browser QA.
 
+- 2026-06-08 Solo Builder preview-only public wiring completed: added `/catalog/solo-builder-ai-launch-kit` as a preview-request catalog product, added a light homepage mention, updated assessment recommendations for solo commercial AI launch paths, added FAQ entries, and kept purchase URL, price, Gumroad, fake download, and paid Offer/InStock schema absent.
+
 ## Later
+
+- 2026-06-08 Solo Builder AI Launch Kit public copy completed: converted the side-gig overview draft into public product content under `content/products/side-gig-ai-readiness-kit/overview.md`, kept the internal folder name for now, and recorded remaining launch work for exports, pricing, checkout, and delivery.
 
 - Add download/delivery pages as needed for the paid document catalog.
 - Add trust-building content.

@@ -57,6 +57,21 @@ const OFFER_CATALOG = {
     learnHref: '/blog/ai-governance-starter-kit-launch',
     learnLabel: 'Read the launch note',
   },
+  soloBuilderLaunch: {
+    slug: 'solo-builder-ai-launch-kit',
+    name: 'Solo Builder AI Launch Kit',
+    why: 'Best fit when a solo AI-enabled app, site, automation, digital product, client workflow, or paid offer needs a practical launch record before it goes public.',
+    includes: [
+      'AI project snapshot',
+      'Claims checklist',
+      'User data intake',
+      'Disclosure and change logs',
+    ],
+    ctaLabel: 'Request preview',
+    href: '/catalog/solo-builder-ai-launch-kit#request-preview',
+    learnHref: '/blog/ai-side-projects',
+    learnLabel: 'Read the solo starting guide',
+  },
   vendorReview: {
     slug: 'vendor-ai-review-packet',
     name: 'Vendor AI Review Packet',
@@ -1142,10 +1157,24 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
   const useCases = answerMap[4] || []
   const hasHighSens = useCases.some((value) => HIGH_SENSITIVITY_USES.includes(value))
   const hasCustomerFacing = useCases.includes('customer-support') || market === 'eu' || market === 'us-multi'
+  const soloCommercialUseCases = ['marketing', 'customer-support', 'software-dev', 'other']
+  const isSoloCommercialProject = entity === 'solo' && role !== 'not-yet' && (
+    PROVIDER_ROLES.includes(role) ||
+    market !== 'internal-only' ||
+    useCases.some((value) => soloCommercialUseCases.includes(value))
+  )
+  const isHigherRiskSoloProject = hasHighSens || dataScore >= 4 || decisionScore >= 3
 
   function addCandidate(key, score) {
     if (score > 0) candidates.push({ key, score, order: candidates.length })
   }
+
+  addCandidate(
+    'soloBuilderLaunch',
+    isSoloCommercialProject
+      ? (isHigherRiskSoloProject ? 2 : 8) + ((priority === 'provider' || priority === 'disclosure' || priority === 'understand' || priority === 'pilot') ? 1 : 0)
+      : 0
+  )
 
   addCandidate(
     'governanceStarter',

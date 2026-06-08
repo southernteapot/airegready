@@ -63,3 +63,71 @@ test('not-yet users get a short-track report with an offer and action plan', () 
   assert.equal(report.primaryRecommendation?.ctaLabel, 'View $19 kit')
   assert.ok(report.actionPlan.doNow.length > 0)
 })
+
+test('small team internal rollout still recommends AI Governance Starter Kit first', () => {
+  const report = getAssessmentReport([
+    { qId: 1, value: 'small-team' },
+    { qId: 2, value: 'tx' },
+    { qId: 3, value: 'deployer' },
+    { qId: 4, values: ['writing', 'internal-ops'], score: 0 },
+    { qId: 5, value: 'internal', score: 1 },
+    { qId: 6, value: 'no', score: 0 },
+    { qId: 7, value: 'internal-only', score: 0 },
+    { qId: 10, value: 'nothing', score: 0 },
+    { qId: 11, value: 'none', score: 0 },
+    { qId: 12, value: 'none', score: 0 },
+    { qId: 14, value: 'none', score: 0 },
+    { qId: 17, value: 'policy' },
+  ])
+
+  assert.equal(report.shortTrack, false)
+  assert.equal(report.primaryRecommendation?.slug, 'ai-governance-starter-kit')
+  assert.equal(report.primaryRecommendation?.href, '/catalog/ai-governance-starter-kit')
+  assert.equal(report.primaryRecommendation?.ctaLabel, 'View $19 kit')
+})
+
+test('solo commercial AI launch path recommends Solo Builder AI Launch Kit first', () => {
+  const report = getAssessmentReport([
+    { qId: 1, value: 'solo' },
+    { qId: 2, value: 'tx' },
+    { qId: 3, value: 'provider' },
+    { qId: 4, values: ['software-dev', 'marketing'], score: 2 },
+    { qId: 5, value: 'personal', score: 3 },
+    { qId: 6, value: 'no', score: 0 },
+    { qId: 7, value: 'us-customers', score: 1 },
+    { qId: 8, value: 'none', score: 0 },
+    { qId: 9, value: 'sometimes', score: 1 },
+    { qId: 13, value: 'none', score: 0 },
+    { qId: 14, value: 'none', score: 0 },
+    { qId: 15, value: 'none', score: 0 },
+    { qId: 17, value: 'provider' },
+  ])
+
+  assert.equal(report.shortTrack, false)
+  assert.equal(report.primaryRecommendation?.slug, 'solo-builder-ai-launch-kit')
+  assert.equal(report.primaryRecommendation?.href, '/catalog/solo-builder-ai-launch-kit#request-preview')
+  assert.equal(report.primaryRecommendation?.ctaLabel, 'Request preview')
+  assert.ok(report.productRecommendations.some((item) => item.slug === 'ai-governance-starter-kit'))
+})
+
+test('higher-risk solo AI workflows keep broader risk resources ahead of Solo Builder', () => {
+  const report = getAssessmentReport([
+    { qId: 1, value: 'solo' },
+    { qId: 2, value: 'ca' },
+    { qId: 3, value: 'provider' },
+    { qId: 4, values: ['healthcare', 'software-dev'], score: 4 },
+    { qId: 5, value: 'regulated', score: 4 },
+    { qId: 6, value: 'consequential', score: 4 },
+    { qId: 7, value: 'us-customers', score: 1 },
+    { qId: 8, value: 'none', score: 0 },
+    { qId: 9, value: 'sometimes', score: 1 },
+    { qId: 13, value: 'none', score: 0 },
+    { qId: 14, value: 'none', score: 0 },
+    { qId: 15, value: 'none', score: 0 },
+    { qId: 17, value: 'impact' },
+  ])
+
+  assert.equal(report.primaryRecommendation?.slug, 'ai-governance-starter-kit')
+  assert.equal(report.primaryRecommendation?.priority, 'Start here')
+  assert.notEqual(report.primaryRecommendation?.slug, 'solo-builder-ai-launch-kit')
+})

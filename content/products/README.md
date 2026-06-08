@@ -4,11 +4,14 @@ Internal working drafts of paid products. Not published to the public site.
 
 Each product lives in its own folder. Drafts are written in plain-English markdown with `[BRACKETED PLACEHOLDERS]` for the buyer to fill in. At delivery time we convert to Word + PDF (and optionally a Google Doc copy).
 
+Naming note: the internal folder `side-gig-ai-readiness-kit` is retained for now, but the public product name is **Solo Builder AI Launch Kit**. Use "side gig" only as audience language, not as the main product name.
+
 ---
 
 ## Product catalog
 
 ### Foundational — core policies and assessments
+- **side-gig-ai-readiness-kit** — Internal folder for the public **Solo Builder AI Launch Kit**: lightweight launch-readiness records for solo builders using AI in commercial apps, websites, automations, consulting offers, digital products, or AI-powered services
 - **ai-acceptable-use-policy** — Rules for how employees may use AI at work (policy + acknowledgment + one-page summary)
 - **ai-governance-framework** — Umbrella: roles, committees, review processes
 - **ai-incident-response-plan** — Playbook for AI misbehavior, leaks, harm events
@@ -113,6 +116,7 @@ Each product lives in its own folder. Drafts are written in plain-English markdo
 
 | Product | Indicative price |
 | --- | --- |
+| Solo Builder AI Launch Kit | $9-19 pending pricing decision |
 | Quick-reference cards / small templates | $9-19 |
 | Acceptable Use Policy / Vendor Risk Assessment / similar | $19-29 |
 | Impact Assessment / Incident Response / Data Governance | $19-39 |

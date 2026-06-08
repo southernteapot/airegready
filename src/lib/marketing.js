@@ -105,6 +105,93 @@ export const productCards = [
     ],
   },
   {
+    slug: 'solo-builder-ai-launch-kit',
+    title: 'Solo Builder AI Launch Kit',
+    kind: 'Kit',
+    previewImage: '/assets/airegready-home-v3-hero-workspace.avif',
+    audience: 'Solo founders, indie hackers, consultants, freelancers, no-code builders, micro-SaaS creators, and one-person businesses using AI commercially.',
+    inside: [
+      'AI Project Snapshot',
+      'AI Claims Checklist',
+      'User Data and Privacy Intake',
+      'AI Disclosure and Disclaimer Builder',
+      'Red Flag Use Case Triage',
+      'Vendor / Model Dependency Note',
+      'Pre-Launch AI Risk Checklist',
+      'Customer FAQ Template',
+      'Incident / Complaint Mini-Log',
+      'AI Change Log',
+      '30-Minute Setup Guide',
+      'Filled Example: AI Website or App',
+      'Filled Example: Consultant or Freelancer Using AI',
+      'Filled Example: Digital Product, Automation, or Micro-SaaS',
+    ],
+    helps: 'A launch-focused AI readiness kit for solo builders that helps document what AI does, what user data it touches, what claims are made, what users should know, what red flags exist, and what changed before a project ships or starts making money.',
+    cta: 'Request preview',
+    deliveryDetails: [
+      'Fourteen planned documents for solo AI launches, including project snapshot, claims checklist, user-data intake, disclosure/disclaimer builder, red-flag triage, model/vendor notes, launch checklist, customer FAQ, issue log, change log, setup guide, and filled examples.',
+      'Plain-English templates for apps, websites, automations, consulting workflows, digital products, micro-SaaS projects, productized services, and other one-person commercial AI offers.',
+      'Designed as an educational documentation starting point before publishing, advertising, demoing, selling, onboarding users, or taking client work.',
+      'Preview-request only while pricing, checkout, exports, ZIP QA, product visuals, and delivery are finalized.',
+      'No legal advice, compliance guarantee, certification, or substitute for qualified legal, privacy, security, HR, procurement, or sector-specific review.',
+    ],
+    useCases: [
+      'Create a simple launch file for an AI-enabled app, website, automation, digital product, micro-SaaS feature, consulting workflow, or client deliverable.',
+      'Document what the AI does, what data goes in, what claims are being made, what users should know, what red flags need attention, and what changed over time.',
+      'Prepare clearer customer, client, platform, or reviewer questions before launch without trying to build an enterprise governance program.',
+    ],
+    reviewPrompts: [
+      'What exactly does the AI do, and where will a user, client, or buyer notice it?',
+      'What user, customer, client, or audience data touches the AI workflow, and what should stay out?',
+      'Which claims, disclosures, red flags, model dependencies, incidents, or changes need qualified review before launch?',
+    ],
+    fitSection: {
+      headingId: 'solo-builder-fit-heading',
+      eyebrow: 'Builder fit',
+      heading: 'Use it when a solo AI project is becoming a real offer.',
+      body: 'The Solo Builder AI Launch Kit is for one-person commercial projects where the AI use, claims, user data, disclosures, red flags, and changes should no longer live only in memory, drafts, prompts, chats, or scattered notes.',
+      bestFor: [
+        'Solo founders, indie hackers, freelancers, consultants, and one-person businesses preparing an AI-enabled offer.',
+        'No-code builders, app/site builders, micro-SaaS creators, automation sellers, digital product creators, and productized-service sellers.',
+        'Builders who need a practical pre-launch record before publishing, advertising, demoing, selling, onboarding users, or taking client work.',
+      ],
+      notFor: [
+        'A project that needs legal, privacy, security, HR, procurement, or sector-specific review before launch.',
+        'Hiring, lending, housing, insurance, healthcare, education, legal, financial, public-sector, or other high-impact decision workflows.',
+        'Organization-wide AI governance, employee rollout, vendor procurement, compliance certification, legal advice, or a compliance guarantee.',
+      ],
+      firstStepsTitle: 'Use it before launch',
+      firstSteps: [
+        'Write the AI Project Snapshot so the offer, AI role, affected users, and launch stage are clear.',
+        'Run the AI Claims Checklist against landing pages, demos, emails, ads, and sales copy.',
+        'Fill out the User Data and Privacy Intake before collecting, pasting, uploading, or storing customer or client data.',
+        'Start the AI Change Log before model, prompt, feature, disclosure, or claim changes become invisible.',
+      ],
+    },
+    faq: [
+      {
+        question: 'Is this legal advice?',
+        answer:
+          'No. The Solo Builder AI Launch Kit is educational material and a practical documentation starting point. It is not legal advice, does not create an attorney-client relationship, and is not a substitute for qualified counsel.',
+      },
+      {
+        question: 'Will this make my AI product compliant?',
+        answer:
+          'No. The kit does not make you compliant, certify your project, or guarantee that your AI use is allowed. It helps you document important facts, spot obvious gaps, and prepare better questions before launch.',
+      },
+      {
+        question: 'What kind of AI projects does it fit?',
+        answer:
+          'It fits external or commercial AI projects such as AI-enabled websites, apps, automations, consulting workflows, productized services, templates, prompts, digital products, lightweight SaaS tools, and client deliverables.',
+      },
+      {
+        question: 'How is this different from the AI Governance Starter Kit?',
+        answer:
+          'The Solo Builder AI Launch Kit focuses on a solo commercial launch: claims, data, disclosures, red flags, customer questions, model/vendor notes, incidents, and changes. The AI Governance Starter Kit focuses on broader internal AI governance basics for founders, new businesses, consultants, operators, and lean teams.',
+      },
+    ],
+  },
+  {
     slug: 'acceptable-use-policy-kit',
     title: 'Acceptable Use Policy Kit',
     kind: 'Kit',
@@ -299,7 +386,7 @@ export const trackedTopics = [
 export const heroProofCards = [
   {
     icon: 'documents',
-    title: '12 catalog packages',
+    title: '13 catalog packages',
     body: 'One paid 14-document starter kit is live, with preview resources and roadmap items kept separate.',
   },
   {

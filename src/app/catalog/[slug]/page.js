@@ -12,6 +12,44 @@ import {
 } from '@/lib/marketing'
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo'
 
+const starterKitDetailConfig = {
+  deliveryDetails: [
+    'Fourteen editable documents spanning governance basics, readiness, rollout, risk tiering, impact assessment, risk register, review notes, and update tracking.',
+    'DOCX files for editing, PDF reference copies, and Markdown versions for teams that work in docs or repositories.',
+    'A Start Here guide and legal-use notice so buyers understand how to adapt the combined packet without treating it as legal advice.',
+    'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
+    'Designed for founders, new business owners, consultants, operators, and lean teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
+  ],
+  galleryIntro: {
+    eyebrow: 'Product preview',
+    heading: 'Preview the actual Starter Kit package.',
+    body: 'These visuals show the kit overview, included-file list, rendered PDF samples, and delivery structure so buyers know what the download contains before leaving for Gumroad.',
+  },
+  fitSection: {
+    headingId: 'starter-fit-heading',
+    eyebrow: 'Buyer fit',
+    heading: 'Use it when you need credible basics, not a giant compliance program.',
+    body: 'The Starter Kit is built for the moment when AI use is already happening, but the written process is missing. It helps you create the first working file before deeper legal, privacy, security, or procurement review is needed.',
+    bestFor: [
+      'Founders and new business owners who are already using AI but have no written inventory, policy, intake path, or update log.',
+      'Consultants and operators who need a practical internal file before AI usage spreads across client work, vendor tools, or team workflows.',
+      'Lean teams that want editable first-pass governance and risk assessment documents before involving legal, privacy, security, HR, or procurement review.',
+    ],
+    notFor: [
+      'A business that needs legal advice, a legal opinion, or a guaranteed compliance determination.',
+      'A regulated, high-impact, or enterprise AI program that needs a full formal assessment, procurement review, technical audit, or counsel-led implementation.',
+      'A buyer looking for software automation, monitoring, certification, or a managed compliance service.',
+    ],
+    firstStepsTitle: 'Use it in your first hour',
+    firstSteps: [
+      'Open the AI Use Inventory and list every AI tool, vendor feature, and account currently used for work.',
+      'Mark sensitive data, customer-facing outputs, decision-support uses, and any unapproved tools.',
+      'Use the green/yellow/red rules and risk tiering decision tree to pick the workflows that need review first.',
+      'Send the rollout message, assign owners, and start the update tracker so the file does not go stale.',
+    ],
+  },
+}
+
 export function generateStaticParams() {
   return getAvailableProductSlugs().map((slug) => ({ slug }))
 }
@@ -112,7 +150,7 @@ function buildProductSchema(product) {
 }
 
 function buildUseCases(product) {
-  return [
+  return product.useCases || [
     `Turn ${product.inside[0]} and related notes into a working record your team can revisit.`,
     'Give founders, operators, and non-legal staff a plain-English starting point before counsel or leadership review.',
     'Create a consistent file structure for governance updates, vendor questions, training, and internal decisions.',
@@ -120,23 +158,32 @@ function buildUseCases(product) {
 }
 
 function buildReviewPrompts(product) {
-  return [
+  return product.reviewPrompts || [
     `Who owns this ${getProductKind(product).toLowerCase()} after the first draft is created?`,
     'Which AI tools, workflows, vendors, or data categories should be documented first?',
     'Which decisions need qualified legal, privacy, security, procurement, or leadership review?',
   ]
 }
 
-function buildDeliveryDetails(product) {
-  if (!isPurchasableProduct(product)) return null
+function getProductDetailConfig(product) {
+  if (product.slug === 'ai-governance-starter-kit') return starterKitDetailConfig
+  return {}
+}
 
-  return [
-    'Fourteen editable documents spanning governance basics, readiness, rollout, risk tiering, impact assessment, risk register, review notes, and update tracking.',
-    'DOCX files for editing, PDF reference copies, and Markdown versions for teams that work in docs or repositories.',
-    'A Start Here guide and legal-use notice so buyers understand how to adapt the combined packet without treating it as legal advice.',
-    'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
-    'Designed for founders, new business owners, consultants, operators, and lean teams using tools like ChatGPT, Claude, Gemini, Copilot, transcription tools, customer-support bots, or vendor AI features.',
-  ]
+function buildDeliveryDetails(product) {
+  return product.deliveryDetails || getProductDetailConfig(product).deliveryDetails || null
+}
+
+function buildGalleryIntro(product) {
+  return product.galleryIntro || getProductDetailConfig(product).galleryIntro || {
+    eyebrow: 'Product preview',
+    heading: `Preview the ${product.title} package.`,
+    body: 'These visuals show representative package materials and structure so you can review the resource before requesting more information.',
+  }
+}
+
+function buildFitSection(product) {
+  return product.fitSection || getProductDetailConfig(product).fitSection || null
 }
 
 function PrimaryAction({ href, children }) {
@@ -176,7 +223,7 @@ function SecondaryAction({ href, children }) {
 function PreviewPanel({ product }) {
   const heroImage = product.galleryImages?.[0]
   const previewSrc = heroImage?.src || product.previewImage
-  const previewAlt = heroImage?.alt || `${product.title} preview workspace with organized AI governance documents and trackers.`
+  const previewAlt = heroImage?.alt || `${product.title} preview workspace with organized documents and trackers.`
   const previewClass = heroImage
     ? 'aspect-[16/9] h-auto w-full rounded-xl object-cover'
     : 'aspect-[16/10] h-auto w-full rounded-xl object-cover'
@@ -227,20 +274,20 @@ function DetailList({ title, items, id }) {
 function ProductGallery({ product }) {
   if (!product.galleryImages?.length) return null
 
+  const galleryIntro = buildGalleryIntro(product)
+
   return (
     <section id="product-gallery" className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="product-gallery-heading">
       <div className="mx-auto max-w-[1240px]">
         <div className="max-w-[760px]">
           <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
-            Product preview
+            {galleryIntro.eyebrow}
           </p>
           <h2 id="product-gallery-heading" className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
-            Preview the actual Starter Kit package.
+            {galleryIntro.heading}
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
-            These visuals show the kit overview, included-file list, rendered
-            PDF samples, and delivery structure so buyers know what the download
-            contains before leaving for Gumroad.
+            {galleryIntro.body}
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-2">
@@ -266,80 +313,69 @@ function ProductGallery({ product }) {
   )
 }
 
-function StarterKitFitSection({ product }) {
-  if (product.slug !== 'ai-governance-starter-kit') return null
+function ProductFitSection({ product }) {
+  const fitSection = buildFitSection(product)
+  if (!fitSection) return null
 
-  const bestFor = [
-    'Founders and new business owners who are already using AI but have no written inventory, policy, intake path, or update log.',
-    'Consultants and operators who need a practical internal file before AI usage spreads across client work, vendor tools, or team workflows.',
-    'Lean teams that want editable first-pass governance and risk assessment documents before involving legal, privacy, security, HR, or procurement review.',
-  ]
-  const notFor = [
-    'A business that needs legal advice, a legal opinion, or a guaranteed compliance determination.',
-    'A regulated, high-impact, or enterprise AI program that needs a full formal assessment, procurement review, technical audit, or counsel-led implementation.',
-    'A buyer looking for software automation, monitoring, certification, or a managed compliance service.',
-  ]
-  const firstHour = [
-    'Open the AI Use Inventory and list every AI tool, vendor feature, and account currently used for work.',
-    'Mark sensitive data, customer-facing outputs, decision-support uses, and any unapproved tools.',
-    'Use the green/yellow/red rules and risk tiering decision tree to pick the workflows that need review first.',
-    'Send the rollout message, assign owners, and start the update tracker so the file does not go stale.',
-  ]
+  const headingId = fitSection.headingId || 'product-fit-heading'
 
   return (
-    <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby="starter-fit-heading">
+    <section className="bg-gradient-to-b from-[#07111F] to-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20" aria-labelledby={headingId}>
       <div className="mx-auto max-w-[1240px]">
         <div className="max-w-[780px]">
           <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
-            Buyer fit
+            {fitSection.eyebrow || 'Buyer fit'}
           </p>
-          <h2 id="starter-fit-heading" className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
-            Use it when you need credible basics, not a giant compliance program.
+          <h2 id={headingId} className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
+            {fitSection.heading}
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
-            The Starter Kit is built for the moment when AI use is already
-            happening, but the written process is missing. It helps you create
-            the first working file before deeper legal, privacy, security, or
-            procurement review is needed.
+            {fitSection.body}
           </p>
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-3">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 className="font-sans text-xl font-black text-white">Best for</h3>
-            <div className="mt-5 grid grid-cols-1 gap-3">
-              {bestFor.map((item) => (
-                <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#58D4FF]" aria-hidden="true" />
-                  <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
-                </div>
-              ))}
+          {fitSection.bestFor?.length > 0 && (
+            <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 className="font-sans text-xl font-black text-white">Best for</h3>
+              <div className="mt-5 grid grid-cols-1 gap-3">
+                {fitSection.bestFor.map((item) => (
+                  <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#58D4FF]" aria-hidden="true" />
+                    <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
-            <h3 className="font-sans text-xl font-black text-white">Not for</h3>
-            <div className="mt-5 grid grid-cols-1 gap-3">
-              {notFor.map((item) => (
-                <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#F59E0B]" aria-hidden="true" />
-                  <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
-                </div>
-              ))}
+          {fitSection.notFor?.length > 0 && (
+            <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6">
+              <h3 className="font-sans text-xl font-black text-white">Not for</h3>
+              <div className="mt-5 grid grid-cols-1 gap-3">
+                {fitSection.notFor.map((item) => (
+                  <div key={item} className="flex gap-3 rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#F59E0B]" aria-hidden="true" />
+                    <p className="font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-6 shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
-            <h3 className="font-sans text-xl font-black text-white">Use it in your first hour</h3>
-            <ol className="mt-5 grid grid-cols-1 gap-3">
-              {firstHour.map((item, index) => (
-                <li key={item} className="rounded-xl border border-slate-800 bg-slate-900 p-4">
-                  <span className="font-sans text-xs font-black text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="mt-2 font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
+          {fitSection.firstSteps?.length > 0 && (
+            <div className="rounded-2xl border border-cyan-200/[0.14] bg-[#050B16] p-6 shadow-[0_34px_90px_-70px_rgba(0,0,0,0.9)]">
+              <h3 className="font-sans text-xl font-black text-white">{fitSection.firstStepsTitle || 'First steps'}</h3>
+              <ol className="mt-5 grid grid-cols-1 gap-3">
+                {fitSection.firstSteps.map((item, index) => (
+                  <li key={item} className="rounded-xl border border-slate-800 bg-slate-900 p-4">
+                    <span className="font-sans text-xs font-black text-cyan-300">{String(index + 1).padStart(2, '0')}</span>
+                    <p className="mt-2 font-sans text-sm leading-relaxed text-[#B2C9ED]">{item}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -349,6 +385,8 @@ function StarterKitFitSection({ product }) {
 function ProductFaq({ faq, product }) {
   if (!faq?.length) return null
 
+  const isPurchasable = isPurchasableProduct(product)
+
   return (
     <section id="faq" className="bg-[#0A1524] px-4 py-16 text-white sm:px-6 sm:py-20">
       <div className="mx-auto max-w-[1120px]">
@@ -357,12 +395,12 @@ function ProductFaq({ faq, product }) {
             Buyer questions
           </p>
           <h2 className="mt-3 font-sans text-3xl font-black leading-tight text-white sm:text-4xl">
-            Before you buy the {product.title}
+            {isPurchasable ? `Before you buy the ${product.title}` : `Questions about the ${product.title}`}
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-[#B2C9ED]">
-            The short version: this is a practical starter packet, not a legal
-            opinion or compliance guarantee. These are the questions that matter
-            before a founder, operator, or new business owner spends money on it.
+            {isPurchasable
+              ? 'The short version: this is a practical starter packet, not a legal opinion or compliance guarantee. These are the questions that matter before a founder, operator, or new business owner spends money on it.'
+              : 'The short version: AIRegReady resources are educational starting points, not legal opinions or compliance guarantees.'}
           </p>
         </div>
 
@@ -379,7 +417,7 @@ function ProductFaq({ faq, product }) {
           ))}
         </div>
 
-        {isPurchasableProduct(product) && (
+        {isPurchasable && (
           <div className="mt-8 flex flex-col items-start gap-3 rounded-2xl border border-[#BED2F4] bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:bg-slate-950">
             <p className="font-sans text-sm font-bold leading-relaxed text-[#06132E] dark:text-white">
               Ready to start from a coherent packet instead of a blank-page prompt loop?
@@ -461,7 +499,7 @@ export default async function CatalogProductPage({ params }) {
 
         <ProductGallery product={product} />
 
-        <StarterKitFitSection product={product} />
+        <ProductFitSection product={product} />
 
         <section className="bg-[#091321] px-4 py-16 text-white sm:px-6 sm:py-20">
           <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-6 lg:grid-cols-[0.8fr_1.2fr]">
@@ -488,7 +526,7 @@ export default async function CatalogProductPage({ params }) {
                     </>
                   ) : (
                     <>
-                      Available by request. No published price or direct download is
+                      Preview available by request. No published price or direct download is
                       attached to this page yet.
                     </>
                   )}
@@ -501,7 +539,7 @@ export default async function CatalogProductPage({ params }) {
                 <DetailList id="what-you-get" title="What you get" items={deliveryDetails} />
               )}
               <DetailList title="What is inside" items={product.inside} />
-              <DetailList title="How teams can use it" items={useCases} />
+              <DetailList title="How to use it" items={useCases} />
               <DetailList title="Questions to answer before adapting it" items={reviewPrompts} />
             </div>
           </div>

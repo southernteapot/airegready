@@ -35,3 +35,10 @@ Do not paste raw terminal logs here.
 - Created `marketing/ai-readiness-checklist-distribution-2026-06-06.md` with LinkedIn/Facebook, short social, Reddit-safe discussion, direct message/email, and follow-up comment copy.
 - Updated the Mission Control source note to make AIRegReady distribution the active session focus and remove stale Mission Control checkpoint language.
 - Validation passed: `npm run test`, `npm run lint`, `npm run build`, `git diff --check`, and Playwright route/mobile/console QA for the new article.
+
+
+## 2026-06-08 - Side-gig AI readiness lane and kit draft
+
+- Added side-gig AI readiness as a pre-advertising buyer lane for solo side-income builders, freelancers, creators, consultants, and people using AI to build sellable products, services, templates, automations, content, apps, courses, or client deliverables.
+- Drafted the internal Side-Gig AI Readiness Kit with six Markdown documents: overview, side-gig AI inventory, customer/client data rules, claims/disclosure review, risk triage, and launch readiness checklist.
+- Added side-gig marketing positioning, ad angles, post drafts, topic drafts, and remaining launch steps; the product is now public as a preview-only catalog page, while exports, Gumroad, pricing, and delivery QA remain unfinished.
