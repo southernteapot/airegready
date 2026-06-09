@@ -12,6 +12,19 @@ function buildAnswerMapFromArray(answerArray) {
   return map
 }
 
+function computeMultiScore(question, values) {
+  const options = values
+    .map((v) => question.options.find((o) => o.value === v))
+    .filter(Boolean)
+  if (options.some((o) => o.score !== undefined)) {
+    return options.reduce((max, o) => Math.max(max, o.score ?? 0), 0)
+  }
+  return Math.min(
+    6,
+    options.reduce((sum, o) => sum + (o.sensitivity || 0), 0)
+  )
+}
+
 function findNextApplicableStep(currentStep, answerMap) {
   for (let i = currentStep + 1; i < QUESTIONS.length; i++) {
     const q = QUESTIONS[i]
@@ -79,14 +92,10 @@ function rehydrateAnswersFromUrl() {
       if (!raw) continue
       if (q.multi) {
         const values = raw.split(',').filter(Boolean)
-        const score = Math.min(
-          6,
-          values.reduce((s, v) => {
-            const opt = q.options.find((o) => o.value === v)
-            return s + (opt?.sensitivity || 0)
-          }, 0)
-        )
-        answers.push({ qId: q.id, values, score })
+        answers.push({ qId: q.id, values, score: computeMultiScore(q, values) })
+      } else if (q.id === 5 && raw) {
+        // Legacy share links recorded the data question as a single value.
+        answers.push({ qId: q.id, values: [raw], score: computeMultiScore(q, [raw]) })
       } else {
         const opt = q.options.find((o) => o.value === raw)
         if (!opt) continue
@@ -988,14 +997,9 @@ export default function AssessmentTool() {
   }
 
   const handleMultiNext = () => {
-    const sumSens = multiSelected.reduce((sum, v) => {
-      const opt = currentQ.options.find((o) => o.value === v)
-      return sum + (opt?.sensitivity || 0)
-    }, 0)
-    const cappedSens = Math.min(sumSens, 6)
     const newAnswers = [
       ...answers,
-      { qId: currentQ.id, values: multiSelected, score: cappedSens },
+      { qId: currentQ.id, values: multiSelected, score: computeMultiScore(currentQ, multiSelected) },
     ]
     setAnswers(newAnswers)
     setMultiSelected([])

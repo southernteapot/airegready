@@ -27,7 +27,7 @@ test('provider with no release review or monitoring scores as exposed and gets t
     { qId: 2, value: 'tx' },
     { qId: 3, value: 'provider' },
     { qId: 4, values: ['software-dev'], score: 1 },
-    { qId: 5, value: 'public', score: 0 },
+    { qId: 5, values: ['public'], score: 0 },
     { qId: 6, value: 'no', score: 0 },
     { qId: 7, value: 'us-customers', score: 1 },
     { qId: 10, value: 'nothing', score: 0 },
@@ -74,7 +74,7 @@ test('small team internal rollout still recommends AI Governance Starter Kit fir
     { qId: 2, value: 'tx' },
     { qId: 3, value: 'deployer' },
     { qId: 4, values: ['writing', 'internal-ops'], score: 0 },
-    { qId: 5, value: 'internal', score: 1 },
+    { qId: 5, values: ['internal'], score: 1 },
     { qId: 6, value: 'no', score: 0 },
     { qId: 7, value: 'internal-only', score: 0 },
     { qId: 10, value: 'nothing', score: 0 },
@@ -96,7 +96,7 @@ test('solo commercial AI launch path recommends Solo Builder AI Launch Kit first
     { qId: 2, value: 'tx' },
     { qId: 3, value: 'provider' },
     { qId: 4, values: ['software-dev', 'marketing'], score: 2 },
-    { qId: 5, value: 'personal', score: 3 },
+    { qId: 5, values: ['personal'], score: 3 },
     { qId: 6, value: 'no', score: 0 },
     { qId: 7, value: 'us-customers', score: 1 },
     { qId: 8, value: 'none', score: 0 },
@@ -114,13 +114,13 @@ test('solo commercial AI launch path recommends Solo Builder AI Launch Kit first
   assert.ok(report.productRecommendations.some((item) => item.slug === 'ai-governance-starter-kit'))
 })
 
-test('solo personal AI user gets the starter kit plus the free checklist, not commercial launch products', () => {
+test('solo respondents always see the Solo Builder kit first', () => {
   const report = getAssessmentReport([
     { qId: 1, value: 'solo' },
     { qId: 2, value: 'fl' },
     { qId: 3, value: 'deployer' },
     { qId: 4, values: ['writing'], score: 0 },
-    { qId: 5, value: 'internal', score: 1 },
+    { qId: 5, values: ['internal'], score: 1 },
     { qId: 6, value: 'no', score: 0 },
     { qId: 7, value: 'internal-only', score: 0 },
     { qId: 8, value: 'informal', score: 1 },
@@ -129,18 +129,20 @@ test('solo personal AI user gets the starter kit plus the free checklist, not co
   ])
 
   assert.equal(report.shortTrack, false)
-  assert.equal(report.primaryRecommendation?.slug, 'ai-governance-starter-kit')
+  assert.equal(report.primaryRecommendation?.slug, 'solo-builder-ai-launch-kit')
+  assert.equal(report.primaryRecommendation?.href, '/catalog/solo-builder-ai-launch-kit')
+  assert.equal(report.primaryRecommendation?.ctaLabel, 'View $14 kit')
+  assert.ok(report.productRecommendations.some((item) => item.slug === 'ai-governance-starter-kit'))
   assert.ok(report.productRecommendations.some((item) => item.slug === 'ai-readiness-checklist'))
-  assert.ok(!report.productRecommendations.some((item) => item.slug === 'solo-builder-ai-launch-kit'))
 })
 
-test('solo consultant focused on vendor tools sees the Vendor AI Review Packet', () => {
+test('solo consultant focused on vendor tools sees the Vendor AI Review Packet after the paid kits', () => {
   const report = getAssessmentReport([
     { qId: 1, value: 'solo' },
     { qId: 2, value: 'ny' },
     { qId: 3, value: 'deployer' },
     { qId: 4, values: ['writing', 'internal-ops'], score: 0 },
-    { qId: 5, value: 'personal', score: 3 },
+    { qId: 5, values: ['personal'], score: 3 },
     { qId: 6, value: 'no', score: 0 },
     { qId: 7, value: 'internal-only', score: 0 },
     { qId: 8, value: 'none', score: 0 },
@@ -148,16 +150,23 @@ test('solo consultant focused on vendor tools sees the Vendor AI Review Packet',
     { qId: 17, value: 'vendor' },
   ])
 
-  assert.ok(report.productRecommendations.some((item) => item.slug === 'vendor-ai-review-packet'))
+  const slugs = report.productRecommendations.map((item) => item.slug)
+  assert.ok(slugs.includes('vendor-ai-review-packet'))
+  const vendorIndex = slugs.indexOf('vendor-ai-review-packet')
+  for (const paidSlug of ['solo-builder-ai-launch-kit', 'ai-governance-starter-kit']) {
+    if (slugs.includes(paidSlug)) {
+      assert.ok(slugs.indexOf(paidSlug) < vendorIndex, `${paidSlug} should be listed before the preview packet`)
+    }
+  }
 })
 
-test('higher-risk solo AI workflows keep broader risk resources ahead of Solo Builder', () => {
+test('higher-risk solo AI workflows lead with Solo Builder and keep the risk-focused starter kit next', () => {
   const report = getAssessmentReport([
     { qId: 1, value: 'solo' },
     { qId: 2, value: 'ca' },
     { qId: 3, value: 'provider' },
     { qId: 4, values: ['healthcare', 'software-dev'], score: 4 },
-    { qId: 5, value: 'regulated', score: 4 },
+    { qId: 5, values: ['regulated'], score: 4 },
     { qId: 6, value: 'consequential', score: 4 },
     { qId: 7, value: 'us-customers', score: 1 },
     { qId: 8, value: 'none', score: 0 },
@@ -168,7 +177,28 @@ test('higher-risk solo AI workflows keep broader risk resources ahead of Solo Bu
     { qId: 17, value: 'impact' },
   ])
 
-  assert.equal(report.primaryRecommendation?.slug, 'ai-governance-starter-kit')
+  assert.equal(report.primaryRecommendation?.slug, 'solo-builder-ai-launch-kit')
   assert.equal(report.primaryRecommendation?.priority, 'Start here')
-  assert.notEqual(report.primaryRecommendation?.slug, 'solo-builder-ai-launch-kit')
+  assert.equal(report.secondaryRecommendations?.[0]?.slug, 'ai-governance-starter-kit')
+  assert.equal(report.secondaryRecommendations?.[0]?.priority, 'Next best fit')
+})
+
+test('multi-select data answers score by the most sensitive selection', () => {
+  const report = getAssessmentReport([
+    { qId: 1, value: 'small-team' },
+    { qId: 2, value: 'oh' },
+    { qId: 3, value: 'deployer' },
+    { qId: 4, values: ['writing', 'internal-ops'], score: 0 },
+    { qId: 5, values: ['internal', 'personal'], score: 3 },
+    { qId: 6, value: 'no', score: 0 },
+    { qId: 7, value: 'us-customers', score: 1 },
+    { qId: 10, value: 'informal', score: 1 },
+    { qId: 11, value: 'informal', score: 1 },
+    { qId: 12, value: 'ad-hoc', score: 1 },
+    { qId: 14, value: 'rough', score: 1 },
+    { qId: 17, value: 'policy' },
+  ])
+
+  assert.ok(report.whoYouAre.includes('customer or personal data'))
+  assert.ok(report.risk.score >= 4)
 })

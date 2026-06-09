@@ -175,6 +175,13 @@ Decision: Lead the site with regulation information, the free assessment, and fr
 Reason: Brian wants the site to read as a regulation research resource that happens to sell a few helpful items, not a kit storefront - a commerce-heavy front door scares off the trust-sensitive audience. He also expects the $14 Solo Builder kit to outsell the Starter Kit, so the two kits get equal billing where products are shown.
 Consequences: Keep prices and buy CTAs off the homepage hero and announcement bar; the homepage may mention prices only in the document-kits section. Selling hard is fine on /catalog and product detail pages. Featured blog posts on the homepage pull from the newest articles automatically. Detailed kit contents live on the product detail pages, not the catalog top.
 
+## 2026-06-09 - Assessment: multi-select data, solo-first, paid-before-preview
+
+Project/system: AIRegReady assessment question flow and recommendation engine
+Decision: The data question (Q5) is multi-select with exclusive "public only" / "not sure" options, scored by the most sensitive selection. Solo respondents (Q1 = solo) always get the Solo Builder AI Launch Kit as the first recommendation, including on the not-yet short track and for higher-risk solo workflows (the risk-focused Starter Kit follows as next best fit). Paid kits are always listed before preview-request and free resources in the recommendation list. Assessment schema version bumped to 3; legacy single-value share links for Q5 still rehydrate.
+Reason: Brian's review: data sensitivity is rarely a single category; a solo answer should lead to the solo product; paid products should never sit behind preview requests.
+Consequences: Multi-select questions with `score` fields score by max (questions with `sensitivity` fields still sum, capped at 6) via `computeMultiScore` in AssessmentTool. New offers in `OFFER_CATALOG` must set `paid: true` when they map to purchasable products so the ordering rule keeps working.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

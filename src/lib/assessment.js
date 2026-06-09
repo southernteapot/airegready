@@ -1,4 +1,4 @@
-export const ASSESSMENT_SCHEMA_VERSION = 2
+export const ASSESSMENT_SCHEMA_VERSION = 3
 
 const TEAM_ENTITIES = ['small-team', 'mid-size', 'larger-org']
 const DEPLOYER_ROLES = ['deployer', 'both']
@@ -44,6 +44,7 @@ const MARKET_LABELS = {
 const OFFER_CATALOG = {
   governanceStarter: {
     slug: 'ai-governance-starter-kit',
+    paid: true,
     name: 'AI Governance Starter Kit',
     why: 'Best first purchase when AI use has outpaced written rules, ownership, and update tracking.',
     includes: [
@@ -59,6 +60,7 @@ const OFFER_CATALOG = {
   },
   soloBuilderLaunch: {
     slug: 'solo-builder-ai-launch-kit',
+    paid: true,
     name: 'Solo Builder AI Launch Kit',
     why: 'Best fit when a solo AI-enabled app, site, automation, digital product, client workflow, or paid offer needs a practical launch record before it goes public.',
     includes: [
@@ -89,6 +91,7 @@ const OFFER_CATALOG = {
   },
   providerAssurance: {
     slug: 'ai-governance-starter-kit',
+    paid: true,
     name: 'AI Governance Starter Kit',
     why: 'Best first purchase when you ship AI-enabled features: it documents what ships, who owns it, risk intake before release, and an update log for model and prompt changes.',
     includes: [
@@ -119,6 +122,7 @@ const OFFER_CATALOG = {
   },
   impactOversight: {
     slug: 'ai-governance-starter-kit',
+    paid: true,
     name: 'AI Governance Starter Kit',
     why: 'Best first purchase for high-stakes use cases because it now includes the intake/impact assessment, tiering decision tree, risk register, and review notes.',
     includes: [
@@ -296,15 +300,16 @@ export const QUESTIONS = [
   },
   {
     id: 5,
-    text: 'What kind of data touches your AI workflows most often?',
-    subtitle: 'Pick the highest-sensitivity answer that is true most of the time.',
+    text: 'What kinds of data touch your AI workflows?',
+    subtitle: 'Select all that apply. Your risk is driven by the most sensitive data involved.',
+    multi: true,
     appliesTo: (a) => a[3] !== 'not-yet',
     options: [
-      { label: 'Nothing sensitive - public info only', value: 'public', score: 0 },
+      { label: 'Nothing sensitive - public info only', value: 'public', score: 0, exclusive: true },
       { label: 'Internal business information', value: 'internal', score: 1 },
       { label: 'Customer or personal data', value: 'personal', score: 3 },
       { label: 'Regulated data (health, financial, legal)', value: 'regulated', score: 4 },
-      { label: 'Not sure', value: 'unsure', score: 2 },
+      { label: 'Not sure', value: 'unsure', score: 2, exclusive: true },
     ],
   },
   {
@@ -478,6 +483,12 @@ function scoreOf(answerMap, qId) {
   const question = questionById(qId)
   if (!question) return 0
   const value = answerMap[qId]
+  if (Array.isArray(value)) {
+    return value.reduce((max, entry) => {
+      const option = question.options.find((candidate) => candidate.value === entry)
+      return Math.max(max, option?.score ?? 0)
+    }, 0)
+  }
   if (!value || typeof value !== 'string') return 0
   const option = question.options.find((candidate) => candidate.value === value)
   return option?.score ?? 0
@@ -627,7 +638,7 @@ function calcReadiness(answerMap) {
 
 function calcGuardrails(answerMap, scoreMap) {
   const ids = getGuardrailQuestionIds(answerMap)
-  const raw = ids.reduce((sum, qId) => sum + (scoreMap[qId] || 0), 0)
+  const raw = ids.reduce((sum, qId) => sum + scoreOf(answerMap, qId), 0)
   const max = ids.reduce((sum, qId) => sum + maxScoreOf(qId), 0)
   const ratio = max > 0 ? raw / max : 0
 
@@ -641,11 +652,11 @@ function calcGuardrails(answerMap, scoreMap) {
 
 function calcRisk(answerMap, scoreMap, guardrails) {
   const role = answerMap[3]
-  const dataScore = scoreMap[5] || 0
-  const decisionScore = scoreMap[6] || 0
-  const marketScore = scoreMap[7] || 0
-  const providerGap = PROVIDER_ROLES.includes(role) && ((scoreMap[13] || 0) <= 1 || (scoreMap[15] || 0) <= 1)
-  const vendorGap = DEPLOYER_ROLES.includes(role) && TEAM_ENTITIES.includes(answerMap[1]) && (scoreMap[12] || 0) <= 1
+  const dataScore = scoreOf(answerMap, 5)
+  const decisionScore = scoreOf(answerMap, 6)
+  const marketScore = scoreOf(answerMap, 7)
+  const providerGap = PROVIDER_ROLES.includes(role) && (scoreOf(answerMap, 13) <= 1 || scoreOf(answerMap, 15) <= 1)
+  const vendorGap = DEPLOYER_ROLES.includes(role) && TEAM_ENTITIES.includes(answerMap[1]) && scoreOf(answerMap, 12) <= 1
 
   let score = getUseCaseSensitivity(answerMap) + dataScore + decisionScore + marketScore
   if (PROVIDER_ROLES.includes(role)) score += 1
@@ -687,13 +698,21 @@ function buildWhoYouAre(answerMap) {
     ? ` for ${namedUses.slice(0, 2).join(' and ')}${namedUses.length > 2 ? ` (and ${namedUses.length - 2} other${namedUses.length - 2 === 1 ? '' : 's'})` : ''}`
     : ''
 
+  const dataValues = Array.isArray(answerMap[5])
+    ? answerMap[5]
+    : answerMap[5]
+      ? [answerMap[5]]
+      : []
+  const topDataValue = ['regulated', 'personal', 'unsure', 'internal', 'public'].find((value) =>
+    dataValues.includes(value)
+  )
   const dataLabel = {
     public: 'only non-sensitive information',
     internal: 'internal business information',
     personal: 'customer or personal data',
     regulated: 'regulated data (health, financial, or legal)',
     unsure: 'data you are not fully sure about',
-  }[answerMap[5]]
+  }[topDataValue]
 
   const decisionLabel = {
     no: 'AI is not influencing decisions about people.',
@@ -1163,16 +1182,17 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
     market !== 'internal-only' ||
     useCases.some((value) => soloCommercialUseCases.includes(value))
   )
-  const isHigherRiskSoloProject = hasHighSens || dataScore >= 4 || decisionScore >= 3
 
   function addCandidate(key, score) {
     if (score > 0) candidates.push({ key, score, order: candidates.length })
   }
 
+  // Solo respondents always see the Solo Builder kit first; it is the
+  // purpose-built, lower-priced option for one-person AI use.
   addCandidate(
     'soloBuilderLaunch',
-    isSoloCommercialProject
-      ? (isHigherRiskSoloProject ? 2 : 8) + ((priority === 'provider' || priority === 'disclosure' || priority === 'understand' || priority === 'pilot') ? 1 : 0)
+    entity === 'solo' && role !== 'not-yet'
+      ? 12 + (isSoloCommercialProject ? 1 : 0)
       : 0
   )
 
@@ -1241,7 +1261,12 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
 
   if (ranked.length === 0) ranked.push({ key: 'governanceStarter', score: 1 })
 
-  return ranked
+  // Paid kits are always listed before preview-request and free resources.
+  const ordered = [...ranked].sort(
+    (a, b) => (OFFER_CATALOG[a.key]?.paid ? 0 : 1) - (OFFER_CATALOG[b.key]?.paid ? 0 : 1)
+  )
+
+  return ordered
     .map((candidate, index) =>
       createOffer(
         candidate.key,
@@ -1287,7 +1312,11 @@ function buildShortTrackRecommendations(answerMap) {
   const priority = answerMap[17]
   const offers = []
 
-  pushUnique(offers, createOffer('governanceStarter', answerMap, 'Start here'))
+  if (entity === 'solo') {
+    pushUnique(offers, createOffer('soloBuilderLaunch', answerMap, 'Start here'))
+  } else {
+    pushUnique(offers, createOffer('governanceStarter', answerMap, 'Start here'))
+  }
 
   if (entity === 'solo' || entity === 'small-team' || priority === 'pilot') {
     pushUnique(offers, createOffer('freeChecklist', answerMap, 'Next best fit'))

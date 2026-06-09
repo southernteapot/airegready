@@ -72,3 +72,11 @@ Do not paste raw terminal logs here.
 - Announcement bar now carries content news (state-by-state tracker) with quiet Document kits / Run assessment links; no prices at the top of the page.
 - Rebuilt the catalog top: both paid kits side by side with equal billing (Solo Builder first per expected sales) and a ten-second comparison strip; follow-on packets, in-development list, and roadmap unchanged below.
 - Supersedes the 2026-06-05 starter-kit-first catalog decision (recorded in DECISIONS.md). Lint/tests/build green; local render checks confirmed section order and both buy paths.
+
+## 2026-06-09 - Assessment consistency pass
+
+- Made the data question (Q5) multi-select with exclusive public/not-sure options; scoring uses the most sensitive selection; report copy and risk math handle arrays; legacy share links still work; schema version bumped to 3.
+- Solo respondents now always get the Solo Builder kit first (full track, short track, and higher-risk paths); the Starter Kit follows where risk warrants it.
+- Paid kits are always ordered before preview-request and free recommendations.
+- Confirmed preview requests currently go only to Cloudflare Worker logs because PREVIEW_REQUEST_WEBHOOK_URL is unset - webhook setup remains Brian's top infrastructure task.
+- 24/24 tests pass; lint and build green.
