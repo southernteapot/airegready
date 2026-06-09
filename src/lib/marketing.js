@@ -80,7 +80,7 @@ export const productCards = [
       {
         question: 'What exactly do I get?',
         answer:
-          'Fourteen editable documents: core governance records, a readiness checklist, 30-day setup plan, staff-facing AI use rules, a tool approval mini-checklist, rollout aids, a completion scorecard, risk tiering, a risk register, and risk review notes. The download includes DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice.',
+          'Fourteen editable documents: core governance records, a readiness checklist, 30-day setup plan, staff-facing AI use rules, a tool approval mini-checklist, rollout aids, a completion scorecard, risk tiering, a risk register, and risk review notes. The download includes DOCX files, PDF reference copies, Markdown versions, a Start Here guide, and a legal-boundary notice, plus a bonus filled example showing a completed first pass for a fictional small business and CSV starter spreadsheets for the inventory, risk register, and update tracker.',
       },
       {
         question: 'How long does the first setup take?',
@@ -167,7 +167,7 @@ export const productCards = [
     deliveryDetails: [
       'Fourteen documents for solo AI launches, including project snapshot, claims checklist, user-data intake, disclosure/disclaimer builder, red-flag triage, model/vendor notes, launch checklist, customer FAQ, issue log, change log, setup guide, and filled examples.',
       'Plain-English templates for apps, websites, automations, consulting workflows, digital products, micro-SaaS projects, productized services, and other one-person commercial AI offers.',
-      'DOCX files for editing, PDF reference copies, Markdown source versions, a Start Here guide, and a legal-use notice.',
+      'DOCX files for editing, PDF reference copies, Markdown source versions, CSV starter spreadsheets for the incident log and change log, a Start Here guide, and a legal-use notice.',
       'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
       'Designed as an educational documentation starting point before publishing, advertising, demoing, selling, onboarding users, or taking client work.',
       'No legal advice, compliance guarantee, certification, or substitute for qualified legal, privacy, security, HR, procurement, or sector-specific review.',
@@ -263,6 +263,7 @@ export const productCards = [
       'scoring guide',
       'red flag list',
       'decision memo / approval record',
+      'bonus filled example review',
     ],
     helps: 'Documents the vendor facts, data-use questions, security posture, AI-specific controls, red flags, approval conditions, and review decision before a new AI tool is adopted.',
     cta: 'View contents',

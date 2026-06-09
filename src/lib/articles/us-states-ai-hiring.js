@@ -2,7 +2,7 @@ export const usStatesAiHiring = {
   slug: 'us-states-ai-hiring',
   title: '5 U.S. States Now Regulate AI in Hiring — Is Yours Next?',
   description:
-    'A practical comparison of state laws governing AI-driven hiring tools, covering NYC LL144, Illinois AIVITA, Colorado SB 26-189, Maryland HB 1202, and New Jersey\'s disclosure rules.',
+    'A practical comparison of state laws governing AI-driven hiring tools, covering NYC LL144, Illinois AIVIA, Colorado SB 26-189, Maryland HB 1202, and New Jersey\'s disclosure rules.',
   category: 'State Laws',
   categorySlug: 'us-state-laws',
   date: '2026-03-10',
@@ -38,7 +38,7 @@ export const usStatesAiHiring = {
           ],
           [
             'Illinois',
-            'AI Video Interview Act (AIVITA)',
+            'AI Video Interview Act (AIVIA)',
             'January 2020',
             'Consent before AI analyzes video interviews; explanation of how AI works; deletion upon request',
             'Enforced under Consumer Fraud Act',
@@ -80,7 +80,7 @@ export const usStatesAiHiring = {
     {
       title: 'The Others: Illinois, Maryland, New Jersey',
       content:
-        'Illinois was actually first. AIVITA, passed in 2019, requires employers to notify applicants before using AI to analyze video interviews, explain what characteristics the AI evaluates, and get consent. Applicants can request deletion of the video, and employers can\'t share it without consent. The original scope was narrow — video interviews only — but Illinois expanded it in 2025 when Governor Pritzker signed HB 3773, the AI Transparency in Employment Act. That law extends notice and consent requirements beyond video interviews to cover any AI analysis of applicants, including resume screening and other automated evaluations. If you hire in Illinois, the obligations now go well beyond video.\n\nThat broader scope signaled the direction things were heading.\n\nMaryland\'s HB 1202 is even narrower: it prohibits employers from using facial recognition during interviews unless the applicant consents in writing. Simple, limited, and easy to comply with. But it shows that even states that don\'t pass sweeping legislation are carving out specific prohibitions.\n\nNew Jersey\'s law, which took effect in early 2025, borrowed from NYC\'s model but added the right to request an alternative assessment process. The penalties are also steeper — up to $10,000 per violation, which adds up fast at scale.',
+        'Illinois was actually first. AIVIA, passed in 2019, requires employers to notify applicants before using AI to analyze video interviews, explain what characteristics the AI evaluates, and get consent. Applicants can request deletion of the video, and employers can\'t share it without consent. The original scope was narrow — video interviews only — but Illinois expanded it in 2025 when Governor Pritzker signed HB 3773, the AI Transparency in Employment Act. That law extends notice and consent requirements beyond video interviews to cover any AI analysis of applicants, including resume screening and other automated evaluations. If you hire in Illinois, the obligations now go well beyond video.\n\nThat broader scope signaled the direction things were heading.\n\nMaryland\'s HB 1202 is even narrower: it prohibits employers from using facial recognition during interviews unless the applicant consents in writing. Simple, limited, and easy to comply with. But it shows that even states that don\'t pass sweeping legislation are carving out specific prohibitions.\n\nNew Jersey\'s law, which took effect in early 2025, borrowed from NYC\'s model but added the right to request an alternative assessment process. The penalties are also steeper — up to $10,000 per violation, which adds up fast at scale.',
     },
     {
       title: 'What to Do If You Use AI in Hiring',

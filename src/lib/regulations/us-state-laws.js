@@ -68,7 +68,7 @@ export const usStateLaws = {
           ],
           [
             'Illinois',
-            'AIVITA, BIPA, HB 3773',
+            'AIVIA, BIPA, HB 3773',
             'In effect',
             'AI video-interview consent, biometric data consent with a private right of action, AI employment-decision notice and anti-discrimination.',
           ],
@@ -240,7 +240,7 @@ export const usStateLaws = {
       id: 'illinois',
       title: 'Illinois: AI in Hiring and Biometric Data',
       content:
-        'Illinois was one of the earliest states to regulate AI, and it remains one of the most active. Two laws are particularly important for organizations using AI: the **Artificial Intelligence Video Interview Act (AIVITA)** and the **Biometric Information Privacy Act (BIPA)**.\n\n**AIVITA (effective January 1, 2020)** applies to employers that use AI to analyze video interviews of job applicants. It was one of the first laws anywhere to directly regulate AI in employment. The law requires employers to notify applicants before the interview that AI will be used to analyze their video, explain how the AI works and what characteristics it evaluates, and obtain the applicant\'s written consent. Applicants have the right to request deletion of their video within 30 days, and employers must comply. If the applicant does not consent, the employer cannot use AI analysis on that interview.\n\n**BIPA (2008, but increasingly relevant to AI)** is not an AI law per se, but it has major implications for AI systems that use biometric data — particularly facial recognition, voiceprint analysis, and fingerprint scanning. BIPA requires informed written consent before collecting biometric identifiers, a publicly available data retention and destruction policy, and restrictions on selling or disclosing biometric data.\n\nBIPA is notable for its **private right of action**. Individuals can sue for $1,000 per negligent violation and $5,000 per intentional or reckless violation. Class action lawsuits under BIPA have resulted in settlements exceeding $600 million. Any AI system that processes biometric data on Illinois residents must comply with BIPA, regardless of where the company is based.\n\nIllinois took another significant step in August 2024 when Governor Pritzker signed **HB 3773** (Public Act 103-0804), which amends the **Illinois Human Rights Act** to address AI in employment. The law makes it a **civil rights violation** to use AI for employment decisions without providing notice to employees, or to use AI in a manner that results in discrimination against members of protected classes. This extends Illinois\'s AI regulation beyond video interviews to cover AI-assisted employment decisions more broadly.\n\nIllinois continues to consider additional automated decision-making legislation. Proposed bills would extend AI transparency and impact assessment requirements beyond hiring to other high-stakes domains, signaling that Illinois will remain at the forefront of state AI regulation.',
+        'Illinois was one of the earliest states to regulate AI, and it remains one of the most active. Two laws are particularly important for organizations using AI: the **Artificial Intelligence Video Interview Act (AIVIA)** and the **Biometric Information Privacy Act (BIPA)**.\n\n**AIVIA (effective January 1, 2020)** applies to employers that use AI to analyze video interviews of job applicants. It was one of the first laws anywhere to directly regulate AI in employment. The law requires employers to notify applicants before the interview that AI will be used to analyze their video, explain how the AI works and what characteristics it evaluates, and obtain the applicant\'s written consent. Applicants have the right to request deletion of their video within 30 days, and employers must comply. If the applicant does not consent, the employer cannot use AI analysis on that interview.\n\n**BIPA (2008, but increasingly relevant to AI)** is not an AI law per se, but it has major implications for AI systems that use biometric data — particularly facial recognition, voiceprint analysis, and fingerprint scanning. BIPA requires informed written consent before collecting biometric identifiers, a publicly available data retention and destruction policy, and restrictions on selling or disclosing biometric data.\n\nBIPA is notable for its **private right of action**. Individuals can sue for $1,000 per negligent violation and $5,000 per intentional or reckless violation. Class action lawsuits under BIPA have resulted in settlements exceeding $600 million. Any AI system that processes biometric data on Illinois residents must comply with BIPA, regardless of where the company is based.\n\nIllinois took another significant step in August 2024 when Governor Pritzker signed **HB 3773** (Public Act 103-0804), which amends the **Illinois Human Rights Act** to address AI in employment. The law makes it a **civil rights violation** to use AI for employment decisions without providing notice to employees, or to use AI in a manner that results in discrimination against members of protected classes. This extends Illinois\'s AI regulation beyond video interviews to cover AI-assisted employment decisions more broadly.\n\nIllinois continues to consider additional automated decision-making legislation. Proposed bills would extend AI transparency and impact assessment requirements beyond hiring to other high-stakes domains, signaling that Illinois will remain at the forefront of state AI regulation.',
     },
     {
       id: 'nyc',
@@ -384,7 +384,7 @@ export const usStateLaws = {
     {
       date: 'January 2020',
       event:
-        'Illinois AI Video Interview Act (AIVITA) takes effect, one of the first U.S. laws directly regulating AI in employment.',
+        'Illinois AI Video Interview Act (AIVIA) takes effect, one of the first U.S. laws directly regulating AI in employment.',
     },
     {
       date: 'July 2023',
@@ -488,7 +488,7 @@ export const usStateLaws = {
         'NYC Department of Consumer and Worker Protection page on AEDT requirements, bias audit guidance, and enforcement.',
     },
     {
-      title: 'Illinois Artificial Intelligence Video Interview Act (AIVITA)',
+      title: 'Illinois Artificial Intelligence Video Interview Act (AIVIA)',
       url: 'https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=4015',
       description:
         'Full text of the Illinois law regulating AI analysis of video interviews.',
