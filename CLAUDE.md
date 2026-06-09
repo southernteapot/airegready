@@ -55,7 +55,7 @@ Rules:
 - **Blog** — ~37 articles in `src/lib/articles/` (one file per article plus `index.js`), registered in `src/lib/data.js` `BLOG_POSTS`, the feed (`/feed.xml`), search, and sitemap
 - **Contact** — `/contact`
 - **FAQ** — accordion-style, content in `src/lib/data.js`
-- **Preview requests** — `/api/preview-request` accepts catalog preview requests with honeypot, origin checks, in-process rate limiting, structured logging, and optional webhook forwarding via `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN`
+- **Preview requests** — `/api/preview-request` accepts catalog preview requests with honeypot, origin checks, in-process rate limiting, and structured logging. Each lead is emailed via the Worker `send_email` binding (`PREVIEW_REQUEST_EMAIL` in `wrangler.jsonc`) to the verified Email Routing destination set in the `PREVIEW_REQUEST_EMAIL_TO` Workers variable (optional `PREVIEW_REQUEST_EMAIL_FROM`, default `previews@airegready.com`); optional webhook forwarding via `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN` still works
 - **Newsletter** — Buttondown via `/api/newsletter` (`BUTTONDOWN_API_KEY`)
 - **Old prototypes** — preserved under `/preview/home-old`, `/preview/front-page-v2`, `/preview/home-v3`, `/preview/home-v4`; `/front-page-v2` redirects to `/preview/front-page-v2`; new prototypes should be noindex under `/preview`
 - **Footer** — includes legal disclaimer: content is educational and does not constitute legal advice

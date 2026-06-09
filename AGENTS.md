@@ -30,7 +30,7 @@ This repo has local project memory files. Read them before making changes.
 - Keep assessment product recommendations aligned with what is actually purchasable: the paid kits, the Vendor AI Review Packet preview, the free checklist, and free regulation guides.
 - CLAUDE.md is the canonical agent-instruction file; when project rules change, update both CLAUDE.md and AGENTS.md.
 - Use `support@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.
-- The preview request flow posts to `/api/preview-request`, not a public personal mailbox. Keep privacy disclosures aligned with any changes to collected fields, logging, or notification webhooks.
+- The preview request flow posts to `/api/preview-request`, not a public personal mailbox. Leads are emailed through the Worker `send_email` binding to the verified Email Routing destination in `PREVIEW_REQUEST_EMAIL_TO` (never commit personal addresses to the repo); a webhook remains an optional extra path. Keep privacy disclosures aligned with any changes to collected fields, logging, or notifications.
 - The homepage is information-first: no prices or buy CTAs in the hero or announcement bar; products appear only in the quiet document-kits section near the bottom. Sell freely on `/catalog` and product detail pages, where the two paid kits get equal billing.
 - Keep the live design aligned with the dark navy/slate product-catalog direction. The older cream/serif editorial look should remain only in archived preview routes unless Brian asks to revive it.
 - Use compressed public assets in `public/assets/` for live UI. Keep raw/generated source images under `images/`, which is local-only and gitignored.

@@ -6,5 +6,9 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  // Sends preview-request notifications to a verified Email Routing
+  // destination address. The recipient is configured at runtime via the
+  // PREVIEW_REQUEST_EMAIL_TO variable so no personal address lives in git.
+  "send_email": [{ "name": "PREVIEW_REQUEST_EMAIL" }]
 }

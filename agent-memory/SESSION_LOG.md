@@ -80,3 +80,7 @@ Do not paste raw terminal logs here.
 - Paid kits are always ordered before preview-request and free recommendations.
 - Confirmed preview requests currently go only to Cloudflare Worker logs because PREVIEW_REQUEST_WEBHOOK_URL is unset - webhook setup remains Brian's top infrastructure task.
 - 24/24 tests pass; lint and build green.
+
+## 2026-06-09 - Preview-request email notifications
+
+- Added a Cloudflare `send_email` binding and an email path in the preview-request API: each lead is sent to the verified Email Routing destination configured in `PREVIEW_REQUEST_EMAIL_TO`, from `previews@airegready.com`, with the requester's details and use case in the body. Webhook forwarding remains as an optional second path. Brian still needs to add the `PREVIEW_REQUEST_EMAIL_TO` variable in the Cloudflare dashboard.

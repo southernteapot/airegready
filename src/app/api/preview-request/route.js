@@ -90,6 +90,65 @@ function isSafeInternalPath(value) {
   return typeof value === 'string' && value.startsWith('/') && !value.startsWith('//') && value.length <= 180
 }
 
+async function getWorkerEnv() {
+  try {
+    const { getCloudflareContext } = await import('@opennextjs/cloudflare')
+    return getCloudflareContext()?.env || null
+  } catch {
+    return null
+  }
+}
+
+function buildLeadEmailText(lead) {
+  return [
+    'New preview request from airegready.com',
+    '',
+    `Package: ${lead.productTitle} (${lead.productKind})`,
+    `Email: ${lead.email}`,
+    `Name: ${lead.name || '-'}`,
+    `Organization type: ${lead.organizationType || '-'}`,
+    `Subscribe to updates: ${lead.subscribe ? 'yes' : 'no'}`,
+    `Source page: ${lead.sourcePath}`,
+    `Time: ${lead.timestamp}`,
+    '',
+    'Use case:',
+    lead.useCase,
+  ].join('\n')
+}
+
+async function sendLeadEmail(lead) {
+  const env = await getWorkerEnv()
+  const binding = env?.PREVIEW_REQUEST_EMAIL
+  const to = env?.PREVIEW_REQUEST_EMAIL_TO || process.env.PREVIEW_REQUEST_EMAIL_TO
+  const from =
+    env?.PREVIEW_REQUEST_EMAIL_FROM ||
+    process.env.PREVIEW_REQUEST_EMAIL_FROM ||
+    'previews@airegready.com'
+
+  if (!binding || typeof binding.send !== 'function' || !to) {
+    return { success: true, mode: 'not-configured' }
+  }
+
+  try {
+    await binding.send({
+      to,
+      from,
+      subject: `Preview request: ${lead.productTitle}`,
+      text: buildLeadEmailText(lead),
+    })
+    return { success: true, mode: 'email' }
+  } catch (error) {
+    console.error(
+      JSON.stringify({ event: 'preview_request_email_failed', message: error?.message || 'unknown' })
+    )
+    return {
+      success: false,
+      status: 502,
+      error: 'Unable to send the preview request. Please try again later.',
+    }
+  }
+}
+
 async function postToWebhook(payload) {
   const webhookUrl = process.env.PREVIEW_REQUEST_WEBHOOK_URL
   if (!webhookUrl) return { success: true, mode: 'log-only' }
@@ -219,6 +278,11 @@ export async function POST(request) {
     }
 
     console.log(JSON.stringify(lead))
+
+    const emailResult = await sendLeadEmail(lead)
+    if (!emailResult.success) {
+      return json({ error: emailResult.error }, emailResult.status)
+    }
 
     const webhookResult = await postToWebhook(lead)
     if (!webhookResult.success) {
