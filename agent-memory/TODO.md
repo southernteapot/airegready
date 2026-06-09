@@ -80,6 +80,7 @@ Track current project tasks here.
 - 2026-06-08 Solo Builder v1 export completed: generated DOCX/PDF/Markdown package at `deliverables/solo-builder-ai-launch-kit-v1/`, created `deliverables/solo-builder-ai-launch-kit-v1.zip`, QA'd PDF page/text/render output and ZIP integrity, and deleted legacy root drafts after export QA.
 
 - 2026-06-08 Solo Builder product visuals completed: created cover, thumbnail, and four gallery PNGs in `public/assets/` for future Gumroad/site use without wiring public purchase metadata.
+- 2026-06-09 Solo Builder overview visual refresh completed: replaced `public/assets/solo-builder-ai-launch-kit-gallery-01-overview.png` with a more professional overview using actual rendered first pages from AI Project Snapshot, AI Claims Checklist, and Pre-Launch AI Risk Checklist.
 
 ## Later
 
