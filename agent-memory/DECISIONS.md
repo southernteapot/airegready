@@ -125,6 +125,41 @@ Decision: Publish the Solo Builder AI Launch Kit at /catalog/solo-builder-ai-lau
 Reason: The marketing path can start before the Solo Builder exports, pricing, checkout, ZIP QA, Gumroad listing, and delivery files are finished, but the site must not imply a fake purchase, instant download, legal advice, or compliance guarantee.
 Consequences: Future Solo Builder launch work must add real delivery assets, pricing, checkout metadata, product visuals, and QA before adding purchaseUrl, price, priceCurrency, buy CTAs, Offer/InStock schema, Gumroad copy, or download language.
 
+## 2026-06-08 - Package Solo Builder with Markdown as bonus format
+
+Project/system: AIRegReady Solo Builder AI Launch Kit deliverables
+Decision: When the Solo Builder AI Launch Kit is exported, provide DOCX and PDF as the main customer formats and include Markdown as a bonus/source-reference format. Before export, compare the older root-level side-gig draft files against the new `content/products/side-gig-ai-readiness-kit/deliverables/` files; fold in unique useful language and delete redundant old drafts.
+Reason: Buyers should get practical editable and readable files first, while Markdown remains useful as an extra source/reference format. The older drafts may still contain useful wording, but the new deliverables folder should become the canonical source set.
+Consequences: Future export work should generate all three formats for Solo Builder, keep DOCX/PDF as the main product promise, and clean up redundant root-level draft files only after comparing their content.
+
+
+## 2026-06-09 - Launch Solo Builder AI Launch Kit as second paid product at $14
+
+Project/system: AIRegReady catalog, homepage, assessment, and product schema
+Decision: Wire the Solo Builder AI Launch Kit as a paid product at $14 USD through Gumroad (`https://airegready.gumroad.com/l/jhsrhu`) with buy CTAs, purchase metadata, and Offer schema, after Brian created the Gumroad listing and provided the link.
+Reason: The deliverable, ZIP QA, product visuals, and Gumroad listing were complete; the preview-only boundary existed specifically until real checkout and delivery existed.
+Consequences: The site now has two paid kits. Public copy, hero proof cards, assessment recommendations, and tests treat Solo Builder as purchasable. Brian should confirm the Gumroad listing delivers `solo-builder-ai-launch-kit-v1.zip` correctly (test purchase or Gumroad preview).
+
+## 2026-06-09 - Split catalog into featured, in-development, and roadmap layers
+
+Project/system: AIRegReady catalog and homepage
+Decision: Show only featured follow-on products (Solo Builder, Acceptable Use Policy Kit, Vendor AI Review Packet) as full catalog cards; move the other available preview products into a compact "in development" list; keep the coming-soon roadmap strip. Keep all available products' detail pages and preview-request paths live.
+Reason: Twelve preview cards against one or two paid products made the catalog read as over-promised. Detail pages stay live to preserve indexed URLs, sitemap entries, and assessment links.
+Consequences: Promote a product to a featured card by setting `featured: true` in `src/lib/marketing.js`. Do not delete in-development detail pages without redirects.
+
+## 2026-06-09 - Offer a real Starter Kit document as a free sample
+
+Project/system: AIRegReady lead generation
+Decision: Publish the Starter Kit's AI Use Inventory (PDF + DOCX) as a free, ungated download at `/free-sample` with optional newsletter signup, linked from the homepage, catalog, and Starter Kit page.
+Reason: A real document proves quality better than gallery screenshots, feeds the newsletter list, and converts better than preview-request forms for cold visitors.
+Consequences: Keep the sample identical to the paid kit document (regenerate it when the kit is updated). Do not add an email gate without updating privacy copy. Future samples should also be real kit documents, not stripped-down teasers.
+
+## 2026-06-09 - Point assessment recommendations at real offers only
+
+Project/system: AIRegReady assessment recommendation engine
+Decision: Remap assessment product recommendations so commercial recommendations target the paid kits (Starter, Solo Builder) and the Vendor AI Review Packet preview; replace the Founder AI Governance Track recommendation with the Starter Kit (for providers) and the free checklist (for understand/pilot users); dedupe recommendations by product slug; fix the stale Colorado SB 24-205 framework label to SB 26-189; link the Texas framework card to `/regulations/texas-ai-regulation`.
+Reason: Brian wants assessment-takers properly routed to the products actually for sale, and recommendation copy must not cite replaced statutes.
+Consequences: Future products should be added to `OFFER_CATALOG` in `src/lib/assessment.js` only when they have an honest CTA (purchase, preview, or free resource). Keep recommendation slugs deduped.
 
 Use this format:
 

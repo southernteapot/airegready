@@ -24,7 +24,10 @@ This repo has local project memory files. Read them before making changes.
 ## AIRegReady Site Rules
 
 - Treat `/catalog` as the canonical customer-facing catalog; `/kits` is compatibility only.
-- Keep catalog claims honest. The AI Governance Starter Kit is the only currently wired paid product; other `/catalog/[slug]` pages are preview/sales pages only until pricing, checkout, and delivery are implemented for those products. Use hosted preview-request forms or contact CTAs rather than fake downloads or prices.
+- Keep catalog claims honest. Two paid products are wired through Gumroad: the AI Governance Starter Kit ($19) and the Solo Builder AI Launch Kit ($14). Other `/catalog/[slug]` pages are preview/sales pages only until pricing, checkout, and delivery are implemented for those products. Use hosted preview-request forms or contact CTAs rather than fake downloads or prices.
+- The free sample at `/free-sample` (Starter Kit AI Use Inventory, files in `public/downloads/`) is the only direct download exposed on the site; keep it a real document from the paid kit, not a teaser.
+- Keep assessment product recommendations aligned with what is actually purchasable: the paid kits, the Vendor AI Review Packet preview, the free checklist, and free regulation guides.
+- CLAUDE.md is the canonical agent-instruction file; when project rules change, update both CLAUDE.md and AGENTS.md.
 - Use `support@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.
 - The preview request flow posts to `/api/preview-request`, not a public personal mailbox. Keep privacy disclosures aligned with any changes to collected fields, logging, or notification webhooks.
 - Keep the live design aligned with the dark navy/slate product-catalog direction. The older cream/serif editorial look should remain only in archived preview routes unless Brian asks to revive it.

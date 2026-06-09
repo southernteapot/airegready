@@ -42,3 +42,14 @@ Do not paste raw terminal logs here.
 - Added side-gig AI readiness as a pre-advertising buyer lane for solo side-income builders, freelancers, creators, consultants, and people using AI to build sellable products, services, templates, automations, content, apps, courses, or client deliverables.
 - Drafted the internal Side-Gig AI Readiness Kit with six Markdown documents: overview, side-gig AI inventory, customer/client data rules, claims/disclosure review, risk triage, and launch readiness checklist.
 - Added side-gig marketing positioning, ad angles, post drafts, topic drafts, and remaining launch steps; the product is now public as a preview-only catalog page, while exports, Gumroad, pricing, and delivery QA remain unfinished.
+
+## 2026-06-09 - Solo Builder paid launch, free sample, catalog cleanup, assessment remap
+
+- Fixed accidental working-tree image moves: restored `public/assets/` files from git and removed the duplicate `home/` and `aigovernance starter kit/` folders.
+- Wired the Solo Builder AI Launch Kit as the second paid product at $14 through Gumroad (`/l/jhsrhu`) with buy CTAs, purchase metadata, Offer schema, real product gallery images, and updated tests.
+- Split the catalog into featured follow-ons, a compact in-development preview list, and the roadmap strip; derived the hero package count from data.
+- Added `/free-sample` offering the Starter Kit AI Use Inventory as ungated PDF/DOCX downloads with optional newsletter signup; linked from homepage, catalog, and product page; registered in sitemap/search.
+- Added a state-by-state quick-reference table to `/regulations/us-state-laws` from the page's existing sourced content.
+- Remapped assessment recommendations to the paid kits, Vendor Packet preview, free checklist, and free state guides; fixed the stale Colorado SB 24-205 label to SB 26-189; linked the Texas framework card to the dedicated Texas guide; added solo paths for personal users and vendor-focused consultants; deduped recommendations by slug.
+- Created `ideas-for-future-monetization/monetization-ideas-2026-06-09.md`; rewrote CLAUDE.md (now includes AGENTS.md content) and updated AGENTS.md.
+- Validation: lint clean, 23/23 tests pass, build generated 139 pages.

@@ -4,13 +4,15 @@ Track current project tasks here.
 
 ## Current
 
-- Prepare the Solo Builder AI Launch Kit for paid launch: compare the older root-level side-gig draft files against the new `deliverables/` source files, fold in unique useful language, delete redundant old drafts, review/polish the 14-document Markdown source kit, create DOCX/PDF exports with Markdown as a bonus format, QA the ZIP, choose pricing, write Gumroad/checkout copy, create product visuals, and wire real purchase/delivery metadata only after checkout and delivery are ready.
-- Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
+- Brian: do a test purchase (or Gumroad preview) of the Solo Builder listing `https://airegready.gumroad.com/l/jhsrhu` to confirm it delivers `solo-builder-ai-launch-kit-v1.zip` correctly. Site-side purchase wiring was completed 2026-06-09.
+- Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing and provides the link: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
+- Brian: configure `PREVIEW_REQUEST_WEBHOOK_URL` (and optional `PREVIEW_REQUEST_WEBHOOK_TOKEN`) in Cloudflare so preview-request leads are not lost in Worker logs; simplest path is a Zapier/Make webhook that appends to a sheet or sends an email. Verify with `npm run smoke:preview-request -- https://airegready.com --live`.
+- Watch `/free-sample` conversion (sample downloads → Starter Kit sales) and consider a second sample document later.
+- Consider next monetization steps from `ideas-for-future-monetization/monetization-ideas-2026-06-09.md` (bundle, paid update subscription, first vertical kit).
 - Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
 - Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Before product conversion, audit `content/products/` for stale Colorado/EU timing references and align delivery copy with the public SB 26-189 / Digital Omnibus updates.
-- Configure `PREVIEW_REQUEST_WEBHOOK_URL` / `PREVIEW_REQUEST_WEBHOOK_TOKEN` or choose another durable CRM/contact backend for preview request notifications, then verify with `npm run smoke:preview-request -- https://airegready.com --live`.
 - Review the professional hybrid homepage refresh in-browser and decide whether the restrained blue/cyan logo and hero treatment should also be applied to social images and older preview pages.
 - Decide when to retire older homepage preview routes after the current homepage has been live long enough.
 - Verify production newsletter configuration for Buttondown (`BUTTONDOWN_API_KEY`) and Cloudflare analytics token setup if analytics should run.
@@ -71,6 +73,12 @@ Track current project tasks here.
 - 2026-06-06 AIRegReady distribution content pass completed: added `/blog/ai-readiness-checklist-new-business`, registered it in the article index/feed/sitemap layer, created `marketing/ai-readiness-checklist-distribution-2026-06-06.md`, and validated with tests, lint, build, and browser QA.
 
 - 2026-06-08 Solo Builder preview-only public wiring completed: added `/catalog/solo-builder-ai-launch-kit` as a preview-request catalog product, added a light homepage mention, updated assessment recommendations for solo commercial AI launch paths, added FAQ entries, and kept purchase URL, price, Gumroad, fake download, and paid Offer/InStock schema absent.
+
+- 2026-06-08 Solo Builder source kit review completed: polished the Markdown deliverables, strengthened claims/data/disclosure/pre-launch worksheets, updated examples, folded useful root-draft material into canonical deliverables, and moved older root-level drafts to `content/products/side-gig-ai-readiness-kit/drafts/legacy/`.
+
+- 2026-06-08 Solo Builder v1 export completed: generated DOCX/PDF/Markdown package at `deliverables/solo-builder-ai-launch-kit-v1/`, created `deliverables/solo-builder-ai-launch-kit-v1.zip`, QA'd PDF page/text/render output and ZIP integrity, and deleted legacy root drafts after export QA.
+
+- 2026-06-08 Solo Builder product visuals completed: created cover, thumbnail, and four gallery PNGs in `public/assets/` for future Gumroad/site use without wiring public purchase metadata.
 
 ## Later
 
