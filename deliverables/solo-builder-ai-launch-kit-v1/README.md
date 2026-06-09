@@ -1,8 +1,9 @@
 # Solo Builder AI Launch Kit v1
 
 **Product:** Solo Builder AI Launch Kit
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Prepared:** 2026-06-08
+**Updated:** 2026-06-09
 
 This packet contains editable templates and reference PDFs for solo builders documenting AI-enabled apps, websites, automations, consulting workflows, client deliverables, digital products, productized services, and micro-SaaS tools before launch.
 
@@ -30,9 +31,9 @@ Start with `START-HERE.md`, then adapt the DOCX files for your project.
 - `markdown/` - plain-text source/reference files
 - `docx/` - editable Word-compatible documents
 - `pdf/` - PDF exports
+- `spreadsheets/` - CSV starter files for the incident/complaint mini-log and AI change log
 - `START-HERE.md` - buyer-facing setup guide
 - `LEGAL-NOTICE.md` - educational-use and legal-boundary notice
-- `source-notes/` - notes identifying source drafts used to assemble the packet
 
 ## Important boundary
 

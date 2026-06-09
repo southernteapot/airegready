@@ -1,9 +1,9 @@
 # AI Governance Starter Kit v1
 
 **Product:** AI Governance Starter Kit
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Prepared:** 2026-05-08
-**Updated:** 2026-06-05
+**Updated:** 2026-06-09
 
 This packet contains editable templates and reference PDFs for a combined first-pass AI governance and risk assessment file. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
 
@@ -57,11 +57,19 @@ This packet contains editable templates and reference PDFs for a combined first-
 14. **AI Risk Review Notes**
     A meeting/review notes template for documenting decisions, rationale, conditions, and follow-up actions.
 
+### Bonus materials
+
+- **Bonus Filled Example: Small Business First Pass**
+  A completed fictional example showing the inventory, policy decisions, tiering, risk register, and update tracker in use at a small business.
+- **Starter spreadsheets**
+  CSV versions of the AI Use Inventory, AI Risk Register, and AI Update Tracker for Excel, Google Sheets, or Airtable.
+
 ## Folder structure
 
 - `markdown/` - editable Markdown source
 - `docx/` - Word-compatible editable documents
 - `pdf/` - PDF exports
+- `spreadsheets/` - CSV starter files for the inventory, risk register, and update tracker
 - `START-HERE.md` - buyer-facing setup guide and recommended first pass
 - `LEGAL-NOTICE.md` - educational-use and legal-boundary notice
 

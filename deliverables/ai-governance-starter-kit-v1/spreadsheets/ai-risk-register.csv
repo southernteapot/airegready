@@ -1,0 +1,4 @@
+Risk ID,Title,Description,Category,Source,AI tool / workflow,Population affected,Jurisdictions,Inherent likelihood (1-5),Inherent impact (1-5),Existing controls,Residual likelihood (1-5),Residual impact (1-5),Residual score,Treatment decision,Owner,Next action,Due date,Status,Next review date
+RISK-AI-001,Sensitive data entered into unapproved AI tools,,Privacy / governance,,Cross-team AI use,,,,,,,,12,,,Confirm approved tools and send rules,,Open,
+RISK-AI-002,AI output used externally without human review,,Accuracy / reputation,,Marketing and support drafts,,,,,,,,9,,,Add review rule to policy and rollout message,,Monitoring,
+RISK-AI-003,Vendor trains on company inputs by default,,Vendor / privacy,,[TOOL NAME],,,,,,,,10,,,Confirm opt-out or restrict data,,Treatment in progress,

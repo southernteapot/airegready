@@ -1,8 +1,9 @@
 # AI Vendor Review Packet v1
 
 **Product:** AI Vendor Review Packet
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Prepared:** 2026-06-05
+**Updated:** 2026-06-09
 
 This packet contains editable templates and reference PDFs for reviewing AI vendors, SaaS AI features, embedded AI tools, and new AI-enabled workflows before approval. Start with `START-HERE.md`, then adapt the DOCX files for your organization.
 
@@ -26,6 +27,11 @@ This packet contains editable templates and reference PDFs for reviewing AI vend
 6. **AI Vendor Decision Memo and Approval Record**
    A decision record template for documenting approval, approval conditions, rejection rationale, owner, scope, and next review date.
 
+### Bonus materials
+
+- **Bonus Filled Example: Completed Vendor Review**
+  A fictional end-to-end example showing questionnaire highlights, red-flag handling, and a filled decision memo with conditions.
+
 ## Folder structure
 
 - `markdown/` - editable Markdown source
@@ -33,7 +39,6 @@ This packet contains editable templates and reference PDFs for reviewing AI vend
 - `pdf/` - PDF exports
 - `START-HERE.md` - buyer-facing setup guide and recommended first pass
 - `LEGAL-NOTICE.md` - educational-use and legal-boundary notice
-- `source-notes/` - notes identifying source drafts used to assemble the packet
 
 ## Important legal boundary
 

@@ -5,7 +5,7 @@
 **Last reviewed:** ______________________________
 **Review cadence:** Quarterly
 
-> **How to use.** This is the master record of every AI tool, workflow, and system in use at [COMPANY NAME]. Keep it current. Under state AI laws such as Colorado SB 26-189, the EU AI Act, NIST AI RMF, and most enterprise audit frameworks, a current inventory is foundational - it's the first thing a regulator or customer will ask for.
+> **How to use.** This is the master record of every AI tool, workflow, and system in use at [COMPANY NAME]. Keep it current. Under AI laws and frameworks such as Colorado SB 26-189, the EU AI Act, the NIST AI RMF, and most enterprise audit expectations, a current inventory is foundational - it's the first thing a regulator or customer will ask for.
 >
 > In practice: keep this as a spreadsheet (Google Sheet / Airtable / Excel) and use this document as the field schema. The fields below match the columns of the spreadsheet.
 

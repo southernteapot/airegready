@@ -109,7 +109,7 @@ A sample starting list:
 | [TOOL 2] | Code assistance | Public code, no proprietary | Company SSO required |
 | [TOOL 3] | Meeting transcription | Internal meetings | Guest consent required |
 
-Requests to add a new tool should be submitted to [APPROVAL CONTACT] using the [APPROVAL PROCESS - see AI Vendor Risk Assessment].
+Requests to add a new tool should be submitted to [APPROVAL CONTACT]. Use the AI Tool Approval Mini-Checklist (included in this kit) for low-risk requests, and the AI Risk Intake and Impact Assessment (also included) when a request involves sensitive data, customer-facing output, system integrations, or decisions about people.
 
 ## 8. Data handling rules
 
@@ -137,7 +137,7 @@ When in doubt, ask [POLICY OWNER] or [IT OWNER] before pasting.
 ## 9. Disclosure and consent
 
 - **Meeting transcription.** Before recording or transcribing a meeting with an AI tool, announce it and give attendees a chance to object. If any attendee objects, do not record. This applies whether the meeting is internal or external.
-- **Customer communications.** When a customer is interacting with an AI system (chatbot, automated email, synthetic voice), they must be told clearly. Use the standard disclosure language from [CUSTOMER AI DISCLOSURE TEMPLATES].
+- **Customer communications.** When a customer is interacting with an AI system (chatbot, automated email, synthetic voice), they must be told clearly. Starter language you can adapt: "This conversation uses an AI assistant. You can ask to reach a person at any time." For AI-drafted messages that a person reviews and sends, disclosure is usually not required, but do not imply a human wrote something when the customer has a reasonable expectation of human interaction (see Section 6).
 - **Hiring and HR.** Candidates and employees must be told when AI is materially involved in decisions about them, as required by applicable law (including Colorado SB 26-189 where covered ADMT is involved, Illinois AIVIA, NYC Local Law 144, and the EU AI Act).
 - **Public content.** When AI meaningfully authored or generated public-facing content in a context where authorship matters (editorials, official statements, creative work), disclose that AI was used.
 

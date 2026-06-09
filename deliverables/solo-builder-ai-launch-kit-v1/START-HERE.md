@@ -23,6 +23,8 @@ The packet includes 14 documents in DOCX, PDF, and Markdown formats:
 13. Filled Example: Consultant or Freelancer Using AI
 14. Filled Example: Digital Product, Automation, or Micro-SaaS
 
+It also includes starter spreadsheets (`spreadsheets/` folder): CSV versions of the Incident / Complaint Mini-Log and the AI Change Log that you can import into Excel, Google Sheets, or Airtable.
+
 ## Recommended first pass
 
 1. Start with the 30-Minute Setup Guide if you need a quick first record.
@@ -40,6 +42,7 @@ The packet includes 14 documents in DOCX, PDF, and Markdown formats:
 - `docx/` contains editable Word-compatible documents.
 - `pdf/` contains PDF exports for easy review or circulation.
 - `markdown/` contains plain-text source versions as a bonus/reference format.
+- `spreadsheets/` contains CSV starter files for the incident/complaint mini-log and the AI change log. Import them into Excel, Google Sheets, or Airtable to keep these logs as living spreadsheets.
 
 Most buyers should start with the DOCX files.
 

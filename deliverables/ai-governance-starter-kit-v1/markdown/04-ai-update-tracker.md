@@ -6,7 +6,7 @@
 **Log owner:** ______________________________
 **Retention:** life of system + [3] years
 
-> **How to use this tracker.** Every material change to an AI system, vendor tool, prompt, model, integration, or policy gets a log entry. Use alongside the AI Change Management Process. The log supports audits, regulator inquiries (EU AI Act Annex IV requires change history), and internal governance.
+> **How to use this tracker.** Every material change to an AI system, vendor tool, prompt, model, integration, or policy gets a log entry. Link entries to your AI Use Inventory, Risk Intake records, and Risk Register. The log supports audits, regulator inquiries, customer questions, and internal governance (the EU AI Act, for example, expects high-risk systems to keep a change history).
 
 ---
 
@@ -26,88 +26,88 @@ Each entry captures:
 | **Reason** | Why the change was made |
 | **Expected impact** | Plain language |
 | **Testing** | Pre-deployment tests performed (functional, performance, bias, red-team) |
-| **Approver(s)** | Who approved (per Change Management) |
+| **Approver(s)** | Who approved the change |
 | **Deployed by** | Who executed the change |
 | **Rollout strategy** | Full / canary / region-by-region / user-by-user |
 | **Rollback plan** | Yes/No; method |
 | **Post-deploy check** | What's monitored; result |
 | **User / customer notice** | Yes/No; link to notice |
 | **Regulatory records updated** | EU database / Colorado ADMT records / other |
-| **Linked documents** | Impact Assessment / Model Card / Incident records / tickets |
+| **Linked documents** | Inventory entry / risk intake record / risk register / incident records / vendor docs / tickets |
 | **Author of log entry** | Name |
 
 ---
 
 ## Example entries
 
-### Entry #23
+### Entry #1 (small team - prompt fix)
 
 | Field | Value |
 | --- | --- |
 | Date | 2026-04-17 |
-| Version | v2.4 |
-| Previous version | v2.3 |
+| Version | v1.3 |
+| Previous version | v1.2 |
 | Change class | Moderate |
-| Summary | Updated system prompt to handle price inquiries more accurately |
-| Components changed | System prompt (support-chatbot) |
-| Reason | Customer complaints about wrong pricing info |
-| Expected impact | Fewer pricing errors; slightly longer responses |
-| Testing | Functional test suite passed; price-query regression set added |
-| Approver(s) | AI Governance Lead (async) |
-| Deployed by | Engineering - Jane S. |
-| Rollout strategy | Canary 10% -> 50% -> 100% over 3 days |
-| Rollback plan | Revert prompt to v2.3; tested |
-| Post-deploy check | Price-error rate dropped 60% in first 72h; no regressions detected |
+| Summary | Updated the support chatbot system prompt so it stops quoting an outdated price |
+| Components changed | System prompt |
+| Reason | Two customers were quoted last year's price |
+| Expected impact | Fewer pricing errors; slightly longer replies |
+| Testing | Re-ran 12 saved test questions, including the 3 price-related ones |
+| Approver(s) | Founder (also AI governance owner) |
+| Deployed by | Founder |
+| Rollout strategy | Full (single low-risk change) |
+| Rollback plan | Restore the saved v1.2 prompt |
+| Post-deploy check | Watched support replies for 3 days; no new pricing complaints |
 | User / customer notice | Not required (quality improvement) |
 | Regulatory records updated | No |
-| Linked documents | Impact Assessment v1.5; ticket PROD-4821 |
-| Author | Jane S. |
+| Linked documents | Inventory entry AIS-001; complaint notes 2026-04-15 |
+| Author of log entry | Founder |
 
-### Entry #24
+### Entry #2 (small team - vendor model upgrade)
 
 | Field | Value |
 | --- | --- |
 | Date | 2026-04-25 |
-| Version | v3.0 |
-| Previous version | v2.4 |
+| Version | v2.0 |
+| Previous version | v1.3 |
 | Change class | Material |
-| Summary | Model upgrade from claude-sonnet-4-5 to claude-sonnet-4-6 |
+| Summary | Switched the chatbot to the vendor's newer model after a deprecation notice |
 | Components changed | Foundation model |
-| Reason | Vendor announced deprecation of prior model; new version offers improved accuracy |
-| Expected impact | Behavior shifts in ambiguous queries; some tone changes; lower latency |
-| Testing | Full functional regression; bias regression (no subgroup change); red-team round (no new issues); performance benchmarking |
-| Approver(s) | AI Review Committee (meeting 2026-04-22); Executive Sponsor |
-| Deployed by | Engineering - Platform team |
-| Rollout strategy | Canary 5% -> 25% -> 100% over 10 days |
-| Rollback plan | Prior model remains available for 90 days |
-| Post-deploy check | No behavior regressions at 72h; customer-support ticket volume stable |
-| User / customer notice | Enterprise customers notified 14 days in advance; no individual-customer-facing UX changes |
-| Regulatory records updated | No (system not registered in EU database; Colorado ADMT records unchanged) |
-| Linked documents | Impact Assessment v2.0; Model Card v2.4 -> v3.0; red-team report 2026-04-15 |
-| Author | Platform Lead |
+| Reason | Vendor is retiring the old model; the newer model tested as more accurate |
+| Expected impact | Some tone and wording changes in replies |
+| Testing | Re-ran the saved test questions; spot-checked 25 anonymized real conversations side by side |
+| Approver(s) | Founder and operations lead |
+| Deployed by | Operations lead |
+| Rollout strategy | Internal-only testing for one week, then switched for customers |
+| Rollback plan | Old model remains available from the vendor for 90 days |
+| Post-deploy check | Support ticket volume stable after two weeks |
+| User / customer notice | Customer FAQ updated |
+| Regulatory records updated | No |
+| Linked documents | Risk intake record 2026-04-22; vendor deprecation email |
+| Author of log entry | Operations lead |
 
-### Entry #25 (Emergency)
+### Entry #3 (emergency - integration permissions)
 
 | Field | Value |
 | --- | --- |
 | Date | 2026-05-02 |
-| Version | v3.0.1 |
-| Previous version | v3.0 |
+| Version | v2.0.1 |
+| Previous version | v2.0 |
 | Change class | Emergency |
-| Summary | Urgent prompt patch to mitigate prompt-injection issue discovered in red-team |
-| Components changed | System prompt; content filter |
-| Reason | Researcher-reported vulnerability; exploitable within one session |
-| Expected impact | Blocks injection vector; minor reduction in output flexibility |
-| Testing | Targeted test on reported exploit; regression on primary use cases |
-| Approver(s) | AI Governance Lead + Executive Sponsor (phone); full Committee post-hoc within 5 days |
-| Deployed by | Security Lead |
-| Rollout strategy | Full immediate |
-| Rollback plan | Prior version preserved; monitoring for unintended effects |
-| Post-deploy check | Exploit blocked; no new issues at 48h |
-| User / customer notice | Internal only; enterprise customers notified via support |
-| Regulatory records updated | Security incident log updated; no external filings required |
-| Linked documents | Incident record INC-2026-05-02; red-team ticket RT-447 |
-| Author | Security Lead |
+| Summary | Disconnected the meeting-notes tool from the shared drive after it summarized a confidential folder |
+| Components changed | Integration permissions |
+| Reason | The tool had broader drive access than intended |
+| Expected impact | Notes tool now works only on meeting recordings, not stored files |
+| Testing | Confirmed the tool can no longer access the confidential folder |
+| Approver(s) | Founder (same day); reviewed at the next governance meeting |
+| Deployed by | IT contractor |
+| Rollout strategy | Immediate |
+| Rollback plan | Not applicable - access intentionally removed |
+| Post-deploy check | Access audit after one week |
+| User / customer notice | Internal note to staff about the new limits |
+| Regulatory records updated | Issue added to the risk register; confirm with qualified review whether any notification duty applies if sensitive data was involved |
+| Linked documents | Incident note 2026-05-02; risk register RISK-AI-006 |
+| Author of log entry | Founder |
 
 ---
 
@@ -121,7 +121,7 @@ Each entry captures:
 ## Preservation
 
 - Don't delete entries; correct with a new entry if needed
-- Archive with the system when retired (see Retirement Checklist)
+- Archive the log with the system's records when a tool is retired, and keep the retired entry in your AI Use Inventory
 - Retention aligns with sector rules and the longer of: operational need, EU AI Act 10-year (for high-risk), sector-specific retention, or 3 years minimum
 
 ## Disclaimer

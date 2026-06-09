@@ -23,6 +23,11 @@ The packet includes 14 documents in DOCX, PDF, and Markdown formats:
 13. AI Risk Register Template
 14. AI Risk Review Notes
 
+It also includes bonus materials:
+
+- **Bonus Filled Example: Small Business First Pass** - a completed example showing what the kit looks like in use at a fictional eight-person company.
+- **Starter spreadsheets** (`spreadsheets/` folder) - CSV versions of the AI Use Inventory, AI Risk Register, and AI Update Tracker that you can import into Excel, Google Sheets, or Airtable.
+
 ## Recommended first pass
 
 1. Open the AI Readiness Checklist and mark what is already known, missing, or under review.
@@ -53,8 +58,9 @@ If you only have one afternoon, do this:
 - `docx/` contains editable Word-compatible documents.
 - `pdf/` contains read-only PDF exports for easy review or circulation.
 - `markdown/` contains plain-text source versions.
+- `spreadsheets/` contains CSV starter files for the inventory, risk register, and update tracker. Import them into Excel, Google Sheets, or Airtable to keep these records as living spreadsheets.
 
-Most buyers should start with the DOCX files.
+Most buyers should start with the DOCX files and the bonus filled example.
 
 ## Important legal boundary
 

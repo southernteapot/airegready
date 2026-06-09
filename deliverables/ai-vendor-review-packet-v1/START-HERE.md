@@ -15,6 +15,8 @@ The packet includes 6 documents in DOCX, PDF, and Markdown formats:
 5. AI Vendor Red Flag List
 6. AI Vendor Decision Memo and Approval Record
 
+It also includes a bonus filled example - **Completed Vendor Review** - showing a full review and filled decision memo for a fictional vendor, so you can copy the level of detail instead of starting from blank fields.
+
 ## Recommended first pass
 
 1. Use the AI Vendor Review Request Email Template when you need information from a vendor, reseller, internal sponsor, or customer success contact.

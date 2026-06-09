@@ -16,7 +16,7 @@ If a serious red flag appears, do not force a launch decision just because the t
 
 ## 0-5 Minutes: Project Snapshot
 
-Open `01-ai-project-snapshot.md` and complete only these fields:
+Open the AI Project Snapshot (document 01) and complete only these fields:
 
 - project name
 - public offer name
@@ -40,7 +40,7 @@ Minimum useful answer:
 
 ## 5-10 Minutes: Claims
 
-Open `02-ai-claims-checklist.md` and find the 3-5 claims most likely to matter.
+Open the AI Claims Checklist (document 02) and find the 3-5 claims most likely to matter.
 
 Look at:
 
@@ -65,7 +65,7 @@ Rewrite or remove the one claim that would create the most confusion if a buyer 
 
 ## 10-15 Minutes: Data
 
-Open `03-user-data-and-privacy-intake.md` and list:
+Open the User Data and Privacy Intake (document 03) and list:
 
 - what users type, paste, upload, or connect
 - what you paste into AI tools
@@ -80,7 +80,7 @@ Minimum useful answer:
 
 ## 15-20 Minutes: Red Flags
 
-Open `05-red-flag-use-case-triage.md` and mark Yes, No, or Unsure for:
+Open the Red Flag Use Case Triage (document 05) and mark Yes, No, or Unsure for:
 
 - health or medical
 - mental health or crisis support
@@ -100,13 +100,13 @@ If anything is Yes or Unsure, write one next step: pause, narrow scope, add huma
 
 ## 20-25 Minutes: Disclosure And FAQ
 
-Open `04-ai-disclosure-and-disclaimer-builder.md` and draft three short notes:
+Open the AI Disclosure and Disclaimer Builder (document 04) and draft three short notes:
 
 1. AI-use disclosure: This feature uses AI to [TASK].
 2. Output limitation: AI output may be incomplete or incorrect, so review it before use.
 3. Problem reporting: Contact [EMAIL OR FORM] if something looks wrong.
 
-Then open `08-customer-faq-template.md` and answer these three questions:
+Then open the Customer FAQ Template (document 08) and answer these three questions:
 
 - Do you use AI?
 - What data does the AI process?
@@ -118,7 +118,7 @@ Put the disclosure where users will see it before relying on output. If no publi
 
 ## 25-30 Minutes: Launch Decision And Change Log
 
-Open `07-pre-launch-ai-risk-checklist.md` and choose one final decision:
+Open the Pre-Launch AI Risk Checklist (document 07) and choose one final decision:
 
 - Ready to launch as scoped
 - Launch only after listed fixes
@@ -127,7 +127,7 @@ Open `07-pre-launch-ai-risk-checklist.md` and choose one final decision:
 - Pause and get qualified help
 - Do not launch in current form
 
-Then open `10-ai-change-log.md` and add the launch baseline:
+Then open the AI Change Log (document 10) and add the launch baseline:
 
 | Date | Change type | What changed | Why it changed | Next review |
 | --- | --- | --- | --- | --- |
