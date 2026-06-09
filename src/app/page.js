@@ -199,7 +199,7 @@ export default function Home() {
                   Resource library
                 </span>
                 <span className="min-w-0 max-w-full break-words font-sans text-sm font-semibold leading-snug text-[#D8E6F5]">
-                  $19 AI Governance Starter Kit for founders, new business owners, and lean teams.
+                  Two paid kits are live: the $19 AI Governance Starter Kit and the $14 Solo Builder AI Launch Kit.
                 </span>
               </div>
               <div className="grid grid-cols-1 gap-2 min-[360px]:grid-cols-2 lg:flex lg:flex-wrap">
