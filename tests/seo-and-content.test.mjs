@@ -26,7 +26,7 @@ test('regulation records expose stable machine-readable review dates', () => {
   const usStateLaws = getRegulationRecords().find((regulation) => regulation.slug === 'us-state-laws')
 
   assert.ok(usStateLaws)
-  assert.equal(usStateLaws.modifiedAt, '2026-06-05')
+  assert.equal(usStateLaws.modifiedAt, '2026-06-09')
 })
 
 test('sitemap entries use canonical stable dates instead of build-time dates', () => {
@@ -35,7 +35,7 @@ test('sitemap entries use canonical stable dates instead of build-time dates', (
   )
 
   assert.ok(regulationEntry?.lastModified instanceof Date)
-  assert.equal(regulationEntry.lastModified.toISOString().slice(0, 10), '2026-06-05')
+  assert.equal(regulationEntry.lastModified.toISOString().slice(0, 10), '2026-06-09')
 })
 
 test('search index is generated from the canonical live content layer', () => {
@@ -62,17 +62,18 @@ test('starter kit exposes live purchase metadata and buyer FAQ', () => {
   assert.ok(starterKit.faq.some((item) => item.answer.includes('Fourteen editable documents')))
 })
 
-test('solo builder launch kit is preview-only in product, search, and sitemap records', () => {
+test('solo builder launch kit exposes live purchase metadata and stays in search and sitemap records', () => {
   const soloBuilder = getProductBySlug('solo-builder-ai-launch-kit')
   const searchIndex = getSearchIndex()
   const sitemapEntries = getSitemapEntries()
 
   assert.ok(soloBuilder)
   assert.equal(soloBuilder.title, 'Solo Builder AI Launch Kit')
-  assert.equal(soloBuilder.purchaseUrl, undefined)
-  assert.equal(soloBuilder.price, undefined)
-  assert.equal(soloBuilder.priceCurrency, undefined)
-  assert.equal(isPurchasableProduct(soloBuilder), false)
+  assert.equal(soloBuilder.purchaseUrl, 'https://airegready.gumroad.com/l/jhsrhu')
+  assert.equal(soloBuilder.price, 14)
+  assert.equal(soloBuilder.priceCurrency, 'USD')
+  assert.equal(soloBuilder.purchaseCta, 'Buy for $14')
+  assert.equal(isPurchasableProduct(soloBuilder), true)
   assert.ok(soloBuilder.inside.includes('AI Claims Checklist'))
   assert.ok(searchIndex.some((entry) => entry.type === 'product' && entry.url === '/catalog/solo-builder-ai-launch-kit'))
   assert.ok(sitemapEntries.some((entry) => entry.url === 'https://airegready.com/catalog/solo-builder-ai-launch-kit'))

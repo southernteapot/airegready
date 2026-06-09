@@ -491,6 +491,9 @@ export default async function CatalogProductPage({ params }) {
                 <SecondaryAction href={isPurchasable ? '#request-preview' : '/assessment'}>
                   {isPurchasable ? 'Ask a question first' : 'Start assessment first'}
                 </SecondaryAction>
+                {product.slug === 'ai-governance-starter-kit' && (
+                  <SecondaryAction href="/free-sample">Try a free sample</SecondaryAction>
+                )}
               </div>
             </div>
             <PreviewPanel product={product} />

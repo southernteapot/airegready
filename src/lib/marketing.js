@@ -108,7 +108,39 @@ export const productCards = [
     slug: 'solo-builder-ai-launch-kit',
     title: 'Solo Builder AI Launch Kit',
     kind: 'Kit',
-    previewImage: '/assets/airegready-home-v3-hero-workspace.avif',
+    featured: true,
+    previewImage: '/assets/solo-builder-ai-launch-kit-gallery-01-overview.png',
+    galleryImages: [
+      {
+        src: '/assets/solo-builder-ai-launch-kit-gallery-01-overview.png',
+        alt: 'Solo Builder AI Launch Kit overview with product summary, document previews, and educational-use notes.',
+        title: 'Launch kit overview',
+        body: 'A quick view of the launch-focused packet, format mix, and educational-use boundary.',
+      },
+      {
+        src: '/assets/solo-builder-ai-launch-kit-gallery-02-included-documents.png',
+        alt: 'Solo Builder AI Launch Kit gallery image listing all fourteen included documents.',
+        title: 'Fourteen included documents',
+        body: 'Launch snapshot, claims checklist, data intake, disclosures, triage, logs, setup guide, and filled examples.',
+      },
+      {
+        src: '/assets/solo-builder-ai-launch-kit-gallery-03-document-previews.png',
+        alt: 'Actual PDF previews from the Solo Builder AI Launch Kit showing sample document pages.',
+        title: 'Actual PDF previews',
+        body: 'Representative pages rendered from the kit reference PDFs.',
+      },
+      {
+        src: '/assets/solo-builder-ai-launch-kit-gallery-04-file-formats.png',
+        alt: 'Solo Builder AI Launch Kit file-format structure showing DOCX, PDF, Markdown, Start Here, and legal notice files.',
+        title: 'Organized file structure',
+        body: 'DOCX files, PDF reference copies, Markdown source, Start Here guide, and legal-use notice.',
+      },
+    ],
+    galleryIntro: {
+      eyebrow: 'Product preview',
+      heading: 'Preview the actual Solo Builder package.',
+      body: 'These visuals show the kit overview, included-file list, rendered PDF samples, and file structure so you know what the kit contains before requesting a preview.',
+    },
     audience: 'Solo founders, indie hackers, consultants, freelancers, no-code builders, micro-SaaS creators, and one-person businesses using AI commercially.',
     inside: [
       'AI Project Snapshot',
@@ -127,12 +159,17 @@ export const productCards = [
       'Filled Example: Digital Product, Automation, or Micro-SaaS',
     ],
     helps: 'A launch-focused AI readiness kit for solo builders that helps document what AI does, what user data it touches, what claims are made, what users should know, what red flags exist, and what changed before a project ships or starts making money.',
-    cta: 'Request preview',
+    cta: 'Buy for $14',
+    purchaseUrl: 'https://airegready.gumroad.com/l/jhsrhu',
+    purchaseCta: 'Buy for $14',
+    price: 14,
+    priceCurrency: 'USD',
     deliveryDetails: [
-      'Fourteen planned documents for solo AI launches, including project snapshot, claims checklist, user-data intake, disclosure/disclaimer builder, red-flag triage, model/vendor notes, launch checklist, customer FAQ, issue log, change log, setup guide, and filled examples.',
+      'Fourteen documents for solo AI launches, including project snapshot, claims checklist, user-data intake, disclosure/disclaimer builder, red-flag triage, model/vendor notes, launch checklist, customer FAQ, issue log, change log, setup guide, and filled examples.',
       'Plain-English templates for apps, websites, automations, consulting workflows, digital products, micro-SaaS projects, productized services, and other one-person commercial AI offers.',
+      'DOCX files for editing, PDF reference copies, Markdown source versions, a Start Here guide, and a legal-use notice.',
+      'Instant Gumroad delivery after purchase; no public direct ZIP download is exposed on AIRegReady.',
       'Designed as an educational documentation starting point before publishing, advertising, demoing, selling, onboarding users, or taking client work.',
-      'Preview-request only while pricing, checkout, exports, ZIP QA, product visuals, and delivery are finalized.',
       'No legal advice, compliance guarantee, certification, or substitute for qualified legal, privacy, security, HR, procurement, or sector-specific review.',
     ],
     useCases: [
@@ -195,6 +232,7 @@ export const productCards = [
     slug: 'acceptable-use-policy-kit',
     title: 'Acceptable Use Policy Kit',
     kind: 'Kit',
+    featured: true,
     previewImage: '/assets/airegready-home-v3-starter-kit.avif',
     audience: 'Teams that need clear internal rules before staff use expands further.',
     inside: ['policy template', 'one-page summary', 'employee acknowledgment', 'GenAI appendix'],
@@ -215,6 +253,7 @@ export const productCards = [
     slug: 'vendor-ai-review-packet',
     title: 'Vendor AI Review Packet',
     kind: 'Packet',
+    featured: true,
     previewImage: '/assets/airegready-home-v3-hero-workspace.avif',
     audience: 'Founders, operators, consultants, school leaders, nonprofits, and lean teams deciding whether to approve an AI vendor or SaaS AI feature.',
     inside: [
@@ -326,6 +365,20 @@ export function getRoadmapProducts() {
   return productCards.filter(isComingSoon)
 }
 
+export function isFeaturedProduct(product) {
+  return Boolean(product.featured) || isPurchasableProduct(product)
+}
+
+export function getFeaturedFollowOnProducts() {
+  return getAvailableProducts().filter(
+    (product) => isFeaturedProduct(product) && product.slug !== 'ai-governance-starter-kit'
+  )
+}
+
+export function getInDevelopmentProducts() {
+  return getAvailableProducts().filter((product) => !isFeaturedProduct(product))
+}
+
 export function getProductBySlug(slug) {
   return getAvailableProducts().find((product) => product.slug === slug)
 }
@@ -386,8 +439,8 @@ export const trackedTopics = [
 export const heroProofCards = [
   {
     icon: 'documents',
-    title: '13 catalog packages',
-    body: 'One paid 14-document starter kit is live, with preview resources and roadmap items kept separate.',
+    title: `${productCards.length} catalog packages`,
+    body: 'Two paid kits are live, with preview resources and roadmap items kept separate.',
   },
   {
     icon: 'workflow',

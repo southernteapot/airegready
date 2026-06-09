@@ -67,8 +67,8 @@ const OFFER_CATALOG = {
       'User data intake',
       'Disclosure and change logs',
     ],
-    ctaLabel: 'Request preview',
-    href: '/catalog/solo-builder-ai-launch-kit#request-preview',
+    ctaLabel: 'View $14 kit',
+    href: '/catalog/solo-builder-ai-launch-kit',
     learnHref: '/blog/ai-side-projects',
     learnLabel: 'Read the solo starting guide',
   },
@@ -88,19 +88,19 @@ const OFFER_CATALOG = {
     learnLabel: 'Read the due diligence guide',
   },
   providerAssurance: {
-    slug: 'founder-ai-governance-track',
-    name: 'Founder AI Governance Track',
-    why: 'Best fit when you build or ship AI-enabled features and need lightweight product, customer, vendor, and board-question materials.',
+    slug: 'ai-governance-starter-kit',
+    name: 'AI Governance Starter Kit',
+    why: 'Best first purchase when you ship AI-enabled features: it documents what ships, who owns it, risk intake before release, and an update log for model and prompt changes.',
     includes: [
-      'Minimum guardrails',
-      'SaaS AI checklist',
-      'Customer FAQ',
-      'Board update template',
+      'AI use inventory',
+      'Risk intake / impact assessment',
+      'Risk register',
+      'Update tracker',
     ],
-    ctaLabel: 'Request preview',
-    href: '/catalog/founder-ai-governance-track#request-preview',
-    learnHref: '/blog/ai-compliance-startups',
-    learnLabel: 'Read the startup guide',
+    ctaLabel: 'View $19 kit',
+    href: '/catalog/ai-governance-starter-kit',
+    learnHref: '/blog/ai-incident-response',
+    learnLabel: 'Read the incident response guide',
   },
   disclosure: {
     slug: 'jurisdiction-guide-library',
@@ -132,20 +132,20 @@ const OFFER_CATALOG = {
     learnHref: '/blog/ai-governance-starter-kit-launch',
     learnLabel: 'Read the launch note',
   },
-  founderTrack: {
-    slug: 'founder-ai-governance-track',
-    name: 'Founder AI Governance Track',
-    why: 'Best fit when you want lightweight templates before AI use, vendor sprawl, and customer commitments get harder to unwind.',
+  freeChecklist: {
+    slug: 'ai-readiness-checklist',
+    name: 'Free AI Readiness Checklist',
+    why: 'Best when you want to understand what applies before spending anything: a guided checklist for inventory, policy, risk, vendor, and update habits.',
     includes: [
-      'Minimum guardrails',
-      'SaaS AI checklist',
-      'Customer FAQ',
-      'Board update template',
+      'Tool inventory prompts',
+      'Policy basics',
+      'Risk and vendor checks',
+      'Update habits',
     ],
-    ctaLabel: 'Request preview',
-    href: '/catalog/founder-ai-governance-track#request-preview',
-    learnHref: '/blog/ai-side-projects',
-    learnLabel: 'Read the solo starting guide',
+    ctaLabel: 'Use the free checklist',
+    href: '/checklist',
+    learnHref: '/blog/ai-readiness-checklist-new-business',
+    learnLabel: 'Read the readiness checklist guide',
   },
   coloradoKit: {
     slug: 'colorado-ai-act-readiness-kit',
@@ -945,7 +945,7 @@ function getApplicableFrameworks(answerMap, scoreMap, readiness, guardrails) {
   if (location === 'tx') {
     frameworks.push({
       name: 'Texas TRAIGA',
-      slug: 'us-state-laws',
+      slug: 'texas-ai-regulation',
       why: 'Texas operations or customers mean the Responsible AI Governance Act belongs in your working set now.',
       priority: 'Applies to you',
     })
@@ -962,9 +962,9 @@ function getApplicableFrameworks(answerMap, scoreMap, readiness, guardrails) {
 
   if (location === 'co') {
     frameworks.push({
-      name: 'Colorado AI Act (SB24-205)',
+      name: 'Colorado AI Act (SB 26-189)',
       slug: 'us-state-laws',
-      why: 'Colorado makes consequential-decision use cases and consumer notices much more concrete for deployers and developers.',
+      why: "Colorado's rewritten ADMT framework takes effect January 1, 2027 and makes consequential-decision use cases, consumer notices, and human review much more concrete.",
       priority: 'Applies to you',
     })
   }
@@ -1187,6 +1187,7 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
   addCandidate(
     'vendorReview',
     (TEAM_ENTITIES.includes(entity) && DEPLOYER_ROLES.includes(role) && scoreOf(answerMap, 12) <= 1 ? 4 : 0) +
+      (entity === 'solo' && DEPLOYER_ROLES.includes(role) && (priority === 'vendor' || dataScore >= 2) ? 2 : 0) +
       (DEPLOYER_ROLES.includes(role) && dataScore >= 2 ? 1 : 0) +
       (priority === 'vendor' ? 2 : 0)
   )
@@ -1215,7 +1216,7 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
   )
 
   addCandidate(
-    'founderTrack',
+    'freeChecklist',
     ((entity === 'solo' || entity === 'small-team') ? 1 : 0) +
       ((priority === 'understand' || priority === 'pilot') ? 2 : 0) +
       (guardrails.ratio <= 0.45 ? 1 : 0)
@@ -1233,7 +1234,9 @@ function getProductRecommendations(answerMap, readiness, guardrails, risk) {
 
   const ranked = candidates
     .sort((a, b) => b.score - a.score || a.order - b.order)
-    .filter((candidate, index, array) => array.findIndex((entry) => entry.key === candidate.key) === index)
+    .filter((candidate, index, array) =>
+      array.findIndex((entry) => OFFER_CATALOG[entry.key]?.slug === OFFER_CATALOG[candidate.key]?.slug) === index
+    )
     .slice(0, 3)
 
   if (ranked.length === 0) ranked.push({ key: 'governanceStarter', score: 1 })
@@ -1287,7 +1290,7 @@ function buildShortTrackRecommendations(answerMap) {
   pushUnique(offers, createOffer('governanceStarter', answerMap, 'Start here'))
 
   if (entity === 'solo' || entity === 'small-team' || priority === 'pilot') {
-    pushUnique(offers, createOffer('founderTrack', answerMap, 'Next best fit'))
+    pushUnique(offers, createOffer('freeChecklist', answerMap, 'Next best fit'))
   }
 
   if (location === 'co') pushUnique(offers, createOffer('coloradoKit', answerMap, 'State-specific'))

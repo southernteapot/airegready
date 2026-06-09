@@ -109,6 +109,16 @@ const STATIC_PAGE_DEFINITIONS = [
     lastModifiedSource: null,
   },
   {
+    url: '/free-sample',
+    title: 'Free Sample: AI Use Inventory Template',
+    description:
+      'Download a free AI use inventory template from the paid AI Governance Starter Kit in PDF and DOCX, no email required.',
+    searchTags: ['free template', 'AI inventory', 'sample'],
+    changeFrequency: 'monthly',
+    priority: 0.75,
+    lastModifiedSource: null,
+  },
+  {
     url: '/legal',
     title: 'Legal',
     description: 'Legal information for AIRegReady.',

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo'
 import {
   getAvailableProducts,
+  getFeaturedFollowOnProducts,
+  getInDevelopmentProducts,
   getProductHref,
   getProductKind,
   getProductPriceLabel,
@@ -122,9 +124,8 @@ export default function KitsPage() {
   const starterProduct = availableProducts.find((product) => product.slug === 'ai-governance-starter-kit')
   const starterHeroImage = starterProduct?.galleryImages?.[0]
   const starterPriceLabel = starterProduct ? getProductPriceLabel(starterProduct) : null
-  const followOnProducts = starterProduct
-    ? availableProducts.filter((product) => product.slug !== starterProduct.slug)
-    : availableProducts
+  const followOnProducts = getFeaturedFollowOnProducts()
+  const inDevelopmentProducts = getInDevelopmentProducts()
   const catalogSchema = buildCatalogSchema(availableProducts)
 
   return (
@@ -158,6 +159,7 @@ export default function KitsPage() {
                 <PrimaryLink href={getProductHref(starterProduct)}>View kit details</PrimaryLink>
               ) : null}
               <SecondaryLink href="#included-files">See included files</SecondaryLink>
+              <SecondaryLink href="/free-sample">Try a free sample first</SecondaryLink>
               {starterProduct && (
                 <SecondaryLink href={`${getProductHref(starterProduct)}#faq`}>Read buyer FAQ</SecondaryLink>
               )}
@@ -227,7 +229,7 @@ export default function KitsPage() {
             id="catalog-heading"
             eyebrow="Separate catalog resources"
             title="Follow-on packets and previews live below the Starter Kit."
-            body="The paid Starter Kit contents are listed above. The cards below are separate catalog resources, preview pages, and deeper follow-on packets for teams that need more specialized documents."
+            body="The paid Starter Kit contents are listed above. The cards below are the next packets in line: separate follow-on resources with their own preview pages and request paths."
           />
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {followOnProducts.map((product) => {
@@ -280,6 +282,35 @@ export default function KitsPage() {
               )
             })}
           </div>
+          {inDevelopmentProducts.length > 0 && (
+            <div className="mt-10 rounded-2xl border border-white/[0.12] bg-[#050B16]/86 p-6 shadow-sm">
+              <div className="max-w-[760px]">
+                <p className="font-sans text-xs font-black uppercase tracking-[0.16em] text-[#8EF1FF]">
+                  In development
+                </p>
+                <h3 className="mt-2 font-sans text-2xl font-black leading-tight text-white">
+                  More specialized packets you can preview on request.
+                </h3>
+                <p className="mt-3 font-sans text-sm leading-relaxed text-[#B2C9ED]">
+                  These resources have detail pages and preview-request paths,
+                  but they are further back in the build queue than the packets
+                  above. No prices or downloads are attached yet.
+                </p>
+              </div>
+              <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {inDevelopmentProducts.map((product) => (
+                  <li key={product.slug} className="flex flex-wrap items-baseline justify-between gap-2 rounded-xl border border-white/[0.1] bg-[#0B1626] px-4 py-3">
+                    <Link href={getProductHref(product)} className="font-sans text-sm font-black text-white no-underline transition hover:text-[#8EF1FF]">
+                      {product.title}
+                    </Link>
+                    <Link href={`${getProductHref(product)}#request-preview`} className="font-sans text-xs font-bold text-[#8EF1FF] no-underline transition hover:text-white">
+                      Request preview <span aria-hidden="true">-&gt;</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {roadmapProducts.length > 0 && (
             <div className="mt-10 rounded-2xl border border-[#C9D7E6] bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
               <div className="max-w-[760px]">

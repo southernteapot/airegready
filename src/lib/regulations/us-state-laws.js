@@ -8,7 +8,7 @@ export const usStateLaws = {
   icon: '\u2696\uFE0F',
   status: 'Evolving',
   lastReviewed: 'June 2026',
-  lastReviewedIso: '2026-06-05',
+  lastReviewedIso: '2026-06-09',
   keyFacts: [
     { label: 'Federal AI Law', value: 'None (as of June 2026)' },
     {
@@ -39,6 +39,83 @@ export const usStateLaws = {
       title: 'The Patchwork Problem',
       content:
         "The United States has no federal law that comprehensively regulates artificial intelligence. Congress has held hearings and introduced bills, but nothing has passed. In the absence of federal action, states have stepped in, each with their own approach, definitions, and enforcement mechanisms.\n\nThis creates a patchwork. A company operating in multiple states may face different disclosure requirements, different definitions of automated decision-making, and different penalties depending on where its customers or employees are located. For organizations deploying AI at scale, this is one of the most challenging compliance environments in the world.\n\nThe pace is accelerating rapidly. According to the National Conference of State Legislatures, all 50 states, Puerto Rico, the Virgin Islands, and Washington, D.C. introduced AI-related legislation in the 2025 legislative session, and 38 states adopted or enacted around 100 measures. Some of these bills target narrow use cases like deepfakes or AI in elections. Others, like Colorado\'s original SB 24-205 and its 2026 replacement SB 26-189, regulate automated decision tools used in high-stakes decisions about people. Understanding which laws apply to your organization requires tracking legislation across every state where you do business.\n\nThis guide covers the most significant state-level AI laws that are enacted or in effect, the common themes across them, and practical steps for building a multi-state compliance strategy.",
+    },
+    {
+      id: 'state-tracker',
+      title: 'State-by-State Quick Reference',
+      content:
+        'The table below summarizes the major state and local AI laws covered in detail on this page. It focuses on enacted laws and the most significant pending proposals — it is a starting point, not an exhaustive list. For day-to-day tracking across all 50 states, the [NCSL AI Legislation Tracker](https://www.ncsl.org/technology-and-communication/artificial-intelligence-2025-legislation) is the most current public resource.',
+      table: {
+        headers: ['State', 'Key Law(s)', 'Status', 'Main Focus'],
+        rows: [
+          [
+            'Colorado',
+            'SB 26-189 (ADMT; replaced SB 24-205)',
+            'Effective Jan 1, 2027',
+            'Notices, records, human review, and data correction for automated decision-making technology in consequential decisions.',
+          ],
+          [
+            'Texas',
+            'TRAIGA (HB 149)',
+            'In effect since Jan 1, 2026',
+            'Intent-based prohibitions on AI misuse, government AI disclosure, healthcare AI disclosure, NIST-based enforcement defenses.',
+          ],
+          [
+            'California',
+            'SB 53 (TFAIA), AB 2013, SB 942',
+            'In effect since Jan 1, 2026',
+            'Frontier-model transparency and incident reporting, generative AI training-data disclosure, AI interaction disclosure.',
+          ],
+          [
+            'Illinois',
+            'AIVITA, BIPA, HB 3773',
+            'In effect',
+            'AI video-interview consent, biometric data consent with a private right of action, AI employment-decision notice and anti-discrimination.',
+          ],
+          [
+            'New York City',
+            'Local Law 144',
+            'In effect since Jul 5, 2023',
+            'Annual independent bias audits, public audit summaries, and candidate notice for automated hiring tools.',
+          ],
+          [
+            'Connecticut',
+            'SB 1103',
+            'Signed 2024',
+            'Impact assessments for high-risk AI systems and consumer disclosure for consequential decisions.',
+          ],
+          [
+            'Utah',
+            'AI Policy Act (SB 149)',
+            'Signed 2024',
+            'Disclosure when consumers interact with generative AI; AI learning laboratory program.',
+          ],
+          [
+            'Maryland',
+            'HB 1202',
+            'In effect',
+            'Written consent required before using facial recognition in hiring interviews.',
+          ],
+          [
+            'Washington',
+            'SB 5838',
+            'Signed 2024',
+            'AI task force to study impacts and recommend regulation before legislating.',
+          ],
+          [
+            'Virginia',
+            'High-Risk AI Developer Act',
+            'Proposed',
+            'Would require impact assessments and transparency for high-risk AI developers.',
+          ],
+          [
+            'New Jersey',
+            'Multiple bills',
+            'Under consideration',
+            'Active bills on AI in hiring, deepfakes, and automated decision-making; no comprehensive law yet.',
+          ],
+        ],
+      },
     },
     {
       id: 'colorado',

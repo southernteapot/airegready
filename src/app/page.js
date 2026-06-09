@@ -5,10 +5,11 @@ import { buildPageMetadata } from '@/lib/seo'
 import { discoveryPages } from '@/lib/discovery-pages'
 import {
   assessmentRows,
+  getFeaturedFollowOnProducts,
+  getProductBySlug,
   getProductHref,
   heroProofCards,
   heroWorkspaceItems,
-  productCards,
   starterContents,
   stripCategories,
   trackedTopics,
@@ -347,11 +348,14 @@ export default function Home() {
                 id="home-products-heading"
                 eyebrow="Featured resources"
                 title="Start with the core governance file, then add focused packets."
-                body="The full catalog now has the detailed resource list. Start with the live starter kit, then add focused catalog resources for acceptable use, risk review, vendor review, and training."
+                body="The full catalog now has the detailed resource list. Start with the live starter kit, then add focused catalog resources for solo launches, acceptable use, and vendor review."
                 compact
               />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {productCards.slice(0, 4).map((product) => (
+                {[getProductBySlug('ai-governance-starter-kit'), ...getFeaturedFollowOnProducts()]
+                  .filter((product) => product && product.slug !== 'solo-builder-ai-launch-kit')
+                  .slice(0, 3)
+                  .map((product) => (
                   <article key={product.title} className="rounded-2xl border border-[#C9D7E6] bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950">
                     <h3 className="font-sans text-lg font-black leading-tight text-[#06132E] dark:text-white">{product.title}</h3>
                     <p className="mt-3 font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">{product.helps}</p>
@@ -360,6 +364,16 @@ export default function Home() {
                     </Link>
                   </article>
                 ))}
+                <article className="rounded-2xl border border-[#C9D7E6] bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+                  <h3 className="font-sans text-lg font-black leading-tight text-[#06132E] dark:text-white">Free Sample: AI Use Inventory</h3>
+                  <p className="mt-3 font-sans text-sm leading-relaxed text-[#455571] dark:text-[#B2C9ED]">
+                    Download one real document from the paid Starter Kit and see
+                    the quality before spending anything.
+                  </p>
+                  <Link href="/free-sample" className="mt-4 inline-flex font-sans text-sm font-black text-[#2C6BFF] no-underline dark:text-[#58D4FF]">
+                    Get the free sample <span aria-hidden="true">&nbsp;-&gt;</span>
+                  </Link>
+                </article>
               </div>
             </div>
             <div className="mt-6 rounded-2xl border border-cyan-200/[0.16] bg-[#050B16] p-5 shadow-[0_30px_90px_-70px_rgba(0,0,0,0.9)]">
@@ -373,7 +387,7 @@ export default function Home() {
                     automations, or paid offers.
                   </p>
                 </div>
-                <LightSecondaryLink href="/catalog/solo-builder-ai-launch-kit">Preview the Solo Builder AI Launch Kit</LightSecondaryLink>
+                <LightSecondaryLink href="/catalog/solo-builder-ai-launch-kit">Get the Solo Builder AI Launch Kit — $14</LightSecondaryLink>
               </div>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
