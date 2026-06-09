@@ -31,6 +31,7 @@ This repo has local project memory files. Read them before making changes.
 - CLAUDE.md is the canonical agent-instruction file; when project rules change, update both CLAUDE.md and AGENTS.md.
 - Use `support@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.
 - The preview request flow posts to `/api/preview-request`, not a public personal mailbox. Keep privacy disclosures aligned with any changes to collected fields, logging, or notification webhooks.
+- The homepage is information-first: no prices or buy CTAs in the hero or announcement bar; products appear only in the quiet document-kits section near the bottom. Sell freely on `/catalog` and product detail pages, where the two paid kits get equal billing.
 - Keep the live design aligned with the dark navy/slate product-catalog direction. The older cream/serif editorial look should remain only in archived preview routes unless Brian asks to revive it.
 - Use compressed public assets in `public/assets/` for live UI. Keep raw/generated source images under `images/`, which is local-only and gitignored.
 - Preserve preview routes unless Brian asks to delete them. Prototype homepage routes should live under `/preview`; old root prototype URLs should redirect there or be removed.

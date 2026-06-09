@@ -168,6 +168,13 @@ Decision: Ship filled examples as uncounted "bonus" documents so the public "14 
 Reason: Brian asked for a full quality pass to make sure buyers get real value. The biggest gaps were trust issues (internal notes shipping to customers, references to missing documents) and missing learn-by-example material.
 Consequences: Future kit updates should keep bonus materials clearly labeled as bonus, never ship `internal-source-notes/`, regenerate exports with `scripts/export-kit-documents.py` plus LibreOffice, and bump the README version with an Updated date.
 
+## 2026-06-09 - Reposition homepage as information-first; feature both kits equally in the catalog
+
+Project/system: AIRegReady homepage, catalog, and overall positioning
+Decision: Lead the site with regulation information, the free assessment, and free tools. The homepage opens with the regulation library (six framework areas, state tracker, latest blog analysis, assessment, starter guides) and sells quietly in one "Practical document kits" section near the bottom with both kits presented equally. The announcement bar carries content news (no prices) plus quiet Document kits / Run assessment links. The catalog page is the store: it now opens with both paid kits side by side (Solo Builder first, Starter Kit second) and a "ten-second comparison" strip, superseding the 2026-06-05 "Lead catalog with Starter Kit contents" decision.
+Reason: Brian wants the site to read as a regulation research resource that happens to sell a few helpful items, not a kit storefront - a commerce-heavy front door scares off the trust-sensitive audience. He also expects the $14 Solo Builder kit to outsell the Starter Kit, so the two kits get equal billing where products are shown.
+Consequences: Keep prices and buy CTAs off the homepage hero and announcement bar; the homepage may mention prices only in the document-kits section. Selling hard is fine on /catalog and product detail pages. Featured blog posts on the homepage pull from the newest articles automatically. Detailed kit contents live on the product detail pages, not the catalog top.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

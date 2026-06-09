@@ -22,8 +22,9 @@ Rules:
 - Do not invent project facts. If something is unknown, write Unknown or TBD.
 
 ## Positioning
-- **Product business / resource catalog** — not a generic blog homepage
-- **Practical AI governance document store** — not legal services
+- **Information-first regulation resource** — the site reads as a plain-English AI regulation library with a free assessment that *happens* to sell a few well-made document kits; it must not read as a kit storefront (Brian's explicit direction, 2026-06-09)
+- **Selling is quiet on the homepage** (one document-kits section near the bottom; no prices in the hero or announcement bar) and **unrestrained on `/catalog` and product detail pages** — those are the store
+- **Practical AI governance document resource** — not legal services
 - **Readiness command center** — document AI use, review vendors, train staff, track regulatory topics, and build an internal governance file
 - **Plain-English implementation support** for non-enterprise teams
 - **Primary buyer language** leads with founders, new business owners, solo builders, consultants, and operators; small organizations and lean teams are secondary
@@ -44,8 +45,8 @@ Rules:
 - If guided services are ever offered, frame them as guided document setup / educational implementation support, never compliance consulting, legal advisory, or expert advisory services.
 
 ## Site Structure
-- **Homepage** — Starter-Kit-first commercial page; CTAs to the $19 kit, the catalog, and the free readiness assessment
-- **Catalog** — `/catalog` is the canonical product/resource catalog and opens with the AI Governance Starter Kit H1 and its 14 included documents; `/catalog/[slug]` detail pages cover the 13 packages (product JSON-LD, galleries, audience/contents/use-case sections); `/kits` remains as a compatibility route
+- **Homepage** — information-first regulation library: hero ("AI regulations, explained in plain English") with free-assessment CTA; sections run regulation areas → latest blog analysis → assessment scorecard → starter guides + free sample → quiet two-kit shop section (both kits equal; prices appear only here) → newsletter → legal boundary. Announcement bar carries content news with quiet Document kits / Run assessment links, no prices
+- **Catalog** — `/catalog` is the store: it opens with both paid kits side by side (Solo Builder first) and a "ten-second comparison" strip; follow-on packets, the in-development preview list, and the roadmap sit below; `/catalog/[slug]` detail pages cover the 13 packages (product JSON-LD, galleries, audience/contents/use-case sections); `/kits` remains as a compatibility route
 - **Discovery landing pages** (buyer-intent SEO) — `/ai-policy-template-small-business`, `/chatgpt-policy-for-employees`, `/ai-use-inventory-template`, `/ai-risk-assessment-template`, `/ai-governance-checklist`; they funnel visitors to the free checklist and paid Starter Kit; data in `src/lib/discovery-pages.js`
 - **AI Readiness Assessment** — `/assessment`, interactive multi-question tool with 3-axis scoring (Readiness / Guardrails / Risk) and tailored action plans; logic in `src/lib/assessment.js`. Product recommendations center on the paid kits (Starter, Solo Builder) plus the Vendor Packet, free checklist, and free state guides — keep recommendation targets aligned with what is actually purchasable
 - **Free sample** — `/free-sample`, direct download of the Starter Kit's AI Use Inventory (PDF/DOCX from `public/downloads/`) with optional newsletter signup

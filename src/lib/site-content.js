@@ -16,9 +16,9 @@ const STATIC_PAGE_DEFINITIONS = [
   })),
   {
     url: '/catalog',
-    title: 'AI Governance Catalog',
+    title: 'AI Document Kits and Catalog',
     description:
-      'AI governance starter kits, acceptable use policy kits, risk tools, vendor review packets, training resources, and jurisdiction guides.',
+      'Paid AI document kits plus acceptable use policy kits, risk tools, vendor review packets, training resources, and jurisdiction guides.',
     searchTags: [],
     changeFrequency: 'monthly',
     priority: 0.85,

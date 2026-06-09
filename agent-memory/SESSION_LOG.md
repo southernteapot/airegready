@@ -65,3 +65,10 @@ Do not paste raw terminal logs here.
 - Built scripts/export-kit-documents.py (python-docx, clones existing kit DOCX as style template) + LibreOffice PDF conversion; rebuilt all three ZIPs with QA (integrity, page checks, rendered-page review).
 - Refreshed the free-sample downloads; updated site copy (Starter FAQ/what-you-get, Solo delivery details, Vendor contents); standardized AIVIA across site content.
 - Versions: Starter Kit v1.2.0, Solo Builder v1.1.0, Vendor Packet v1.1.0. Lint/tests/build all green.
+
+## 2026-06-09 - Information-first homepage and equal-kit catalog
+
+- Rebuilt the homepage as a regulation-library front door: plain-English hero with assessment CTA, six regulation-area cards, latest four blog articles, assessment scorecard, starter guides + free sample card, and a single quiet two-kit shop section near the bottom (prices only there).
+- Announcement bar now carries content news (state-by-state tracker) with quiet Document kits / Run assessment links; no prices at the top of the page.
+- Rebuilt the catalog top: both paid kits side by side with equal billing (Solo Builder first per expected sales) and a ten-second comparison strip; follow-on packets, in-development list, and roadmap unchanged below.
+- Supersedes the 2026-06-05 starter-kit-first catalog decision (recorded in DECISIONS.md). Lint/tests/build green; local render checks confirmed section order and both buy paths.
