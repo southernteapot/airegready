@@ -4,7 +4,8 @@ Track current project tasks here.
 
 ## Current
 
-- Brian: do a test purchase (or Gumroad preview) of the Solo Builder listing `https://airegready.gumroad.com/l/jhsrhu` to confirm it delivers `solo-builder-ai-launch-kit-v1.zip` correctly. Site-side purchase wiring was completed 2026-06-09.
+- Brian: upload the rebuilt ZIPs to Gumroad - `deliverables/ai-governance-starter-kit-v1.zip` (v1.2.0) to the Starter Kit listing and `deliverables/solo-builder-ai-launch-kit-v1.zip` (v1.1.0) to the Solo Builder listing - then do a test purchase/preview of each to confirm delivery. The vendor packet ZIP (v1.1.0) is ready for whenever that listing is created.
+- Brian: optionally announce the free v1.2 content update (bonus filled example + spreadsheets) to existing buyers via Gumroad's update email.
 - Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing and provides the link: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
 - Brian: configure `PREVIEW_REQUEST_WEBHOOK_URL` (and optional `PREVIEW_REQUEST_WEBHOOK_TOKEN`) in Cloudflare so preview-request leads are not lost in Worker logs; simplest path is a Zapier/Make webhook that appends to a sheet or sends an email. Verify with `npm run smoke:preview-request -- https://airegready.com --live`.
 - Watch `/free-sample` conversion (sample downloads → Starter Kit sales) and consider a second sample document later.

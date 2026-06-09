@@ -161,6 +161,13 @@ Decision: Remap assessment product recommendations so commercial recommendations
 Reason: Brian wants assessment-takers properly routed to the products actually for sale, and recommendation copy must not cite replaced statutes.
 Consequences: Future products should be added to `OFFER_CATALOG` in `src/lib/assessment.js` only when they have an honest CTA (purchase, preview, or free resource). Keep recommendation slugs deduped.
 
+## 2026-06-09 - Kit quality pass: bonus examples, spreadsheets, and packaging cleanup
+
+Project/system: AIRegReady paid kit deliverables (Starter v1.2.0, Solo Builder v1.1.0, Vendor Packet v1.1.0)
+Decision: Ship filled examples as uncounted "bonus" documents so the public "14 documents" / "6 documents" claims stay true without regenerating product images; add CSV starter spreadsheets where documents tell buyers to keep records as spreadsheets; remove internal source-mapping notes from customer ZIPs (moved to `deliverables/internal-source-notes/`); fix Starter Kit cross-references to documents not included in the kit; rewrite the Update Tracker examples at small-team scale; reference document names instead of `.md` filenames in buyer-facing guides; standardize the Illinois law abbreviation as AIVIA.
+Reason: Brian asked for a full quality pass to make sure buyers get real value. The biggest gaps were trust issues (internal notes shipping to customers, references to missing documents) and missing learn-by-example material.
+Consequences: Future kit updates should keep bonus materials clearly labeled as bonus, never ship `internal-source-notes/`, regenerate exports with `scripts/export-kit-documents.py` plus LibreOffice, and bump the README version with an Updated date.
+
 Use this format:
 
 ## YYYY-MM-DD - Decision title

@@ -25,7 +25,8 @@ This repo has local project memory files. Read them before making changes.
 
 - Treat `/catalog` as the canonical customer-facing catalog; `/kits` is compatibility only.
 - Keep catalog claims honest. Two paid products are wired through Gumroad: the AI Governance Starter Kit ($19) and the Solo Builder AI Launch Kit ($14). Other `/catalog/[slug]` pages are preview/sales pages only until pricing, checkout, and delivery are implemented for those products. Use hosted preview-request forms or contact CTAs rather than fake downloads or prices.
-- The free sample at `/free-sample` (Starter Kit AI Use Inventory, files in `public/downloads/`) is the only direct download exposed on the site; keep it a real document from the paid kit, not a teaser.
+- The free sample at `/free-sample` (Starter Kit AI Use Inventory, files in `public/downloads/`) is the only direct download exposed on the site; keep it a real document from the paid kit, not a teaser. Regenerate the sample files whenever that document changes in the kit.
+- Kit exports are rebuilt with `python3 scripts/export-kit-documents.py JOBFILE` plus `soffice --headless --convert-to pdf`. Internal source-mapping notes live in `deliverables/internal-source-notes/` and must never ship inside customer ZIPs. Label new kit materials as bonus items rather than changing the public "14 documents" / "6 documents" counts.
 - Keep assessment product recommendations aligned with what is actually purchasable: the paid kits, the Vendor AI Review Packet preview, the free checklist, and free regulation guides.
 - CLAUDE.md is the canonical agent-instruction file; when project rules change, update both CLAUDE.md and AGENTS.md.
 - Use `support@airegready.com` for public contact links. Do not publish personal email addresses, personal names, attorney references, compliance guarantees, or legal-advice language.

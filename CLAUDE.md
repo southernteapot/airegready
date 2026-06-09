@@ -32,8 +32,10 @@ Rules:
 
 ## Product Status (keep catalog claims honest)
 - Two wired paid products, both via Gumroad with Product/Offer pricing schema and buy CTAs:
-  - **AI Governance Starter Kit** — $19 (`https://airegready.gumroad.com/l/kfadzn`), a 14-document governance + first-pass risk assessment packet.
-  - **Solo Builder AI Launch Kit** — $14 (`https://airegready.gumroad.com/l/jhsrhu`), a 14-document solo launch packet (internal folder name `side-gig-ai-readiness-kit`; deliverable at `deliverables/solo-builder-ai-launch-kit-v1/`).
+  - **AI Governance Starter Kit** — $19 (`https://airegready.gumroad.com/l/kfadzn`), a 14-document governance + first-pass risk assessment packet (v1.2.0 adds a bonus filled example and CSV starter spreadsheets).
+  - **Solo Builder AI Launch Kit** — $14 (`https://airegready.gumroad.com/l/jhsrhu`), a 14-document solo launch packet (v1.1.0 adds CSV starter spreadsheets; internal folder name `side-gig-ai-readiness-kit`; deliverable at `deliverables/solo-builder-ai-launch-kit-v1/`).
+- Kit document counts ("14 documents", "6 documents") are part of public claims and baked into product gallery images — new materials should be labeled **bonus** rather than changing the counts, unless a deliberate re-versioning updates copy and images together.
+- Kit exports are rebuilt with `python3 scripts/export-kit-documents.py JOBFILE` (markdown → DOCX, cloning an existing kit DOCX for styles) then `soffice --headless --convert-to pdf`; Solo Builder is landscape, the others portrait. Internal source-mapping notes live in `deliverables/internal-source-notes/` and must never ship inside customer ZIPs.
 - All other `/catalog/[slug]` pages are **preview/sales pages only** until pricing, checkout, and delivery are wired for those products. Use hosted preview-request forms or contact CTAs — never fake downloads, invented prices, in-stock claims, or Offer schema for preview-only products.
 - **Vendor AI Review Packet** is the next paid-product candidate; a v1.0.0 deliverable exists at `deliverables/ai-vendor-review-packet-v1/` but the public page stays preview-only until Brian creates the Gumroad listing and provides the link.
 - A **free sample** (the Starter Kit's AI Use Inventory, PDF + DOCX) is downloadable at `/free-sample` with files in `public/downloads/`; it is a lead magnet with optional newsletter signup, no email gate.
@@ -137,7 +139,7 @@ git diff --check
 - All follow the "Ready" naming convention
 
 ## Recent Checkpoint
-As of 2026-06-09: the $19 AI Governance Starter Kit and $14 Solo Builder AI Launch Kit are both live on Gumroad; the catalog separates featured follow-ons from an in-development list and roadmap; `/free-sample` offers the AI Use Inventory as a free download; the U.S. state AI laws page has a state-by-state quick-reference table; assessment recommendations were remapped to the real paid kits, the free checklist, and free state guides (the stale Colorado SB 24-205 label was fixed). The Vendor AI Review Packet is the next product to wire once Brian creates the Gumroad listing. Monetization brainstorm lives in `ideas-for-future-monetization/`. See `agent-memory/TODO.md` and `agent-memory/DECISIONS.md` for current tasks and decision history.
+As of 2026-06-09: the $19 AI Governance Starter Kit and $14 Solo Builder AI Launch Kit are both live on Gumroad; the catalog separates featured follow-ons from an in-development list and roadmap; `/free-sample` offers the AI Use Inventory as a free download; the U.S. state AI laws page has a state-by-state quick-reference table; assessment recommendations were remapped to the real paid kits, the free checklist, and free state guides. A kit quality pass rebuilt all three deliverables (Starter v1.2.0, Solo v1.1.0, Vendor v1.1.0) with bonus filled examples, CSV starter spreadsheets, fixed cross-references, and internal notes removed from customer ZIPs — Brian needs to upload the rebuilt ZIPs to Gumroad. The Vendor AI Review Packet is the next product to wire once Brian creates the Gumroad listing. Monetization brainstorm lives in `ideas-for-future-monetization/`. See `agent-memory/TODO.md` and `agent-memory/DECISIONS.md` for current tasks and decision history.
 
 ## Loose Cleanup
 - Root `images/` exists as local raw/generated source images and is ignored by git; not referenced by the app

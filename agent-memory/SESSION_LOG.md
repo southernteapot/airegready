@@ -53,3 +53,15 @@ Do not paste raw terminal logs here.
 - Remapped assessment recommendations to the paid kits, Vendor Packet preview, free checklist, and free state guides; fixed the stale Colorado SB 24-205 label to SB 26-189; linked the Texas framework card to the dedicated Texas guide; added solo paths for personal users and vendor-focused consultants; deduped recommendations by slug.
 - Created `ideas-for-future-monetization/monetization-ideas-2026-06-09.md`; rewrote CLAUDE.md (now includes AGENTS.md content) and updated AGENTS.md.
 - Validation: lint clean, 23/23 tests pass, build generated 139 pages.
+
+## 2026-06-09 - Kit quality pass and v1.2/v1.1 rebuilds
+
+- Reviewed all 34 documents across the three kits; verdict: strong content with fixable trust issues.
+- Fixed Starter Kit defects: cross-references to documents not in the kit (AUP approval path, disclosure templates, change-management/retirement references), enterprise-scale Update Tracker examples replaced with small-team examples, "state AI laws" wording fix.
+- Fixed Solo 30-Minute Guide to reference document names instead of .md filenames (canonical + export copies).
+- Added bonus filled examples: Small Business First Pass (Starter) and Completed Vendor Review (Vendor Packet).
+- Added CSV starter spreadsheets: inventory/risk register/update tracker (Starter), incident log/change log (Solo).
+- Removed internal source-notes from customer ZIPs (now in deliverables/internal-source-notes/); added DOCX/PDF versions of Start Here/README/legal notice to the Starter Kit for packaging parity.
+- Built scripts/export-kit-documents.py (python-docx, clones existing kit DOCX as style template) + LibreOffice PDF conversion; rebuilt all three ZIPs with QA (integrity, page checks, rendered-page review).
+- Refreshed the free-sample downloads; updated site copy (Starter FAQ/what-you-get, Solo delivery details, Vendor contents); standardized AIVIA across site content.
+- Versions: Starter Kit v1.2.0, Solo Builder v1.1.0, Vendor Packet v1.1.0. Lint/tests/build all green.
