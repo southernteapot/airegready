@@ -1,112 +1,113 @@
-# Solo Builder AI Launch Kit - Draft Source Files
+# Solo Builder AI Launch Kit - Start Here
 
-The Solo Builder AI Launch Kit is a plain-English set of draft source worksheets for solo builders using AI commercially in apps, websites, automations, consulting offers, digital products, micro-SaaS tools, productized services, or client work.
+The Solo Builder AI Launch Kit helps you create a practical launch file for an AI-enabled offer before you publish, sell, advertise, demo, onboard users, or send AI-assisted client work.
 
-These files are Markdown source drafts. They are not final DOCX, PDF, ZIP, checkout, Gumroad, or delivery files.
+Use it for an AI app, website, automation, consulting workflow, digital product, micro-SaaS, paid template, productized service, or client deliverable. The point is simple: write down what AI does, what data it touches, what claims you make, what users should know, what red flags need review, and what changes after launch.
 
-## Who This Kit Is For
+These are Markdown source files. They are not final DOCX, PDF, ZIP, checkout, Gumroad, purchase, pricing, or delivery files.
 
-This kit is for one-person builders who need a practical launch file before putting an AI-enabled offer in front of users, customers, clients, or buyers.
+## What You Should Have When You Finish
 
-Good-fit users include:
+By the end, you should have:
+
+- a one-page snapshot of the AI project
+- a reviewed list of public claims and safer rewrites
+- a practical map of user, customer, client, and vendor data
+- draft AI-use disclosure, limitation, and problem-reporting language
+- a red-flag triage decision with follow-up actions
+- a vendor/model dependency note
+- a pre-launch ship/no-ship decision
+- a short customer FAQ
+- lightweight incident and change logs you can keep using after launch
+
+You do not need to make the file perfect. You need enough detail that future you, a client, a platform reviewer, or a qualified advisor can understand what you launched and what still needs review.
+
+## Good Fit
+
+This kit fits solo builders using AI commercially, including:
 
 - solo founders and indie hackers
-- freelancers and consultants
+- freelancers, consultants, and productized-service sellers
 - no-code builders, app builders, and website builders
 - micro-SaaS creators and automation sellers
-- digital product creators and productized-service sellers
-- side-gig builders using AI in a commercial offer
+- digital product creators selling templates, guides, prompts, courses, or tools
+- side-gig builders preparing to sell, publish, advertise, or take clients
 
-The kit is most useful when the project is moving fast, but the AI use, data flow, claims, disclosures, red flags, and changes should no longer live only in memory, chat history, or scattered notes.
+It is especially useful when AI use, data flow, claims, disclosures, risk notes, and changes are scattered across code, prompts, chats, sales drafts, and memory.
 
-## Who This Kit Is Not For
+## Not A Good Fit By Itself
 
-This kit is not a substitute for:
+This kit is too light by itself if the project involves:
 
-- legal, privacy, security, HR, procurement, or sector-specific review
-- a formal compliance program
-- regulated-use review for high-stakes decisions
-- vendor due diligence for a major procurement
-- organization-wide AI governance across employees, departments, or approval workflows
+- healthcare, mental health, legal, financial, tax, credit, employment, housing, education, insurance, public-sector, child-related, biometric, surveillance, or identity-verification uses
+- AI that scores, approves, denies, ranks, prices, diagnoses, recommends, or makes decisions that materially affect people
+- sensitive personal data, client confidential data, regulated data, credentials, payment details, or contract-restricted information
+- formal legal, privacy, security, HR, procurement, platform, or sector-specific review
+- organization-wide AI governance across employees, departments, tools, and approval workflows
+- major vendor due diligence or enterprise procurement
 
-If the AI project affects health, mental health, legal rights, financial decisions, credit, employment, housing, education, insurance, children, identity verification, biometrics, surveillance, or other high-stakes outcomes, use this kit only as a starting record and get qualified help before launch.
+For those situations, use this only as a starting record. Review specific obligations with qualified counsel or the appropriate privacy, security, HR, procurement, platform, or sector specialist.
 
-## Suggested Order Of Use
+## Recommended Order
 
-1. AI Project Snapshot
-2. AI Claims Checklist
-3. User Data and Privacy Intake
-4. Red Flag Use Case Triage
-5. Vendor / Model Dependency Note
-6. AI Disclosure and Disclaimer Builder
-7. Customer FAQ Template
-8. Pre-Launch AI Risk Checklist
-9. Incident / Complaint Mini-Log
-10. AI Change Log
-11. 30-Minute Setup Guide
-12. Filled examples as reference while completing the worksheets
+1. `01-ai-project-snapshot.md` - define the project and where AI appears.
+2. `02-ai-claims-checklist.md` - review sales, product, ad, demo, FAQ, and client-facing claims.
+3. `03-user-data-and-privacy-intake.md` - list data collected, data sent to AI, vendor exposure, logs, and data to avoid.
+4. `05-red-flag-use-case-triage.md` - sort the workflow into lower-risk, needs-review, or pause/escalate.
+5. `06-vendor-model-dependency-note.md` - record the AI vendors, models, settings, prompts, and fallback plan.
+6. `04-ai-disclosure-and-disclaimer-builder.md` - draft disclosure, limitation, and reporting language that matches the actual workflow.
+7. `08-customer-faq-template.md` - prepare plain answers for users, clients, or buyers.
+8. `07-pre-launch-ai-risk-checklist.md` - make the final launch decision.
+9. `09-incident-complaint-mini-log.md` - keep a place for issues after launch.
+10. `10-ai-change-log.md` - record the launch baseline and meaningful changes.
 
-## 30-Minute Quick-Start Path
+Use the filled examples whenever you get stuck:
 
-If you only have half an hour, do the minimum viable version:
+- `12-filled-example-ai-website-or-app.md`
+- `13-filled-example-consultant-or-freelancer.md`
+- `14-filled-example-digital-product-automation-microsaas.md`
 
-- 0-5 minutes: complete the AI Project Snapshot in rough notes.
-- 5-10 minutes: mark the riskiest claims in the AI Claims Checklist.
-- 10-15 minutes: list user data that touches the AI workflow.
-- 15-20 minutes: scan the Red Flag Use Case Triage and mark any categories that apply.
-- 20-25 minutes: draft a simple AI-use disclosure and output limitation.
-- 25-30 minutes: complete the Pre-Launch AI Risk Checklist and start the AI Change Log.
+## 30-Minute Path
 
-The goal is not perfection. The goal is to create a first working record that makes the project easier to review before launch.
+If you only have half an hour, open `11-30-minute-setup-guide.md` and complete the quick version:
 
-## Full Review Path
+- write the rough project snapshot
+- review the 3-5 most important claims
+- write the one-sentence data flow
+- mark red flags as Yes, No, or Unsure
+- draft a simple AI-use disclosure and limitation
+- choose a launch decision
+- add the launch baseline to the change log
 
-For a fuller review, complete each worksheet in order, then read the filled examples and update your answers. Save the completed files with your project name and review date. Revisit the snapshot, claims, disclosure, vendor note, incident log, and change log whenever you change the AI model, prompt, data flow, public copy, feature behavior, or customer-facing promise.
+That version is not a full review. It is a useful first record.
 
 ## Educational Boundary
 
-This kit is educational information, not legal advice. It does not create an attorney-client relationship, does not make an AI project compliant, does not approve a use case, does not guarantee safety, and does not replace qualified legal, privacy, security, HR, procurement, or sector-specific review.
+This kit is educational information and a practical documentation starting point. It is not legal advice, does not create an attorney-client relationship, does not make an AI project compliant, does not approve a use case, does not guarantee safety, and does not replace qualified legal, privacy, security, HR, procurement, platform, or sector-specific review.
 
-Use it to document the project, spot obvious gaps, ask better questions, and prepare before launch. Review specific legal, privacy, contractual, regulatory, and professional obligations with qualified counsel or the appropriate advisor.
+Use it to document the project, spot obvious gaps, ask better questions, and prepare before launch.
 
 ## Included Files
 
-| File | Purpose |
+| File | What it produces |
 | --- | --- |
-| 01-ai-project-snapshot.md | Capture the basic facts about the AI project. |
-| 02-ai-claims-checklist.md | Review public and sales claims about what the AI can do. |
-| 03-user-data-and-privacy-intake.md | Map what user, client, or customer data touches the AI workflow. |
-| 04-ai-disclosure-and-disclaimer-builder.md | Draft starter language for AI use, limits, review, and problem reporting. |
-| 05-red-flag-use-case-triage.md | Identify projects that need extra caution or qualified review. |
-| 06-vendor-model-dependency-note.md | Track the AI vendors, models, tools, settings, and fallback plans. |
-| 07-pre-launch-ai-risk-checklist.md | Run a one-page launch check before publishing, selling, or onboarding users. |
-| 08-customer-faq-template.md | Prepare answers to common user or customer questions. |
-| 09-incident-complaint-mini-log.md | Track complaints, bad outputs, privacy concerns, or AI-related issues. |
-| 10-ai-change-log.md | Track changes to the model, prompt, vendor, data use, claims, disclosures, and behavior. |
-| 11-30-minute-setup-guide.md | Show the shortest practical path through the kit. |
-| 12-filled-example-ai-website-or-app.md | Show a completed example for an AI-powered website or app. |
-| 13-filled-example-consultant-or-freelancer.md | Show a completed example for client-facing freelance work. |
-| 14-filled-example-digital-product-automation-microsaas.md | Show a completed example for a digital product, automation, or micro-SaaS. |
+| 01-ai-project-snapshot.md | Project summary, AI role, data inputs, user-facing claims, risks, and next review date. |
+| 02-ai-claims-checklist.md | Claim inventory, risk rating, evidence notes, safer rewrites, and publish decision. |
+| 03-user-data-and-privacy-intake.md | Practical data map, do-not-submit rules, vendor exposure, logs, user notice notes, and review questions. |
+| 04-ai-disclosure-and-disclaimer-builder.md | Draft AI-use disclosure, output limitation, human review note, data note, and problem-reporting text. |
+| 05-red-flag-use-case-triage.md | Green/yellow/red triage decision, red-flag checks, and follow-up actions. |
+| 06-vendor-model-dependency-note.md | Vendor/model/tool record, settings checklist, prompt locations, limitations, and fallback plan. |
+| 07-pre-launch-ai-risk-checklist.md | Final ship/no-ship checklist with blockers, fixes, owner, and next review date. |
+| 08-customer-faq-template.md | Customer-ready FAQ draft and review table. |
+| 09-incident-complaint-mini-log.md | Lightweight issue log and after-action notes. |
+| 10-ai-change-log.md | Launch baseline and ongoing change record. |
+| 11-30-minute-setup-guide.md | Fast path through the minimum useful version. |
+| 12-filled-example-ai-website-or-app.md | Completed example for a user-facing AI app. |
+| 13-filled-example-consultant-or-freelancer.md | Completed example for AI-assisted client work. |
+| 14-filled-example-digital-product-automation-microsaas.md | Completed example for an AI automation or micro-SaaS. |
 
-## Suggested Future Export Structure
+## Future Export Notes
 
-When this kit is converted to customer delivery files, DOCX and PDF should be the main customer formats. Include Markdown as a bonus/source-reference format, not as the primary product experience. Use a structure like:
+When this kit is converted to customer delivery files, DOCX and PDF should be the main customer formats. Markdown can be included as a bonus/source-reference format.
 
-    solo-builder-ai-launch-kit/
-      start-here.pdf
-      legal-notice.pdf
-      markdown/
-        01-ai-project-snapshot.md
-        ...
-      docx/
-        01-ai-project-snapshot.docx
-        ...
-      pdf/
-        01-ai-project-snapshot.pdf
-        ...
-      examples/
-        ai-website-or-app-example.pdf
-        consultant-or-freelancer-example.pdf
-        digital-product-automation-microsaas-example.pdf
-
-Before export, review every file for product naming, formatting, page breaks, links, disclaimers, and whether any examples imply legal, compliance, financial, health, employment, or other professional advice.
+Before export, review formatting, page breaks, filenames, product naming, links, disclaimers, support contact placeholders, examples, and any language that could be mistaken for a legal, compliance, financial, health, employment, safety, or outcome guarantee.

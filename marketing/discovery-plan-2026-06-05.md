@@ -1,6 +1,6 @@
 # AIRegReady Discovery Plan - 2026-06-05
 
-Goal: help founders, new business owners, consultants, operators, and lean teams find AIRegReady when they are searching for practical AI policy, checklist, inventory, and risk-assessment starting points.
+Goal: help founders, new business owners, side-income builders, freelancers, consultants, operators, and lean teams find AIRegReady when they are searching for practical AI policy, checklist, inventory, risk-assessment, and pre-launch AI side-gig starting points.
 
 ## Site Assets Added
 
@@ -17,6 +17,10 @@ Goal: help founders, new business owners, consultants, operators, and lean teams
 Use this pain statement in posts and listings:
 
 > You are already using AI in the business, but there is no written inventory, no staff rule, no risk intake path, and no change log. AIRegReady helps you create the first working file.
+
+Use this side-gig version when the buyer is a solo person trying to make money with AI:
+
+> You are using AI to build something sellable, but you have not written down the tools, data rules, claims, disclosures, review steps, or launch checks. AIRegReady helps you create the first side-gig AI file before you sell, publish, advertise, or take clients.
 
 Do not claim legal compliance, certification, attorney review, or guaranteed regulatory outcomes.
 
@@ -44,6 +48,7 @@ Do not claim legal compliance, certification, attorney review, or guaranteed reg
 
 ## Outreach Targets
 
+- Side-gig, indie-hacker, creator, freelancer, Gumroad, Etsy/Shopify, and solopreneur communities where people discuss launching AI-assisted products or services.
 - Founder communities where people ask operational setup questions.
 - Consultant/operator LinkedIn posts about AI adoption and business process.
 - Small business newsletters that feature practical templates and checklists.
@@ -95,7 +100,9 @@ Safer phrasing:
 
 ## Product #2 Candidate
 
-The strongest follow-on offer is the Vendor AI Review Packet. It naturally follows the Starter Kit because buyers who inventory AI tools will soon ask, "Can we approve this AI vendor or SaaS AI feature?"
+Before paid advertising, test the **Side-Gig AI Readiness Kit** as the clearer entry offer for solo side-income builders. It should help people document what AI tools they used, what data they avoided, what claims they checked, what they disclosed, and what they reviewed before selling, publishing, advertising, or taking clients.
+
+The strongest business follow-on offer remains the Vendor AI Review Packet. It naturally follows the Starter Kit because buyers who inventory AI tools will soon ask, "Can we approve this AI vendor or SaaS AI feature?"
 
 Likely contents:
 

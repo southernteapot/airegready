@@ -1,6 +1,6 @@
 # AIRegReady AI Adoption Post Bank - 2026-06-05
 
-Purpose: ready-to-post educational content for founders, new business owners, consultants, operators, and lean teams trying to get practical about AI adoption.
+Purpose: ready-to-post educational content for founders, new business owners, side-income builders, freelancers, consultants, operators, and lean teams trying to get practical about AI adoption.
 
 Use these as LinkedIn posts, short newsletter sections, Gumroad updates, or source material for future blog posts. Keep the legal boundary clear: educational templates only, not legal advice or a compliance guarantee.
 
@@ -309,3 +309,81 @@ Link: https://airegready.com/catalog/ai-governance-starter-kit
 9. Do not let perfect governance block useful documentation. Start with inventory, rules, intake, and tracking. https://airegready.com/catalog/ai-governance-starter-kit
 
 10. The practical AI opportunity: help people turn scattered AI use into a visible process. https://airegready.com
+
+## Side-Gig Posts
+
+### 16. Before you sell the AI thing
+
+If you are using AI to make side money, create a first file before you sell, publish, advertise, or take clients.
+
+It does not need to be complicated:
+
+- tools used
+- data that stays out
+- claims checked
+- disclosure decision
+- human review
+- platform/client terms checked
+- open questions
+
+The goal is not enterprise governance.
+
+The goal is avoiding obvious mistakes while the side gig becomes real.
+
+### 17. What not to paste into AI for client work
+
+Freelancers using AI in client work need one plain rule:
+
+Do not paste client data, confidential files, contracts, credentials, private messages, financial details, legal facts, health information, or anything covered by an NDA into AI tools unless the client, contract, tool, and workflow allow it.
+
+AI can help with structure, outlines, examples, and editing.
+
+Client data needs more care.
+
+### 18. AI wrote the sales copy. You still own the claim.
+
+AI can make a product page sound confident fast.
+
+That is useful and dangerous.
+
+Before posting or running ads, check every claim:
+
+- Is it true?
+- Can I prove it?
+- Is it overstated?
+- Does it sound like a guarantee?
+- Does it imply legal, financial, medical, tax, employment, or other expert outcomes?
+- Would a buyer reasonably expect disclosure that AI helped create it?
+
+AI can draft the copy. You still own the claim.
+
+### 19. Side-gig AI readiness
+
+Most side-gig builders do not need a 90-page AI governance manual.
+
+They need a short file that answers:
+
+- What AI tools did I use?
+- What did AI help create?
+- What data did I avoid?
+- What did I check before launch?
+- What should I disclose?
+- What claims did I soften or remove?
+- What questions need a lawyer, accountant, client, platform, or vendor answer?
+
+That is enough to make the work visible before it turns into a real business.
+
+### 20. The risky side-gig buckets
+
+AI side gigs deserve extra caution when they touch:
+
+- legal, financial, medical, tax, employment, education, housing, or insurance advice
+- sensitive customer or client data
+- hiring, scoring, eligibility, pricing, or access decisions
+- real voices, faces, names, brands, or likenesses
+- client contracts, NDAs, or confidential files
+- platform rules about AI-generated content
+
+Those are not always impossible.
+
+They are just not publish-first-think-later territory.
