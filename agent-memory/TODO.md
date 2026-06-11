@@ -11,7 +11,6 @@ Track current project tasks here.
 - Watch `/free-sample` conversion (sample downloads → Starter Kit sales) and consider a second sample document later.
 - Consider next monetization steps from `ideas-for-future-monetization/monetization-ideas-2026-06-09.md` (bundle, paid update subscription, first vertical kit).
 - Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
-- Confirm Cloudflare GitHub auto-deploy status for `master` and document the exact production deploy path if it is active.
 - Convert remaining drafted markdown products in `content/products/` to delivery formats such as Word, PDF, and optionally Google Docs. AI Governance Starter Kit v1 has been converted.
 - Before product conversion, audit `content/products/` for stale Colorado/EU timing references and align delivery copy with the public SB 26-189 / Digital Omnibus updates.
 - Review the professional hybrid homepage refresh in-browser and decide whether the restrained blue/cyan logo and hero treatment should also be applied to social images and older preview pages.

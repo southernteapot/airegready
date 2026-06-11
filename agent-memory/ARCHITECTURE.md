@@ -35,7 +35,7 @@ AIRegReady is a Next.js App Router site for a practical AI governance resource c
 - `wrangler.jsonc` points `main` at `.open-next/worker.js` and serves assets from `.open-next/assets`.
 - `open-next.config.ts` configures Cloudflare wrappers/converters for the default server and middleware.
 - README/CLAUDE notes say the normal publish path is `git push origin master` if Cloudflare GitHub auto-deploy is connected.
-- Whether Cloudflare GitHub auto-deploy is currently connected: Unknown.
+- Cloudflare GitHub auto-deploy is confirmed working as of 2026-06-11: pushing to `origin/master` deployed the K-12 procurement guide to production within minutes.
 
 ## Important Directories
 
