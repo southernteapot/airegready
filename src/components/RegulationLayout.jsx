@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import BackToTop from './BackToTop'
 import Breadcrumb from './Breadcrumb'
@@ -60,6 +61,28 @@ export default function RegulationLayout({ regulation, relatedArticles = [] }) {
               ))}
             </dl>
           </div>
+        )}
+
+        {/* Figure */}
+        {regulation.figure && (
+          <figure className="mb-10">
+            <div className="overflow-hidden rounded-2xl border border-border/70 bg-surface shadow-sm">
+              <Image
+                src={regulation.figure.src}
+                alt={regulation.figure.alt}
+                width={regulation.figure.width}
+                height={regulation.figure.height}
+                sizes="(max-width: 880px) 100vw, 820px"
+                className="w-full h-auto"
+                unoptimized={regulation.figure.src.endsWith('.svg')}
+              />
+            </div>
+            {regulation.figure.caption && (
+              <figcaption className="mt-2 font-sans text-xs text-secondary/70 leading-relaxed">
+                {regulation.figure.caption}
+              </figcaption>
+            )}
+          </figure>
         )}
 
         {/* Table of Contents */}

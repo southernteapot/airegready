@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="400" viewBox="0 0 1120 400" role="img" aria-label="Five-step school district AI vendor vetting pipeline: intake, privacy and legal review, contract and DPA, pilot and approval, monitor and re-review.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#081421"/>
+      <stop offset="1" stop-color="#0B1B2F"/>
+    </linearGradient>
+    <linearGradient id="cardTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1120" height="400" fill="url(#bg)"/>
+
+  <!-- header -->
+  <text x="40" y="52" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2.2" fill="#38BDF8">DISTRICT AI TOOL VETTING PIPELINE</text>
+  <text x="40" y="82" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="21" font-weight="800" fill="#FFFFFF">From request to renewal: one front door for every AI tool</text>
+
+  <!-- connector line -->
+  <line x1="40" y1="220" x2="1080" y2="220" stroke="#16314D" stroke-width="1"/>
+
+  <!-- STEP 1 -->
+  <g>
+    <rect x="40" y="120" width="188" height="200" rx="14" fill="#0E1F33" stroke="#1F3A57" stroke-width="1"/>
+    <rect x="56" y="120" width="156" height="2" fill="url(#cardTop)"/>
+    <circle cx="68" cy="154" r="14" fill="#22D3EE"/>
+    <text x="68" y="159" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#07111F">1</text>
+    <text x="56" y="196" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Intake</text>
+    <text font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#B2C9ED">
+      <tspan x="56" y="222">One request path for</tspan>
+      <tspan x="56" y="239">every tool — paid, free,</tspan>
+      <tspan x="56" y="256">or new AI features in</tspan>
+      <tspan x="56" y="273">existing products</tspan>
+    </text>
+  </g>
+  <path d="M236 214 l10 6 -10 6" fill="none" stroke="#3E5F82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP 2 -->
+  <g>
+    <rect x="253" y="120" width="188" height="200" rx="14" fill="#0E1F33" stroke="#1F3A57" stroke-width="1"/>
+    <rect x="269" y="120" width="156" height="2" fill="url(#cardTop)"/>
+    <circle cx="281" cy="154" r="14" fill="#22D3EE"/>
+    <text x="281" y="159" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#07111F">2</text>
+    <text x="269" y="196" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Privacy review</text>
+    <text font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#B2C9ED">
+      <tspan x="269" y="222">FERPA, COPPA, and</tspan>
+      <tspan x="269" y="239">state-law screen; data</tspan>
+      <tspan x="269" y="256">categories listed; risk</tspan>
+      <tspan x="269" y="273">tier assigned</tspan>
+    </text>
+  </g>
+  <path d="M449 214 l10 6 -10 6" fill="none" stroke="#3E5F82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP 3 -->
+  <g>
+    <rect x="466" y="120" width="188" height="200" rx="14" fill="#0E1F33" stroke="#1F3A57" stroke-width="1"/>
+    <rect x="482" y="120" width="156" height="2" fill="url(#cardTop)"/>
+    <circle cx="494" cy="154" r="14" fill="#22D3EE"/>
+    <text x="494" y="159" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#07111F">3</text>
+    <text x="482" y="196" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Contract &amp; DPA</text>
+    <text font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#B2C9ED">
+      <tspan x="482" y="222">District data ownership,</tspan>
+      <tspan x="482" y="239">no model training,</tspan>
+      <tspan x="482" y="256">retention and certified</tspan>
+      <tspan x="482" y="273">deletion terms</tspan>
+    </text>
+  </g>
+  <path d="M662 214 l10 6 -10 6" fill="none" stroke="#3E5F82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP 4 -->
+  <g>
+    <rect x="679" y="120" width="188" height="200" rx="14" fill="#0E1F33" stroke="#1F3A57" stroke-width="1"/>
+    <rect x="695" y="120" width="156" height="2" fill="url(#cardTop)"/>
+    <circle cx="707" cy="154" r="14" fill="#22D3EE"/>
+    <text x="707" y="159" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#07111F">4</text>
+    <text x="695" y="196" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Pilot &amp; approval</text>
+    <text font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#B2C9ED">
+      <tspan x="695" y="222">Small-scale test with</tspan>
+      <tspan x="695" y="239">success criteria, then</tspan>
+      <tspan x="695" y="256">board or cabinet</tspan>
+      <tspan x="695" y="273">sign-off to scale</tspan>
+    </text>
+  </g>
+  <path d="M875 214 l10 6 -10 6" fill="none" stroke="#3E5F82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- STEP 5 -->
+  <g>
+    <rect x="892" y="120" width="188" height="200" rx="14" fill="#0E1F33" stroke="#1F3A57" stroke-width="1"/>
+    <rect x="908" y="120" width="156" height="2" fill="url(#cardTop)"/>
+    <circle cx="920" cy="154" r="14" fill="#22D3EE"/>
+    <text x="920" y="159" text-anchor="middle" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="800" fill="#07111F">5</text>
+    <text x="908" y="196" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Monitor &amp; renew</text>
+    <text font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#B2C9ED">
+      <tspan x="908" y="222">Re-review on feature or</tspan>
+      <tspan x="908" y="239">model changes, incident</tspan>
+      <tspan x="908" y="256">and exit plans, renewal</tspan>
+      <tspan x="908" y="273">checkpoints</tspan>
+    </text>
+  </g>
+
+  <!-- footer -->
+  <text x="40" y="366" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#7FA3C8">Free tools count as procurement, too — the payment is the data.</text>
+  <text x="1080" y="366" text-anchor="end" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="10" fill="#5B7A9D">airegready.com</text>
+</svg>

@@ -84,3 +84,9 @@ Do not paste raw terminal logs here.
 ## 2026-06-09 - Preview-request email notifications
 
 - Added a Cloudflare `send_email` binding and an email path in the preview-request API: each lead is sent to the verified Email Routing destination configured in `PREVIEW_REQUEST_EMAIL_TO`, from `previews@airegready.com`, with the requester's details and use case in the body. Webhook forwarding remains as an optional second path. Brian still needs to add the `PREVIEW_REQUEST_EMAIL_TO` variable in the Cloudflare dashboard.
+
+## 2026-06-11 - K-12 AI procurement guide
+
+- Added `/regulations/k12-ai-procurement` (K-12 School AI Procurement & Student Privacy): researched guide covering the FERPA/COPPA-2025/PPRA/state-law baseline, Ohio HB 96 and other state/district actions, the LAUSD "Ed"/AllHere cautionary tale, a district policy blueprint, protective contract clauses, a vendor-question table, red flags, family transparency, and a 90-day starting sequence, with 12 primary/secondary sources and a timeline.
+- Added optional `figure` support to `RegulationLayout` (next/image, unoptimized for SVG) and created `public/assets/k12-ai-procurement-pipeline.svg`, a brand-styled 5-step vetting pipeline diagram.
+- Cross-linked the new guide from the sector-rules education section. Lint, 24/24 tests, and build green. Left uncommitted for Brian's review.

@@ -163,7 +163,7 @@ export const sectorRules = {
       id: 'education',
       title: 'Education',
       content:
-        'AI tools are rapidly entering K-12 and higher education for uses including adaptive learning platforms, automated grading, student risk identification, admissions screening, and administrative decision-making. The primary federal framework governing AI in education is FERPA, but broader concerns about student privacy, algorithmic bias in assessments, and equitable access also apply.',
+        'AI tools are rapidly entering K-12 and higher education for uses including adaptive learning platforms, automated grading, student risk identification, admissions screening, and administrative decision-making. The primary federal framework governing AI in education is FERPA, but broader concerns about student privacy, algorithmic bias in assessments, and equitable access also apply. For a dedicated walkthrough of how districts vet AI vendors, the contract clauses that protect students, and state procurement mandates, see the [K-12 School AI Procurement & Student Privacy guide](/regulations/k12-ai-procurement).',
       items: [
         {
           term: 'FERPA and AI in Education',
