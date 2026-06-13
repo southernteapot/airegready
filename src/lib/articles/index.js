@@ -35,8 +35,10 @@ import { firstAiPolicyForNewBusiness } from './first-ai-policy-for-new-business.
 import { howToMakeAiUseInventory } from './how-to-make-ai-use-inventory.js'
 import { firstPassAiRiskAssessment } from './first-pass-ai-risk-assessment.js'
 import { aiReadinessChecklistNewBusiness } from './ai-readiness-checklist-new-business.js'
+import { fable5ExportControlShutdown } from './fable-5-export-control-shutdown.js'
 
 const articles = {
+  'fable-5-export-control-shutdown': fable5ExportControlShutdown,
   'ai-readiness-checklist-new-business': aiReadinessChecklistNewBusiness,
   'first-pass-ai-risk-assessment': firstPassAiRiskAssessment,
   'how-to-make-ai-use-inventory': howToMakeAiUseInventory,

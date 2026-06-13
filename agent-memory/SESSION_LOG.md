@@ -90,3 +90,11 @@ Do not paste raw terminal logs here.
 - Added `/regulations/k12-ai-procurement` (K-12 School AI Procurement & Student Privacy): researched guide covering the FERPA/COPPA-2025/PPRA/state-law baseline, Ohio HB 96 and other state/district actions, the LAUSD "Ed"/AllHere cautionary tale, a district policy blueprint, protective contract clauses, a vendor-question table, red flags, family transparency, and a 90-day starting sequence, with 12 primary/secondary sources and a timeline.
 - Added optional `figure` support to `RegulationLayout` (next/image, unoptimized for SVG) and created `public/assets/k12-ai-procurement-pipeline.svg`, a brand-styled 5-step vetting pipeline diagram.
 - Cross-linked the new guide from the sector-rules education section. Lint, 24/24 tests, and build green. Left uncommitted for Brian's review.
+
+## 2026-06-13 - Fable 5 export-control shutdown blog post
+
+- Researched and wrote a news/analysis blog post on the June 12, 2026 U.S. Commerce Department export-control directive that forced Anthropic to disable its Fable 5 and Mythos 5 models for all foreign nationals (incl. those inside the U.S.), which Anthropic complied with by switching both off entirely; other models incl. Claude Opus 4.8 stayed up.
+- Verified the story against Anthropic's own statement plus Bloomberg, NBC, Fortune, Washington Post, and Al Jazeera before writing (regulatory-accuracy rule). Corrected Brian's initial framing: it was disabled for everyone (not just foreign nationals), via a "deemed export" mechanism, and is disputed/developing.
+- File: `src/lib/articles/fable-5-export-control-shutdown.js` (Federal Policy, featured, 12 sections, 6 takeaways, 6 sources, related regs federal-policy/global). Registered in `src/lib/articles/index.js`. Angle covers the precedent, AI-regulation implications, U.S./global economic stakes, the critics' contradiction, and a practical "vendor/model continuity risk" takeaway for the small-business audience; selling kept quiet per positioning (ArticleLayout auto-adds checklist/assessment links).
+- Confirmed it flows into blog index, search, sitemap, and feed.xml. Lint, 24/24 tests, and build green. Left uncommitted for Brian's review - this may be the site's first publicly published post, so he wants to review before pushing.
+- Documented the real blog pipeline + the dead `BLOG_POSTS` gotcha in ARCHITECTURE.md.

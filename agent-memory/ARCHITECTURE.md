@@ -52,6 +52,13 @@ AIRegReady is a Next.js App Router site for a practical AI governance resource c
 - `images/` - Raw/generated image and logo source candidates. README/CLAUDE say these are not referenced by the app and were intentionally excluded from the redesign commit.
 - Generated/runtime directories present locally: `.next/`, `.open-next/`, `out/`, `.wrangler/`, `.render-checks/`, `node_modules/`.
 
+## Blog / Article Pipeline
+
+- Source of truth is `src/lib/articles/`: one file per article exporting an article object, plus `index.js` which imports it and adds it to the `articles` map. Registering there is all that is needed - `getAllArticles()` feeds the blog index, `/blog/[slug]` pages, OG images, the homepage latest-analysis section, and `site-content.js` (search, sitemap, `feed.xml`).
+- Gotcha: `BLOG_POSTS` in `src/lib/data.js` is legacy and has no importers - nothing renders from it, so do not bother updating it for new posts (AGENTS.md still lists it as a registration step; that is stale).
+- Article object shape: `slug`, `title`, `description`, `category`, `categorySlug`, `date` (ISO, drives sort/feed/sitemap), `displayDate`, `readTime`, `featured`, `sections[]` (`{ title|null, content, list?, table? }`), `takeaways[]`, `sources[]` (`{ title, url }`), `relatedArticles[]`, `relatedRegulations[]` (valid reg slugs: eu-ai-act, nist-ai-rmf, us-state-laws, federal-policy, sector-rules, global).
+- Content markdown via `ContentRenderer`: `\n\n` = paragraph, `**bold**`, `[label](url)` (internal `/`, hash `#`, or external). The legal `Disclaimer` is auto-rendered by `ArticleLayout`; do not hand-add it. A table of contents renders only when 3+ sections have titles.
+
 ## Important Config Files
 
 - `package.json` - npm scripts and dependencies.
