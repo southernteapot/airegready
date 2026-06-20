@@ -215,6 +215,10 @@ function CircuitBackdrop({ className = '' }) {
 export default function Home() {
   const articles = getAllArticles()
   const latestArticles = articles.slice(0, 4)
+  const latestArticle = articles[0]
+  const lastUpdated = latestArticle?.displayDate
+  const lastUpdatedIso = latestArticle?.date
+  const articleCount = articles.length
   const starterKit = getProductBySlug('ai-governance-starter-kit')
   const soloKit = getProductBySlug('solo-builder-ai-launch-kit')
   const paidKits = [
@@ -290,6 +294,13 @@ export default function Home() {
                   <PrimaryLink href="/assessment">Take the free assessment</PrimaryLink>
                   <HeroSecondaryLink href="/regulations">Browse the regulation library</HeroSecondaryLink>
                 </div>
+                {lastUpdated && (
+                  <p className="mt-4 font-sans text-xs font-medium text-[#9FB4CC]">
+                    Last updated{' '}
+                    <time dateTime={lastUpdatedIso}>{lastUpdated}</time>
+                    {articleCount ? ` · ${articleCount} articles` : ''}
+                  </p>
+                )}
                 <div className="mt-6 grid grid-cols-1 gap-3 border-t border-white/[0.12] pt-5 sm:grid-cols-3">
                   {heroInfoCards.map((card) => (
                     <div key={card.title} className="rounded-xl border border-white/[0.12] bg-white/[0.07] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
