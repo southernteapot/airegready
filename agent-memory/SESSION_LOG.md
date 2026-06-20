@@ -98,3 +98,18 @@ Do not paste raw terminal logs here.
 - File: `src/lib/articles/fable-5-export-control-shutdown.js` (Federal Policy, featured, 12 sections, 6 takeaways, 6 sources, related regs federal-policy/global). Registered in `src/lib/articles/index.js`. Angle covers the precedent, AI-regulation implications, U.S./global economic stakes, the critics' contradiction, and a practical "vendor/model continuity risk" takeaway for the small-business audience; selling kept quiet per positioning (ArticleLayout auto-adds checklist/assessment links).
 - Confirmed it flows into blog index, search, sitemap, and feed.xml. Lint, 24/24 tests, and build green. Left uncommitted for Brian's review - this may be the site's first publicly published post, so he wants to review before pushing.
 - Documented the real blog pipeline + the dead `BLOG_POSTS` gotcha in ARCHITECTURE.md.
+
+## 2026-06-16 - Anthropic vendor-risk follow-up blog post
+
+- Added `/blog/anthropic-export-control-vendor-risk`, a news-reactive AIRegReady post using the Anthropic Fable 5/Mythos 5 export-control dispute as a practical vendor-continuity lesson for ordinary AI buyers and operators.
+- Registered the article in `src/lib/articles/index.js`; it links back to the broader Fable shutdown explainer and vendor due-diligence guidance.
+- Validation passed: `npm run test` (24/24), `npm run lint`, `npm run build`, and `git diff --check`.
+
+## 2026-06-19 - New York RAISE Act blog post + state page update
+
+- Researched mid-June AI-governance news and pitched uncovered story options (EU content-labeling code, NY RAISE Act, Mobley v. Workday vendor liability, WA digital-likeness law, Anthropic policy frameworks). Brian picked the New York RAISE Act.
+- Added `/blog/new-york-raise-act` (State Laws, featured, 15 sections, 6 takeaways, 5 sources): plain-English explainer of New York's Responsible AI Safety and Education Act, framed around its convergence with California's TFAIA plus a vendor-risk "what this means if you just use AI" takeaway. Registered in `src/lib/articles/index.js`.
+- Regulatory-accuracy catch: two law-firm sources described different versions of the law. Verified the FINAL March 2026 chapter-amended version - effective Jan 1, 2027; frontier model = >10^26 ops; large developer = >$500M revenue; 72h/24h incident reporting; critical harm = >50 people or >$1B; NY AG enforcement $1M/$3M plus a DFS disclosure role; no private right of action. Amendments deliberately aligned thresholds/definition/penalties with California (penalties down from the original $10M/$30M).
+- Updated `src/lib/regulations/us-state-laws.js`: new "New York" quick-reference row, a dedicated RAISE Act section after California's, two timeline entries (Dec 2025 original signing, Mar 27 2026 final), New York added to the key-facts state list, two NY primary sources, and bumped `lastReviewedIso` to 2026-06-19.
+- Updated the two `tests/seo-and-content.test.mjs` assertions pinning the us-state-laws canonical review date to 2026-06-19.
+- Confirmed `BLOG_POSTS` in data.js is still dead (only the articles index needed wiring). Lint, 24/24 tests, build, and `git diff --check` all green. Left uncommitted for Brian's review.

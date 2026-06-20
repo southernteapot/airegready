@@ -37,8 +37,10 @@ import { firstPassAiRiskAssessment } from './first-pass-ai-risk-assessment.js'
 import { aiReadinessChecklistNewBusiness } from './ai-readiness-checklist-new-business.js'
 import { fable5ExportControlShutdown } from './fable-5-export-control-shutdown.js'
 import { anthropicExportControlVendorRisk } from './anthropic-export-control-vendor-risk.js'
+import { newYorkRaiseAct } from './new-york-raise-act.js'
 
 const articles = {
+  'new-york-raise-act': newYorkRaiseAct,
   'anthropic-export-control-vendor-risk': anthropicExportControlVendorRisk,
   'fable-5-export-control-shutdown': fable5ExportControlShutdown,
   'ai-readiness-checklist-new-business': aiReadinessChecklistNewBusiness,

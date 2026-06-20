@@ -26,7 +26,7 @@ test('regulation records expose stable machine-readable review dates', () => {
   const usStateLaws = getRegulationRecords().find((regulation) => regulation.slug === 'us-state-laws')
 
   assert.ok(usStateLaws)
-  assert.equal(usStateLaws.modifiedAt, '2026-06-09')
+  assert.equal(usStateLaws.modifiedAt, '2026-06-19')
 })
 
 test('sitemap entries use canonical stable dates instead of build-time dates', () => {
@@ -35,7 +35,7 @@ test('sitemap entries use canonical stable dates instead of build-time dates', (
   )
 
   assert.ok(regulationEntry?.lastModified instanceof Date)
-  assert.equal(regulationEntry.lastModified.toISOString().slice(0, 10), '2026-06-09')
+  assert.equal(regulationEntry.lastModified.toISOString().slice(0, 10), '2026-06-19')
 })
 
 test('search index is generated from the canonical live content layer', () => {

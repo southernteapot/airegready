@@ -8,12 +8,12 @@ export const usStateLaws = {
   icon: '\u2696\uFE0F',
   status: 'Evolving',
   lastReviewed: 'June 2026',
-  lastReviewedIso: '2026-06-09',
+  lastReviewedIso: '2026-06-19',
   keyFacts: [
     { label: 'Federal AI Law', value: 'None (as of June 2026)' },
     {
       label: 'States with AI Laws',
-      value: 'California, Colorado, Illinois, Texas, New York City, and growing',
+      value: 'California, Colorado, Illinois, Texas, New York, New York City, and growing',
     },
     {
       label: 'Common Focus',
@@ -65,6 +65,12 @@ export const usStateLaws = {
             'SB 53 (TFAIA), AB 2013, SB 942',
             'In effect since Jan 1, 2026',
             'Frontier-model transparency and incident reporting, generative AI training-data disclosure, AI interaction disclosure.',
+          ],
+          [
+            'New York',
+            'RAISE Act (S6953)',
+            'Effective Jan 1, 2027',
+            'Frontier-model safety frameworks, transparency reports, and a 72-hour critical-incident clock for the largest AI developers.',
           ],
           [
             'Illinois',
@@ -233,6 +239,44 @@ export const usStateLaws = {
           term: 'Annual Scope Review',
           description:
             'The California Department of Technology must annually assess the 10^26 FLOPs threshold and the $500 million large-developer definition, and recommend updates to the legislature. The scope is expected to evolve as compute and revenue thresholds shift with industry growth.',
+        },
+      ],
+    },
+    {
+      id: 'new-york-raise',
+      title: 'New York RAISE Act: Frontier AI Safety, Aligned With California',
+      content:
+        "On March 27, 2026, Governor Kathy Hochul signed the final, amended version of the **Responsible AI Safety and Education Act (RAISE Act)** — New York's frontier AI law — after 2026 chapter amendments reshaped the bill she first signed in December 2025. It takes effect **January 1, 2027**, making New York the second state, after California, to regulate the developers of the largest AI models specifically.\n\nThe amendments deliberately aligned the RAISE Act's scope with California's TFAIA: it covers **frontier developers** training foundation models above **10^26 operations**, with the heaviest duties on **large frontier developers** whose annual revenue exceeds **$500 million** — roughly the same five to eight companies. Like California, it reaches any covered developer whose models operate in whole or in part in the state. Enforcement is led by the **New York Attorney General** (civil penalties up to **$1 million** for a first violation and **$3 million** for subsequent ones), with a dedicated office in the **Department of Financial Services (DFS)** handling disclosure filings. There is **no private right of action**.\n\nWhere New York goes further than California is in speed and substance: a **72-hour** critical-incident reporting clock (versus California's 15 days) and an explicit duty not to deploy a frontier model that creates an unreasonable risk of critical harm.",
+      items: [
+        {
+          term: 'Frontier AI Framework (Large Developers)',
+          description:
+            "Large frontier developers must write, follow, and publicly publish a frontier AI framework describing how they assess and mitigate catastrophic risk — including risk thresholds and mitigations, third-party assessments, cybersecurity protecting unreleased model weights, internal governance, and incident response. The framework must be reviewed and updated at least annually, with unredacted copies and version history retained for the deployment period plus five years.",
+        },
+        {
+          term: 'Transparency Reports',
+          description:
+            "Before deploying a new frontier model, developers must publish a transparency report — which may live in a model or system card — covering contact information, release date, supported languages and output modalities, intended uses, usage restrictions, and (for large developers) a summary of the catastrophic-risk assessment. A redacted framework is also transmitted to the Attorney General and the Division of Homeland Security and Emergency Services.",
+        },
+        {
+          term: 'Critical Safety Incident Reporting (72 Hours)',
+          description:
+            'Developers must report critical safety incidents to state authorities within 72 hours of determining one has occurred, or within 24 hours when an incident poses an imminent risk of death or serious physical injury. Large developers also file quarterly summaries of catastrophic risk arising from their own internal use of frontier models.',
+        },
+        {
+          term: 'No Unreasonable Critical-Harm Deployment',
+          description:
+            "A large frontier developer may not deploy a frontier model if doing so would create an unreasonable risk of critical harm. This turns the published framework into a deployment condition, not just a disclosure — a step beyond California's transparency-focused approach.",
+        },
+        {
+          term: 'Critical Harm Definition',
+          description:
+            "A foreseeable, material risk that a single frontier-model incident causes the death of or serious injury to more than 50 people, or more than $1 billion in property damage — through expert-level chemical, biological, radiological, or nuclear weapons assistance, autonomous criminal conduct without meaningful human intervention, or a model evading developer or user control. The 2026 amendments aligned this definition with California's.",
+        },
+        {
+          term: 'What Deployers Should Take From It',
+          description:
+            'The RAISE Act does not regulate businesses that merely use AI. But it covers the largest model vendors, so the frameworks, transparency reports, and incident practices it brings into the open are useful inputs for vendor due diligence and a free reference for building your own AI governance documentation.',
         },
       ],
     },
@@ -442,6 +486,11 @@ export const usStateLaws = {
         'Trump executive order "Ensuring a National Policy Framework for AI" targets state AI laws for potential federal preemption. DOJ AI Litigation Task Force established.',
     },
     {
+      date: 'December 2025',
+      event:
+        "New York Governor Hochul signs the original Responsible AI Safety and Education Act (RAISE Act), the state's first frontier AI law, days after the federal preemption executive order.",
+    },
+    {
       date: 'January 2026',
       event:
         'Multiple state AI laws take effect: California SB 53 (TFAIA), AB 2013, and SB 942; Texas TRAIGA (HB 149); and others.',
@@ -455,6 +504,11 @@ export const usStateLaws = {
       date: 'March 20, 2026',
       event:
         'White House releases its National Policy Framework for Artificial Intelligence, a non-binding legislative blueprint covering child safety, innovation, workforce development, and state preemption.',
+    },
+    {
+      date: 'March 27, 2026',
+      event:
+        'Governor Hochul signs the final, amended RAISE Act. Chapter amendments align its compute and revenue thresholds and critical-harm definition with California, lower penalties to $1M/$3M, and set a January 1, 2027 effective date.',
     },
     {
       date: 'May 14, 2026',
@@ -510,6 +564,18 @@ export const usStateLaws = {
       url: 'https://legiscan.com/CA/text/SB53/id/3270002',
       description:
         'Full text of California\'s frontier AI transparency law.',
+    },
+    {
+      title: 'New York RAISE Act (S6953) — New York State Senate',
+      url: 'https://www.nysenate.gov/legislation/bills/2025/S6953',
+      description:
+        'Bill page for the Responsible AI Safety and Education Act, New York\'s frontier AI law effective January 1, 2027.',
+    },
+    {
+      title: 'NY DFS — Hochul Signs Nation-Leading AI Frontier Model Legislation',
+      url: 'https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20251222',
+      description:
+        'New York Department of Financial Services announcement on the RAISE Act and its administrative role under the law.',
     },
     {
       title: 'Texas TRAIGA (HB 149)',
