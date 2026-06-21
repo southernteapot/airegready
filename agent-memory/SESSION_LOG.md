@@ -6,6 +6,12 @@ Do not paste raw terminal logs here.
 
 ## Sessions
 
+## 2026-06-21 - Gumroad rebuilt ZIP attachments
+
+- Uploaded the rebuilt customer ZIPs to the existing Gumroad products without removing the older attached files: `AI Governance Starter Kit v1.2.0.zip` on the Starter Kit product and `Solo Builder AI Launch Kit v1.1.0.zip` on the Solo Builder product.
+- Verified the local ZIP SHA256 values before upload and confirmed Gumroad returned success with new file ids.
+- Remaining optional QA: make/preview a customer purchase/download and optionally send a Gumroad update email to existing buyers.
+
 ## 2026-04-29 - Ad-inspired homepage refresh
 
 - Updated shared brand colors, navigation, footer, and `src/components/Logo.jsx` to match the `images/airegad.png` direction.

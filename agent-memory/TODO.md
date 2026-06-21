@@ -4,7 +4,6 @@ Track current project tasks here.
 
 ## Current
 
-- Brian: upload the rebuilt ZIPs to Gumroad - `deliverables/ai-governance-starter-kit-v1.zip` (v1.2.0) to the Starter Kit listing and `deliverables/solo-builder-ai-launch-kit-v1.zip` (v1.1.0) to the Solo Builder listing - then do a test purchase/preview of each to confirm delivery. The vendor packet ZIP (v1.1.0) is ready for whenever that listing is created.
 - Brian: optionally announce the free v1.2 content update (bonus filled example + spreadsheets) to existing buyers via Gumroad's update email.
 - Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing and provides the link: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
 - Brian: finish preview-request email notifications (code shipped 2026-06-09): in the Cloudflare dashboard, add the Workers variable `PREVIEW_REQUEST_EMAIL_TO` set to the Gmail address that is the verified Email Routing destination for support@airegready.com. If a test send reports a sender-verification error, onboard airegready.com under Email Sending in the dashboard. Verify with `npm run smoke:preview-request -- https://airegready.com`. The webhook env vars remain supported as an optional extra path.
@@ -80,6 +79,8 @@ Track current project tasks here.
 
 - 2026-06-08 Solo Builder product visuals completed: created cover, thumbnail, and four gallery PNGs in `public/assets/` for future Gumroad/site use without wiring public purchase metadata.
 - 2026-06-09 Solo Builder overview visual refresh completed: replaced `public/assets/solo-builder-ai-launch-kit-gallery-01-overview.png` with a more professional overview using actual rendered first pages from AI Project Snapshot, AI Claims Checklist, and Pre-Launch AI Risk Checklist.
+
+- 2026-06-21 Gumroad delivery update completed: existing Gumroad products now preserve the old attached ZIPs and also attach rebuilt customer ZIPs `AI Governance Starter Kit v1.2.0.zip` (file id `EP3wgAN9QMUpHBb03DHeow==`) and `Solo Builder AI Launch Kit v1.1.0.zip` (file id `qK0_i9KtGeOTYow2Fnxc0g==`). Local ZIP SHA256 values verified before upload: Starter `82932848d46cf89d004d3c302ec7c2c0978666125257df36ea33925376f972f5`; Solo `fd7a72b8def700cafdd9dd9659b865d11ffa60c4ba0ca66d999f0de1f01bdd69`. Still useful later: customer purchase/preview receipt QA and optional buyer update email.
 
 ## Later
 
