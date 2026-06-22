@@ -39,8 +39,10 @@ import { fable5ExportControlShutdown } from './fable-5-export-control-shutdown.j
 import { anthropicExportControlVendorRisk } from './anthropic-export-control-vendor-risk.js'
 import { newYorkRaiseAct } from './new-york-raise-act.js'
 import { ftcAiWashingCrackdown } from './ftc-ai-washing-crackdown.js'
+import { aiChatbotEnforcementRisk } from './ai-chatbot-enforcement-risk.js'
 
 const articles = {
+  'ai-chatbot-enforcement-risk': aiChatbotEnforcementRisk,
   'ftc-ai-washing-crackdown': ftcAiWashingCrackdown,
   'new-york-raise-act': newYorkRaiseAct,
   'anthropic-export-control-vendor-risk': anthropicExportControlVendorRisk,
