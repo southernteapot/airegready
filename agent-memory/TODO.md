@@ -4,9 +4,10 @@ Track current project tasks here.
 
 ## Current
 
-- Brian: optionally announce the free v1.2 content update (bonus filled example + spreadsheets) to existing buyers via Gumroad's update email.
-- Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing and provides the link: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
+- Brian: test Gumroad customer downloads for both rebuilt paid ZIPs: AI Governance Starter Kit v1.2.0 and Solo Builder AI Launch Kit v1.1.0.
+- If the download QA passes, decide whether to announce the free content update (bonus filled example + spreadsheets) to existing buyers via Gumroad's update email.
 - Brian: finish preview-request email notifications (code shipped 2026-06-09): in the Cloudflare dashboard, add the Workers variable `PREVIEW_REQUEST_EMAIL_TO` set to the Gmail address that is the verified Email Routing destination for support@airegready.com. If a test send reports a sender-verification error, onboard airegready.com under Email Sending in the dashboard. Verify with `npm run smoke:preview-request -- https://airegready.com`. The webhook env vars remain supported as an optional extra path.
+- Wire the Vendor AI Review Packet to Gumroad after Brian creates the product listing and provides the link: add purchase URL, price, Product/Offer schema, buy CTAs, Gumroad description, and delivery QA.
 - Watch `/free-sample` conversion (sample downloads → Starter Kit sales) and consider a second sample document later.
 - Consider next monetization steps from `ideas-for-future-monetization/monetization-ideas-2026-06-09.md` (bundle, paid update subscription, first vertical kit).
 - Create Vendor AI Review Packet product visuals for the site and Gumroad after the listing direction is chosen.
