@@ -128,9 +128,10 @@ compliance guarantees.
 ## Catalog Status
 
 The catalog is currently a mixed paid/preview flow. The AI Governance Starter
-Kit is purchasable through the configured Gumroad URL, while other available
-catalog packages remain preview-request pages until pricing, checkout, and
-delivery are explicitly implemented for those products. Preview forms post to
+Kit and Solo Builder AI Launch Kit are purchasable through their configured
+Gumroad URLs, while other available catalog packages remain preview-request
+pages until pricing, checkout, and delivery are explicitly implemented for those
+products. Preview forms post to
 `/api/preview-request` with a honeypot, origin check, in-process rate limit,
 and optional webhook forwarding. Coming-soon items are separated into a roadmap
 strip until their contents are ready. Do not invent prices, downloads, checkout
