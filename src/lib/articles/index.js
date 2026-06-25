@@ -40,8 +40,10 @@ import { anthropicExportControlVendorRisk } from './anthropic-export-control-ven
 import { newYorkRaiseAct } from './new-york-raise-act.js'
 import { ftcAiWashingCrackdown } from './ftc-ai-washing-crackdown.js'
 import { aiChatbotEnforcementRisk } from './ai-chatbot-enforcement-risk.js'
+import { missingGpt56LaunchGovernmentRisk } from './missing-gpt-5-6-launch-government-risk.js'
 
 const articles = {
+  'missing-gpt-5-6-launch-government-risk': missingGpt56LaunchGovernmentRisk,
   'ai-chatbot-enforcement-risk': aiChatbotEnforcementRisk,
   'ftc-ai-washing-crackdown': ftcAiWashingCrackdown,
   'new-york-raise-act': newYorkRaiseAct,

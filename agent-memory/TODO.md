@@ -84,6 +84,7 @@ Track current project tasks here.
 - 2026-06-21 Gumroad delivery update completed: existing Gumroad products now preserve the old attached ZIPs and also attach rebuilt customer ZIPs `AI Governance Starter Kit v1.2.0.zip` (file id `EP3wgAN9QMUpHBb03DHeow==`) and `Solo Builder AI Launch Kit v1.1.0.zip` (file id `qK0_i9KtGeOTYow2Fnxc0g==`). Local ZIP SHA256 values verified before upload: Starter `82932848d46cf89d004d3c302ec7c2c0978666125257df36ea33925376f972f5`; Solo `fd7a72b8def700cafdd9dd9659b865d11ffa60c4ba0ca66d999f0de1f01bdd69`. Still useful later: customer purchase/preview receipt QA and optional buyer update email.
 
 - 2026-06-22 chatbot enforcement blog post completed: added `/blog/ai-chatbot-enforcement-risk`, registered it in the article index/feed/search/sitemap layer, and validated with `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
+- 2026-06-25 GPT-5.6/Fable launch-risk blog post completed: added `/blog/missing-gpt-5-6-launch-government-risk`, registered it in the article index/feed/search/sitemap layer, and validated with `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
 
 ## Later
 
