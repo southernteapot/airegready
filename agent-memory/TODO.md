@@ -85,6 +85,7 @@ Track current project tasks here.
 
 - 2026-06-22 chatbot enforcement blog post completed: added `/blog/ai-chatbot-enforcement-risk`, registered it in the article index/feed/search/sitemap layer, and validated with `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
 - 2026-06-25 GPT-5.6/Fable launch-risk blog post completed: added `/blog/missing-gpt-5-6-launch-government-risk`, registered it in the article index/feed/search/sitemap layer, and validated with `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
+- 2026-06-25 OpenAI staggered GPT-5.6 rollout blog post completed: added `/blog/openai-staggered-gpt-56-release-risk`, registered it in the article index/feed/search/sitemap layer, and validated with `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
 
 ## Later
 

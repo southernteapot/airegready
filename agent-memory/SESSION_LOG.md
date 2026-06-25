@@ -6,6 +6,12 @@ Do not paste raw terminal logs here.
 
 ## Sessions
 
+## 2026-06-25 - OpenAI staggered GPT-5.6 release-risk blog post
+
+- Verified the Reuters-syndicated report (via KFGO) that the Trump administration reportedly asked OpenAI to stagger GPT-5.6 over security concerns, citing The Information; retained cautious language because the underlying item is reported, not a public agency rule.
+- Added `/blog/openai-staggered-gpt-56-release-risk`, framing the reported limited-preview/customer-by-customer access path as a release-risk and model-dependency lesson for AI buyers and builders.
+- Registered the article in `src/lib/articles/index.js`; validation passed: `npm run lint`, `npm run test`, `npm run build`, and `git diff --check`.
+
 ## 2026-06-25 - Missing GPT-5.6 launch-risk blog post
 
 - Researched the rumored June 25 GPT-5.6 launch against official OpenAI release/model pages, secondary rumor coverage, Anthropic's Fable/Mythos export-control statement, and a Five Eyes AI cyber-risk statement.

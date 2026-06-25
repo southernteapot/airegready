@@ -41,8 +41,10 @@ import { newYorkRaiseAct } from './new-york-raise-act.js'
 import { ftcAiWashingCrackdown } from './ftc-ai-washing-crackdown.js'
 import { aiChatbotEnforcementRisk } from './ai-chatbot-enforcement-risk.js'
 import { missingGpt56LaunchGovernmentRisk } from './missing-gpt-5-6-launch-government-risk.js'
+import { openaiStaggeredGpt56ReleaseRisk } from './openai-staggered-gpt-56-release-risk.js'
 
 const articles = {
+  'openai-staggered-gpt-56-release-risk': openaiStaggeredGpt56ReleaseRisk,
   'missing-gpt-5-6-launch-government-risk': missingGpt56LaunchGovernmentRisk,
   'ai-chatbot-enforcement-risk': aiChatbotEnforcementRisk,
   'ftc-ai-washing-crackdown': ftcAiWashingCrackdown,
